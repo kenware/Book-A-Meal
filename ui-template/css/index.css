@@ -27,9 +27,9 @@ a{
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 12px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   margin-top:15px;
 }
 
@@ -52,6 +52,9 @@ a{
     position: fixed;
     width:100%;
     top:0;
+  }
+  .sidebar{
+    visibility:hidden;
   }
 }
 
