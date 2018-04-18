@@ -1,0 +1,51 @@
+.admin-container{
+    margin-top: 70px;
+ 
+}
+
+
+.sidebar {
+   
+    color: white;
+    top:50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid rgb(238, 238, 238);
+    background-color: #333;
+    margin-top:1.3rem;
+  }
+  .sidebar1-width{
+    width:25%;
+  }
+  .sidebar2-width{
+    width:10%;
+  }
+
+
+.main-sidebar1{
+      width:75%;
+      margin-left: 25%;
+  }
+  .main-sidebar2{
+    width:90%;
+    margin-left: 10%;
+}
+.top-padding{
+    margin:13px 0px 3px 0px;
+}
+.h2-color{
+    color:lightseagreen;
+}
+.p-dash,.p-set,.p-add,.p-out,.p-all{
+    position: fixed;
+    left:80px;
+    z-index: 1000;
+    color:white;
+
+
+}
