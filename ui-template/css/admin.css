@@ -1,0 +1,106 @@
+.admin-container{
+    margin-top: 70px;
+ 
+}
+
+
+.sidebar {
+   
+    color: white;
+    top:50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid rgb(238, 238, 238);
+    background-color: #333;
+    margin-top:1.3rem;
+  }
+  .sidebar1-width{
+    width:25%;
+  }
+  .sidebar2-width{
+    width:10%;
+  }
+
+
+.main-sidebar1{
+      width:75%;
+      margin-left: 25%;
+  }
+  .main-sidebar2{
+    width:90%;
+    margin-left: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .main-sidebar1{
+        width:100%;
+        margin-left:0px;
+     }
+     .main-sidebar2{
+       width:100%;
+        margin-left:0px;
+     } 
+}
+.top-padding{
+    margin:13px 0px 3px 0px;
+}
+.h2-color{
+    color:lightseagreen;
+}
+/*popover*/
+.p-dash,.p-set,.p-add,.p-out,.p-all{
+    position: fixed;
+    left:80px;
+    z-index: 10000;
+    color:lightseagreen;;
+}
+.main{
+    margin-top: 4rem;
+}
+.contents{
+    margin-top: 1rem;
+}   
+   
+.content-wrap{
+    display:flex;
+    justify-content: space-around;
+}
+.col-meal{
+    flex:1;
+}
+.img-height{
+    width:100px;
+    height: 100px;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(174, 178, 184);
+    box-shadow: 10px 10px 10px rgb(32, 178, 170);
+}
+.header div{
+    flex:1;
+}
+.user-img{
+    height: 50px;
+    width: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
