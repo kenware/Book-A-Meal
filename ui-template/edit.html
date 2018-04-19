@@ -6,13 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/admin.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
-       
+        <link rel="stylesheet" href="css/register.css">
+        
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/index.js"></script>
-        <script></script>
-
+      
     </head>
     <body>
 
@@ -24,7 +23,7 @@
             <a href="admin-all.html">All-Menu</a>
             <a href="login.html">Login</a>
             <a href="register.html">SignUp</a>
-            
+      
             <a href="index.html" class="active" style="font-size:23px;">Home</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
@@ -81,127 +80,72 @@
                         </ul>
                     </div>
                 </nav>
+    
             <main class="main main-sidebar1" id="main">
                 <header class="header">
-                   <div class="l-r-pad-text">
-                       <h1 class="white-color">ADMIN</h1>
-                   </div>
-                   <div>
+                    <div class="l-r-pad-text">
+                        <h1 class="white-color">ADMIN</h1>
+                    </div>
+                    <div>
                         <h4 class="white-color m-text">Kevin</h4>
                         <img src="image/eze.jpg" class="user-img rounded-circle"/>
                     </div>
                 </header>
-                    <h2>All Meal Options</h2>
-                    <h4 class="p-color text-center">Edit, delete or View all meal options</h4>
-                <div class="contents">
-                    
-                    <div class="content-wrap">
-                        <div class="col-meal l-r-pad-text">
-                           <img src="image/l.png" class="rounded-circle img-height">
-                        </div>
-                        <div class="col-meal">
-                         <h4 class="p-color"> Title</h4>French Desserts
-                        </div> 
-                        <div class="col-meal">
-                            <h4 class="p-color">Price</h4>$300
-                        </div>
-                        <div class="col-meal">
-                            <h4 class="p-color"><a href="edit.html">View Delet or Edit</a></h4>
-                        </div>  
-                    </div>   
-                    
-                </div>
-                <div class="contents">
-                    
-                        <div class="content-wrap">
-                            <div class="col-meal l-r-pad-text">
-                               <img src="image/1.jpg" class="rounded-circle img-height">
+                <h2 style="top:2rem;">Modify, Delete or Update Jollof Rice Meal</h2>
+                <div class="detail-contents">     
+                    <img src="image/8.jpg" class="detail-img">  
+               </div>   
+                <div class="register-container" style="margin-top:0px">
+                    <div class="register-col"></div>
+                    <div class="register-wrapper" style="margin-top:2rem;">
+                        <h4 class="p-color text-center">Edit the field bellow to Modify a meal</h4> 
+                        <form action="dashboard.html">
+                            <div class="form-row">
+                                <label for="name">Name/Title</label>
+                                <input type="text" id="name" value="French Desserts">
                             </div>
-                            <div class="col-meal">
-                             <h4 class="p-color"> Title</h4>American Desserts
-                            </div> 
-                            <div class="col-meal">
-                                <h4 class="p-color">Price</h4>$500
+                            <div class="form-row">
+                                <label for="name">Price</label>
+                                <input type="text" id="name" value="$300">
                             </div>
-                            <div class="col-meal">
-                                <h4 class="p-color"><a href="edit.html">View, Delet or Edit</a></h4>
-                            </div>  
-                        </div>   
+                            <div class="form-row">
+                                <label for="name">Quantity</label>
+                                <input type="text" id="name" value="1">
+                            </div>
+                            <div class="form-row">
+                                <label for="file">Recipe Image</label>
+                                <input type="file" id="file">
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="button lg">Update Meal</button>
+                            </div>
+                        </form>
                         
-                    </div>
-                    <div class="contents">
-                    
-                            <div class="content-wrap">
-                                <div class="col-meal l-r-pad-text">
-                                   <img src="image/2.jpg" class="rounded-circle img-height">
-                                </div>
-                                <div class="col-meal">
-                                 <h4 class="p-color"> Title</h4>Chines Recipe
-                                </div> 
-                                <div class="col-meal">
-                                    <h4 class="p-color">Price</h4>$200
-                                </div>
-                                <div class="col-meal">
-                                    <h4 class="p-color"><a href="edit.html">View, Delet or Edit</a></h4>
-                                </div>  
-                            </div>   
-                            
-                    </div>
-                    <div class="contents">
-                
-                        <div class="content-wrap">
-                            <div class="col-meal l-r-pad-text">
-                                <img src="image/3.jpg" class="rounded-circle img-height">
-                            </div>
-                            <div class="col-meal">
-                                <h4 class="p-color"> Title</h4>Nigerian Abacha
-                            </div> 
-                            <div class="col-meal">
-                                <h4 class="p-color">Price</h4>$300
-                            </div>
-                            <div class="col-meal">
-                                <h4 class="p-color"><a href="eedit.html">View Delet or Edit</a></h4>
-                            </div>  
-                        </div>   
-                            
-                    </div>
-                            <div class="contents">
-            
-                            <div class="content-wrap">
-                                <div class="col-meal l-r-pad-text">
-                                    <img src="image/4.jpg" class="rounded-circle img-height">
-                                </div>
-                                <div class="col-meal">
-                                    <h4 class="p-color"> Title</h4>Nigerian Amala
-                                </div> 
-                                <div class="col-meal">
-                                    <h4 class="p-color">Price</h4>$200
-                                </div>
-                                <div class="col-meal">
-                                    <h4 class="p-color"><a href="edit.html">View Delet or Edit</a></h4>
-                                </div>  
-                            </div>   
-                            
+                    </div> 
+                    <div class="register-col"></div>
+                </div>
+                </form>
+                <div class="contents" style="margin-top:2rem;flex-wrap:wrap">       
+                    <div class="content-wrap">
+                        <div class="col-meal no-col-meal"></div>                
+                        <div class="col-meal l-r-pad-text">
+                            <span class="p-color m-text"><span class="fa fa-trash fa-2x"></span>Delete</span>
                         </div>
-                        <div class="contents">
-            
-                                <div class="content-wrap">
-                                    <div class="col-meal l-r-pad-text">
-                                    <button><span class="fa fa-backward white-color">&nbsp;PREV</span></button>
-                                    </div>
-                                    <div class="col-meal">
-                            
-                                    </div> 
-                                    <div class="col-meal">
-                
-                                    </div>
-                                    <div class="col-meal">
-                                        <button>NEXT&nbsp;<span class="fa fa-forward white-color"></span></button>
-                                    </div>  
-                                </div>   
-                                
-                                </div>
-                <footer class="footer" style="margin-top:30px; width:100%;">
+                    
+                        <div class="col-meal l-r-pad-text">
+                            <span class="m-text p-color"><span class="fa fa-close fa-2x"></span>Cancel</span>     
+                        </div>   
+                        <div class="col-meal">
+                                <span class="p-color m-text fa fa-print fa-2x"></span>&nbsp; <span class="m-text p-color"> Print</span>
+                        </div>
+                        <div class="col-meal">
+                           <span class="p-color m-text fa fa-share-alt fa-2x"></span> <span class="fa fa-twitter fa-2x p-color"></span>
+                            <span class="fa fa-facebook fa-2x p-color"></span>
+                            <span class="fa fa-linkedin fa-2x p-color"></span>
+                        </div>    
+                    </div>                    
+                </div>
+                <footer class="footer" style="margin-top:30px;">
                         <div class="footer-col">
                             <h2 class="">
                                 Book-A-Meal

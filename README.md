@@ -1,6 +1,6 @@
-# more-recipe
+# Book-A-
 Book-A-Meal: Order a meal of your choice just by a single click
-![A Meal photo](templates/image/g.jpg)
+![A Meal photo](ui-template/image/8.jpg)
 *  TABLE OF CONTENTS
 * [Team members](#team-members)
 * [installations](#installations)
@@ -13,7 +13,7 @@ Book-A-Meal: Order a meal of your choice just by a single click
 # <a name="installations">Installations
 * Create a folder 
 * Enter the folder director from the command line and initialize git using "git init" command in the command line
-* clone the the repositary using "git clone https://github.com/kenware/more-recipes.git " command
+* clone the the repositary using "git clone https://github.com/kenware/Book-A-Meal.git" command
 * type 'npm install' command on the root directory of the project to install dependency
 * npm start
 # <a name="test"></a>Test
