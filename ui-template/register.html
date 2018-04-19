@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Book-A-Meal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/register.css">
+        <script src="js/index.js"></script>
+        <style>
+        body{
+            background-image: url("image/ad.jpg");
+          }
+        </style>
+    </head>
+    <body>
+
+        <div class="nav" id="myTopnav" style="position: fixed;width:100%;top:0;">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="admin.html">Admin</a>
+                <a href="admin-set-menu.html">Set-Menu</a>
+                <a href="admin-all.html">All-Menu</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">SignUp</a>
+            <a href="index.html" class="active" style="font-size:23px;">Home</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <div class="register-container">
+            <div class="register-col"></div>
+            <div class="register-wrapper">
+                <h2 class'login-header'>Enter your details to SignUp</h2> 
+                <form action="dashboard.html">
+                    <div class="form-row">
+                        <label for="name">Fullname</label>
+                        <input type="text" id="name" placeholder="Eze Kevin">
+                    </div>
+                    <div class="form-row">
+                        <label for="name">Username</label>
+                        <input type="text" id="name" placeholder="Keny">
+                    </div>
+                    <div class="form-row">
+                        <label for="name">Email</label>
+                        <input type="email" id="name" placeholder="Keny">
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="button lg">SignUp</button>
+                    </div>
+                    <div class="form-row">
+                    <label for="inputPassword3"><a href="/signup">Login</a></label>
+                    <label for="inputPassword3"><a href="/signup">forgot password?</a></label>
+                    </div>
+                </form>
+                
+            </div> 
+            <div class="register-col"></div>
+        </div>
+        <footer class="footer" style="margin-top:30px;">
+            <div class="footer-col">
+                <h2 class="">
+                    Book-A-Meal
+                </h2>
+                <ul>
+                    <li> <a href="login.html" class="text-white">LogIn</a></li>
+                    <li> <br><a href="register.html" class="text-white">SignUp</a></li>
+                    <li><br><a href="dashboard.html" class="text-white">Dashboard</a></li>
+                    <li><br><a href="#" class="text-white">Get In Touch</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h2 class="">
+                    Recent News
+                </h2>
+                <p>
+                    Book-a-Meal app is designed to make live better
+                    and easier. You can get your favorite meal with just
+                    a click any where around the world.
+                    <br>
+                    <br> Dont hesistate to make
+                    your order now.We are available 24/7 
+                </p>
+            </div>
+            <div class="footer-col">
+                <h2 class="">
+                    SUBSCRIBE
+                </h2>
+                <p>
+                    Get Monthly Updates on our Meal and Recipes and
+                    also free resources.
+                </p>
+                <div class="form-row">
+                        <input type="email"  placeholder="Email" style="background-color:white;">
+                </div>
+                <div class="form-row">
+                    <button href="" class="button" type="submit" style="margin-left:25px;">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-col social">
+                <h2 class="">
+                    Connect With Us
+                </h2>
+                <p>
+                    Get in touch with us on various social media
+                </p>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-likedIn"></span>
+                <span class="fa fa-twitter"></span>
+            </div>
+        </footer>
+        <div class="footer-row">
+            <p class="">
+                © Copyright 2018 Book-A-Meal - All Rights Reserved
+            </p>
+        </div>  
+    </body>
+</html>

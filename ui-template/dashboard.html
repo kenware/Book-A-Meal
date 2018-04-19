@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Book-A-Meal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+       
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+        <script></script>
+
+    </head>
+    <body>
+
+        <div class="nav" id="myTopnav" style="position: fixed;width:100%;top:0;">
+            <a href="index.html" class="active" style="font-size:25px;">Book-A-Meal</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Admin</a>
+            <a href="admin-set-menu.html">Set-Menu</a>
+            <a href="admin-all.html">All-Menu</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">SignUp</a>
+           
+            <a href="index.html" class="active" style="font-size:23px;">Home</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <div class="admin-container">
+            <nav class="sidebar sidebar1-width" id="nav1">
+              <div>
+                    <em class="fa fa-bars l-r-pad-text m-text bar1"></em>
+                  <h1 class="white-color l-r-pad-text">Book-A-Meal</h1>
+                  <ul>
+                      <li class="top-padding li-style">
+                          <a href="dashboard.html" class="white-color m-text">Dashboard</a>
+                         
+                        </li>
+                      <li class="top-padding li-style">
+                            <a href="#" class="white-color m-text">My Orders</a>
+                      </li>
+                      <li class="top-padding li-style">
+                            <a href="javascript:void(0);" class="add white-color m-text">Profile</a>
+                      </li>
+                      <li class="top-padding li-style">
+                            <a href="javascript:void(0);" class="set white-color m-text">Change Password</a>
+                        </li>
+                        <li class="top-padding li-style">
+                              <a href="javascript:void(0);" class="white-color m-text">LogOut</a>
+                        </li>
+                  </ul>
+              </div>
+            </nav>
+            <nav class="sidebar sidebar2-width" id="nav2"style="background-color:">
+                <div>
+                        <em class="fa fa-bars l-r-pad-text m-text bar2"></em>
+                    <h1 class="l-r-pad-text"><a href="index.html"><em class="white-color fa fa-home fa-3x"></em></a></h1>
+                    <ul>
+                        <li class="top-padding li-style">
+                            <a href="dashboard.html" class="white-color m-text dashboard"><em class="fa fa-dashboard fa-2x"></em></a>
+                            <label class="p-dash m-text">Dashoard</label>
+                        </li>
+                        <li class="top-padding li-style">
+                            <a href="#" class="white-color m-text"><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
+                            <label class="p-all m-text">My Orders</label>
+                        </li>
+                        <li class="top-padding li-style">
+                                <a href="javascript:void(0);" class="add white-color m-text"><em class="fa fa-user fa-2x add-meal"></em></a>
+                                <label class="p-add m-text">Profile</label>
+                            </li>
+                        <li class="top-padding li-style">
+                                <a href="javascript:void(0);" class="set white-color m-text"><em class="fa fa-edit fa-2x set-meal"></em></a>
+                                <label class="p-set m-text">Change Password</label>
+                            </li>
+                            <li class="top-padding li-style">
+                                <a href="javascript:void(0);" class="white-color m-text"><em class="fa fa-power-off fa-2x logout"></em></a>
+                                <label class="p-out m-text">LougOut</label>
+                            </li>
+                    </ul>
+                </div>
+            </nav>
+           
+            <main class="main main-sidebar1" id="main">
+                <header class="header">
+                    <div class="l-r-pad-text">
+                        <h1 class="white-color">USER DASHBOARD</h1>
+                    </div>
+                    <div>
+                            <h4 class="white-color m-text">KENY</h4>
+                            <img src="image/eze.jpg" class="user-img rounded-circle"/>
+                    </div>
+                </header>
+                <div class="contents">
+                    <div class="items">
+                            <h2>SELECT TO VIEW ALL THE MENU OF THE DAY</h2>
+                            <h4 class="p-color text-center">Select from the list of days to view menu for that day</h4>
+                        
+                           <div class="select-meal-day">
+                                <div class="meal-day">
+                                    <p class="p-color" style="flex:2">Choose a day</p>
+                                    <select class="rounded-button">
+                                            <option value="audi" selected>Sunday</option>
+                                            <option value="mon">Monday</option>
+                                            <option value="Tues">Tuesday</option>
+                                            <option value="Wedn">Wednesday</option>
+                                            <option value="audi" selected>Thursday</option>
+                                            <option value="audi" selected>Friday</option>
+                                            <option value="audi" selected>Saturday</option>
+                                    </select>
+                                </div>
+                            <div class="meal-day">
+                                <img src="image/2.jpg" id="App-logo" class="rounded-circle" style="height:4rem;width:4rem; margin-left:40%;" />
+                            </div>
+                            </div>
+                            <div class="contents"></div>
+                            <div class="content-wrap">
+                                    <div class="col-meal l-r-pad-text">
+                                       <img src="image/l.png" class="rounded-circle img-height">
+                                    </div>
+                                    <div class="col-meal">
+                                     <h4 class="p-color"> Title</h4>French Desserts
+                                    </div> 
+                                    <div class="col-meal">
+                                        <h4 class="p-color">Price</h4>$300
+                                    </div>
+                                    <div class="col-meal">
+                                        <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                    </div>  
+                                </div>   
+                                
+                            </div>
+                            <div class="contents">
+                                
+                                    <div class="content-wrap">
+                                        <div class="col-meal l-r-pad-text">
+                                           <img src="image/1.jpg" class="rounded-circle img-height">
+                                        </div>
+                                        <div class="col-meal">
+                                         <h4 class="p-color"> Title</h4>American Desserts
+                                        </div> 
+                                        <div class="col-meal">
+                                            <h4 class="p-color">Price</h4>$500
+                                        </div>
+                                        <div class="col-meal">
+                                                <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                        </div>  
+                                    </div>   
+                                    
+                                </div>
+                                <div class="contents">
+                                
+                                        <div class="content-wrap">
+                                            <div class="col-meal l-r-pad-text">
+                                               <img src="image/2.jpg" class="rounded-circle img-height">
+                                            </div>
+                                            <div class="col-meal">
+                                             <h4 class="p-color"> Title</h4>Chines Recipe
+                                            </div> 
+                                            <div class="col-meal">
+                                                <h4 class="p-color">Price</h4>$200
+                                            </div>
+                                            <div class="col-meal">
+                                                    <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                            </div>  
+                                        </div>   
+                                        
+                                </div>
+                                <div class="contents">
+                            
+                                    <div class="content-wrap">
+                                        <div class="col-meal l-r-pad-text">
+                                            <img src="image/3.jpg" class="rounded-circle img-height">
+                                        </div>
+                                        <div class="col-meal">
+                                            <h4 class="p-color"> Title</h4>Nigerian Abacha
+                                        </div> 
+                                        <div class="col-meal">
+                                            <h4 class="p-color">Price</h4>$300
+                                        </div>
+                                        <div class="col-meal">
+                                                <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                        </div>  
+                                    </div>   
+                                        
+                                </div>
+                                        <div class="contents">
+                        
+                                        <div class="content-wrap">
+                                            <div class="col-meal l-r-pad-text">
+                                                <img src="image/4.jpg" class="rounded-circle img-height">
+                                            </div>
+                                            <div class="col-meal">
+                                                <h4 class="p-color"> Title</h4>Nigerian Amala
+                                            </div> 
+                                            <div class="col-meal">
+                                                <h4 class="p-color">Price</h4>$200
+                                            </div>
+                                            <div class="col-meal">
+                                                    <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                            </div>  
+                                        </div>   
+                                        
+                                    </div>
+                           <div class="contents">
+            
+                            <div class="content-wrap">
+                                <div class="col-meal l-r-pad-text">
+                                <button>PREV </button>
+                                </div>
+                                <div class="col-meal">
+                        
+                                </div> 
+                                <div class="col-meal">
+            
+                                </div>
+                                <div class="col-meal">
+                                    <button>MORE>></button>
+                                </div>  
+                            </div>   
+                            
+                            </div>
+                    </div>   
+                    
+                </div>
+                <footer class="footer" style="margin-top:30px;">
+                        <div class="footer-col">
+                            <h2 class="">
+                                Book-A-Meal
+                            </h2>
+                            <ul>
+                                <li> <a href="login.html" class="text-white">LogIn</a></li>
+                                <li> <br><a href="register.html" class="text-white">SignUp</a></li>
+                                <li><br><a href="dashboard.html" class="text-white">Dashboard</a></li>
+                                <li><br><a href="#" class="text-white">Get In Touch</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h2 class="">
+                                Recent News
+                            </h2>
+                            <p>
+                                Book-a-Meal app is designed to make live better
+                                and easier. You can get your favorite meal with just
+                                a click any where around the world.
+                                <br>
+                                <br> Dont hesistate to make
+                                your order now.We are available 24/7 
+                            </p>
+                        </div>
+                        <div class="footer-col">
+                            <h2 class="">
+                                SUBSCRIBE
+                            </h2>
+                            <p>
+                                Get Monthly Updates on our Meal and Recipes and
+                                also free resources.
+                            </p>
+                            <div class="form-row">
+                                    <input type="email"  placeholder="Email" style="background-color:white;">
+                            </div>
+                            <div class="form-row">
+                                <button href="" class="button" type="submit" style="margin-left:25px;">Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="footer-col social">
+                            <h2 class="">
+                                Connect With Us
+                            </h2>
+                            <p>
+                                Get in touch with us on various social media
+                            </p>
+                            <span class="fa fa-twitter"></span>
+                            <span class="fa fa-facebook"></span>
+                            <span class="fa fa-likedIn"></span>
+                            <span class="fa fa-twitter"></span>
+                        </div>
+                    </footer>
+                    <div class="footer-row">
+                        <p class="">
+                            © Copyright 2018 Book-A-Meal - All Rights Reserved
+                        </p>
+                    </div> 
+            </main>
+
+        </div>
+        
+    </body>
+</html>
