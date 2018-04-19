@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Book-A-Meal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+        <link rel="stylesheet" href="css/register.css">
+        
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+      
+    </head>
+    <body>
+
+        <div class="nav" id="myTopnav" style="position: fixed;width:100%;top:0;">
+            <a href="index.html" class="active" style="font-size:25px;">Book-A-Meal</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="admin.html">Admin</a>
+            <a href="admin-set-menu.html">Set-Menu</a>
+            <a href="admin-all.html">All-Menu</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">SignUp</a>
+      
+            <a href="index.html" class="active" style="font-size:23px;">Home</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+        <div class="admin-container">
+        <nav class="sidebar sidebar1-width" id="nav1">
+                <div>
+                        <em class="fa fa-bars l-r-pad-text m-text bar1"></em>
+                    <h1 class="h2-color l-r-pad-text">Book-A-Meal</h1>
+                    <ul>
+                        <li class="top-padding li-style">
+                            <a href="admin.html" class="h2-color m-text">ADMIN</a>
+                            
+                            </li>
+                        <li class="top-padding li-style">
+                                <a href="admin-all.html" class="h2-color m-text">All Meal</a>
+                        </li>
+                        <li class="top-padding li-style">
+                                <a href="admin-all.html" class="add h2-color m-text">Add Meal</a>
+                        </li>
+                        <li class="top-padding li-style">
+                                <a href="admin-set-menu.html" class="set h2-color m-text">Set Menu</a>
+                            </li>
+                            <li class="top-padding li-style">
+                                <a href="index.html" class="h2-color m-text">LogOut</a>
+                            </li>
+                    </ul>
+                </div>
+                </nav>
+                <nav class="sidebar sidebar2-width" id="nav2">
+                    <div>
+                            <em class="fa fa-bars l-r-pad-text m-text bar2"></em>
+                        <h1 class="l-r-pad-text"><a href="index.html"><em class="h2-color fa fa-home fa-3x"></em></a></h1>
+                        <ul>
+                            <li class="top-padding li-style">
+                                <a href="admin.html" class="h2-color m-text dashboard"><em class="fa fa-dashboard fa-2x"></em></a>
+                                <label class="p-dash m-text">ADMIN</label>
+                            </li>
+                            <li class="top-padding li-style">
+                                <a href="admin-all.html" class="h2-color m-text"><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
+                                <label class="p-all m-text">All Meal</label>
+                            </li>
+                            <li class="top-padding li-style">
+                                    <a href="admin-all.html" class="add h2-color m-text"><em class="fa fa-plus fa-2x add-meal"></em></a>
+                                    <label class="p-add m-text">Add Meal</label>
+                                </li>
+                            <li class="top-padding li-style">
+                                    <a href="admin-set-menu.html" class="set h2-color m-text"><em class="fa fa-bar-chart fa-2x set-meal"></em></a>
+                                    <label class="p-set m-text">Set Menu</label>
+                                </li>
+                                <li class="top-padding li-style">
+                                    <a href="index.html" class="h2-color m-text"><em class="fa fa-power-off fa-2x logout"></em></a>
+                                    <label class="p-out m-text">LougOut</label>
+                                </li>
+                        </ul>
+                    </div>
+                </nav>
+    
+            <main class="main main-sidebar1" id="main">
+                <header class="header">
+                    <div class="l-r-pad-text">
+                        <h1 class="white-color">ADMIN</h1>
+                    </div>
+                    <div>
+                        <h4 class="white-color m-text">Kevin</h4>
+                        <img src="image/eze.jpg" class="user-img rounded-circle"/>
+                    </div>
+                </header>
+                <h2 style="top:2rem;">Modify, Delete or Update Jollof Rice Meal</h2>
+                <div class="detail-contents">     
+                    <img src="image/8.jpg" class="detail-img">  
+               </div>   
+                <div class="register-container" style="margin-top:0px">
+                    <div class="register-col"></div>
+                    <div class="register-wrapper" style="margin-top:2rem;">
+                        <h4 class="p-color text-center">Edit the field bellow to Modify a meal</h4> 
+                        <form action="dashboard.html">
+                            <div class="form-row">
+                                <label for="name">Name/Title</label>
+                                <input type="text" id="name" value="French Desserts">
+                            </div>
+                            <div class="form-row">
+                                <label for="name">Price</label>
+                                <input type="text" id="name" value="$300">
+                            </div>
+                            <div class="form-row">
+                                <label for="name">Quantity</label>
+                                <input type="text" id="name" value="1">
+                            </div>
+                            <div class="form-row">
+                                <label for="file">Recipe Image</label>
+                                <input type="file" id="file">
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="button lg">Update Meal</button>
+                            </div>
+                        </form>
+                        
+                    </div> 
+                    <div class="register-col"></div>
+                </div>
+                </form>
+                <div class="contents" style="margin-top:2rem;flex-wrap:wrap">       
+                    <div class="content-wrap">
+                        <div class="col-meal no-col-meal"></div>                
+                        <div class="col-meal l-r-pad-text">
+                            <span class="p-color m-text"><span class="fa fa-trash fa-2x"></span>Delete</span>
+                        </div>
+                    
+                        <div class="col-meal l-r-pad-text">
+                            <span class="m-text p-color"><span class="fa fa-close fa-2x"></span>Cancel</span>     
+                        </div>   
+                        <div class="col-meal">
+                                <span class="p-color m-text fa fa-print fa-2x"></span>&nbsp; <span class="m-text p-color"> Print</span>
+                        </div>
+                        <div class="col-meal">
+                           <span class="p-color m-text fa fa-share-alt fa-2x"></span> <span class="fa fa-twitter fa-2x p-color"></span>
+                            <span class="fa fa-facebook fa-2x p-color"></span>
+                            <span class="fa fa-linkedin fa-2x p-color"></span>
+                        </div>    
+                    </div>                    
+                </div>
+                <footer class="footer" style="margin-top:30px;">
+                        <div class="footer-col">
+                            <h2 class="">
+                                Book-A-Meal
+                            </h2>
+                            <ul>
+                                <li> <a href="login.html" class="text-white">LogIn</a></li>
+                                <li> <br><a href="register.html" class="text-white">SignUp</a></li>
+                                <li><br><a href="dashboard.html" class="text-white">Dashboard</a></li>
+                                <li><br><a href="#" class="text-white">Get In Touch</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h2 class="">
+                                Recent News
+                            </h2>
+                            <p>
+                                Book-a-Meal app is designed to make live better
+                                and easier. You can get your favorite meal with just
+                                a click any where around the world.
+                                <br>
+                                <br> Dont hesistate to make
+                                your order now.We are available 24/7 
+                            </p>
+                        </div>
+                        <div class="footer-col">
+                            <h2 class="">
+                                SUBSCRIBE
+                            </h2>
+                            <p>
+                                Get Monthly Updates on our Meal and Recipes and
+                                also free resources.
+                            </p>
+                            <div class="form-row">
+                                    <input type="email"  placeholder="Email" style="background-color:white;">
+                            </div>
+                            <div class="form-row">
+                                <button href="" class="button" type="submit" style="margin-left:25px;">Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="footer-col social">
+                            <h2 class="">
+                                Connect With Us
+                            </h2>
+                            <p>
+                                Get in touch with us on various social media
+                            </p>
+                            <span class="fa fa-twitter"></span>
+                            <span class="fa fa-facebook"></span>
+                            <span class="fa fa-likedIn"></span>
+                            <span class="fa fa-twitter"></span>
+                        </div>
+                    </footer>
+                    <div class="footer-row">
+                        <p class="">
+                            © Copyright 2018 Book-A-Meal - All Rights Reserved
+                        </p>
+                    </div> 
+            </main>
+
+        </div>
+        
+    </body>
+</html>
