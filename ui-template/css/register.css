@@ -1,0 +1,41 @@
+
+  
+  
+  .register-container{
+    display: flex;
+    height: auto;
+  }
+  .register-col{
+    flex:1;
+  }
+  .register-wrapper{
+      -moz-box-shadow: 15px 5px 5px 5px #272626;
+      -webkit-box-shadow: 15px 5px 5px 5px #dfd5d5;
+      box-shadow: 5px 5px 5px 5px #6e6060;
+      background-color: white;
+      margin-top: 150px;
+      align-items:center;
+     flex:3;
+     height: auto;
+  }
+  .form-row{
+      display: flex;
+      padding: 10px 0;
+  }
+  .form-row label{
+   padding: 10px 10px 10px 10px;
+   flex:1;
+  }
+  .form-row input{
+    flex:2;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+   }
+   .form-row button{
+    flex:2;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+  
+   }
