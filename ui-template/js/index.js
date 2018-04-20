@@ -21,12 +21,18 @@ $(window).ready(function(){
      $(".modal-order").show()
    })
   
+   $("#notification1").click(function(){
+    $(".timeline-container").toggle()
+    //$(".meal-container").toggle()
+   })
+   $("#notification2").click(function(){
+    $(".timeline-container").toggle()
+    
+   })
  //dashboard js and admin js
  $(".timeline-container").hide();//dashboard timeline
  $("#nav2").hide();
  $(".bar1").click(function(){
-   $("#notification").addClass("bar2");//dashboard timeline
-  $("#notification").removeClass("bar1");//dashboard timeline
   
   $("#nav2").show(300000);
   $("#nav1").hide(300000);
@@ -38,9 +44,6 @@ $(window).ready(function(){
  })
 
  $(".bar2").click(function(){
-   $("#notification").addClass("bar1");//dashboard timeline
-  $("#notification").removeClass("bar2");//dashboard timeline
-  
   $("#nav2").hide(300000);
   $("#nav1").show(300000);
   $("#main").removeClass("main-sidebar2");
