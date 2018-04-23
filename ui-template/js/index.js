@@ -17,9 +17,17 @@ $(window).ready(function(){
    $(".remove-modal").click(function(){
      $(".modal-order").hide();
    })
+
    $(".order").click(function(){
      $(".modal-order").show()
    })
+
+   $(".order-container").hide()
+   $(".my-order").click(function(){
+    $(".order-container").show()
+    $(".meal-container").hide()
+    //$(".bar1").click()
+  })
   
    $("#notification1").click(function(){
     $(".timeline-container").toggle()

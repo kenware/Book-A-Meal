@@ -174,19 +174,22 @@ button:hover{
   margin-left:30px;
   font-size: 20px;
 }
-.meal-day p,select{
+.meal-day input{
   margin-top: 10px;
 }
 .p-color{
   color:rgb(5, 79, 145);
 }
-.meal-day select{
-  flex:2;
+.date{
   box-shadow: 10px 10px 10px rgb(32, 178, 170);
  
 }
 .meal-day p{
   flex:1;
+  margin-top: 2rem;
+}
+.date-container{
+  flex: 1;
 }
 .rounded-button{
   border-radius: 30%;
