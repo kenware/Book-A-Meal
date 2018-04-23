@@ -1,5 +1,5 @@
 body{
-  background-image: url("../image/ac.jpg");
+  background-image: url("../image/ad.jpg");
 }
 
 
@@ -19,7 +19,7 @@ body{
     height: 200px;
     align-items:center;
    flex:3;
-   height: 300px;;
+   height: auto;
 }
 .form-row{
     display: flex;

@@ -9,8 +9,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
        
       
-        <script src="js/index.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+        .content-wrap{
+            flex-wrap:wrap;
+            justify-content: space-between;       
+        }
+        </style>
     </head>
     <body>
         <div class="detail-header">
@@ -26,27 +32,81 @@
             <a href="register.html">SignUp</a>
           
             <a href="index.html" class="active" style="font-size:23px;">Home</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()"><span class="fa fa-bars fa-2x"></span></span></a>
         </div>
         <div class="site-container" style="margin-left:3%;margin-right:3%;">
             <h2>DETAILS OF JOLLOF RICE MEAL</h2>
-            <div class="contents">
-            
-                    <div class="content-wrap">
-                        <div class="col-meal l-r-pad-text">
-                        <button>PREV </button>
-                        </div>
-                       
-                        <div class="col-meal">
-                                <button>MORE>></button>
-                            </div>   
-                        <div class="col-meal">
-                            <button>MORE>></button>
-                        </div>  
-                    </div>   
+            <div class="detail-contents">     
+                 <img src="image/8.jpg" class="detail-img">  
                     
+            </div>   
+                
+            <div class="contents">       
+                <div class="content-wrap">
+                    <div class="col-meal no-col-meal"></div>                
+                    <div class="col-meal l-r-pad-text">
+                      <p class="p-color m-text">Name</p>
                     </div>
-            <footer class="footer">
+                
+                    <div class="col-meal l-r-pad-text">
+                      <p class="m-text">French Recipe</p>     
+                    </div>   
+                    <div class="col-meal no-col-meal"></div>
+                    <div class="col-meal no-col-meal"></div>    
+                </div>                    
+            </div>
+            <div class="contents" style="margin-top:0px;">       
+                    <div class="content-wrap">
+                        <div class="col-meal no-col-meal"></div>                
+                        <div class="col-meal l-r-pad-text">
+                          <p class="p-color m-text">Price</p>
+                        </div>
+                    
+                        <div class="col-meal l-r-pad-text">
+                          <p class="m-text">$500</p>     
+                        </div>   
+                        <div class="col-meal no-col-meal"></div>
+                        <div class="col-meal no-col-meal"></div>    
+                    </div>                    
+                </div>
+                <div class="contents" style="margin-top:0px;">       
+                    <div class="content-wrap">
+                        <div class="col-meal no-col-meal"></div>                
+                        <div class="col-meal l-r-pad-text">
+                            <p class="p-color m-text">Description</p>
+                        </div>
+                    
+                        <div class="col-meal l-r-pad-text" style="flex:2;">
+                            <p class="m-text justify">Abacha Recipe is an Ibo meal,
+                                 because of its delicious taste, it is prepared and eaten acros 
+                                the whole world. Its main ingrdient are Abacha(Processed casava), palm oil,
+                               Vegetable ganished with fish</p>     
+                        </div>   
+                        <div class="col-meal no-col-meal"></div>    
+                    </div>                    
+                    </div>
+                    <div class="contents" style="margin-top:0px; flex-wrap:wrap">       
+                        <div class="content-wrap">
+                            <div class="col-meal no-col-meal"></div>                
+                            <div class="col-meal l-r-pad-text">
+                                <span class="m-text p-color"><span class="fa fa-plus fa-2x"></span>Order</span>
+                            </div>
+                        
+                            <div class="col-meal l-r-pad-text">
+                                <span class="m-text p-color"><span class="fa fa-close fa-2x"></span>Cancel</span>     
+                            </div>   
+                            <div class="col-meal">
+                                    <span class="p-color m-text fa fa-print fa-2x"></span>&nbsp; <span class="m-text p-color"> Print</span>
+                            </div>
+                            <div class="col-meal">
+                               <span class="p-color m-text fa fa-share-alt fa-2x"></span> <span class="fa fa-twitter fa-2x p-color"></span>
+                                <span class="fa fa-facebook fa-2x p-color"></span>
+                                <span class="fa fa-linkedin fa-2x p-color"></span>
+                            </div>    
+                        </div>                    
+                    </div>
+                    </div>
+            <footer class="footer" style="margin-top:2rem;">
                 <div class="footer-col">
                     <h2 class="">
                         Book-A-Meal
@@ -95,7 +155,7 @@
                     </p>
                     <span class="fa fa-twitter"></span>
                     <span class="fa fa-facebook"></span>
-                    <span class="fa fa-likedIn"></span>
+                    <span class="fa fa-linkedin"></span>
                     <span class="fa fa-twitter"></span>
                 </div>
             </footer>
@@ -103,8 +163,7 @@
                <p class="">
                   © Copyright 2018 Book-A-Meal - All Rights Reserved
               </p>
-            </div>   
-        </div>
-        <script src="http://vjs.zencdn.net/6.6.3/video.js"></script> 
+            </div>
+    <script src="js/index.js"></script>            
     </body>
 </html>

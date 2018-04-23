@@ -53,7 +53,7 @@
     color:lightseagreen;
 }
 /*popover*/
-.p-dash,.p-set,.p-add,.p-out,.p-all{
+.p-dash,.p-set,.p-add,.p-out,.p-all,.p-notif{
     position: fixed;
     left:80px;
     z-index: 10000;

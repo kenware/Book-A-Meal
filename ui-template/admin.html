@@ -28,7 +28,7 @@
             <a href="register.html">SignUp</a>
             
             <a href="index.html" class="active" style="font-size:23px;">Home</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()"><span class="fa fa-bars fa-2x"></span></span></a>
         </div>
         <div class="admin-container">
             <nav class="sidebar sidebar1-width" id="nav1">
@@ -37,20 +37,20 @@
                   <h1 class="h2-color l-r-pad-text">Book-A-Meal</h1>
                   <ul>
                       <li class="top-padding li-style">
-                          <a href="dashboard.html" class="h2-color m-text">Dashboard</a>
+                          <a href="admin.html" class="h2-color m-text">ADMIN</a>
                          
                         </li>
                       <li class="top-padding li-style">
-                            <a href="#" class="h2-color m-text">All Meal</a>
+                            <a href="admin-all.html" class="h2-color m-text">All Meal</a>
                       </li>
                       <li class="top-padding li-style">
-                            <a href="javascript:void(0);" class="add h2-color m-text">Add Meal</a>
+                            <a href="admin-all.html" class="add h2-color m-text">Add Meal</a>
                       </li>
                       <li class="top-padding li-style">
-                            <a href="javascript:void(0);" class="set h2-color m-text">Set Menu</a>
+                            <a href="admin-set-menu.html" class="set h2-color m-text">Set Menu</a>
                         </li>
                         <li class="top-padding li-style">
-                              <a href="javascript:void(0);" class="h2-color m-text">LogOut</a>
+                              <a href="index.html" class="h2-color m-text">LogOut</a>
                         </li>
                   </ul>
               </div>
@@ -61,23 +61,23 @@
                     <h1 class="l-r-pad-text"><a href="index.html"><em class="h2-color fa fa-home fa-3x"></em></a></h1>
                     <ul>
                         <li class="top-padding li-style">
-                            <a href="dashboard.html" class="h2-color m-text dashboard"><em class="fa fa-dashboard fa-2x"></em></a>
-                            <label class="p-dash m-text">Dashoard</label>
+                            <a href="admin.html" class="h2-color m-text dashboard"><em class="fa fa-dashboard fa-2x"></em></a>
+                            <label class="p-dash m-text">ADMIN</label>
                         </li>
                         <li class="top-padding li-style">
-                            <a href="#" class="h2-color m-text"><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
+                            <a href="admin-all.html" class="h2-color m-text"><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
                             <label class="p-all m-text">All Meal</label>
                         </li>
                         <li class="top-padding li-style">
-                                <a href="javascript:void(0);" class="add h2-color m-text"><em class="fa fa-plus fa-2x add-meal"></em></a>
+                                <a href="admin-all.html" class="add h2-color m-text"><em class="fa fa-plus fa-2x add-meal"></em></a>
                                 <label class="p-add m-text">Add Meal</label>
                             </li>
                         <li class="top-padding li-style">
-                                <a href="javascript:void(0);" class="set h2-color m-text"><em class="fa fa-bar-chart fa-2x set-meal"></em></a>
+                                <a href="admin-set-menu.html" class="set h2-color m-text"><em class="fa fa-bar-chart fa-2x set-meal"></em></a>
                                 <label class="p-set m-text">Set Menu</label>
                             </li>
                             <li class="top-padding li-style">
-                                <a href="javascript:void(0);" class="h2-color m-text"><em class="fa fa-power-off fa-2x logout"></em></a>
+                                <a href="index.html" class="h2-color m-text"><em class="fa fa-power-off fa-2x logout"></em></a>
                                 <label class="p-out m-text">LougOut</label>
                             </li>
                     </ul>
@@ -98,19 +98,13 @@
                 <h4 class="p-color text-center">Select day to display sumamry of orders and details</h4>
                 <div class="select-meal-day">
                         <div class="meal-day">
-                            <p class="p-color">choose a day</p>
-                            <select class="rounded-button">
-                                    <option value="audi" selected>Sunday</option>
-                                    <option value="mon">Monday</option>
-                                    <option value="Tues">Tuesday</option>
-                                    <option value="Wedn">Wednesday</option>
-                                    <option value="audi" selected>Thursday</option>
-                                    <option value="audi" selected>Friday</option>
-                                    <option value="audi" selected>Saturday</option>
-                            </select>
+                            <p class="p-color">Choose a date</p>
+                            <div class="date-container">
+                                <input type="date" value="2018-04-21"class="date rounded-button">
+                            </div>
                         </div>
                         <div class="meal-day">
-                            <img src="image/l.png" id="App-logo" class="rounded-circle" style="height:4rem;width:4rem; margin-left:40%;" />
+                            <img src="image/g.jpg" id="App-logo" class="rounded-circle" style="height:4rem;width:4rem; margin-left:40%;" />
                         </div>
                     </div>
                 <div>
@@ -125,7 +119,7 @@
                         <th>Quanitity odered
                         </th>
                         <th>Price ($)</th>
-                        <th>Total price(price*quantity)</th>
+                        <th>Total price( price * quantity)</th>
                         <th>Day</th>
                         <th>Delivery time</th>
                         <th>Customer</th>
@@ -178,23 +172,23 @@
                     </table>
                   </div>
                   <div class="contents">
-
-                    <div class="content-wrap">
-                        <div class="col-meal l-r-pad-text">
-                        <button>PREV </button>
-                        </div>
-                        <div class="col-meal">
-                
-                        </div> 
-                        <div class="col-meal">
-
-                        </div>
-                        <div class="col-meal">
-                            <button>MORE>></button>
-                        </div>  
-                    </div>   
+            
+                        <div class="content-wrap">
+                            <div class="col-meal l-r-pad-text">
+                            <button><span class="fa fa-backward white-color">&nbsp;PREV</span></button>
+                            </div>
+                            <div class="col-meal">
                     
-                    </div>
+                            </div> 
+                            <div class="col-meal">
+        
+                            </div>
+                            <div class="col-meal">
+                                <button>NEXT&nbsp;<span class="fa fa-forward white-color"></span></button>
+                            </div>  
+                        </div>   
+                        
+                        </div>
                 <footer class="footer" style="margin-top:30px;">
                         <div class="footer-col">
                             <h2 class="">

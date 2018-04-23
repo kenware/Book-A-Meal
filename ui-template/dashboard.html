@@ -11,22 +11,24 @@
        
         <script src="js/jquery/jquery.min.js"></script>
         <script src="js/index.js"></script>
-        <script></script>
+        <style>
+        </style>
 
     </head>
     <body>
 
         <div class="nav" id="myTopnav" style="position: fixed;width:100%;top:0;">
             <a href="index.html" class="active" style="font-size:25px;">Book-A-Meal</a>
+            <a href="index.html">logout</a>
             <a href="dashboard.html">Dashboard</a>
             <a href="admin.html">Admin</a>
-            <a href="admin-set-menu.html">Set-Menu</a>
-            <a href="admin-all.html">All-Menu</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">SignUp</a>
+            <a href="javascript:void(0);" class="my-order">My-Orders</a>       
+            <a href="javascript:void(0);" class="bar1">Notification</a>
+            <a href="javascript:void(0);" class="bar1">Profile</a>
+            
            
             <a href="index.html" class="active" style="font-size:23px;">Home</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()"><span class="fa fa-bars fa-2x"></span></span></a>
         </div>
         <div class="admin-container">
             <nav class="sidebar sidebar1-width" id="nav1">
@@ -39,10 +41,13 @@
                          
                         </li>
                       <li class="top-padding li-style">
-                            <a href="#" class="white-color m-text">My Orders</a>
+                            <a href="#" class="white-color m-text my-order">My Orders</a>
                       </li>
                       <li class="top-padding li-style">
-                            <a href="javascript:void(0);" class="add white-color m-text">Profile</a>
+                            <a href="javascript:void(0);" class="bar1 white-color m-text ">Notification</a>
+                      </li>
+                      <li class="top-padding li-style">
+                            <a href="javascript:void(0);" class="bar1 white-color m-text ">Profile</a>
                       </li>
                       <li class="top-padding li-style">
                             <a href="javascript:void(0);" class="set white-color m-text">Change Password</a>
@@ -63,15 +68,19 @@
                             <label class="p-dash m-text">Dashoard</label>
                         </li>
                         <li class="top-padding li-style">
-                            <a href="#" class="white-color m-text"><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
-                            <label class="p-all m-text">My Orders</label>
+                            <a href="#" class="white-color m-text "><em class="fa fa-calendar-o fa-2x popover all-meal"></em></a>
+                            <label class="p-all m-text my-order">My Orders</label>
                         </li>
                         <li class="top-padding li-style">
-                                <a href="javascript:void(0);" class="add white-color m-text"><em class="fa fa-user fa-2x add-meal"></em></a>
+                                <a href="javascript:void(0);" class="bar2 white-color m-text"><em class="fa fa-bell fa-2x notif"></em></a>
+                                <label class="p-notif m-text">Notifications</label>
+                            </li>
+                        <li class="top-padding li-style">
+                                <a href="javascript:void(0);" class="bar2 white-color m-text"><em class="fa fa-user fa-2x add-meal"></em></a>
                                 <label class="p-add m-text">Profile</label>
                             </li>
                         <li class="top-padding li-style">
-                                <a href="javascript:void(0);" class="set white-color m-text"><em class="fa fa-edit fa-2x set-meal"></em></a>
+                                <a href="javascript:void(0);" class="bar2 set white-color m-text"><em class="fa fa-edit fa-2x set-meal"></em></a>
                                 <label class="p-set m-text">Change Password</label>
                             </li>
                             <li class="top-padding li-style">
@@ -90,34 +99,54 @@
                     <div>
                             <h4 class="white-color m-text">KENY</h4>
                             <img src="image/eze.jpg" class="user-img rounded-circle"/>
+                            <div style="float:right;" class="notification1">
+                                <a  href="javascript:void(0);" class="" id="notification1">
+                                   <span class="p-color">Notification1</span>
+                                   <em class="fa fa-bars l-r-pad-text m-text" ></em>
+                               </a>
+                            </div>
+                            <div style="float:right;" class="notification2">
+                                <a  href="javascript:void(0);" class="" id="notification2">
+                                   <span class="p-color">Notification2</span>
+                                   <em class="fa fa-bars l-r-pad-text m-text" ></em>
+                               </a>
+                            </div>
                     </div>
                 </header>
-                <div class="contents">
+                <div class="content-container">
+                 <div class="modal-order"> 
+                   <button style="float:right; background-color:red; display:block;" class="remove-modal">  
+                     &times;</button>
+                  <div class="modal-order-content">
+                        <img src="image/l.png" class="rounded-circle img-height">
+                  </div>
+                  <div class="modal-order-content">
+                     <p class="justify l-r-pad-text"> You are about to add Jollof rice in Oder Cart</p>                  
+                  </div>
+                  <div class="modal-order-content">                   
+                     <button class="remove-modal">Add</button><button class="remove-modal">Cancel</button>
+                  </div>
+                  </div>
+                  <div class="meal-container">
                     <div class="items">
                             <h2>SELECT TO VIEW ALL THE MENU OF THE DAY</h2>
                             <h4 class="p-color text-center">Select from the list of days to view menu for that day</h4>
                         
-                           <div class="select-meal-day">
-                                <div class="meal-day">
-                                    <p class="p-color" style="flex:2">Choose a day</p>
-                                    <select class="rounded-button">
-                                            <option value="audi" selected>Sunday</option>
-                                            <option value="mon">Monday</option>
-                                            <option value="Tues">Tuesday</option>
-                                            <option value="Wedn">Wednesday</option>
-                                            <option value="audi" selected>Thursday</option>
-                                            <option value="audi" selected>Friday</option>
-                                            <option value="audi" selected>Saturday</option>
-                                    </select>
+                            <div class="select-meal-day">
+                                    <div class="meal-day">
+                                        <p class="p-color">Choose a date</p>
+                                        <div class="date-container">
+                                            <input type="date" value="2018-04-21"class="date rounded-button">
+                                        </div>
+                                    </div>
+                                    <div class="meal-day">
+                                        <img src="image/l.png" id="App-logo" class="rounded-circle" style="height:4rem;width:4rem; margin-left:40%;" />
+                                    </div>
                                 </div>
-                            <div class="meal-day">
-                                <img src="image/2.jpg" id="App-logo" class="rounded-circle" style="height:4rem;width:4rem; margin-left:40%;" />
-                            </div>
-                            </div>
                             <div class="contents"></div>
                             <div class="content-wrap">
                                     <div class="col-meal l-r-pad-text">
-                                       <img src="image/l.png" class="rounded-circle img-height">
+                                        <a href="image/l.png"><img src="image/l.png" class="rounded-circle img-height"></a>
                                     </div>
                                     <div class="col-meal">
                                      <h4 class="p-color"> Title</h4>French Desserts
@@ -126,7 +155,7 @@
                                         <h4 class="p-color">Price</h4>$300
                                     </div>
                                     <div class="col-meal">
-                                        <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                        <h4 class="p-color"><a href="detail.html">View</a> <button class="order">Order</button></h4>
                                     </div>  
                                 </div>   
                                 
@@ -135,7 +164,7 @@
                                 
                                     <div class="content-wrap">
                                         <div class="col-meal l-r-pad-text">
-                                           <img src="image/1.jpg" class="rounded-circle img-height">
+                                            <a href="image/1.jpg"><img src="image/1.jpg" class="rounded-circle img-height"></a>
                                         </div>
                                         <div class="col-meal">
                                          <h4 class="p-color"> Title</h4>American Desserts
@@ -144,7 +173,7 @@
                                             <h4 class="p-color">Price</h4>$500
                                         </div>
                                         <div class="col-meal">
-                                                <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                            <h4 class="p-color"><a href="detail.html">View</a> <button class="order">Order</button></h4>
                                         </div>  
                                     </div>   
                                     
@@ -153,7 +182,7 @@
                                 
                                         <div class="content-wrap">
                                             <div class="col-meal l-r-pad-text">
-                                               <img src="image/2.jpg" class="rounded-circle img-height">
+                                                <a href="image/2.jpg"><img src="image/2.jpg" class="rounded-circle img-height"></a>
                                             </div>
                                             <div class="col-meal">
                                              <h4 class="p-color"> Title</h4>Chines Recipe
@@ -162,7 +191,7 @@
                                                 <h4 class="p-color">Price</h4>$200
                                             </div>
                                             <div class="col-meal">
-                                                    <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                                    <h4 class="p-color"><a href="detail.html">View</a> <button class="order">Order</button></h4>
                                             </div>  
                                         </div>   
                                         
@@ -171,7 +200,7 @@
                             
                                     <div class="content-wrap">
                                         <div class="col-meal l-r-pad-text">
-                                            <img src="image/3.jpg" class="rounded-circle img-height">
+                                            <a href="image/3.jpg"><img src="image/3.jpg" class="rounded-circle img-height"></a>
                                         </div>
                                         <div class="col-meal">
                                             <h4 class="p-color"> Title</h4>Nigerian Abacha
@@ -180,7 +209,7 @@
                                             <h4 class="p-color">Price</h4>$300
                                         </div>
                                         <div class="col-meal">
-                                                <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                                <h4 class="p-color"><a href="detail.html">View</a> <button class="order">Order</button></h4>
                                         </div>  
                                     </div>   
                                         
@@ -189,7 +218,7 @@
                         
                                         <div class="content-wrap">
                                             <div class="col-meal l-r-pad-text">
-                                                <img src="image/4.jpg" class="rounded-circle img-height">
+                                                <a href="image/4.jpg"><img src="image/4.jpg" class="rounded-circle img-height"></a>
                                             </div>
                                             <div class="col-meal">
                                                 <h4 class="p-color"> Title</h4>Nigerian Amala
@@ -198,7 +227,7 @@
                                                 <h4 class="p-color">Price</h4>$200
                                             </div>
                                             <div class="col-meal">
-                                                    <h4 class="p-color"><a href="detail.html">View Detail</a> <button>Select</button></h4>
+                                                    <h4 class="p-color"><a href="detail.html">View</a> <button class="order">Order</button></h4>
                                             </div>  
                                         </div>   
                                         
@@ -207,7 +236,7 @@
             
                             <div class="content-wrap">
                                 <div class="col-meal l-r-pad-text">
-                                <button>PREV </button>
+                                <button><span class="fa fa-backward white-color">&nbsp;PREV</span></button>
                                 </div>
                                 <div class="col-meal">
                         
@@ -216,13 +245,122 @@
             
                                 </div>
                                 <div class="col-meal">
-                                    <button>MORE>></button>
+                                    <button>NEXT&nbsp;<span class="fa fa-forward white-color"></span></button>
                                 </div>  
                             </div>   
                             
                             </div>
-                    </div>   
-                    
+                    </div>
+                        <div style="overflow-x:auto; margin-top:2rem;" class="order-container">
+                            <h2 style="margin-top:4rem;">MY MEAL ORDER HISTORY</h2>
+                            <table>
+                               <tr>
+                                 <th>id</th>
+                                 <th>Name</th>
+                                 <th>Quanitity odered
+                                 </th>
+                                 <th>Price ($)</th>
+                                 
+                                 <th>Total price( price * quantity)</th>
+                                 <td>Date</td>
+                                 <td>Status</td>
+                               </tr>
+                               <tr>
+                                 <td>2</td>
+                                 <td>French Recipe</td>
+                                 <td>5</td>
+                                 <td>100</td>
+                                 <td>500</td>
+                                 <td>05/8/19</td>
+                                 <td>delivered</td>            
+                        </tr>
+                        <tr>
+                             <td>3</td>
+                             <td>jollof</td>
+                             <td>5</td>
+                             <td>100</td>
+                             <td>500</td>
+                             <td>04/05/18</td>
+                             <td>pending</td>
+                 
+                         </tr>
+                         <tr>
+                             <td>1</td>
+                             <td>Egusi soup</td>
+                             <td>5</td>
+                             <td>100</td>
+                             <td>500</td>
+                             <td>05/8/19</td>
+                             <td>delivered</td>
+         
+                         </tr>
+                       </table>
+                    </div>
+                    <div class="timeline-container">
+                        <h2>Timeline</h2>
+                        <ul class="timeline" >
+                            <li>
+                              <div class="timeline-badge"><em class="fa fa-camera"></em></div>
+                              <div class="timeline-panel bg-light">
+                                <div class="timeline-heading">
+                                  <h5 class="timeline-title l-margin m-text">Profile</h5>
+                                </div>
+                                <div class="timeline-body">
+                                <ul>
+                                <li style="list-style:none;">
+                                    <img src="image/eze.jpg" class="user-img rounded-circle"/>
+                                </li>    
+                                <li> 
+                                   <span class="h2-color">Keny</span>
+                               </li>
+                                <li>
+                                    <span class="h2-color">Update profile</span>
+                                </li>
+                                <li><span class="h2-color">Change Password</span></li>
+                               </ul>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="timeline-badge primary"><em class="fa fa-link"></em></div>
+                              <div class="timeline-panel bg-light">
+                                <div class="timeline-heading">
+                                  <h5 class="timeline-title l-margin m-text">Notifications</h5>
+                                </div>
+                                <div class="timeline-body">
+                                 <p>
+                                  <ul>
+                                  <li>
+                                     Jollof rice, new italian recipe is just added
+                                     to monday meal menu.Order <a href="dashboard.html">now</a>
+                                 </li>
+                                 </ul>
+                                </p>
+                                </div>
+                               </div>
+                             </li>           
+                             <li>
+                               <div class="timeline-badge"><em class="fa fa-paperclip"></em></div>
+                               <div class="timeline-panel bg-light">
+                                 <div class="timeline-heading">
+                                   <h5 class="timeline-title m-text l-margin">Recently Ordered Meal</h5>
+                                 </div>
+                                 <div class="timeline-body">
+                                   <p>
+                                   <ul >
+                                  <li>
+                                   </li>
+                                  <li>Italian Recipes</li>
+                                  <li>Ewedu Meal</li>
+                                  <li>Abacha</li>
+                                 </ul>
+                                   </p>
+                                 </div>
+                               </div>
+                             </li>              
+                           </ul>
+
+                   </div>
                 </div>
                 <footer class="footer" style="margin-top:30px;">
                         <div class="footer-col">
