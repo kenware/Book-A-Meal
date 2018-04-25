@@ -4,15 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start-dev": "npm-run-all --parallel build-development start",
-    "build-production": "webpack -p",
-    "build-development": "webpack -w",
-    "gulp": "gulp watch",
-    "swipe": "nodemon ./swipe.js --exec babel-node",
     "start": "nodemon ./app.js --exec babel-node",
     "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha --recursive",
-    "test": "npm run coverage -- --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "test": "npm run coverage -- --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",
   "license": "ISC",

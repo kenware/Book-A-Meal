@@ -1,7 +1,6 @@
 
-import model from '../models/meal';
+import meals from '../models/meal';
 import shortcode from 'date-shortcode';
-const meals = model.meals;
 
 export default class mealController{
     constructor(meals, menu, order){

@@ -4,4 +4,3 @@ node_modules/
 
 # Ada Library Information
 *.ali
-/js/jquery
