@@ -2,10 +2,10 @@
 Book-A-Meal: Order a meal of your choice just by a single click
 ![A Meal photo](ui-template/image/8.jpg)
 *  Coveral Badge
-*  [![Coverage Status](https://coveralls.io/repos/github/kenware/Book-A-Meal/badge.png?branch=feature-user-should-set-menu-156948982)](https://coveralls.io/github/kenware/Book-A-Meal?branch=feature-user-should-set-menu-156948982)
+*  [![Coverage Status](https://coveralls.io/repos/github/kenware/Book-A-Meal/badge.svg?branch=user-should-order-a-meal-156949284)](https://coveralls.io/github/kenware/Book-A-Meal?branch=user-should-order-a-meal-156949284)
 *  Travis Ci
-*  https://travis-ci.org/kenware/Book-A-Meal.svg?branch=feature-user-should-set-menu-156948982
-*  [![Build Status](https://travis-ci.org/kenware/Book-A-Meal.svg?branch=feature-user-should-set-menu-156948982)](https://travis-ci.org/kenware/Book-A-Meal)
+*  https://travis-ci.org/kenware/Book-A-Meal.svg?branch=user-should-order-a-meal-156949284
+*  [![Build Status](https://travis-ci.org/kenware/Book-A-Meal.svg?branch=user-should-order-a-meal-156949284)](https://travis-ci.org/kenware/Book-A-Meal)
 *  TABLE OF CONTENTS
 * [Team members](#team-members)
 * [installations](#installations)
