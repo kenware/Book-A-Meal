@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./app.js --exec babel-node",
     "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha --recursive",
+    "linter": "node node_modules/eslint/bin/eslint server --ext js --fix",
     "test": "npm run coverage -- --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",

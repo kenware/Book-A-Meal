@@ -1,7 +1,7 @@
 process.env.NODE_ENV = 'test';
 
 
-import meals from '../server/models/meal';
+//import meals from '../server/models/meal';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../app';
@@ -198,4 +198,87 @@ describe('mocha testing of menu models', () => {
             });
         });
     });           
+})
+
+describe('mocha testing of order models', () => {
+
+    describe('/POST api/v1/orders', () => {
+        it('it should not post an order without menuId', (done) => {
+        chai.request(server)
+            .post('/api/v1/orders')
+            .send({
+                    id: 2,
+                    userId: 2,
+                    quantity: 2,
+                    mealsId : 2,
+                    status: 'pending'
+                    })
+            .end((err, res) => {
+                res.should.have.status(404);
+                res.body.should.be.a('string');            
+                res.body.should.be.eql('order fields are required');
+                done();
+            });
+        });
+    });
+    describe('/POST api/v1/orders', () => {
+        it('it should not post an order with empty menuId', (done) => {
+        chai.request(server)
+            .post('/api/v1/orders')
+            .send({
+                    id: 2,
+                    userId: 2,
+                    quantity: 2,
+                    mealId : 1,
+                    menuId : 4,
+                    status: 'pending'
+                    })
+            .end((err, res) => {
+                res.should.have.status(404);
+                res.body.should.be.a('string');            
+                res.body.should.be.eql('your menu does not exist');
+                done();
+            });
+        });
+    });  
+    describe('/POST api/v1/orders', () => {
+        it('it should not post an order with empty mealId', (done) => {
+        chai.request(server)
+            .post('/api/v1/orders')
+            .send({
+                    id: 2,
+                    userId: 2,
+                    quantity: 2,
+                    mealId : 8,
+                    menuId : 1,
+                    status: 'pending'
+                    })
+            .end((err, res) => {
+                res.should.have.status(404);
+                res.body.should.be.a('string');            
+                res.body.should.be.eql('the meal does not exist in the menu');
+                done();
+            });
+        });
+    });  
+    describe('/POST api/v1/orders', () => {
+        it('it should post an order', (done) => {
+        chai.request(server)
+            .post('/api/v1/orders')
+            .send({
+                    id: 2,
+                    userId: 2,
+                    quantity: 2,
+                    mealId : 1,
+                    menuId : 1,
+                    status: 'pending'
+                    })
+            .end((err, res) => {
+                res.should.have.status(201);
+                res.body.should.be.a('object');            
+                res.body.should.have.property('message').be.eql('order created');;
+                done();
+            });
+        });
+    });  
 })
