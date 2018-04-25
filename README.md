@@ -1,6 +1,10 @@
 # Book-A-
 Book-A-Meal: Order a meal of your choice just by a single click
 ![A Meal photo](ui-template/image/8.jpg)
+*  Coveral Badge
+*  [![Coverage Status](https://coveralls.io/repos/github/kenware/Book-A-Meal/badge.png?branch=feature-user-should-set-menu-156948982)](https://coveralls.io/github/kenware/Book-A-Meal?branch=feature-user-should-set-menu-156948982)
+*  Travis Ci
+*  https://travis-ci.org/kenware/Book-A-Meal.svg?branch=feature-user-should-set-menu-156948982
 *  TABLE OF CONTENTS
 * [Team members](#team-members)
 * [installations](#installations)
