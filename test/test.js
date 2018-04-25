@@ -136,6 +136,37 @@ describe('/POST api/v1/meales', () => {
 
 
 describe('mocha testing of menu models', () => {
+
+    describe('/GET api/v1/menu', () => {
+        it('it should get empty result when todays menu is not set', (done) => {
+            chai.request(server)
+            .get('/api/v1/menu')
+            .end((err, res) => {
+                res.should.have.status(400);
+                res.body.should.be.a('string');            
+                res.body.should.be.eql('today menu is not set');
+                done();
+            });
+        });
+    });    
+    describe('/POST api/v1/menu', () => {
+        it('it should post a menu with a string of mealsId', (done) => {
+        chai.request(server)
+            .post('/api/v1/menu')
+            .send({
+                    id:2,
+                    title:'Menu goodis',
+                    mealsId :'1,2,3'
+                    })
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a('object');            
+                res.body.should.have.property('meals').be.a('array');
+                res.body.should.have.property('title').eql('Menu goodis');
+                done();
+            });
+        });
+    }); 
     describe('/POST api/v1/menu', () => {
         it('it should post a menu with an array of mealId', (done) => {
           chai.request(server)
@@ -154,40 +185,17 @@ describe('mocha testing of menu models', () => {
               });
            });
        });
-    describe('/POST api/v1/menu', () => {
-        it('it should post a menu with a string of mealsId', (done) => {
+    describe('/Get api/v1/menu', () => {
+    it('it should get menu', (done) => {
         chai.request(server)
-            .post('/api/v1/menu')
-            .send({
-                    id:2,
-                    title:'Menu goodis',
-                    mealsId :'1,2,3'
-                    })
+            .get('/api/v1/menu')
             .end((err, res) => {
-                res.should.have.status(200);
+                res.should.have.status(201);
                 res.body.should.be.a('object');            
                 res.body.should.have.property('meals').be.a('array');
-                res.body.should.have.property('title').eql('Menu goodis');
+                res.body.should.have.property('title').eql('todays menu');
                 done();
             });
         });
-    });
-    describe('/POST api/v1/menu', () => {
-        it('it should post a menu with an array of mealId', (done) => {
-          chai.request(server)
-              .post('/api/v1/menu')
-              .send({
-                     id:2,
-                     title:'Menu goodis',
-                     mealsId :[1,2,3]
-                     })
-              .end((err, res) => {
-                  res.should.have.status(200);
-                  res.body.should.be.a('object');            
-                  res.body.should.have.property('meals').be.a('array');
-                  res.body.should.have.property('title').eql('Menu goodis');
-                  done();
-              });
-           });
-       });         
+    });           
 })

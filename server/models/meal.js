@@ -19,5 +19,4 @@ meals = [
         description: 'very delicious'
     }
 ]
-
 export default meals;

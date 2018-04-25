@@ -28,15 +28,33 @@ export default class menuController{
         }
         menus.push({
             title: todayMenu.title,
-            date,
+            menuDate:date,
             meals,
         });
         return res.status(200).json(
-            {
+            {   id:todayMenu.id,
                 title: todayMenu.title,
-                date,
+                date:date,
                 meals,
            }
         );
+    }
+    getMenu(req,res){
+        let date = shortcode.parse('{YYYY-MM-DD}',new Date());
+        let menuMeals = [];
+        for (let eachMenu of menus){
+            if(eachMenu.menuDate == date){
+               menuMeals = eachMenu.meals.concat(menuMeals)
+            }
+        }
+        if(menuMeals.length>0){
+            return res.status(201).json({
+                title:'todays menu',
+                date : date,
+                meals:menuMeals
+            })
+        }else{
+            return res.status(400).json('today menu is not set') 
+        }
     }
 }

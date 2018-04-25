@@ -13,6 +13,6 @@ router.delete('/meals/:mealId',new mealController().deleteMeal);
 //feature set menu for the day
 router.post('/menu',new menuController().createMenu);
 //feature get menu for the day
-//router.get('/menu',new menuController().getMenu);
+router.get('/menu',new menuController().getMenu);
 
 export default router;
