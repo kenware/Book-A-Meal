@@ -6,13 +6,14 @@ import allMeals from '../models/meal';
 export default class menuController {
   createMenu(req, res) {
     const todayMenu = req.body;
-    let mealsId;
+    const { title, id } = todayMenu;
+    let { mealsId, menuDate } = todayMenu;
     const meals = [];
-    if (typeof todayMenu.mealsId === 'string') {
-      mealsId = todayMenu.mealsId.split(',');
-    } else {
-      mealsId = todayMenu.mealsId;
+    // enable posting of mealsId of comma seperated string
+    if (typeof mealsId === 'string') {
+      mealsId = mealsId.split(',');
     }
+    // select meals from meal table using meal id
     for (const meal of allMeals) {
       for (const eachId of mealsId) {
         if (meal.id === parseInt(eachId)) {
@@ -20,36 +21,35 @@ export default class menuController {
         }
       }
     }
-    let date;
-    if (todayMenu.menuDate === undefined) {
-      date = shortcode.parse('{YYYY-MM-DD}', new Date());
-      todayMenu.menuDate = date;
+    if (!menuDate) {
+      menuDate = shortcode.parse('{YYYY-MM-DD}', new Date());
     }
     menus.push({
-      title: todayMenu.title,
-      menuDate: date,
+      title,
+      menuDate,
       meals,
     });
     return res.status(200).json({
-      id: todayMenu.id,
-      title: todayMenu.title,
-      date,
+      id,
+      title,
+      menuDate,
       meals,
     });
   }
   getMenu(req, res) {
     const date = shortcode.parse('{YYYY-MM-DD}', new Date());
-    let menuMeals = [];
+    let meals = [];
     for (const eachMenu of menus) {
       if (eachMenu.menuDate === date) {
-        menuMeals = eachMenu.meals.concat(menuMeals);
+        meals = eachMenu.meals.concat(meals);
       }
     }
-    if (menuMeals.length > 0) {
+    if (meals.length > 0) {
+      const title = 'todays menu';
       return res.status(201).json({
-        title: 'todays menu',
+        title,
         date,
-        meals: menuMeals
+        meals
       });
     }
     return res.status(400).json('today menu is not set');

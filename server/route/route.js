@@ -20,4 +20,5 @@ router.get('/menu', new menuController().getMenu);
 
 // feature create order
 router.post('/orders', new orderController().createOrder);
+router.put('/orders/:orderId', new orderController().updateOrder);
 export default router;

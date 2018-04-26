@@ -230,7 +230,7 @@ describe('mocha testing of order models', () => {
                     userId: 2,
                     quantity: 2,
                     mealId : 1,
-                    menuId : 4,
+                    menuId : 8,
                     status: 'pending'
                     })
             .end((err, res) => {
@@ -249,7 +249,7 @@ describe('mocha testing of order models', () => {
                     id: 2,
                     userId: 2,
                     quantity: 2,
-                    mealId : 8,
+                    mealId : 9,
                     menuId : 1,
                     status: 'pending'
                     })
@@ -280,5 +280,39 @@ describe('mocha testing of order models', () => {
                 done();
             });
         });
-    });  
+    });
+    describe('/PUT api/v1/orders/:orderId', () => {
+        it('it should not update order that does not exist', (done) => {
+        chai.request(server)
+            .put('/api/v1/orders/9')
+            .send({
+                    quantity: 3,
+                    status : 'delivered',
+                    deliveryDate : '2018-04-17',
+                    })
+            .end((err, res) => {
+                res.should.have.status(404);
+                res.body.should.be.a('string');            
+                res.body.should.be.eql('order not found');;
+                done();
+            });
+        });
+    });
+    describe('/PUT api/v1/orders/:orderId', () => {
+        it('it should update order', (done) => {
+        chai.request(server)
+            .put('/api/v1/orders/2')
+            .send({
+                    quantity: 3,
+                    status : 'delivered',
+                    deliveryDate : '2018-04-17',
+                    })
+            .end((err, res) => {
+                res.should.have.status(201);
+                res.body.should.be.a('object');            
+                res.body.should.have.property('message').be.eql('successfuly updated');;
+                done();
+            });
+        });
+    });        
 })

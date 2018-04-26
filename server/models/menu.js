@@ -6,7 +6,7 @@ const menu = [
       id: 1,
       name: 'Rice and beans',
       price: 500,
-      description: 'very delicious',
+      description: 'very delicious'
     }],
     menuDate: '2018-04-23'
   }
