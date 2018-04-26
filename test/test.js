@@ -314,5 +314,16 @@ describe('mocha testing of order models', () => {
                 done();
             });
         });
-    });        
+    }); 
+    describe('/PUT api/v1/orders/:orderId', () => {
+        it('it should get all order', (done) => {
+        chai.request(server)
+            .get('/api/v1/orders')
+            .end((err, res) => {
+                res.should.have.status(201);
+                res.body.should.be.a('array');            
+                done();
+            });
+        });
+    });       
 })
