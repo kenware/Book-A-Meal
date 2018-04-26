@@ -61,11 +61,10 @@ export default class orderController {
     }
     return res.status(404).json('order not found');
   }
-  getOrders(req,res){
-    if(orders.length>0){
-        return res.status(201).json(orders)
-    }else{
-        return res.status(404).json('you have not made any order')
+  getOrders(req, res) {
+    if (orders.length > 0) {
+      return res.status(201).json(orders);
     }
- }
+    return res.status(404).json('you have not made any order');
+  }
 }
