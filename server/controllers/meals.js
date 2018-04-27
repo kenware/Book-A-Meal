@@ -8,6 +8,14 @@ export default class mealController {
     }
     return res.status(404).json('meals not found');
   }
+  getOneMeal(req, res) {
+    const mealId = parseInt(req.params.mealId, 10);
+    const meal = meals.find(one => one.id === mealId);
+    if (!meal) {
+      return res.status(404).json('meal not found');
+    }
+    return res.status(201).json(meal);
+  }
   createMeals(req, res) {
     const meal = req.body;
     const { price, name } = meal;
@@ -51,7 +59,8 @@ export default class mealController {
     const mealId = parseInt(req.params.mealId, 10);
     for (const eachMeal of meals) {
       if (eachMeal.id === mealId) {
-        meals.splice(mealId - 1, 1);
+        const index = meals.indexOf(eachMeal);
+        meals.splice(index, 1);
         return res.status(201).json('meal successfully deleted');
       }
     }

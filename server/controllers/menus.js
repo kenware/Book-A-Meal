@@ -9,6 +9,7 @@ export default class menuController {
     const { title, id } = todayMenu;
     let { mealsId, menuDate } = todayMenu;
     const meals = [];
+
     // enable posting of mealsId of comma seperated string
     if (typeof mealsId === 'string') {
       mealsId = mealsId.split(',');
@@ -36,6 +37,7 @@ export default class menuController {
       meals,
     });
   }
+  // get menu for today
   getMenu(req, res) {
     const date = shortcode.parse('{YYYY-MM-DD}', new Date());
     let meals = [];
@@ -53,5 +55,25 @@ export default class menuController {
       });
     }
     return res.status(400).json('today menu is not set');
+  }
+  // get menu for any day
+  getAnyMenu(req, res) {
+    const date = req.params.date;
+    let meals = [];
+    for (const eachMenu of menus) {
+      if (eachMenu.menuDate === date) {
+        meals = eachMenu.meals.concat(meals);
+      }
+    }
+    if (meals.length > 0) {
+      const title = 'todays menu';
+      return res.status(201).json({
+        title,
+        date,
+        meals
+      });
+    }
+    const message = `menu of ${date} is not set`;
+    return res.status(400).json(message);
   }
 }

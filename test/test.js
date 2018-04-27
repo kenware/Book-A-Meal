@@ -22,6 +22,30 @@ describe('mocha testing of meal models', () => {
         });
     });
   });
+  describe('/GET api/v1/meals', () => {
+    it('it should GET one meal', (done) => {
+    chai.request(server)
+      .get('/api/v1/meals/1')
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.be.a('object');
+        res.body.should.have.property('id').be.eql(1);
+        done();
+      });
+    });
+  })
+  describe('/GET api/v1/meals', () => {
+    it('it should GET all the meals', (done) => {
+    chai.request(server)
+      .get('/api/v1/meals/6')
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('string');
+        res.body.should.be.eql('meal not found');
+        done();
+      });
+    });
+  })    
   describe('/POST api/v1/meales', () => {
     it('it should not post meal that already exist', (done) => {
       chai.request(server)
@@ -166,6 +190,25 @@ describe('mocha testing of menu models', () => {
     });
   });
   describe('/POST api/v1/menu', () => {
+    it('it should post a menu of any date', (done) => {
+      chai.request(server)
+        .post('/api/v1/menu')
+        .send({
+          id: 3,
+          title: 'best Menu goodis',
+          mealsId: '1,2',
+          menuDate: '2018-05-02'
+        })
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('object');
+          res.body.should.have.property('meals').be.a('array');
+          res.body.should.have.property('title').eql('best Menu goodis');
+          done();
+        });
+    });
+  });
+  describe('/POST api/v1/menu', () => {
     it('it should post a menu with an array of mealId', (done) => {
       chai.request(server)
         .post('/api/v1/menu')
@@ -184,7 +227,7 @@ describe('mocha testing of menu models', () => {
     });
   });
   describe('/Get api/v1/menu', () => {
-    it('it should get menu', (done) => {
+    it('it should get menu of today', (done) => {
       chai.request(server)
         .get('/api/v1/menu')
         .end((err, res) => {
@@ -192,6 +235,31 @@ describe('mocha testing of menu models', () => {
           res.body.should.be.a('object');
           res.body.should.have.property('meals').be.a('array');
           res.body.should.have.property('title').eql('todays menu');
+          done();
+        });
+    });
+  });
+  describe('/Get api/v1/menu', () => {
+    it('it should get menu of any day', (done) => {
+      chai.request(server)
+        .get('/api/v1/menu/2018-05-02')
+        .end((err, res) => {
+          res.should.have.status(201);
+          res.body.should.be.a('object');
+          res.body.should.have.property('meals').be.a('array');
+          res.body.should.have.property('date').eql('2018-05-02');
+          done();
+        });
+    });
+  });
+  describe('/GET api/v1/menu', () => {
+    it('it should get empty result when menu of the specified day is not set', (done) => {
+      chai.request(server)
+        .get('/api/v1/menu/2018-05-03')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('string');
+          res.body.should.be.eql('menu of 2018-05-03 is not set');
           done();
         });
     });
