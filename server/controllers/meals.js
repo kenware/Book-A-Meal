@@ -10,15 +10,18 @@ export default class mealController {
   }
   createMeals(req, res) {
     const meal = req.body;
-    const { price, name, id } = meal;
+    const { price, name } = meal;
+    let { id } = meal;
     if (!price || !name || !id) {
       return res.status(404).json('all the meal field are required');
     }
     for (const eachMeal of meals) {
-      if (eachMeal.id === meal.id) {
+      if (eachMeal.id === parseInt(id)) {
         return res.status(422).json('meal aready exist');
       }
     }
+    id = parseInt(id);
+    meal.id = id;
     meals.push(meal);
     const message = 'meal successfuly created';
     return res.status(200).json({
@@ -28,12 +31,14 @@ export default class mealController {
   }
   updateMeal(req, res) {
     const mealId = parseInt(req.params.mealId, 10);
-    const meal = req.body;
-    for (const eachMeal of meals) {
-      if (eachMeal.id === mealId) {
-        eachMeal.name = meal.name;
-        eachMeal.price = meal.price;
-        eachMeal.description = meal.description;
+    const {
+      name, price, description
+    } = req.body;
+    for (const meal of meals) {
+      if (meal.id === mealId) {
+        meal.name = name || meal.name;
+        meal.price = price || meal.price;
+        meal.description = description || meal.description;
         res.status(201).json({
           message: 'successfuly updated',
           meal
