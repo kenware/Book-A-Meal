@@ -1,6 +1,7 @@
+node_modules/
+coverage/
 # Object file
 *.o
 
 # Ada Library Information
 *.ali
-/js/jquery
