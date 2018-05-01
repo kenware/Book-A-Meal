@@ -1,10 +1,19 @@
-import orders from '../models/order';
-import menus from '../models/menu';
+import dumyData from '../dumydata/store';
+const menus = dumyData.menus;
+const orders = dumyData.orders;
 
 export default class orderController {
+  constructor(id, userId, status, quantity,totalPrice,meal) {
+    this.id = id;
+    this.userId = userId;
+    this.status = status
+    this.quantity = quantity; 
+    this.totalPrice = totalPrice;
+    this.meal = meal;    
+  }
   createOrder(req, res) {
     const orderRequest = req.body;
-    const {
+    let {
       menuId, mealId, userId, status, quantity, deliveryDate
     } = orderRequest;
     let { id } = orderRequest;
@@ -31,28 +40,28 @@ export default class orderController {
     }
     id = parseInt(id);
     const totalPrice = quantity * meal.price;
-    const myOrder = {
-      id, deliveryDate, userId, status, quantity, totalPrice, meal
-    };
+    //instance of an orderController
+    const myOrder = new orderController(id, userId, status,quantity, totalPrice, meal);
     orders.push(myOrder);
     const message = 'order created';
+
     return res.status(201).json({
       message, myOrder
     });
   }
+
   updateOrder(req, res) {
     const orderId = parseInt(req.params.orderId, 10);
     const update = req.body;
-    const { deliveryDate, status, quantity } = update;
     for (const eachOrder of orders) {
       if (eachOrder.id === orderId) {
-        eachOrder.deliveryDate = deliveryDate || eachOrder.deliveryDate;
-        eachOrder.status = status || eachOrder.status;
-        eachOrder.quantity = quantity || eachOrder.quantity;
-        eachOrder.totalPrice = quantity * eachOrder.meal.price ||
+        eachOrder.status = update.status || eachOrder.status;
+        eachOrder.quantity = update.quantity || eachOrder.quantity;
+        eachOrder.totalPrice = update.quantity * eachOrder.meal.price ||
         eachOrder.quantity * eachOrder.meal.price;
         const message = 'successfuly updated';
-        const myOrder = eachOrder;
+        const { id, userId, status,quantity, totalPrice, meal } = eachOrder;
+        const myOrder = new orderController(id, userId, status,quantity, totalPrice, meal);
         return res.status(201).json({
           message,
           myOrder
@@ -61,6 +70,7 @@ export default class orderController {
     }
     return res.status(404).json('order not found');
   }
+
   getOrders(req, res) {
     if (orders.length > 0) {
       return res.status(201).json(orders);

@@ -35,7 +35,7 @@ describe('mocha testing of meal models', () => {
     });
   })
   describe('/GET api/v1/meals', () => {
-    it('it should GET all the meals', (done) => {
+    it('it should return status 404 if meal not found', (done) => {
     chai.request(server)
       .get('/api/v1/meals/6')
       .end((err, res) => {
@@ -233,8 +233,8 @@ describe('mocha testing of menu models', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a('object');
-          res.body.should.have.property('meals').be.a('array');
-          res.body.should.have.property('title').eql('todays menu');
+
+          res.body.should.have.property('title').eql('Menu goodis');
           done();
         });
     });
@@ -246,8 +246,6 @@ describe('mocha testing of menu models', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a('object');
-          res.body.should.have.property('meals').be.a('array');
-          res.body.should.have.property('date').eql('2018-05-02');
           done();
         });
     });
