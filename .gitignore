@@ -1,4 +1,4 @@
-# Object file
+node_modules/
 *.o
 
 # Ada Library Information

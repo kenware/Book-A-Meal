@@ -7,6 +7,11 @@ body {
 a:hover{
   color:lightseagreen;
 }
+button{
+  color:black;
+  background-color:rgba(216, 186, 19, 0.795);
+  border-radius: 10%;
+}
 select option{
   margin-left: 50px;
 }
@@ -19,13 +24,13 @@ a{
 /*Nav begins*/
 .nav {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(216, 186, 19, 0.795);
 }
 .nav a:first-child {float: left;}
 .nav a:not(:first-child) {float: right;}
 .nav a {
   display: block;
-  color: #f2f2f2;
+  color: darkslategray;
   text-align: center;
   padding: 14px 12px;
   text-decoration: none;
@@ -129,13 +134,14 @@ a{
 
 h2{
   text-align: center;
-  color:lightseagreen;
+  color:rgba(216, 186, 19, 0.795);
   text-shadow: 1px 1px;
 }
 button{
-  background-color:lightseagreen;
-  color: rgb(195, 209, 218);
+  background-color:rgba(216, 186, 19, 0.795);
+  color: black;
   font-size: 20px;
+  box-shadow: 3px 3px #888888;
 }
 button:hover{
   background-color:rgb(81, 131, 114);
@@ -365,7 +371,7 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
 
 /* footer css start here*/
 .footer{
-  background-color: #000;
+  background-color: darkslategray;
   color:white;
 }
 .footer a{
@@ -385,18 +391,20 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
 .footer h2{
   padding: 2px 10px 10px 0px;
   font-size: 25px;
+  color:rgba(207, 194, 117, 0.795);
 }
 .footer-col{
   flex:1;
   color:white;
   font-size: 20px;
+  margin-bottom: 4rem;
 }
 .footer-col .form-row{
   padding: 10px 0px 0px 30px;
 
   
 }
-.footer-col input,button{
+.footer-col input{
   border-radius: 50%;
   height: 40px;;
 }
