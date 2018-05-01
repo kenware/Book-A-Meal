@@ -1,14 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var MealMenu = sequelize.define('MealMenu', {
-    mealId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    menuId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }
+    MealId: DataTypes.INTEGER,
+    MenuId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

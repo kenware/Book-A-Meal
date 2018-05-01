@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     image: {
       type: DataTypes.STRING
+    },
+    role: {
+      type: DataTypes.STRING
     }
   });
   User.associate = (models) => {
@@ -32,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Menu, {
       foreignKey: 'userId',
       as: 'Menus'
+      });
+    User.hasMany(models.Order, {
+      foreignKey: 'userId',
+        as: 'Orders'
       });
   }
   return User;

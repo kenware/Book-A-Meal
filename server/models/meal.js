@@ -16,9 +16,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   Meal.associate = (models) => {
-    Meal.belongsTo(models.User, {
+    Meal.belongsTo(models.user, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
+    });
+    Meal.belongsToMany(models.Menu, {
+      through: 'MealMenus',
+      onDelete: 'CASCADE'
     });
   }
   return Meal;

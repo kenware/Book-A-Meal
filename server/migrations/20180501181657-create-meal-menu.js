@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-   mealId: {
+   MealId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
@@ -18,7 +18,7 @@ module.exports = {
       onUpdate: 'cascade',
       onDelete: 'cascade'
     },
-    menuId: {
+    MenuId: {
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {

@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
+    Menu.belongsToMany(models.Meal, {
+      through: 'MealMenus',
+      onDelete: 'CASCADE',
+    });
   }
   return Menu;
 };
