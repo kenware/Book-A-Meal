@@ -1,19 +1,25 @@
-import orders from '../models/order';
-import menus from '../models/menu';
+import orderModel from '../models/order';
+import menuModel from '../models/menu';
+import mealModel from '../models/meal';
+const menus = new menuModel();
+const meals = new mealModel();
+const orders = new orderModel;
+
 
 export default class orderController {
+
   createOrder(req, res) {
-    const orderRequest = req.body;
-    const {
-      menuId, mealId, userId, status, quantity, deliveryDate
-    } = orderRequest;
-    let { id } = orderRequest;
-    if (!menuId || !id || !mealId) {
+    let {
+      menuId, mealId, userId, status, quantity
+    } = req.body;
+    //let { id } = orderRequest;
+    if (!menuId || !quantity || !mealId || !userId) {
       return res.status(404).json('order fields are required');
     }
     let myMenu;
     let meal;
-    for (const menu of menus) {
+    const allMenus = menus.getAll();
+    for (const menu of allMenus) {
       if (menu.id === parseInt(menuId)) {
         myMenu = menu;
       }
@@ -29,30 +35,23 @@ export default class orderController {
     if (!meal) {
       return res.status(404).json('the meal does not exist in the menu');
     }
-    id = parseInt(id);
-    const totalPrice = quantity * meal.price;
-    const myOrder = {
-      id, deliveryDate, userId, status, quantity, totalPrice, meal
-    };
-    orders.push(myOrder);
+    //autogenerate order id
+    const id = orders.getAll().reverse()[0].id + 1;
+    const myOrder = orders.createOrder(id,userId,quantity,status,meal)
     const message = 'order created';
+
     return res.status(201).json({
       message, myOrder
     });
   }
+
   updateOrder(req, res) {
     const orderId = parseInt(req.params.orderId, 10);
-    const update = req.body;
-    const { deliveryDate, status, quantity } = update;
-    for (const eachOrder of orders) {
+    const allOrder = orders.getAll()
+    for (const eachOrder of allOrder) {
       if (eachOrder.id === orderId) {
-        eachOrder.deliveryDate = deliveryDate || eachOrder.deliveryDate;
-        eachOrder.status = status || eachOrder.status;
-        eachOrder.quantity = quantity || eachOrder.quantity;
-        eachOrder.totalPrice = quantity * eachOrder.meal.price ||
-        eachOrder.quantity * eachOrder.meal.price;
+        const myOrder = orders.updateOrder(req.body,eachOrder)
         const message = 'successfuly updated';
-        const myOrder = eachOrder;
         return res.status(201).json({
           message,
           myOrder
@@ -61,9 +60,11 @@ export default class orderController {
     }
     return res.status(404).json('order not found');
   }
+
   getOrders(req, res) {
-    if (orders.length > 0) {
-      return res.status(201).json(orders);
+    const allOrder = orders.getAll();
+    if (allOrder.length > 0) {
+      return res.status(201).json(allOrder);
     }
     return res.status(404).json('you have not made any order');
   }

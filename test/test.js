@@ -35,7 +35,7 @@ describe('mocha testing of meal models', () => {
     });
   })
   describe('/GET api/v1/meals', () => {
-    it('it should GET all the meals', (done) => {
+    it('it should return status 404 if meal not found', (done) => {
     chai.request(server)
       .get('/api/v1/meals/6')
       .end((err, res) => {
@@ -51,8 +51,7 @@ describe('mocha testing of meal models', () => {
       chai.request(server)
         .post('/api/v1/meals')
         .send({
-          id: 1,
-          name: 'rice and beans',
+          name: 'Rice and beans',
           price: 300,
           description: 'very sumptious and yummy'
         })
@@ -116,7 +115,7 @@ describe('mocha testing of meal models', () => {
   describe('/PUT api/v1/meales/mealId', () => {
     it('it should update meal', (done) => {
       chai.request(server)
-        .put('/api/v1/meals/4')
+        .put('/api/v1/meals/3')
         .send({
           id: 4,
           name: 'rice and beans with pap',
@@ -146,7 +145,7 @@ describe('mocha testing of meal models', () => {
   describe('/delete api/v1/meales/mealId', () => {
     it('it should return resource not found for meal that does not exist', (done) => {
       chai.request(server)
-        .delete('/api/v1/meals/4')
+        .delete('/api/v1/meals/3')
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a('string');
@@ -214,6 +213,7 @@ describe('mocha testing of menu models', () => {
         .post('/api/v1/menu')
         .send({
           id: 2,
+          menuDate:'2018-05-08',
           title: 'Menu goodis',
           mealsId: [1, 2, 3]
         })
@@ -233,8 +233,8 @@ describe('mocha testing of menu models', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a('object');
-          res.body.should.have.property('meals').be.a('array');
-          res.body.should.have.property('title').eql('todays menu');
+
+          res.body.should.have.property('title').eql('Menu goodis');
           done();
         });
     });
@@ -246,8 +246,6 @@ describe('mocha testing of menu models', () => {
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.be.a('object');
-          res.body.should.have.property('meals').be.a('array');
-          res.body.should.have.property('date').eql('2018-05-02');
           done();
         });
     });

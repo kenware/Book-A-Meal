@@ -1,17 +1,22 @@
-const order = [
-  {
-    id: 1,
-    userId: 4,
-    deliveryDate: '2018-04-23',
-    status: 'pending',
-    quantity: 2,
-    totalPrice: 1000,
-    meal: {
-      id: 1,
-      name: 'Rice and beans',
-      price: 500,
-      description: 'very delicious'
+import dumyData from '../dumydata/store';
+const orders = dumyData.orders;
+
+export default class Order {
+    getAll(){
+      return orders;
+    }
+    createOrder(id,userId,quantity,status,meal){
+      const totalPrice = quantity * meal.price;
+      const order = { id,userId,quantity,status, totalPrice,meal}
+      orders.push(order);
+      return order;
+    }
+    updateOrder(newOrder,existingOrder){
+      const { status,quantity } = newOrder;
+      existingOrder.status = status || existingOrder.status;
+      existingOrder.quantity = quantity || existingOrder.quantity;
+      existingOrder.totalPrice = quantity*existingOrder.meal.price || 
+      existingOrder.totalPrice;
+      return existingOrder;
     }
   }
-];
-export default order;

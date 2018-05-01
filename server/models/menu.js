@@ -1,14 +1,13 @@
-const menu = [
-  {
-    id: 1,
-    title: 'today menu',
-    meals: [{
-      id: 1,
-      name: 'Rice and beans',
-      price: 500,
-      description: 'very delicious'
-    }],
-    menuDate: '2018-04-23'
+import dumyData from '../dumydata/store';
+const menus = dumyData.menus;
+
+export default class Menu {
+    getAll(){
+      return menus;
+    }
+    addMenu(id, title, menuDate, meals){
+      const menu = { id, title, menuDate, meals }
+      menus.push(menu);
+      return menu;
+    }
   }
-];
-export default menu;
