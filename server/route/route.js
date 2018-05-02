@@ -1,14 +1,15 @@
 
-const express = require('express'), router = express.Router();
-
-
-
+import express from 'express';
 
 
 import userController from '../controller/user';
+import middleware from '../middleware/validate';
 
-router.post('/auth/signup', new userController().createUser);
+const validate = new middleware();
 
+const router = express.Router();
+
+router.post('/auth/signup', validate.signup, new userController().createUser);
 
 
 export default router;

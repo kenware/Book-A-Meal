@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   var Meal = sequelize.define('Meal', {
     name: {
@@ -9,21 +9,24 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     description: {
-      type: DataTypes.TEXT      
+      type: DataTypes.TEXT
     },
     image: {
-      type: DataTypes.STRING      
+      type: DataTypes.STRING
+    }
+  }, {
+    classMethods: {
+      associate(models) {
+        Meal.belongsTo(models.user, {
+          foreignKey: 'userId',
+          onDelete: 'CASCADE',
+        });
+        Meal.belongsToMany(models.Menu, {
+          through: 'MealMenus',
+          onDelete: 'CASCADE'
+        });
+      }
     }
   });
-  Meal.associate = (models) => {
-    Meal.belongsTo(models.user, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE',
-    });
-    Meal.belongsToMany(models.Menu, {
-      through: 'MealMenus',
-      onDelete: 'CASCADE'
-    });
-  }
   return Meal;
 };

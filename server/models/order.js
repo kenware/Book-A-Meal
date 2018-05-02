@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   var Order = sequelize.define('Order', {
     title: {
@@ -17,12 +17,15 @@ module.exports = (sequelize, DataTypes) => {
     totalPrice: {
       type: DataTypes.INTEGER
     }
+  }, {
+    classMethods: {
+      associate(models) {
+        Order.belongsTo(models.User, {
+          foreignKey: 'userId',
+          onDelete: 'CASCADE',
+        });
+      }
+    }
   });
-  Order.associate = (models) => {
-    Order.belongsTo(models.User, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE',
-    });
-  }
   return Order;
 };

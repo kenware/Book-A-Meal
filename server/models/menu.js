@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Menu = sequelize.define('Menu', {
     title: {
@@ -6,18 +6,22 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     date: {
-      type: DataTypes.STRING     
+      type: DataTypes.STRING
     },
+
+  }, {
+    classMethods: {
+      associate(models) {
+        Menu.belongsTo(models.User, {
+          foreignKey: 'userId',
+          onDelete: 'CASCADE',
+        });
+        Menu.belongsToMany(models.Meal, {
+          through: 'MealMenus',
+          onDelete: 'CASCADE',
+        });
+      }
+    }
   });
-  Menu.associate = (models) => {
-    Menu.belongsTo(models.User, {
-      foreignKey: 'userId',
-      onDelete: 'CASCADE',
-    });
-    Menu.belongsToMany(models.Meal, {
-      through: 'MealMenus',
-      onDelete: 'CASCADE',
-    });
-  }
   return Menu;
 };
