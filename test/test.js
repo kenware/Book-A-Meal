@@ -16,10 +16,6 @@ chai.use(chaiHttp);
 
 
 
-
-describe('before test is done', () => {
-
-});
 describe('/POST api/v1/auth/signup', () => {
     before((done) => {
         User.sync()
