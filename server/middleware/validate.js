@@ -48,11 +48,4 @@ export default class middleware {
     }
     next();
   }
-
-  async signin(req, res, next) {
-    const { username, password } = req.body;
-    if (!username) { return res.status(401).json('username is required'); }
-    if (!password) { return res.status(401).json('password is required'); }
-    next();
-  }
 }
