@@ -29,7 +29,7 @@ export default class mealController {
       image = 'http://res.cloudinary.com/more-recipes/image/upload/v1515492424/img-upload/file-1515492419229-images4.jpg.jpg';
     }
     const meal = await Meal.create({
-      name, price, description, image,userId
+      name, price, description, image, userId
     });
     if (!meal) { return res.status(405).json('Error occured while creating meal'); }
     return res.status(201).json(meal);
