@@ -1,18 +1,28 @@
 
-
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import sequelize from 'sequelize';
 import validator from 'validator';
 import model from '../models';
 
-//const Op = sequelize.O;
+const secret = 'kevin';
+// const Op = sequelize.O;
 const User = model.User;
 
 export default class middleware {
-  async userAuth() {
+  async auth(req, res, next) {
+    const token = req.headers.authorization || req.headers['x-access-token'];
+    if (!token) {
+      return res.status(401).json('Unauthorized Access');
+    }
 
-  }
-  async adminAuth(req, res, next) {
-
+    jwt.verify(token, secret, (err, result) => {
+      if (err) {
+        return res.status(401).json('Please login!');
+      }
+      req.decoded = result;
+      next();
+    });
   }
   async signup(req, res, next) {
     const {
@@ -36,6 +46,13 @@ export default class middleware {
     if (username.length < 4 || password.length < 4) {
       return res.status(401).json('each field must be a minimum of 4 characters');
     }
+    next();
+  }
+
+  async signin(req, res, next) {
+    const { username, password } = req.body;
+    if (!username) { return res.status(401).json('username is required'); }
+    if (!password) { return res.status(401).json('password is required'); }
     next();
   }
 }
