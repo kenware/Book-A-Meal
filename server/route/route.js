@@ -7,6 +7,7 @@ import cloudinaryStorage from 'multer-storage-cloudinary';
 import userController from '../controller/user';
 import validate from '../middleware/validate';
 import mealController from '../controller/meal';
+import menuController from '../controller/menu';
 
 const router = express.Router();
 
@@ -38,5 +39,6 @@ router.post('/auth/meals', new validate().auth, upload.array('file'), new mealCo
 router.put('/auth/meals/:mealId', new validate().auth, upload.array('file'), new mealController().updateMeal);
 // delete a meal
 router.delete('/auth/meals/:mealId', new validate().auth, new mealController().deleteMeal);
-
+// POST a menu for the day
+router.post('/auth/menu',new menuController().createMenu);
 export default router;

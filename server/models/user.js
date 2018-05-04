@@ -22,27 +22,24 @@ module.exports = (sequelize, DataTypes) => {
     role: {
       type: DataTypes.STRING
     }
-  }, {
-    classMethods: {
-      associate(models) {
-        User.hasMany(models.Meal, {
-          foreignKey: 'userId',
-          as: 'Meals'
-        });
-        User.hasMany(models.notification, {
-          foreignKey: 'userId',
-          as: 'notifications'
-        });
-        User.hasMany(models.Menu, {
-          foreignKey: 'userId',
-          as: 'Menus'
-        });
-        User.hasMany(models.Order, {
-          foreignKey: 'userId',
-          as: 'Orders'
-        });
-      }
-    }
   });
+  User.associate = (models) => {
+    User.hasMany(models.Meal, {
+      foreignKey: 'userId',
+      as: 'Meals'
+    });
+    User.hasMany(models.notification, {
+      foreignKey: 'userId',
+      as: 'notifications'
+    });
+    User.hasMany(models.Menu, {
+      foreignKey: 'userId',
+      as: 'Menus'
+    });
+    User.hasMany(models.Order, {
+      foreignKey: 'userId',
+      as: 'Orders'
+    });
+  }
   return User;
 };

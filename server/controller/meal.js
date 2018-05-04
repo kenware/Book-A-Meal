@@ -18,10 +18,9 @@ export default class mealController {
     if (!name) { return res.status(401).json('name field is required'); }
     if (!description) { return res.status(401).json('description field is required'); }
 
-    if (req.decoded.role !== 'admin' && req.decoded.role !== 'superUser') {
-      return res.status(401).json('Unauthorised access');
-    }
+   
     const userId = req.decoded.id;
+    //return res.status(200).json(userId)
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
@@ -29,7 +28,7 @@ export default class mealController {
       image = 'http://res.cloudinary.com/more-recipes/image/upload/v1515492424/img-upload/file-1515492419229-images4.jpg.jpg';
     }
     const meal = await Meal.create({
-      userId, name, price, description, image
+      name, price, description, image
     });
     if (!meal) { return res.status(405).json('Error occured while creating meal'); }
     return res.status(201).json(meal);
@@ -43,10 +42,8 @@ export default class mealController {
     let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
-    // return res.json(req.decoded.id)
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
-      return res.status(422).json('You cannot update meal you did not add');
-    }
+ 
+    
     if (!price) { price = meal.price; }
     if (!name) { name = meal.name; }
     if (!description) { price = meal.price; }
@@ -73,9 +70,7 @@ export default class mealController {
     }
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
-      return res.status(422).json('You cannot delete meal you did not add');
-    }
+    
     const removeMeal = await meal.destroy();
     return res.status(200).json('meal successfully deleted');
   }
