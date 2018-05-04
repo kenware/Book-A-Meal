@@ -20,13 +20,13 @@ a{
 /*Nav begins*/
 .nav {
   overflow: hidden;
-  background-color: rgba(216, 186, 19, 0.795);
+  background-color: rgba(165, 162, 12, 0.877);
 }
 .nav a:first-child {float: left;}
 .nav a:not(:first-child) {float: right;}
 .nav a {
   display: block;
-  color: darkslategray;
+  color: white;
   text-align: center;
   padding: 14px 12px;
   text-decoration: none;
@@ -131,13 +131,11 @@ a{
 h2{
   text-align: center;
   color:rgba(216, 186, 19, 0.795);
-  text-shadow: 1px 1px;
 }
 button{
-  border-radius: 12%;
   background-color:rgba(216, 186, 19, 0.795);
   color: black;
-  font-size: 20px;
+  font-size: 25px;
   
 }
 button:hover{
@@ -182,10 +180,6 @@ button:hover{
 }
 .p-color{
   color:rgb(5, 79, 145);
-}
-.date{
-  box-shadow: 2px 2px 2px rgb(32, 178, 170);
- 
 }
 .meal-day p{
   flex:1;
@@ -402,9 +396,10 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
   
 }
 .footer-col input{
-  border-radius: 12%;
   height: 40px;
   padding:1px 1px 1px 1px;
+  text-align: center;
+
 }
 .footer-row{
   position: relative;
@@ -452,4 +447,9 @@ justify-content: space-around;
   .no-col-meal{
     display: none;
      }
+ }
+ .date{
+   height: 40px;
+   border-radius: 10%;
+   text-align: center;
  }
