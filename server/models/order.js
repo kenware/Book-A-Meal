@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
-  var Order = sequelize.define('Order', {
+  const Order = sequelize.define('Order', {
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -17,15 +17,12 @@ module.exports = (sequelize, DataTypes) => {
     totalPrice: {
       type: DataTypes.INTEGER
     }
-  }, {
-    classMethods: {
-      associate(models) {
-        Order.belongsTo(models.User, {
-          foreignKey: 'userId',
-          onDelete: 'CASCADE',
-        });
-      }
-    }
   });
+  Order.associate = (models) => {
+    Order.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
+  };
   return Order;
 };

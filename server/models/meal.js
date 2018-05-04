@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
-  var Meal = sequelize.define('Meal', {
+  const Meal = sequelize.define('Meal', {
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -14,19 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.STRING
     }
-  }, {
-    classMethods: {
-      associate(models) {
-        Meal.belongsTo(models.user, {
-          foreignKey: 'userId',
-          onDelete: 'CASCADE',
-        });
-        Meal.belongsToMany(models.Menu, {
-          through: 'MealMenus',
-          onDelete: 'CASCADE'
-        });
-      }
-    }
   });
+  Meal.associate = (models) => {
+    Meal.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
+    Meal.belongsToMany(models.Menu, {
+      through: 'MealMenus',
+      onDelete: 'CASCADE'
+    });
+  };
   return Meal;
 };

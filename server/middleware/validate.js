@@ -1,7 +1,5 @@
 
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
-import sequelize from 'sequelize';
 import validator from 'validator';
 import model from '../models';
 
@@ -48,8 +46,8 @@ export default class middleware {
     }
     next();
   }
-  async signin(req,res,next){
-    const { username,password } =req.body;
+  async signin(req, res, next) {
+    const { username, password } = req.body;
     if (!username) { return res.status(401).json('username is required'); }
     if (!password) { return res.status(401).json('password is required'); }
     next();

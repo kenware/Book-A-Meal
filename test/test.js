@@ -7,7 +7,7 @@ import server from '../app';
 let should = chai.should();
 import model from '../server/models';
 const User = model.User;
-//const meal = model.Meal;
+const Meal = model.Meal;
 //const  menu = model.Menu;
 //const  Order = model.Order;
 chai.use(chaiHttp);
@@ -15,7 +15,9 @@ chai.use(chaiHttp);
 
 
 
-
+let tokenSuper = '';
+let tokenUser = '';
+let tokenAdmin = '';
 describe('/POST api/v1/auth/signup', () => {
     before((done) => {
         User.sync()
@@ -31,7 +33,23 @@ describe('/POST api/v1/auth/signup', () => {
             done();
         });
      });
- it('user should sign up superUser', (done) => {
+     //migrate or a DB 
+     before((done) => {
+        Meal.sync()
+        .then(() => {
+            done();
+        });
+      });
+      before((done) => {
+        Meal.destroy({
+            where: {}
+        })
+        .then(() => {
+            done();
+        });
+     });
+     let userId = 0;
+ it('superuser should sign up ', (done) => {
     chai.request(server)
         .post('/api/v1/auth/signup')
         .send({
@@ -45,28 +63,60 @@ describe('/POST api/v1/auth/signup', () => {
             res.should.have.status(201);
             res.body.should.have.property('user');
             res.body.should.have.property('token');
-            res.body.should.be.a('object')
+            res.body.should.be.a('object');
+            tokenSuper = res.body.token;
             done();
         });
   });
 
-   it('user should sign up', (done) => {
+   it('first user should sign up', (done) => {
      chai.request(server)
          .post('/api/v1/auth/signup')
          .send({
                username:'keneth',
                name:'keneth',
                email:'kelvin@gmail.kev',
-               password:'12345678'
+               password:'12345'
               })
          .end((err, res) => {
              res.should.have.status(201);
              res.body.should.have.property('user');
              res.body.should.have.property('token');
              res.body.should.be.a('object')
+             userId = res.body.user.id;
              done();
          });
    });
+   it('second user should sign up', (done) => {
+    chai.request(server)
+        .post('/api/v1/auth/signup')
+        .send({
+              username:'ejike',
+              name:'ejike',
+              email:'ejike@gmail.kev',
+              password:'12345'
+             })
+        .end((err, res) => {
+            res.should.have.status(201);
+            res.body.should.have.property('user');
+            res.body.should.have.property('token');
+            res.body.should.be.a('object');
+            tokenUser = res.body.token;
+            done();
+        });
+  });
+  it('superUser should set firstUser as an admin', (done) => {
+    chai.request(server)
+        .post('/api/v1/auth/admin/' + userId)
+        .set('authorization', tokenSuper)
+        .end((err, res) => {
+            res.should.have.status(201);
+            res.body.should.have.property('message');
+            res.body.should.have.property('setAdmin');
+            res.body.should.be.a('object')
+            done();
+        });
+  });
 
    it('user with existing email should not sign up', (done) => {
     chai.request(server)
@@ -101,7 +151,7 @@ describe('/POST api/v1/auth/signup', () => {
             done();
      });    
    });
-   it('user should not sign with invalid email address', (done) => {
+   it('user should not signup with invalid email address', (done) => {
     chai.request(server)
        .post('/api/v1/auth/signup')
        .send({
@@ -117,7 +167,7 @@ describe('/POST api/v1/auth/signup', () => {
            done();
     });    
   });
-   it('user should not sign in with a minimum of 4 characters', (done) => {
+   it('user should not signup with a minimum of 4 characters', (done) => {
     chai.request(server)
        .post('/api/v1/auth/signup')
        .send({
@@ -133,7 +183,7 @@ describe('/POST api/v1/auth/signup', () => {
            done();
     });    
   });
-  it('user should not sign in without username', (done) => {
+  it('user should not signup without username', (done) => {
     chai.request(server)
        .post('/api/v1/auth/signup')
        .send({
@@ -255,4 +305,53 @@ describe('/POST api/v1/auth/signin', () => {
                done();
         });    
       });          
+});
+
+describe('Testing of meal middleware and controller', () => {
+
+let id = 0; 
+  before((done) => {
+    chai.request(server)
+        .post('/api/v1/auth/signin')
+        .send({ 
+            username:'keneth',
+            password:'12345'
+        })
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.should.have.property('message').eql('succesful login');
+            res.body.should.have.property('token');
+            tokenAdmin = res.body.token;
+
+            done();
+   });      
+});
+    it('Normal user should not POST a meal', (done) => {
+        chai.request(server)
+           .post('/api/v1/auth/meals')
+           .set('authorization', tokenUser)
+           .send({
+               name:'abacha',
+               price:555,
+               description:'good'
+               })
+           .end((err, res) => {
+               res.should.have.status(401);
+               res.body.should.be.eql('Unauthorised access');
+               res.body.should.be.a('string')
+               done();
+        });    
+    });
+    it('Normal user should not GET/ a meal', (done) => {
+        chai.request(server)
+           .get('/api/v1/auth/meals')
+           .set('authorization', tokenUser)
+           .end((err, res) => {
+               res.should.have.status(401);
+               res.body.should.be.eql('Unauthorised access');
+               res.body.should.be.a('string')
+               done();
+        });    
+    });
 });

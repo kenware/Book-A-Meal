@@ -18,7 +18,7 @@ export default class userController {
       });
     });
     let role;
-    if(username === 'kenson'){ role = 'superUser'}else{ role ='user'}
+    if (username === 'kenson') { role = 'superUser'; } else { role = 'user'; }
     const user = await User.create({
       name, username, password, email, role
     });

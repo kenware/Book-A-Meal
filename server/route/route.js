@@ -34,7 +34,7 @@ router.post('/auth/admin/:userId', new validate().auth, new userController().adm
 router.get('/auth/meals', new validate().auth, new mealController().getMeals);
 // admin post meal
 router.post('/auth/meals', new validate().auth, upload.array('file'), new mealController().addMeal);
-//update a meal
+// update a meal
 router.put('/auth/meals/:mealId', new validate().auth, upload.array('file'), new mealController().updateMeal);
 // delete a meal
 router.delete('/auth/meals/:mealId', new validate().auth, new mealController().deleteMeal);
