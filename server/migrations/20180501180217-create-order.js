@@ -39,6 +39,15 @@ module.exports = {
         key: 'id',
         as: 'userId',
       }
+    },
+    mealId: {
+      type: Sequelize.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'Meals',
+        key: 'id',
+        as: 'mealId',
+      }
     }
   }),
   down: (queryInterface, Sequelize) => queryInterface.dropTable('Orders')

@@ -3,6 +3,7 @@
 import model from '../models/index';
 
 const Meal = model.Meal;
+const User = model.User;
 
 export default class mealController {
   async getMeals(req, res) {
@@ -14,23 +15,28 @@ export default class mealController {
   }
   async addMeal(req, res) {
     const { price, name, description } = req.body;
+    if (req.decoded.role !== 'admin' && req.decoded.role !== 'superUser') {
+      return res.status(401).json('Unauthorised access');
+    }
     if (!price) { return res.status(401).json('price field is required'); }
     if (!name) { return res.status(401).json('name field is required'); }
     if (!description) { return res.status(401).json('description field is required'); }
-
+    const isExist = await Meal.findOne({ where:{ name } });
+    if(isExist){ return res.status(422).json('Meal already exist'); }
    
-    const userId = req.decoded.id;
-    //return res.status(200).json(userId)
+    const id = req.decoded.id;
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
     } else {
       image = 'http://res.cloudinary.com/more-recipes/image/upload/v1515492424/img-upload/file-1515492419229-images4.jpg.jpg';
     }
+    const user =User.build({ id })
     const meal = await Meal.create({
       name, price, description, image
     });
     if (!meal) { return res.status(405).json('Error occured while creating meal'); }
+    meal.setUser(user);
     return res.status(201).json(meal);
   }
 
@@ -42,14 +48,16 @@ export default class mealController {
     let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
- 
+    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+      return res.status(401).json('you cannot update meal you did not add');
+    }
     
     if (!price) { price = meal.price; }
     if (!name) { name = meal.name; }
     if (!description) { price = meal.price; }
 
     // get file upload
-    let image;
+    let image; 
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
     } else {
@@ -70,7 +78,9 @@ export default class mealController {
     }
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
-    
+    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+      return res.status(401).json('you cannot delete meal you did not add');
+    }
     const removeMeal = await meal.destroy();
     return res.status(200).json('meal successfully deleted');
   }

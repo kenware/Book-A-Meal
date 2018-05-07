@@ -52,4 +52,36 @@ export default class middleware {
     if (!password) { return res.status(401).json('password is required'); }
     next();
   }
+
+  async menu(req,res,next){
+    const { title } = req.body;
+    let { mealId, orderBefore } = req.body;
+    //Title field cannot be empty
+    if(!title){return res.status(401).json('title is required')}
+    //orderBefore field cannot be empty
+    if(!orderBefore){
+      return res.status(401)
+      .json('specify the time users should be able to make an order')
+    }
+    //Ensure that mealId is an array of integer
+    if(!Array.isArray(mealId)){
+      mealId = [mealId]
+    }
+    let mealsId = []
+    mealId.forEach(element => {
+        mealsId.push(parseInt(element,10))
+    });
+    //pass the mealId and orderBefore to req
+    orderBefore = Number(orderBefore);
+    req.body.orderBefore = orderBefore;
+    req.body.mealsId = mealsId;
+    next();
+  }
+  async order(req,res,next){
+    const { menuId,quantity, mealId } = req.body;
+    if (!menuId) { return res.status(401).json('menuId is required'); }
+    if (!quantity) { return res.status(401).json('quantity is required'); }
+    if (!mealId) { return res.status(401).json('mealId. is required'); }
+    next();
+  }
 }

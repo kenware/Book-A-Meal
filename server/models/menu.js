@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     date: {
       type: DataTypes.STRING
     },
+    orderBefore: {
+      type: DataTypes.INTEGER
+    },
 
   });
   Menu.associate = (models) => {

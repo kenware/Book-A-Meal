@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
+    Order.belongsTo(models.Meal, {
+      foreignKey: 'mealId',
+      onDelete: 'CASCADE',
+    });
   };
   return Order;
 };
