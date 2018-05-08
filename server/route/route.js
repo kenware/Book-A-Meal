@@ -49,13 +49,13 @@ router.delete('/auth/meals/:mealId',validate.auth, Meal.deleteMeal);
 
 // Menu route
 // POST a menu for the day
-//router.post('/auth/menu', validate.auth, validate.menu,Menu.createMenu);
+router.post('/auth/menu', validate.auth, validate.menu,Menu.createMenu);
 //get todays menu
-//router.get('/auth/menu', validate.auth, Menu.getMenu);
+router.get('/auth/menu', validate.auth, Menu.getMenu);
 // Get menu of any day
-//router.get('/auth/menu/:date', validate.auth, Menu.getMenu);
+router.get('/auth/menu/:date', validate.auth, Menu.getMenu);
 
 // Order route
 // POST an order for the day
-//router.post('/auth/orders', validate.auth, validate.order,Order.createOrder);
+router.post('/auth/orders', validate.auth, validate.order,Order.createOrder);
 export default router;

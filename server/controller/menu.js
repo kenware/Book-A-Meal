@@ -28,9 +28,18 @@ export default class menuController {
          menu.save();
          message = date +' menu is updated';
     } 
-    
-     menu.addMeals(mealsId)
-     return res.status(200).json({ message,menu });
-    }
 
+    menu.addMeals(mealsId)
+    return res.status(200).json({ message,menu });
+  }
+  async getMenu(req,res){
+    let date = req.params.date;
+    if(!date){ date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
+    let menu = await Menu.findOne({
+        where:{ date },
+        include:{model:Meal}
+      });
+    if(!menu){ return res.status(404).json(date +' menu is not set')}
+    return res.status(200).json(menu);
+  }
 }

@@ -77,4 +77,12 @@ export default class middleware {
     req.body.mealsId = mealsId;
     next();
   }
+  async order(req,res,next){
+    const { menuId,quantity, mealId } = req.body;
+    if (!menuId) { return res.status(401).json('menuId is required'); }
+    if (!quantity) { return res.status(401).json('quantity is required'); }
+    if (!mealId) { return res.status(401).json('mealId. is required'); }
+    next();
+    
+  }
 }
