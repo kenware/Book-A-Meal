@@ -2,8 +2,7 @@
 
 import model from '../models/index';
 
-const Meal = model.Meal;
-const User = model.User;
+const { Meal, User } = model;
 
 export default class mealController {
   async getMeals(req, res) {
@@ -21,17 +20,17 @@ export default class mealController {
     if (!price) { return res.status(401).json('price field is required'); }
     if (!name) { return res.status(401).json('name field is required'); }
     if (!description) { return res.status(401).json('description field is required'); }
-    const isExist = await Meal.findOne({ where:{ name } });
-    if(isExist){ return res.status(422).json('Meal already exist'); }
-   
-    const id = req.decoded.id;
+    const isExist = await Meal.findOne({ where: { name } });
+    if (isExist) { return res.status(422).json('Meal already exist'); }
+
+    const { id } = req.decoded;
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
     } else {
       image = 'http://res.cloudinary.com/more-recipes/image/upload/v1515492424/img-upload/file-1515492419229-images4.jpg.jpg';
     }
-    const user =User.build({ id })
+    const user = User.build({ id });
     const meal = await Meal.create({
       name, price, description, image
     });
@@ -44,35 +43,40 @@ export default class mealController {
     if (req.decoded.role !== 'superUser' && req.decoded.role !== 'admin') {
       return res.status(401).json('Unauthorised access');
     }
-    const mealId = req.params.mealId;
+    const { mealId } = req.params;
     let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
       return res.status(401).json('you cannot update meal you did not add');
     }
-    
-    if (!price) { price = meal.price; }
-    if (!name) { name = meal.name; }
-    if (!description) { price = meal.price; }
+    const {
+      oldPrice,
+      oldName,
+      oldDescription,
+      oldImage,
+    } = meal;
+    if (!price) { price = oldPrice; }
+    if (!name) { name = oldName; }
+    if (!description) { description = oldDescription; }
 
     // get file upload
-    let image; 
+    let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
     } else {
       // save original fileimage if no image is uploaded
-      image = meal.image;
+      image = oldImage;
     }
 
     const update = await meal.update({
       price, name, description, image
     });
-    return res.status(201).json(meal);
+    return res.status(201).json(update);
   }
 
   async deleteMeal(req, res) {
-    const mealId = req.params.mealId;
+    const { mealId } = req.params;
     if (req.decoded.role !== 'superUser' && req.decoded.role !== 'admin') {
       return res.status(401).json('Unauthorised access');
     }
@@ -81,7 +85,7 @@ export default class mealController {
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
       return res.status(401).json('you cannot delete meal you did not add');
     }
-    const removeMeal = await meal.destroy();
+    await meal.destroy();
     return res.status(200).json('meal successfully deleted');
   }
 }

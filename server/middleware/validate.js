@@ -5,7 +5,7 @@ import model from '../models';
 
 const secret = 'kevin';
 // const Op = sequelize.O;
-const User = model.User;
+const { User } = model;
 
 export default class middleware {
   async auth(req, res, next) {
@@ -53,36 +53,35 @@ export default class middleware {
     next();
   }
 
-  async menu(req,res,next){
+  async menu(req, res, next) {
     const { title } = req.body;
     let { mealId, orderBefore } = req.body;
-    //Title field cannot be empty
-    if(!title){return res.status(401).json('title is required')}
-    //orderBefore field cannot be empty
-    if(!orderBefore){
+    // Title field cannot be empty
+    if (!title) { return res.status(401).json('title is required'); }
+    // orderBefore field cannot be empty
+    if (!orderBefore) {
       return res.status(401)
-      .json('specify the time users should be able to make an order')
+        .json('specify the time users should be able to make an order');
     }
-    //Ensure that mealId is an array of integer
-    if(!Array.isArray(mealId)){
-      mealId = [mealId]
+    // Ensure that mealId is an array of integer
+    if (!Array.isArray(mealId)) {
+      mealId = [mealId];
     }
-    let mealsId = []
-    mealId.forEach(element => {
-        mealsId.push(parseInt(element,10))
+    const mealsId = [];
+    mealId.forEach((element) => {
+      mealsId.push(parseInt(element, 10));
     });
-    //pass the mealId and orderBefore to req
+    // pass the mealId and orderBefore to req
     orderBefore = Number(orderBefore);
     req.body.orderBefore = orderBefore;
     req.body.mealsId = mealsId;
     next();
   }
-  async order(req,res,next){
-    const { menuId,quantity, mealId } = req.body;
+  async order(req, res, next) {
+    const { menuId, quantity, mealId } = req.body;
     if (!menuId) { return res.status(401).json('menuId is required'); }
     if (!quantity) { return res.status(401).json('quantity is required'); }
     if (!mealId) { return res.status(401).json('mealId. is required'); }
     next();
-    
   }
 }

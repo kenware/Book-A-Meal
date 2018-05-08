@@ -40,6 +40,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       as: 'Orders'
     });
-  }
+  };
   return User;
 };

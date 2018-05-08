@@ -5,7 +5,7 @@ import model from '../models/index';
 
 
 const secret = 'kevin';
-const User = model.User;
+const { User } = model;
 
 export default class userController {
   async createUser(req, res) {
@@ -40,7 +40,14 @@ export default class userController {
     if (!user) { return res.status(401).json('wrong credentials'); }
     bcrypt.compare(password, user.password, (err, match) => {
       if (match) {
-        const token = jwt.sign({ id: user.id, username: user.username, role: user.role }, secret, { expiresIn: 86400 });
+        const token = jwt.sign(
+          {
+            id: user.id,
+            username: user.username,
+            role: user.role
+          },
+          secret, { expiresIn: 86400 }
+        );
         return res.status(200).json({
           id: user.id, message: 'succesful login', token, username: user.username
         });
