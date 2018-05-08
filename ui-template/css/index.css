@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:azure;
+ 
 }
 a:hover{
   color:lightseagreen;
@@ -135,7 +135,6 @@ h2{
 button{
   background-color:rgba(216, 186, 19, 0.795);
   color: black;
-  font-size: 25px;
   
 }
 button:hover{
@@ -377,27 +376,35 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
 .footer p{
   padding:0px 5px 1px 5px;
   text-align: justify;
-  font-size: 16px;
+
 }
-.footer h2{
+.footer h3{
   padding: 2px 10px 10px 0px;
-  font-size: 25px;
+ 
   color:rgba(207, 194, 117, 0.795);
 }
 .footer-col{
   flex:1;
   color:white;
-  font-size: 20px;
   margin-bottom: 4rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .footer-col .form-row{
-  padding: 10px 0px 0px 30px;
+  padding: 0px 0px 10px 0px;
 
   
 }
+.form-row > button{
+  margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 3px;
+}
 .footer-col input{
-  height: 40px;
-  padding:1px 1px 1px 1px;
+  padding-left: 0px;
+    width: 96%;
+    height: 25px;
+    border-radius: 3px;
   text-align: center;
 
 }
@@ -412,8 +419,12 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
   text-align: center;
   padding-top:100Px;
 }
+.footer-col ul {
+  padding-left: 0px;
+  list-style: none;
+}
 .footer-col ul li {
-  padding: px 10px 5px 10px;
+  
   list-style: none;
 }
 @media(min-width:900px){

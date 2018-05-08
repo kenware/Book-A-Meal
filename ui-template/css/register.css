@@ -18,20 +18,20 @@
      flex:3;
      height: auto;
   }
-  .form-row{
+  .form-field{
       display: flex;
       padding: 10px 0;
   }
-  .form-row label{
+  .form-field label{
    padding: 10px 10px 10px 10px;
    flex:1;
   }
-  .form-row input{
+  .form-field input{
     flex:2;
     padding: 10px 10px 10px 10px;
     margin-right: 10px;
    }
-   .form-row button{
+   .form-field button{
     flex:2;
     padding: 10px 10px 10px 10px;
     margin-right: 10px;

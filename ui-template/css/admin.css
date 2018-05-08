@@ -86,8 +86,8 @@
 .header{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(174, 178, 184);
- 
+    background-color:darkslategray;
+    opacity:9;
     width:99%;
 }
 .header div{
