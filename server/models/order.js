@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     quantity: {
       type: DataTypes.INTEGER
     },
+    catererId: {
+      type: DataTypes.INTEGER
+    },
     totalPrice: {
       type: DataTypes.INTEGER
     }

@@ -19,10 +19,16 @@ export default class orderController {
       include: { model: Meal }
     });
     if (!menu) { return res.status(404).json('menu not found'); }
-    // check wether an order time is passed
+    // caterers id
+    const { userId } = menu;
+    const catererId = userId;
+    // get order expire time
     const { orderBefore } = menu;
+    // get current date
     const date = shortcode.parse('{YYYY-MM-DD}', new Date());
+    // get present time
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
+    // check if order time is expired
     if (orderBefore < Number(presentTime) || menu.date !== date) {
       return res.status(422)
         .json('You cannot order menu at this time');
@@ -39,9 +45,16 @@ export default class orderController {
     const user = User.build({ id });
     const title = meal.name;
     const status = 'pending';
+    // create an order
     const order = await Order.create({
-      status, title, address, quantity, totalPrice
+      status,
+      title,
+      address,
+      quantity,
+      totalPrice,
+      catererId
     });
+    // check if order is created
     if (!order) { return res.status(404).json('error ordering meal'); }
     order.setUser(user);
     order.setMeal(meal);
@@ -49,11 +62,35 @@ export default class orderController {
     return res.status(201).json(order);
   }
   async updateOrder(req, res) {
-    const {
-      cancel,
-      mealId,
+    const newQuantity = req.body.quantity;
+    const newAddress = req.body.address;
+    const { orderId } = req.params;
+    const id = orderId;
+    const order = await Order.findOne({ where: { id } });
+    // check if order exist
+    if (!order) { return res.status(404).json('order not found'); }
+    // check if the user that ordered the meal is making the update
+    if (req.decoded.id !== order.userId) {
+      return res.status(401).json('you cannot update order you did not add');
+    }
+    let {
       quantity,
       address,
-    } = req.body;
+    } = order;
+    quantity = newQuantity || quantity;
+    address = newAddress || address;
+    // update
+    const update = await order.update({ quantity, address });
+    if (!update) { return res.status(404).json('update failed'); }
+    return res.status(201).json(update);
+  }
+  async getOrders(req, res) {
+    const { id } = req.decoded;
+    const catererId = id;
+    const orders = await Order.findAll({
+      where: { catererId }
+    });
+    if (!orders) { return res.status(404).json('users have not ordered a meal'); }
+    return res.status(200).json(orders);
   }
 }

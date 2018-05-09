@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     orderBefore: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DECIMAL
     },
 
   });

@@ -68,4 +68,14 @@ export default class userController {
     const message = `${setAdmin.username} is set as admin`;
     return res.status(201).json({ message, setAdmin });
   }
+  async getOrders(req, res) {
+    const { id } = req.decoded;
+    const userId = id;
+    const orders = await model.Order.findAll({
+      where: { userId },
+      include: { model: User }
+    });
+    if (!orders) { return res.status(404).json('users have not ordered a meal'); }
+    return res.status(200).json(orders);
+  }
 }

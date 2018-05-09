@@ -6,24 +6,22 @@ const { Meal, User } = model;
 
 export default class mealController {
   async getMeals(req, res) {
-    if (req.decoded.role !== 'admin' && req.decoded.role !== 'superUser') {
-      return res.status(401).json('Unauthorised access');
-    }
-    const meals = await Meal.findAll();
+    const { id } = req.decoded;
+    const userId = id;
+    const meals = await Meal.findAll({ where: { userId } });
     return res.status(200).json(meals);
   }
   async addMeal(req, res) {
     const { price, name, description } = req.body;
-    if (req.decoded.role !== 'admin' && req.decoded.role !== 'superUser') {
-      return res.status(401).json('Unauthorised access');
-    }
+    const { id } = req.decoded;
+    const userId = id;
+    // return res.json(userId)
     if (!price) { return res.status(401).json('price field is required'); }
     if (!name) { return res.status(401).json('name field is required'); }
     if (!description) { return res.status(401).json('description field is required'); }
-    const isExist = await Meal.findOne({ where: { name } });
+    const isExist = await Meal.findOne({ where: { name, userId } });
     if (isExist) { return res.status(422).json('Meal already exist'); }
 
-    const { id } = req.decoded;
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
@@ -40,9 +38,6 @@ export default class mealController {
   }
 
   async updateMeal(req, res) {
-    if (req.decoded.role !== 'superUser' && req.decoded.role !== 'admin') {
-      return res.status(401).json('Unauthorised access');
-    }
     const { mealId } = req.params;
     let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
@@ -77,9 +72,6 @@ export default class mealController {
 
   async deleteMeal(req, res) {
     const { mealId } = req.params;
-    if (req.decoded.role !== 'superUser' && req.decoded.role !== 'admin') {
-      return res.status(401).json('Unauthorised access');
-    }
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json('meal does not exist'); }
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {

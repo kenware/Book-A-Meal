@@ -23,6 +23,9 @@ module.exports = {
     totalPrice: {
       type: Sequelize.INTEGER
     },
+    catererId: {
+      type: Sequelize.INTEGER
+    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE

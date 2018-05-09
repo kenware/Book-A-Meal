@@ -8,7 +8,7 @@ const secret = 'kevin';
 const { User } = model;
 
 export default class middleware {
-  async auth(req, res, next) {
+  async authUser(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
     if (!token) {
       return res.status(401).json('Unauthorized Access');
@@ -17,6 +17,23 @@ export default class middleware {
     jwt.verify(token, secret, (err, result) => {
       if (err) {
         return res.status(401).json('Please login!');
+      }
+      req.decoded = result;
+      next();
+    });
+  }
+  async authAdmin(req, res, next) {
+    const token = req.headers.authorization || req.headers['x-access-token'];
+    if (!token) {
+      return res.status(401).json('Unauthorized Access');
+    }
+
+    jwt.verify(token, secret, (err, result) => {
+      if (err) {
+        return res.status(401).json('Please login!');
+      }
+      if (result.role !== 'admin' && result.role !== 'superUser') {
+        return res.status(401).json('Unauthorized Access');
       }
       req.decoded = result;
       next();
@@ -63,25 +80,23 @@ export default class middleware {
       return res.status(401)
         .json('specify the time users should be able to make an order');
     }
-    // Ensure that mealId is an array of integer
-    if (!Array.isArray(mealId)) {
-      mealId = [mealId];
+    if (!mealId) {
+      return res.status(401)
+        .json('please select a meal to set menu');
     }
-    const mealsId = [];
-    mealId.forEach((element) => {
-      mealsId.push(parseInt(element, 10));
-    });
+    mealId = Number(mealId);
     // pass the mealId and orderBefore to req
     orderBefore = Number(orderBefore);
     req.body.orderBefore = orderBefore;
-    req.body.mealsId = mealsId;
+    req.body.mealId = mealId;
     next();
   }
   async order(req, res, next) {
-    const { menuId, quantity, mealId } = req.body;
+    const { menuId, quantity, mealId, address } = req.body;
     if (!menuId) { return res.status(401).json('menuId is required'); }
     if (!quantity) { return res.status(401).json('quantity is required'); }
-    if (!mealId) { return res.status(401).json('mealId. is required'); }
+    if (!mealId) { return res.status(401).json('mealId is required'); }
+    if (!address) { return res.status(401).json('address is required'); }
     next();
   }
 }
