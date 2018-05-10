@@ -10,7 +10,7 @@ export default class mealController {
     const userId = id;
     const meals = await Meal.findAll({ where: { userId } });
     if (!meals || meals.length < 1) {
-      return res.status(401).json('there is no meal in the list');
+      return res.status(401).json({ message: 'There is no meal in the list' });
     }
     return res.status(200).json(meals);
   }
@@ -19,22 +19,22 @@ export default class mealController {
     const { id } = req.decoded;
     const userId = id;
     // Input validation
-    if (!price) { return res.status(401).json('price field is required'); }
-    if (!name) { return res.status(401).json('name field is required'); }
-    if (!description) { return res.status(401).json('description field is required'); }
+    if (!price) { return res.status(401).json({ message: 'Price field is required' }); }
+    if (!name) { return res.status(401).json({ message: 'Name field is required' }); }
+    if (!description) { return res.status(401).json({ message: 'description field is required' }); }
 
     if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
-      return res.status(401).json('Please provide a valid meal price');
+      return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
-      return res.status(400).json('Please provide a valid meal name');
+      return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
     if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
-      return res.status(400).json('Please provide a valid meal name');
+      return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
 
     const isExist = await Meal.findOne({ where: { name, userId } });
-    if (isExist) { return res.status(422).json('Meal already exist'); }
+    if (isExist) { return res.status(422).json({ message: 'Meal already exist' }); }
 
     let image;
     if (req.files && req.files.length !== 0) {
@@ -46,18 +46,21 @@ export default class mealController {
     const meal = await Meal.create({
       name, price, description, image
     });
-    if (!meal) { return res.status(405).json('Error occured while creating meal'); }
+    if (!meal) { return res.status(405).json({ message: 'Error occured while creating meal' }); }
     meal.setUser(user);
     return res.status(201).json(meal);
   }
 
   async updateMeal(req, res) {
     const { mealId } = req.params;
+    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+      return res.status(401).json({ message: 'Provide a valid meal id' });
+    }
     let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
-    if (!meal) { return res.status(422).json('Meal does not exist'); }
+    if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
-      return res.status(401).json('you cannot update meal you did not add');
+      return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
     const {
       oldPrice,
@@ -86,12 +89,15 @@ export default class mealController {
 
   async deleteMeal(req, res) {
     const { mealId } = req.params;
+    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+      return res.status(401).json({ message: 'provide a valid meal id' });
+    }
     const meal = await Meal.findById(mealId);
-    if (!meal) { return res.status(422).json('meal does not exist'); }
+    if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
-      return res.status(401).json('you cannot delete meal you did not add');
+      return res.status(401).json({ message: 'You cannot delete meal you did not add' });
     }
     await meal.destroy();
-    return res.status(200).json('meal successfully deleted');
+    return res.status(200).json({ message: 'Meal successfully deleted' });
   }
 }

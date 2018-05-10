@@ -11,14 +11,14 @@ export default class menuController {
     let message = 'menu is updated';
     // check if mealId exist
     const meal = await Meal.findOne({ where: { userId, id: mealId } });
-    if (!meal) { return res.status(401).json('meal with the entered id not found'); }
+    if (!meal) { return res.status(401).json({ message: 'Meal with the entered id not found' }); }
     // get current hour of the day
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
 
     // check if current time is grater than order expire time
     if (orderBefore < Number(presentTime)) {
       return res.status(422)
-        .json('The closing time user can order cannot be lesser than the present time');
+        .json({ message: 'The closing time user can order cannot be lesser than the present time' });
     }
 
     if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
@@ -29,7 +29,7 @@ export default class menuController {
       menu = await Menu.create({ title, date, orderBefore });
       menu.setUser(user);
       menu.save();
-      message = `${date} menu is set`;
+      message = `${date} Menu is set`;
     } else {
       menu = await menu.update({ orderBefore, title });
     }
@@ -53,7 +53,7 @@ export default class menuController {
         },
       ]
     });
-    if (!menu || menu.length < 1) { return res.status(404).json(`${date} menu is not set`); }
+    if (!menu || menu.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
     return res.status(200).json(menu);
   }
 }

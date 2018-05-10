@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import model from '../models/index';
 
 
-const secret = 'kevin';
+const secret = process.env.secret;
 const { User } = model;
 
 export default class userController {
@@ -23,13 +23,18 @@ export default class userController {
       name, username, password, email, role
     });
     if (!user) {
-      return res.status(442).json('error signing up');
+      return res.status(442).json({ message: 'Error signing up' });
     }
     const token = jwt.sign(
       { id: user.id, username: user.username, role: user.role },
       secret, { expiresIn: 86400 }
     );
-    return res.status(201).json({ user, token });
+    return res.status(201).json({
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      token
+    });
   }
 
   async login(req, res) {
@@ -37,7 +42,7 @@ export default class userController {
     const user = await User.findOne({
       where: { username }
     });
-    if (!user) { return res.status(401).json('wrong credentials'); }
+    if (!user) { return res.status(401).json({ message: 'Wrong credentials' }); }
     bcrypt.compare(password, user.password, (err, match) => {
       if (match) {
         const token = jwt.sign(
@@ -52,19 +57,19 @@ export default class userController {
           id: user.id, message: 'succesful login', token, username: user.username
         });
       }
-      return res.status(401).json('wrong credentials');
+      return res.status(401).json({ message: 'Wrong credentials' });
     });
   }
   async adminSignup(req, res) {
     if (!req.decoded.role === 'superUser') {
-      return res.status(401).json('You are not authorised to add a user');
+      return res.status(401).json({ message: 'You are not authorised to add a user' });
     }
     const id = req.params.userId;
     const user = await User.findById(id);
-    if (!user) { return res.status(401).json('user not found'); }
+    if (!user) { return res.status(401).json({ message: 'User not found' }); }
     const role = 'admin';
     const setAdmin = await user.update({ role });
-    if (!setAdmin) { return res.status(401).json('update failed'); }
+    if (!setAdmin) { return res.status(401).json({ message: 'Update failed' }); }
     const message = `${setAdmin.username} is set as admin`;
     return res.status(201).json({ message, setAdmin });
   }
@@ -74,7 +79,7 @@ export default class userController {
     const orders = await model.Order.findAll({
       where: { userId }
     });
-    if (!orders || orders.length < 1) { return res.status(404).json('users have not ordered a meal'); }
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
     return res.status(200).json(orders);
   }
 }

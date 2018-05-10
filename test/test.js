@@ -680,10 +680,10 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
-  it('Admin should  GET a menu', (done) => {
+  it('User should  GET a menu', (done) => {
     chai.request(server)
       .get('/api/v1/auth/menu')
-      .set('authorization', tokenAdmin)
+      .set('authorization', tokenUser)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('array');

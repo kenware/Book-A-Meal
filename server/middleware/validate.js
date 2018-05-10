@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import validator from 'validator';
 import model from '../models';
 
-const secret = 'kevin';
+const secret = process.env.secret;
 // const Op = sequelize.O;
 const { User } = model;
 
@@ -11,12 +11,12 @@ export default class middleware {
   async authUser(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
     if (!token) {
-      return res.status(401).json('Unauthorized Access');
+      return res.status(401).json({ message: 'Unauthorized Access' });
     }
 
     jwt.verify(token, secret, (err, result) => {
       if (err) {
-        return res.status(401).json('Please login!');
+        return res.status(401).json({ message: 'Please login!' });
       }
       req.decoded = result;
       next();
@@ -25,15 +25,15 @@ export default class middleware {
   async authAdmin(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
     if (!token) {
-      return res.status(401).json('Unauthorized Access');
+      return res.status(401).json({ message: 'Unauthorized Access' });
     }
 
     jwt.verify(token, secret, (err, result) => {
       if (err) {
-        return res.status(401).json('Please login!');
+        return res.status(401).json({ message: 'Please login!' });
       }
       if (result.role !== 'admin' && result.role !== 'superUser') {
-        return res.status(401).json('Unauthorized Access');
+        return res.status(401).json({ message: 'Unauthorized Access' });
       }
       req.decoded = result;
       next();
@@ -43,34 +43,34 @@ export default class middleware {
     const {
       username, name, email, password
     } = req.body;
-    if (!username || (/^ *$/.test(name) === true)) {
-      return res.status(401).json('valid username is required');
+    if (!username || (/^ *$/.test(username) === true)) {
+      return res.status(401).json({ message: 'Valid username is required' });
     }
-    if (!email) { return res.status(401).json('email is required'); }
-    if (!password) { return res.status(401).json('password is required'); }
-    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
-      return res.status(401).json('valid name is required');
+    if (!email) { return res.status(401).json({ message: 'Email is required' }); }
+    if (!password) { return res.status(401).json({ message: 'Password is required' }); }
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || (/^ *$/.test(name) === true)) {
+      return res.status(401).json({ message: 'valid name is required' });
     }
-    if (!validator.isEmail(email)) { return res.status(401).json('invalid email'); }
-    if (password.length < 5) { return res.status(401).json('password must be greater than five character'); }
+    if (!validator.isEmail(email)) { return res.status(401).json({ message: 'Invalid email' }); }
+    if (password.length < 5) { return res.status(401).json({ message: 'Password must be greater than five character' }); }
     const veryUsername = await User.findOne({
       where: { username }
     });
-    if (veryUsername) { return res.status(401).json('username already exist'); }
+    if (veryUsername) { return res.status(401).json({ message: 'Username already exist' }); }
 
     const veryEmail = await User.findOne({
       where: { email }
     });
-    if (veryEmail) { return res.status(401).json('email already exist'); }
+    if (veryEmail) { return res.status(401).json({ message: 'Email already exist' }); }
     if (username.length < 4 || password.length < 4) {
-      return res.status(401).json('each field must be a minimum of 4 characters');
+      return res.status(401).json({ message: 'Each field must be a minimum of 4 characters' });
     }
     next();
   }
   async signin(req, res, next) {
     const { username, password } = req.body;
-    if (!username) { return res.status(401).json('username is required'); }
-    if (!password) { return res.status(401).json('password is required'); }
+    if (!username) { return res.status(401).json({ message: 'Username is required' }); }
+    if (!password) { return res.status(401).json({ message: 'Password is required' }); }
     next();
   }
 
@@ -78,27 +78,27 @@ export default class middleware {
     const { title, mealId } = req.body;
     let { orderBefore } = req.body;
     // Title field cannot be empty
-    if (!title) { return res.status(401).json('title is required'); }
+    if (!title) { return res.status(401).json({ message: 'title is required' }); }
     if ((/^ *$/.test(title) === true) || (/^[a-zA-Z ]+$/.test(title) === false) || typeof title !== 'string') {
       return res.status(400).send({ message: 'Please provide a valid title' });
     }
     // orderBefore field cannot be empty
     if (!orderBefore) {
       return res.status(401)
-        .json('specify the time users should be able to make an order');
+        .json({ message: 'Specify the time users should be able to make an order' });
     }
     if ((Number.isNaN(Number(orderBefore))) === true || (/^ *$/.test(orderBefore) === true)) {
-      return res.status(401).json('Please provide a valid time in hours');
+      return res.status(401).json({ message: 'Please provide a valid time in hours' });
     }
     if (!mealId) {
       return res.status(401)
-        .json('please select a meal to set menu');
+        .json({ message: 'please select a meal to set menu' });
     }
     if (orderBefore > 24) {
-      return res.status(401).json('expire time cannot be more than 24 hours');
+      return res.status(401).json({ message: 'Expire time cannot be more than 24 hours' });
     }
     if (Number.isNaN(Number(mealId)) || (/^ *$/.test(mealId) === true)) {
-      return res.status(401).json('enter a valid meal id');
+      return res.status(401).json({ message: 'Enter a valid meal id' });
     }
     // pass the mealId and orderBefore to req
     orderBefore = Number(orderBefore);
@@ -113,19 +113,19 @@ export default class middleware {
       mealId,
       address
     } = req.body;
-    if (!menuId) { return res.status(401).json('menuId is required'); }
-    if (!quantity) { return res.status(401).json('quantity is required'); }
-    if (!mealId) { return res.status(401).json('mealId is required'); }
-    if (!address || typeof adddress !== 'string' || (/^ *$/.test(address) === true)) { return res.status(401).json('address is required'); }
+    if (!menuId) { return res.status(401).json({ message: 'menuId is required' }); }
+    if (!quantity) { return res.status(401).json({ message: 'quantity is required' }); }
+    if (!mealId) { return res.status(401).json({ message: 'mealId is required' }); }
+    if (!address || typeof adddress !== 'string') { return res.status(401).json({ message: 'address is required' }); }
 
     if ((Number.isNaN(Number(menuId))) === true || (/^ *$/.test(menuId) === true)) {
-      return res.status(401).json('Please provide a valid menu id');
+      return res.status(401).json({ message: 'Please provide a valid menu id' });
     }
     if ((Number.isNaN(Number(quantity))) === true || (/^ *$/.test(quantity) === true)) {
-      return res.status(401).json('Please provide a valid quantity');
+      return res.status(401).json({ message: 'Please provide a valid quantity' });
     }
     if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
-      return res.status(401).json('Please provide a valid meal id');
+      return res.status(401).json({ message: 'Please provide a valid meal id' });
     }
     next();
   }
@@ -134,13 +134,13 @@ export default class middleware {
       quantity,
       address
     } = req.body;
-    if (!quantity) { return res.status(401).json('quantity is required'); }
+    if (!quantity) { return res.status(401).json({ message: 'quantity is required' }); }
     if (!address || typeof adddress !== 'string' || (/^ *$/.test(address) === true)) {
-      return res.status(401).json('address is required');
+      return res.status(401).json({ message: 'Address is required' });
     }
 
     if ((Number.isNaN(Number(quantity))) === true || (/^ *$/.test(quantity) === true)) {
-      return res.status(401).json('Please provide a valid quantity');
+      return res.status(401).json({ message: 'Please provide a valid quantity' });
     }
     next();
   }
