@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import model from '../models/index';
 
 
-const secret = process.env.secret;
+import secret from '../config/config';
 const { User } = model;
 
 export default class userController {
