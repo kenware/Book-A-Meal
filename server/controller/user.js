@@ -5,6 +5,7 @@ import model from '../models/index';
 
 
 import secret from '../config/config';
+
 const { User } = model;
 
 export default class userController {
@@ -30,6 +31,7 @@ export default class userController {
       secret, { expiresIn: 86400 }
     );
     return res.status(201).json({
+      id: user.id,
       name: user.name,
       username: user.username,
       email: user.email,

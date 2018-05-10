@@ -40,9 +40,10 @@ export default class middleware {
     });
   }
   async signup(req, res, next) {
-    const {
-      username, name, email, password
+    let {
+      username, name, password
     } = req.body;
+    const { email } = req.body;
     if (!username || (/^ *$/.test(username) === true)) {
       return res.status(401).json({ message: 'Valid username is required' });
     }
@@ -66,6 +67,12 @@ export default class middleware {
     if (username.length < 4 || password.length < 4) {
       return res.status(401).json({ message: 'Each field must be a minimum of 4 characters' });
     }
+    name = name.trim();
+    username = username.trim();
+    password = password.trim();
+    req.body.name = name;
+    req.body.username = username;
+    req.body.password = password;
     next();
   }
   async signin(req, res, next) {

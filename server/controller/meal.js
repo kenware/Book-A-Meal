@@ -15,7 +15,9 @@ export default class mealController {
     return res.status(200).json(meals);
   }
   async addMeal(req, res) {
-    const { price, name, description } = req.body;
+    const { price, description } = req.body;
+    let { name } = req.body;
+    name = name.trim();
     const { id } = req.decoded;
     const userId = id;
     // Input validation
@@ -53,10 +55,19 @@ export default class mealController {
 
   async updateMeal(req, res) {
     const { mealId } = req.params;
+    let { price, name, description } = req.body;
+    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
+      return res.status(401).json({ message: 'Please provide a valid meal price' });
+    }
+    if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
+      return res.status(400).json({ message: 'Please provide a valid meal name' });
+    }
+    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
+      return res.status(400).json({ message: 'Please provide a valid meal name' });
+    }
     if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Provide a valid meal id' });
     }
-    let { price, name, description } = req.body;
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
     if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
