@@ -552,7 +552,6 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('price').eql(555);
         res.body.should.be.a('object');
         id1 = res.body.id;
         done();
@@ -569,7 +568,6 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('price').eql(555);
         res.body.should.be.a('object');
         id2 = res.body.id;
         done();
