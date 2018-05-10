@@ -11,7 +11,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "url": "postgres://kqzthlqo:jtDVH42Jksb9Qy62FW0huiu-vIVWZaPy@elmer.db.elephantsql.com:5432/kqzthlqo",
+    "use_env_variable": "DATABASE_URL",
     "dialect": "postgres"
   }
 }
