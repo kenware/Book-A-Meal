@@ -48,9 +48,10 @@ export default class middleware {
     }
     if (!email) { return res.status(401).json({ message: 'Email is required' }); }
     if (!password) { return res.status(401).json({ message: 'Password is required' }); }
-    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || (/^ *$/.test(name) === true)) {
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || (/^ *$/.test(name) === true) || name.length < 5) {
       return res.status(401).json({ message: 'valid name is required' });
     }
+
     if (!validator.isEmail(email)) { return res.status(401).json({ message: 'Invalid email' }); }
     if (password.length < 5) { return res.status(401).json({ message: 'Password must be greater than five character' }); }
     const veryUsername = await User.findOne({

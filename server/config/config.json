@@ -1,6 +1,10 @@
 {
   "development": {
-    "url": "postgres://postgres:dehydrogenase@127.0.0.1:5432/bookmeal",
+    "username": "postgres",
+    "password": "dehydrogenase",
+    "database": "bookmeal",
+    "host": "127.0.0.1",
+    "port": 5432,
     "dialect": "postgres"
   },
   "test": {
