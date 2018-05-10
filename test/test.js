@@ -368,13 +368,12 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('price').eql(555);
         res.body.should.be.a('object');
         mealId = res.body.id;
         done();
       });
   });
-  it('Admin user should POST a meal that already exist', (done) => {
+  it('Admin user should not POST a meal that already exist', (done) => {
     chai.request(server)
       .post('/api/v1/auth/meals')
       .set('authorization', tokenAdmin)
