@@ -26,25 +26,9 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  before((done) => {
-    User.destroy({
-      where: {}
-    })
-      .then(() => {
-        done();
-      });
-  });
   // migrate or a DB
   before((done) => {
     Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Meal.destroy({
-      where: {}
-    })
       .then(() => {
         done();
       });
@@ -56,21 +40,13 @@ describe('/POST api/v1/auth/signup', () => {
       });
   });
   before((done) => {
-    Menu.destroy({
-      where: {}
-    })
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
     Order.sync()
       .then(() => {
         done();
       });
   });
   before((done) => {
-    Order.destroy({
+    User.destroy({
       where: {}
     })
       .then(() => {
