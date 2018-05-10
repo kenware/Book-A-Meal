@@ -66,9 +66,20 @@ export default class orderController {
     const newAddress = req.body.address;
     const { orderId } = req.params;
     const id = orderId;
-    const order = await Order.findOne({ where: { id } });
+    const order = await Order.findOne({
+      where: { id },
+      include: { model: Meal }
+    });
     // check if order exist
     if (!order) { return res.status(404).json('order not found'); }
+    const orderHour = new Date(order.createdAt).getHours() * 60;
+    const orderMinute = (new Date(order.createdAt).getMinutes());
+    const orderTime = orderMinute + orderHour;
+    const presentTime = (new Date().getHours() * 60) + (new Date().getMinutes());
+    if ((Number(presentTime) - Number(orderTime)) > 60) {
+      return res.status(404).json('you cannot update order at this time');
+    }
+
     // check if the user that ordered the meal is making the update
     if (req.decoded.id !== order.userId) {
       return res.status(401).json('you cannot update order you did not add');
@@ -76,11 +87,13 @@ export default class orderController {
     let {
       quantity,
       address,
+      totalPrice,
     } = order;
     quantity = newQuantity || quantity;
     address = newAddress || address;
+    totalPrice = (order.Meal.price * newQuantity) || totalPrice;
     // update
-    const update = await order.update({ quantity, address });
+    const update = await order.update({ quantity, address, totalPrice });
     if (!update) { return res.status(404).json('update failed'); }
     return res.status(201).json(update);
   }
@@ -88,9 +101,10 @@ export default class orderController {
     const { id } = req.decoded;
     const catererId = id;
     const orders = await Order.findAll({
-      where: { catererId }
+      where: { catererId },
+      include: { model: User }
     });
-    if (!orders) { return res.status(404).json('users have not ordered a meal'); }
+    if (!orders || orders.length < 1) { return res.status(404).json('users have not ordered a meal'); }
     return res.status(200).json(orders);
   }
 }

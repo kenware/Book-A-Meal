@@ -72,10 +72,9 @@ export default class userController {
     const { id } = req.decoded;
     const userId = id;
     const orders = await model.Order.findAll({
-      where: { userId },
-      include: { model: User }
+      where: { userId }
     });
-    if (!orders) { return res.status(404).json('users have not ordered a meal'); }
+    if (!orders || orders.length < 1) { return res.status(404).json('users have not ordered a meal'); }
     return res.status(200).json(orders);
   }
 }

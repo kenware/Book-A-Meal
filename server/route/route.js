@@ -35,7 +35,7 @@ const upload = multer({ storage });
 // User route
 router.post('/auth/signup', validate.signup, User.createUser);
 router.post('/auth/signin', validate.signin, User.login);
-router.get('/auth/orders', validate.authUser, User.getOrders);
+// router.get('/auth/orders', validate.authUser, User.getOrders);
 // set admin user
 router.post('/auth/admin/:userId', validate.authAdmin, User.adminSignup);
 
@@ -60,6 +60,6 @@ router.get('/auth/menu/:date', validate.authAdmin, Menu.getMenu);
 // Order route
 // POST an order for the day
 router.post('/auth/orders', validate.authUser, validate.order, Order.createOrder);
-router.put('/auth/orders/:orderId', validate.authUser, Order.updateOrder);
+router.put('/auth/orders/:orderId', validate.updateOrder, validate.authUser, Order.updateOrder);
 router.get('/auth/orders', validate.authAdmin, Order.getOrders);
 export default router;

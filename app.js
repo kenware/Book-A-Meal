@@ -7,7 +7,7 @@ import route from './server/route/route';
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ type: 'application/json'}));
+app.use(bodyParser.json({ type: 'application/json' }));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 app.use(volleyball);
 app.use('/api/v1', route);

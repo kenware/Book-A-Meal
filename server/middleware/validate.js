@@ -43,12 +43,16 @@ export default class middleware {
     const {
       username, name, email, password
     } = req.body;
-    if (!username) { return res.status(401).json('username is required'); }
+    if (!username || (/^ *$/.test(name) === true)) {
+      return res.status(401).json('valid username is required');
+    }
     if (!email) { return res.status(401).json('email is required'); }
     if (!password) { return res.status(401).json('password is required'); }
-    if (!name) { return res.status(401).json('name is required'); }
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
+      return res.status(401).json('valid name is required');
+    }
     if (!validator.isEmail(email)) { return res.status(401).json('invalid email'); }
-
+    if (password.length < 5) { return res.status(401).json('password must be greater than five character'); }
     const veryUsername = await User.findOne({
       where: { username }
     });
@@ -71,20 +75,31 @@ export default class middleware {
   }
 
   async menu(req, res, next) {
-    const { title } = req.body;
-    let { mealId, orderBefore } = req.body;
+    const { title, mealId } = req.body;
+    let { orderBefore } = req.body;
     // Title field cannot be empty
     if (!title) { return res.status(401).json('title is required'); }
+    if ((/^ *$/.test(title) === true) || (/^[a-zA-Z ]+$/.test(title) === false) || typeof title !== 'string') {
+      return res.status(400).send({ message: 'Please provide a valid title' });
+    }
     // orderBefore field cannot be empty
     if (!orderBefore) {
       return res.status(401)
         .json('specify the time users should be able to make an order');
     }
+    if ((Number.isNaN(Number(orderBefore))) === true || (/^ *$/.test(orderBefore) === true)) {
+      return res.status(401).json('Please provide a valid time in hours');
+    }
     if (!mealId) {
       return res.status(401)
         .json('please select a meal to set menu');
     }
-    mealId = Number(mealId);
+    if (orderBefore > 24) {
+      return res.status(401).json('expire time cannot be more than 24 hours');
+    }
+    if (Number.isNaN(Number(mealId)) || (/^ *$/.test(mealId) === true)) {
+      return res.status(401).json('enter a valid meal id');
+    }
     // pass the mealId and orderBefore to req
     orderBefore = Number(orderBefore);
     req.body.orderBefore = orderBefore;
@@ -92,11 +107,41 @@ export default class middleware {
     next();
   }
   async order(req, res, next) {
-    const { menuId, quantity, mealId, address } = req.body;
+    const {
+      menuId,
+      quantity,
+      mealId,
+      address
+    } = req.body;
     if (!menuId) { return res.status(401).json('menuId is required'); }
     if (!quantity) { return res.status(401).json('quantity is required'); }
     if (!mealId) { return res.status(401).json('mealId is required'); }
-    if (!address) { return res.status(401).json('address is required'); }
+    if (!address || typeof adddress !== 'string' || (/^ *$/.test(address) === true)) { return res.status(401).json('address is required'); }
+
+    if ((Number.isNaN(Number(menuId))) === true || (/^ *$/.test(menuId) === true)) {
+      return res.status(401).json('Please provide a valid menu id');
+    }
+    if ((Number.isNaN(Number(quantity))) === true || (/^ *$/.test(quantity) === true)) {
+      return res.status(401).json('Please provide a valid quantity');
+    }
+    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+      return res.status(401).json('Please provide a valid meal id');
+    }
+    next();
+  }
+  async updateOrder(req, res, next) {
+    const {
+      quantity,
+      address
+    } = req.body;
+    if (!quantity) { return res.status(401).json('quantity is required'); }
+    if (!address || typeof adddress !== 'string' || (/^ *$/.test(address) === true)) {
+      return res.status(401).json('address is required');
+    }
+
+    if ((Number.isNaN(Number(quantity))) === true || (/^ *$/.test(quantity) === true)) {
+      return res.status(401).json('Please provide a valid quantity');
+    }
     next();
   }
 }

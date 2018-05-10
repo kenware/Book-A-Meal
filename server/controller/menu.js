@@ -10,9 +10,8 @@ export default class menuController {
     let { date } = req.body;
     let message = 'menu is updated';
     // check if mealId exist
-
     const meal = await Meal.findOne({ where: { userId, id: mealId } });
-    if (!meal) { return res.status(200).json('meal with the entered id found'); }
+    if (!meal) { return res.status(401).json('meal with the entered id not found'); }
     // get current hour of the day
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
 
@@ -54,7 +53,7 @@ export default class menuController {
         },
       ]
     });
-    if (!menu) { return res.status(404).json(`${date} menu is not set`); }
+    if (!menu || menu.length < 1) { return res.status(404).json(`${date} menu is not set`); }
     return res.status(200).json(menu);
   }
 }
