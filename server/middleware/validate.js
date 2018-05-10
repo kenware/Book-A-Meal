@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import validator from 'validator';
 import model from '../models';
 
-const secret = process.env.secret;
+const { secret } = process.env;
 // const Op = sequelize.O;
 const { User } = model;
 
