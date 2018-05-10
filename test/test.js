@@ -49,6 +49,34 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
+  before((done) => {
+    Menu.sync()
+      .then(() => {
+        done();
+      });
+  });
+  before((done) => {
+    Menu.destroy({
+      where: {}
+    })
+      .then(() => {
+        done();
+      });
+  });
+  before((done) => {
+    Order.sync()
+      .then(() => {
+        done();
+      });
+  });
+  before((done) => {
+    Order.destroy({
+      where: {}
+    })
+      .then(() => {
+        done();
+      });
+  });
   let userId = 0;
   it('superuser should sign up ', (done) => {
     chai.request(server)
@@ -537,7 +565,7 @@ describe('Testing of meal middleware and controller', () => {
   });
 });
 describe('Testing of Menu middleware and controller', () => {
-  let id1, id2 = 0;
+  let id1, id2=0;
   it('Admin user should POST a meal id1', (done) => {
     chai.request(server)
       .post('/api/v1/auth/meals')
@@ -669,7 +697,7 @@ describe('Testing of Menu middleware and controller', () => {
       .send({
         title: 'today',
         mealId: id1,
-        orderBefore: 8,
+        orderBefore: (new Date().getHours() + 2),
       })
       .end((err, res) => {
         res.should.have.status(200);
