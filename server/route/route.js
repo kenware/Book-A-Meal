@@ -1,28 +1,65 @@
 
+  import express from 'express';
+  import multer from 'multer';
+  import cloudinary from 'cloudinary';
+  import cloudinaryStorage from 'multer-storage-cloudinary';
 
-import express from 'express';
-import mealController from '../controllers/meals';
-import menuController from '../controllers/menus';
-import orderController from '../controllers/orders';
+  import userController from '../controller/user';
+  import middleware from '../middleware/validate';
+  import mealController from '../controller/meal';
+  import menuController from '../controller/menu';
+  import orderController from '../controller/order';
 
-const router = express.Router();
+  const validate = new middleware();
+  const User = new userController();
+  const Meal = new mealController();
+  const Menu = new menuController();
+  const Order = new orderController();
+  const router = express.Router();
 
-// feature get, post, update and delete meal
-router.get('/meals', new mealController().getMeals);
-router.post('/meals', new mealController().createMeals);
-router.put('/meals/:mealId', new mealController().updateMeal);
-router.delete('/meals/:mealId', new mealController().deleteMeal);
-router.get('/meals/:mealId', new mealController().getOneMeal);
+  cloudinary.config({
+    cloud_name: 'more-recipes',
+    api_key: '127278553653283',
+    api_secret: 'XUBlnwpJ2dbSHJzPZu-vTWxgob4'
+  });
 
-// feature set menu for the day
-router.post('/menu', new menuController().createMenu);
-// feature get menu for the day
-router.get('/menu', new menuController().getMenu);
-// get menu for any day
-router.get('/menu/:date', new menuController().getAnyMenu);
+  const storage = cloudinaryStorage({
+    cloudinary,
+    folder: 'img-upload',
+    filename(req, file, cb) {
+      cb(null, `${file.fieldname}-${Date.now()}-${file.originalname}`);
+    }
+  });
+  const upload = multer({ storage });
 
-// feature create order
-router.post('/orders', new orderController().createOrder);
-router.put('/orders/:orderId', new orderController().updateOrder);
-router.get('/orders', new orderController().getOrders);
-export default router;
+  // User route
+  router.post('/auth/signup', validate.signup, User.createUser);
+  router.post('/auth/signin', validate.signin, User.login);
+  // router.get('/auth/orders', validate.authUser, User.getOrders);
+  // set admin user
+  router.post('/auth/admin/:userId', validate.authAdmin, User.adminSignup);
+
+  // Meal Route
+  // get all meals by caterer
+  router.get('/meals', validate.authAdmin, Meal.getMeals);
+  // admin post meal
+  router.post('/meals', validate.authAdmin, upload.array('file'), Meal.addMeal);
+  // update a meal
+  router.put('/meals/:mealId', validate.authAdmin, upload.array('file'), Meal.updateMeal);
+  // delete a meal
+  router.delete('/meals/:mealId', validate.authAdmin, Meal.deleteMeal);
+
+  // Menu route
+  // POST a menu for the day
+  router.post('/menu', validate.authAdmin, validate.menu, Menu.createMenu);
+  // get todays menu
+  router.get('/menu', validate.authUser, Menu.getMenu);
+  // Get menu of any day
+  router.get('/menu/:date', validate.authAdmin, Menu.getMenu);
+
+  // Order route
+  // POST an order for the day
+  router.post('/orders', validate.authUser, validate.order, Order.createOrder);
+  router.put('/orders/:orderId', validate.updateOrder, validate.authUser, Order.updateOrder);
+  router.get('/orders', validate.authAdmin, Order.getOrders);
+  export default router;

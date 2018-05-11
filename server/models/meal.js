@@ -1,31 +1,33 @@
-import dumyData from '../dumydata/store';
-const meals = dumyData.meals;
 
-export default class Meal {
-
-    getMeals(){
-       return meals;
+module.exports = (sequelize, DataTypes) => {
+  const Meal = sequelize.define('Meal', {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.STRING
+    },
+    description: {
+      type: DataTypes.TEXT
+    },
+    image: {
+      type: DataTypes.STRING
     }
-
-    getOneMeal(mealId){
-      this.mealId = mealId;
-      return  meals.find(one => one.id === mealId);
-    }
-
-    addMeal(id, name, price, description){
-      const meal = { id,name,price,price,description }
-      meals.push(meal);
-      return meal;
-    }
-    updateMeal(newMeal,existingMeal){
-      const { name,price,description } = newMeal;
-      existingMeal.name = name || existingMeal.name;
-      existingMeal.price = price || existingMeal.price;
-      existingMeal.description = description || existingMeal.description;
-      return existingMeal;
-    }
-    deleteMeal(meal){
-      const index = meals.indexOf(meal);
-      meals.splice(index,1);
-    }
-  }
+  });
+  Meal.associate = (models) => {
+    Meal.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
+    Meal.belongsToMany(models.Menu, {
+      through: 'MealMenus',
+      onDelete: 'CASCADE'
+    });
+    Meal.hasMany(models.Order, {
+      foreignKey: 'mealId',
+      as: 'Meals'
+    });
+  };
+  return Meal;
+};
