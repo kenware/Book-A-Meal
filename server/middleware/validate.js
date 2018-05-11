@@ -92,8 +92,7 @@ export default class middleware {
     }
     // orderBefore field cannot be empty
     if (!orderBefore) {
-      return res.status(401)
-        .json({ message: 'Specify the time users should be able to make an order' });
+      return res.status(401).json({ message: 'Specify the time users should be able to make an order' });
     }
     if ((Number.isNaN(Number(orderBefore))) === true || (/^ *$/.test(orderBefore) === true)) {
       return res.status(401).json({ message: 'Please provide a valid time in hours' });

@@ -507,7 +507,7 @@ describe('Testing of meal middleware and controller', () => {
         description: 'good'
       })
       .end((err, res) => {
-       
+
         res.body.should.have.property('message').eql('Meal does not exist');
         res.body.should.be.a('object');
         done();
@@ -547,7 +547,7 @@ describe('Testing of meal middleware and controller', () => {
   });
 });
 describe('Testing of Menu middleware and controller', () => {
-  let id1, id2=0;
+  let id1, id2 = 0;
   it('Admin user should POST a meal id1', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -577,7 +577,7 @@ describe('Testing of Menu middleware and controller', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.be.a('object');
-        res.body.should.have.property('name').eql('ogbono')
+        res.body.should.have.property('name').eql('ogbono');
         id2 = res.body.id;
         done();
       });
@@ -662,16 +662,6 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
-  it('Admin should  not GET a menu that is not set', (done) => {
-    chai.request(server)
-      .get('/api/v1/menu')
-      .set('authorization', tokenAdmin)
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.body.should.be.a('object');
-        done();
-      });
-  });
   it('Admin should POST a menu', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
@@ -686,16 +676,6 @@ describe('Testing of Menu middleware and controller', () => {
         res.body.should.have.property('message');
         res.body.should.have.property('menu');
         res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User should  GET a menu', (done) => {
-    chai.request(server)
-      .get('/api/v1/menu')
-      .set('authorization', tokenUser)
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('array');
         done();
       });
   });

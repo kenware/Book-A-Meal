@@ -9,7 +9,7 @@ Book-A-Meal: Order a meal of your choice just by a single click
 * [installations](#installations)
 * [functions](#functions)
 * [test](#test)
-* [licence](licence)
+* [licence](#licence)
 # <a name="team-members"></a>Team members
 * Eze Kevin E
 * Pottential Andela fellows<br>
