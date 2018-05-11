@@ -401,23 +401,24 @@ background: url("../image/testimonial.jpg") no-repeat center center fixed;
     border-radius: 3px;
 }
 .footer-col input{
-  padding-left: 0px;
-    width: 96%;
-    height: 25px;
-    border-radius: 3px;
+  width:100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 3px;
   text-align: center;
 
 }
 .footer-row{
   position: relative;
   top:-20px;
-  height: 200px;;
+  height: 100px;;
   color:white;
   background-color:rgb(56, 54, 54);
 }
 .footer-row p{
   text-align: center;
-  padding-top:100Px;
+  padding-top:50Px;
 }
 .footer-col ul {
   padding-left: 0px;
