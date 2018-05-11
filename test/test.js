@@ -66,7 +66,9 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('user');
+        res.body.should.have.property('name').eql('kenson');
+        res.body.should.have.property('username').eql('kenson');
+        res.body.should.have.property('name').eql('kenson');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
         tokenSuper = res.body.token;
@@ -85,10 +87,12 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('user');
+        res.body.should.have.property('name').eql('keneth');
+        res.body.should.have.property('username').eql('keneth');
+        res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        userId = res.body.user.id;
+        userId = res.body.id;
         done();
       });
   });
@@ -103,7 +107,9 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('user');
+        res.body.should.have.property('name').eql('ejike');
+        res.body.should.have.property('username').eql('ejike');
+        res.body.should.have.property('email').eql('ejike@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
         tokenUser = res.body.token;
@@ -134,8 +140,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('email already exist');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Email already exist');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -151,8 +157,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('username already exist');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Username already exist');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -167,8 +173,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('invalid email');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Invalid email');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -183,8 +189,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('password must be greater than five character');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Password must be greater than five character');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -199,8 +205,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('valid username is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Valid username is required');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -215,8 +221,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('email is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Email is required');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -231,8 +237,8 @@ describe('/POST api/v1/auth/signup', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('password is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Password is required');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -248,8 +254,8 @@ describe('/POST api/v1/auth/signin', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('username is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Username is required');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -262,8 +268,8 @@ describe('/POST api/v1/auth/signin', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('password is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Password is required');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -276,8 +282,8 @@ describe('/POST api/v1/auth/signin', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('wrong credentials');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Wrong credentials');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -290,8 +296,8 @@ describe('/POST api/v1/auth/signin', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('wrong credentials');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Wrong credentials');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -332,7 +338,7 @@ describe('Testing of meal middleware and controller', () => {
   });
   it('Normal user should not POST a meal', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenUser)
       .send({
         name: 'abacha',
@@ -341,25 +347,25 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('Unauthorized Access');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Unauthorized Access');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('caterer should not GET/ an empty meal', (done) => {
     chai.request(server)
-      .get('/api/v1/auth/meals')
+      .get('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('there is no meal in the list');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('There is no meal in the list');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin user should POST a meal', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'abacha',
@@ -369,13 +375,14 @@ describe('Testing of meal middleware and controller', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.be.a('object');
+        res.body.should.have.property('name').eql('abacha');
         mealId = res.body.id;
         done();
       });
   });
   it('Admin user should not POST a meal that already exist', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'abacha',
@@ -384,14 +391,14 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(422);
-        res.body.should.be.eql('Meal already exist');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Meal already exist');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should not POST a meal without name', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: '',
@@ -400,14 +407,14 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('name field is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Name field is required');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should not POST a meal without price', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'egusi',
@@ -416,14 +423,14 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('price field is required');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Price field is required');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should not POST a meal that already exist name', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'abacha',
@@ -432,25 +439,25 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(422);
-        res.body.should.be.eql('Meal already exist');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Meal already exist');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Normal user should not GET/ a meal', (done) => {
     chai.request(server)
-      .get('/api/v1/auth/meals')
+      .get('/api/v1/meals')
       .set('authorization', tokenUser)
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('Unauthorized Access');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Unauthorized Access');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('caterer should GET/ all meals', (done) => {
     chai.request(server)
-      .get('/api/v1/auth/meals')
+      .get('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .end((err, res) => {
         res.should.have.status(200);
@@ -460,7 +467,7 @@ describe('Testing of meal middleware and controller', () => {
   });
   it(' user should not POST a meal name with sql, special chararcters', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'beanse234$#%&',
@@ -469,14 +476,14 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(400);
-        res.body.should.be.eql('Please provide a valid meal name');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Please provide a valid meal name');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should not POST a meal price with special chararcters', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'beanse234$#%&',
@@ -485,30 +492,30 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('Please provide a valid meal price');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Please provide a valid meal price');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should not UPDATE a meal that does not exist', (done) => {
     chai.request(server)
-      .put('/api/v1/auth/meals/60')
+      .put('/api/v1/meals/60')
       .set('authorization', tokenAdmin)
       .send({
-        name: 'beanse234',
+        name: 'beanse',
         price: '5566',
         description: 'good'
       })
       .end((err, res) => {
-        res.should.have.status(422);
-        res.body.should.be.eql('Meal does not exist');
-        res.body.should.be.a('string');
+       
+        res.body.should.have.property('message').eql('Meal does not exist');
+        res.body.should.be.a('object');
         done();
       });
   });
   it(' user should UPDATE a meal', (done) => {
     chai.request(server)
-      .put(`/api/v1/auth/meals/${mealId}`)
+      .put(`/api/v1/meals/${mealId}`)
       .set('authorization', tokenAdmin)
       .send({
         name: 'beansee',
@@ -524,7 +531,7 @@ describe('Testing of meal middleware and controller', () => {
   });
   it(' user should Delete a meal', (done) => {
     chai.request(server)
-      .delete(`/api/v1/auth/meals/${mealId}`)
+      .delete(`/api/v1/meals/${mealId}`)
       .set('authorization', tokenAdmin)
       .send({
         name: 'beansee',
@@ -533,8 +540,8 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.eql('meal successfully deleted');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Meal successfully deleted');
+        res.body.should.be.a('object');
         done();
       });
   });
@@ -543,7 +550,7 @@ describe('Testing of Menu middleware and controller', () => {
   let id1, id2=0;
   it('Admin user should POST a meal id1', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'abacha',
@@ -552,6 +559,7 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(201);
+        res.body.should.have.property('name').eql('abacha');
         res.body.should.be.a('object');
         id1 = res.body.id;
         done();
@@ -559,7 +567,7 @@ describe('Testing of Menu middleware and controller', () => {
   });
   it('Admin user should POST a meal id2', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/meals')
+      .post('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .send({
         name: 'ogbono',
@@ -569,13 +577,14 @@ describe('Testing of Menu middleware and controller', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.be.a('object');
+        res.body.should.have.property('name').eql('ogbono')
         id2 = res.body.id;
         done();
       });
   });
   it('Admin user should not POST a menu with no meal id', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -584,14 +593,14 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('please select a meal to set menu');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('please select a meal to set menu');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin user should not POST a menu with invalid meal id', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -600,14 +609,14 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('enter a valid meal id');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Enter a valid meal id');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin user should not POST a menu without orderBefore', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -616,14 +625,14 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('specify the time users should be able to make an order');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Specify the time users should be able to make an order');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin user should not POST a menu with invalid orderbefore', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -632,14 +641,14 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('Please provide a valid time in hours');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Please provide a valid time in hours');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin user should  not POST a menu with meal id that does not exist', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -648,24 +657,24 @@ describe('Testing of Menu middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(401);
-        res.body.should.be.eql('expire time cannot be more than 24 hours');
-        res.body.should.be.a('string');
+        res.body.should.have.property('message').eql('Expire time cannot be more than 24 hours');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin should  not GET a menu that is not set', (done) => {
     chai.request(server)
-      .get('/api/v1/auth/menu')
+      .get('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .end((err, res) => {
         res.should.have.status(404);
-        res.body.should.be.a('string');
+        res.body.should.be.a('object');
         done();
       });
   });
   it('Admin should POST a menu', (done) => {
     chai.request(server)
-      .post('/api/v1/auth/menu')
+      .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
@@ -682,7 +691,7 @@ describe('Testing of Menu middleware and controller', () => {
   });
   it('User should  GET a menu', (done) => {
     chai.request(server)
-      .get('/api/v1/auth/menu')
+      .get('/api/v1/menu')
       .set('authorization', tokenUser)
       .end((err, res) => {
         res.should.have.status(200);
