@@ -1,5 +1,5 @@
 body{
-  background-image: url("../image/ad.jpg");
+  background-color: white;
 }
 
 
@@ -21,21 +21,21 @@ body{
    flex:3;
    height: auto;
 }
-.form-row{
+.login-form .form-row{
     display: flex;
     padding: 10px 0;
 }
-.form-row label{
+.login-form .form-row label{
  padding: 10px 10px 10px 10px;
  flex:1;
 }
-.form-row input{
+.login-form .form-row input{
   flex:2;
   padding: 10px 10px 10px 10px;
   margin-right: 10px;
  }
- .form-row button{
-  flex:2;
+ .login-form .form-row button{
+  flex:1;
   padding: 10px 10px 10px 10px;
   margin-right: 10px;
   margin-left: 10px;
