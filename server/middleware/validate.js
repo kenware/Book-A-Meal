@@ -40,19 +40,17 @@ export default class middleware {
     });
   }
   async signup(req, res, next) {
-    let {
-      username, name, password
-    } = req.body;
-    const { email } = req.body;
-    if (!username || (/^ *$/.test(username) === true)) {
+    let { name } = req.body;
+    const { email, username, password } = req.body;
+    if (!username || /^[a-z0-9_]+$/i.test(username) === false) {
       return res.status(401).json({ message: 'Valid username is required' });
+    }
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true || name.length < 5) {
+      return res.status(401).json({ message: 'valid name is required' });
     }
     if (!email) { return res.status(401).json({ message: 'Email is required' }); }
     if (!password) { return res.status(401).json({ message: 'Password is required' }); }
-    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || (/^ *$/.test(name) === true) || name.length < 5) {
-      return res.status(401).json({ message: 'valid name is required' });
-    }
-
+    if (/^\S+$/g.test(password) === false) { return res.status(401).json({ message: 'Password cannot contain a space' }); }
     if (!validator.isEmail(email)) { return res.status(401).json({ message: 'Invalid email' }); }
     if (password.length < 5) { return res.status(401).json({ message: 'Password must be greater than five character' }); }
     const veryUsername = await User.findOne({
@@ -68,8 +66,6 @@ export default class middleware {
       return res.status(401).json({ message: 'Each field must be a minimum of 4 characters' });
     }
     name = name.trim();
-    username = username.trim();
-    password = password.trim();
     req.body.name = name;
     req.body.username = username;
     req.body.password = password;
