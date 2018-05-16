@@ -3,14 +3,14 @@ import React from 'react';
 
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from './history';
-import Header from './components/header/index';
+import Home from './components/home/index';
 
 const Routes = () => (
   <Router history={history}>
     <div className="primary-layout">
       <main>
         <Switch>
-          <Route exact path="/meals" component={Header} />
+          <Route exact path="/meals" component={Home} />
           <Redirect to="/meals" />
         </Switch>
       </main>

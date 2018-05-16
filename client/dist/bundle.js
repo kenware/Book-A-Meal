@@ -105,6 +105,29 @@ eval("// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// lo
 
 /***/ }),
 
+/***/ "./client/components/home/index.js":
+/*!*****************************************!*\
+  !*** ./client/components/home/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/react.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _redux = __webpack_require__(/*! redux */ \"./node_modules/redux/es/index.js\");\n\nvar _index = __webpack_require__(/*! ../header/index */ \"./client/components/header/index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\n__webpack_require__(/*! ./index.scss */ \"./client/components/home/index.scss\");\n\nvar _action = __webpack_require__(/*! ../../redux/Action/action */ \"./client/redux/Action/action.js\");\n\nvar actions = _interopRequireWildcard(_action);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Home = function (_Component) {\n  _inherits(Home, _Component);\n\n  function Home(props) {\n    _classCallCheck(this, Home);\n\n    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));\n\n    _this.state = {};\n    _this.onChange = _this.onChange.bind(_this);\n    return _this;\n  }\n\n  _createClass(Home, [{\n    key: 'componentWillReceiveProps',\n    value: function componentWillReceiveProps(newProps) {}\n  }, {\n    key: 'onChange',\n    value: function onChange(e) {\n      var newLocal = this;\n      var state = newLocal.state.state;\n\n      state[e.target.name] = e.target.value;\n      this.setState(state);\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n          'div',\n          { className: 'carousel-header' },\n          _react2.default.createElement('div', { className: 'header-overlay' }),\n          _react2.default.createElement(\n            'div',\n            { className: 'caption' },\n            _react2.default.createElement(\n              'h3',\n              { className: 'lead' },\n              'Book A Meal Today'\n            ),\n            _react2.default.createElement(\n              'p',\n              { className: 'lead' },\n              'Health is wealth!'\n            )\n          )\n        ),\n        _react2.default.createElement(_index2.default, null)\n      );\n    }\n  }]);\n\n  return Home;\n}(_react.Component);\n\nfunction mapStateToProps(state, ownProps) {\n  return {\n    message: 'state.message'\n  };\n}\nfunction mapDispatchToProps(dispatch) {\n  return { actions: (0, _redux.bindActionCreators)(actions, dispatch) };\n}\nexports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);\n\n//# sourceURL=webpack:///./client/components/home/index.js?");
+
+/***/ }),
+
+/***/ "./client/components/home/index.scss":
+/*!*******************************************!*\
+  !*** ./client/components/home/index.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./index.scss */ \"./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./client/components/home/index.scss\");\nif(typeof content === 'string') content = [[module.i, content, '']];\n// add the styles to the DOM\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/addStyles.js */ \"./node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(false) {}\n\n//# sourceURL=webpack:///./client/components/home/index.scss?");
+
+/***/ }),
+
 /***/ "./client/history.js":
 /*!***************************!*\
   !*** ./client/history.js ***!
@@ -117,6 +140,17 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./client/image/carousel-1.jpg":
+/*!*************************************!*\
+  !*** ./client/image/carousel-1.jpg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"image/carousel-1.jpg\";\n\n//# sourceURL=webpack:///./client/image/carousel-1.jpg?");
+
+/***/ }),
+
 /***/ "./client/index.js":
 /*!*************************!*\
   !*** ./client/index.js ***!
@@ -126,6 +160,18 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 "use strict";
 eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/react.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _routes = __webpack_require__(/*! ./routes */ \"./client/routes.js\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nvar _store = __webpack_require__(/*! ./redux/store */ \"./client/redux/store.js\");\n\nvar _store2 = _interopRequireDefault(_store);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import {loadRecipes} from './redux/Action/action';\n\n\n// import 'bootstrap/dist/css/bootstrap.min.css';\n// import  'bootstrap/dist/js/bootstrap.min.js';\n// import { Router, browserHistory } from 'react-router';\nvar store = (0, _store2.default)();\n\n(0, _reactDom.render)(_react2.default.createElement(\n  _reactRedux.Provider,\n  { store: store },\n  _react2.default.createElement(_routes2.default /* history={browserHistory}  routes={routes} */, null)\n), document.getElementById('root'));\n\n//# sourceURL=webpack:///./client/index.js?");
+
+/***/ }),
+
+/***/ "./client/redux/Action/action.js":
+/*!***************************************!*\
+  !*** ./client/redux/Action/action.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _actionType = __webpack_require__(/*! ./actionType */ \"./client/redux/Action/actionType.js\");\n\nvar types = _interopRequireWildcard(_actionType);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _history = __webpack_require__(/*! ../../history */ \"./client/history.js\");\n\nvar _history2 = _interopRequireDefault(_history);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\n//# sourceURL=webpack:///./client/redux/Action/action.js?");
 
 /***/ }),
 
@@ -197,7 +243,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/react.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _history = __webpack_require__(/*! ./history */ \"./client/history.js\");\n\nvar _history2 = _interopRequireDefault(_history);\n\nvar _index = __webpack_require__(/*! ./components/header/index */ \"./client/components/header/index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Routes = function Routes() {\n  return _react2.default.createElement(\n    _reactRouterDom.Router,\n    { history: _history2.default },\n    _react2.default.createElement(\n      'div',\n      { className: 'primary-layout' },\n      _react2.default.createElement(\n        'main',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Switch,\n          null,\n          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/meals', component: _index2.default }),\n          _react2.default.createElement(_reactRouterDom.Redirect, { to: '/meals' })\n        )\n      )\n    )\n  );\n};\n// import { Route, IndexRoute } from 'react-router'\n\nexports.default = Routes;\n\n/*\nexport default (\n  <Route >\n    <Route path=\"/recipes\" component={Home} >\n       <Route path=\"/recipes/:recipeId\" component={Detail} />\n    </Route>\n\n  </Route>\n);\n*/\n\n//# sourceURL=webpack:///./client/routes.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/react.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _history = __webpack_require__(/*! ./history */ \"./client/history.js\");\n\nvar _history2 = _interopRequireDefault(_history);\n\nvar _index = __webpack_require__(/*! ./components/home/index */ \"./client/components/home/index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Routes = function Routes() {\n  return _react2.default.createElement(\n    _reactRouterDom.Router,\n    { history: _history2.default },\n    _react2.default.createElement(\n      'div',\n      { className: 'primary-layout' },\n      _react2.default.createElement(\n        'main',\n        null,\n        _react2.default.createElement(\n          _reactRouterDom.Switch,\n          null,\n          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/meals', component: _index2.default }),\n          _react2.default.createElement(_reactRouterDom.Redirect, { to: '/meals' })\n        )\n      )\n    )\n  );\n};\n// import { Route, IndexRoute } from 'react-router'\n\nexports.default = Routes;\n\n/*\nexport default (\n  <Route >\n    <Route path=\"/recipes\" component={Home} >\n       <Route path=\"/recipes/:recipeId\" component={Detail} />\n    </Route>\n\n  </Route>\n);\n*/\n\n//# sourceURL=webpack:///./client/routes.js?");
 
 /***/ }),
 
@@ -232,7 +278,18 @@ eval("/*\nobject-assign\n(c) Sindre Sorhus\n@license MIT\n*/\n\n\n/* eslint-disa
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(undefined);\n// imports\n\n\n// module\nexports.push([module.i, \".nav {\\n  overflow: hidden;\\n  background-color: #333; }\\n\\n.nav a:first-child {\\n  float: left; }\\n\\n.nav a:not(:first-child) {\\n  float: right; }\\n\\n.nav a {\\n  display: block;\\n  color: #f2f2f2;\\n  text-align: center;\\n  padding: 14px 12px;\\n  text-decoration: none;\\n  font-size: 18px;\\n  margin-top: 15px; }\\n\\n.nav a:hover {\\n  background-color: #ddd;\\n  color: lightseagreen; }\\n\\n.nav .icon {\\n  display: none; }\\n\\n@media screen and (max-width: 600px) {\\n  .nav a:not(:first-child) {\\n    display: none; }\\n  .nav a.icon {\\n    float: right;\\n    display: block;\\n    font-size: 25px; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; }\\n  .sidebar {\\n    visibility: hidden; } }\\n\\n@media screen and (max-width: 600px) {\\n  .nav.responsive {\\n    position: fixed; }\\n  .nav.responsive .icon {\\n    position: absolute;\\n    right: 0;\\n    top: 0;\\n    font-size: 25px; }\\n  .nav.responsive a {\\n    float: none;\\n    display: block;\\n    text-align: left; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; } }\\n\\n@media screen and (max-width: 600px) {\\n  .nav.responsive2 {\\n    position: relative; }\\n  .nav.responsive2 .icon {\\n    position: absolute;\\n    right: 0;\\n    top: 0;\\n    font-size: 25px; }\\n  .nav.responsive2 a {\\n    float: none;\\n    display: block;\\n    text-align: left; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; } }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./client/components/header/index.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(undefined);\n// imports\n\n\n// module\nexports.push([module.i, \".nav {\\n  overflow: hidden;\\n  background-color: rgba(165, 162, 12, 0.877); }\\n\\n.nav a:first-child {\\n  float: left; }\\n\\n.nav a:not(:first-child) {\\n  float: right; }\\n\\n.nav a {\\n  display: block;\\n  color: white;\\n  text-align: center;\\n  padding: 14px 12px;\\n  text-decoration: none;\\n  font-size: 17px;\\n  margin-top: 15px; }\\n\\n.nav a:hover {\\n  background-color: #ddd;\\n  color: lightseagreen; }\\n\\n.nav .icon {\\n  display: none; }\\n\\n@media screen and (max-width: 600px) {\\n  .nav a:not(:first-child) {\\n    display: none; }\\n  .nav a.icon {\\n    float: right;\\n    display: block;\\n    font-size: 25px; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; }\\n  .sidebar {\\n    visibility: hidden; } }\\n\\n@media screen and (max-width: 600px) {\\n  .nav.responsive {\\n    position: fixed; }\\n  .nav.responsive .icon {\\n    position: absolute;\\n    right: 0;\\n    top: 0;\\n    font-size: 25px; }\\n  .nav.responsive a {\\n    float: none;\\n    display: block;\\n    text-align: left; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; } }\\n\\n@media screen and (max-width: 600px) {\\n  .nav.responsive2 {\\n    position: relative; }\\n  .nav.responsive2 .icon {\\n    position: absolute;\\n    right: 0;\\n    top: 0;\\n    font-size: 25px; }\\n  .nav.responsive2 a {\\n    float: none;\\n    display: block;\\n    text-align: left; }\\n  .fixed-top {\\n    position: fixed;\\n    width: 100%;\\n    top: 0; } }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./client/components/header/index.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./client/components/home/index.scss":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./client/components/home/index.scss ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(undefined);\n// imports\n\n\n// module\nexports.push([module.i, \".carousel-header {\\n  background: url(\" + __webpack_require__(/*! ../../image/carousel-1.jpg */ \"./client/image/carousel-1.jpg\") + \") center center fixed;\\n  -webkit-transition: opacity 1s;\\n  -moz-transition: opacity 1s;\\n  -ms-transition: opacity 1s;\\n  -o-transition: opacity 1s;\\n  transition: opacity 1s;\\n  width: 100%;\\n  height: 70vh;\\n  -webkit-background-size: cover;\\n  -moz-background-size: cover;\\n  -o-background-size: cover;\\n  background-size: cover;\\n  margin-top: -30px; }\\n\\n.header-overlay {\\n  background-color: #000;\\n  height: 70vh;\\n  left: 0;\\n  opacity: .5;\\n  position: absolute;\\n  right: 0;\\n  top: 0;\\n  z-index: 10; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./client/components/home/index.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 

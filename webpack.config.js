@@ -49,6 +49,7 @@ module.exports = {
         {
           loader: 'file-loader',
           options: {
+            context: process.cwd(),
             name: 'image/[name].[ext]'
           }
         }

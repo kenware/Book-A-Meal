@@ -1,0 +1,26 @@
+.carousel-header{
+    background: url('../../image/carousel-1.jpg') center center fixed;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+    width: 100%;
+    height: 70vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top:-30px;
+  
+  }
+  .header-overlay {
+    background-color: #000;
+    height: 70vh;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
