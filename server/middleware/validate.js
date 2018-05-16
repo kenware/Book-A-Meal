@@ -83,7 +83,7 @@ export default class middleware {
     let { orderBefore } = req.body;
     // Title field cannot be empty
     if (!title) { return res.status(401).json({ message: 'title is required' }); }
-    if ((/^ *$/.test(title) === true) || (/^[a-zA-Z ]+$/.test(title) === false) || typeof title !== 'string') {
+    if ((/^ *$/.test(title) === true) || typeof title !== 'string') {
       return res.status(400).send({ message: 'Please provide a valid title' });
     }
     // orderBefore field cannot be empty
