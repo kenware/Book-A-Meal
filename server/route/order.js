@@ -12,4 +12,5 @@ const router = express.Router();
 router.post('/orders', validate.authUser, validate.order, Order.createOrder);
 router.put('/orders/:orderId', validate.updateOrder, validate.authUser, Order.updateOrder);
 router.get('/orders', validate.authAdmin, Order.getOrders);
+router.get('/user/orders', validate.authUser, Order.getUserOrders);
 export default router;

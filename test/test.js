@@ -15,7 +15,7 @@ chai.use(chaiHttp);
 // import FormData from 'form-data';
 
 
-let tokenSuper = '';
+let tokenUpdate = '';
 let tokenUser = '';
 let tokenAdmin = '';
 let id = 0, mealId = 0;
@@ -62,7 +62,7 @@ describe('/POST api/v1/auth/signup', () => {
         name: 'kenson',
         email: 'kenson@gmail.com',
         password: '12345',
-        role: 'superUser'
+        role: 'admin'
       })
       .end((err, res) => {
         res.should.have.status(201);
@@ -71,7 +71,7 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('name').eql('kenson');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        tokenSuper = res.body.token;
+        tokenAdmin = res.body.token;
         done();
       });
   });
@@ -93,6 +93,7 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('token');
         res.body.should.be.a('object');
         userId = res.body.id;
+        tokenUpdate = res.body.token;
         done();
       });
   });
@@ -116,10 +117,10 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  it('superUser should set firstUser as an admin', (done) => {
+  it('first User should update to admin', (done) => {
     chai.request(server)
-      .post(`/api/v1/auth/admin/${userId}`)
-      .set('authorization', tokenSuper)
+      .post(`/api/v1/auth/admin`)
+      .set('authorization', tokenUpdate)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('message');
@@ -323,7 +324,7 @@ describe('Testing of meal middleware and controller', () => {
     chai.request(server)
       .post('/api/v1/auth/signin')
       .send({
-        username: 'keneth',
+        username: 'kenson',
         password: '12345'
       })
       .end((err, res) => {

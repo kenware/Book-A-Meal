@@ -105,9 +105,37 @@ export default class orderController {
     const catererId = id;
     const orders = await Order.findAll({
       where: { catererId },
-      include: { model: User }
+      include: [
+        {
+          model: Meal,
+          attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
+        },
+        {
+          model: User,
+          attributes: ['id', 'name', 'username', 'image']
+        },
+      ]
     });
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'users have not ordered a meal' }); }
+    return res.status(200).json(orders);
+  }
+  async getUserOrders(req, res) {
+    const { id } = req.decoded;
+    const userId = id;
+    const orders = await Order.findAll({
+      where: { userId },
+      include: [
+        {
+          model: Meal,
+          attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
+        },
+        {
+          model: User,
+          attributes: ['id', 'name', 'username', 'image', 'role']
+        },
+      ]
+    });
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
     return res.status(200).json(orders);
   }
 }

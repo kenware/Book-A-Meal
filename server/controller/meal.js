@@ -1,8 +1,7 @@
-
-
+import Sequelize from 'sequelize';
 import model from '../models/index';
 
-const { Meal, User } = model;
+const { Meal, User, Order } = model;
 
 export default class mealController {
   async getMeals(req, res) {
@@ -83,7 +82,7 @@ export default class mealController {
     // get the meal to update
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+    if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
     const {
@@ -118,10 +117,28 @@ export default class mealController {
     }
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+    if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot delete meal you did not add' });
     }
     await meal.destroy();
     return res.status(200).json({ message: 'Meal successfully deleted' });
+  }
+  async getMostOrderMeals(req, res) {
+    const { limit } = req.params;
+    try {
+      const meal = await Order.findAll({
+        attributes: [
+          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'OrderCount']],
+        include: [{ model: Meal }],
+        group: ['Meal.id'],
+        order: [
+          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'DESC']
+        ],
+        limit
+      });
+      return res.json(meal);
+    } catch (err) {
+      return res.json(err);
+    }
   }
 }
