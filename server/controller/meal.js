@@ -29,7 +29,7 @@ export default class mealController {
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
+    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
     // trim empty spaces at the beginning and the end of the string

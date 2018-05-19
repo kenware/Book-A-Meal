@@ -23,7 +23,8 @@ chai.use(chaiHttp);
 let tokenUpdate = '';
 let tokenUser = '';
 let tokenAdmin = '';
-let id = 0, mealId = 0;
+let id = 0, mealId = 0, menuId = 1, orderId = 0;
+let id1;
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
     User.sync()
@@ -525,7 +526,6 @@ describe('Testing of meal middleware and controller', () => {
         description: 'good'
       })
       .end((err, res) => {
-
         res.body.should.have.property('message').eql('Meal does not exist');
         res.body.should.be.a('object');
         done();
@@ -565,7 +565,6 @@ describe('Testing of meal middleware and controller', () => {
   });
 });
 describe('Testing of Menu middleware and controller', () => {
-  let id1, id2 = 0;
   it('Admin user should POST a meal id1', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -596,7 +595,6 @@ describe('Testing of Menu middleware and controller', () => {
         res.should.have.status(201);
         res.body.should.be.a('object');
         res.body.should.have.property('name').eql('ogbono');
-        id2 = res.body.id;
         done();
       });
   });
@@ -680,7 +678,18 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
-  it('Admin should POST a menu', (done) => {
+  it('Admin user should  not Get a menu that is not set', (done) => {
+    chai.request(server)
+      .get('/api/v1/menu')
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should POST a menu', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
       .set('authorization', tokenAdmin)
@@ -694,6 +703,253 @@ describe('Testing of Menu middleware and controller', () => {
         res.body.should.have.property('message');
         res.body.should.have.property('menu');
         res.body.should.be.a('object');
+        menuId = res.body.menu.id;
+        done();
+      });
+  });
+  it('User should Get a menu', (done) => {
+    chai.request(server)
+      .get('/api/v1/menu')
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
+        done();
+      });
+  });
+});
+describe('Testing of Order middleware and controller', () => {
+  it('User should not order a meal without mealId', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: '',
+        menuId,
+        quantity: 2,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('mealId is required');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal without menuId', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId: '',
+        quantity: 2,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('menuId is required');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal without quantity', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId,
+        quantity: '',
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('quantity is required');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal without address', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId,
+        quantity: 2,
+        address: ''
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('address is required');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal with invalid menu id', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId: ' ',
+        quantity: 2,
+        address: 'no 19'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Please provide a valid menu id');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal with invalid meal id', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: '  hj',
+        menuId,
+        quantity: 2,
+        address: 'no 19'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Please provide a valid meal id');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal with invalid quantity input', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId,
+        quantity: 'hhjo',
+        address: 'no 19'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Please provide a valid quantity');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal with a meal id that does not exist', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: 200,
+        menuId,
+        quantity: 2,
+        address: 'no 19'
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message').eql('Meal not found');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not order a meal with a menu id that does not exist', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId: 200,
+        quantity: 2,
+        address: 'no 19'
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message').eql('Menu not found');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User order a meal', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        mealId: id1,
+        menuId,
+        quantity: 2,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.have.property('address').eql('no 19 reverend street');
+        res.body.should.have.property('totalPrice').eql(1110);
+        res.body.should.have.property('status').eql('pending');
+        res.body.should.be.a('object');
+        orderId = res.body.id;
+        done();
+      });
+  });
+  it('User should not update order with aa bad order id params', (done) => {
+    chai.request(server)
+      .put('/api/v1/orders/a')
+      .set('authorization', tokenUser)
+      .send({
+        quantity: 3,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Provide a valid order id');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should not update order with orderId that does not exist', (done) => {
+    chai.request(server)
+      .put('/api/v1/orders/200')
+      .set('authorization', tokenUser)
+      .send({
+        quantity: 3,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message').eql('Order not found');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('User should update an order', (done) => {
+    chai.request(server)
+      .put(`/api/v1/orders/${orderId}`)
+      .set('authorization', tokenUser)
+      .send({
+        quantity: 1,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.have.property('address').eql('no 19 reverend street');
+        res.body.should.have.property('totalPrice').eql(555);
+        res.body.should.have.property('status').eql('pending');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+  it('Admin should get all orders', (done) => {
+    chai.request(server)
+      .get('/api/v1/orders')
+      .set('authorization', tokenAdmin)
+      .send({
+        quantity: 3,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
         done();
       });
   });

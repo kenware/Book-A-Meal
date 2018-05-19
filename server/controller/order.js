@@ -18,7 +18,7 @@ export default class orderController {
       where: { id: parseInt(menuId) },
       include: { model: Meal }
     });
-    if (!menu) { return res.status(404).json('Menu not found'); }
+    if (!menu) { return res.status(404).json({ message: 'Menu not found' }); }
     // caterers id
     const { userId } = menu;
     const catererId = userId;
@@ -31,14 +31,14 @@ export default class orderController {
     // check if order time is expired
     if (orderBefore < Number(presentTime) || menu.date !== date) {
       return res.status(422)
-        .json('You cannot order menu at this time');
+        .json({ message: 'You cannot order menu at this time' });
     }
     let meal;
     // check if meal exist in the menu using mealId
     menu.Meals.forEach((element) => {
       if (element.id === parseInt(mealId)) { meal = element; }
     });
-    if (!meal) { return res.status(404).json('meal not found'); }
+    if (!meal) { return res.status(404).json({ message: 'Meal not found' }); }
 
     const { id } = req.decoded;
     const totalPrice = meal.price * quantity;
