@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import model from '../models';
 
 dotenv.config();
-//import secret from '../config/config';
 const secret = process.env.SECRET;
 const { User } = model;
 
@@ -47,7 +46,7 @@ export default class middleware {
     if (!username || /^[a-z0-9_]+$/i.test(username) === false) {
       return res.status(401).json({ message: 'Valid username is required' });
     }
-    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true || name.length < 5) {
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true) {
       return res.status(401).json({ message: 'valid name is required' });
     }
     if (!email) { return res.status(401).json({ message: 'Email is required' }); }

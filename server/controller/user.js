@@ -8,6 +8,8 @@ import model from '../models/index';
 dotenv.config();
 // import secret from '../config/config';
 const secret = process.env.SECRET;
+const passEmail = process.env.PASS;
+const userEmail = process.env.USER;
 const { Op } = sequelize;
 const { User } = model;
 
@@ -108,8 +110,8 @@ export default class userController {
         // port: 5000,
         secure: true, // use SSL
         auth: {
-          user: 'ejykken@gmail.com',
-          pass: 'ken_waredehydrogenase'
+          user: userEmail,
+          pass: passEmail// 'ken_waredehydrogenase'
         }
       });
       const mailoutput = `<html>\n\
@@ -148,6 +150,23 @@ export default class userController {
 
         return res.json(`Message sent: ${info.response}`);
       });
+    } catch (err) { return res.json(err); }
+  }
+  async resetPassword(req, res) {
+    const { id } = req.decoded;
+    const { password } = req.body;
+    if (!password) { return res.status(401).json({ message: 'Enter new password' }); }
+    if (/^\S+$/g.test(password) === false) {
+      return res.status(401).json({ message: 'Password cannot contain a space' });
+    }
+    try {
+      const user = await User.findById(id);
+      if (!user) { return res.status(401).json({ message: 'User not found' }); }
+      const update = await user.update({ password });
+      if (update) {
+        return res.status(201).json({ message: 'Password changed' });
+      }
+      return res.status(401).json({ message: 'Password reset failed' });
     } catch (err) { return res.json(err); }
   }
 }

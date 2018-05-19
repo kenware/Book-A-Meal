@@ -14,7 +14,9 @@ router.post('/auth/signup', validate.signup, User.createUser);
 router.post('/auth/signin', validate.signin, User.login);
 // send reset link to email
 router.post('/auth/resetLink', User.sendResetLink);
-// update user to admin
+// reset password
+router.post('/auth/reset', validate.authUser, User.resetPassword);
+// update user to admin 
 router.post('/auth/admin', validate.authUser, User.adminSignup);
 // get all users
 router.get('/auth/signin', validate.authAdmin, User.getUsers);
