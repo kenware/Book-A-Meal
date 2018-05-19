@@ -42,7 +42,6 @@ export default class menuController {
     if (!menu) {
       menu = await Menu.create({ title, date, orderBefore });
       menu.setUser(user);
-      menu.save();
       message = `${date} Menu is set`;
     } else {
       menu = await menu.update({ orderBefore, title });
@@ -56,11 +55,11 @@ export default class menuController {
         emailList.push(element.email);
       });
       // create notification when menu is set
-      //message = `${date} Menu is set by caterer ${username}`;
-      //const sendNotific = await notification.create({ message });
-      //if (!sendNotific) {
-      //  return res.status(401).json({ message: 'error sending notification' });
-      //}
+      message = `${date} Menu is set by caterer ${username}`;
+      const sendNotific = await notification.create({ message });
+      if (!sendNotific) {
+        return res.status(401).json({ message: 'error sending notification' });
+      }
       // send email notification when menu is set using nodemailer
       const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',

@@ -8,7 +8,12 @@ process.env.NODE_ENV = 'test';
 const should = chai.should();
 
 const {
-  User, Meal, Menu, Order
+  User,
+  Meal,
+  Menu,
+  Order,
+  MealMenu,
+  notification
 } = model;
 
 chai.use(chaiHttp);
@@ -41,6 +46,18 @@ describe('/POST api/v1/auth/signup', () => {
   });
   before((done) => {
     Order.sync()
+      .then(() => {
+        done();
+      });
+  });
+  before((done) => {
+    MealMenu.sync()
+      .then(() => {
+        done();
+      });
+  });
+  before((done) => {
+    notification.sync()
       .then(() => {
         done();
       });
