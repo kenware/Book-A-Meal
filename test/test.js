@@ -119,7 +119,7 @@ describe('/POST api/v1/auth/signup', () => {
   });
   it('first User should update to admin', (done) => {
     chai.request(server)
-      .post(`/api/v1/auth/admin`)
+      .post('/api/v1/auth/admin')
       .set('authorization', tokenUpdate)
       .end((err, res) => {
         res.should.have.status(201);
