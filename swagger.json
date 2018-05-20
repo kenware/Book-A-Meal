@@ -1,0 +1,1007 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Book a meal is an app that enable users order their  favorite meal.Just by a single click, your meal is on your door step.",
+    "version" : "0.2",
+    "title" : "Book-A-Meal-API"
+  },
+  "host" : "bookmeals.herokuappcom",
+  "tags" : [ {
+    "name" : "Register",
+    "description" : "New users should provide information like name, username,email,password. To register as a caterer role field as an admin should be supplied."
+  }, {
+    "name" : "Login",
+    "description" : "Existing users should enter  username and password."
+  }, {
+    "name" : "User Upgrade",
+    "description" : "Existing users can upgrade to a caterer."
+  }, {
+    "name" : "Meals",
+    "description" : "Caterer should Post, Update, or Delete a meal. Available to only caterers"
+  }, {
+    "name" : "Password Reset",
+    "description" : "Send password reset link to email"
+  }, {
+    "name" : "Menu",
+    "description" : "Caterer should be able to set(POST) a menu of the day and users should be able to Get menu of the day"
+  }, {
+    "name" : "Orders",
+    "description" : "Users should be able  order a meal. Caterers can get most ordered meals"
+  } ],
+  "paths" : {
+    "/api/v1/auth/signup" : {
+      "post" : {
+        "tags" : [ "Register" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model7"
+          },
+          "x-examples" : {
+            "application/json" : "{   \n    \"name\": \"sundayA\"\n    \"username\": \"sundayA\",\n    \"password\": \"12345\",\n    \"email\": \"sundaA@gmail.com\"\n}"
+          }
+        }, {
+          "name" : "signup",
+          "in" : "path",
+          "description" : "Example values form path are: 'signin' 'signup'",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "A new user should supply name, username, password and a valid email address.",
+            "schema" : {
+              "$ref" : "#/definitions/Model8"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/signin" : {
+      "post" : {
+        "tags" : [ "Login" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model20"
+          },
+          "x-examples" : {
+            "application/json" : "{   \n    \"username\": \"sundayA\",\n    \"password\": \"12345\"\n}"
+          }
+        }, {
+          "name" : "login",
+          "in" : "path",
+          "description" : "Example values form path are: 'signin'",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A new user should supply name, username, password and a valid email address.",
+            "schema" : {
+              "$ref" : "#/definitions/Model8"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/admin" : {
+      "get" : {
+        "tags" : [ "User Upgrade" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A user is updated to admin/caterer.role",
+            "schema" : {
+              "$ref" : "#/definitions/Model21"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/resetLink" : {
+      "post" : {
+        "tags" : [ "Password Reset" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model23"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"emailOrUsername\": \"kenson\"\n}"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A success message of sent password reset link",
+            "schema" : {
+              "$ref" : "#/definitions/Model24"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/meals" : {
+      "post" : {
+        "tags" : [ "Meals" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model3"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"name\": \"moi moi and rice\",\n    \"price\": 500,\n    \"description\": \"delicious\"\n}"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "The created meal is returne in the response",
+            "schema" : {
+              "$ref" : "#/definitions/Model10"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/meals/12" : {
+      "put" : {
+        "tags" : [ "Meals" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model1"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"name\": \"moi moi and meat\",\n    \"price\": 1000,\n    \"description\": \"delicious\"\n}"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Definition generated from Swagger Inspector",
+            "schema" : {
+              "$ref" : "#/definitions/Model11"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Meals" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model2"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"name\": \"moi moi and meat\",\n    \"price\": 1000,\n    \"description\": \"delicious\"\n}"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Definition generated from Swagger Inspector",
+            "schema" : {
+              "$ref" : "#/definitions/Model12"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/menu" : {
+      "get" : {
+        "tags" : [ "Menu" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The response contain a menu info and meal id of the menu",
+            "schema" : {
+              "$ref" : "#/definitions/Model22"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Menu" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model0"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"title\": \"today's menu\",\n    \"mealId\": 13,\n    \"orderBefore\": \"23\"\n}"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The response contain a menu info and meal id of the menu",
+            "schema" : {
+              "$ref" : "#/definitions/Model13"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mostOrder/meals/2" : {
+      "get" : {
+        "tags" : [ "Orders" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAsInVzZXJuYW1lIjoic3VuZGF5Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE1MjY3NjA2NjYsImV4cCI6MTUyNjg0NzA2Nn0.zTxQwZ9leP_NR4pB6MIGR8P8-gqpkhDV9Pda7HNJIOM'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAsInVzZXJuYW1lIjoic3VuZGF5Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE1MjY3NjA2NjYsImV4cCI6MTUyNjg0NzA2Nn0.zTxQwZ9leP_NR4pB6MIGR8P8-gqpkhDV9Pda7HNJIOM"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get the most ordered meal. the params entetered specifies the limit of the meal returned",
+            "schema" : {
+              "$ref" : "#/definitions/Model15"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders" : {
+      "post" : {
+        "tags" : [ "Orders" ],
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "authorization",
+          "in" : "header",
+          "description" : "Generated header parameter. Example value ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs'",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsInVzZXJuYW1lIjoic3VuZGF5QSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTUyNjc1OTQ0OSwiZXhwIjoxNTI2ODQ1ODQ5fQ.g4x9TT1Lm7idUSMLhEB4tCt3MFCbM20wA2IT9qwhrZs"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Model6"
+          },
+          "x-examples" : {
+            "application/json" : "{\n    \"title\": \"today's menu\",\n    \"mealId\": 13,\n    \"menuId\": 4,\n    \"quantity\": 2,\n    \"address\": \"10 Reverend street Ojo\"\n}"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "Definition generated from Swagger Inspector",
+            "schema" : {
+              "$ref" : "#/definitions/Model14"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Model9" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "image" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Meal" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "image" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "example" : {
+        "image" : "image",
+        "createdAt" : "createdAt",
+        "price" : 5,
+        "name" : "name",
+        "description" : "description",
+        "id" : 1,
+        "userId" : 5,
+        "updatedAt" : "updatedAt"
+      }
+    },
+    "Model12" : {
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "message" : "message"
+      }
+    },
+    "Array" : {
+      "properties" : {
+        "OrderCount" : {
+          "type" : "string"
+        },
+        "Meal" : {
+          "$ref" : "#/definitions/Meal"
+        }
+      }
+    },
+    "Model13" : {
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "menu" : {
+          "$ref" : "#/definitions/Menu"
+        }
+      },
+      "example" : {
+        "message" : "message",
+        "menu" : {
+          "date" : "date",
+          "createdAt" : "createdAt",
+          "orderBefore" : "orderBefore",
+          "id" : 0,
+          "title" : "title",
+          "userId" : 6,
+          "updatedAt" : "updatedAt"
+        }
+      }
+    },
+    "Model10" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "image" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "example" : {
+        "image" : "image",
+        "createdAt" : "createdAt",
+        "price" : 6,
+        "name" : "name",
+        "description" : "description",
+        "id" : 0,
+        "userId" : 1,
+        "updatedAt" : "updatedAt"
+      }
+    },
+    "Model11" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "example" : {
+        "createdAt" : "createdAt",
+        "price" : 6,
+        "name" : "name",
+        "description" : "description",
+        "id" : 0,
+        "userId" : 1,
+        "updatedAt" : "updatedAt"
+      }
+    },
+    "Model16" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Model17" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Model14" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "address" : {
+          "type" : "string"
+        },
+        "quantity" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalPrice" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "catererId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "mealId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "example" : {
+        "catererId" : 5,
+        "createdAt" : "createdAt",
+        "address" : "address",
+        "quantity" : 6,
+        "mealId" : 2,
+        "totalPrice" : 1,
+        "id" : 0,
+        "title" : "title",
+        "userId" : 5,
+        "status" : "status",
+        "updatedAt" : "updatedAt"
+      }
+    },
+    "Model0" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "mealId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "orderBefore" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "mealId" : 0,
+        "orderBefore" : "orderBefore",
+        "title" : "title"
+      }
+    },
+    "Model15" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Array"
+      }
+    },
+    "Model1" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "price" : 0,
+        "name" : "name",
+        "description" : "description"
+      }
+    },
+    "Model2" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "price" : 0,
+        "name" : "name",
+        "description" : "description"
+      }
+    },
+    "Model3" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "price" : 0,
+        "name" : "name",
+        "description" : "description"
+      }
+    },
+    "Model4" : {
+      "properties" : {
+        "password" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "role" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Menu" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "orderBefore" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "example" : {
+        "date" : "date",
+        "createdAt" : "createdAt",
+        "orderBefore" : "orderBefore",
+        "id" : 0,
+        "title" : "title",
+        "userId" : 6,
+        "updatedAt" : "updatedAt"
+      }
+    },
+    "Model6" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "mealId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "menuId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "quantity" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "address" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "mealId" : 0,
+        "quantity" : 1,
+        "address" : "address",
+        "menuId" : 6,
+        "title" : "title"
+      }
+    },
+    "Model7" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "name" : "name",
+        "id" : 0,
+        "email" : "email",
+        "username" : "username",
+        "token" : "token"
+      }
+    },
+    "Model8" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "name" : "name",
+        "id" : 0,
+        "email" : "email",
+        "username" : "username",
+        "token" : "token"
+      }
+    },
+    "Model20" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "id" : 0,
+        "username" : "username",
+        "token" : "token"
+      }
+    },
+    "Model21" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "setAdmin" : {
+          "$ref" : "#/definitions/Admin"
+        },
+        "token" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "id" : 0,
+        "message" : "message",
+        "setAdmin" : {
+          "name" : "name",
+          "id" : 6,
+          "email" : "email",
+          "username" : "username"
+        },
+        "token" : "token"
+      }
+    },
+    "Admin" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "name" : "name",
+        "id" : 6,
+        "email" : "email",
+        "username" : "username"
+      }
+    },
+    "Model22" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        },
+        "orderBefore" : {
+          "type" : "string"
+        },
+        "updatedAt" : {
+          "type" : "string"
+        },
+        "createdAt" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "meals" : {
+          "$ref" : "#/definitions/Meal"
+        }
+      },
+      "example" : {
+        "date" : "date",
+        "createdAt" : "createdAt",
+        "orderBefore" : "orderBefore",
+        "id" : 0,
+        "title" : "title",
+        "userId" : 6,
+        "updatedAt" : "updatedAt",
+        "meals" : {
+          "image" : "image",
+          "createdAt" : "createdAt",
+          "price" : 5,
+          "name" : "name",
+          "description" : "description",
+          "id" : 1,
+          "userId" : 5,
+          "updatedAt" : "updatedAt"
+        }
+      }
+    },
+    "Model23" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "emailOrUsername" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "emailOrUsername" : "emailOrUsername",
+        "id" : 0
+      }
+    },
+    "Model24" : {
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "message" : "message"
+      }
+    }
+  }
+}
