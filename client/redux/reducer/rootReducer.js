@@ -1,10 +1,10 @@
 
 import { combineReducers } from 'redux';
-import meals from './mealReducer';
+import mostOrder from './mealReducer';
 
 const rootReducer = combineReducers({
   // short hand property names
-  meals,
+  mostOrder,
 });
 
 export default rootReducer;

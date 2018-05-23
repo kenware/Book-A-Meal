@@ -48,6 +48,7 @@ export default class menuController {
       isMenuSet = true;
     }
     menu.addMeal(mealId);
+    //return res.json(menu);
     if (!isMenuSet) {
       // get all user to get the email of all users
       const allUser = await User.findAll();

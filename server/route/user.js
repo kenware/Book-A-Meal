@@ -19,5 +19,5 @@ router.post('/auth/reset', validate.authUser, User.resetPassword);
 // update user to admin 
 router.post('/auth/admin', validate.authUser, User.adminSignup);
 // get all users
-router.get('/auth/signin', validate.authAdmin, User.getUsers);
+router.get('/auth/users', validate.authAdmin, User.getUsers);
 export default router;
