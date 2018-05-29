@@ -13,6 +13,16 @@ export default class mealController {
     }
     return res.status(200).json(meals);
   }
+  async getOneMeal(req, res) {
+    const { id } = req.decoded;
+    const userId = id;
+    const { mealId } = req.params;
+    const meal = await Meal.findAll({ where: { userId, id: mealId } });
+    if (!meal) {
+      return res.status(401).json({ message: 'There is no meal in the list' });
+    }
+    return res.status(200).json(meal);
+  }
   async addMeal(req, res) {
     let { description, name } = req.body;
     const { price } = req.body;
@@ -67,8 +77,8 @@ export default class mealController {
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid description name' });
+    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
+      return res.status(400).json({ message: 'Please provide a valid description' });
     }
     if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Provide a valid meal id' });
@@ -85,23 +95,11 @@ export default class mealController {
     if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
-    const {
-      oldPrice,
-      oldName,
-      oldDescription,
-      oldImage,
-    } = meal;
-    if (!price) { price = oldPrice; }
-    if (!name) { name = oldName; }
-    if (!description) { description = oldDescription; }
-
+    
     // get file upload
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
-    } else {
-      // save original fileimage if no image is uploaded
-      image = oldImage;
     }
 
     const update = await meal.update({

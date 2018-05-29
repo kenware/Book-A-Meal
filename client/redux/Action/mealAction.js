@@ -37,7 +37,7 @@ export const register = (name, username, email, password) => (dispatch) => {
         return dispatch(loadErrorMessage({ registerError: response.message }));
       }
       auth.setAuth(response.token, response.username, response.id);
-     // return history.push('/admin');
+      return history.push('/admin');
     });
 };
 
@@ -56,8 +56,18 @@ export const login = (username, password) => (dispatch) => {
         return dispatch(loadErrorMessage({ loginError: response.message }));
       }
       auth.setAuth(response.token, response.username, response.id);
-      //return history.push('/admin');
+      return history.push('/admin');
     });
+};
+
+export const getAllMeals = () => (dispatch) => {
+  fetch('/api/v1/meals', {
+    headers: {
+      authorization: token
+    }
+  })
+    .then(res => res.json())
+    .then(meals => dispatch(loadAllMeals(meals)));
 };
 
 export const createMeal = payload => (dispatch) => {
@@ -73,19 +83,10 @@ export const createMeal = payload => (dispatch) => {
       if (response.message) {
         return dispatch(loadErrorMessage({ createMealError: response.message }));
       }
-      return dispatch(loadSuccessMessage({ createMealSuccess: 'Meal Successfully Created' }));
+      dispatch(getAllMeals());
+      dispatch(loadSuccessMessage({ createMealSuccess: 'Meal Successfully Created' }));
       // return history.push('/dashboard');
     });
-};
-
-export const getAllMeals = () => (dispatch) => {
-  fetch('/api/v1/meals', {
-    headers: {
-      authorization: token
-    }
-  })
-    .then(res => res.json())
-    .then(meals => dispatch(loadAllMeals(meals)));
 };
 export const deleteMeal = id => (dispatch) => {
   fetch(`/api/v1/meals/${id}`, {
@@ -101,7 +102,7 @@ export const deleteMeal = id => (dispatch) => {
     });
 };
 export const updateMeal = (id, payload) => (dispatch) => {
-  fetch(`/api/v1/meals${id}`, {
+  fetch(`/api/v1/meals/${id}`, {
     method: 'PUT',
     headers: {
       authorization: token
@@ -113,7 +114,9 @@ export const updateMeal = (id, payload) => (dispatch) => {
       if (response.message) {
         return dispatch(loadErrorMessage({ updateMealError: response.message }));
       }
+      dispatch(getAllMeals());
       return dispatch(loadSuccessMessage({ updateMealSuccess: 'Meal Successfully Updated' }));
+      
       // return history.push('/dashboard');
     });
 };

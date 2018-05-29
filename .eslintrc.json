@@ -16,6 +16,8 @@
       "no-param-reassign": 0,
       "comma-dangle": 0,
       "react/jsx-filename-extension": 0,
+      "react/jsx-label-has-for": 0,
+      "react/jsx-anchor-is-valid": 0,
       "radix": 0,
       "curly": ["error", "multi-line"],
       "import/no-unresolved": [2, { "commonjs": true }],

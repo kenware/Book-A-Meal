@@ -1,5 +1,10 @@
 export default {
   meals: [],
   mostOrder: [],
-  user: []
+  user: [],
+  errorMessage: [],
+  successMessage: [],
+  menu: [],
+  myOrder: [],
+  allOrder: []
 };

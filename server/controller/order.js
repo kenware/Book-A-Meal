@@ -64,6 +64,7 @@ export default class orderController {
   async updateOrder(req, res) {
     const newQuantity = req.body.quantity;
     const newAddress = req.body.address;
+    const newStatus = req.body.status;
     const { orderId } = req.params;
     if ((Number.isNaN(Number(orderId))) === true || (/^ *$/.test(orderId) === true)) {
       return res.status(401).json({ message: 'Provide a valid order id' });
@@ -91,12 +92,14 @@ export default class orderController {
       quantity,
       address,
       totalPrice,
+      status
     } = order;
     quantity = newQuantity || quantity;
     address = newAddress || address;
+    status = newStatus || status;
     totalPrice = (order.Meal.price * newQuantity) || totalPrice;
     // update
-    const update = await order.update({ quantity, address, totalPrice });
+    const update = await order.update({ quantity, address, totalPrice, status });
     if (!update) { return res.status(404).json({ message: 'Update failed' }); }
     return res.status(201).json(update);
   }
@@ -129,10 +132,9 @@ export default class orderController {
           model: Meal,
           attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
         },
-        {
-          model: User,
-          attributes: ['id', 'name', 'username', 'image', 'role']
-        },
+      ],
+      order: [
+        ['createdAt', 'DESC']
       ]
     });
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }

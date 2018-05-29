@@ -281,6 +281,9 @@ button:hover{
   .justify{
     text-align: justify;
   }
+  .text-center {
+    text-align: center;
+  }
     .testimonial-photo{
       margin: -4rem 0px 0px 40%;
       display: inline-block;
@@ -298,4 +301,8 @@ button:hover{
     }
    .m-text{
     font-size: 20px;
+  }
+  .top-bot-margin {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
   }

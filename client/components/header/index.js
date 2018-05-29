@@ -27,7 +27,7 @@ class Nav extends Component {
       <div>
         <div className={`nav ${this.state.responsive}`} id="myTopnav">
           <Link to="/meals" className="a active" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
-          <Link to="login.html" className="a">Login</Link>
+          <Link to="/login" className="a">Login</Link>
           <Link to="/register" className="a">SignUp</Link>
           <Link to="/meals" className="active a">Home</Link>
           <span className="a icon" onClick={this.onClick}><span className="fa fa-bars" /></span>
