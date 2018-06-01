@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'Recharts';
 import Dropzone from 'react-dropzone';
 import FormData from 'form-data';
 
 import * as mealActions from '../../redux/Action/mealAction';
+import * as actions from '../../redux/Action/action';
 import './index.scss';
 
 class Add extends Component {
@@ -30,6 +30,9 @@ class Add extends Component {
     if (newProps.errorMessage) {
       this.setState({ addMeal: 'Add Meal' });
     }
+  }
+  componentWillUnmount() {
+    this.props.actions.clearMessages();
   }
   onChange(e) {
     const { state } = this;
@@ -128,6 +131,9 @@ function mapStateToProps(state, ownProps) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return { mealActions: bindActionCreators(mealActions, dispatch) };
+  return {
+    mealActions: bindActionCreators(mealActions, dispatch),
+    actions: bindActionCreators(actions, dispatch)
+  };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Add);

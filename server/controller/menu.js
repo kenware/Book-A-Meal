@@ -56,7 +56,7 @@ export default class menuController {
         emailList.push(element.email);
       });
       // create notification when menu is set
-      message = `${date} Menu is set by caterer ${username}`;
+      message = `Today menu is set by caterer ${username}`;
       const sendNotific = await notification.create({ message });
       if (!sendNotific) {
         return res.status(401).json({ message: 'error sending notification' });

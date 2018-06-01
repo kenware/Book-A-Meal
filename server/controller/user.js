@@ -11,7 +11,7 @@ const secret = process.env.SECRET;
 const passEmail = process.env.PASS;
 const userEmail = process.env.USER;
 const { Op } = sequelize;
-const { User } = model;
+const { User, notification } = model;
 
 export default class userController {
   async createUser(req, res) {
@@ -32,7 +32,12 @@ export default class userController {
       return res.status(442).json({ message: 'Error signing up' });
     }
     const token = jwt.sign(
-      { id: user.id, username: user.username, role: user.role },
+      {
+        id: user.id,
+        username: user.username,
+        role: user.role,
+        image: user.image
+      },
       secret, { expiresIn: 86400 }
     );
     return res.status(201).json({
@@ -40,6 +45,7 @@ export default class userController {
       name: user.name,
       username: user.username,
       email: user.email,
+      role: user.role,
       token
     });
   }
@@ -56,12 +62,17 @@ export default class userController {
           {
             id: user.id,
             username: user.username,
-            role: user.role
+            role: user.role,
+            image: user.image
           },
           secret, { expiresIn: 86400 }
         );
         return res.status(200).json({
-          id: user.id, message: 'succesful login', token, username: user.username
+          id: user.id,
+          message: 'succesful login',
+          token,
+          username: user.username,
+          role: user.role
         });
       }
       return res.status(401).json({ message: 'Wrong credentials' });
@@ -80,12 +91,13 @@ export default class userController {
     const message = `${setAdmin.username} is set as admin`;
     return res.status(201).json({ message, setAdmin });
   }
-  async getUsers(req, res) {
-    const users = await User.findAll();
-    if (!users || users.length < 1) {
+  async getUser(req, res) {
+    const { id } = req.decoded;
+    const user = await User.findById(id);
+    if (!user) {
       return res.status(404).json({ message: 'users not found' });
     }
-    return res.status(200).json(users);
+    return res.status(200).json(user);
   }
   async sendResetLink(req, res) {
     const { emailOrUsername } = req.body;
@@ -168,5 +180,38 @@ export default class userController {
       }
       return res.status(401).json({ message: 'Password reset failed' });
     } catch (err) { return res.json(err); }
+  }
+  async userNotification(req, res) {
+    const { userId } = req.decoded;
+    const notifications = await notification.findAll({
+      where: {
+        [Op.or]: [
+          { userId },
+          { userId: null }
+        ]
+      },
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    });
+    return res.status(201).json(notifications);
+  }
+  async refreshToken(req, res) {
+    const token = jwt.sign(
+      {
+        username: req.decoded.username,
+        role: req.decoded.role,
+        id: req.decoded.id,
+        image: req.decoded.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    return res.status(200).json({
+      username: req.decoded.username,
+      role: req.decoded.role,
+      id: req.decoded.id,
+      image: req.decoded.image,
+      token
+    });
   }
 }

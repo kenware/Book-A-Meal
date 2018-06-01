@@ -19,5 +19,9 @@ router.post('/auth/reset', validate.authUser, User.resetPassword);
 // update user to admin 
 router.post('/auth/admin', validate.authUser, User.adminSignup);
 // get all users
-router.get('/auth/users', validate.authAdmin, User.getUsers);
+router.get('/auth/user', validate.authUser, User.getUser);
+// get notification
+router.get('/notifications', validate.authUser, User.userNotification);
+// refresh user token
+router.get('/refresh', validate.authUser, User.refreshToken);
 export default router;

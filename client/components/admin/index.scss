@@ -14,3 +14,13 @@
   .detail-text{
    margin-top:1rem;
   }
+  @media screen and (max-width: 600px) {
+  .largeScreen-header{
+     display: none;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .smallScreen-header{
+       display: none;
+      }
+    }

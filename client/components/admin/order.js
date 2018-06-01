@@ -35,10 +35,11 @@ class Orders extends Component {
     ];
 
     return (
-      <div className=" order-container" style={{ marginTop: '4rem' }}>
+      <div className="order-container" style={{ marginTop: '4rem', justifyContent: 'spaceAround' }}>
         <h2 style={{ marginTop: '4rem' }}>Overview Of Most Ordered Meal </h2>
+        <div className="order-wrapper">
         <AreaChart
-          width={730}
+          width={670}
           height={250}
           data={data}
           margin={{
@@ -62,6 +63,7 @@ class Orders extends Component {
           <Area type="monotone" dataKey="totalOrder" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
           <Area type="monotone" dataKey="price" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
         </AreaChart>
+        </div>
         <div className="order-wrapper">
           <h2 style={{ marginTop: '4rem' }}>ORDER HISTORY OF ALL USERS</h2>
 

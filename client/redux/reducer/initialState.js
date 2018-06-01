@@ -6,5 +6,6 @@ export default {
   successMessage: [],
   menu: [],
   myOrder: [],
-  allOrder: []
+  allOrder: [],
+  notifics: []
 };

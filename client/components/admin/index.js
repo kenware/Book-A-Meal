@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Route, Link } from 'react-router-dom';
 
 import Header from '../header/index';
+import Header2 from '../header/header2';
 import Footer from '../footer/index';
 import * as actions from '../../redux/Action/action';
 import * as mealActions from '../../redux/Action/mealAction';
@@ -37,6 +38,7 @@ class Admin extends Component {
     this.props.mealActions.getAllMeals();
     this.props.mealActions.loadMostOrderedMeal();
     this.props.orderActions.getAllOrders();
+    this.props.actions.refreshToken();
   }
   render() {
     const toggle = () => {
@@ -69,8 +71,12 @@ class Admin extends Component {
     };
     return (
       <div>
-        <Header />
-
+        <span className="largeScreen-header">
+          <Header />
+        </span>
+        <span className="smallScreen-header">
+          <Header2 />
+        </span>
         <div className="admin-container">
           <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
             <div>
@@ -91,10 +97,10 @@ class Admin extends Component {
                   <Link to="/admin/setmenu" className="y-color my-order">Set Menu</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <Link to="/profile" className="bar1 y-color ">Profile</Link>
+                  <Link to="/dashboard/profile" className="bar1 y-color ">Profile</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <Link to="/profile" className="set y-color">Change Password</Link>
+                  <Link to="/dashboard/profile" className="set y-color">Change Password</Link>
                 </li>
                 <li className="top-padding li-style">
                   <a href="javascript:void(0);" className="y-color">LogOut</a>
@@ -187,7 +193,7 @@ class Admin extends Component {
                 <h4 className="white-color">ADMIN</h4>
               </div>
               <div>
-                <h4 className="white-color">Keny</h4>
+                <h4 className="white-color">{localStorage.getItem('username')}</h4>
                 <img src="image/eze.jpg" className="user-img rounded-circle" />
               </div>
             </header>
@@ -213,7 +219,7 @@ function mapStateToProps(state, ownProps) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return { 
+  return {
     actions: bindActionCreators(actions, dispatch),
     mealActions: bindActionCreators(mealActions, dispatch),
     orderActions: bindActionCreators(orderActions, dispatch)

@@ -7,6 +7,7 @@ import Dropzone from 'react-dropzone';
 import FormData from 'form-data';
 
 import * as mealActions from '../../redux/Action/mealAction';
+import * as actions from '../../redux/Action/action';
 import './index.scss';
 
 class Edit extends Component {
@@ -42,6 +43,9 @@ class Edit extends Component {
         updateMeal: 'Update Meal'
       });
     }
+  }
+  componentWillUnmount() {
+    this.props.actions.clearMessages();
   }
   onChange(e) {
     const { state } = this;
@@ -153,6 +157,9 @@ function mapStateToProps(state, ownProps) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return { mealActions: bindActionCreators(mealActions, dispatch) };
+  return {
+    mealActions: bindActionCreators(mealActions, dispatch),
+    actions: bindActionCreators(actions, dispatch)
+  };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Edit);

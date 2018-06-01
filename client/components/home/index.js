@@ -45,9 +45,10 @@ class Home extends Component {
       state[e] = false;
       this.setState({ state });
     };
+    const home = 'home';
     return (
       <div>
-        <Header />
+        <Header home={home} />
         <div className="carousel-header">
           <div className="header-overlay" />
           <div className="caption">

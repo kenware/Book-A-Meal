@@ -37,6 +37,9 @@ class Register extends Component {
       this.setState({ signUp: 'SignUp' })
     }
   }
+  componentWillUnmount() {
+    this.props.actions.clearMessages();
+  }
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;

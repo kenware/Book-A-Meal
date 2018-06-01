@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './index.scss';
-import * as actions from '../../redux/Action/action.js';
+import * as actions from '../../redux/Action/action';
 import history from '../../history';
 import auth from '../../authenticate/auth';
 
 // const role = auth.getRole();
-class Nav extends Component {
+class Header3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,8 +27,7 @@ class Nav extends Component {
   }
   logout() {
     auth.logOut();
-    this.setState({ role: '' });
-    history.push('/login');
+    history.push('/meals');
   }
 
   render() {
@@ -36,26 +35,12 @@ class Nav extends Component {
       <div>
         <div className={`nav ${this.state.responsive}`} id="myTopnav">
           <Link to="/meals" className="a active" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
-          {this.state.role ?
-            <a href="javascript:void(0);" onClick={this.logout} className="a">LogOut</a>
-          : <span />}
-          {localStorage.getItem('username') ?
-             <Link to="/profile" className="a"><em className="fa fa-user"/> &nbsp;{localStorage.getItem('username')}</Link>
-          : <span />}
+          <a href="javascript:void(0);" onClick={this.logout} className="a">LogOut</a>
+          <Link to="/profile" className="a"><em className="fa fa-user"/> &nbsp;{localStorage.getItem('username')}</Link>
           {this.state.role === 'admin' ?
             <Link to="/admin" className="a">Admin</Link>
           : <span />}
-          {this.state.role === 'user' ?
-            <Link to="/dashboard" className="a">dashboard</Link>
-          : <span />}
-          {this.state.role ?
-            <span />
-          : <Link to="/login" className="a">Login</Link>
-            }
-          {this.state.role ?
-            <span />
-          : <Link to="/register" className="a">SignUp</Link>
-            }
+          <Link to="/dashboard/orders" className="a">My Orders</Link>
           <Link to="/meals" className="active a">Home</Link>
           <span className="a icon" onClick={this.onClick}><span className="fa fa-bars" /></span>
         </div>
@@ -74,4 +59,4 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) };
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default connect(mapStateToProps, mapDispatchToProps)(Header3);

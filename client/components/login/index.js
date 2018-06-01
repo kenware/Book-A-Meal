@@ -26,6 +26,9 @@ class Login extends Component {
       this.setState({ login: 'Login' });
     }
   }
+  componentWillUnmount() {
+    this.props.actions.clearMessages();
+  }
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
@@ -56,6 +59,7 @@ class Login extends Component {
           <div className="register-wrapper">
             <h2 className="login-header">Enter your details to Login</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
+            <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>
             <form action="dashboard.html">
               <div className="form-field">
                 <label htmlFor="name">

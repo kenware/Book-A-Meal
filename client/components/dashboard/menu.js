@@ -35,6 +35,9 @@ class Menu extends Component {
       this.setState({ modal: 'modal', order: 'Order' });
     }
   }
+    componentWillUnmount() {
+    this.props.actions.clearMessages();
+  }
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;

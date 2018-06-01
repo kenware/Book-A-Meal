@@ -4,12 +4,15 @@ import { bindActionCreators } from 'redux';
 import { Route, Link } from 'react-router-dom';
 
 import Header from '../header/index';
+import Header3 from '../header/header3';
 import Menu from './menu';
 import Orders from './order';
 import Footer from '../footer/index';
+import Profile from './profile';
 import './index.scss';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
+import * as actions from '../../redux/Action/action';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -25,13 +28,51 @@ class Dashboard extends Component {
       profile: 'profile',
       notific: 'notific',
       logOut: 'logOut',
-      order: 'order'
+      order: 'order',
+      limit: 4,
+      upgradeModal: 'modal',
+      upgradeButton: 'Upgrade'
     };
+    this.notific = this.notific.bind(this);
+    this.upgrade = this.upgrade.bind(this);
+    this.confirmUpgrade = this.confirmUpgrade.bind(this);
+    this.cancelUpgrade = this.cancelUpgrade.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.menuActions.getMenu();
+    this.props.actions.getNotifications();
+    this.props.orderActions.getMyOrder();
+    this.props.actions.refreshToken('role');
+  }
+  componentWillReceiveProps(newProps) {
+    if (newProps.successMessage.upgradeSuccess) {
+      this.setState({ upgradeModal: 'modal' });
+    }
+  }
+  notific() {
+    let { limit } = this.state;
+    limit += 4;
+  }
+  cancelUpgrade() {
+    this.setState({ upgradeModal: 'modal' });
+  }
+  confirmUpgrade() {
+    this.props.actions.upgrade();
+    this.setState({
+      upgradeButton: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
+    });
+  }
+  upgrade() {
+    this.setState({ upgradeModal: '' });
   }
   render() {
+    const monthNames = [
+      'January', 'February', 'March',
+      'April', 'May', 'June',
+      'July', 'August', 'September',
+      'October', 'November', 'December'
+    ];
+
     const toggle = () => {
       if (this.state.nav1 === '') {
         this.setState({
@@ -61,14 +102,24 @@ class Dashboard extends Component {
     };
     return (
       <div>
-        <Header />
-
+        <span className="largeScreen-header">
+          <Header />
+        </span>
+        <span className="smallScreen-header">
+          <Header3 />
+        </span>
         <div className="admin-container">
           <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
             <div>
               <em className="fa fa-bars l-r-pad-text m-text bar1" onClick={() => toggle()} />
               <h3 className="y-color l-r-pad-text">Book-A-Meal</h3>
               <ul>
+                {localStorage.getItem('role') === 'admin' ?
+                  <li className="top-padding li-style">
+                    <Link to="/admin" className="y-color">Admin</Link>
+
+                  </li>
+                : <span />}
                 <li className="top-padding li-style">
                   <Link to="/dashboard" className="y-color">Dashboard</Link>
 
@@ -80,10 +131,10 @@ class Dashboard extends Component {
                   <a onClick={() => toggle()} href="javascript:void(0);" className="bar1 y-color ">Notification</a>
                 </li>
                 <li className="top-padding li-style">
-                  <Link to="/profile" className="bar1 y-color ">Profile</Link>
+                  <Link to="/dashboard/profile" className="bar1 y-color ">Profile</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <Link to="/profile" className="set y-color">Change Password</Link>
+                  <Link to="/dashboard/profile" className="set y-color">Change Password</Link>
                 </li>
                 <li className="top-padding li-style">
                   <a href="javascript:void(0);" className="y-color">LogOut</a>
@@ -93,13 +144,13 @@ class Dashboard extends Component {
           </nav>
           <nav className={`sidebar sidebar2-width ${this.state.nav2}`}>
             <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar2" onClick={() => toggle()} />
-              <h1 className="l-r-pad-text"><a href="index.html"><em className="white-color fa fa-home" /></a></h1>
-              <ul className="list-type">
+              <em className="fa fa-bars l-r-pad-text m-text bar2 y-color" onClick={() => toggle()} />
+              <h1 className="l-r-pad-text"><a href="index.html"><em className="y-color fa fa-home" /></a></h1>
+              <ul className="y-color">
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard"
-                    className="white-color dashboard"
+                    className="y-color dashboard"
                     onMouseLeave={() => handleClose('dash')}
                     onMouseEnter={() => handleClick('dash')}
                   ><em className="fa fa-dashboard" />
@@ -109,7 +160,7 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard/orders"
-                    className="white-color m-text "
+                    className="y-color m-text "
                     onMouseLeave={() => handleClose('order')}
                     onMouseEnter={() => handleClick('order')}
                   ><em className="fa fa-calendar-o popover all-meal" />
@@ -119,7 +170,7 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <a
                     href="javascript:void(0);"
-                    className=" white-color m-text"
+                    className="y-color m-text"
                     onMouseLeave={() => handleClose('notific')}
                     onMouseEnter={() => handleClick('notific')}
                   ><em className="fa fa-bell notif" />
@@ -129,7 +180,7 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <Link
                     to="dashboard/profile"
-                    className="white-color m-text"
+                    className="y-color m-text"
                     onMouseLeave={() => handleClose('profile')}
                     onMouseEnter={() => handleClick('profile')}
                   ><em className="fa fa-user add-meal" />
@@ -139,7 +190,7 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <Link
                     to="dashboard/profile"
-                    className="white-color m-text"
+                    className="y-color m-text"
                     onMouseLeave={() => handleClose('cPassword')}
                     onMouseEnter={() => handleClick('cPassword')}
                   ><em className="fa fa-edit set-meal" />
@@ -149,7 +200,7 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <a
                     href="javascript:void(0);"
-                    className="white-color m-text"
+                    className="y-color m-text"
                     onMouseLeave={() => handleClose('logOut')}
                     onMouseEnter={() => handleClick('logOut')}
                   ><em className="fa fa-power-off logout" />
@@ -164,24 +215,45 @@ class Dashboard extends Component {
             <header className="header">
               <div className="l-r-pad-text">
                 <h4 className="white-color">USER DASHBOARD</h4>
+                { localStorage.getItem('role') === 'user' ?
+                  <span onClick={this.upgrade} className="y-color" role="button"> Upgrade To A Caterer ?</span>
+                : <Link to="/admin" className="y-color">Manage your meals</Link>
+                }
               </div>
               <div>
-                <h4 className="white-color">Keny</h4>
+                <h4 className="white-color">{localStorage.getItem('username')}</h4>
                 <img src="image/eze.jpg" className="user-img rounded-circle" />
               </div>
               <div className="notification1">
                 <a href="javascript:void(0);" className="" onClick={() => toggle()}>
                   <h4 className="white-color">Notification</h4>
-                  <em className="fa fa-bars l-r-pad-text white-color" />
+                  <em className="fa fa-bars l-r-pad-text y-color" />
                 </a>
               </div>
 
             </header>
-            
+
             <div className="content-container">
+              <div className={`modal-order ${this.state.upgradeModal}`}>
+                <button
+                  style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
+                  className="remove-modal"
+                  onClick={this.cancelUpgrade}
+                >
+                  &times;
+                </button>
+                <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
+                  <p className="justify l-r-pad-text"> You are about to upgrade to admin/Caterer</p>
+                  <p className="justify l-r-pad-text danger">{this.props.errorMessage.upgradeError}</p>
+                </div>
+                <div className="modal-order-content">
+                  <button className="remove-modal" onClick={this.confirmUpgrade}>{this.state.upgradeButton}</button><button onClick={this.cancelUpgrade}className="remove-modal">Cancel</button>
+                </div>
+              </div>
+              
               <Route exact path="/dashboard" component={Menu} />
               <Route exact path="/dashboard/orders" component={Orders} />
-              
+              <Route exact path="/dashboard/profile" component={Profile} />
               <div className={`timeline-container ${this.state.timeline}`}>
                 <h2>Timeline</h2>
                 <ul className="timeline" >
@@ -202,7 +274,11 @@ class Dashboard extends Component {
                           <li>
                             <span className="h2-color">Update profile</span>
                           </li>
-                          <li><span className="h2-color">Change Password</span></li>
+                          <li><span className="h2-color" role="button"> Change Password</span></li>
+                          {localStorage.getItem('role') === 'user' ?
+                            <li><button onClick={this.upgrade} className="p-color" role="button"> Upgrade To A Caterer</button></li>
+                          : <span />
+                          }
                         </ul>
                       </div>
                     </div>
@@ -216,9 +292,18 @@ class Dashboard extends Component {
                       <div className="timeline-body">
                         <p>
                           <ul>
+                            {this.props.notifics.map(notific =>
+                              (
+                                <li style={{ marginTop: '1rem' }}>
+                                  <div className="p-color">{notific.message}</div>
+                                  <div>
+                                    {monthNames[new Date(notific.createdAt).getMonth()].substr(0, 3)}&nbsp;
+                                    {new Date(notific.createdAt).getDate()} &nbsp; {new Date(notific.createdAt).getFullYear()}
+                                  </div>
+                                </li>
+                              ))}
                             <li>
-                             Jollof rice, new italian recipe is just added
-                             to monday meal menu.Order <a href="dashboard.html">now</a>
+                              <button onClick={this.notific}> Load Prev </button>
                             </li>
                           </ul>
                         </p>
@@ -246,7 +331,7 @@ class Dashboard extends Component {
                 </ul>
 
               </div>
-              
+
             </div>
             <Footer />
           </main>
@@ -260,14 +345,19 @@ class Dashboard extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
+  let { notifics } = state;
+  notifics = notifics.slice(0, 4);
   return {
-    errorMessage: state.errorMessage
+    errorMessage: state.errorMessage,
+    successMessage: state.successMessage,
+    notifics
   };
 }
 function mapDispatchToProps(dispatch) {
   return {
     menuActions: bindActionCreators(menuActions, dispatch),
-    orderActions: bindActionCreators(orderActions, dispatch)
+    orderActions: bindActionCreators(orderActions, dispatch),
+    actions: bindActionCreators(actions, dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

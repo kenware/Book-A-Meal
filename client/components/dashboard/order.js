@@ -21,15 +21,15 @@ class Orders extends Component {
       modal: 'modal',
       modifyOrder: 'Modify',
       statusModal: 'modal',
-      modifyError: ''
+      modifyError: '',
+      confirmButton: 'Confirm'
     };
     this.onChange = this.onChange.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
     this.modify = this.modify.bind(this);
+    this.confirmStatus = this.confirmStatus.bind(this);
   }
-  componentWillMount() {
-    this.props.orderActions.getMyOrder();
-  }
+
   componentWillReceiveProps(newProps) {
     if (newProps.errorMessage.updateError) {
       this.setState({
@@ -39,15 +39,21 @@ class Orders extends Component {
     } else if (newProps.successMessage.updateSuccess) {
       this.cancelOrder();
     }
+    else if (newProps.successMessage.confirmSuccess) {
+      this.cancelOrder();
+    }
   }
+
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+
   handleClick(e) {
     this.setState({ open: !this.state.open });
   }
+
   handleClose(e) {
     this.setState({ open: false });
   }
@@ -60,8 +66,14 @@ class Orders extends Component {
       price: '',
       statusModal: 'modal',
       modifyError: '',
-      modifyOrder: 'Modify'
+      modifyOrder: 'Modify',
+      confirmButton: 'Confirm'
     });
+  }
+  confirmStatus() {
+    const { orderId } = this.state;
+    this.props.orderActions.confirmStatus(orderId);
+    this.setState({ confirmButton: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>) });
   }
   modify() {
     const {
@@ -96,6 +108,7 @@ class Orders extends Component {
     };
     return (
       <div className="order-wrapper order-container">
+        <div style={{margin: '1rem 1rem 1rem 1rem'}}>
         <div className={`modal-order ${this.state.statusModal}`}>
           <button
             style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
@@ -105,10 +118,10 @@ class Orders extends Component {
             &times;
           </button>
           <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
-            <p className="justify l-r-pad-text"> Confirm that {this.state.mealName} is delivered</p>
+            <p className="justify l-r-pad-text"> Confirm{this.state.orderId} that you have received ' {this.state.mealName} '</p>
           </div>
           <div className="modal-order-content">
-            <button className="remove-modal" onClick={this.modify}>Confirm</button><button onClick={this.cancelOrder}className="remove-modal">Cancel</button>
+            <button className="remove-modal" onClick={this.confirmStatus}>{this.state.confirmButton}</button><button onClick={this.cancelOrder}className="remove-modal">Cancel</button>
           </div>
         </div>
         <div className={`modal-order ${this.state.modal}`}>
@@ -208,6 +221,7 @@ class Orders extends Component {
               ))}
           </tbody>
         </table>
+      </div>
       </div>
     );
   }
