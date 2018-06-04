@@ -10,7 +10,7 @@ import './index.scss';
 import * as actions from '../../redux/Action/action';
 
 
-class Register extends Component {
+export class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -102,7 +102,7 @@ class Register extends Component {
             <h2 className="login-header">Enter your details to SignUp</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.registerError }</h3>
             <h3 className="text-center danger">{this.state.message }</h3>
-            <form action="dashboard.html">
+            <form className="register">
               <div className="form-field">
                 <label htmlFor="name">Fullname</label>
                 <input onChange={this.onChange} type="text" id="name" name="name" placeholder="Eze Kevin" required />
@@ -115,22 +115,22 @@ class Register extends Component {
                 <label htmlFor="name">Email<br />
                   <font color="red">{this.state.validEmail} </font>
                 </label>
-                <input onChange={this.onEmail} type="email" name="email" placeholder="Keny" required />
+                <input onChange={this.onEmail} type="email" name="email" placeholder="Keny" id="email" required />
 
               </div>
               <div className="form-field">
                 <label htmlFor="password">Password</label>
-                <input onChange={this.onChange} type="password" name="password" required />
+                <input onChange={this.onChange} type="password" name="password" id="password" required />
               </div>
               <div className="form-field">
                 <label htmlFor="password">Confirm Password<br />
                   <font color="green">{this.state.passwordmatch }</font>
                   <font color="red">{this.state.passwordmismatch }</font>
                 </label>
-                <input onChange={this.change} type="password" name="vpassword" required />
+                <input onChange={this.change} type="password" name="vpassword" id="vpassword"required />
               </div>
               <div className="form-field">
-                <button type="submit" className="button lg" onClick={this.register}>{this.state.signUp}</button>
+                <button type="submit" className="button lg submit" onClick={this.register}>{this.state.signUp}</button>
               </div>
               <div className="form-field">
                 <label htmlFor="inputPassword3">

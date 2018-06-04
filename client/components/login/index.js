@@ -8,7 +8,7 @@ import Footer from '../footer/index';
 import * as actions from '../../redux/Action/action';
 
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.login = this.login.bind(this);
   }
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.errorMessage.loginError) {
       this.setState({ login: 'Login' });
     }
@@ -60,7 +60,7 @@ class Login extends Component {
             <h2 className="login-header">Enter your details to Login</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
             <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>
-            <form action="dashboard.html">
+            <form action="dashboard.html" className="login">
               <div className="form-field">
                 <label htmlFor="name">
                   Username <br />
@@ -74,7 +74,7 @@ class Login extends Component {
                   Password <br />
                   <span className="text-center danger">{this.state.passField }</span>
                 </label>
-                <input onChange={this.onChange} type="password" name="password" required />
+                <input onChange={this.onChange} type="password" name="password" id="password" required />
               </div>
               <div className="form-field">
                 <button name="submit" type="submit" className="button lg" onClick={this.login}>{this.state.login}</button>

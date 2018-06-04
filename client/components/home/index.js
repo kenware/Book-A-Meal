@@ -7,10 +7,10 @@ import ReactCardFlip from 'react-card-flip';
 import Header from '../header/index';
 import Footer from '../footer/index';
 import './index.scss';
-import * as actions from '../../redux/Action/action';
+//import * as actions from '../../redux/Action/action';
+import { loadMostOrderedMeal } from '../../redux/Action/action';
 
-
-class Home extends Component {
+export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ class Home extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   componentWillMount() {
-    this.props.actions.loadMostOrderedMeal();
+    this.props.loadMostOrderedMeal();
   }
 
   onChange(e) {
@@ -165,6 +165,7 @@ class Home extends Component {
               <div className="meal-menu-flip">
                 <ReactCardFlip isFlipped={this.state[meal.Meal.id]}>
                   <div
+                    id="flip-card"
                     key="front"
                     onMouseEnter={() => handleClick(meal.Meal.id)}
                   >
@@ -236,6 +237,6 @@ function mapStateToProps(state, ownProps) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
+  return { loadMostOrderedMeal: bindActionCreators(loadMostOrderedMeal, dispatch) };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,0 +1,1405 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Home Component it should flip card on mouseEnter event 1`] = `
+<div>
+  <Connect(Nav)
+    home="home"
+  />
+  <div
+    className="carousel-header"
+  >
+    <div
+      className="header-overlay"
+    />
+    <div
+      className="caption"
+    >
+      <h3
+        className="lead"
+      >
+        Book A Meal Today
+      </h3>
+      <p
+        className="lead"
+      >
+        Health is wealth!
+      </p>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <h2>
+      BOOK A MEAL IN THREE EASY STEPS
+    </h2>
+    <div
+      className="all-meal-step"
+    >
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            SignUp/SignIn
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            Order A Meal
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div>
+            <img
+              alt="meal"
+              className="rounded-circle"
+              id="App-logo"
+              src="image/l.png"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <br />
+          <span>
+            Hot Fresh Meal
+          </span>
+        </div>
+      </div>
+    </div>
+    <h2>
+      Recommended meals
+    </h2>
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-card"
+        >
+          <div
+            className="meal-img-wrap"
+          >
+            <div
+              className="meal-overlay"
+            />
+            <img
+              alt="Avatar"
+              className="meal-card-img"
+              src="image"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text"
+          >
+            <h4
+              className="p-color"
+            >
+              <b>
+                $
+                400
+              </b>
+            </h4>
+            <p>
+              rice
+            </p>
+            <Link
+              replace={false}
+              to="/detail/undefined"
+            >
+              View
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="parallex"
+  >
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-dashboard fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Dashboard
+          </h2>
+          <p
+            className="white-color"
+          >
+            Enter your dashboard to perform awesome functionality which include ordering for a meal, adding meal options from meal menu
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/dashbord"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-rocket fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Login/SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/login"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-user fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            SignUp to get started. Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/register"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginBottom": "2rem",
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-flip"
+        >
+          <ReactCardFlip
+            cardStyles={
+              Object {
+                "back": Object {},
+                "front": Object {},
+              }
+            }
+            flipSpeedBackToFront={0.6}
+            flipSpeedFrontToBack={0.6}
+            infinite={false}
+            isFlipped={false}
+          >
+            <div
+              id="flip-card"
+              key="front"
+              onMouseEnter={[Function]}
+            >
+              <img
+                alt="Avatar"
+                className="meal-card-img"
+                src="image"
+              />
+            </div>
+            <div
+              key="back"
+              onMouseLeave={[Function]}
+            >
+              <h2>
+                rice
+              </h2>
+              <h2>
+                Price: 
+                400
+              </h2>
+              <p
+                className="justify l-r-pad-text"
+              >
+                good...
+              </p>
+            </div>
+          </ReactCardFlip>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="user-testimonial"
+  >
+    <br />
+    <br />
+    <h2>
+      WHAT OUR FANTASTIC USERS SAY
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Best site to get latest recipe with just a click
+      <br />
+      <br />
+    </h4>
+    <div
+      className="testimonial-wrap"
+    >
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/eze.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify text-pad"
+          >
+            Book-A-Meal is just amazing!. For the first time i can book for any meal by a single click any where around the world, without having to go to any  resturant .This is really awesome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Kevin
+            </h2>
+            <p
+              className="text-center white-color"
+            >
+              Developer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/face1.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify l-r-pad-text"
+          >
+            Book-A-Meal is  awesome!.This have preventd the stress of having to go down the street from one resturant to another, i have my favorite delivered to my door step b a single click.This is really awsome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Jessica Jones
+            </h2>
+            <p
+              className="white-color text-center"
+            >
+              Actor
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Home Component it should flip card on mouseEnter event 2`] = `
+<div>
+  <Connect(Nav)
+    home="home"
+  />
+  <div
+    className="carousel-header"
+  >
+    <div
+      className="header-overlay"
+    />
+    <div
+      className="caption"
+    >
+      <h3
+        className="lead"
+      >
+        Book A Meal Today
+      </h3>
+      <p
+        className="lead"
+      >
+        Health is wealth!
+      </p>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <h2>
+      BOOK A MEAL IN THREE EASY STEPS
+    </h2>
+    <div
+      className="all-meal-step"
+    >
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            SignUp/SignIn
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            Order A Meal
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div>
+            <img
+              alt="meal"
+              className="rounded-circle"
+              id="App-logo"
+              src="image/l.png"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <br />
+          <span>
+            Hot Fresh Meal
+          </span>
+        </div>
+      </div>
+    </div>
+    <h2>
+      Recommended meals
+    </h2>
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-card"
+        >
+          <div
+            className="meal-img-wrap"
+          >
+            <div
+              className="meal-overlay"
+            />
+            <img
+              alt="Avatar"
+              className="meal-card-img"
+              src="image"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text"
+          >
+            <h4
+              className="p-color"
+            >
+              <b>
+                $
+                400
+              </b>
+            </h4>
+            <p>
+              rice
+            </p>
+            <Link
+              replace={false}
+              to="/detail/undefined"
+            >
+              View
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="parallex"
+  >
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-dashboard fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Dashboard
+          </h2>
+          <p
+            className="white-color"
+          >
+            Enter your dashboard to perform awesome functionality which include ordering for a meal, adding meal options from meal menu
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/dashbord"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-rocket fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Login/SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/login"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-user fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            SignUp to get started. Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/register"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginBottom": "2rem",
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-flip"
+        >
+          <ReactCardFlip
+            cardStyles={
+              Object {
+                "back": Object {},
+                "front": Object {},
+              }
+            }
+            flipSpeedBackToFront={0.6}
+            flipSpeedFrontToBack={0.6}
+            infinite={false}
+            isFlipped={true}
+          >
+            <div
+              id="flip-card"
+              key="front"
+              onMouseEnter={[Function]}
+            >
+              <img
+                alt="Avatar"
+                className="meal-card-img"
+                src="image"
+              />
+            </div>
+            <div
+              key="back"
+              onMouseLeave={[Function]}
+            >
+              <h2>
+                rice
+              </h2>
+              <h2>
+                Price: 
+                400
+              </h2>
+              <p
+                className="justify l-r-pad-text"
+              >
+                good...
+              </p>
+            </div>
+          </ReactCardFlip>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="user-testimonial"
+  >
+    <br />
+    <br />
+    <h2>
+      WHAT OUR FANTASTIC USERS SAY
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Best site to get latest recipe with just a click
+      <br />
+      <br />
+    </h4>
+    <div
+      className="testimonial-wrap"
+    >
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/eze.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify text-pad"
+          >
+            Book-A-Meal is just amazing!. For the first time i can book for any meal by a single click any where around the world, without having to go to any  resturant .This is really awesome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Kevin
+            </h2>
+            <p
+              className="text-center white-color"
+            >
+              Developer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/face1.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify l-r-pad-text"
+          >
+            Book-A-Meal is  awesome!.This have preventd the stress of having to go down the street from one resturant to another, i have my favorite delivered to my door step b a single click.This is really awsome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Jessica Jones
+            </h2>
+            <p
+              className="white-color text-center"
+            >
+              Actor
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Home Component renders correctly 1`] = `
+<div>
+  <Connect(Nav)
+    home="home"
+  />
+  <div
+    className="carousel-header"
+  >
+    <div
+      className="header-overlay"
+    />
+    <div
+      className="caption"
+    >
+      <h3
+        className="lead"
+      >
+        Book A Meal Today
+      </h3>
+      <p
+        className="lead"
+      >
+        Health is wealth!
+      </p>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <h2>
+      BOOK A MEAL IN THREE EASY STEPS
+    </h2>
+    <div
+      className="all-meal-step"
+    >
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            SignUp/SignIn
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            Order A Meal
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div>
+            <img
+              alt="meal"
+              className="rounded-circle"
+              id="App-logo"
+              src="image/l.png"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <br />
+          <span>
+            Hot Fresh Meal
+          </span>
+        </div>
+      </div>
+    </div>
+    <h2>
+      Recommended meals
+    </h2>
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-card"
+        >
+          <div
+            className="meal-img-wrap"
+          >
+            <div
+              className="meal-overlay"
+            />
+            <img
+              alt="Avatar"
+              className="meal-card-img"
+              src="image"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text"
+          >
+            <h4
+              className="p-color"
+            >
+              <b>
+                $
+                400
+              </b>
+            </h4>
+            <p>
+              rice
+            </p>
+            <Link
+              replace={false}
+              to="/detail/undefined"
+            >
+              View
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="parallex"
+  >
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-dashboard fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Dashboard
+          </h2>
+          <p
+            className="white-color"
+          >
+            Enter your dashboard to perform awesome functionality which include ordering for a meal, adding meal options from meal menu
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/dashbord"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-rocket fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            Login/SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/login"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="parallex-menu"
+    >
+      <div
+        className="parallex-img"
+      >
+        <span
+          className="fa fa-user fa-4x white-color"
+          style={
+            Object {
+              "marginLeft": "40%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="parallex-card"
+      >
+        <div
+          className="container"
+        >
+          <br />
+          <h2
+            className="white-color"
+          >
+            SignUp
+          </h2>
+          <p
+            className="p-style"
+          >
+            SignUp to get started. Login to order menu of your choice with just a single click
+          </p>
+        </div>
+        <div
+          className="parallex-footer"
+        >
+          <button>
+            <Link
+              replace={false}
+              to="/register"
+            >
+               more
+            </Link>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginBottom": "2rem",
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+      >
+        <div
+          className="meal-menu-flip"
+        >
+          <ReactCardFlip
+            cardStyles={
+              Object {
+                "back": Object {},
+                "front": Object {},
+              }
+            }
+            flipSpeedBackToFront={0.6}
+            flipSpeedFrontToBack={0.6}
+            infinite={false}
+            isFlipped={false}
+          >
+            <div
+              id="flip-card"
+              key="front"
+              onMouseEnter={[Function]}
+            >
+              <img
+                alt="Avatar"
+                className="meal-card-img"
+                src="image"
+              />
+            </div>
+            <div
+              key="back"
+              onMouseLeave={[Function]}
+            >
+              <h2>
+                rice
+              </h2>
+              <h2>
+                Price: 
+                400
+              </h2>
+              <p
+                className="justify l-r-pad-text"
+              >
+                good...
+              </p>
+            </div>
+          </ReactCardFlip>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="user-testimonial"
+  >
+    <br />
+    <br />
+    <h2>
+      WHAT OUR FANTASTIC USERS SAY
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Best site to get latest recipe with just a click
+      <br />
+      <br />
+    </h4>
+    <div
+      className="testimonial-wrap"
+    >
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/eze.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify text-pad"
+          >
+            Book-A-Meal is just amazing!. For the first time i can book for any meal by a single click any where around the world, without having to go to any  resturant .This is really awesome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Kevin
+            </h2>
+            <p
+              className="text-center white-color"
+            >
+              Developer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="user-testimonial-menu"
+        >
+          <div
+            className="testimonial-photo"
+          >
+            <img
+              alt="profile"
+              className="rounded-circle"
+              src="image/face1.jpg"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <p
+            className="justify l-r-pad-text"
+          >
+            Book-A-Meal is  awesome!.This have preventd the stress of having to go down the street from one resturant to another, i have my favorite delivered to my door step b a single click.This is really awsome.
+          </p>
+          <div
+            className="container"
+          >
+            <h2
+              className="white-color"
+            >
+              Jessica Jones
+            </h2>
+            <p
+              className="white-color text-center"
+            >
+              Actor
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer />
+</div>
+`;
