@@ -41,7 +41,6 @@ class Dashboard extends Component {
   componentDidMount() {
     this.props.menuActions.getMenu();
     this.props.actions.getNotifications();
-    this.props.orderActions.getMyOrder();
     this.props.actions.refreshToken('role');
   }
   componentWillReceiveProps(newProps) {
@@ -189,7 +188,7 @@ class Dashboard extends Component {
                 </li>
                 <li className="top-padding li-style">
                   <Link
-                    to="dashboard/profile"
+                    to="/dashboard/profile"
                     className="y-color m-text"
                     onMouseLeave={() => handleClose('cPassword')}
                     onMouseEnter={() => handleClick('cPassword')}
@@ -252,8 +251,8 @@ class Dashboard extends Component {
               </div>
               
               <Route exact path="/dashboard" component={Menu} />
-              <Route exact path="/dashboard/orders" component={Orders} />
-              <Route exact path="/dashboard/profile" component={Profile} />
+              <Route path="/dashboard/orders" component={Orders} />
+              <Route path="/dashboard/profile" component={Profile} />
               <div className={`timeline-container ${this.state.timeline}`}>
                 <h2>Timeline</h2>
                 <ul className="timeline" >

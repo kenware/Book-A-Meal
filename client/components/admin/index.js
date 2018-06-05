@@ -38,7 +38,7 @@ class Admin extends Component {
     this.props.mealActions.getAllMeals();
     this.props.mealActions.loadMostOrderedMeal();
     this.props.orderActions.getAllOrders();
-    this.props.actions.refreshToken();
+    //this.props.actions.refreshToken();
   }
   render() {
     const toggle = () => {

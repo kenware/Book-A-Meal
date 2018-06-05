@@ -47,7 +47,7 @@ export const getMyOrder = () => (dispatch) => {
         }));
         return dispatch(loadMyOrder([]));
       }
-      dispatch(loadMyOrder(myOrder));
+      dispatch(loadMyOrder([]));
     });
 };
 export const getAllOrders = () => (dispatch) => {

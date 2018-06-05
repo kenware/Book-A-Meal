@@ -29,8 +29,11 @@ class Orders extends Component {
     this.modify = this.modify.bind(this);
     this.confirmStatus = this.confirmStatus.bind(this);
   }
+  componentDidMount() {
+    this.props.orderActions.getMyOrder();
+  }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.errorMessage.updateError) {
       this.setState({
         modifyOrder: 'Modify',

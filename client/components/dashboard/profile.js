@@ -21,7 +21,7 @@ class Profile extends Component {
     this.onChange = this.onChange.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.actions.getUser()
   }
 
