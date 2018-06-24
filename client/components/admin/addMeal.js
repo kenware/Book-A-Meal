@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Dropzone from 'react-dropzone';
 import FormData from 'form-data';
-
+import PropTypes from 'prop-types';
 import * as mealActions from '../../redux/Action/mealAction';
 import * as actions from '../../redux/Action/action';
 import './index.scss';
 
-class Add extends Component {
+export class Add extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,23 +24,43 @@ class Add extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.addMeal = this.addMeal.bind(this);
+    this.onDrop = this.onDrop.bind(this);
   }
-  componentWillReceiveProps(newProps) {
-    if (newProps.errorMessage) {
-      this.setState({ addMeal: 'Add Meal' });
+  /**
+   * lifecycle hook called when component receives props
+   *
+   * return new state after it is changed
+   */
+  static getDerivedStateFromProps(props) {
+    if (props.errorMessage.createMealError || props.successMessage.createMealSuccess) {
+      return { addMeal: 'Add Meal' };
     }
+    return null;
   }
+  /**
+   * remove error props in redux store if component unmount
+   */
   componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+  /**
+   * @param  {} e set state on input onchange event
+  */
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+  /**
+   * @param  {} file sets image to state using drop box
+  */
   onDrop(file) {
     this.setState({ file, image: '' });
   }
+  /**
+   * calls a redux function
+   * adds a meal using form-data
+  */
   addMeal(e) {
     e.preventDefault();
     const {
@@ -49,7 +68,7 @@ class Add extends Component {
     } = this.state;
     if (!name) { this.setState({ validName: 'Name is required' }); return; }
     if (!price) { this.setState({ validPrice: 'Price is required' }); return; }
-    if (!description) { this.setState({ validDescription: 'Description is required' }); return }
+    if (!description) { this.setState({ validDescription: 'Description is required' }); return; }
     const payload = new FormData();
     payload.append('name', name);
     payload.append('price', price);
@@ -89,7 +108,7 @@ class Add extends Component {
                 <label htmlFor="name">Description<br />
                   <font color="red">{this.state.validDescription} </font>
                 </label>
-                <textarea cols="7" rows="9" onChange={this.onChange} className="form-label" name="description" placeholder="Description of the meal" required />
+                <textarea cols="7" rows="9" id="description" onChange={this.onChange} className="form-label descriptions" name="description" placeholder="Description of the meal" required />
 
               </div>
               <div className="form-field">
@@ -98,18 +117,18 @@ class Add extends Component {
                 </label>
                 <span className="form-label">
                   <Dropzone
-                    onDrop={this.onDrop.bind(this)}
+                    onDrop={this.onDrop}
                     accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
                     ref="dropzone"
                     multiple={false}
                   >
                     Drag and drop or click to select an image to upload.
                   </Dropzone>
-                  {this.state.file.map(fil=><img src={fil.preview} className="img-fluid" style={{width: '200px', height: '200px'}} alt="upload"/>)}
+                  {this.state.file.map(fil => <img src={fil.preview} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />)}
                 </span>
               </div>
               <div className="form-field">
-                <button type="submit" className="button lg" onClick={this.addMeal}>{this.state.addMeal}</button>
+                <button type="submit" className="button lg submit" name="submit" onClick={this.addMeal}>{this.state.addMeal}</button>
               </div>
               <div className="form-field">
                 <span className="text-center form-label p-color">{this.props.successMessage.createMealSuccess }</span>
@@ -123,14 +142,19 @@ class Add extends Component {
     );
   }
 }
-
-function mapStateToProps(state, ownProps) {
+Add.propTypes = {
+  errorMessage: PropTypes.object.isRequired,
+  successMessage: PropTypes.object.isRequired,
+  mealActions: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     mealActions: bindActionCreators(mealActions, dispatch),
     actions: bindActionCreators(actions, dispatch)

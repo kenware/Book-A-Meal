@@ -48,9 +48,9 @@ export default class menuController {
       isMenuSet = true;
     }
     menu.addMeal(mealId);
-    //return res.json(menu);
+    // return res.json(menu);
     if (!isMenuSet) {
-      // get all user to get the email of all users
+    // get all user to get the email of all users
       const allUser = await User.findAll();
       allUser.forEach((element) => {
         emailList.push(element.email);
@@ -108,9 +108,11 @@ export default class menuController {
         if (error) {
           return res.json(error);
         }
+        return { info, message, menu };
       });
+    } else {
+      return res.status(200).json({ message, menu });
     }
-    return res.status(200).json({ message, menu });
   }
   async getMenu(req, res) {
     let { date } = req.params;

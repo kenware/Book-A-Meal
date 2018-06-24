@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Header from '../header/index';
 import Header3 from '../header/header3';
-import Menu from './menu';
-import Orders from './order';
+import MyMenu from './menu';
+import Order from './order';
 import Footer from '../footer/index';
-import Profile from './profile';
+import Profil from './profile';
 import './index.scss';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
 import * as actions from '../../redux/Action/action';
+import Timeline from './timeline';
+import auth from '../../authenticate/auth';
+import history from '../../history';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,74 +35,98 @@ class Dashboard extends Component {
       order: 'order',
       limit: 4,
       upgradeModal: 'modal',
-      upgradeButton: 'Upgrade'
+      upgradeButton: 'Upgrade',
+      Redirect: false
     };
-    this.notific = this.notific.bind(this);
     this.upgrade = this.upgrade.bind(this);
     this.confirmUpgrade = this.confirmUpgrade.bind(this);
     this.cancelUpgrade = this.cancelUpgrade.bind(this);
+    this.logOut = this.logOut.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
+  /**
+   * lifecycle hook called when component is mounted to DOM
+   *
+   * @memberof Dashboard index
+   *
+   * @returns {undefined} fetches notification
+   * refreshes token if the user is still logged in or redirect to log in page if expired
+   */
   componentDidMount() {
-    this.props.menuActions.getMenu();
     this.props.actions.getNotifications();
     this.props.actions.refreshToken('role');
   }
-  componentWillReceiveProps(newProps) {
-    if (newProps.successMessage.upgradeSuccess) {
-      this.setState({ upgradeModal: 'modal' });
+  /**
+   * lifecycle hook called when component receives props
+   *
+   * @memberof Dashboard index
+   * return state after it is changed
+   */
+  static getDerivedStateFromProps(props) {
+    if (props.successMessage.upgradeSuccess) {
+      return { upgradeModal: 'modal' };
     }
+    return null;
   }
-  notific() {
-    let { limit } = this.state;
-    limit += 4;
-  }
+  /**
+   * cancel upgrade using modal
+   */
   cancelUpgrade() {
     this.setState({ upgradeModal: 'modal' });
   }
+  /**
+   * go ahead to upgrade user to caterer
+   */
   confirmUpgrade() {
     this.props.actions.upgrade();
     this.setState({
       upgradeButton: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
     });
   }
+  /**
+   * Dispaly modal upgrade
+   */
   upgrade() {
     this.setState({ upgradeModal: '' });
   }
+  // logout and redirect to home
+  logOut() {
+    auth.logOut();
+    history.push('/meals');
+  }
+  // toggle side bar on click event
+  toggle() {
+    if (this.state.nav1 === '') {
+      this.setState({
+        nav2: '',
+        nav1: 'nav1',
+        main: 'main-sidebar2',
+        timeline: ''
+      });
+    } else {
+      this.setState({
+        nav2: 'nav2',
+        nav1: '',
+        main: 'main-sidebar1',
+        timeline: 'timeliner'
+      });
+    }
+  }
+  // remove popover on mouseleave
+  handleClose(value) {
+    const { state } = this;
+    state[value] = value;
+    this.setState(state);
+  }
+  // Popover on mouseEnter or hover
+  handleClick(value) {
+    const { state } = this;
+    state[value] = '';
+    this.setState(state);
+  }
   render() {
-    const monthNames = [
-      'January', 'February', 'March',
-      'April', 'May', 'June',
-      'July', 'August', 'September',
-      'October', 'November', 'December'
-    ];
-
-    const toggle = () => {
-      if (this.state.nav1 === '') {
-        this.setState({
-          nav2: '',
-          nav1: 'nav1',
-          main: 'main-sidebar2',
-          timeline: ''
-        });
-      } else {
-        this.setState({
-          nav2: 'nav2',
-          nav1: '',
-          main: 'main-sidebar1',
-          timeline: 'timeliner'
-        });
-      }
-    };
-    const handleClose = (value) => {
-      const state = this.state;
-      state[value] = value;
-      this.setState(state);
-    };
-    const handleClick = (value) => {
-      const state = this.state;
-      state[value] = '';
-      this.setState(state);
-    };
     return (
       <div>
         <span className="largeScreen-header">
@@ -110,10 +138,10 @@ class Dashboard extends Component {
         <div className="admin-container">
           <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
             <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar1" onClick={() => toggle()} />
+              <em className="fa fa-bars l-r-pad-text m-text bar1 toggle1" onClick={this.toggle} role="button" />
               <h3 className="y-color l-r-pad-text">Book-A-Meal</h3>
               <ul>
-                {localStorage.getItem('role') === 'admin' ?
+                {window.localStorage.getItem('role') === 'admin' ?
                   <li className="top-padding li-style">
                     <Link to="/admin" className="y-color">Admin</Link>
 
@@ -127,7 +155,7 @@ class Dashboard extends Component {
                   <Link to="/dashboard/orders" className="y-color my-order">My Orders</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <a onClick={() => toggle()} href="javascript:void(0);" className="bar1 y-color ">Notification</a>
+                  <span onClick={this.toggle} className="bar1 y-color " role="button">Notification</span>
                 </li>
                 <li className="top-padding li-style">
                   <Link to="/dashboard/profile" className="bar1 y-color ">Profile</Link>
@@ -136,22 +164,22 @@ class Dashboard extends Component {
                   <Link to="/dashboard/profile" className="set y-color">Change Password</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <a href="javascript:void(0);" className="y-color">LogOut</a>
+                  <span onClick={this.logOut} className="y-color" role="button">LogOut</span>
                 </li>
               </ul>
             </div>
           </nav>
           <nav className={`sidebar sidebar2-width ${this.state.nav2}`}>
             <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar2 y-color" onClick={() => toggle()} />
+              <em className="fa fa-bars l-r-pad-text m-text bar2 y-color " onClick={this.toggle} role="button" />
               <h1 className="l-r-pad-text"><a href="index.html"><em className="y-color fa fa-home" /></a></h1>
               <ul className="y-color">
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard"
-                    className="y-color dashboard"
-                    onMouseLeave={() => handleClose('dash')}
-                    onMouseEnter={() => handleClick('dash')}
+                    className="y-color dashboard dashboard-link"
+                    onMouseLeave={() => this.handleClose('dash')}
+                    onMouseEnter={() => this.handleClick('dash')}
                   ><em className="fa fa-dashboard" />
                   </Link>
                   <span className={`p-dash m-text ${this.state.dash}`}>Dashoard</span>
@@ -159,29 +187,30 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard/orders"
-                    className="y-color m-text "
-                    onMouseLeave={() => handleClose('order')}
-                    onMouseEnter={() => handleClick('order')}
+                    className="y-color m-text order-link"
+                    onMouseLeave={() => this.handleClose('order')}
+                    onMouseEnter={() => this.handleClick('order')}
                   ><em className="fa fa-calendar-o popover all-meal" />
                   </Link>
                   <span className={`p-all m-text ${this.state.order}`}>My Orders</span>
                 </li>
                 <li className="top-padding li-style">
-                  <a
-                    href="javascript:void(0);"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('notific')}
-                    onMouseEnter={() => handleClick('notific')}
+                  <span
+                    onClick={this.toggle}
+                    role="button"
+                    className="y-color m-text notific-link"
+                    onMouseLeave={() => this.handleClose('notific')}
+                    onMouseEnter={() => this.handleClick('notific')}
                   ><em className="fa fa-bell notif" />
-                  </a>
-                  <span className={`p-notif m-text ${this.state.notific}`}>Notifications</span>
+                  </span>
+                  <span className={`hover p-notif m-text ${this.state.notific}`}>Notifications</span>
                 </li>
                 <li className="top-padding li-style">
                   <Link
-                    to="dashboard/profile"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('profile')}
-                    onMouseEnter={() => handleClick('profile')}
+                    to="/dashboard/profile"
+                    className="y-color m-text profile-link"
+                    onMouseLeave={() => this.handleClose('profile')}
+                    onMouseEnter={() => this.handleClick('profile')}
                   ><em className="fa fa-user add-meal" />
                   </Link>
                   <label className={`p-add m-text ${this.state.profile}`}>Profile</label>
@@ -189,22 +218,23 @@ class Dashboard extends Component {
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard/profile"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('cPassword')}
-                    onMouseEnter={() => handleClick('cPassword')}
+                    className="y-color m-text pReset-link"
+                    onMouseLeave={() => this.handleClose('cPassword')}
+                    onMouseEnter={() => this.handleClick('cPassword')}
                   ><em className="fa fa-edit set-meal" />
                   </Link>
-                  <label className={`p-set m-text ${this.state.cPassword}`}>Change Password</label>
+                  <label className={`hover p-set m-text ${this.state.cPassword}`}>Change Password</label>
                 </li>
                 <li className="top-padding li-style">
-                  <a
-                    href="javascript:void(0);"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('logOut')}
-                    onMouseEnter={() => handleClick('logOut')}
+                  <span
+                    role="button"
+                    onClick={this.logOut}
+                    className="y-color m-text logout-link"
+                    onMouseLeave={() => this.handleClose('logOut')}
+                    onMouseEnter={() => this.handleClick('logOut')}
                   ><em className="fa fa-power-off logout" />
-                  </a>
-                  <label className={`p-out m-text ${this.state.logOut}`}>LougOut</label>
+                  </span>
+                  <span className={`hover p-out m-text ${this.state.logOut}`}>LougOut</span>
                 </li>
               </ul>
             </div>
@@ -214,20 +244,20 @@ class Dashboard extends Component {
             <header className="header">
               <div className="l-r-pad-text">
                 <h4 className="white-color">USER DASHBOARD</h4>
-                { localStorage.getItem('role') === 'user' ?
-                  <span onClick={this.upgrade} className="y-color" role="button"> Upgrade To A Caterer ?</span>
+                { window.localStorage.getItem('role') === 'user' ?
+                  <span onClick={this.upgrade} className="y-color hover upgrade" role="button"> Upgrade To A Caterer ?</span>
                 : <Link to="/admin" className="y-color">Manage your meals</Link>
                 }
               </div>
               <div>
-                <h4 className="white-color">{localStorage.getItem('username')}</h4>
-                <img src="image/eze.jpg" className="user-img rounded-circle" />
+                <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
+                <img src="image/eze.jpg" className="user-img rounded-circle" alt="user" />
               </div>
               <div className="notification1">
-                <a href="javascript:void(0);" className="" onClick={() => toggle()}>
-                  <h4 className="white-color">Notification</h4>
-                  <em className="fa fa-bars l-r-pad-text y-color" />
-                </a>
+                <span className="hover" onClick={this.toggle} role="button">
+                  <h4 className="white-color hover">Notification</h4>
+                  <em className="fa fa-bars l-r-pad-text y-color hover" />
+                </span>
               </div>
 
             </header>
@@ -246,89 +276,16 @@ class Dashboard extends Component {
                   <p className="justify l-r-pad-text danger">{this.props.errorMessage.upgradeError}</p>
                 </div>
                 <div className="modal-order-content">
-                  <button className="remove-modal" onClick={this.confirmUpgrade}>{this.state.upgradeButton}</button><button onClick={this.cancelUpgrade}className="remove-modal">Cancel</button>
+                  <button className="remove-modal confirmUpgrade" onClick={this.confirmUpgrade}>{this.state.upgradeButton}</button><button onClick={this.cancelUpgrade}className="remove-modal cancelUpgrade">Cancel</button>
                 </div>
               </div>
-              
-              <Route exact path="/dashboard" component={Menu} />
-              <Route path="/dashboard/orders" component={Orders} />
-              <Route path="/dashboard/profile" component={Profile} />
+
+              <Route exact path="/dashboard" component={MyMenu} />
+              <Route exact path="/dashboard/profile" component={Profil} />
+              <Route exact path="/dashboard/orders" component={Order} />
               <div className={`timeline-container ${this.state.timeline}`}>
                 <h2>Timeline</h2>
-                <ul className="timeline" >
-                  <li>
-                    <div className="timeline-badge"><em className="fa fa-camera" /></div>
-                    <div className="timeline-panel bg-light">
-                      <div className="timeline-heading">
-                        <h5 className="timeline-title l-margin m-text">Profile</h5>
-                      </div>
-                      <div className="timeline-body">
-                        <ul>
-                          <li style={{ listStyle: 'none' }}>
-                            <img src="image/eze.jpg" className="user-img rounded-circle" alt="profil" />
-                          </li>
-                          <li>
-                            <span className="h2-color">Keny</span>
-                          </li>
-                          <li>
-                            <span className="h2-color">Update profile</span>
-                          </li>
-                          <li><span className="h2-color" role="button"> Change Password</span></li>
-                          {localStorage.getItem('role') === 'user' ?
-                            <li><button onClick={this.upgrade} className="p-color" role="button"> Upgrade To A Caterer</button></li>
-                          : <span />
-                          }
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="timeline-badge primary"><em className="fa fa-link" /></div>
-                    <div className="timeline-panel bg-light">
-                      <div className="timeline-heading">
-                        <h5 className="timeline-title l-margin m-text">Notifications</h5>
-                      </div>
-                      <div className="timeline-body">
-                        <p>
-                          <ul>
-                            {this.props.notifics.map(notific =>
-                              (
-                                <li style={{ marginTop: '1rem' }}>
-                                  <div className="p-color">{notific.message}</div>
-                                  <div>
-                                    {monthNames[new Date(notific.createdAt).getMonth()].substr(0, 3)}&nbsp;
-                                    {new Date(notific.createdAt).getDate()} &nbsp; {new Date(notific.createdAt).getFullYear()}
-                                  </div>
-                                </li>
-                              ))}
-                            <li>
-                              <button onClick={this.notific}> Load Prev </button>
-                            </li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="timeline-badge"><em className="fa fa-paperclip" /></div>
-                    <div className="timeline-panel bg-light">
-                      <div className="timeline-heading">
-                        <h5 className="timeline-title m-text l-margin">Recently Ordered Meal</h5>
-                      </div>
-                      <div className="timeline-body">
-                        <p>
-                          <ul >
-                            <li />
-                            <li>Italian Recipes</li>
-                            <li>Ewedu Meal</li>
-                            <li>Abacha</li>
-                          </ul>
-                        </p>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-
+                <Timeline notifics={this.props.notifics} />
               </div>
 
             </div>
@@ -342,17 +299,21 @@ class Dashboard extends Component {
     );
   }
 }
+Dashboard.propTypes = {
+  notifics: PropTypes.array.isRequired,
+  errorMessage: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+};
 
-function mapStateToProps(state, ownProps) {
-  let { notifics } = state;
-  notifics = notifics.slice(0, 4);
+export function mapStateToProps(state) {
+  const { notifics } = state;
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
     notifics
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     menuActions: bindActionCreators(menuActions, dispatch),
     orderActions: bindActionCreators(orderActions, dispatch),

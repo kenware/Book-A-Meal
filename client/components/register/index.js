@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import validator from 'validator';
-
+import PropTypes from 'prop-types';
 import Header from '../header/index';
 import Footer from '../footer/index';
 import './index.scss';
 import * as actions from '../../redux/Action/action';
-
 
 export class Register extends Component {
   constructor(props) {
@@ -32,19 +31,34 @@ export class Register extends Component {
     this.change = this.change.bind(this);
     this.register = this.register.bind(this);
   }
-  componentWillReceiveProps(newProps) {
-    if(newProps.errorMessage.registerError) {
-      this.setState({ signUp: 'SignUp' })
+  /**
+   * @param  {} props if new props from redux with error arrives
+   * change the state lof register button from loading icon to text
+   */
+  static getDerivedStateFromProps(props) {
+    if (props.errorMessage.registerError) {
+      return { signUp: 'SignUp' };
     }
+    return null;
   }
+  /**
+   * remove error props in redux store if component unmount
+   */
   componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+  /**
+   * @param  {} e set state on input onchange event
+   */
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+  /**
+   * @param  {} e set state on email onchange event
+   * checks if email is valid
+   */
   onEmail(e) {
     if (!validator.isEmail(`${e.target.value}`)) {
       const validEmail = 'Invalid Email Address';
@@ -57,6 +71,10 @@ export class Register extends Component {
       this.setState({ validEmail });
     }
   }
+  /**
+   * @param  {} e set state on password onchange event
+   * checks if password and confirm password is same
+   */
   change(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
@@ -72,10 +90,11 @@ export class Register extends Component {
     }
   }
 
-
+  /**
+   * @param  {} e register method
+   */
   register(e) {
     e.preventDefault();
-
     const {
       email,
       password,
@@ -90,7 +109,6 @@ export class Register extends Component {
     } else {
       this.setState({ message: 'All Field Is Required' });
     }
-    
   }
   render() {
     return (
@@ -149,13 +167,17 @@ export class Register extends Component {
     );
   }
 }
+Register.propTypes = {
+  errorMessage: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
 
-function mapStateToProps(state, ownProps) {
+export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

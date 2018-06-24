@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Route, Link } from 'react-router-dom';
-
+import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Header from '../header/index';
 import Header2 from '../header/header2';
 import Footer from '../footer/index';
@@ -10,65 +10,107 @@ import * as actions from '../../redux/Action/action';
 import * as mealActions from '../../redux/Action/mealAction';
 import * as orderActions from '../../redux/Action/orderAction';
 import './index.scss';
-import Orders from './order';
+import Order from './order';
 import Allmeals from './allMeals';
 import Setmenu from './setMenu';
 import Addmeals from './addMeal';
-import Edit from './edit';
+import EditMeal from './edit';
+import history from '../../history';
+import auth from '../../authenticate/auth';
+import SideBar from './sidebar';
 
-class Admin extends Component {
+export class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       nav1: '',
       nav2: 'nav2',
-      modal: 'modal',
-      timeline: 'timeliner',
       main: 'main-sidebar1',
       dash: 'dash',
       cPassword: 'cPassword',
       profile: 'profile',
       notific: 'notific',
-      logOut: 'logOut',
+      logout: 'logout',
       order: 'order',
       setmeal: 'setmeal'
     };
+    this.logOut = this.logOut.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
-  componentWillMount() {
+  /**
+   * lifecycle hook called when component is mounted to DOM
+   * @returns {mostOrder} load most ordered meal on page load
+   * @returns {meals} get all meal
+   * @returns {allOrder} get all orders.
+   * refreshes token if it is not expired or logout and redirect to home if expired
+   */
+  componentDidMount() {
     this.props.mealActions.getAllMeals();
     this.props.mealActions.loadMostOrderedMeal();
     this.props.orderActions.getAllOrders();
-    //this.props.actions.refreshToken();
+    this.props.actions.refreshToken();
+  }
+  // logout user
+  logOut() {
+    auth.logOut();
+    history.push('/meals');
+  }
+  // toggle sidbar
+  toggle() {
+    if (this.state.nav1 === '') {
+      this.setState({
+        nav2: '',
+        nav1: 'nav1',
+        main: 'main-sidebar2'
+      });
+    } else {
+      this.setState({
+        nav2: 'nav2',
+        nav1: '',
+        main: 'main-sidebar1'
+      });
+    }
+  }
+  // Remove popover on mouseLeave
+  handleClose(value) {
+    const state = this;
+    state[value] = value;
+    this.setState(state);
+  }
+  // Popover on mouseEnter or hover
+  handleClick(value) {
+    const state = this;
+    state[value] = '';
+    this.setState(state);
   }
   render() {
-    const toggle = () => {
-      if (this.state.nav1 === '') {
-        this.setState({
-          nav2: '',
-          nav1: 'nav1',
-          main: 'main-sidebar2',
-          timeline: ''
-        });
-      } else {
-        this.setState({
-          nav2: 'nav2',
-          nav1: '',
-          main: 'main-sidebar1',
-          timeline: 'timeliner'
-        });
-      }
+    const {
+      nav1,
+      nav2,
+      main,
+      dash,
+      cPassword,
+      profile,
+      notific,
+      logout,
+      order,
+      setmeal
+    } = this.state;
+    const prop = {
+      nav1,
+      nav2,
+      main,
+      dash,
+      cPassword,
+      profile,
+      notific,
+      logout,
+      order,
+      setmeal
     };
 
-    const handleClose = (value) => {
-      const state = this.state;
-      state[value] = value;
-      this.setState(state);
-    };
-    const handleClick = (value) => {
-      const state = this.state;
-      state[value] = '';
-      this.setState(state);
-    };
     return (
       <div>
         <span className="largeScreen-header">
@@ -78,130 +120,28 @@ class Admin extends Component {
           <Header2 />
         </span>
         <div className="admin-container">
-          <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
-            <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar1" onClick={() => toggle()} />
-              <h3 className="y-color l-r-pad-text"><Link to="/admin" className="y-color">ADMIN</Link></h3>
-              <ul>
-                <li className="top-padding li-style">
-                  <Link to="/dashboard" className="y-color">Dashoard</Link>
-
-                </li>
-                <li className="top-padding li-style">
-                  <Link to="/admin/allmeals" className="y-color my-order">All Meals</Link>
-                </li>
-                <li className="top-padding li-style">
-                  <Link to="/admin/addmeals" className="y-color my-order">Add Meals</Link>
-                </li>
-                <li className="top-padding li-style">
-                  <Link to="/admin/setmenu" className="y-color my-order">Set Menu</Link>
-                </li>
-                <li className="top-padding li-style">
-                  <Link to="/dashboard/profile" className="bar1 y-color ">Profile</Link>
-                </li>
-                <li className="top-padding li-style">
-                  <Link to="/dashboard/profile" className="set y-color">Change Password</Link>
-                </li>
-                <li className="top-padding li-style">
-                  <a href="javascript:void(0);" className="y-color">LogOut</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <nav className={`sidebar sidebar2-width ${this.state.nav2}`}>
-            <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar2 y-color" onClick={() => toggle()} />
-              <h1 className="l-r-pad-text"><a href="index.html"><em className="y-color fa fa-home" /></a></h1>
-              <ul className="">
-                <li className="top-padding li-style">
-                  <Link
-                    to="/dashboard"
-                    className="y-color dashboard"
-                    onMouseLeave={() => handleClose('dash')}
-                    onMouseEnter={() => handleClick('dash')}
-                  ><em className="fa fa-dashboard" />
-                  </Link>
-                  <span className={`p-dash m-text ${this.state.dash}`}>Dashoard</span>
-                </li>
-                <li className="top-padding li-style">
-                  <Link
-                    to="/admin/allmeals"
-                    className="y-color m-text "
-                    onMouseLeave={() => handleClose('order')}
-                    onMouseEnter={() => handleClick('order')}
-                  ><em className="fa fa-list-alt popover all-meal" />
-                  </Link>
-                  <span className={`p-all m-text ${this.state.order}`}>All Meals</span>
-                </li>
-                <li className="top-padding li-style">
-                  <Link
-                    to="/admin/addmeals"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('notific')}
-                    onMouseEnter={() => handleClick('notific')}
-                  ><em className="fa fa-cart-plus " />
-                  </Link>
-                  <span className={`p-notif m-text ${this.state.notific}`}>Add Meals</span>
-                </li>
-                <li className="top-padding li-style">
-                  <Link
-                    to="/admin/setmenu"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('setmeal')}
-                    onMouseEnter={() => handleClick('setmeal')}
-                  ><em className="fa fa-plus " />
-                  </Link>
-                  <span className={`p-notif m-text ${this.state.setmeal}`}>Set Menu</span>
-                </li>
-                <li className="top-padding li-style">
-                  <Link
-                    to="dashboard/profile"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('profile')}
-                    onMouseEnter={() => handleClick('profile')}
-                  ><em className="fa fa-user add-meal" />
-                  </Link>
-                  <label className={`p-add m-text ${this.state.profile}`}>Profile</label>
-                </li>
-                <li className="top-padding li-style">
-                  <Link
-                    to="dashboard/profile"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('cPassword')}
-                    onMouseEnter={() => handleClick('cPassword')}
-                  ><em className="fa fa-edit set-meal" />
-                  </Link>
-                  <label className={`p-set m-text ${this.state.cPassword}`}>Change Password</label>
-                </li>
-                <li className="top-padding li-style">
-                  <a
-                    href="javascript:void(0);"
-                    className="y-color m-text"
-                    onMouseLeave={() => handleClose('logOut')}
-                    onMouseEnter={() => handleClick('logOut')}
-                  ><em className="fa fa-power-off logout" />
-                  </a>
-                  <label className={`p-out m-text ${this.state.logOut}`}>LougOut</label>
-                </li>
-              </ul>
-            </div>
-          </nav>
-
+          <SideBar
+            {...prop}
+            handleClick={this.handleClick}
+            handleClose={this.handleClose}
+            toggle={this.toggle}
+            logOut={this.logOut}
+          />
           <main className={`main ${this.state.main}`} id="main">
             <header className="header">
               <div className="l-r-pad-text">
                 <h4 className="white-color">ADMIN</h4>
               </div>
               <div>
-                <h4 className="white-color">{localStorage.getItem('username')}</h4>
-                <img src="image/eze.jpg" className="user-img rounded-circle" />
+                <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
+                <img src="image/eze.jpg" className="user-img rounded-circle" alt="profile" />
               </div>
             </header>
-            <Route exact path="/admin" component={Orders} />
+            <Route exact path="/admin" render={props => <Order mostOrder={this.props.mostOrder} allOrder={this.props.allOrder} {...props} />} />
             <Route exact path="/admin/allmeals" component={Allmeals} />
             <Route exact path="/admin/setmenu" component={Setmenu} />
             <Route exact path="/admin/addmeals" component={Addmeals} />
-            <Route path="/admin/edit/:mealId" component={Edit} />
+            <Route path="/admin/edit/:mealId" component={EditMeal} />
             <Footer />
           </main>
 
@@ -212,13 +152,21 @@ class Admin extends Component {
     );
   }
 }
-
-function mapStateToProps(state, ownProps) {
+Admin.propTypes = {
+  mostOrder: PropTypes.array.isRequired,
+  allOrder: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
+  mealActions: PropTypes.object.isRequired,
+  orderActions: PropTypes.object.isRequired,
+};
+export function mapStateToProps(state) {
   return {
-    errorMessage: state.errorMessage
+    errorMessage: state.errorMessage,
+    mostOrder: state.mostOrder,
+    allOrder: state.allOrder
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch),
     mealActions: bindActionCreators(mealActions, dispatch),

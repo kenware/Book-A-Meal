@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Player, BigPlayButton } from 'video-react';
 import 'video-react/dist/video-react.css';
-
+import PropTypes from 'prop-types';
+import * as actions from '../../redux/Action/action';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
+import MealGuide from './mealGuide';
+import TodayMenu from './todayMenu';
+import Video from './video';
 
-class Menu extends Component {
+export class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
       mealId: '',
       menuId: '',
-      quantity: 0,
+      quantity: '',
       address: '',
       name: '',
       image: '',
@@ -26,23 +28,53 @@ class Menu extends Component {
     this.onChange = this.onChange.bind(this);
     this.orderMeal = this.orderMeal.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
+    this.confirmOrder = this.confirmOrder.bind(this);
   }
-  componentWillMount() {
+  /**
+   * lifecycle hook called when component is mounted to DOM
+   *
+   * @memberof DashboardMenu index
+   *
+   * @returns {undefined} fetches totay menu
+   */
+  componentDidMount() {
     this.props.menuActions.getMenu();
   }
-  componentWillReceiveProps(newProps) {
-    if (newProps.errorMessage || newProps.successMessage) {
-      this.setState({ modal: 'modal', order: 'Order' });
+  /**
+   * lifecycle hook called when component receives
+   * Return new state when new props arrive from redux store
+   */
+  static getDerivedStateFromProps(props) {
+    if (props.errorMessage.orderError || props.successMessage.orderSuccess) {
+      const successMessage = props.successMessage.orderSuccess;
+      const errorMessage = props.errorMessage.orderError;
+      props.actions.clearMessages();
+      return {
+        modal: 'modal',
+        order: 'Order',
+        errorMessage,
+        successMessage
+      };
     }
+    return null;
   }
-    componentWillUnmount() {
+  /**
+   * remove error props/messages in redux store if component unmount
+   */
+  componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+  /**
+   * @param  {} e set state on input onchange event
+  */
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+  /**
+   * cancel modal if the user dont want to proceed with the order
+  */
   cancelOrder() {
     this.setState({
       modal: 'modal',
@@ -55,43 +87,50 @@ class Menu extends Component {
       addressError: ''
     });
   }
-  orderMeal(e) {
+  /**
+   * Orders meal
+   * calls redux action
+  */
+  orderMeal() {
     const {
       mealId,
       menuId,
       address,
       quantity
     } = this.state;
+    // Ensure that address and quanity is not empty
     if (!address) {
       this.setState({ addressError: 'Your address is required' }); return;
     } this.setState({ addressError: '' });
     if (!quantity) {
       this.setState({ quantityError: 'Quantity is required' }); return;
     } this.setState({ quantityError: '' });
+    // redux addmeal action
     this.props.orderActions.orderMeal(mealId, menuId, address, quantity);
     this.setState({
       order: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
     });
   }
+  // shows modal to comfirm that user want to a meal
+  confirmOrder(mealId, menuId, mealName, image, price, mealDescription) {
+    this.setState({
+      mealId,
+      menuId,
+      mealName,
+      image,
+      price,
+      mealDescription,
+      modal: ''
+    });
+  }
   render() {
-    const confirmOrder = (mealId, menuId, mealName, image, price, mealDescription) => {
-      this.setState({
-        mealId,
-        menuId,
-        mealName,
-        image,
-        price,
-        mealDescription,
-        modal: ''
-      });
-    };
     return (
       <div className="meal-container">
         <div className={`modal-order ${this.state.modal}`}>
           <button
             style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
             onClick={this.cancelOrder}
-            className="remove-modal"
+            className="remove-modal top-close"
           >
              &times;
           </button>
@@ -115,114 +154,54 @@ class Menu extends Component {
           </div>
           <div className="justify-overide">
             <span className="modal-order-items l-r-pad-text"> Quantity: </span>
-            <span className="modal-order-items l-r-pad-text"><input name="quantity" type="number" onChange={this.onChange} /></span>
+            <span className="modal-order-items l-r-pad-text"><input id="quantity" name="quantity" type="number" onChange={this.onChange} /></span>
           </div>
           <div className="justify-overide">
             <span className="modal-order-items l-r-pad-text"> Address: </span>
-            <span className="modal-order-items l-r-pad-text"><input name="address" type="text" onChange={this.onChange} /></span>
+            <span className="modal-order-items l-r-pad-text"><input name="address" id="address" type="text" onChange={this.onChange} /></span>
           </div>
           <div className="modal-order-content">
             <span className="modal-order-items l-r-pad-text">
-              <button onClick={this.orderMeal} className="remove-modal">{this.state.order}</button>
+              <button onClick={this.orderMeal} className="remove-modal order-meal">{this.state.order}</button>
             </span>
             <span className="modal-order-items l-r-pad-text">
-              <button onClick={this.cancelOrder} className="remove-modal">Cancel</button>
+              <button onClick={this.cancelOrder} className="remove-modal close-modal">Cancel</button>
             </span>
           </div>
         </div>
-        <h2>ORDER A MEAL IN A TWO MORE EASY STEPS</h2>
-        <h4 className="p-color text-center">Choose and order a meal in todays menu using the order button</h4>
-        <div className="all-meal-step">
-          <div className="meal-day">
-            <div >
-              <div className="circle" ><span className="fa fa-check fa-4x p-color" style={{ margin: '10px 0px 0px 13px' }} /></div><br />
-              <span>SignUp/SignIn</span>
-            </div>
-          </div>
-          <div className="meal-day">
-            <span className="fa fa-long-arrow-right fa-4x p-color" />
-          </div>
-          <div className="meal-day">
-            <div >
-              <div className="circle" /><br />
-              <span>Order A Meal</span>
-            </div>
-          </div>
-          <div className="meal-day">
-            <span className="fa fa-long-arrow-right fa-4x p-color" />
-          </div>
-          <div className="meal-day">
-            <div>
-              <div><img src="image/l.png" id="App-logo" className="rounded-circle" style={{ height: '100px', width: '100px' }} alt="meal" /></div>
-              <br /><span>Hot Fresh Meal</span>
-            </div>
-          </div>
-        </div>
+        <MealGuide />
         <h2 className="top-bot-margin">TODAYS MENU</h2>
-        <h3 className="success text-center">{this.props.successMessage.orderSuccess}</h3>
-        <h3 className="danger text-center">{this.props.errorMessage.orderError}</h3>
+        <h3 className="success text-center">{this.state.successMessage}</h3>
+        <h3 className="danger text-center">{this.state.errorMessage}</h3>
         <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3>
-        {this.props.menu.map(menuMeals =>
-          (
-            <div>
-              <h3 className="p-color text-center">Menu by Caterer&nbsp;
-                <Link to={`/profile/${menuMeals.User.id}`}>{menuMeals.User.name}</Link>
-                &nbsp; <img src={menuMeals.User.image} className="user-img rounded-circle" alt="profile" />
-              </h3>
-              {menuMeals.Meals.map(meal =>
-            (
-              <div className="contents">
-                <div className="content-wrap">
-                  <div className="col-meal l-r-pad-text">
-                    <a href="image/l.png"><img src={meal.image} className="rounded-circle img-height" alt="menu meal" /></a>
-                  </div>
-                  <div className="col-meal">
-                    <h4 className="p-color"> Name</h4>{meal.name}
-                  </div>
-                  <div className="col-meal">
-                    <h4 className="p-color">Price(#)</h4>{meal.price}
-                  </div>
-                  <div className="col-meal">
-                    <h5 className="p-color">
-                      <Link to="/detail">View</Link>&nbsp;
-                      <button onClick={() => confirmOrder(meal.id, menuMeals.id, meal.name, meal.image, meal.price, meal.description)}className="order1">
-                        <em className="fa fa-cart-plus" />
-                    &nbsp; Order
-                      </button>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              ))}
-            </div>
-          ))}
+        <TodayMenu menu={this.props.menu} confirmOrder={this.confirmOrder} />
         {this.props.menu.length < 1 ?
-          <div>
-            <h3 className="p-color text-center">While waiting for today's menu, you might want to watch this video </h3>
-            <h5 className="text-center"> French Recipe</h5>
-            <div className="video-container">
-              <Player poster="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/13b12570812444f1bc86415b6e4c5284/BFV39875_VeganLunchMealPrep_FB_FINAL_FINAL_FINAL.jpg">
-                <source src="https://vid.buzzfeed.com/output/83972/landscape_720/1520642061" />
-                <BigPlayButton position="center" />
-              </Player>
-            </div>
-          </div> : <span />}
+          <Video /> : <span />}
       </div>
     );
   }
 }
+// propType validation
+Menu.propTypes = {
+  errorMessage: PropTypes.object.isRequired,
+  orderActions: PropTypes.object.isRequired,
+  menu: PropTypes.array.isRequired,
+  menuActions: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+};
 
-function mapStateToProps(state, ownProps) {
+export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
     menu: state.menu
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     menuActions: bindActionCreators(menuActions, dispatch),
-    orderActions: bindActionCreators(orderActions, dispatch)
+    orderActions: bindActionCreators(orderActions, dispatch),
+    actions: bindActionCreators(actions, dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

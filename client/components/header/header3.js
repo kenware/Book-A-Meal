@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import './index.scss';
-import * as actions from '../../redux/Action/action';
 import history from '../../history';
 import auth from '../../authenticate/auth';
 
-// const role = auth.getRole();
+// this header is used only in user dashboard for a small screen size
 class Header3 extends Component {
   constructor(props) {
     super(props);
@@ -18,13 +15,20 @@ class Header3 extends Component {
     this.onClick = this.onClick.bind(this);
     this.logout = this.logout.bind(this);
   }
-  onClick(e) {
+  /**
+   * addd css class for drop down and responsive navbar
+  */
+  onClick() {
     if (this.state.responsive === 'responsive') {
       this.setState({ responsive: '' });
     } else {
       this.setState({ responsive: 'responsive' });
     }
   }
+  /**
+   * logout users
+   * redirect to login psage
+  */
   logout() {
     auth.logOut();
     history.push('/meals');
@@ -34,29 +38,19 @@ class Header3 extends Component {
     return (
       <div>
         <div className={`nav ${this.state.responsive}`} id="myTopnav">
-          <Link to="/meals" className="a active" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
-          <a href="javascript:void(0);" onClick={this.logout} className="a">LogOut</a>
-          <Link to="/profile" className="a"><em className="fa fa-user"/> &nbsp;{localStorage.getItem('username')}</Link>
+          <Link to="/meals" className="a active active-text-header" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
+          <span onClick={this.logout} className="a" role="button">LogOut</span>
+          <Link to="/profile" className="a"><em className="fa fa-user" /> &nbsp;{window.localStorage.getItem('username')}</Link>
           {this.state.role === 'admin' ?
             <Link to="/admin" className="a">Admin</Link>
           : <span />}
           <Link to="/dashboard/orders" className="a">My Orders</Link>
           <Link to="/meals" className="active a">Home</Link>
-          <span className="a icon" onClick={this.onClick}><span className="fa fa-bars" /></span>
+          <span className="a icon" onClick={this.onClick} role="button"><span className="fa fa-bars" /></span>
         </div>
       </div>
 
     );
   }
 }
-
-function mapStateToProps(state, ownProps) {
-  return {
-    message: state.message,
-    appMessage: state.appMessage
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Header3);
+export default Header3;

@@ -2,8 +2,6 @@
 import * as types from './actionType';
 import auth from '../../authenticate/auth';
 
-//const token = auth.getToken();
-const token = localStorage.getItem('token');
 export const loadMostOrdered = mostOrder => ({ type: types.LOAD_MOST_ORDERED, mostOrder });
 export const loadErrorMessage = errorMessage => ({ type: types.LOAD_ERROR_MESSAGE, errorMessage });
 export const loadSuccessMessage = successMessage => ({
@@ -15,7 +13,7 @@ export const setMenu = (mealId, title, orderBefore) => (dispatch) => {
   fetch('/api/v1/menu', {
     method: 'POST',
     headers: {
-      authorization: localStorage.getItem('token'),
+      authorization: auth.getToken(),
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -34,7 +32,7 @@ export const setMenu = (mealId, title, orderBefore) => (dispatch) => {
 export const getMenu = () => (dispatch) => {
   fetch('/api/v1/menu', {
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     }
   })
     .then(res => res.json())
@@ -44,6 +42,5 @@ export const getMenu = () => (dispatch) => {
         return dispatch(loadErrorMessage({ getMenuError: 'Todays Menu is not set yet' }));
       }
       dispatch(loadTodayMenu(menu));
-
     });
 };

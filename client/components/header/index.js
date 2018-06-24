@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import './index.scss';
-import * as actions from '../../redux/Action/action.js';
 import history from '../../history';
 import auth from '../../authenticate/auth';
 
-// const role = auth.getRole();
+/**
+  * This header is used in all pages for large screen size
+*/
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -18,13 +17,20 @@ class Nav extends Component {
     this.onClick = this.onClick.bind(this);
     this.logout = this.logout.bind(this);
   }
-  onClick(e) {
+  /**
+   * addd css class for drop down and responsive navbar
+  */
+  onClick() {
     if (this.state.responsive === 'responsive') {
       this.setState({ responsive: '' });
     } else {
       this.setState({ responsive: 'responsive' });
     }
   }
+  /**
+   * logout users
+   * redirect to login psage
+  */
   logout() {
     auth.logOut();
     this.setState({ role: '' });
@@ -35,20 +41,20 @@ class Nav extends Component {
     return (
       <div>
         <div className={`nav ${this.state.responsive}`} id="myTopnav">
-          <Link to="/meals" className="a active" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
-          {this.state.role ?
-            <a href="javascript:void(0);" onClick={this.logout} className="a">LogOut</a>
+          <Link to="/meals" className="a active active-text-header" style={{ fontSize: '30px', marginTop: '10px' }} >Book-A-Meal</Link>
+          {window.localStorage.getItem('role') ?
+            <span onClick={this.logout} className="a" role="button">LogOut</span>
           : <span />}
-          {localStorage.getItem('username') ?
-             <Link to="/profile" className="a"><em className="fa fa-user"/> &nbsp;{localStorage.getItem('username')}</Link>
+          {window.localStorage.getItem('username') ?
+            <Link to="/profile" className="a"><em className="fa fa-user" /> &nbsp;{window.localStorage.getItem('username')}</Link>
           : <span />}
-          {this.state.role === 'admin' ?
+          {window.localStorage.getItem('role') === 'admin' ?
             <Link to="/admin" className="a">Admin</Link>
           : <span />}
-          {this.state.role === 'user' ?
+          {window.localStorage.getItem('role') === 'user' ?
             <Link to="/dashboard" className="a">dashboard</Link>
           : <span />}
-          {this.state.role ?
+          {window.localStorage.getItem('role') ?
             <span />
           : <Link to="/login" className="a">Login</Link>
             }
@@ -57,7 +63,7 @@ class Nav extends Component {
           : <Link to="/register" className="a">SignUp</Link>
             }
           <Link to="/meals" className="active a">Home</Link>
-          <span className="a icon" onClick={this.onClick}><span className="fa fa-bars" /></span>
+          <span className="a icon" onClick={this.onClick} role="button"><span className="fa fa-bars" /></span>
         </div>
       </div>
 
@@ -65,13 +71,5 @@ class Nav extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    message: state.message,
-    appMessage: state.appMessage
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+
+export default Nav;

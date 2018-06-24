@@ -1,24 +1,29 @@
+
 const setAuth = (token, username, userId, role, image) => {
-  localStorage.setItem('token', token);
-  localStorage.setItem('username', username);
-  localStorage.setItem('userId', userId);
-  localStorage.setItem('image', image);
-  return localStorage.setItem('role', role);
+  window.localStorage.setItem('token', token);
+  window.localStorage.setItem('username', username);
+  window.localStorage.setItem('userId', userId);
+  window.localStorage.setItem('image', image);
+  return window.localStorage.setItem('role', role);
 };
+
 const logOut = () => {
-  localStorage.removeItem('token');
-  localStorage.removeItem('username');
-  localStorage.removeItem('userId');
-  localStorage.removeItem('image');
-  return localStorage.removeItem('role');
+  window.localStorage.removeItem('token');
+  window.localStorage.removeItem('username');
+  window.localStorage.removeItem('userId');
+  window.localStorage.removeItem('image');
+  return window.localStorage.removeItem('role');
 };
+
 const setRefresh = (token, image) => {
-  localStorage.setItem('token', token);
-  localStorage.setItem('image', image);
+  window.localStorage.setItem('token', token);
+  window.localStorage.setItem('image', image);
 };
-const getToken = () => localStorage.getItem('token');
-const getRole = () => localStorage.getItem('role');
-const getUsername = () => localStorage.getItem('username');
+
+const getToken = () => window.localStorage.getItem('token');
+const getRole = () => window.localStorage.getItem('role');
+const getUsername = () => window.localStorage.getItem('username');
+
 export default {
   setAuth,
   logOut,

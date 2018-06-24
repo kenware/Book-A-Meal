@@ -73,7 +73,7 @@
     z-index: 10000;
     color:lightseagreen;;
 }
-.dash, .cPassword, .notific, .logOut, .order, .profile, .setmeal {
+.dash, .logout, .cPassword, .notific, .logOut, .order, .profile, .setmeal {
   display: none;
 }
 .main{
@@ -308,6 +308,9 @@ tr:nth-child(even){background-color: #f2f2f2}
     }
     }
   
+}
+.hover:hover {
+  color: lightseagreen;
 }
  
   

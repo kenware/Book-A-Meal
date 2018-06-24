@@ -83,6 +83,7 @@ export const refreshToken = role => (dispatch) => {
     .then((newUser) => {
       if (newUser.message) {
         dispatch(loadErrorMessage({ authError: 'Your Session Expired, Please Login' }));
+        auth.logOut();
         return history.push('/login');
       }
       if (newUser.role === 'user' && newUser.role !== role) {
@@ -100,18 +101,22 @@ export const upgrade = () => (dispatch) => {
     }
   })
     .then(res => res.json())
-    .then((upgrade) => {
-      if (!upgrade.setAdmin) {
-        return dispatch(loadErrorMessage({ upgradeError: upgrade.message }));
+    .then((res) => {
+      if (!res.setAdmin) {
+        return dispatch(loadErrorMessage({ upgradeError: res.message }));
       }
-      localStorage.setItem('role', upgrade.setAdmin.role);
+      auth.logOut();
+      const {
+        username, id, role, image
+      } = res.setAdmin;
+      auth.setAuth(res.token, username, id, role, image);
       dispatch(loadSuccessMessage({ upgradeSuccess: 'Upgrade successfull' }));
     });
 };
+
 export const clearMessages = () => (dispatch) => {
   dispatch(loadErrorMessage([]));
   dispatch(loadSuccessMessage([]));
-
 };
 
 export const getUser = () => (dispatch) => {
@@ -122,4 +127,44 @@ export const getUser = () => (dispatch) => {
   })
     .then(res => res.json())
     .then(user => dispatch(loadUser(user)));
+};
+
+export const updateProfile = payload => (dispatch) => {
+  fetch('/api/v1/auth/update', {
+    headers: {
+      authorization: auth.getToken()
+    },
+    method: 'POST',
+    body: payload
+  })
+    .then(res => res.json())
+    .then((user) => {
+      if (user.message) {
+        return dispatch(loadErrorMessage({ updateError: user.message }));
+      }
+      if (user.image) {
+        window.localStorage.setItem('image', user.image);
+      }
+      getUser();
+      return dispatch(loadSuccessMessage({ updateSuccess: 'User updated!' }));
+    });
+};
+export const resetLink = emailOrUsername => (dispatch) => {
+  fetch('/api/v1/auth/resetLink', {
+    headers: {
+      authorization: auth.getToken(),
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      emailOrUsername
+    })
+  })
+    .then(res => res.json())
+    .then((link) => {
+      if (link.message) {
+        return dispatch(loadErrorMessage({ resetError: link.message }));
+      }
+      return dispatch(loadSuccessMessage({ resetSuccess: 'Reset Link sent to your email' }));
+    });
 };

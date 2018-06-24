@@ -2,8 +2,6 @@
 import * as types from './actionType';
 import auth from '../../authenticate/auth';
 
-// const token = auth.getToken();
-const token = localStorage.getItem('token');
 export const loadMostOrdered = mostOrder => ({ type: types.LOAD_MOST_ORDERED, mostOrder });
 export const loadErrorMessage = errorMessage => ({ type: types.LOAD_ERROR_MESSAGE, errorMessage });
 export const loadSuccessMessage = successMessage => ({
@@ -17,7 +15,7 @@ export const orderMeal = (mealId, menuId, address, quantity) => (dispatch) => {
   fetch('/api/v1/orders', {
     method: 'POST',
     headers: {
-      authorization: localStorage.getItem('token'),
+      authorization: auth.getToken(),
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -47,13 +45,13 @@ export const getMyOrder = () => (dispatch) => {
         }));
         return dispatch(loadMyOrder([]));
       }
-      dispatch(loadMyOrder([]));
+      dispatch(loadMyOrder(myOrder));
     });
 };
 export const getAllOrders = () => (dispatch) => {
   fetch('/api/v1/orders', {
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     }
   })
     .then(res => res.json())
@@ -70,7 +68,7 @@ export const updateOrder = (id, quantity, address, status) => (dispatch) => {
   fetch(`/api/v1/orders/${id}`, {
     method: 'PUT',
     headers: {
-      authorization: localStorage.getItem('token'),
+      authorization: auth.getToken(),
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -90,7 +88,7 @@ export const confirmStatus = id => (dispatch) => {
   fetch(`/api/v1/orderStatus/${id}`, {
     method: 'PUT',
     headers: {
-      authorization: localStorage.getItem('token'),
+      authorization: auth.getToken(),
       'Content-Type': 'application/json'
     }
   })

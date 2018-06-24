@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import PropTypes from 'prop-types';
 import Header from '../header/index';
 import Footer from '../footer/index';
 import * as actions from '../../redux/Action/action';
-
 
 export class Login extends Component {
   constructor(props) {
@@ -21,22 +20,37 @@ export class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.login = this.login.bind(this);
   }
-  UNSAFE_componentWillReceiveProps(newProps) {
-    if (newProps.errorMessage.loginError) {
-      this.setState({ login: 'Login' });
+  /**
+   * ifecycle hook called when component is receives props
+   * @param  {} props if new props from redux with error arrives
+   * change the state login button from loading icon to
+   * to text
+   */
+  static getDerivedStateFromProps(props) {
+    if (props.errorMessage.loginError) {
+      return { login: 'Login' };
     }
+    return null;
   }
+  /**
+   * remove error props in redux store if component unmount
+   */
   componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+  /**
+   * @param  {} e set state on input onchange event
+   */
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+  /**
+   * @param  {} e login method
+   */
   login(e) {
     e.preventDefault();
-
     const {
       password,
       username
@@ -92,17 +106,19 @@ export class Login extends Component {
         </div>
         <Footer />
       </div>
-
     );
   }
 }
-
-function mapStateToProps(state, ownProps) {
+Login.propTypes = {
+  errorMessage: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
+};
+export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage
   };
 }
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

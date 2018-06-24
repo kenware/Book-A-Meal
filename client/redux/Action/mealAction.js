@@ -1,10 +1,6 @@
 
 import * as types from './actionType';
 import auth from '../../authenticate/auth';
-import history from '../../history';
-
-// const token = auth.getToken();
-const token = localStorage.getItem('token');
 export const loadMostOrdered = mostOrder => ({ type: types.LOAD_MOST_ORDERED, mostOrder });
 export const loadErrorMessage = errorMessage => ({ type: types.LOAD_ERROR_MESSAGE, errorMessage });
 export const loadSuccessMessage = successMessage => ({
@@ -22,7 +18,7 @@ export const loadMostOrderedMeal = () => (dispatch) => {
 export const getAllMeals = () => (dispatch) => {
   fetch('/api/v1/meals', {
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     }
   })
     .then(res => res.json())
@@ -31,15 +27,14 @@ export const getAllMeals = () => (dispatch) => {
         return dispatch(loadAllMeals(meals));
       }
       dispatch(loadAllMeals([]));
-    }
-    );
+    });
 };
 
 export const createMeal = payload => (dispatch) => {
   fetch('/api/v1/meals', {
     method: 'POST',
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     },
     body: payload
   })
@@ -47,17 +42,17 @@ export const createMeal = payload => (dispatch) => {
     .then((response) => {
       if (response.message) {
         return dispatch(loadErrorMessage({ createMealError: response.message }));
-      } 
+      }
       dispatch(getAllMeals());
       dispatch(loadSuccessMessage({ createMealSuccess: 'Meal Successfully Created' }));
-        // return history.push('/dashboard');
+      // return history.push('/dashboard');
     });
 };
 export const deleteMeal = id => (dispatch) => {
   fetch(`/api/v1/meals/${id}`, {
     method: 'DELETE',
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     }
   })
     .then(res => res.json())
@@ -70,7 +65,7 @@ export const updateMeal = (id, payload) => (dispatch) => {
   fetch(`/api/v1/meals/${id}`, {
     method: 'PUT',
     headers: {
-      authorization: localStorage.getItem('token')
+      authorization: auth.getToken()
     },
     body: payload
   })
@@ -81,7 +76,5 @@ export const updateMeal = (id, payload) => (dispatch) => {
       }
       dispatch(getAllMeals());
       return dispatch(loadSuccessMessage({ updateMealSuccess: 'Meal Successfully Updated' }));
-
-      // return history.push('/dashboard');
     });
 };

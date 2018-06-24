@@ -2,7 +2,7 @@
 
 exports[`Test Register Component should recieve error message props with wrong user input 1`] = `
 <div>
-  <Connect(Nav) />
+  <Nav />
   <div
     className="register-container"
   >
@@ -167,7 +167,7 @@ exports[`Test Register Component should recieve error message props with wrong u
 
 exports[`Test Register Component should recieve error message props with wrong user input 2`] = `
 <div>
-  <Connect(Nav) />
+  <Nav />
   <div
     className="register-container"
   >
@@ -334,7 +334,7 @@ exports[`Test Register Component should recieve error message props with wrong u
 
 exports[`Test Register Component should render correctly 1`] = `
 <div>
-  <Connect(Nav) />
+  <Nav />
   <div
     className="register-container"
   >
@@ -495,4 +495,35 @@ exports[`Test Register Component should render correctly 1`] = `
   </div>
   <footer />
 </div>
+`;
+
+exports[`Test Register Component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+}
+`;
+
+exports[`Test Register Component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "registerError": "Wrong credentials",
+  },
+}
 `;

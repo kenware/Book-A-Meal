@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Register } from '../../../components/register/index';
+import { shallow } from 'enzyme';
+import { Register, mapDispatchToProps, mapStateToProps } from '../../../components/register/index';
 
 describe('Test Register Component', () => {
   const props = {
@@ -8,6 +8,7 @@ describe('Test Register Component', () => {
       registerError: 'Wrong credentials'
     },
     actions: {
+      register: jest.fn(),
       errorMessage: {
         registerError: 'Wrong credentials',
         authError: 'Wrong credentials'
@@ -21,6 +22,7 @@ describe('Test Register Component', () => {
       loginError: ''
     },
     actions: {
+      register: jest.fn(),
       errorMessage: {
         registerError: '',
         authError: ''
@@ -33,77 +35,38 @@ describe('Test Register Component', () => {
     const tree = shallow(<Register {...emptyProps} />);
     expect(tree).toMatchSnapshot();
   });
-
-  it('it should render all input field', () => {
-    const tree = shallow(<Register {...emptyProps} />);
-    expect(tree.find('.form-field').length).toEqual(7);
-  });
-
-  it('should render without throwing an error', () => {
-    expect(shallow(<Register {...emptyProps} />).exists(<form className="register" />)).toBe(true);
-  });
-
-  it('should respond to change event and change the state of the Register Component', () => {
-
-    const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#username').simulate('change', { target: { name: 'username', value: 'kevin' } });
-
-    expect(tree.state('username')).toEqual('kevin');
-  });
-
-  it('should respond to change event of password input and change the state of the register Component', () => {
-
-    const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#password').simulate('change', { target: { name: 'password', value: 'cats' } });
-
-    expect(tree.state('password')).toEqual('cats');
-  });
-
-  it('should respond to change event of name and change the state of the register Component', () => {
-
-    const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#name').simulate('change', { target: { name: 'name', value: 'kevin' } });
-
-    expect(tree.state('name')).toEqual('kevin');
-  });
-
   it('should respond to change eventof email input and change the state of the register Component', () => {
-
     const tree = shallow(<Register {...emptyProps} />);
     tree.find('#email').simulate('change', { target: { name: 'email', value: 'kevin@gmail.com' } });
-
     expect(tree.state('email')).toEqual('kevin@gmail.com');
   });
-
-  it('should respond to change event of email input return error in invalid email input', () => {
-    const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#email').simulate('change', { target: { name: 'email', value: 'kevin@' } });
-    expect(tree.state('validEmail')).toEqual('Invalid Email Address');
-  });
-  it('should respond to change event of confirm password invalid email input', () => {
-    const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#vpassword').simulate('change', { target: { name: 'vpassword', value: '12345' } });
-    expect(tree.state('vpassword')).toEqual('12345');
-  });
-  it('should return password and confirm password match on change event', () => {
+  it('should register user onsubmit events event', () => {
     const tree = shallow(<Register {...emptyProps} />);
     tree.find('#password').simulate('change', { target: { name: 'password', value: '12345' } });
     tree.find('#vpassword').simulate('change', { target: { name: 'vpassword', value: '12345' } });
-    expect(tree.state('passwordmatch')).toEqual('Password Match');
+    tree.find('#email').simulate('change', { target: { name: 'email', value: 'kevin@gmail.com' } });
+    tree.find('#username').simulate('change', { target: { name: 'username', value: 'kevin' } });
+    const wrapper = tree.instance();
+    wrapper.register({ preventDefault: jest.fn() });
   });
-  it('should return password and confirm password mismatch on change event', () => {
+  it('should register user onsubmit events event and return error on empty password, email or username', () => {
     const tree = shallow(<Register {...emptyProps} />);
-    tree.find('#password').simulate('change', { target: { name: 'password', value: '1234' } });
-    tree.find('#vpassword').simulate('change', { target: { name: 'vpassword', value: '12345' } });
-    expect(tree.state('passwordmatch')).toEqual('');
-    expect(tree.state('passwordmismatch')).toEqual('Password do not Match');
-    
-});
-
-  it('should recieve error message props with wrong user input', () => {
-    let tree = shallow(<Register {...emptyProps} />);
+    const wrapper = tree.instance();
+    wrapper.register({ preventDefault: jest.fn() });
+  });
+  it('should respond to lifecycle method', () => {
+    const tree = shallow(<Register {...emptyProps} />);
+    const wrapper = tree.instance();
+    wrapper.componentWillUnmount();
+    wrapper.constructor.getDerivedStateFromProps({ errorMessage: { registerError: 'error' } });
+  });
+  it('should respond to mapStateToProps methods', () => {
+    const ownProps = { match: { params: { mealId: 1 } } };
+    const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
-    tree = shallow(<Register {...props} />);
+  });
+  it('should respond to mapDispatchToProps methods', () => {
+    const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();
   });
 });

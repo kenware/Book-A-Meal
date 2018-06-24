@@ -6,10 +6,9 @@ import dotenv from 'dotenv';
 import model from '../models/index';
 
 dotenv.config();
-// import secret from '../config/config';
 const secret = process.env.SECRET;
 const passEmail = process.env.PASS;
-const userEmail = process.env.USER;
+const userEmail = process.env.USERS;
 const { Op } = sequelize;
 const { User, notification } = model;
 
@@ -78,6 +77,10 @@ export default class userController {
       return res.status(401).json({ message: 'Wrong credentials' });
     });
   }
+  /**
+   * @param  {token} req upgrade user to an admin
+   * @param  {user} res user is now an admin
+   */
   async adminSignup(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -89,8 +92,18 @@ export default class userController {
     const setAdmin = await user.update({ role });
     if (!setAdmin) { return res.status(401).json({ message: 'Update failed' }); }
     const message = `${setAdmin.username} is set as admin`;
-    return res.status(201).json({ message, setAdmin });
+    const token = jwt.sign(
+      {
+        id: setAdmin.id,
+        username: setAdmin.username,
+        role: setAdmin.role,
+        image: setAdmin.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    return res.status(201).json({ message, setAdmin, token });
   }
+
   async getUser(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -115,6 +128,7 @@ export default class userController {
         { id: verify.id, username: verify.username, role: verify.role },
         secret, { expiresIn: 86400 }
       );
+
       const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         // host: 'bookmeals.herokuapp.com',
@@ -123,7 +137,7 @@ export default class userController {
         secure: true, // use SSL
         auth: {
           user: userEmail,
-          pass: passEmail// 'ken_waredehydrogenase'
+          pass: passEmail
         }
       });
       const mailoutput = `<html>\n\
@@ -160,7 +174,7 @@ export default class userController {
           return res.json(error);
         }
 
-        return res.json(`Message sent: ${info.response}`);
+        return res.json({ success: info.response });
       });
     } catch (err) { return res.json(err); }
   }
@@ -213,5 +227,20 @@ export default class userController {
       image: req.decoded.image,
       token
     });
+  }
+  async userUpdate(req, res) {
+    const { id } = req.decoded;
+    const user = await User.findById(id);
+    if (!user) { return res.status(401).json({ message: 'User not found' }); }
+    const { name } = req.body;
+    let { image } = req.body;
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true) {
+      return res.status(401).json({ message: 'valid name is required' });
+    }
+    if (req.files && req.files.length !== 0) {
+      image = req.files[0].url;
+    }
+    const update = await user.update({ name, image });
+    return res.status(201).json(update);
   }
 }
