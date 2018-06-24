@@ -6,15 +6,15 @@
   "scripts": {
     "start-d": "nodemon ./app.js --exec babel-node",
     "start": "babel-node app.js",
-    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha --recursive",
+    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha test/**.js --recursive",
     "lint": "node node_modules/eslint/bin/eslint server --ext js --fix",
     "test": "npm run coverage -- --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "start-dev": "npm-run-all --parallel build-development start-d",
     "build-production": "webpack -p",
     "build-development": "webpack -w",
     "jest:test": "jest",
-    "jest": "jest --coverage  --watch --no-cache",
-    "test-all": "npm run cover && npm run test",
+    "jest": "jest --watchAll --no-cache --coverage",
+    "test-all": "npm-run-all --parallel cover test",
     "cover": "npm run jest --no-cache --cover"
   },
   "author": "",

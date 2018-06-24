@@ -6,7 +6,7 @@ import model from '../models/index';
 
 dotenv.config();
 const passEmail = process.env.PASS;
-const userEmail = process.env.USER;
+const userEmail = process.env.USERS;
 const {
   Menu,
   Meal,
@@ -29,7 +29,7 @@ export default class menuController {
     // get current hour of the day
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
 
-    // check if current time is grater than order expire time
+    // check if current time is greater than order expire time
     if (orderBefore < Number(presentTime)) {
       return res.status(422)
         .json({ message: 'The closing time user can order cannot be lesser than the present time' });
@@ -49,7 +49,7 @@ export default class menuController {
     }
     menu.addMeal(mealId);
     // return res.json(menu);
-    if (!isMenuSet) {
+    //if (!isMenuSet) {
     // get all user to get the email of all users
       const allUser = await User.findAll();
       allUser.forEach((element) => {
@@ -108,11 +108,11 @@ export default class menuController {
         if (error) {
           return res.json(error);
         }
-        return { info, message, menu };
+        return res.json({ info, message, menu });
       });
-    } else {
-      return res.status(200).json({ message, menu });
-    }
+    //} else {
+    //  return res.status(200).json({ message, menu });
+    //}
   }
   async getMenu(req, res) {
     let { date } = req.params;
