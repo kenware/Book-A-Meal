@@ -4,7 +4,7 @@ import './index.scss';
 import history from '../../history';
 import auth from '../../authenticate/auth';
 
-// this header is used only in user dashboard for a small screen size
+// this header is used only in user dashboard for a small screen sizes
 class Header3 extends Component {
   constructor(props) {
     super(props);

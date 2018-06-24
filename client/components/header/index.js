@@ -5,6 +5,7 @@ import history from '../../history';
 import auth from '../../authenticate/auth';
 
 /**
+  * index header
   * This header is used in all pages for large screen size
 */
 class Nav extends Component {
