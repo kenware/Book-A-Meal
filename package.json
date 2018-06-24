@@ -14,6 +14,7 @@
     "build-development": "webpack -w",
     "jest:test": "jest",
     "jest": "jest --coverage  --watch --no-cache",
+    "test-all": "npm run cover && npm run test",
     "cover": "npm run jest --no-cache --cover"
   },
   "author": "",
