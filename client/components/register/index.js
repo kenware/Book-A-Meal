@@ -109,6 +109,7 @@ export class Register extends Component {
     } else {
       this.setState({ message: 'All Field Is Required' });
     }
+    this.props.actions.clearMessages();
   }
   render() {
     return (

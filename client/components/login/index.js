@@ -63,6 +63,7 @@ export class Login extends Component {
       userField: '',
       passField: ''
     });
+    this.props.actions.clearMessages();
   }
   render() {
     return (

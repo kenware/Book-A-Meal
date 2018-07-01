@@ -5,7 +5,9 @@ import cloudinary from 'cloudinary';
 import cloudinaryStorage from 'multer-storage-cloudinary';
 import userController from '../controller/user';
 import middleware from '../middleware/validate';
+import mailController from '../controller/mailer';
 
+const Mail = new mailController();
 const validate = new middleware();
 const User = new userController();
 
@@ -32,7 +34,7 @@ const router = express.Router();
 router.post('/auth/signup', validate.signup, User.createUser);
 router.post('/auth/signin', validate.signin, User.login);
 // send reset link to email
-router.post('/auth/resetLink', User.sendResetLink);
+router.post('/auth/resetLink', User.sendResetLink, Mail.changePassword);
 // reset password
 router.post('/auth/reset', validate.authUser, User.resetPassword);
 // update user to admin

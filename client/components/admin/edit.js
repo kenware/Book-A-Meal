@@ -35,8 +35,8 @@ export class Edit extends Component {
    *
    * @returns {getAllMeal} fetches all meals
    */
-  componentDidMount() {
-    if (this.props.meals === 'array') {
+  componentWillMount() {
+    if (this.props.meals.name === '') {
       this.props.mealActions.getAllMeal();
     }
   }
@@ -174,9 +174,9 @@ export function mapStateToProps(state, ownProps) {
   if (state.meals.length > 0) {
     meals = state.meals.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
   } else {
-    meals = [{
+    meals = {
       name: '', price: 0, description: '', id: 0
-    }];
+    };
   }
   return {
     errorMessage: state.errorMessage,

@@ -1227,7 +1227,6 @@ Object {
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],
@@ -1244,7 +1243,6 @@ Object {
   "menuActions": Object {
     "getMenu": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
     "setMenu": [Function],

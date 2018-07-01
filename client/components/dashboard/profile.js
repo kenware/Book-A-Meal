@@ -15,7 +15,7 @@ export class Profile extends Component {
       name: '',
       file: [],
       image: '',
-      updateProfile: 'Update'
+      updateProfile: 'Update',
     };
     this.onChange = this.onChange.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
@@ -35,15 +35,14 @@ export class Profile extends Component {
    * lifecycle hook called when component receives new props
    * Return new state when new props arrive from redux store
    */
-  static getDerivedStateFromProps(props) {
-    if (props.user.name) {
-      return {
-        name: props.user.name,
-        image: props.user.image,
+  componentWillReceiveProps(newProps) {
+    if (newProps.user.name) {
+      this.setState({
+        name: newProps.user.name,
+        image: newProps.user.image,
         updateProfile: 'Update'
-      };
+      });
     }
-    return null;
   }
   /**
    * remove error props in redux store if component unmount
@@ -83,7 +82,6 @@ export class Profile extends Component {
     this.setState({
       updateProfile: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
     });
-    this.props.actions.clearMessages();
     this.props.actions.updateProfile(payload);
   }
   render() {

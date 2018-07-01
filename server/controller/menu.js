@@ -1,28 +1,20 @@
 import shortcode from 'date-shortcode';
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
 import model from '../models/index';
 
-
-dotenv.config();
-const passEmail = process.env.PASS;
-const userEmail = process.env.USERS;
 const {
   Menu,
   Meal,
   User,
-  notification
 } = model;
 
 export default class menuController {
-  async createMenu(req, res) {
+  async createMenu(req, res, next) {
     const { title, mealId, orderBefore } = req.body;
     const { id, username } = req.decoded;
     const userId = id;
     let { date } = req.body;
     let message = 'menu is updated';
     let isMenuSet = false;
-    const emailList = [];
     // check if mealId exist
     const meal = await Meal.findOne({ where: { userId, id: mealId } });
     if (!meal) { return res.status(401).json({ message: 'Meal with the entered id not found' }); }
@@ -48,68 +40,11 @@ export default class menuController {
       isMenuSet = true;
     }
     menu.addMeal(mealId);
-    // return res.json(menu);
-    if (!isMenuSet) {
-    // get all user to get the email of all users
-      const allUser = await User.findAll();
-      allUser.forEach((element) => {
-        emailList.push(element.email);
-      });
-      // create notification when menu is set
-      message = `Today menu is set by caterer ${username}`;
-      const sendNotific = await notification.create({ message });
-      if (!sendNotific) {
-        return res.status(401).json({ message: 'error sending notification' });
-      }
-      // send email notification when menu is set using nodemailer
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        // host: 'bookmeals.herokuapp.com',
-        port: 465,
-        // port: 5000,
-        secure: true, // use SSL
-        auth: {
-          user: userEmail,
-          pass: passEmail// 'ken_waredehydrogenase'
-        }
-      });
-      // html email body
-      const mailoutput = `<html>\n\
-      <body>\n\
-      <table>\n\
-      <tr>\n\
-      <td>Title: </td><h2> Book-A-Meal</h2><td></td>\n\
-      <td>Title: </td><h3> no-reply@Book-A-Meal.com </h3> <td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Email: </td>Today's Menu is set <td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>MN: </td>Order Now<td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Messge: </td>This menu is specially prepared by well known caterer ${username} ,
-      place your order<a href='${req.headers.host}/dashboard'> here </a>. 
-      If the above link do not 
-      work. Pkease follow this link ${req.headers.host}/dashboard <td></td>\n\
-      </tr>\n\
-      </table></body></html>`;
-      // setup e-mail data
-      const mailOptions = {
-        from: '"Book-A-Meal "<no-reply@Book-A-Meal.com>', // sender address (who sends)
-        to: emailList, // list of receivers (who receives)
-        subject: 'Notification', // Subject line
-        // text: 'Hello world ', // plaintext body
-        html: mailoutput // html body
-      };
-
-      // send mail with defined transport object
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return res.json(error);
-        }
-        return res.json({ info, message, menu });
-      });
+    if (isMenuSet) {
+      req.body.menu = menu;
+      req.body.message = message;
+      req.body.username = username;
+      next();
     } else {
       return res.status(200).json({ message, menu });
     }

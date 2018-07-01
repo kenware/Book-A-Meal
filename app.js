@@ -1,14 +1,16 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-
 import volleyball from 'volleyball';
 import userRoute from './server/route/user';
 import mealRoute from './server/route/meal';
 import menuRoute from './server/route/menu';
 import orderRoute from './server/route/order';
+
+dotenv.config();
 
 const swaggerDocument = require('./swagger.json');
 

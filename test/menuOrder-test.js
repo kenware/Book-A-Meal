@@ -207,7 +207,7 @@ describe('Testing of Menu middleware and controller', () => {
       .send({
         title: 'today',
         mealId: '34545jhjk',
-        orderBefore: (new Date().getHours() + 2),
+        orderBefore: (new Date().getHours() + 1),
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -301,7 +301,7 @@ describe('Testing of Menu middleware and controller', () => {
       .send({
         title: 'today',
         mealId,
-        orderBefore: (new Date().getHours() + 2),
+        orderBefore: (new Date().getHours() + 1),
       })
       .end((err, res) => {
         res.should.have.status(200);

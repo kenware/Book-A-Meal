@@ -11,7 +11,7 @@ const { User } = model;
 export default class middleware {
   async authUser(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
-    if (!token) {
+    if (!token || token === 'null') {
       return res.status(401).json({ message: 'Unauthorized Access' });
     }
 
@@ -25,7 +25,7 @@ export default class middleware {
   }
   async authAdmin(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
-    if (!token) {
+    if (!token || token === 'null') {
       return res.status(401).json({ message: 'Unauthorized Access' });
     }
 

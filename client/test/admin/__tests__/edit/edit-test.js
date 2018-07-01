@@ -4,7 +4,7 @@ import { Edit, mapStateToProps, mapDispatchToProps } from '../../../../component
 import { props, emptyProps } from '../../adminMockData';
 
 const newProps = {
-  meals: 'array',
+  meals: [{ name: '' }],
   mostOrder: [
   ],
   allOrder: [

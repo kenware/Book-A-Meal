@@ -56,7 +56,7 @@ export class Dashboard extends Component {
    */
   componentDidMount() {
     this.props.actions.getNotifications();
-    this.props.actions.refreshToken('role');
+    this.props.actions.refreshToken('user');
   }
   /**
    * lifecycle hook called when component receives props
@@ -251,7 +251,7 @@ export class Dashboard extends Component {
               </div>
               <div>
                 <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
-                <img src="image/eze.jpg" className="user-img rounded-circle" alt="user" />
+                <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="user" />
               </div>
               <div className="notification1">
                 <span className="hover" onClick={this.toggle} role="button">

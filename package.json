@@ -12,10 +12,9 @@
     "start-dev": "npm-run-all --parallel build-development start-d",
     "build-production": "webpack -p",
     "build-development": "webpack -w",
-    "jest:test": "jest",
-    "jest": "jest --watchAll --no-cache --coverage",
-    "test-all": "npm-run-all --parallel cover test",
-    "cover": "npm run jest --no-cache --cover"
+    "jest": "jest --no-cache --coverage",
+    "test-all": "run-s jest test",
+    "cover": "jest --watch"
   },
   "author": "",
   "license": "ISC",
@@ -33,13 +32,14 @@
     "istanbul": "^1.0.0-alpha",
     "jest": "^23.1.0",
     "jest-babel-istanbul": "^0.1.0",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.17.5-alpha.1",
     "react-test-renderer": "^16.4.0",
     "reactjs-localstorage": "0.0.6",
     "redux-mock-store": "^1.5.3",
     "webpack-cli": "^2.1.3"
   },
   "dependencies": {
+    "D": "^1.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^23.0.1",
@@ -86,6 +86,7 @@
     "multer-storage-cloudinary": "^2.2.1",
     "node-sass": "^4.5.2",
     "nodemailer": "^4.6.4",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "npm-run-all": "^4.1.2",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",

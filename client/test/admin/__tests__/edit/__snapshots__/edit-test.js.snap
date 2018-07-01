@@ -1809,7 +1809,6 @@ Object {
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],
@@ -1859,14 +1858,12 @@ Object {
   "errorMessage": Object {
     "createMealError": "",
   },
-  "meals": Array [
-    Object {
-      "description": "",
-      "id": 0,
-      "name": "",
-      "price": 0,
-    },
-  ],
+  "meals": Object {
+    "description": "",
+    "id": 0,
+    "name": "",
+    "price": 0,
+  },
   "successMessage": Object {
     "createMealSuccess": "",
   },

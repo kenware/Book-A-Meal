@@ -13,7 +13,7 @@ const props = {
   dash: 'dash',
   cPassword: '12345',
   profile: 'profile',
-  notific: [],
+  notific: '',
   logout: 'logout',
   order: 'order',
 };

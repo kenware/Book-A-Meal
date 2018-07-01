@@ -63,6 +63,7 @@ export class Add extends Component {
   */
   addMeal(e) {
     e.preventDefault();
+    this.props.actions.clearMessages();
     const {
       name, price, description, file
     } = this.state;
@@ -124,7 +125,7 @@ export class Add extends Component {
                   >
                     Drag and drop or click to select an image to upload.
                   </Dropzone>
-                  {this.state.file.map(fil => <img src={fil.preview} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />)}
+                  {this.state.file.map(fil => <img key={fil.preview} src={fil.preview} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />)}
                 </span>
               </div>
               <div className="form-field">
