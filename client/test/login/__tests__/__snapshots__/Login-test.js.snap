@@ -1,0 +1,487 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Login Component renders correctly 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your details to Login
+      </h2>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form
+        action="dashboard.html"
+        className="login"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="username"
+            name="username"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/register"
+            >
+              SignUp
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/resetLink"
+            >
+              forgot password? 
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Login Component should recieve error message props with wrong credentials 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your details to Login
+      </h2>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form
+        action="dashboard.html"
+        className="login"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="username"
+            name="username"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/register"
+            >
+              SignUp
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/resetLink"
+            >
+              forgot password? 
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Login Component should recieve error message props with wrong credentials 2`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your details to Login
+      </h2>
+      <br />
+      <h3
+        className="text-center danger"
+      >
+        Wrong credentials
+      </h3>
+      <h3
+        className="text-center danger"
+      />
+      <form
+        action="dashboard.html"
+        className="login"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="username"
+            name="username"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password 
+            <br />
+            <span
+              className="text-center danger"
+            />
+          </label>
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/register"
+            >
+              SignUp
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/resetLink"
+            >
+              forgot password? 
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Login Component should respond to change event and change the state of the Login Component 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your details to Login
+      </h2>
+      <br />
+      <h3
+        className="text-center danger"
+      >
+        Wrong credentials
+      </h3>
+      <h3
+        className="text-center danger"
+      />
+      <form
+        action="dashboard.html"
+        className="login"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username 
+            <br />
+            <span
+              className="text-center danger"
+            >
+              Username is required
+            </span>
+          </label>
+          <input
+            id="username"
+            name="username"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password 
+            <br />
+            <span
+              className="text-center danger"
+            >
+              Password is required
+            </span>
+          </label>
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            name="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/register"
+            >
+              SignUp
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/resetLink"
+            >
+              forgot password? 
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Login Component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+}
+`;
+
+exports[`Test Login Component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "loginError": "Wrong credentials",
+  },
+}
+`;

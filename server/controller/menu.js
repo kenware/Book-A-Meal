@@ -1,21 +1,27 @@
 import shortcode from 'date-shortcode';
 import model from '../models/index';
 
-const { Menu, Meal, User } = model;
+const {
+  Menu,
+  Meal,
+  User,
+} = model;
+
 export default class menuController {
-  async createMenu(req, res) {
+  async createMenu(req, res, next) {
     const { title, mealId, orderBefore } = req.body;
-    const { id } = req.decoded;
+    const { id, username } = req.decoded;
     const userId = id;
     let { date } = req.body;
     let message = 'menu is updated';
+    let isMenuSet = false;
     // check if mealId exist
     const meal = await Meal.findOne({ where: { userId, id: mealId } });
     if (!meal) { return res.status(401).json({ message: 'Meal with the entered id not found' }); }
     // get current hour of the day
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
 
-    // check if current time is grater than order expire time
+    // check if current time is greater than order expire time
     if (orderBefore < Number(presentTime)) {
       return res.status(422)
         .json({ message: 'The closing time user can order cannot be lesser than the present time' });
@@ -28,14 +34,20 @@ export default class menuController {
     if (!menu) {
       menu = await Menu.create({ title, date, orderBefore });
       menu.setUser(user);
-      menu.save();
       message = `${date} Menu is set`;
     } else {
       menu = await menu.update({ orderBefore, title });
+      isMenuSet = true;
     }
-
     menu.addMeal(mealId);
-    return res.status(200).json({ message, menu });
+    if (isMenuSet) {
+      req.body.menu = menu;
+      req.body.message = message;
+      req.body.username = username;
+      next();
+    } else {
+      return res.status(200).json({ message, menu });
+    }
   }
   async getMenu(req, res) {
     let { date } = req.params;

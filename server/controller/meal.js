@@ -1,8 +1,7 @@
-
-
+import Sequelize from 'sequelize';
 import model from '../models/index';
 
-const { Meal, User } = model;
+const { Meal, User, Order } = model;
 
 export default class mealController {
   async getMeals(req, res) {
@@ -14,10 +13,19 @@ export default class mealController {
     }
     return res.status(200).json(meals);
   }
+  async getOneMeal(req, res) {
+    const { id } = req.decoded;
+    const userId = id;
+    const { mealId } = req.params;
+    const meal = await Meal.findAll({ where: { userId, id: mealId } });
+    if (!meal) {
+      return res.status(401).json({ message: 'There is no meal in the list' });
+    }
+    return res.status(200).json(meal);
+  }
   async addMeal(req, res) {
-    const { price, description } = req.body;
-    let { name } = req.body;
-    name = name.trim();
+    let { description, name } = req.body;
+    const { price } = req.body;
     const { id } = req.decoded;
     const userId = id;
     // Input validation
@@ -31,10 +39,16 @@ export default class mealController {
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
+    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-
+    // trim empty spaces at the beginning and the end of the string
+    name = name.trim();
+    description = description.trim();
+    // remove extra spaces in a string
+    name = name.replace(/  +/g, ' ');
+    description = description.replace(/  +/g, ' ');
+    // chech if meal is already exist
     const isExist = await Meal.findOne({ where: { name, userId } });
     if (isExist) { return res.status(422).json({ message: 'Meal already exist' }); }
 
@@ -56,40 +70,36 @@ export default class mealController {
   async updateMeal(req, res) {
     const { mealId } = req.params;
     let { price, name, description } = req.body;
+
     if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof name !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid meal name' });
+    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
+      return res.status(400).json({ message: 'Please provide a valid description' });
     }
     if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Provide a valid meal id' });
     }
+    // remove extra spaces in a string
+    name = name.trim();
+    description = description.trim();
+    // remove extra spaces in a string
+    name = name.replace(/  +/g, ' ');
+    description = description.replace(/  +/g, ' ');
+    // get the meal to update
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+    if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
-    const {
-      oldPrice,
-      oldName,
-      oldDescription,
-      oldImage,
-    } = meal;
-    if (!price) { price = oldPrice; }
-    if (!name) { name = oldName; }
-    if (!description) { description = oldDescription; }
-
+    
     // get file upload
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
-    } else {
-      // save original fileimage if no image is uploaded
-      image = oldImage;
     }
 
     const update = await meal.update({
@@ -105,10 +115,28 @@ export default class mealController {
     }
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
-    if (req.decoded.id !== meal.userId && req.decoded.role !== 'superUser') {
+    if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot delete meal you did not add' });
     }
     await meal.destroy();
     return res.status(200).json({ message: 'Meal successfully deleted' });
+  }
+  async getMostOrderMeals(req, res) {
+    const { limit } = req.params;
+    try {
+      const meal = await Order.findAll({
+        attributes: [
+          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'OrderCount']],
+        include: [{ model: Meal }],
+        group: ['Meal.id'],
+        order: [
+          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'DESC']
+        ],
+        limit
+      });
+      return res.json(meal);
+    } catch (err) {
+      return res.json(err);
+    }
   }
 }

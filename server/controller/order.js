@@ -18,7 +18,7 @@ export default class orderController {
       where: { id: parseInt(menuId) },
       include: { model: Meal }
     });
-    if (!menu) { return res.status(404).json('Menu not found'); }
+    if (!menu) { return res.status(404).json({ message: 'Menu not found' }); }
     // caterers id
     const { userId } = menu;
     const catererId = userId;
@@ -31,14 +31,14 @@ export default class orderController {
     // check if order time is expired
     if (orderBefore < Number(presentTime) || menu.date !== date) {
       return res.status(422)
-        .json('You cannot order menu at this time');
+        .json({ message: 'You cannot order menu at this time' });
     }
     let meal;
     // check if meal exist in the menu using mealId
     menu.Meals.forEach((element) => {
       if (element.id === parseInt(mealId)) { meal = element; }
     });
-    if (!meal) { return res.status(404).json('meal not found'); }
+    if (!meal) { return res.status(404).json({ message: 'Meal not found' }); }
 
     const { id } = req.decoded;
     const totalPrice = meal.price * quantity;
@@ -64,6 +64,7 @@ export default class orderController {
   async updateOrder(req, res) {
     const newQuantity = req.body.quantity;
     const newAddress = req.body.address;
+    const newStatus = req.body.status;
     const { orderId } = req.params;
     if ((Number.isNaN(Number(orderId))) === true || (/^ *$/.test(orderId) === true)) {
       return res.status(401).json({ message: 'Provide a valid order id' });
@@ -91,12 +92,16 @@ export default class orderController {
       quantity,
       address,
       totalPrice,
+      status
     } = order;
     quantity = newQuantity || quantity;
     address = newAddress || address;
+    status = newStatus || status;
     totalPrice = (order.Meal.price * newQuantity) || totalPrice;
     // update
-    const update = await order.update({ quantity, address, totalPrice });
+    const update = await order.update({
+      quantity, address, totalPrice, status
+    });
     if (!update) { return res.status(404).json({ message: 'Update failed' }); }
     return res.status(201).json(update);
   }
@@ -105,9 +110,55 @@ export default class orderController {
     const catererId = id;
     const orders = await Order.findAll({
       where: { catererId },
-      include: { model: User }
+      include: [
+        {
+          model: Meal,
+          attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
+        },
+        {
+          model: User,
+          attributes: ['id', 'name', 'username', 'image']
+        },
+      ],
+      order: [
+        ['createdAt', 'DESC']
+      ]
     });
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'users have not ordered a meal' }); }
     return res.status(200).json(orders);
+  }
+  async getUserOrders(req, res) {
+    const { id } = req.decoded;
+    const userId = id;
+    const orders = await Order.findAll({
+      where: { userId },
+      include: [
+        {
+          model: Meal,
+          attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
+        },
+      ],
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    });
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
+    return res.status(200).json(orders);
+  }
+  async confirmStatus(req, res) {
+    const userId = req.decoded.id;
+    const id = req.params.orderId;
+    const order = await Order.findOne({
+      where: { id }
+    });
+    if (!order) { return res.status(404).json({ message: 'Order not found' }); }
+    if (userId !== order.userId) {
+      return res.status(401).json({ message: 'You cannot update order you did not add' });
+    }
+    const update = await order.update({
+      status: 'confirmed'
+    });
+    if (!update) { return res.status(404).json({ message: 'Update failed' }); }
+    return res.status(201).json(update);
   }
 }

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test mostOder components it should flip card on mouseEnter event 1`] = `
+<div
+  className="meal-menu-row"
+>
+  <div
+    className="meal-menu"
+    key="1"
+  >
+    <div
+      className="meal-menu-card"
+    >
+      <div
+        className="meal-img-wrap"
+      >
+        <div
+          className="meal-overlay"
+        />
+        <img
+          alt="Avatar"
+          className="meal-card-img"
+          src="image"
+        />
+      </div>
+      <div
+        className="container l-r-pad-text"
+      >
+        <h4
+          className="p-color"
+        >
+          <b>
+            $
+            400
+          </b>
+        </h4>
+        <p>
+          rice
+        </p>
+        <Link
+          replace={false}
+          to="/detail/1"
+        >
+          View
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test mostOder components it should flip card on mouseEnter event 2`] = `
+<div
+  className="meal-menu-row"
+/>
+`;
+
+exports[`Test mostOder components renders correctly 1`] = `
+<div
+  className="meal-menu-row"
+>
+  <div
+    className="meal-menu"
+    key="1"
+  >
+    <div
+      className="meal-menu-card"
+    >
+      <div
+        className="meal-img-wrap"
+      >
+        <div
+          className="meal-overlay"
+        />
+        <img
+          alt="Avatar"
+          className="meal-card-img"
+          src="image"
+        />
+      </div>
+      <div
+        className="container l-r-pad-text"
+      >
+        <h4
+          className="p-color"
+        >
+          <b>
+            $
+            400
+          </b>
+        </h4>
+        <p>
+          rice
+        </p>
+        <Link
+          replace={false}
+          to="/detail/1"
+        >
+          View
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+`;

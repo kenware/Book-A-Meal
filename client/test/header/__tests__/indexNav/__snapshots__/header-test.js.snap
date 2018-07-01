@@ -1,0 +1,393 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing of sidebar component should render properly 1`] = `
+<div>
+  <div
+    className="nav "
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span />
+    <span />
+    <span />
+    <span />
+    <Link
+      className="a"
+      replace={false}
+      to="/login"
+    >
+      Login
+    </Link>
+    <Link
+      className="a"
+      replace={false}
+      to="/register"
+    >
+      SignUp
+    </Link>
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Testing of sidebar component should render properly with user info in the nav bar 1`] = `
+<div>
+  <div
+    className="nav "
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span
+      className="a"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
+    <Link
+      className="a"
+      replace={false}
+      to="/profile"
+    >
+      <em
+        className="fa fa-user"
+      />
+        
+      user
+    </Link>
+    <span />
+    <Link
+      className="a"
+      replace={false}
+      to="/dashboard"
+    >
+      dashboard
+    </Link>
+    <span />
+    <span />
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Testing of sidebar component should render properly with user info in the nav bar 2`] = `
+<div>
+  <div
+    className="nav "
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span
+      className="a"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
+    <Link
+      className="a"
+      replace={false}
+      to="/profile"
+    >
+      <em
+        className="fa fa-user"
+      />
+        
+      admin
+    </Link>
+    <Link
+      className="a"
+      replace={false}
+      to="/admin"
+    >
+      Admin
+    </Link>
+    <span />
+    <span />
+    <span />
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Testing of sidebar component should render properly with user info in the nav bar 3`] = `
+<div>
+  <div
+    className="nav "
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span
+      className="a"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
+    <Link
+      className="a"
+      replace={false}
+      to="/profile"
+    >
+      <em
+        className="fa fa-user"
+      />
+        
+      user
+    </Link>
+    <span />
+    <Link
+      className="a"
+      replace={false}
+      to="/dashboard"
+    >
+      dashboard
+    </Link>
+    <span />
+    <span />
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Testing of sidebar component should respond to click method 1`] = `
+<div>
+  <div
+    className="nav responsive"
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span
+      className="a"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
+    <Link
+      className="a"
+      replace={false}
+      to="/profile"
+    >
+      <em
+        className="fa fa-user"
+      />
+        
+      user
+    </Link>
+    <span />
+    <Link
+      className="a"
+      replace={false}
+      to="/dashboard"
+    >
+      dashboard
+    </Link>
+    <span />
+    <span />
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Testing of sidebar component should respond to logout method 1`] = `
+<div>
+  <div
+    className="nav "
+    id="myTopnav"
+  >
+    <Link
+      className="a active active-text-header"
+      replace={false}
+      style={
+        Object {
+          "fontSize": "30px",
+          "marginTop": "10px",
+        }
+      }
+      to="/meals"
+    >
+      Book-A-Meal
+    </Link>
+    <span
+      className="a"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
+    <Link
+      className="a"
+      replace={false}
+      to="/profile"
+    >
+      <em
+        className="fa fa-user"
+      />
+        
+      user
+    </Link>
+    <span />
+    <Link
+      className="a"
+      replace={false}
+      to="/dashboard"
+    >
+      dashboard
+    </Link>
+    <span />
+    <span />
+    <Link
+      className="active a"
+      replace={false}
+      to="/meals"
+    >
+      Home
+    </Link>
+    <span
+      className="a icon"
+      onClick={[Function]}
+      role="button"
+    >
+      <span
+        className="fa fa-bars"
+      />
+    </span>
+  </div>
+</div>
+`;

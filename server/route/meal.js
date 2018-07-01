@@ -37,4 +37,9 @@ router.post('/meals', validate.authAdmin, upload.array('file'), Meal.addMeal);
 router.put('/meals/:mealId', validate.authAdmin, upload.array('file'), Meal.updateMeal);
 // delete a meal
 router.delete('/meals/:mealId', validate.authAdmin, Meal.deleteMeal);
+// get  most ordered meals
+router.get('/mostOrder/meals/:limit', Meal.getMostOrderMeals);
+// get one meal
+
+router.get('/meals/:mealId', validate.authAdmin, Meal.getOneMeal);
 export default router;
