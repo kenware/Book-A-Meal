@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import ReactPaginate from 'react-paginate';
+import './index.scss';
 
 import * as mealActions from '../../redux/Action/mealAction';
 import './index.scss';
 
+const limit = 6;
 export class AllMeal extends Component {
   constructor(props) {
     super(props);
@@ -14,8 +17,11 @@ export class AllMeal extends Component {
       mealId: 0,
       mealName: '',
       mealImage: '',
-      modal: 'modal'
+      modal: 'modal',
+      currentPage: ''
     };
+    // this.handlePageChange = this.handlePageChange.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
     this.cancelDelete = this.cancelDelete.bind(this);
     this.deleteMeal = this.deleteMeal.bind(this);
   }
@@ -39,6 +45,13 @@ export class AllMeal extends Component {
       });
     }
   }
+  handlePageClick(data) {
+    const selected = data.selected;
+    const offset = Math.ceil(selected);
+
+    this.setState({ currentPage: selected });
+  }
+
   render() {
     /**
      * @param  {} mealId
@@ -76,7 +89,7 @@ export class AllMeal extends Component {
         <h4 className="danger text-center">{this.props.successMessage.message}</h4>
         {this.props.meals.map(meal =>
         (
-          <div className="contents" key={meal.id}>
+          <div className="contents container" key={meal.id}>
             <div className="content-wrap">
               <div className="col-meal l-r-pad-text">
                 <img src={meal.image} className="rounded-circle img-height" alt="meals" />
@@ -96,6 +109,13 @@ export class AllMeal extends Component {
             </div>
           </div>
         ))}
+        <ReactPaginate clickCallback={this.handlePageClick}
+                                   previousLabel={<span class="prev">Previous</span>}
+                                   nextLabel={<span class="prev">Next</span>}
+                                   breakLabel={<span class="ellipsis">...</span>}
+                                   pageNum={this.state.pageNum}
+                                   marginPagesDisplayed={2}
+                                   pageRangeDisplayed={5} />
       </div>
     );
   }

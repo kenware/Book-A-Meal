@@ -40,7 +40,7 @@ export default class menuController {
       isMenuSet = true;
     }
     menu.addMeal(mealId);
-    if (isMenuSet) {
+    if (!isMenuSet) {
       req.body.menu = menu;
       req.body.message = message;
       req.body.username = username;

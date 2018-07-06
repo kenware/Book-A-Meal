@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Header from '../header/index';
 import Footer from '../footer/index';
+import './index.scss';
 import * as actions from '../../redux/Action/action';
 
 export class Login extends Component {
@@ -69,9 +70,9 @@ export class Login extends Component {
     return (
       <div>
         <Header />
-        <div className="register-container">
+        <div className="register-container" id="login-bg">
           <div className="register-col" />
-          <div className="register-wrapper">
+          <div className="register-wrapper" style={{ height: '50vh' }}>
             <h2 className="login-header">Enter your details to Login</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
             <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>

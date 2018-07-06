@@ -9,18 +9,16 @@
     flex:1;
   }
   .register-wrapper{
-      -moz-box-shadow: 15px 5px 5px 5px #272626;
-      -webkit-box-shadow: 15px 5px 5px 5px #dfd5d5;
-      box-shadow: 5px 5px 5px 5px #6e6060;
+      border: dotted darkslategray;
       background-color: white;
-      margin-top: 150px;
+      margin-top: 100px;
       align-items:center;
      flex:3;
      height: auto;
   }
   .form-field{
       display: flex;
-      padding: 10px 0;
+      padding: 10px 10% 10px 7%;
   }
   .form-field label{
    padding: 10px 10px 10px 10px;
@@ -43,3 +41,12 @@
    .danger {
      color: red;
    }
+   #register-bg{
+    background: url('../../image/image.jpg') center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 90vh;
+    opacity: 1;;
+}

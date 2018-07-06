@@ -84,10 +84,10 @@ export const refreshToken = role => dispatch => window.fetch('/api/v1/refresh', 
       return history.push('/login');
     }
     if (newUser.role === 'user' && newUser.role !== role) {
-      auth.setRefresh(newUser.token, newUser.image);
+      auth.setRefresh(newUser.token);
       return history.push('/dashboard');
     }
-    auth.setRefresh(newUser.token, newUser.image);
+    auth.setRefresh(newUser.token);
   });
 export const upgrade = () => dispatch => window.fetch('/api/v1/auth/admin', {
   method: 'POST',
