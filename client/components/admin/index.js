@@ -47,7 +47,6 @@ export class Admin extends Component {
    * refreshes token if it is not expired or logout and redirect to home if expired
    */
   componentDidMount() {
-    this.props.mealActions.getAllMeals();
     this.props.mealActions.loadMostOrderedMeal();
     this.props.orderActions.getAllOrders();
     this.props.actions.refreshToken('admin');

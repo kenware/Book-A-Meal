@@ -257,7 +257,10 @@ export class Orders extends Component {
                     </span>
                   : <span>{order.status}</span>}
                   </td>
-                  <td><button className="p-color modify-btn" onClick={() => modifyOrder(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)}>Modify</button></td>
+                  <td>{ order.status === 'confirmed' ?
+                    <button className="p-color modify-btn" disabled>Modify</button> :
+                    <button onClick={() => modifyOrder(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)} className="p-color modify-btn" >Modify</button>}
+                  </td>
                 </tr>
                 ))}
             </tbody>

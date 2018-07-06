@@ -38,7 +38,6 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
             <img
               alt="profil"
               className="user-img rounded-circle"
-              src="image/eze.jpg"
             />
           </li>
           <li>
@@ -92,7 +91,14 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
         className="timeline-body"
       >
         <p>
-          <ul>
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
             <li
               key="1"
               style={
@@ -200,7 +206,7 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
             <img
               alt="profil"
               className="user-img rounded-circle"
-              src="image/eze.jpg"
+              src="user"
             />
           </li>
           <li>
@@ -260,7 +266,14 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
         className="timeline-body"
       >
         <p>
-          <ul>
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
             <li
               key="1"
               style={

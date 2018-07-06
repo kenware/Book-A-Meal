@@ -40,7 +40,7 @@ export default class menuController {
       isMenuSet = true;
     }
     menu.addMeal(mealId);
-    if (isMenuSet) {
+    if (!isMenuSet) {
       req.body.menu = menu;
       req.body.message = message;
       req.body.username = username;
@@ -51,9 +51,14 @@ export default class menuController {
   }
   async getMenu(req, res) {
     let { date } = req.params;
+    let { limit, offset } = req.query;
+    limit = parseInt(limit, 10) || 0;
+    offset = parseInt(offset, 10) || 0;
     if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
     const menu = await Menu.findAll({
       where: { date },
+      limit,
+      offset,
       include: [
         {
           model: model.Meal,

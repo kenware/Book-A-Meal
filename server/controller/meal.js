@@ -5,13 +5,24 @@ const { Meal, User, Order } = model;
 
 export default class mealController {
   async getMeals(req, res) {
+    let { limit, offset } = req.query;
+    limit = parseInt(limit, 10) || 0;
+    offset = parseInt(offset, 10) || 0;
     const { id } = req.decoded;
     const userId = id;
-    const meals = await Meal.findAll({ where: { userId } });
-    if (!meals || meals.length < 1) {
-      return res.status(401).json({ message: 'There is no meal in the list' });
+    try {
+      const meals = await Meal.findAndCountAll({
+        where: { userId },
+        limit,
+        offset
+      });
+      if (meals.count < 1) {
+        return res.status(401).json({ message: 'There is no meal in the list' });
+      }
+      return res.status(200).json(meals);
+    } catch (err) {
+      return res.json(err);
     }
-    return res.status(200).json(meals);
   }
   async getOneMeal(req, res) {
     const { id } = req.decoded;
@@ -69,7 +80,8 @@ export default class mealController {
 
   async updateMeal(req, res) {
     const { mealId } = req.params;
-    let { price, name, description } = req.body;
+    let { name, description } = req.body;
+    const { price } = req.body;
 
     if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
@@ -95,7 +107,7 @@ export default class mealController {
     if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
-    
+
     // get file upload
     let image;
     if (req.files && req.files.length !== 0) {

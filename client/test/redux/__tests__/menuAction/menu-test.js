@@ -15,7 +15,6 @@ describe('async actions test', () => {
     fetchMock.restore();
   });
 
-
   it('should  LOAD_ERROR_MESSAGE with unauthenticated user with setMenu action ', () => {
     const message = { message: 'unauthorized' };
     fetchMock
@@ -30,6 +29,7 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_SUCCESS_MESSAGE with authenticated user ON setMenu action ', () => {
     const response = { menu: [{ meal: 'rice' }] };
     fetchMock
@@ -44,30 +44,34 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_ERROR_MESSAGE with unauthenticated user with getMenu action ', () => {
+    const limit = 6, offset = 0;
     const message = { message: 'unauthorized' };
     fetchMock
-      .get('/api/v1/menu', { body: message });
+      .get(`/api/v1/menu?limit=${limit}&offset=${offset}`, { body: message });
 
     const expectedActions = [
       { type: types.LOAD_TODAY_MENU, menu: [] }, { type: types.LOAD_ERROR_MESSAGE, errorMessage: { getMenuError: 'Todays Menu is not set yet' } }
     ];
     const store = mockStore({ menu: [] });
-    return store.dispatch(actions.getMenu()).then(() => {
+    return store.dispatch(actions.getMenu(limit, offset)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_SUCCESS_MESSAGE with authenticated user ON getMenu action ', () => {
     const response = { menu: [{ meal: 'rice' }] };
+    const limit = 6, offset = 0;
     fetchMock
-      .get('/api/v1/menu', { body: response });
+      .get(`/api/v1/menu?limit=${limit}&offset=${offset}`, { body: response });
 
     const expectedActions = [
       { type: types.LOAD_TODAY_MENU, menu: response }
     ];
     const store = mockStore({ menu: [] });
-    return store.dispatch(actions.getMenu()).then(() => {
+    return store.dispatch(actions.getMenu(limit, offset)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });

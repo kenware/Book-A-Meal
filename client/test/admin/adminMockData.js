@@ -27,20 +27,22 @@ export const props = {
       }
     }
   ],
-  meals: [
-    {
-      id: 1,
-      name: 'rice',
-      price: '200',
-      descrption: 'Very delicious'
-    },
-    {
-      id: 2,
-      name: 'beans',
-      price: '200',
-      descrption: 'Very delicious'
-    }
-  ],
+  meals: {
+    rows: [
+      {
+        id: 1,
+        name: 'rice',
+        price: '200',
+        descrption: 'Very delicious'
+      },
+      {
+        id: 2,
+        name: 'beans',
+        price: '200',
+        descrption: 'Very delicious'
+      }
+    ]
+  },
   errorMessage: {
     createMealError: 'Wrong credentials'
   },
@@ -72,8 +74,10 @@ export const emptyProps = {
   ],
   allOrder: [
   ],
-  meals: [
-  ],
+  meals: {
+    rows: [
+    ]
+  },
   successMessage: {
     createMealSuccess: ''
   },

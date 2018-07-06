@@ -74,7 +74,7 @@ describe('/POST api/v1/auth/signup', () => {
     chai.request(server)
       .post('/api/v1/auth/signup')
       .send({
-        username: 'kenson',
+        username: 'kevlin',
         name: 'kenson',
         email: 'kenson@gmail.com',
         password: '12345',
@@ -83,7 +83,7 @@ describe('/POST api/v1/auth/signup', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('kenson');
-        res.body.should.have.property('username').eql('kenson');
+        res.body.should.have.property('username').eql('kevlin');
         res.body.should.have.property('name').eql('kenson');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
@@ -149,23 +149,6 @@ describe('/POST api/v1/auth/signup', () => {
 
 
 describe('Testing of meal middleware and controller', () => {
-  before((done) => {
-    chai.request(server)
-      .post('/api/v1/auth/signin')
-      .send({
-        username: 'kenson',
-        password: '12345'
-      })
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        res.body.should.have.property('message').eql('succesful login');
-        res.body.should.have.property('token');
-        tokenAdmin = res.body.token;
-
-        done();
-      });
-  });
   it('Normal user should not POST a meal', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -182,7 +165,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
-  it('caterer should not GET/ an empty meal', (done) => {
+  it('caterer should GET/ a message when he make a request on empty meal table', (done) => {
     chai.request(server)
       .get('/api/v1/meals')
       .set('authorization', tokenAdmin)
@@ -291,7 +274,7 @@ describe('Testing of meal middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });

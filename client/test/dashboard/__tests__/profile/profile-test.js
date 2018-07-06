@@ -81,11 +81,11 @@ describe('Test Profile component', () => {
   it('should respond to componentWillProps method', () => {
     const tree = mount(<Profile {...emptyProps} />);
     const wrapper = tree.instance();
-    wrapper.constructor.getDerivedStateFromProps({
+    wrapper.componentWillReceiveProps({
       user: { }
     });
     expect(tree).toMatchSnapshot();
-    wrapper.constructor.getDerivedStateFromProps({
+    wrapper.componentWillReceiveProps({
       user: {
         name: 'ken',
         image: 'image_url',
