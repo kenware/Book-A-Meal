@@ -48,7 +48,7 @@ const Timeline = ({ notifics }) => (
         </div>
         <div className="timeline-body">
           <p>
-            <ul>
+            <ul style={{ overflow: 'scroll', height: '300px' }}>
               {notifics.map(notific =>
                 (
                   <li style={{ marginTop: '1rem' }} key={notific.id}>

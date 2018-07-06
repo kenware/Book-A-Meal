@@ -45,7 +45,6 @@ class ResetLink extends Component {
   */
   resetLink(e) {
     e.preventDefault();
-    this.props.actions.clearMessages();
     const {
       emailOrUsername,
     } = this.state;

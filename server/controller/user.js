@@ -122,7 +122,12 @@ export default class userController {
       });
       if (!verify) { return res.json({ message: 'Record not found' }); }
       const token = jwt.sign(
-        { id: verify.id, username: verify.username, role: verify.role },
+        {
+          id: verify.id,
+          username: verify.username,
+          role: verify.role,
+          image: verify.image
+        },
         secret, { expiresIn: 86400 }
       );
       req.body.user = verify;
@@ -201,6 +206,22 @@ export default class userController {
       image = req.files[0].url;
     }
     const update = await user.update({ name, image });
-    return res.status(201).json(update);
+    const token = jwt.sign(
+      {
+        username: update.username,
+        role: update.role,
+        id: update.id,
+        image: update.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    const userUpdate = {
+      username: update.username,
+      role: update.role,
+      id: update.id,
+      image: update.image,
+      token
+    };
+    return res.status(201).json(userUpdate);
   }
 }

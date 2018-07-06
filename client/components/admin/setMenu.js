@@ -106,7 +106,7 @@ export class SetMenu extends Component {
         <h5 className="p-color text-center">Eg Expire time of 17 <em className="fa fa-long-arrow-right" /> 5pm</h5>
         <h4 className="danger text-center">{this.state.errorMessage}</h4>
         <h4 className="y-color text-center">{this.state.setMenuSuccess}</h4>
-        <div className="form-field">
+        <div className="form-field" id="setMenu-forrm">
           <label htmlFor="name">
             Title <br />
             <span className="text-center danger">{this.state.errorTitle }</span>
@@ -114,7 +114,7 @@ export class SetMenu extends Component {
           <input onChange={this.onChange} type="text" id="title" name="title" placeholder="Keny" required />
 
         </div>
-        <div className="form-field">
+        <div className="form-field" id="setMenu-forrm">
           <label htmlFor="password">
             Expire Time <br />
             <span className="text-center danger">{this.state.errorOrderBefore }</span>
