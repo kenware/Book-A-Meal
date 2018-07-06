@@ -9,6 +9,16 @@ const {
 } = model;
 
 export default class orderController {
+  /**
+ * @method createOrder
+ * @returns { null } returns Error ordering meal
+ * @param { String } mealId mealId of the meal to be ordered
+ * @param { String }  quantity of the meal to be ordered
+ * @param { String }  address of the person ordering the meal
+ * @returns { object } returns order details
+ * @description It takes meal id, quantity
+    and address of the person that is ordering the meal and create an order
+ */
   async createOrder(req, res) {
     const {
       menuId, quantity, mealId, address
@@ -39,7 +49,6 @@ export default class orderController {
       if (element.id === parseInt(mealId)) { meal = element; }
     });
     if (!meal) { return res.status(404).json({ message: 'Meal not found' }); }
-
     const { id } = req.decoded;
     const totalPrice = meal.price * quantity;
     const user = User.build({ id });
@@ -61,6 +70,17 @@ export default class orderController {
     order.save();
     return res.status(201).json(order);
   }
+
+  /**
+ * @method updateOrder
+ * @returns { null } returns Order not found
+ * @param { String } orderId of the order to be updated
+ * @param { String }  quantity of the meal to be ordered
+ * @param { String }  address of the person ordering the meal
+ * @returns { object } returns updated order
+ * @description It takes order id, quantity
+    or address of the person that is ordering the meal and updates an order
+ */
   async updateOrder(req, res) {
     const newQuantity = req.body.quantity;
     const newAddress = req.body.address;
@@ -105,6 +125,14 @@ export default class orderController {
     if (!update) { return res.status(404).json({ message: 'Update failed' }); }
     return res.status(201).json(update);
   }
+
+  /**
+ * @method getOrders
+ * @returns { null } returns users have not ordered a meal
+ * @returns { array } returns all orders
+ * @description used to get the orders users have made in the specified in limit and offset
+ *      functionality limited to caterers only
+ */
   async getOrders(req, res) {
     const { id } = req.decoded;
     const catererId = id;
@@ -127,6 +155,13 @@ export default class orderController {
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'users have not ordered a meal' }); }
     return res.status(200).json(orders);
   }
+
+  /**
+ * @method getOrders
+ * @returns { null } returns users have not ordered a meal
+ * @returns { array } returns all orders
+ * @description used to get the orders made by a particular user
+ */
   async getUserOrders(req, res) {
     const { id } = req.decoded;
     const userId = id;
@@ -145,6 +180,11 @@ export default class orderController {
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
     return res.status(200).json(orders);
   }
+
+  /**
+ * @method confirmStatus
+ * @description acknowledges that meal is received
+ */
   async confirmStatus(req, res) {
     const userId = req.decoded.id;
     const id = req.params.orderId;

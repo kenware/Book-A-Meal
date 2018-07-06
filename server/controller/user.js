@@ -10,6 +10,13 @@ const { Op } = sequelize;
 const { User, notification } = model;
 
 export default class userController {
+  /**
+ * @method createUser
+ * @param { object } req An object containing user details like name, username, email
+ * @param {object} res A response containing the user
+ * @returns { object } returns the user
+ * @description It takes req containing user object and create the user and then returns the user
+ */
   async createUser(req, res) {
     const {
       name, username, email, role
@@ -42,10 +49,18 @@ export default class userController {
       username: user.username,
       email: user.email,
       role: user.role,
-      token
+      token,
+      image: user.image
     });
   }
 
+  /**
+ * @method login
+ * @param { object } req An object containing password and username
+ * @param {object} res A response containing the user
+ * @returns { object } returns the user
+ * @description It takes req containing user object and create the user and then returns the user
+ */
   async login(req, res) {
     const { username, password } = req.body;
     const user = await User.findOne({
@@ -68,12 +83,14 @@ export default class userController {
           message: 'succesful login',
           token,
           username: user.username,
-          role: user.role
+          role: user.role,
+          image: user.image
         });
       }
       return res.status(401).json({ message: 'Wrong credentials' });
     });
   }
+
   /**
    * @param  {token} req upgrade user to an admin
    * @param  {user} res user is now an admin
@@ -101,6 +118,10 @@ export default class userController {
     return res.status(201).json({ message, setAdmin, token });
   }
 
+  /**
+   * @param  {token} req  send a request that get a user from the token
+   * @param  {user} res response containing the user
+   */
   async getUser(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -109,6 +130,13 @@ export default class userController {
     }
     return res.status(200).json(user);
   }
+
+  /**
+   * @param  {object} req email or username
+   * @param  {link} res send resetpassword link
+   * @description It takes a valid email address or
+   *   username and sends a resetPassword link to user email
+   */
   async sendResetLink(req, res, next) {
     const { emailOrUsername } = req.body;
     try {
@@ -135,6 +163,12 @@ export default class userController {
       next();
     } catch (err) { return res.json(err); }
   }
+
+  /**
+   * @param  {object} req password and decoded id
+   * @param  {newPassword} res send new password
+   * @description It takes a new password from user and set it as user's password
+   */
   async resetPassword(req, res) {
     const { id } = req.decoded;
     let { password } = req.body;
@@ -160,6 +194,12 @@ export default class userController {
       return res.status(401).json({ message: 'Password reset failed' });
     } catch (err) { return res.json(err); }
   }
+
+  /**
+   * @param  {object} req decoded id from token
+   * @param  {newPassword} res send notification
+   * @description It sendes notification to users that today's menu is set
+   */
   async userNotification(req, res) {
     const { userId } = req.decoded;
     const notifications = await notification.findAll({
@@ -175,6 +215,13 @@ export default class userController {
     });
     return res.status(201).json(notifications);
   }
+
+  /**
+   * @param  {object} req payloads from token
+   * @param  {newPassword} res new token
+   * @description It takes payload from existing token and assign a new token to it
+   *              the token then have a fresh expire time
+   */
   async refreshToken(req, res) {
     const token = jwt.sign(
       {
@@ -193,6 +240,11 @@ export default class userController {
       token
     });
   }
+
+  /**
+   * @param  {object} req object containing user info. to update
+   * @param  {user} res updated user
+   */
   async userUpdate(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);

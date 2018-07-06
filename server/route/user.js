@@ -1,5 +1,6 @@
 
 import express from 'express';
+import dotenv from 'dotenv';
 import multer from 'multer';
 import cloudinary from 'cloudinary';
 import cloudinaryStorage from 'multer-storage-cloudinary';
@@ -7,14 +8,15 @@ import userController from '../controller/user';
 import middleware from '../middleware/validate';
 import mailController from '../controller/mailer';
 
+dotenv.config();
 const Mail = new mailController();
 const validate = new middleware();
 const User = new userController();
 
 cloudinary.config({
-  cloud_name: 'more-recipes',
-  api_key: '127278553653283',
-  api_secret: 'XUBlnwpJ2dbSHJzPZu-vTWxgob4'
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
 });
 
 const storage = cloudinaryStorage({

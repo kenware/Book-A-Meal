@@ -23,48 +23,16 @@ chai.use(chaiHttp);
 let tokenUpdate = '';
 let tokenUser = '';
 let tokenAdmin = '';
-const id = 0;
 let mealId = 0, menuId = 1, orderId = 0;
 let id1;
-describe('/POST api/v1/auth/signup', () => {
+describe('User information for Menu and Order controller', () => {
   before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  // migrate or a DB
-  before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Menu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Order.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    MealMenu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    notification.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
+    User.sync();
+    Meal.sync();
+    Menu.sync();
+    Order.sync();
+    MealMenu.sync();
+    notification.sync();
     User.destroy({
       where: {}
     })
@@ -72,7 +40,7 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  let userId = 0;
+
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
@@ -111,11 +79,11 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        userId = res.body.id;
         tokenUpdate = res.body.token;
         done();
       });
   });
+
   it('second user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
@@ -136,6 +104,7 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
+
   it('first User should update to admin', (done) => {
     chai.request(server)
       .post('/api/v1/auth/admin')
@@ -149,7 +118,6 @@ describe('/POST api/v1/auth/signup', () => {
       });
   });
 });
-
 
 describe('Testing of Menu middleware and controller', () => {
   it('Admin user should POST a meal id1', (done) => {
@@ -169,6 +137,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should POST a meal id2', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -185,6 +154,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should not POST a menu with no meal id', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
@@ -201,6 +171,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should not POST a menu with invalid meal id', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
@@ -217,6 +188,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should not POST a menu without orderBefore', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
@@ -233,6 +205,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should not POST a menu with invalid orderbefore', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
@@ -249,6 +222,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should  not POST a menu with meal id that does not exist', (done) => {
     chai.request(server)
       .post('/api/v1/menu')
