@@ -171,8 +171,8 @@ export class Edit extends Component {
 
 export function mapStateToProps(state, ownProps) {
   let meals;
-  if (state.meals.length > 0) {
-    meals = state.meals.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
+  if (state.meals.rows.length > 0) {
+    meals = state.meals.rows.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
   } else {
     meals = {
       name: '', price: 0, description: '', id: 0
@@ -186,7 +186,7 @@ export function mapStateToProps(state, ownProps) {
 }
 
 Edit.propTypes = {
-  meals: PropTypes.array.isRequired,
+  meals: PropTypes.object.isRequired,
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired,

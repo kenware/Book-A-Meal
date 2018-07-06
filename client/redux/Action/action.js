@@ -84,10 +84,10 @@ export const refreshToken = role => dispatch => window.fetch('/api/v1/refresh', 
       return history.push('/login');
     }
     if (newUser.role === 'user' && newUser.role !== role) {
-      auth.setRefresh(newUser.token, newUser.image);
+      auth.setRefresh(newUser.token);
       return history.push('/dashboard');
     }
-    auth.setRefresh(newUser.token, newUser.image);
+    auth.setRefresh(newUser.token);
   });
 export const upgrade = () => dispatch => window.fetch('/api/v1/auth/admin', {
   method: 'POST',
@@ -151,7 +151,7 @@ export const resetLink = emailOrUsername => dispatch => window.fetch('/api/v1/au
   .then(res => res.json())
   .then((link) => {
     if (!link.success) {
-      return dispatch(loadErrorMessage({ resetError: link.message }));
+      return dispatch(loadErrorMessage({ resetError: 'Error occured while sending email' }));
     }
     return dispatch(loadSuccessMessage({ resetSuccess: 'Reset Link sent to your email. Please check your inbox and spam email.' }));
   });

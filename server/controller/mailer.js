@@ -1,13 +1,12 @@
 
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
-import sgTransport from 'nodemailer-sendgrid-transport';
 import model from '../models/index';
 
 
 dotenv.config();
-const sendgridPass = process.env.API_PASS;
-const sendgridUser = process.env.API_USER;
+const gmailPass = process.env.GMAIL_PASS;
+const gmailUser = process.env.GMAIL_USER;
 const {
   User,
   notification
@@ -30,12 +29,17 @@ export default class mailController {
       return res.status(401).json({ message: 'error sending notification' });
     }
     // send email notification when menu is set using nodemailer
-    const transporter = nodemailer.createTransport(sgTransport({
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      // host: 'bookmeals.herokuapp.com',
+      port: 465,
+      // port: 5000,
+      secure: true, // use SSL
       auth: {
-        api_user: sendgridUser,
-        api_key: sendgridPass
+        user: gmailUser,
+        pass: gmailPass
       }
-    }));
+    });
     // html email body
     const mailoutput = `<html>\n\
     <body>\n\
@@ -77,12 +81,17 @@ export default class mailController {
 
   async changePassword(req, res) {
     const { user, token } = req.body;
-    const transporter = nodemailer.createTransport(sgTransport({
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      // host: 'bookmeals.herokuapp.com',
+      port: 465,
+      // port: 5000,
+      secure: true, // use SSL
       auth: {
-        api_user: sendgridUser,
-        api_key: sendgridPass
+        user: gmailUser,
+        pass: gmailPass
       }
-    }));
+    });
     const mailoutput = `<html>\n\
     <body>\n\
     <table>\n\
@@ -116,7 +125,7 @@ export default class mailController {
       if (error) {
         return res.json(error);
       }
-      return res.json({ success: info.message });
+      return res.status(201).json({ success: info.response });
     });
   }
 }

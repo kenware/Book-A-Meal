@@ -17,12 +17,10 @@ const {
 } = model;
 
 chai.use(chaiHttp);
-// import FormData from 'form-data';
 let tokenUpdate = '';
 let tokenUser = '';
 let tokenAdmin = '', mealId = 0;
-const id = 0, menuId = 1, orderId = 0;
-let id1;
+
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
     User.sync()
@@ -69,12 +67,11 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  let userId = 0;
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
       .send({
-        username: 'kenson',
+        username: 'kevlin',
         name: 'kenson',
         email: 'kenson@gmail.com',
         password: '12345',
@@ -83,7 +80,7 @@ describe('/POST api/v1/auth/signup', () => {
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('kenson');
-        res.body.should.have.property('username').eql('kenson');
+        res.body.should.have.property('username').eql('kevlin');
         res.body.should.have.property('name').eql('kenson');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
@@ -108,11 +105,11 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        userId = res.body.id;
         tokenUpdate = res.body.token;
         done();
       });
   });
+
   it('second user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
@@ -133,6 +130,7 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
+
   it('first User should update to admin', (done) => {
     chai.request(server)
       .post('/api/v1/auth/admin')
@@ -147,25 +145,7 @@ describe('/POST api/v1/auth/signup', () => {
   });
 });
 
-
 describe('Testing of meal middleware and controller', () => {
-  before((done) => {
-    chai.request(server)
-      .post('/api/v1/auth/signin')
-      .send({
-        username: 'kenson',
-        password: '12345'
-      })
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        res.body.should.have.property('message').eql('succesful login');
-        res.body.should.have.property('token');
-        tokenAdmin = res.body.token;
-
-        done();
-      });
-  });
   it('Normal user should not POST a meal', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -182,7 +162,8 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
-  it('caterer should not GET/ an empty meal', (done) => {
+
+  it('caterer should GET/ a message when he make a request on empty meal table', (done) => {
     chai.request(server)
       .get('/api/v1/meals')
       .set('authorization', tokenAdmin)
@@ -193,6 +174,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should POST a meal', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -210,6 +192,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should not POST a meal that already exist', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -226,6 +209,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should not POST a meal without name', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -242,6 +226,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should not POST a meal without price', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -258,6 +243,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should not POST a meal that already exist name', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -274,6 +260,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it('Normal user should not GET/ a meal', (done) => {
     chai.request(server)
       .get('/api/v1/meals')
@@ -285,16 +272,18 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it('caterer should GET/ all meals', (done) => {
     chai.request(server)
       .get('/api/v1/meals')
       .set('authorization', tokenAdmin)
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });
+
   it(' user should not POST a meal name with sql, special chararcters', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -311,6 +300,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should not POST a meal price with special chararcters', (done) => {
     chai.request(server)
       .post('/api/v1/meals')
@@ -327,6 +317,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should not UPDATE a meal that does not exist', (done) => {
     chai.request(server)
       .put('/api/v1/meals/60')
@@ -342,6 +333,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should UPDATE a meal', (done) => {
     chai.request(server)
       .put(`/api/v1/meals/${mealId}`)
@@ -358,6 +350,7 @@ describe('Testing of meal middleware and controller', () => {
         done();
       });
   });
+
   it(' user should Delete a meal', (done) => {
     chai.request(server)
       .delete(`/api/v1/meals/${mealId}`)

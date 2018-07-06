@@ -27,7 +27,7 @@ export const setMenu = (mealId, title, orderBefore) => dispatch => window.fetch(
     // return history.push('/dashboard');
   });
 
-export const getMenu = () => dispatch => window.fetch('/api/v1/menu', {
+export const getMenu = (limit, offset) => dispatch => window.fetch(`/api/v1/menu?limit=${limit}&offset=${offset}`, {
   headers: {
     authorization: auth.getToken()
   }

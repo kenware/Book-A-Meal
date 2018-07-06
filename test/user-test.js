@@ -17,49 +17,17 @@ const {
 } = model;
 
 chai.use(chaiHttp);
-// import FormData from 'form-data';
 
 
 let tokenUpdate = '';
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  // migrate or a DB
-  before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Menu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Order.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    MealMenu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    notification.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
+    User.sync();
+    Meal.sync();
+    Menu.sync();
+    Order.sync();
+    MealMenu.sync();
+    notification.sync();
     User.destroy({
       where: {}
     })
@@ -67,7 +35,6 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  let userId = 0;
   it('superuser should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')

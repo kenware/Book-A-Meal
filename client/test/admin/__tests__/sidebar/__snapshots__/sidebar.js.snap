@@ -272,7 +272,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to dashbord link events 1`] = `
+exports[`Testing of sidebar component should respond to dashbord mouseenter events 1`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -544,7 +544,7 @@ exports[`Testing of sidebar component should respond to dashbord link events 1`]
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to dashbord link events 2`] = `
+exports[`Testing of sidebar component should respond to dashbord mouseenter events 2`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -816,7 +816,7 @@ exports[`Testing of sidebar component should respond to dashbord link events 2`]
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to dashbord link events 3`] = `
+exports[`Testing of sidebar component should respond to dashbord mouseenter events 3`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -1088,7 +1088,7 @@ exports[`Testing of sidebar component should respond to dashbord link events 3`]
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events of addMeal, 1`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events of addMeal mouseEnter 1`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -1360,7 +1360,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events of addMeal, 2`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events of addMeal mouseEnter 2`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -2176,7 +2176,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events of setmeal, 1`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events of setmeal mouseEnter 1`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -2448,7 +2448,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events of setmeal, 2`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events of setmeal mouseEnter 2`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -2720,7 +2720,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals, 1`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals mouseEnter 1`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -2992,7 +2992,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals, 2`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals mouseEnter 2`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"
@@ -3264,7 +3264,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
 </div>
 `;
 
-exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals, 3`] = `
+exports[`Testing of sidebar component should respond to handleClick and handleClose events on allmeals mouseEnter 3`] = `
 <div>
   <nav
     className="sidebar sidebar1-width nav1"

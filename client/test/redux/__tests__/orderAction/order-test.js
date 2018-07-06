@@ -15,7 +15,6 @@ describe('async actions test', () => {
     fetchMock.restore();
   });
 
-
   it('should  LOAD_ERROR_MESSAGE when order fail with orderMeal Action ', () => {
     const message = { message: 'order failed' };
     fetchMock
@@ -44,6 +43,7 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_ERROR_MESSAGE when order fail with getMyOrder Action ', () => {
     const message = { message: 'order failed' };
     fetchMock
@@ -58,6 +58,7 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_ERROR_MESSAGE when order fail with getMyOrder Action ', () => {
     const myOrder = { status: 'pending', meal: { name: 'rice' } };
     fetchMock
@@ -71,6 +72,7 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_ERROR_MESSAGE when order fail with getAllOrder Action ', () => {
     const message = { message: 'order failed' };
     fetchMock
@@ -84,6 +86,7 @@ describe('async actions test', () => {
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
+
   it('should  LOAD_ALL_ORDER when order is created with getAllOrder Action ', () => {
     const allOrder = { status: 'pending', meal: { name: 'rice' } };
     fetchMock

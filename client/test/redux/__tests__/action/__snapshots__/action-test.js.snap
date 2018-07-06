@@ -15,10 +15,10 @@ exports[`async actions test should refresh token and redirect to dashbored for r
 exports[`async actions test should send restlink to user 1`] = `
 Array [
   Object {
-    "successMessage": Object {
-      "resetSuccess": "Reset Link sent to your email",
+    "errorMessage": Object {
+      "resetError": "Error occured while sending email",
     },
-    "type": "LOAD_SUCCESS_MESSAGE",
+    "type": "LOAD_ERROR_MESSAGE",
   },
 ]
 `;

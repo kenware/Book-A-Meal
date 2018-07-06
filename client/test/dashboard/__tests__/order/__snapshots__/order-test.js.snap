@@ -1149,7 +1149,7 @@ exports[`Test order component of dashboard should change state when component re
           <td>
             <button
               className="p-color modify-btn"
-              onClick={[Function]}
+              disabled={true}
             >
               Modify
             </button>
@@ -1606,7 +1606,7 @@ Orders {
                 <td>
                   <button
                     className="p-color modify-btn"
-                    onClick={[Function]}
+                    disabled={true}
                   >
                     Modify
                   </button>
@@ -1881,7 +1881,7 @@ exports[`Test order component of dashboard should change state when component re
           <td>
             <button
               className="p-color modify-btn"
-              onClick={[Function]}
+              disabled={true}
             >
               Modify
             </button>
@@ -2348,7 +2348,7 @@ Orders {
                 <td>
                   <button
                     className="p-color modify-btn"
-                    onClick={[Function]}
+                    disabled={true}
                   >
                     Modify
                   </button>
@@ -2830,7 +2830,7 @@ Orders {
                 <td>
                   <button
                     className="p-color modify-btn"
-                    onClick={[Function]}
+                    disabled={true}
                   >
                     Modify
                   </button>
@@ -9758,7 +9758,6 @@ exports[`Test order component of dashboard should modify an order 1`] = `
           className="justify l-r-pad-text"
         >
            Confirm that you have received  
-          rice
         </p>
       </div>
       <div
@@ -9779,7 +9778,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
       </div>
     </div>
     <div
-      className="modal-order "
+      className="modal-order modal"
     >
       <button
         className="remove-modal"
@@ -9807,7 +9806,9 @@ exports[`Test order component of dashboard should modify an order 1`] = `
           within ONE hour after it is created
           <h4
             className="danger text-center"
-          />
+          >
+            All the field is required
+          </h4>
         </p>
       </div>
       <div
@@ -9820,9 +9821,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
         </span>
         <span
           className="modal-order-items "
-        >
-          rice
-        </span>
+        />
       </div>
       <div
         className="justify-overide"
@@ -9834,9 +9833,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
         </span>
         <span
           className="modal-order-items "
-        >
-          200
-        </span>
+        />
       </div>
       <div
         className="justify-overide"
@@ -9854,7 +9851,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
             name="quantity"
             onChange={[Function]}
             type="number"
-            value={3}
+            value=""
           />
         </span>
       </div>
@@ -9874,7 +9871,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
             name="address"
             onChange={[Function]}
             type="text"
-            value="Reverend Street"
+            value=""
           />
         </span>
       </div>
@@ -9888,12 +9885,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
             className="remove-modal modify"
             onClick={[Function]}
           >
-            <div>
-              <i
-                aria-hidden="true"
-                className="fa fa-spinner fa-spin fa-2x fa-fw"
-              />
-            </div>
+            Modify
           </button>
         </span>
         <span
@@ -9987,7 +9979,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
           <td>
             <button
               className="p-color modify-btn"
-              onClick={[Function]}
+              disabled={true}
             >
               Modify
             </button>
@@ -16323,6 +16315,7 @@ Orders {
 exports[`Test order component of dashboard should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
