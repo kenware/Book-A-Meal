@@ -10,6 +10,7 @@ import MealGuide from './mealGuide';
 import TodayMenu from './todayMenu';
 import Video from './video';
 
+const limit = 1;
 export class Menu extends Component {
   constructor(props) {
     super(props);
@@ -23,12 +24,15 @@ export class Menu extends Component {
       price: '',
       mealDescription: '',
       order: 'Order',
-      modal: 'modal'
+      modal: 'modal',
+      pageNum: 1
     };
     this.onChange = this.onChange.bind(this);
     this.orderMeal = this.orderMeal.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
     this.confirmOrder = this.confirmOrder.bind(this);
+    this.handlePageNext = this.handlePageNext.bind(this);
+    this.handlePagePrev = this.handlePagePrev.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -38,7 +42,7 @@ export class Menu extends Component {
    * @returns {undefined} fetches totay menu
    */
   componentDidMount() {
-    this.props.menuActions.getMenu();
+    this.props.menuActions.getMenu(limit, 0);
   }
   /**
    * lifecycle hook called when component receives
@@ -123,6 +127,35 @@ export class Menu extends Component {
       modal: ''
     });
   }
+  /**
+   * Pagination method
+   * Next page
+   */
+  handlePageNext() {
+    let { pageNum } = this.state;
+    pageNum += 1;
+    const offset = (pageNum - 1) * limit;
+    const totalPage = this.props.menu.length;
+    if (totalPage < 1) {
+      return this.setState({ lastPage: 'Last page', firstPage: '' });
+    }
+    this.props.menuActions.getMenu(limit, offset);
+    this.setState({ pageNum, firstPage: '' });
+  }
+  /**
+   * Pagination method
+   * Prev page
+   */
+  handlePagePrev() {
+    let { pageNum } = this.state;
+    pageNum -= 1;
+    if (pageNum < 1) {
+      return this.setState({ firstPage: 'firstPage', lastPage: '' });
+    }
+    const offset = (pageNum - 1) * limit;
+    this.props.menuActions.getMenu(limit, offset);
+    this.setState({ pageNum, lastPage: '' });
+  }
   render() {
     return (
       <div className="meal-container">
@@ -173,10 +206,17 @@ export class Menu extends Component {
         <h2 className="top-bot-margin">TODAYS MENU</h2>
         <h3 className="success text-center">{this.state.successMessage}</h3>
         <h3 className="danger text-center">{this.state.errorMessage}</h3>
-        <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3>
+        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
+          <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3> :
+          <spsan /> }
         <TodayMenu menu={this.props.menu} confirmOrder={this.confirmOrder} />
-        {this.props.menu.length < 1 ?
-          <Video /> : <span />}
+        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
+          <Video /> : <span /> }
+        <div className="pagination">
+          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
+          <div className="current p-color"><button>{this.state.pageNum} </button></div>
+          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
+        </div>
       </div>
     );
   }

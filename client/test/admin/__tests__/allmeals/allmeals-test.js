@@ -31,7 +31,7 @@ describe('Test Component of ALLMeals component', () => {
 
   it('should have 17 divs', () => {
     const tree = shallow(<AllMeal {...props} />);
-    expect(tree.find('div')).toHaveLength(17);
+    expect(tree.find('div')).toHaveLength(21);
   });
 
   it('should display 2 img tag from the meals contents', () => {
@@ -55,6 +55,7 @@ describe('Test Component of ALLMeals component', () => {
     tree.find('#rice').simulate('click');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to deleteMeal method', () => {
     const tree = shallow(<AllMeal {...props} />);
     // onClick event
@@ -69,6 +70,7 @@ describe('Test Component of ALLMeals component', () => {
     wrapper.cancelDelete();
     expect(tree).toMatchSnapshot();
   });
+
   it('should call deletMeal method onclick event', () => {
     const deleteMeal = jest.spyOn(AllMeal.prototype, 'deleteMeal');
     const tree = shallow(<AllMeal {...props} />);
@@ -88,11 +90,13 @@ describe('Test Component of ALLMeals component', () => {
     expect(tree).toMatchSnapshot();
     expect(cancelDelete).toHaveBeenCalled();
   });
+
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();

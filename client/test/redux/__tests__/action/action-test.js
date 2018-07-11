@@ -238,7 +238,7 @@ describe('async actions test', () => {
       .post('/api/v1/auth/resetLink', { body: wrongData });
 
     const expectedActions = [
-      { type: types.LOAD_ERROR_MESSAGE, errorMessage: { resetError: 'Wrong detail' } }
+      { type: types.LOAD_ERROR_MESSAGE, errorMessage: { resetError: 'Error occured while sending email' } }
     ];
 
     const store = mockStore({ link: [] });

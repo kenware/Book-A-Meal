@@ -380,20 +380,22 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
     }
   }
   meals={
-    Array [
-      Object {
-        "descrption": "Very delicious",
-        "id": 1,
-        "name": "rice",
-        "price": "200",
-      },
-      Object {
-        "descrption": "Very delicious",
-        "id": 2,
-        "name": "beans",
-        "price": "200",
-      },
-    ]
+    Object {
+      "rows": Array [
+        Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        Object {
+          "descrption": "Very delicious",
+          "id": 2,
+          "name": "beans",
+          "price": "200",
+        },
+      ],
+    }
   }
   menuActions={
     Object {
@@ -810,6 +812,7 @@ exports[`Test index Component of addmeal component should respond addMeal method
 exports[`Test index Component of addmeal component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],

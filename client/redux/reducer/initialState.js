@@ -1,5 +1,5 @@
 export default {
-  meals: [],
+  meals: { rows: [] },
   mostOrder: [],
   user: [],
   errorMessage: {},

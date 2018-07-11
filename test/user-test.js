@@ -17,7 +17,6 @@ const {
 } = model;
 
 chai.use(chaiHttp);
-// import FormData from 'form-data';
 
 
 let tokenUpdate = '';

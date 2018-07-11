@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-
-import * as mealActions from '../../redux/Action/mealAction';
 import './index.scss';
+import * as mealActions from '../../redux/Action/mealAction';
 
+const limit = 6;
 export class AllMeal extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +14,16 @@ export class AllMeal extends Component {
       mealId: 0,
       mealName: '',
       mealImage: '',
-      modal: 'modal'
+      modal: 'modal',
+      pageNum: 1
     };
+    this.handlePageNext = this.handlePageNext.bind(this);
+    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.cancelDelete = this.cancelDelete.bind(this);
     this.deleteMeal = this.deleteMeal.bind(this);
+  }
+  componentDidMount() {
+    this.props.mealActions.getAllMeals(limit, 0);
   }
   /**
    * closes modal without deleting a meal
@@ -38,6 +44,27 @@ export class AllMeal extends Component {
         mealId: '', mealName: '', mealImage: '', modal: 'modal'
       });
     }
+  }
+  handlePageNext() {
+    let { pageNum } = this.state;
+    pageNum += 1;
+    const offset = (pageNum - 1) * limit;
+    const totalPage = this.props.meals.count / limit;
+    if (pageNum === totalPage || pageNum > totalPage) {
+      return this.setState({ lastPage: 'Last page', firstPage: '' });
+    }
+    this.props.mealActions.getAllMeals(limit, offset);
+    this.setState({ pageNum, firstPage: '' });
+  }
+  handlePagePrev() {
+    let { pageNum } = this.state;
+    pageNum -= 1;
+    if (pageNum < 1) {
+      return this.setState({ firstPage: 'firstPage', lastPage: '' });
+    }
+    const offset = (pageNum - 1) * limit;
+    this.props.mealActions.getAllMeals(limit, offset);
+    this.setState({ pageNum, lastPage: '' });
   }
   render() {
     /**
@@ -74,9 +101,9 @@ export class AllMeal extends Component {
         <h2>All Meal Options{this.props.successMessage.createMealSuccess }</h2>
         <h4 className="p-color text-center">Edit, delete or View all meal options</h4>
         <h4 className="danger text-center">{this.props.successMessage.message}</h4>
-        {this.props.meals.map(meal =>
+        {this.props.meals.rows.map(meal =>
         (
-          <div className="contents" key={meal.id}>
+          <div className="contents container" key={meal.id}>
             <div className="content-wrap">
               <div className="col-meal l-r-pad-text">
                 <img src={meal.image} className="rounded-circle img-height" alt="meals" />
@@ -96,12 +123,17 @@ export class AllMeal extends Component {
             </div>
           </div>
         ))}
+        <div className="pagination">
+          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
+          <div className="current p-color"><button>{this.state.pageNum} </button></div>
+          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
+        </div>
       </div>
     );
   }
 }
 AllMeal.propTypes = {
-  meals: PropTypes.array.isRequired,
+  meals: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired
 };

@@ -185,7 +185,7 @@ exports[`Test Profile component renders correctly 1`] = `
             onChange={[Function]}
             required={true}
             type="text"
-            value="kenny"
+            value=""
           />
         </div>
         <div
@@ -286,7 +286,7 @@ exports[`Test Profile component renders correctly 1`] = `
             <img
               alt="upload"
               className="img-fluid"
-              src="image_url"
+              src=""
               style={
                 Object {
                   "height": "200px",
@@ -1946,6 +1946,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
 exports[`Test Profile component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
@@ -2192,7 +2193,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
             onChange={[Function]}
             required={true}
             type="text"
-            value="kenny"
+            value=""
           />
         </div>
         <div
@@ -2293,7 +2294,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
             <img
               alt="upload"
               className="img-fluid"
-              src="image_url"
+              src=""
               style={
                 Object {
                   "height": "200px",

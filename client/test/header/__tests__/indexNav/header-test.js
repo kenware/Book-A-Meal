@@ -7,6 +7,7 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<IndexNav />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should render properly with user info in the nav bar', () => {
     window.localStorage = {
       getItem() {
@@ -16,6 +17,7 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<IndexNav />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should render properly with user info in the nav bar', () => {
     window.localStorage = {
       getItem() {
@@ -25,6 +27,7 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<IndexNav />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should render properly with user info in the nav bar', () => {
     window.localStorage = {
       getItem() {
@@ -34,6 +37,7 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<IndexNav />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to click method', () => {
     const tree = shallow(<IndexNav />);
     const wrapper = tree.instance();
@@ -42,6 +46,7 @@ describe('Testing of sidebar component', () => {
     wrapper.onClick();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to logout method', () => {
     const tree = shallow(<IndexNav />);
     window.localStorage = {

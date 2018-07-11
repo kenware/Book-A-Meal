@@ -4,8 +4,10 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as actions from '../../redux/Action/action';
+import * as mealActions from '../../redux/Action/mealAction';
 import './index.scss';
 
+const limit = 6;
 export class SetMenu extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,10 @@ export class SetMenu extends Component {
       errorOrderBefore: '',
       setMenuSuccess: '',
       Add: 'Add',
+      pageNum: 1
     };
+    this.handlePageNext = this.handlePageNext.bind(this);
+    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.onChange = this.onChange.bind(this);
     this.addMenu = this.addMenu.bind(this);
     this.cancelAdd = this.cancelAdd.bind(this);
@@ -29,6 +34,10 @@ export class SetMenu extends Component {
    *
    * return new state after it is changed
    */
+  componentDidMount() {
+    this.props.mealActions.getAllMeals('6', '0');
+  }
+
   static getDerivedStateFromProps(props) {
     if (props.errorMessage.setMenuError || props.successMessage.setMenuSuccess) {
       const successMessage = props.successMessage.setMenuSuccess;
@@ -69,6 +78,27 @@ export class SetMenu extends Component {
       });
     }
   }
+  handlePageNext() {
+    let { pageNum } = this.state;
+    pageNum += 1;
+    const offset = (pageNum - 1) * limit;
+    const totalPage = this.props.meals.count / limit;
+    if (pageNum === totalPage || pageNum > totalPage) {
+      return this.setState({ lastPage: 'Last page', firstPage: '' });
+    }
+    this.props.mealActions.getAllMeals(limit, offset);
+    this.setState({ pageNum, firstPage: '' });
+  }
+  handlePagePrev() {
+    let { pageNum } = this.state;
+    pageNum -= 1;
+    if (pageNum < 1) {
+      return this.setState({ firstPage: 'firstPage', lastPage: '' });
+    }
+    const offset = (pageNum - 1) * limit;
+    this.props.mealActions.getAllMeals(limit, offset);
+    this.setState({ pageNum, lastPage: '' });
+  }
 
   render() {
     // Display modal that allow you to add meal to menu
@@ -106,7 +136,7 @@ export class SetMenu extends Component {
         <h5 className="p-color text-center">Eg Expire time of 17 <em className="fa fa-long-arrow-right" /> 5pm</h5>
         <h4 className="danger text-center">{this.state.errorMessage}</h4>
         <h4 className="y-color text-center">{this.state.setMenuSuccess}</h4>
-        <div className="form-field">
+        <div className="form-field" id="setMenu-forrm">
           <label htmlFor="name">
             Title <br />
             <span className="text-center danger">{this.state.errorTitle }</span>
@@ -114,7 +144,7 @@ export class SetMenu extends Component {
           <input onChange={this.onChange} type="text" id="title" name="title" placeholder="Keny" required />
 
         </div>
-        <div className="form-field">
+        <div className="form-field" id="setMenu-forrm">
           <label htmlFor="password">
             Expire Time <br />
             <span className="text-center danger">{this.state.errorOrderBefore }</span>
@@ -125,15 +155,13 @@ export class SetMenu extends Component {
         <table>
           <tbody>
             <tr>
-              <th>id</th>
               <th>Name</th>
               <th>Price ($)</th>
               <th>Add to Menu</th>
             </tr>
-            {this.props.meals.map(meal =>
+            {this.props.meals.rows.map(meal =>
               (
                 <tr className="tr" key={meal.id}>
-                  <td>{meal.id}</td>
                   <td>{meal.name}</td>
                   <td>{meal.price}</td>
                   <td>
@@ -145,13 +173,19 @@ export class SetMenu extends Component {
               ))}
           </tbody>
         </table>
+        <div className="pagination">
+          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
+          <div className="current p-color"><button>{this.state.pageNum} </button></div>
+          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
+        </div>
       </div>
     );
   }
 }
 SetMenu.propTypes = {
-  meals: PropTypes.array.isRequired,
+  meals: PropTypes.object.isRequired,
   menuActions: PropTypes.object.isRequired,
+  mealActions: PropTypes.object.isRequired,
 };
 export function mapStateToProps(state) {
   return {
@@ -163,7 +197,8 @@ export function mapStateToProps(state) {
 export function mapDispatchToProps(dispatch) {
   return {
     menuActions: bindActionCreators(menuActions, dispatch),
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
+    mealActions: bindActionCreators(mealActions, dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SetMenu);

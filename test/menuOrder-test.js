@@ -23,7 +23,8 @@ chai.use(chaiHttp);
 let tokenUpdate = '';
 let tokenUser = '';
 let tokenAdmin = '';
-let id = 0, mealId = 0, menuId = 1, orderId = 0;
+const id = 0;
+let mealId = 0, menuId = 1, orderId = 0;
 let id1;
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
@@ -314,7 +315,7 @@ describe('Testing of Menu middleware and controller', () => {
   }).timeout(10000);
   it('User should Get a menu', (done) => {
     chai.request(server)
-      .get('/api/v1/menu')
+      .get('/api/v1/menu?limit=1&offset=0')
       .set('authorization', tokenUser)
       .end((err, res) => {
         res.should.have.status(200);

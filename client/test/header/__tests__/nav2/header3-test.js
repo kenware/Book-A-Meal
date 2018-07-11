@@ -7,10 +7,12 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<Header2 />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should render properly', () => {
     const tree = shallow(<Header2 />).setState({ role: 'admin' });
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to click method', () => {
     const tree = shallow(<Header2 />);
     const wrapper = tree.instance();
@@ -19,6 +21,7 @@ describe('Testing of sidebar component', () => {
     wrapper.onClick();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to logout method', () => {
     const tree = shallow(<Header2 />);
     global.history.pushState = jest.fn();

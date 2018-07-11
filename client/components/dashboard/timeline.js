@@ -23,7 +23,7 @@ const Timeline = ({ notifics }) => (
         <div className="timeline-body">
           <ul>
             <li style={{ listStyle: 'none' }}>
-              <img src="image/eze.jpg" className="user-img rounded-circle" alt="profil" />
+              <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="profil" />
             </li>
             <li>
               <span className="h2-color">Keny</span>
@@ -48,7 +48,7 @@ const Timeline = ({ notifics }) => (
         </div>
         <div className="timeline-body">
           <p>
-            <ul>
+            <ul style={{ overflow: 'scroll', height: '300px' }}>
               {notifics.map(notific =>
                 (
                   <li style={{ marginTop: '1rem' }} key={notific.id}>

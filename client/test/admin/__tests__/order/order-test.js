@@ -24,6 +24,7 @@ describe('Test Component of Order component', () => {
     const tree = shallow(<Orders {...props} />);
     expect(tree.find('.order-wrapper')).toHaveLength(2);
   });
+
   it('should have only one table', () => {
     const tree = shallow(<Orders {...props} />);
     expect(tree.find('table')).toHaveLength(1);

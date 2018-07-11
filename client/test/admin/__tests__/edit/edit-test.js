@@ -4,7 +4,7 @@ import { Edit, mapStateToProps, mapDispatchToProps } from '../../../../component
 import { props, emptyProps } from '../../adminMockData';
 
 const newProps = {
-  meals: [{ name: '' }],
+  meals: { rows: { name: '' } },
   mostOrder: [
   ],
   allOrder: [
@@ -36,38 +36,39 @@ describe('Test edit meal component', () => {
     const tree = shallow(<Edit {...newProps} />);
     expect(tree).toMatchSnapshot();
   });
+
   it('renders correctly', () => {
     const tree = shallow(<Edit {...props} />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to change event and change the state of the name input', () => {
     const tree = shallow(<Edit {...emptyProps} />);
     // onChange event
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'rice' } });
     expect(tree.state('name')).toEqual('rice');
   });
+
   it('should respond to lifeCycle methods', () => {
     const tree = shallow(<Edit {...emptyProps} />);
     const wrapper = tree.instance();
-    wrapper.componentDidMount();
+    wrapper.componentWillMount();
     expect(tree).toMatchSnapshot();
     wrapper.componentWillUnmount();
     expect(wrapper).toMatchSnapshot();
   });
+
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to mapStateToProps methods', () => {
-    const ownProps = { match: { params: { mealId: 1 } } };
-    const tree = mapStateToProps(emptyProps, ownProps);
-    expect(tree).toMatchSnapshot();
-  });
+
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to lifeCycle methods', () => {
     const tree = shallow(<Edit {...emptyProps} />);
     const wrapper = tree.instance();
@@ -76,6 +77,7 @@ describe('Test edit meal component', () => {
     wrapper.addMeal({ preventDefault: jest.fn() });
     expect(wrapper).toMatchSnapshot();
   });
+
   it('should respond to lifeCycle methods', () => {
     const tree = shallow(<Edit {...emptyProps} />);
     const wrapper = tree.instance();
@@ -86,7 +88,7 @@ describe('Test edit meal component', () => {
     }, { meals: { } });
     expect(tree).toMatchSnapshot();
     tree.instance().constructor.getDerivedStateFromProps({ meals: {} }, { meals: { } });
-    wrapper.componentDidMount();
+    wrapper.componentWillMount();
     expect(tree).toMatchSnapshot();
   });
 
@@ -105,9 +107,9 @@ describe('Test edit meal component', () => {
     tree.find('.submit').simulate('click', { target: { name: 'submit' }, preventDefault: jest.fn() });
     expect(tree.state('validPrice')).toEqual('Price is required');
   });
+
   it('should respond addMeal method onClick event edit profile', () => {
     const tree = shallow(<Edit {...emptyProps} />);
-
     // onChange event
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'rice' } });
     // onchange event

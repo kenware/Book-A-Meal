@@ -5,12 +5,18 @@ exports[`Test Register Component should render correctly 1`] = `
   <Nav />
   <div
     className="register-container"
+    id="register-bg"
   >
     <div
       className="register-col"
     />
     <div
       className="register-wrapper"
+      style={
+        Object {
+          "height": "500px",
+        }
+      }
     >
       <h2
         className="login-header"
@@ -168,6 +174,7 @@ exports[`Test Register Component should render correctly 1`] = `
 exports[`Test Register Component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
