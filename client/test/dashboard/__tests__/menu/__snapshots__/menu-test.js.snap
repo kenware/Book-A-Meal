@@ -1,0 +1,4026 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test menu component of dashboard renders correctly 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard renders correctly 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should clear redux store on unmount method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond lifeCyle method component did mount 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond lifeCyle method component did mount 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event and dislay a modal and close modal on cancel order method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event and dislay a modal and close modal on cancel order method 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event and dislay a modal and close modal on cancel order method 3`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event and dislay a modal and close modal on cancel order method 4`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event and dislay a modal and order a meal 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order "
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src="image"
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        mealName
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        mealName
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        price
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          <div>
+            <i
+              aria-hidden="true"
+              className="fa fa-spinner fa-spin fa-2x fa-fw"
+            />
+          </div>
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={Array []}
+  />
+  <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event of order button and dislay a modal and show Address is required on empty address field on submit 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order "
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src="image"
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        mealName
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        >
+          Your address is required
+        </h4>
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        mealName
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        price
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to a click event order button and dislay a modal and show Quantity is required on empty Quantity field on submit 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order "
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src="image"
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        mealName
+        <br />
+        <h4
+          className="danger text-center"
+        >
+          Quantity is required
+        </h4>
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        mealName
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      >
+        price
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to canceOrder method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to canceOrder method 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to confirmOrder method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "menuActions": Object {
+    "getMenu": [Function],
+    "loadErrorMessage": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "setMenu": [Function],
+  },
+  "orderActions": Object {
+    "confirmStatus": [Function],
+    "getAllOrders": [Function],
+    "getMyOrder": [Function],
+    "loadAllOrder": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMyOrder": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "orderMeal": [Function],
+    "updateOrder": [Function],
+  },
+}
+`;
+
+exports[`Test menu component of dashboard should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+    "updateError": "error on update",
+  },
+  "menu": Array [
+    Object {
+      "Meals": Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ],
+      "User": Object {
+        "email": "ken@gmail.com",
+        "name": "ken",
+        "usrername": "ken",
+      },
+      "id": 1,
+    },
+  ],
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+    "updateProfileSuccess": "updated",
+    "upgradeSuccess": " good",
+  },
+}
+`;
+
+exports[`Test menu component of dashboard should respond to onChange method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to onChange method 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to orderMeal method 1`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to orderMeal method 2`] = `
+<div
+  className="meal-container"
+>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal top-close"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="menu"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+        You about to Order 
+        <br />
+        <h4
+          className="danger text-center"
+        />
+        <h4
+          className="danger text-center"
+        />
+      </p>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Name:: 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Price (#): 
+      </span>
+      <span
+        className="modal-order-items "
+      />
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Quantity: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="quantity"
+          name="quantity"
+          onChange={[Function]}
+          type="number"
+        />
+      </span>
+    </div>
+    <div
+      className="justify-overide"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+         Address: 
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <input
+          id="address"
+          name="address"
+          onChange={[Function]}
+          type="text"
+        />
+      </span>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal order-meal"
+          onClick={[Function]}
+        >
+          Order
+        </button>
+      </span>
+      <span
+        className="modal-order-items l-r-pad-text"
+      >
+        <button
+          className="remove-modal close-modal"
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+      </span>
+    </div>
+  </div>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+  >
+    TODAYS MENU
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <spsan />
+  <todayMenu
+    confirmOrder={[Function]}
+    menu={
+      Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
+          },
+          "id": 1,
+        },
+      ]
+    }
+  />
+  <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;

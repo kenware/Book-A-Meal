@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async actions test should LOGIN_USER when fetching user has been done and login caterer 1`] = `Array []`;
+
+exports[`async actions test should LOGIN_USER when fetching user has been done and login normal user 1`] = `Array []`;
+
+exports[`async actions test should REGISTER_USER when fetching user has been done 1`] = `Array []`;
+
+exports[`async actions test should REGISTER_USER when fetching user has been done and redirect to admin 1`] = `Array []`;
+
+exports[`async actions test should refresh token and redirect to dashbored for role user 1`] = `Array []`;
+
+exports[`async actions test should refresh token and redirect to dashbored for role user 2`] = `Array []`;
+
+exports[`async actions test should send restlink to user 1`] = `
+Array [
+  Object {
+    "errorMessage": Object {
+      "resetError": "Error occured while sending email",
+    },
+    "type": "LOAD_ERROR_MESSAGE",
+  },
+]
+`;

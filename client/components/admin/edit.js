@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, Area } from 'Recharts';
 import Dropzone from 'react-dropzone';
 import FormData from 'form-data';
+import PropTypes from 'prop-types';
 
 import * as mealActions from '../../redux/Action/mealAction';
 import * as actions from '../../redux/Action/action';
 import './index.scss';
 
-class Edit extends Component {
+export class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      meals: [],
       name: this.props.meals.name,
       price: this.props.meals.price,
       description: this.props.meals.description,
@@ -26,35 +26,62 @@ class Edit extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.addMeal = this.addMeal.bind(this);
+    this.onDrop = this.onDrop.bind(this);
   }
- 
+  /**
+   * lifecycle hook called when component is mounted to DOM
+   *
+   * @memberof Admin index
+   *
+   * @returns {getAllMeal} fetches all meals
+   */
   componentWillMount() {
-    if (typeof this.props.meals === 'array') {
+    if (this.props.meals.name === '') {
       this.props.mealActions.getAllMeal();
     }
   }
-  componentWillReceiveProps(newProps) {
-    if (newProps.meals) {
-      this.setState({
-        image: newProps.meals.image,
-        name: newProps.meals.name,
-        price: newProps.meals.price,
-        description: newProps.meals.description,
+  /**
+   * lifecycle hook called when component receives props
+   *
+   * return new state after it is changed
+   */
+  static getDerivedStateFromProps(props, state) {
+    if (props.meals !== state.meals) {
+      return {
+        meals: props.meals,
+        image: props.meals.image,
+        name: props.meals.name,
+        price: props.meals.price,
+        description: props.meals.description,
         updateMeal: 'Update Meal'
-      });
+      };
     }
+    return { meals: state.meals };
   }
+  /**
+   * remove error props in redux store if component unmount
+   */
   componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+  /**
+   * @param  {} e set state on input onchange event
+  */
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+  /**
+   * @param  {} file sets image to state using drop box
+  */
   onDrop(file) {
     this.setState({ file, image: '' });
   }
+  /**
+   * calls a redux function
+   * adds a meal using form-data
+  */
   addMeal(e) {
     e.preventDefault();
     const {
@@ -70,6 +97,7 @@ class Edit extends Component {
     file.forEach((photo) => {
       payload.append('file', photo);
     });
+    // show loading icon on addmeal button
     this.setState({
       updateMeal: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
     });
@@ -81,7 +109,7 @@ class Edit extends Component {
       <div>
         <h2 style={{ marginTop: '2rem' }}>UPDATE A MEAL </h2>
         <div className="detail-contents">
-          <img src={this.state.image} className="detail-img" alt="meal"/>
+          <img src={this.state.image} className="detail-img" alt="meal" />
         </div>
         <div className="register-container" style={{ marginTop: '2px' }}>
           <div className="register-col" />
@@ -94,19 +122,19 @@ class Edit extends Component {
                 <label htmlFor="name">Name     <br />
                   <font color="red">{this.state.validName} </font>
                 </label>
-                <input onChange={this.onChange} type="text" value={this.state.name} name="name" required />
+                <input onChange={this.onChange} type="text" value={this.state.name} name="name" id="name" required />
               </div>
               <div className="form-field">
                 <label htmlFor="price">Price<br />
                   <font color="red">{this.state.validPrice} </font>
                 </label>
-                <input onChange={this.onChange} type="number" value={this.state.price} name="price" required />
+                <input onChange={this.onChange} type="number" value={this.state.price} name="price" id="price" required />
               </div>
               <div className="form-field">
                 <label htmlFor="name">Description<br />
                   <font color="red">{this.state.validDescription} </font>
                 </label>
-                <textarea cols="7" rows="9" onChange={this.onChange} className="form-label" name="description" value={this.state.description} required />
+                <textarea cols="7" rows="9" onChange={this.onChange} className="form-label" name="description" value={this.state.description} id="description"required />
 
               </div>
               <div className="form-field">
@@ -115,18 +143,18 @@ class Edit extends Component {
                 </label>
                 <span className="form-label">
                   <Dropzone
-                    onDrop={this.onDrop.bind(this)}
+                    onDrop={this.onDrop}
                     accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
                     ref="dropzone"
                     multiple={false}
                   >
                     Drag and drop or click to select an image to upload.
                   </Dropzone>
-                  {this.state.file.map(fil => <img src={fil.preview} className="img-fluid" />)}
+                  {this.state.file.map(fil => <img key={fil.preview} src={fil.preview} className="img-fluid" alt="meal" />)}
                 </span>
               </div>
               <div className="form-field">
-                <button type="submit" className="button lg" onClick={this.addMeal}>{this.state.updateMeal}</button>
+                <button type="submit" className="button lg submit" onClick={this.addMeal}>{this.state.updateMeal}</button>
               </div>
               <div className="form-field">
                 <span className="text-center form-label p-color">{this.props.successMessage.updateMealSuccess }</span>
@@ -141,14 +169,14 @@ class Edit extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
+export function mapStateToProps(state, ownProps) {
   let meals;
-  if (state.meals.length > 0) {
-    meals = state.meals.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
+  if (state.meals.rows.length > 0) {
+    meals = state.meals.rows.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
   } else {
-    meals = [{
+    meals = {
       name: '', price: 0, description: '', id: 0
-    }];
+    };
   }
   return {
     errorMessage: state.errorMessage,
@@ -156,7 +184,16 @@ function mapStateToProps(state, ownProps) {
     meals
   };
 }
-function mapDispatchToProps(dispatch) {
+
+Edit.propTypes = {
+  meals: PropTypes.object.isRequired,
+  errorMessage: PropTypes.object.isRequired,
+  successMessage: PropTypes.object.isRequired,
+  mealActions: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired,
+};
+
+export function mapDispatchToProps(dispatch) {
   return {
     mealActions: bindActionCreators(mealActions, dispatch),
     actions: bindActionCreators(actions, dispatch)

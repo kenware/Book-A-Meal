@@ -1,9 +1,9 @@
 export default {
-  meals: [],
+  meals: { rows: [] },
   mostOrder: [],
   user: [],
-  errorMessage: [],
-  successMessage: [],
+  errorMessage: {},
+  successMessage: {},
   menu: [],
   myOrder: [],
   allOrder: [],

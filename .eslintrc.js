@@ -1,0 +1,34 @@
+module.exports = {
+  "extends": "airbnb",
+  "env": {
+    "jest": true,
+  },
+  "rules": {
+    "one-var": 0,
+    "class-methods-use-this": 0,
+    "one-var-declaration-per-line": 0,
+    "new-cap": 0,
+    "no-restricted-syntax": 0,
+    "consistent-return": 0,
+    "no-param-reassign": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
+    "comma-dangle": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-label-has-for": 0,
+    "react/jsx-anchor-is-valid": 0,
+    "jsx-a11y/label-has-for": 0,
+    "react/no-string-refs": 0,
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "radix": 0,
+    "curly": ["error", "multi-line"],
+    "import/no-unresolved": [2, { "commonjs": true }],
+    "no-shadow": ["error", { "allow": ["req", "res", "err"] }]
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "window": true,
+    "document": true
+  }
+};

@@ -1,15 +1,11 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import sequelize from 'sequelize';
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
 import model from '../models/index';
 
 dotenv.config();
-// import secret from '../config/config';
 const secret = process.env.SECRET;
-const passEmail = process.env.PASS;
-const userEmail = process.env.USER;
 const { Op } = sequelize;
 const { User, notification } = model;
 
@@ -78,6 +74,10 @@ export default class userController {
       return res.status(401).json({ message: 'Wrong credentials' });
     });
   }
+  /**
+   * @param  {token} req upgrade user to an admin
+   * @param  {user} res user is now an admin
+   */
   async adminSignup(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -89,8 +89,18 @@ export default class userController {
     const setAdmin = await user.update({ role });
     if (!setAdmin) { return res.status(401).json({ message: 'Update failed' }); }
     const message = `${setAdmin.username} is set as admin`;
-    return res.status(201).json({ message, setAdmin });
+    const token = jwt.sign(
+      {
+        id: setAdmin.id,
+        username: setAdmin.username,
+        role: setAdmin.role,
+        image: setAdmin.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    return res.status(201).json({ message, setAdmin, token });
   }
+
   async getUser(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -99,7 +109,7 @@ export default class userController {
     }
     return res.status(200).json(user);
   }
-  async sendResetLink(req, res) {
+  async sendResetLink(req, res, next) {
     const { emailOrUsername } = req.body;
     try {
       const verify = await User.findOne({
@@ -112,61 +122,22 @@ export default class userController {
       });
       if (!verify) { return res.json({ message: 'Record not found' }); }
       const token = jwt.sign(
-        { id: verify.id, username: verify.username, role: verify.role },
+        {
+          id: verify.id,
+          username: verify.username,
+          role: verify.role,
+          image: verify.image
+        },
         secret, { expiresIn: 86400 }
       );
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        // host: 'bookmeals.herokuapp.com',
-        port: 465,
-        // port: 5000,
-        secure: true, // use SSL
-        auth: {
-          user: userEmail,
-          pass: passEmail// 'ken_waredehydrogenase'
-        }
-      });
-      const mailoutput = `<html>\n\
-      <body>\n\
-      <table>\n\
-      <tr>\n\
-      <td>Title: </td><h2> Book-A-Meal</h2><td></td>\n\
-      <td>Title: </td>Reset Password <td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Email: </td><td>${verify.email}</td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>MN: </td> Click the link bellow to reset your password<td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Messge: </td> Dere ${verify.name} reset your password 
-      <a href='${req.headers.host}/passwordreset/${token}'> here </a>. If the above link do not 
-      work. Pkease follow this link ${req.headers.host}/passwordreset/${token} <td></td>\n\
-      </tr>\n\
-      </table></body></html>`;
-      // setup e-mail data
-      const mailOptions = {
-        from: '"Book-A-Meal "<no-reply@Book-A-Meal.com>', // sender address (who sends)
-        to: verify.email, // list of receivers (who receives)
-        subject: 'Reset Password', // Subject line
-        // text: 'Hello world ', // plaintext body
-        html: mailoutput // html body
-      };
-
-      // send mail with defined transport object
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return res.json(error);
-        }
-
-        return res.json(`Message sent: ${info.response}`);
-      });
+      req.body.user = verify;
+      req.body.token = token;
+      next();
     } catch (err) { return res.json(err); }
   }
   async resetPassword(req, res) {
     const { id } = req.decoded;
-    const { password } = req.body;
+    let { password } = req.body;
     if (!password) { return res.status(401).json({ message: 'Enter new password' }); }
     if (/^\S+$/g.test(password) === false) {
       return res.status(401).json({ message: 'Password cannot contain a space' });
@@ -174,9 +145,17 @@ export default class userController {
     try {
       const user = await User.findById(id);
       if (!user) { return res.status(401).json({ message: 'User not found' }); }
+      // Hasah password using bcrypt
+      password = await new Promise((resolve, reject) => {
+        bcrypt.hash(password, 10, (err, hash) => {
+          if (err) reject(err);
+          resolve(hash);
+        });
+      });
+      // change password
       const update = await user.update({ password });
       if (update) {
-        return res.status(201).json({ message: 'Password changed' });
+        return res.status(201).json({ success: 'Password changed', user: update });
       }
       return res.status(401).json({ message: 'Password reset failed' });
     } catch (err) { return res.json(err); }
@@ -213,5 +192,36 @@ export default class userController {
       image: req.decoded.image,
       token
     });
+  }
+  async userUpdate(req, res) {
+    const { id } = req.decoded;
+    const user = await User.findById(id);
+    if (!user) { return res.status(401).json({ message: 'User not found' }); }
+    const { name } = req.body;
+    let { image } = req.body;
+    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true) {
+      return res.status(401).json({ message: 'valid name is required' });
+    }
+    if (req.files && req.files.length !== 0) {
+      image = req.files[0].url;
+    }
+    const update = await user.update({ name, image });
+    const token = jwt.sign(
+      {
+        username: update.username,
+        role: update.role,
+        id: update.id,
+        image: update.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    const userUpdate = {
+      username: update.username,
+      role: update.role,
+      id: update.id,
+      image: update.image,
+      token
+    };
+    return res.status(201).json(userUpdate);
   }
 }

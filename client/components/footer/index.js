@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
-// import { Link } from 'react-router-dom';
+// footer, used in all pages
 const footer = () => (
   <div>
     <footer className="footer" style={{ marginTop: '2rem' }}>

@@ -1,0 +1,519 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test index Component of admin pages renders correctly 1`] = `
+<div>
+  <span
+    className="largeScreen-header"
+  >
+    <Nav />
+  </span>
+  <span
+    className="smallScreen-header"
+  >
+    <Header />
+  </span>
+  <div
+    className="admin-container"
+  >
+    <Sidebar
+      cPassword="cPassword"
+      dash="dash"
+      handleClick={[Function]}
+      handleClose={[Function]}
+      logOut={[Function]}
+      logout="logout"
+      main="main-sidebar1"
+      nav1=""
+      nav2="nav2"
+      notific="notific"
+      order="order"
+      profile="profile"
+      setmeal="setmeal"
+      toggle={[Function]}
+    />
+    <main
+      className="main main-sidebar1"
+      id="main"
+    >
+      <header
+        className="header"
+      >
+        <div
+          className="l-r-pad-text"
+        >
+          <h4
+            className="white-color"
+          >
+            ADMIN
+          </h4>
+        </div>
+        <div>
+          <h4
+            className="white-color"
+          />
+          <img
+            alt="profile"
+            className="user-img rounded-circle"
+          />
+        </div>
+      </header>
+      <Route
+        exact={true}
+        path="/admin"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/allmeals"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/setmenu"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/addmeals"
+      />
+      <Route
+        component={[Function]}
+        path="/admin/edit/:mealId"
+      />
+      <footer />
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Test index Component of admin pages should have respond handle click and close method 1`] = `
+<div>
+  <span
+    className="largeScreen-header"
+  >
+    <Nav />
+  </span>
+  <span
+    className="smallScreen-header"
+  >
+    <Header />
+  </span>
+  <div
+    className="admin-container"
+  >
+    <Sidebar
+      cPassword="cPassword"
+      dash="dash"
+      handleClick={[Function]}
+      handleClose={[Function]}
+      logOut={[Function]}
+      logout="logout"
+      main="main-sidebar1"
+      nav1=""
+      nav2="nav2"
+      notific="notific"
+      order="order"
+      profile="profile"
+      setmeal="setmeal"
+      toggle={[Function]}
+    />
+    <main
+      className="main main-sidebar1"
+      id="main"
+    >
+      <header
+        className="header"
+      >
+        <div
+          className="l-r-pad-text"
+        >
+          <h4
+            className="white-color"
+          >
+            ADMIN
+          </h4>
+        </div>
+        <div>
+          <h4
+            className="white-color"
+          />
+          <img
+            alt="profile"
+            className="user-img rounded-circle"
+          />
+        </div>
+      </header>
+      <Route
+        exact={true}
+        path="/admin"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/allmeals"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/setmenu"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/addmeals"
+      />
+      <Route
+        component={[Function]}
+        path="/admin/edit/:mealId"
+      />
+      <footer />
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Test index Component of admin pages should have respond handle click and close method 2`] = `
+<div>
+  <span
+    className="largeScreen-header"
+  >
+    <Nav />
+  </span>
+  <span
+    className="smallScreen-header"
+  >
+    <Header />
+  </span>
+  <div
+    className="admin-container"
+  >
+    <Sidebar
+      cPassword="cPassword"
+      dash="dash"
+      handleClick={[Function]}
+      handleClose={[Function]}
+      logOut={[Function]}
+      logout="logout"
+      main="main-sidebar1"
+      nav1=""
+      nav2="nav2"
+      notific="notific"
+      order="order"
+      profile="profile"
+      setmeal="setmeal"
+      toggle={[Function]}
+    />
+    <main
+      className="main main-sidebar1"
+      id="main"
+    >
+      <header
+        className="header"
+      >
+        <div
+          className="l-r-pad-text"
+        >
+          <h4
+            className="white-color"
+          >
+            ADMIN
+          </h4>
+        </div>
+        <div>
+          <h4
+            className="white-color"
+          />
+          <img
+            alt="profile"
+            className="user-img rounded-circle"
+          />
+        </div>
+      </header>
+      <Route
+        exact={true}
+        path="/admin"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/allmeals"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/setmenu"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/addmeals"
+      />
+      <Route
+        component={[Function]}
+        path="/admin/edit/:mealId"
+      />
+      <footer />
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Test index Component of admin pages should have respond handle click and close method 3`] = `
+<div>
+  <span
+    className="largeScreen-header"
+  >
+    <Nav />
+  </span>
+  <span
+    className="smallScreen-header"
+  >
+    <Header />
+  </span>
+  <div
+    className="admin-container"
+  >
+    <Sidebar
+      cPassword="cPassword"
+      dash="dash"
+      handleClick={[Function]}
+      handleClose={[Function]}
+      logOut={[Function]}
+      logout="logout"
+      main="main-sidebar1"
+      nav1=""
+      nav2="nav2"
+      notific="notific"
+      order="order"
+      profile="profile"
+      setmeal="setmeal"
+      toggle={[Function]}
+    />
+    <main
+      className="main main-sidebar1"
+      id="main"
+    >
+      <header
+        className="header"
+      >
+        <div
+          className="l-r-pad-text"
+        >
+          <h4
+            className="white-color"
+          >
+            ADMIN
+          </h4>
+        </div>
+        <div>
+          <h4
+            className="white-color"
+          />
+          <img
+            alt="profile"
+            className="user-img rounded-circle"
+          />
+        </div>
+      </header>
+      <Route
+        exact={true}
+        path="/admin"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/allmeals"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/setmenu"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/addmeals"
+      />
+      <Route
+        component={[Function]}
+        path="/admin/edit/:mealId"
+      />
+      <footer />
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Test index Component of admin pages should have respond to logOut method 1`] = `
+<div>
+  <span
+    className="largeScreen-header"
+  >
+    <Nav />
+  </span>
+  <span
+    className="smallScreen-header"
+  >
+    <Header />
+  </span>
+  <div
+    className="admin-container"
+  >
+    <Sidebar
+      cPassword="cPassword"
+      dash="dash"
+      handleClick={[Function]}
+      handleClose={[Function]}
+      logOut={[Function]}
+      logout="logout"
+      main="main-sidebar1"
+      nav1=""
+      nav2="nav2"
+      notific="notific"
+      order="order"
+      profile="profile"
+      setmeal="setmeal"
+      toggle={[Function]}
+    />
+    <main
+      className="main main-sidebar1"
+      id="main"
+    >
+      <header
+        className="header"
+      >
+        <div
+          className="l-r-pad-text"
+        >
+          <h4
+            className="white-color"
+          >
+            ADMIN
+          </h4>
+        </div>
+        <div>
+          <h4
+            className="white-color"
+          />
+          <img
+            alt="profile"
+            className="user-img rounded-circle"
+          />
+        </div>
+      </header>
+      <Route
+        exact={true}
+        path="/admin"
+        render={[Function]}
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/allmeals"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/setmenu"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/admin/addmeals"
+      />
+      <Route
+        component={[Function]}
+        path="/admin/edit/:mealId"
+      />
+      <footer />
+    </main>
+  </div>
+</div>
+`;
+
+exports[`Test index Component of admin pages should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "mealActions": Object {
+    "createMeal": [Function],
+    "deleteMeal": [Function],
+    "getAllMeals": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadSuccessMessage": [Function],
+    "updateMeal": [Function],
+  },
+  "orderActions": Object {
+    "confirmStatus": [Function],
+    "getAllOrders": [Function],
+    "getMyOrder": [Function],
+    "loadAllOrder": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMyOrder": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "orderMeal": [Function],
+    "updateOrder": [Function],
+  },
+}
+`;
+
+exports[`Test index Component of admin pages should respond to mapStateToProps methods 1`] = `
+Object {
+  "allOrder": Array [
+    Object {
+      "Meal": Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      "address": "Reverend Street",
+      "createdAt": "2018-05-4",
+      "id": 1,
+      "quantity": 3,
+      "status": "pending",
+      "updatedAt": "2018-05-4",
+    },
+  ],
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+  },
+  "mostOrder": Array [
+    Object {
+      "Meal": Object {
+        "description": "good",
+        "id": 1,
+        "image": "image",
+        "name": "rice",
+        "price": "400",
+      },
+      "id": 1,
+    },
+  ],
+}
+`;

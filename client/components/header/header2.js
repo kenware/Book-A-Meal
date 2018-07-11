@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import './index.scss';
-import * as actions from '../../redux/Action/action';
 import history from '../../history';
 import auth from '../../authenticate/auth';
-
-// const role = auth.getRole();
+/**
+  * This header is used in only admin page for small screen size
+*/
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -17,13 +15,20 @@ class Header extends Component {
     this.onClick = this.onClick.bind(this);
     this.logout = this.logout.bind(this);
   }
-  onClick(e) {
+  /**
+   * addd css class for drop down and responsive navbar
+  */
+  onClick() {
     if (this.state.responsive === 'responsive') {
       this.setState({ responsive: '' });
     } else {
       this.setState({ responsive: 'responsive' });
     }
   }
+  /**
+   * logout users
+   * redirect to login psage
+  */
   logout() {
     auth.logOut();
     history.push('/meals');
@@ -33,16 +38,16 @@ class Header extends Component {
     return (
       <div>
         <div className={`nav ${this.state.responsive}`} id="myTopnav">
-          <Link to="/meals" className="a active" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
-          <a href="javascript:void(0);" onClick={this.logout} className="a">LogOut</a>
-          <Link to="/profile" className="a"><em className="fa fa-user"/> &nbsp;{localStorage.getItem('username')}</Link>
+          <Link to="/meals" className="a active active-text-header" style={{ fontSize: '23px', marginTop: '10px' }} >Book-A-Meal</Link>
+          <span onClick={this.logout} className="a" role="button">LogOut</span>
+          <Link to="/profile" className="a"><em className="fa fa-user" /> &nbsp;{window.localStorage.getItem('username')}</Link>
           <Link to="/admin" className="a">Admin</Link>
           <Link to="/dashboard" className="a">dashboard</Link>
           <Link to="/admin/allmeals" className="a">All meals</Link>
           <Link to="/admin/setmenu" className="a">Set Menu</Link>
           <Link to="/admin/addmeals" className="a">Add meals</Link>
           <Link to="/meals" className="active a">Home</Link>
-          <span className="a icon" onClick={this.onClick}><span className="fa fa-bars" /></span>
+          <span className="a icon" onClick={this.onClick} role="button"><span className="fa fa-bars" /></span>
         </div>
       </div>
 
@@ -50,13 +55,4 @@ class Header extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    message: state.message,
-    appMessage: state.appMessage
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

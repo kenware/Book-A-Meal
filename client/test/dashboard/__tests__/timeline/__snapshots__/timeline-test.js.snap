@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Timeline component of dashboard renders correctly 1`] = `
+<ul
+  className="timeline"
+>
+  <li>
+    <div
+      className="timeline-badge"
+    >
+      <em
+        className="fa fa-camera"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title l-margin m-text"
+        >
+          Profile
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <ul>
+          <li
+            style={
+              Object {
+                "listStyle": "none",
+              }
+            }
+          >
+            <img
+              alt="profil"
+              className="user-img rounded-circle"
+            />
+          </li>
+          <li>
+            <span
+              className="h2-color"
+            >
+              Keny
+            </span>
+          </li>
+          <li>
+            <span
+              className="h2-color"
+            >
+              Update profile
+            </span>
+          </li>
+          <li>
+            <span
+              className="h2-color"
+              role="button"
+            >
+               Change Password
+            </span>
+          </li>
+          <span />
+        </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      className="timeline-badge primary"
+    >
+      <em
+        className="fa fa-link"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title l-margin m-text"
+        >
+          Notifications
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <p>
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
+            <li
+              key="1"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
+            >
+              <div
+                className="p-color"
+              >
+                here i come
+              </div>
+              <div>
+                Jun
+                 
+                10
+                  
+                2018
+              </div>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      className="timeline-badge"
+    >
+      <em
+        className="fa fa-paperclip"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title m-text l-margin"
+        >
+          Recently Ordered Meal
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <p>
+          <ul>
+            <li />
+            <li>
+              Italian Recipes
+            </li>
+            <li>
+              Ewedu Meal
+            </li>
+            <li>
+              Abacha
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Test Timeline component of dashboard should have three modal-order-content class 1`] = `
+<ul
+  className="timeline"
+>
+  <li>
+    <div
+      className="timeline-badge"
+    >
+      <em
+        className="fa fa-camera"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title l-margin m-text"
+        >
+          Profile
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <ul>
+          <li
+            style={
+              Object {
+                "listStyle": "none",
+              }
+            }
+          >
+            <img
+              alt="profil"
+              className="user-img rounded-circle"
+              src="user"
+            />
+          </li>
+          <li>
+            <span
+              className="h2-color"
+            >
+              Keny
+            </span>
+          </li>
+          <li>
+            <span
+              className="h2-color"
+            >
+              Update profile
+            </span>
+          </li>
+          <li>
+            <span
+              className="h2-color"
+              role="button"
+            >
+               Change Password
+            </span>
+          </li>
+          <li>
+            <button
+              className="p-color"
+            >
+               Upgrade To A Caterer
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      className="timeline-badge primary"
+    >
+      <em
+        className="fa fa-link"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title l-margin m-text"
+        >
+          Notifications
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <p>
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
+            <li
+              key="1"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
+            >
+              <div
+                className="p-color"
+              >
+                here i come
+              </div>
+              <div>
+                Jun
+                 
+                10
+                  
+                2018
+              </div>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div
+      className="timeline-badge"
+    >
+      <em
+        className="fa fa-paperclip"
+      />
+    </div>
+    <div
+      className="timeline-panel bg-light"
+    >
+      <div
+        className="timeline-heading"
+      >
+        <h5
+          className="timeline-title m-text l-margin"
+        >
+          Recently Ordered Meal
+        </h5>
+      </div>
+      <div
+        className="timeline-body"
+      >
+        <p>
+          <ul>
+            <li />
+            <li>
+              Italian Recipes
+            </li>
+            <li>
+              Ewedu Meal
+            </li>
+            <li>
+              Abacha
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+`;

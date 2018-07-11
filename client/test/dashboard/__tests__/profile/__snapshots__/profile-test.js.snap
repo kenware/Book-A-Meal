@@ -1,0 +1,2332 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Profile component renders correctly 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction],
+      "getNotifications": [MockFunction],
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "refreshToken": [MockFunction],
+      "updateProfile": [MockFunction],
+      "upgrade": [MockFunction],
+    }
+  }
+  confirmOrder={[MockFunction]}
+  errorMessage={
+    Object {
+      "createMealError": "Wrong credentials",
+      "updateError": "error on update",
+    }
+  }
+  mealActions={
+    Object {
+      "getAllMeals": [MockFunction],
+      "loadMostOrderedMeal": [MockFunction],
+    }
+  }
+  meals={
+    Array [
+      Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      Object {
+        "descrption": "Very delicious",
+        "id": 2,
+        "name": "beans",
+        "price": "200",
+      },
+    ]
+  }
+  menu={
+    Array [
+      Object {
+        "Meals": Array [
+          Object {
+            "desctription": "good",
+            "id": 1,
+            "name": "jollof",
+            "price": 100,
+          },
+        ],
+        "User": Object {
+          "email": "ken@gmail.com",
+          "name": "ken",
+          "usrername": "ken",
+        },
+        "id": 1,
+      },
+    ]
+  }
+  menuActions={
+    Object {
+      "getAllOrders": [MockFunction],
+      "getMenu": [MockFunction],
+    }
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "pending",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {
+        "createdAt": "2018-06-10",
+        "id": 1,
+        "message": "here i come",
+        "updatedAt": "2018-06-10",
+      },
+    ]
+  }
+  orderActions={
+    Object {
+      "confirmStatus": [MockFunction],
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "meal created",
+      "updateProfileSuccess": "updated",
+      "upgradeSuccess": " good",
+    }
+  }
+  user={
+    Object {
+      "email": "ken@gmaoil.com",
+      "id": 1,
+      "image": "image_url",
+      "name": "kenny",
+      "username": "ken",
+    }
+  }
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    >
+      error on update
+    </h3>
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+            value="ken"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+            value="ken@gmaoil.com"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          >
+            updated
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should display error messages from redux error props 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction],
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  errorMessage={
+    Object {
+      "createMealError": "",
+    }
+  }
+  mealActions={
+    Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    }
+  }
+  meals={Array []}
+  menu={Array []}
+  menuActions={
+    Object {
+      "getMenu": [MockFunction],
+    }
+  }
+  mostOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "",
+          "id": 1,
+          "name": "",
+          "price": "",
+        },
+        "id": "",
+      },
+    ]
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "confirmed",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {},
+    ]
+  }
+  orderActions={
+    Object {
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    />
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should respond to componentWillMount lifeCycle method 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  errorMessage={
+    Object {
+      "createMealError": "",
+    }
+  }
+  mealActions={
+    Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    }
+  }
+  meals={Array []}
+  menu={Array []}
+  menuActions={
+    Object {
+      "getMenu": [MockFunction],
+    }
+  }
+  mostOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "",
+          "id": 1,
+          "name": "",
+          "price": "",
+        },
+        "id": "",
+      },
+    ]
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "confirmed",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {},
+    ]
+  }
+  orderActions={
+    Object {
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    />
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should respond to componentWillProps method 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  errorMessage={
+    Object {
+      "createMealError": "",
+    }
+  }
+  mealActions={
+    Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    }
+  }
+  meals={Array []}
+  menu={Array []}
+  menuActions={
+    Object {
+      "getMenu": [MockFunction],
+    }
+  }
+  mostOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "",
+          "id": 1,
+          "name": "",
+          "price": "",
+        },
+        "id": "",
+      },
+    ]
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "confirmed",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {},
+    ]
+  }
+  orderActions={
+    Object {
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    />
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should respond to componentWillProps method 2`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  errorMessage={
+    Object {
+      "createMealError": "",
+    }
+  }
+  mealActions={
+    Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    }
+  }
+  meals={Array []}
+  menu={Array []}
+  menuActions={
+    Object {
+      "getMenu": [MockFunction],
+    }
+  }
+  mostOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "",
+          "id": 1,
+          "name": "",
+          "price": "",
+        },
+        "id": "",
+      },
+    ]
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "confirmed",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {},
+    ]
+  }
+  orderActions={
+    Object {
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    />
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction],
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    }
+  }
+  errorMessage={
+    Object {
+      "createMealError": "",
+    }
+  }
+  mealActions={
+    Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    }
+  }
+  meals={Array []}
+  menu={Array []}
+  menuActions={
+    Object {
+      "getMenu": [MockFunction],
+    }
+  }
+  mostOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "",
+          "id": 1,
+          "name": "",
+          "price": "",
+        },
+        "id": "",
+      },
+    ]
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "confirmed",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {},
+    ]
+  }
+  orderActions={
+    Object {
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "",
+    }
+  }
+  user={Object {}}
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    />
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;
+
+exports[`Test Profile component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "mealActions": Object {
+    "createMeal": [Function],
+    "deleteMeal": [Function],
+    "getAllMeals": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadSuccessMessage": [Function],
+    "updateMeal": [Function],
+  },
+}
+`;
+
+exports[`Test Profile component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+    "updateError": "error on update",
+  },
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+    "updateProfileSuccess": "updated",
+    "upgradeSuccess": " good",
+  },
+  "user": Object {
+    "email": "ken@gmaoil.com",
+    "id": 1,
+    "image": "image_url",
+    "name": "kenny",
+    "username": "ken",
+  },
+}
+`;
+
+exports[`Test Profile component should respond to onChange event 1`] = `
+<Profile
+  actions={
+    Object {
+      "clearMessages": [MockFunction],
+      "getNotifications": [MockFunction],
+      "getUser": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "refreshToken": [MockFunction],
+      "updateProfile": [MockFunction],
+      "upgrade": [MockFunction],
+    }
+  }
+  confirmOrder={[MockFunction]}
+  errorMessage={
+    Object {
+      "createMealError": "Wrong credentials",
+      "updateError": "error on update",
+    }
+  }
+  mealActions={
+    Object {
+      "getAllMeals": [MockFunction],
+      "loadMostOrderedMeal": [MockFunction],
+    }
+  }
+  meals={
+    Array [
+      Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      Object {
+        "descrption": "Very delicious",
+        "id": 2,
+        "name": "beans",
+        "price": "200",
+      },
+    ]
+  }
+  menu={
+    Array [
+      Object {
+        "Meals": Array [
+          Object {
+            "desctription": "good",
+            "id": 1,
+            "name": "jollof",
+            "price": 100,
+          },
+        ],
+        "User": Object {
+          "email": "ken@gmail.com",
+          "name": "ken",
+          "usrername": "ken",
+        },
+        "id": 1,
+      },
+    ]
+  }
+  menuActions={
+    Object {
+      "getAllOrders": [MockFunction],
+      "getMenu": [MockFunction],
+    }
+  }
+  myOrder={
+    Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "quantity": 3,
+        "status": "pending",
+        "updatedAt": "2018-05-4",
+      },
+    ]
+  }
+  notifics={
+    Array [
+      Object {
+        "createdAt": "2018-06-10",
+        "id": 1,
+        "message": "here i come",
+        "updatedAt": "2018-06-10",
+      },
+    ]
+  }
+  orderActions={
+    Object {
+      "confirmStatus": [MockFunction],
+      "getMyOrder": [MockFunction],
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    }
+  }
+  successMessage={
+    Object {
+      "createMealSuccess": "meal created",
+      "updateProfileSuccess": "updated",
+      "upgradeSuccess": " good",
+    }
+  }
+  user={
+    Object {
+      "email": "ken@gmaoil.com",
+      "id": 1,
+      "image": "image_url",
+      "name": "kenny",
+      "username": "ken",
+    }
+  }
+>
+  <div
+    className="order-container"
+  >
+    <h2
+      style={
+        Object {
+          "marginTop": "2rem",
+        }
+      }
+    >
+      Update your Profile 
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Fill The Field Below To Update a profile
+    </h4>
+    <br />
+    <h3
+      className="text-center danger"
+    >
+      error on update
+    </h3>
+    <h3
+      className="text-center p-color"
+    />
+    <div
+      className="profile-container"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <form>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Username
+            <br />
+          </label>
+          <input
+            className="username"
+            readOnly={true}
+            type="text"
+            value="ken"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+          </label>
+          <input
+            id="email"
+            name="email"
+            readOnly={true}
+            type="email"
+            value="ken@gmaoil.com"
+          />
+        </div>
+        <div
+          className="profile-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              <div
+                aria-disabled={false}
+                className=""
+                onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                style={
+                  Object {
+                    "borderColor": "#666",
+                    "borderRadius": 5,
+                    "borderStyle": "dashed",
+                    "borderWidth": 2,
+                    "height": 200,
+                    "width": 200,
+                  }
+                }
+              >
+                <span
+                  className="dropBox"
+                >
+                  Drag and drop or click to select an image to upload.
+                </span>
+                <input
+                  accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                  autoComplete="off"
+                  disabled={false}
+                  multiple={false}
+                  onChange={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="file"
+                />
+              </div>
+            </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            id="submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          >
+            updated
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</Profile>
+`;

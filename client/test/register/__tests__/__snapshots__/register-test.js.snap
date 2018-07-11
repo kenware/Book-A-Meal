@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Register Component should render correctly 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+    id="register-bg"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "height": "500px",
+        }
+      }
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your details to SignUp
+      </h2>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form
+        className="register"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Fullname
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            placeholder="Eze Kevin"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username
+          </label>
+          <input
+            id="username"
+            name="username"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Email
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            placeholder="Keny"
+            required={true}
+            type="email"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Confirm Password
+            <br />
+            <font
+              color="green"
+            />
+            <font
+              color="red"
+            />
+          </label>
+          <input
+            id="vpassword"
+            name="vpassword"
+            onChange={[Function]}
+            required={true}
+            type="password"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            SignUp
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/login"
+            >
+              Login
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/resetLink"
+            >
+              forgot password? 
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Register Component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+}
+`;
+
+exports[`Test Register Component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "registerError": "Wrong credentials",
+  },
+}
+`;

@@ -1,0 +1,1529 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Component of ALLMeals component renders correctly 1`] = `
+<div>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should call deletMeal method onclick event 1`] = `
+<div>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should cancel/remove modal that delete meal using cancelAdd method onclick event 1`] = `
+<div>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should respond to a click event by dispalying a modal when caterer want to delete a meal by selecting from meal options 1`] = `
+<div>
+  <div
+    className="modal-order "
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+        rice
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should respond to deleteMeal method  1`] = `
+<div>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should respond to deleteMeal method 1`] = `
+<div>
+  <div
+    className="modal-order modal"
+  >
+    <button
+      className="remove-modal"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "display": "block",
+          "float": "right",
+        }
+      }
+    >
+      ×
+    </button>
+    <div
+      className="modal-order-content"
+    >
+      <img
+        alt="meal"
+        className="rounded-circle img-height"
+        src=""
+      />
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <p
+        className="justify l-r-pad-text"
+      >
+         You are about to delete 
+      </p>
+    </div>
+    <div
+      className="modal-order-content"
+    >
+      <button
+        className="remove-modal delete-meal"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="remove-modal cancel-delete"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  <h2>
+    All Meal Options
+    meal created
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Edit, delete or View all meal options
+  </h4>
+  <h4
+    className="danger text-center"
+  />
+  <div
+    className="contents container"
+    key="1"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          rice
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/1"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="rice"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="contents container"
+    key="2"
+  >
+    <div
+      className="content-wrap"
+    >
+      <div
+        className="col-meal l-r-pad-text"
+      >
+        <img
+          alt="meals"
+          className="rounded-circle img-height"
+        />
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+           Title
+        </h4>
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          beans
+        </Link>
+      </div>
+      <div
+        className="col-meal"
+      >
+        <h4
+          className="p-color"
+        >
+          Price
+        </h4>
+        200
+      </div>
+      <div
+        className="col-meal"
+      >
+        <br />
+        <Link
+          replace={false}
+          to="/admin/edit/2"
+        >
+          <em
+            className="fa fa-edit p-color"
+          />
+           Edit
+        </Link>
+        <br />
+         
+        <br />
+        <span
+          className="p-color"
+          id="beans"
+          onClick={[Function]}
+          role="button"
+        >
+          <em
+            className="fa fa-trash p-color"
+          />
+           Delete
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Component of ALLMeals component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "mealActions": Object {
+    "createMeal": [Function],
+    "deleteMeal": [Function],
+    "getAllMeals": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadSuccessMessage": [Function],
+    "updateMeal": [Function],
+  },
+}
+`;
+
+exports[`Test Component of ALLMeals component should respond to mapStateToProps methods 1`] = `
+Object {
+  "meals": Object {
+    "rows": Array [
+      Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      Object {
+        "descrption": "Very delicious",
+        "id": 2,
+        "name": "beans",
+        "price": "200",
+      },
+    ],
+  },
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+  },
+}
+`;
