@@ -2,6 +2,7 @@ module.exports = {
   "extends": "airbnb",
   "env": {
     "jest": true,
+    "mocha": true
   },
   "rules": {
     "one-var": 0,
@@ -11,6 +12,7 @@ module.exports = {
     "no-restricted-syntax": 0,
     "consistent-return": 0,
     "no-param-reassign": 0,
+    "no-unused-vars": 0,
     "jsx-a11y/interactive-supports-focus": 0,
     "comma-dangle": 0,
     "jsx-a11y/anchor-is-valid": 0,

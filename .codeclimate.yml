@@ -1,0 +1,15 @@
+engines:
+  duplication:
+    enabled: false
+    config:
+      languages:
+      - javascript
+ratings:
+  paths:
+  - "server/**/*.js"
+  - "client/**/*.js"
+exclude_paths:
+  - "test/"
+  - "client/__tests__"
+  - "client/helpers"
+  - "client/mocks"

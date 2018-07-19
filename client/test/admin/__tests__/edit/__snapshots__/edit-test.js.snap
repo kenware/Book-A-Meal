@@ -1873,20 +1873,3 @@ Object {
   },
 }
 `;
-
-exports[`Test edit meal component should respond to mapStateToProps methods 2`] = `
-Object {
-  "errorMessage": Object {
-    "createMealError": "",
-  },
-  "meals": Object {
-    "description": "",
-    "id": 0,
-    "name": "",
-    "price": 0,
-  },
-  "successMessage": Object {
-    "createMealSuccess": "",
-  },
-}
-`;

@@ -9,6 +9,14 @@ const secret = process.env.SECRET;
 const { User } = model;
 
 export default class middleware {
+  /**
+ * @method authUser
+ * @param {string} data - A token
+ * @returns { null } returns Unauthorized Access if token is undfefined
+ * @returns { expired } returns Please login
+ * @description used to access authenticated route
+ * @description if token is valid, decode the payload and pass it controller
+ */
   async authUser(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
     if (!token || token === 'null') {
@@ -23,6 +31,15 @@ export default class middleware {
       next();
     });
   }
+
+  /**
+ * @method authAdmin
+ * @param {string} data - A token
+ * @returns { null } returns Unauthorized Access if token is undfefined
+ * @returns { expired } returns Please login
+ * @description used to access authenticated route
+ * @description if token is valid, decode the payload and pass it controller
+ */
   async authAdmin(req, res, next) {
     const token = req.headers.authorization || req.headers['x-access-token'];
     if (!token || token === 'null') {
@@ -40,6 +57,12 @@ export default class middleware {
       next();
     });
   }
+
+  /**
+ * @method signup
+ * @param {string} req - A user object
+ * @description if the user details is valid, pass it controller
+ */
   async signup(req, res, next) {
     let { name, role } = req.body;
     const { email, username, password } = req.body;
@@ -77,6 +100,12 @@ export default class middleware {
     req.body.password = password;
     next();
   }
+
+  /**
+ * @method signin
+ * @param {string} req - A username and password
+ * @description if the user details is valid, pass it controller
+ */
   async signin(req, res, next) {
     const { username, password } = req.body;
     if (!username) { return res.status(401).json({ message: 'Username is required' }); }
@@ -84,6 +113,11 @@ export default class middleware {
     next();
   }
 
+  /**
+ * @method menu
+ * @param {string} req - orderBefore, title
+ * @description if the parameter is valid, pass it controller
+ */
   async menu(req, res, next) {
     const { title, mealId } = req.body;
     let { orderBefore } = req.body;
@@ -115,6 +149,7 @@ export default class middleware {
     req.body.mealId = mealId;
     next();
   }
+
   async order(req, res, next) {
     const {
       menuId,
@@ -139,6 +174,7 @@ export default class middleware {
     }
     next();
   }
+
   async updateOrder(req, res, next) {
     const {
       quantity,

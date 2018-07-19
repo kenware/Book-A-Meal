@@ -7,7 +7,16 @@ const {
   User,
 } = model;
 
+  /**
+ * @class menuController
+ * @description create and get today's menu
+ */
 export default class menuController {
+  /**
+ * @method createMenu
+ * @returns { array } returns today's menu
+ * @description Create today's menu
+ */
   async createMenu(req, res, next) {
     const { title, mealId, orderBefore } = req.body;
     const { id, username } = req.decoded;
@@ -49,6 +58,12 @@ export default class menuController {
       return res.status(200).json({ message, menu });
     }
   }
+
+  /**
+ * @method getMenu
+ * @returns { array } returns today's menu
+ * @description gets today's menu
+ */
   async getMenu(req, res) {
     let { date } = req.params;
     let { limit, offset } = req.query;
