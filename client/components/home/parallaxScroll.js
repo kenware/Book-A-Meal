@@ -11,9 +11,9 @@ const parallaxScroll = () => (
       </div>
       <div className="parallex-card">
         <div className="container"><br />
-          <h2 className="white-color">Dashboard</h2>
-          <p className="white-color">Enter your dashboard to perform awesome
-                      functionality which include ordering for a meal, adding meal options
+          <h2 className="white-color">Menu</h2>
+          <p className="white-color">Enter menu page to perform awesome
+                      functionality which include ordering a meal, adding meal options
                       from meal menu
           </p>
         </div>
@@ -30,7 +30,7 @@ const parallaxScroll = () => (
       </div>
       <div className="parallex-card">
         <div className="container"><br />
-          <h2 className="white-color">Login/SignUp</h2>
+          <h2 className="white-color">Login</h2>
           <p className="p-style">Login to order menu of your choice with just a single click</p>
         </div>
         <div className="parallex-footer">

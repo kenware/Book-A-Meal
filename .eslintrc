@@ -1,9 +1,12 @@
-module.exports = {
+{
   "extends": "airbnb",
   "env": {
     "jest": true,
     "mocha": true
   },
+  "parserOptions": {
+    "sourceType": "module"
+},
   "rules": {
     "one-var": 0,
     "class-methods-use-this": 0,
@@ -15,6 +18,7 @@ module.exports = {
     "no-unused-vars": 0,
     "jsx-a11y/interactive-supports-focus": 0,
     "comma-dangle": 0,
+    "import/no-dynamic-require": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-label-has-for": 0,
@@ -33,4 +37,4 @@ module.exports = {
     "window": true,
     "document": true
   }
-};
+}

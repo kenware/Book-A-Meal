@@ -241,21 +241,21 @@ export class Dashboard extends Component {
           </nav>
 
           <main className={`main ${this.state.main}`} id="main">
-            <header className="header">
+            <header className="header p-color">
               <div className="l-r-pad-text">
-                <h4 className="white-color">USER DASHBOARD</h4>
+                <h4 className="">USER DASHBOARD</h4>
                 { window.localStorage.getItem('role') === 'user' ?
                   <span onClick={this.upgrade} className="y-color hover upgrade" role="button"> Upgrade To A Caterer ?</span>
                 : <Link to="/admin" className="y-color">Manage your meals</Link>
                 }
               </div>
               <div>
-                <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
+                <h4 className="">{window.localStorage.getItem('username')}</h4>
                 <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="user" />
               </div>
               <div className="notification1">
                 <span className="hover" onClick={this.toggle} role="button">
-                  <h4 className="white-color hover">Notification</h4>
+                  <h4 className=" hover">Notification</h4>
                   <em className="fa fa-bars l-r-pad-text y-color hover" />
                 </span>
               </div>

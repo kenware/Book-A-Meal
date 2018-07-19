@@ -99,12 +99,13 @@ export class Home extends Component {
                       <img src={meal.Meal.image} alt="Avatar" className="meal-card-img" />
                     </div>
                     <div
+                      id="flip-card-back"
                       key="back"
                       onMouseLeave={() => handleClose(meal.Meal.id)}
                     >
                       <h2>{meal.Meal.name}</h2>
                       <h2>Price: {meal.Meal.price}</h2>
-                      <p className="justify l-r-pad-text">{`${meal.Meal.description.substr(0, 100).trim()}...`}</p>
+                      <p className="justify l-r-pad-text">{`${meal.Meal.description.substr(0, 300).trim()}...`}</p>
                     </div>
                   </ReactCardFlip>
                 </div>
@@ -128,14 +129,15 @@ Home.propTypes = {
   loadMostOrderedMeal: PropTypes.func.isRequired,
   mealFlip: PropTypes.array.isRequired
 };
-function mapStateToProps(state) {
+export const mapStateToProps = (state) => {
   const mealFlip = state.mostOrder.reverse().slice(0, 3);
   return {
     mostOrder: state.mostOrder,
     mealFlip
   };
-}
-function mapDispatchToProps(dispatch) {
-  return { loadMostOrderedMeal: bindActionCreators(loadMostOrderedMeal, dispatch) };
-}
+};
+
+export const mapDispatchToProps = dispatch => ({
+  loadMostOrderedMeal: bindActionCreators(loadMostOrderedMeal, dispatch)
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

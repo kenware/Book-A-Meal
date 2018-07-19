@@ -1,7 +1,7 @@
 # Book-A-Meal
 Book-A-Meal: Order a meal of your choice just by a single click
 ![A Meal photo](ui-template/image/8.jpg)
- [![Coverage Status](https://coveralls.io/repos/github/kenware/Book-A-Meal/badge.svg?branch=user-should-order-a-meal-156949284)](https://coveralls.io/github/kenware/Book-A-Meal?branch=user-should-order-a-meal-156949284)
+ * [![Coverage Status](https://coveralls.io/repos/github/kenware/Book-A-Meal/badge.svg?branch=user-should-order-a-meal-156949284)](https://coveralls.io/github/kenware/Book-A-Meal?branch=user-should-order-a-meal-156949284)
 [![Build Status](https://travis-ci.org/kenware/Book-A-Meal.svg?branch=feature-user-should-get-all-order-feedback-156949490)](https://travis-ci.org/kenware/Book-A-Meal)
 <a href="https://codeclimate.com/github/kenware/Book-A-Meal/maintainability"><img src="https://api.codeclimate.com/v1/badges/4bb76d484e1060e825a6/maintainability" /></a>
 

@@ -58,9 +58,9 @@ describe('Test menu component of dashboard', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree.find('.modal-order')).toHaveLength(1);
   });
-  it('should have two modal with className modal-order ', () => {
+  it('should have 13 span className ', () => {
     const tree = shallow(<Menu {...props} />);
-    expect(tree.find('span')).toHaveLength(11);
+    expect(tree.find('span')).toHaveLength(13);
   });
   it('should have justify-overide class', () => {
     const tree = shallow(<Menu {...props} />);

@@ -22,9 +22,11 @@ export class AllMeal extends Component {
     this.cancelDelete = this.cancelDelete.bind(this);
     this.deleteMeal = this.deleteMeal.bind(this);
   }
+
   componentDidMount() {
     this.props.mealActions.getAllMeals(limit, 0);
   }
+
   /**
    * closes modal without deleting a meal
    */
@@ -33,6 +35,7 @@ export class AllMeal extends Component {
       mealId: '', mealName: '', mealImage: '', modal: 'modal'
     });
   }
+
   /**
    * calls a redux action
    * deletes a meal
@@ -45,6 +48,7 @@ export class AllMeal extends Component {
       });
     }
   }
+
   handlePageNext() {
     let { pageNum } = this.state;
     pageNum += 1;
@@ -56,6 +60,7 @@ export class AllMeal extends Component {
     this.props.mealActions.getAllMeals(limit, offset);
     this.setState({ pageNum, firstPage: '' });
   }
+
   handlePagePrev() {
     let { pageNum } = this.state;
     pageNum -= 1;
@@ -66,6 +71,7 @@ export class AllMeal extends Component {
     this.props.mealActions.getAllMeals(limit, offset);
     this.setState({ pageNum, lastPage: '' });
   }
+
   render() {
     /**
      * @param  {} mealId
@@ -78,6 +84,7 @@ export class AllMeal extends Component {
         mealId, mealName, mealImage, modal: ''
       });
     };
+
     return (
       <div>
         <div className={`modal-order ${this.state.modal}`}>
@@ -137,13 +144,14 @@ AllMeal.propTypes = {
   successMessage: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired
 };
-export function mapStateToProps(state) {
-  return {
-    meals: state.meals,
-    successMessage: state.successMessage
-  };
-}
-export function mapDispatchToProps(dispatch) {
-  return { mealActions: bindActionCreators(mealActions, dispatch) };
-}
+
+export const mapStateToProps = state => ({
+  meals: state.meals,
+  successMessage: state.successMessage
+});
+
+export const mapDispatchToProps = dispatch => ({
+  mealActions: bindActionCreators(mealActions, dispatch)
+});
+
 export default connect(mapStateToProps, mapDispatchToProps)(AllMeal);

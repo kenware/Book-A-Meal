@@ -1,14 +1,17 @@
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+
 import bcrypt from 'bcryptjs';
 import sequelize from 'sequelize';
 import model from '../models/index';
+import tokenizer from '../helpers/tokenGenerator';
 
-dotenv.config();
-const secret = process.env.SECRET;
 const { Op } = sequelize;
 const { User, notification } = model;
 
+/**
+ * @class userController
+ * @description create a user, signin a user update a user to admin
+ *  send resetLink, send notification a menu is set
+ */
 export default class userController {
   /**
  * @method createUser
@@ -34,15 +37,8 @@ export default class userController {
     if (!user) {
       return res.status(442).json({ message: 'Error signing up' });
     }
-    const token = jwt.sign(
-      {
-        id: user.id,
-        username: user.username,
-        role: user.role,
-        image: user.image
-      },
-      secret, { expiresIn: 86400 }
-    );
+    const token = new tokenizer(user).getToken();
+    user.token = token;
     return res.status(201).json({
       id: user.id,
       name: user.name,
@@ -69,15 +65,7 @@ export default class userController {
     if (!user) { return res.status(401).json({ message: 'Wrong credentials' }); }
     bcrypt.compare(password, user.password, (err, match) => {
       if (match) {
-        const token = jwt.sign(
-          {
-            id: user.id,
-            username: user.username,
-            role: user.role,
-            image: user.image
-          },
-          secret, { expiresIn: 86400 }
-        );
+        const token = new tokenizer(user).getToken();
         return res.status(200).json({
           id: user.id,
           message: 'succesful login',
@@ -106,15 +94,7 @@ export default class userController {
     const setAdmin = await user.update({ role });
     if (!setAdmin) { return res.status(401).json({ message: 'Update failed' }); }
     const message = `${setAdmin.username} is set as admin`;
-    const token = jwt.sign(
-      {
-        id: setAdmin.id,
-        username: setAdmin.username,
-        role: setAdmin.role,
-        image: setAdmin.image
-      },
-      secret, { expiresIn: 86400 }
-    );
+    const token = new tokenizer(setAdmin).getToken();
     return res.status(201).json({ message, setAdmin, token });
   }
 
@@ -149,15 +129,7 @@ export default class userController {
         }
       });
       if (!verify) { return res.json({ message: 'Record not found' }); }
-      const token = jwt.sign(
-        {
-          id: verify.id,
-          username: verify.username,
-          role: verify.role,
-          image: verify.image
-        },
-        secret, { expiresIn: 86400 }
-      );
+      const token = new tokenizer(verify).getToken();
       req.body.user = verify;
       req.body.token = token;
       next();
@@ -223,15 +195,7 @@ export default class userController {
    *              the token then have a fresh expire time
    */
   async refreshToken(req, res) {
-    const token = jwt.sign(
-      {
-        username: req.decoded.username,
-        role: req.decoded.role,
-        id: req.decoded.id,
-        image: req.decoded.image
-      },
-      secret, { expiresIn: 86400 }
-    );
+    const token = new tokenizer(req.decoded).getToken();
     return res.status(200).json({
       username: req.decoded.username,
       role: req.decoded.role,
@@ -258,15 +222,7 @@ export default class userController {
       image = req.files[0].url;
     }
     const update = await user.update({ name, image });
-    const token = jwt.sign(
-      {
-        username: update.username,
-        role: update.role,
-        id: update.id,
-        image: update.image
-      },
-      secret, { expiresIn: 86400 }
-    );
+    const token = new tokenizer(update).getToken();
     const userUpdate = {
       username: update.username,
       role: update.role,

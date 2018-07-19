@@ -211,13 +211,12 @@ export class Orders extends Component {
           <table>
             <tbody>
               <tr>
-                <th>id</th>
                 <th>Name</th>
                 <th>Quanitity odered
                 </th>
                 <th>Price ($)</th>
 
-                <th>Total price ( price * quantity)</th>
+                <th>Total price</th>
                 <td>Date</td>
                 <td>Address</td>
                 <td>Status</td>
@@ -226,7 +225,6 @@ export class Orders extends Component {
               {this.props.myOrder.map(order =>
               (
                 <tr key={order.id}>
-                  <td>{order.id}</td>
                   <td>{order.Meal.name}</td>
                   <td>{order.quantity}</td>
                   <td>{order.Meal.price}</td>

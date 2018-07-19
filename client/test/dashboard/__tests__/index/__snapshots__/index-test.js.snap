@@ -251,13 +251,13 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -271,7 +271,7 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -287,7 +287,7 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -642,13 +642,13 @@ exports[`Test index Component of admin pages renders correctly 2`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -662,7 +662,7 @@ exports[`Test index Component of admin pages renders correctly 2`] = `
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -681,7 +681,7 @@ exports[`Test index Component of admin pages renders correctly 2`] = `
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -1036,13 +1036,13 @@ exports[`Test index Component of admin pages should accept new props from compon
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -1056,7 +1056,7 @@ exports[`Test index Component of admin pages should accept new props from compon
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -1072,7 +1072,7 @@ exports[`Test index Component of admin pages should accept new props from compon
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -1427,13 +1427,13 @@ exports[`Test index Component of admin pages should accept new props from compon
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -1447,7 +1447,7 @@ exports[`Test index Component of admin pages should accept new props from compon
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -1463,7 +1463,7 @@ exports[`Test index Component of admin pages should accept new props from compon
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -1818,13 +1818,13 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -1838,7 +1838,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -1857,7 +1857,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -2212,13 +2212,13 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -2232,7 +2232,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -2248,7 +2248,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -2603,13 +2603,13 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -2623,7 +2623,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -2639,7 +2639,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -2994,13 +2994,13 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -3014,7 +3014,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -3030,7 +3030,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -3385,13 +3385,13 @@ exports[`Test index Component of admin pages should logOut  1`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -3405,7 +3405,7 @@ exports[`Test index Component of admin pages should logOut  1`] = `
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -3421,7 +3421,7 @@ exports[`Test index Component of admin pages should logOut  1`] = `
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -3786,13 +3786,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -3806,7 +3806,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -3825,7 +3825,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -4190,13 +4190,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -4210,7 +4210,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -4229,7 +4229,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -4594,13 +4594,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -4614,7 +4614,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -4633,7 +4633,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -4998,13 +4998,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -5018,7 +5018,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -5037,7 +5037,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -5402,13 +5402,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -5422,7 +5422,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -5441,7 +5441,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -5806,13 +5806,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -5826,7 +5826,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -5845,7 +5845,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -6210,13 +6210,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -6230,7 +6230,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -6249,7 +6249,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -6614,13 +6614,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -6634,7 +6634,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -6653,7 +6653,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -7018,13 +7018,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -7038,7 +7038,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -7057,7 +7057,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -7412,13 +7412,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -7432,7 +7432,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -7451,7 +7451,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -7806,13 +7806,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -7826,7 +7826,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -7845,7 +7845,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -8200,13 +8200,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -8220,7 +8220,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -8239,7 +8239,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -8594,13 +8594,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -8614,7 +8614,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -8633,7 +8633,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -8988,13 +8988,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -9008,7 +9008,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -9027,7 +9027,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -9382,13 +9382,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -9402,7 +9402,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -9421,7 +9421,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -9786,13 +9786,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -9806,7 +9806,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -9825,7 +9825,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -10190,13 +10190,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -10210,7 +10210,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -10229,7 +10229,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -10594,13 +10594,13 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -10614,7 +10614,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             admin
           </h4>
@@ -10633,7 +10633,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -10988,13 +10988,13 @@ exports[`Test index Component of admin pages should respond to change event of a
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -11008,7 +11008,7 @@ exports[`Test index Component of admin pages should respond to change event of a
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -11027,7 +11027,7 @@ exports[`Test index Component of admin pages should respond to change event of a
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -11382,13 +11382,13 @@ exports[`Test index Component of admin pages should respond to change event of a
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -11402,7 +11402,7 @@ exports[`Test index Component of admin pages should respond to change event of a
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -11421,7 +11421,7 @@ exports[`Test index Component of admin pages should respond to change event of a
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -11546,10 +11546,13 @@ Object {
     "upgrade": [Function],
   },
   "menuActions": Object {
+    "clearMenuMeals": [Function],
     "getMenu": [Function],
+    "getMenuMeals": [Function],
     "loadErrorMessage": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
+    "loadTodayMenuMeals": [Function],
     "setMenu": [Function],
   },
   "orderActions": Object {
@@ -11841,13 +11844,13 @@ exports[`Test index Component of admin pages should toggle sidebar 1`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -11861,7 +11864,7 @@ exports[`Test index Component of admin pages should toggle sidebar 1`] = `
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -11877,7 +11880,7 @@ exports[`Test index Component of admin pages should toggle sidebar 1`] = `
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -12232,13 +12235,13 @@ exports[`Test index Component of admin pages should toggle sidebar 2`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -12252,7 +12255,7 @@ exports[`Test index Component of admin pages should toggle sidebar 2`] = `
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           />
           <img
             alt="user"
@@ -12268,7 +12271,7 @@ exports[`Test index Component of admin pages should toggle sidebar 2`] = `
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -12623,13 +12626,13 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 1`
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -12643,7 +12646,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 1`
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -12662,7 +12665,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 1`
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>
@@ -13017,13 +13020,13 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 2`
       id="main"
     >
       <header
-        className="header"
+        className="header p-color"
       >
         <div
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className=""
           >
             USER DASHBOARD
           </h4>
@@ -13037,7 +13040,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 2`
         </div>
         <div>
           <h4
-            className="white-color"
+            className=""
           >
             user
           </h4>
@@ -13056,7 +13059,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 2`
             role="button"
           >
             <h4
-              className="white-color hover"
+              className=" hover"
             >
               Notification
             </h4>

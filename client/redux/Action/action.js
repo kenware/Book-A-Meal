@@ -4,11 +4,15 @@ import auth from '../../authenticate/auth';
 import history from '../../history';
 
 export const loadMostOrdered = mostOrder => ({ type: types.LOAD_MOST_ORDERED, mostOrder });
+
 export const loadErrorMessage = errorMessage => ({ type: types.LOAD_ERROR_MESSAGE, errorMessage });
+
 export const loadSuccessMessage = successMessage => ({
   type: types.LOAD_SUCCESS_MESSAGE, successMessage
 });
+
 export const loadNotifications = notifics => ({ type: types.LOAD_NOTIFICATIONS, notifics });
+
 export const loadUser = user => ({ type: types.LOAD_USER, user });
 
 export const loadMostOrderedMeal = () => dispatch => window.fetch('/api/v1/mostOrder/meals/6')

@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ResetLink component renders correctly 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your username or email
+      </h2>
+      <h3
+        className="login-header danger text-center"
+      />
+      <h3
+        className="login-header p-color text-center"
+      />
+      <form
+        action="dashboard.html"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username/Email 
+            <br />
+            <span
+              className="danger"
+            >
+               
+            </span>
+          </label>
+          <input
+            id="username"
+            name="emailOrUsername"
+            onChange={[Function]}
+            placeholder="keny or keny@gmail.com"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            onClick={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/login"
+            >
+              Login
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/register"
+            >
+              Register?
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test ResetLink component should render messages from props 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your username or email
+      </h2>
+      <h3
+        className="login-header danger text-center"
+      >
+        Error sending link
+      </h3>
+      <h3
+        className="login-header p-color text-center"
+      >
+        Link sent to user email
+      </h3>
+      <form
+        action="dashboard.html"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username/Email 
+            <br />
+            <span
+              className="danger"
+            >
+               
+            </span>
+          </label>
+          <input
+            id="username"
+            name="emailOrUsername"
+            onChange={[Function]}
+            placeholder="keny or keny@gmail.com"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            onClick={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/login"
+            >
+              Login
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/register"
+            >
+              Register?
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test ResetLink component should respond to change event and change the state of the resetLink Component 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your username or email
+      </h2>
+      <h3
+        className="login-header danger text-center"
+      >
+        Error sending link
+      </h3>
+      <h3
+        className="login-header p-color text-center"
+      >
+        Link sent to user email
+      </h3>
+      <form
+        action="dashboard.html"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username/Email 
+            <br />
+            <span
+              className="danger"
+            >
+              this field is required
+               
+            </span>
+          </label>
+          <input
+            id="username"
+            name="emailOrUsername"
+            onChange={[Function]}
+            placeholder="keny or keny@gmail.com"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            onClick={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/login"
+            >
+              Login
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/register"
+            >
+              Register?
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test ResetLink component should respond to componentWillRecievProps methods 1`] = `
+<div>
+  <Nav />
+  <div
+    className="register-container"
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+    >
+      <h2
+        className="login-header"
+      >
+        Enter your username or email
+      </h2>
+      <h3
+        className="login-header danger text-center"
+      >
+        Error sending link
+      </h3>
+      <h3
+        className="login-header p-color text-center"
+      >
+        Link sent to user email
+      </h3>
+      <form
+        action="dashboard.html"
+      >
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Username/Email 
+            <br />
+            <span
+              className="danger"
+            >
+               
+            </span>
+          </label>
+          <input
+            id="username"
+            name="emailOrUsername"
+            onChange={[Function]}
+            placeholder="keny or keny@gmail.com"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg"
+            onClick={[Function]}
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="inputPassword3"
+          >
+            <Link
+              replace={false}
+              to="/login"
+            >
+              Login
+            </Link>
+                
+            <Link
+              replace={false}
+              to="/register"
+            >
+              Register?
+            </Link>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test ResetLink component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+}
+`;
+
+exports[`Test ResetLink component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "resetError": "Error sending link",
+  },
+  "successMessage": Object {
+    "resetSuccess": "Link sent to user email",
+  },
+}
+`;

@@ -17,8 +17,6 @@ const {
 } = model;
 
 chai.use(chaiHttp);
-// import FormData from 'form-data';
-
 
 let tokenUpdate = '';
 let tokenUser = '';
@@ -532,7 +530,7 @@ describe('Testing of Order middleware and controller', () => {
       })
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.be.a('array');
+        res.body.should.be.a('object');
         done();
       });
   });

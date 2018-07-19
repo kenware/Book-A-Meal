@@ -1451,10 +1451,13 @@ Object {
     "updateMeal": [Function],
   },
   "menuActions": Object {
+    "clearMenuMeals": [Function],
     "getMenu": [Function],
+    "getMenuMeals": [Function],
     "loadErrorMessage": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
+    "loadTodayMenuMeals": [Function],
     "setMenu": [Function],
   },
 }

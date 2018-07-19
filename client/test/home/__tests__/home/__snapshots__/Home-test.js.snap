@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Home Component it should flip card on mouseEnter event 1`] = `
+exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 1`] = `
 <div>
   <Nav />
   <div
@@ -169,6 +169,7 @@ exports[`Test Home Component it should flip card on mouseEnter event 1`] = `
               />
             </div>
             <div
+              id="flip-card-back"
               key="back"
               onMouseLeave={[Function]}
             >
@@ -211,7 +212,7 @@ exports[`Test Home Component it should flip card on mouseEnter event 1`] = `
 </div>
 `;
 
-exports[`Test Home Component it should flip card on mouseEnter event 2`] = `
+exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 2`] = `
 <div>
   <Nav />
   <div
@@ -380,6 +381,219 @@ exports[`Test Home Component it should flip card on mouseEnter event 2`] = `
               />
             </div>
             <div
+              id="flip-card-back"
+              key="back"
+              onMouseLeave={[Function]}
+            >
+              <h2>
+                rice
+              </h2>
+              <h2>
+                Price: 
+                400
+              </h2>
+              <p
+                className="justify l-r-pad-text"
+              >
+                good...
+              </p>
+            </div>
+          </ReactCardFlip>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="user-testimonial"
+  >
+    <br />
+    <br />
+    <h2>
+      WHAT OUR FANTASTIC USERS SAY
+    </h2>
+    <h4
+      className="p-color text-center"
+    >
+      Best site to get latest recipe with just a click
+      <br />
+      <br />
+    </h4>
+    <userTestimomial />
+  </div>
+  <footer />
+</div>
+`;
+
+exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 3`] = `
+<div>
+  <Nav />
+  <div
+    className="carousel-header"
+  >
+    <div
+      className="header-overlay"
+    />
+    <div
+      className="caption"
+    >
+      <h3
+        className="lead active-text-header"
+      >
+        Book A Meal Today
+      </h3>
+      <p
+        className="lead active-text-header"
+      >
+        Health is wealth!
+      </p>
+    </div>
+  </div>
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <h2>
+      BOOK A MEAL IN THREE EASY STEPS
+    </h2>
+    <div
+      className="all-meal-step"
+    >
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            SignUp/SignIn
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div
+            className="circle"
+          />
+          <br />
+          <span>
+            Order A Meal
+          </span>
+        </div>
+      </div>
+      <div
+        className="meal-day"
+      >
+        <span
+          className="fa fa-long-arrow-right fa-4x"
+        />
+      </div>
+      <div
+        className="meal-day"
+      >
+        <div>
+          <div>
+            <img
+              alt="meal"
+              className="rounded-circle"
+              id="App-logo"
+              src="image/l.png"
+              style={
+                Object {
+                  "height": "100px",
+                  "width": "100px",
+                }
+              }
+            />
+          </div>
+          <br />
+          <span>
+            Hot Fresh Meal
+          </span>
+        </div>
+      </div>
+    </div>
+    <h2>
+      Recommended meals
+    </h2>
+    <mostOrdered
+      mostOrder={
+        Array [
+          Object {
+            "Meal": Object {
+              "description": "good",
+              "id": 1,
+              "image": "image",
+              "name": "rice",
+              "price": "400",
+            },
+            "id": 1,
+          },
+        ]
+      }
+    />
+  </div>
+  <parallaxScroll />
+  <div
+    className="site-container"
+    style={
+      Object {
+        "marginBottom": "2rem",
+        "marginLeft": "3%",
+        "marginRight": "3%",
+      }
+    }
+  >
+    <div
+      className="meal-menu-row"
+    >
+      <div
+        className="meal-menu"
+        key="2"
+      >
+        <div
+          className="meal-menu-flip"
+        >
+          <ReactCardFlip
+            cardStyles={
+              Object {
+                "back": Object {},
+                "front": Object {},
+              }
+            }
+            flipSpeedBackToFront={0.6}
+            flipSpeedFrontToBack={0.6}
+            infinite={false}
+            isFlipped={false}
+          >
+            <div
+              id="flip-card"
+              key="front"
+              onMouseEnter={[Function]}
+            >
+              <img
+                alt="Avatar"
+                className="meal-card-img"
+                src="image"
+              />
+            </div>
+            <div
+              id="flip-card-back"
               key="back"
               onMouseLeave={[Function]}
             >
@@ -591,6 +805,7 @@ exports[`Test Home Component renders correctly 1`] = `
               />
             </div>
             <div
+              id="flip-card-back"
               key="back"
               onMouseLeave={[Function]}
             >
@@ -631,4 +846,39 @@ exports[`Test Home Component renders correctly 1`] = `
   </div>
   <footer />
 </div>
+`;
+
+exports[`Test Home Component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "loadMostOrderedMeal": [Function],
+}
+`;
+
+exports[`Test Home Component should respond to mapStateToProps methods 1`] = `
+Object {
+  "mealFlip": Array [
+    Object {
+      "Meal": Object {
+        "description": "good",
+        "id": 1,
+        "image": "image",
+        "name": "rice",
+        "price": "400",
+      },
+      "id": 1,
+    },
+  ],
+  "mostOrder": Array [
+    Object {
+      "Meal": Object {
+        "description": "good",
+        "id": 1,
+        "image": "image",
+        "name": "rice",
+        "price": "400",
+      },
+      "id": 1,
+    },
+  ],
+}
 `;

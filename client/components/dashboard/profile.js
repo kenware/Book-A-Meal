@@ -21,6 +21,7 @@ export class Profile extends Component {
     this.updateProfile = this.updateProfile.bind(this);
     this.onDrop = this.onDrop.bind(this);
   }
+
   /**
    * lifecycle hook called when component is mounted to DOM
    *
@@ -31,6 +32,7 @@ export class Profile extends Component {
   componentDidMount() {
     this.props.actions.getUser();
   }
+
   /**
    * lifecycle hook called when component receives new props
    * Return new state when new props arrive from redux store
@@ -39,17 +41,21 @@ export class Profile extends Component {
     if (newProps.user.name) {
       this.setState({
         name: newProps.user.name,
+        username: newProps.user.username,
+        email: newProps.user.email,
         image: newProps.user.image,
         updateProfile: 'Update'
       });
     }
   }
+
   /**
    * remove error props in redux store if component unmount
    */
   componentWillUnmount() {
     this.props.actions.clearMessages();
   }
+
   /**
    * @param  {} e set state on input onchange event
   */
@@ -58,12 +64,14 @@ export class Profile extends Component {
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+
   /**
    * @param  {} file sets image to state using drop box
   */
   onDrop(file) {
     this.setState({ file, image: '' });
   }
+
   /**
    * @param  {} e updates user profile
    * user can update only name and profile photo
@@ -84,15 +92,15 @@ export class Profile extends Component {
     });
     this.props.actions.updateProfile(payload);
   }
+
   render() {
     return (
-      <div className="order-container">
+      <div className="profile-container">
         <h2 style={{ marginTop: '2rem' }}>Update your Profile </h2>
         <h4 className="p-color text-center">Fill The Field Below To Update a profile</h4><br />
         <h3 className="text-center danger">{this.props.errorMessage.updateError}</h3>
         <h3 className="text-center p-color">{this.props.successMessage.updateSuccess}</h3>
-        <div className="profile-container" style={{ marginTop: '2px' }}>
-
+        <div className="profile-wrap" style={{ marginTop: '2px' }}>
           <form>
             <div className="profile-field">
               <label htmlFor="name">Name     <br />
@@ -103,16 +111,17 @@ export class Profile extends Component {
             <div className="profile-field">
               <label htmlFor="price">Username<br />
               </label>
-              <input type="text" className="username" value={this.props.user.username} readOnly />
+              <input type="text" className="username" value={this.state.username} readOnly />
             </div>
             <div className="profile-field">
               <label htmlFor="name">Email<br />
               </label>
-              <input type="email" id="email" name="email" value={this.props.user.email} readOnly />
+              <input type="email" id="email" name="email" value={this.state.email} readOnly />
             </div>
             <div className="profile-field">
-              <label htmlFor="password">
-                  Image
+              <label htmlFor="name">
+                {this.state.file.map(fil => <img key={fil.preview} src={fil.preview} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />)}
+                <img src={this.state.image} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />
               </label>
               <span className="form-label">
                 <Dropzone
@@ -125,8 +134,6 @@ export class Profile extends Component {
                     Drag and drop or click to select an image to upload.
                   </span>
                 </Dropzone>
-                {this.state.file.map(fil => <img key={fil.preview} src={fil.preview} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />)}
-                <img src={this.state.image} className="img-fluid" style={{ width: '200px', height: '200px' }} alt="upload" />
               </span>
             </div>
             <div className="form-field">
@@ -141,23 +148,22 @@ export class Profile extends Component {
     );
   }
 }
+
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
 };
-export function mapStateToProps(state) {
-  return {
-    errorMessage: state.errorMessage,
-    successMessage: state.successMessage,
-    user: state.user
-  };
-}
-export function mapDispatchToProps(dispatch) {
-  return {
-    mealActions: bindActionCreators(mealActions, dispatch),
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+
+export const mapStateToProps = state => ({
+  errorMessage: state.errorMessage,
+  successMessage: state.successMessage,
+  user: state.user
+});
+
+export const mapDispatchToProps = dispatch => ({
+  mealActions: bindActionCreators(mealActions, dispatch),
+  actions: bindActionCreators(actions, dispatch)
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -3,7 +3,7 @@ import * as types from '../../../../redux/Action/actionType';
 
 describe('userReducer reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual([]);
+    expect(reducer(undefined, {})).toEqual({});
   });
 
   it('should handle LOAD_USER', () => {

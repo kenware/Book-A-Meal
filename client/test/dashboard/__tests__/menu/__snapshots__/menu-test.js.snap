@@ -32,7 +32,7 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -43,7 +43,7 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -136,7 +136,7 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -144,7 +144,7 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -166,6 +166,33 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -244,7 +271,7 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -255,7 +282,7 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -348,7 +375,7 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -362,6 +389,24 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
+    }
   />
   <video />
   <div
@@ -439,7 +484,7 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -450,7 +495,7 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -543,7 +588,7 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -551,7 +596,7 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -573,6 +618,33 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -651,7 +723,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -662,7 +734,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -755,7 +827,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -763,7 +835,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -785,6 +857,33 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -863,7 +962,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -874,7 +973,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -967,7 +1066,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -975,7 +1074,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -997,6 +1096,33 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -1075,7 +1201,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -1086,7 +1212,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -1179,7 +1305,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -1193,6 +1319,24 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
+    }
   />
   <video />
   <div
@@ -1270,7 +1414,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -1281,7 +1425,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -1374,7 +1518,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -1388,6 +1532,27 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "addressError": "",
+        "image": "",
+        "mealDescription": "mealDescription",
+        "mealId": "",
+        "mealName": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+        "quantityError": "",
+      }
+    }
   />
   <video />
   <div
@@ -1465,7 +1630,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -1476,7 +1641,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -1569,7 +1734,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -1583,6 +1748,24 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
+    }
   />
   <video />
   <div
@@ -1660,7 +1843,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -1671,7 +1854,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -1764,7 +1947,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -1778,6 +1961,27 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "addressError": "",
+        "image": "",
+        "mealDescription": "mealDescription",
+        "mealId": "",
+        "mealName": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+        "quantityError": "",
+      }
+    }
   />
   <video />
   <div
@@ -1855,7 +2059,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -1867,7 +2071,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -1969,7 +2173,7 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -1983,6 +2187,32 @@ exports[`Test menu component of dashboard should respond to a click event and di
   <todayMenu
     confirmOrder={[Function]}
     menu={Array []}
+    menuMeals={Array []}
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "my address",
+        "addressError": "",
+        "image": "image",
+        "mealDescription": "mealDescription",
+        "mealId": "mealId",
+        "mealName": "mealName",
+        "menuId": "menuId",
+        "modal": "",
+        "name": "",
+        "order": <div>
+          <i
+            aria-hidden="true"
+            className="fa fa-spinner fa-spin fa-2x fa-fw"
+          />
+        </div>,
+        "pageNum": 1,
+        "price": "price",
+        "quantity": "300",
+        "quantityError": "",
+      }
+    }
   />
   <video />
   <div
@@ -2060,7 +2290,7 @@ exports[`Test menu component of dashboard should respond to a click event of ord
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -2074,7 +2304,7 @@ exports[`Test menu component of dashboard should respond to a click event of ord
         >
           Your address is required
         </h4>
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -2171,7 +2401,7 @@ exports[`Test menu component of dashboard should respond to a click event of ord
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -2179,7 +2409,7 @@ exports[`Test menu component of dashboard should respond to a click event of ord
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2201,6 +2431,35 @@ exports[`Test menu component of dashboard should respond to a click event of ord
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "addressError": "Your address is required",
+        "image": "image",
+        "mealDescription": "mealDescription",
+        "mealId": "mealId",
+        "mealName": "mealName",
+        "menuId": "menuId",
+        "modal": "",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "price",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -2279,7 +2538,7 @@ exports[`Test menu component of dashboard should respond to a click event order 
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -2293,7 +2552,7 @@ exports[`Test menu component of dashboard should respond to a click event order 
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -2390,7 +2649,7 @@ exports[`Test menu component of dashboard should respond to a click event order 
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -2398,7 +2657,7 @@ exports[`Test menu component of dashboard should respond to a click event order 
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2420,6 +2679,36 @@ exports[`Test menu component of dashboard should respond to a click event order 
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "my address",
+        "addressError": "",
+        "image": "image",
+        "mealDescription": "mealDescription",
+        "mealId": "mealId",
+        "mealName": "mealName",
+        "menuId": "menuId",
+        "modal": "",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "price",
+        "quantity": "",
+        "quantityError": "Quantity is required",
+      }
     }
   />
   <span />
@@ -2498,7 +2787,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -2509,7 +2798,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -2602,7 +2891,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -2610,7 +2899,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2632,6 +2921,33 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -2710,7 +3026,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -2721,7 +3037,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -2814,7 +3130,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -2822,7 +3138,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2844,6 +3160,33 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -2922,7 +3265,7 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -2933,7 +3276,7 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -3026,7 +3369,7 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -3034,7 +3377,7 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3056,6 +3399,33 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -3123,10 +3493,13 @@ Object {
     "upgrade": [Function],
   },
   "menuActions": Object {
+    "clearMenuMeals": [Function],
     "getMenu": [Function],
+    "getMenuMeals": [Function],
     "loadErrorMessage": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
+    "loadTodayMenuMeals": [Function],
     "setMenu": [Function],
   },
   "orderActions": Object {
@@ -3169,6 +3542,14 @@ Object {
       "id": 1,
     },
   ],
+  "menuMeals": Array [
+    Object {
+      "desctription": "good",
+      "id": 1,
+      "name": "jollof",
+      "price": 100,
+    },
+  ],
   "successMessage": Object {
     "createMealSuccess": "meal created",
     "updateProfileSuccess": "updated",
@@ -3209,7 +3590,7 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -3220,7 +3601,7 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -3313,7 +3694,7 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -3321,7 +3702,7 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3343,6 +3724,33 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -3421,7 +3829,7 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -3432,7 +3840,7 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -3525,7 +3933,7 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -3533,7 +3941,7 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3555,6 +3963,34 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "ken": undefined,
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -3633,7 +4069,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -3644,7 +4080,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -3737,7 +4173,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -3745,7 +4181,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3767,6 +4203,33 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />
@@ -3845,7 +4308,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
     <div
       className="modal-order-content"
     >
-      <p
+      <span
         className="justify l-r-pad-text"
       >
         You about to Order 
@@ -3856,7 +4319,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
         <h4
           className="danger text-center"
         />
-      </p>
+      </span>
     </div>
     <div
       className="justify-overide"
@@ -3949,7 +4412,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
   <h2
     className="top-bot-margin"
   >
-    TODAYS MENU
+    TODAY MENU FROM All CATERERS
   </h2>
   <h3
     className="success text-center"
@@ -3957,7 +4420,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
   <h3
     className="danger text-center"
   />
-  <spsan />
+  <span />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3979,6 +4442,33 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
           "id": 1,
         },
       ]
+    }
+    menuMeals={
+      Array [
+        Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      ]
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "image": "",
+        "mealDescription": "",
+        "mealId": "",
+        "menuId": "",
+        "modal": "modal",
+        "name": "",
+        "order": "Order",
+        "pageNum": 1,
+        "price": "",
+        "quantity": "",
+      }
     }
   />
   <span />

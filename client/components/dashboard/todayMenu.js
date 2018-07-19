@@ -2,47 +2,50 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const todayMenu = ({ menu, confirmOrder }) => (
+const todayMenu = ({
+  menu, confirmOrder, state, showMenu, menuMeals
+}) => (
   <div>
-    { menu.map(menuMeals =>
+    { menu.map(oneMenu =>
         (
-          <div key={menuMeals.id}>
-            <h3 className="p-color text-center">Menu by Caterer&nbsp;
-              <Link to={`/profile/${menuMeals.User.id}`}>{menuMeals.User.name}</Link>
-              <img src={menuMeals.User.image} className="user-img rounded-circle" alt="profile" />
-            </h3>
-            {menuMeals.Meals.map(meal =>
-            (
-              <div className="contents" key={meal.id}>
-                <div className="content-wrap">
-                  <div className="col-meal l-r-pad-text">
-                    <a href="image/l.png"><img src={meal.image} className="rounded-circle img-height" alt="menu meal" /></a>
-                  </div>
-                  <div className="col-meal">
-                    <h4 className="p-color"> Name</h4>{meal.name}
-                  </div>
-                  <div className="col-meal">
-                    <h4 className="p-color">Price(#)</h4>{meal.price}
-                  </div>
-                  <div className="col-meal">
-                    <h5 className="p-color">
-                      <Link to="/detail">View</Link>&nbsp;
-                      <button onClick={() => confirmOrder(meal.id, menuMeals.id, meal.name, meal.image, meal.price, meal.description)} className="order1">
+          <div key={oneMenu.id}>
+            <button className="accordion" onClick={() => showMenu(oneMenu.id, oneMenu.Meals.replace(window.location.host, ''))}>
+              <span style={{ float: 'right', marginTop: '1.5rem' }}>{ state.accordion[oneMenu.id] ? <em className="fa fa-minus p-color" /> : <em className="fa fa-plus p-color" />}</span>
+              <img src={oneMenu.User.image ? oneMenu.User.image : 'image/l.png'} className="user-img rounded-circle" alt="profile" /><br />
+              {oneMenu.User.username}
+            </button>
+            <div className={`showA meal-menu-row spread${state.accordion[oneMenu.id]}`} >
+              { menuMeals.length > 0 ? menuMeals.map(meal => (
+                <div key={meal.id} className="meal-menu">
+                  <div className="menu-card">
+                    <div className="menu-img-wrap">
+                      <div className="menu-overlay" />
+                      <img src={meal.image} alt="Avatar" className="menu-card-img" />
+                    </div>
+                    <div className="container l-r-pad-text">
+                      <h4 className="p-color"><b>{meal.name}</b></h4>
+                      <button onClick={() => confirmOrder(meal.id, oneMenu.id, meal.name, meal.image, meal.price, meal.description)} className="order1">
                         <em className="fa fa-cart-plus" />
-                    &nbsp; Order
+                        &nbsp; Order
                       </button>
-                    </h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-                ))}
+              )) :
+              <div><i className="fa fa-spinner fa-spin fa-4x fa-fw" aria-hidden="true" /></div>}
+            </div>
           </div>
         )) }
   </div>
 );
+
 todayMenu.propTypes = {
+  menuMeals: PropTypes.array.isRequired,
+  showMenu: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
   menu: PropTypes.array.isRequired,
   confirmOrder: PropTypes.func.isRequired
 };
+
 export default todayMenu;
 

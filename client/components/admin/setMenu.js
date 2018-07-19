@@ -52,6 +52,7 @@ export class SetMenu extends Component {
     }
     return null;
   }
+
   /**
    * @param  {} e set state on input onchange event
   */
@@ -60,6 +61,7 @@ export class SetMenu extends Component {
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+
   // cancel modal
   cancelAdd() {
     this.setState({ mealId: 0, mealName: '', modal: 'modal' });
@@ -67,6 +69,7 @@ export class SetMenu extends Component {
   /** Add meal to menu
    * calls redux action
    */
+
   addMenu() {
     const { mealId, title, orderBefore } = this.state;
     if (mealId && title) {
@@ -78,6 +81,7 @@ export class SetMenu extends Component {
       });
     }
   }
+
   handlePageNext() {
     let { pageNum } = this.state;
     pageNum += 1;
@@ -89,6 +93,7 @@ export class SetMenu extends Component {
     this.props.mealActions.getAllMeals(limit, offset);
     this.setState({ pageNum, firstPage: '' });
   }
+
   handlePagePrev() {
     let { pageNum } = this.state;
     pageNum -= 1;
@@ -182,11 +187,13 @@ export class SetMenu extends Component {
     );
   }
 }
+
 SetMenu.propTypes = {
   meals: PropTypes.object.isRequired,
   menuActions: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired,
 };
+
 export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
@@ -194,11 +201,11 @@ export function mapStateToProps(state) {
     meals: state.meals,
   };
 }
-export function mapDispatchToProps(dispatch) {
-  return {
-    menuActions: bindActionCreators(menuActions, dispatch),
-    actions: bindActionCreators(actions, dispatch),
-    mealActions: bindActionCreators(mealActions, dispatch)
-  };
-}
+
+export const mapDispatchToProps = dispatch => ({
+  menuActions: bindActionCreators(menuActions, dispatch),
+  actions: bindActionCreators(actions, dispatch),
+  mealActions: bindActionCreators(mealActions, dispatch)
+});
+
 export default connect(mapStateToProps, mapDispatchToProps)(SetMenu);

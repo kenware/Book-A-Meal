@@ -10,7 +10,7 @@ import MealGuide from './mealGuide';
 import TodayMenu from './todayMenu';
 import Video from './video';
 
-const limit = 1;
+const limit = 2;
 export class Menu extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +25,8 @@ export class Menu extends Component {
       mealDescription: '',
       order: 'Order',
       modal: 'modal',
-      pageNum: 1
+      pageNum: 1,
+      accordion: {}
     };
     this.onChange = this.onChange.bind(this);
     this.orderMeal = this.orderMeal.bind(this);
@@ -33,6 +34,7 @@ export class Menu extends Component {
     this.confirmOrder = this.confirmOrder.bind(this);
     this.handlePageNext = this.handlePageNext.bind(this);
     this.handlePagePrev = this.handlePagePrev.bind(this);
+    this.showMenu = this.showMenu.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -127,6 +129,20 @@ export class Menu extends Component {
       modal: ''
     });
   }
+  showMenu(id, url) {
+    let state = this.state.accordion;
+    if (state[id]) {
+      this.state.accordion = {};
+      this.setState(state);
+    } else {
+      this.props.menuActions.clearMenuMeals();
+      this.props.menuActions.getMenuMeals(url);
+      this.state.accordion = {};
+      state = this.state.accordion;
+      state[id] = id;
+      this.setState(state);
+    }
+  }
   /**
    * Pagination method
    * Next page
@@ -171,11 +187,11 @@ export class Menu extends Component {
             <img src={this.state.image} className="rounded-circle img-height" alt="menu" />
           </div>
           <div className="modal-order-content">
-            <p className="justify l-r-pad-text">
+            <span className="justify l-r-pad-text">
               You about to Order {this.state.mealName}<br />
               <h4 className="danger text-center">{this.state.quantityError}</h4>
               <h4 className="danger text-center">{this.state.addressError}</h4>
-            </p>
+            </span>
           </div>
           <div className="justify-overide">
             <span className="modal-order-items l-r-pad-text"> Name:: </span>
@@ -203,13 +219,19 @@ export class Menu extends Component {
           </div>
         </div>
         <MealGuide />
-        <h2 className="top-bot-margin">TODAYS MENU</h2>
+        <h2 className="top-bot-margin">TODAY MENU FROM All CATERERS</h2>
         <h3 className="success text-center">{this.state.successMessage}</h3>
         <h3 className="danger text-center">{this.state.errorMessage}</h3>
         {this.props.menu.length < 1 && this.state.pageNum === 1 ?
           <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3> :
-          <spsan /> }
-        <TodayMenu menu={this.props.menu} confirmOrder={this.confirmOrder} />
+          <span /> }
+        <TodayMenu
+          menu={this.props.menu}
+          confirmOrder={this.confirmOrder}
+          state={this.state}
+          showMenu={this.showMenu}
+          menuMeals={this.props.menuMeals}
+        />
         {this.props.menu.length < 1 && this.state.pageNum === 1 ?
           <Video /> : <span /> }
         <div className="pagination">
@@ -228,13 +250,15 @@ Menu.propTypes = {
   menu: PropTypes.array.isRequired,
   menuActions: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
+  menuMeals: PropTypes.array.isRequired,
 };
 
 export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
-    menu: state.menu
+    menu: state.menu,
+    menuMeals: state.menuMeals
   };
 }
 export function mapDispatchToProps(dispatch) {

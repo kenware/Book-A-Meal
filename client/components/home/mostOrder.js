@@ -17,7 +17,7 @@ export const mostOrdered = ({ mostOrder }) => (
           <div className="container l-r-pad-text">
             <h4 className="p-color"><b>${meal.Meal.price}</b></h4>
             <p>{meal.Meal.name}</p>
-            <Link to={`/detail/${meal.Meal.id}`}>View</Link>
+            <Link to="/dashboard">View</Link>
           </div>
         </div>
       </div>

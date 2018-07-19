@@ -77,6 +77,16 @@ exports[`Test Profile component renders correctly 1`] = `
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={
+    Array [
+      Object {
+        "desctription": "good",
+        "id": 1,
+        "name": "jollof",
+        "price": 100,
+      },
+    ]
+  }
   myOrder={
     Array [
       Object {
@@ -113,6 +123,12 @@ exports[`Test Profile component renders correctly 1`] = `
       "updateOrder": [MockFunction],
     }
   }
+  showMenu={[MockFunction]}
+  state={
+    Object {
+      "accordion": Object {},
+    }
+  }
   successMessage={
     Object {
       "createMealSuccess": "meal created",
@@ -131,7 +147,7 @@ exports[`Test Profile component renders correctly 1`] = `
   }
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -157,7 +173,7 @@ exports[`Test Profile component renders correctly 1`] = `
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -201,7 +217,6 @@ exports[`Test Profile component renders correctly 1`] = `
             className="username"
             readOnly={true}
             type="text"
-            value="ken"
           />
         </div>
         <div
@@ -218,16 +233,25 @@ exports[`Test Profile component renders correctly 1`] = `
             name="email"
             readOnly={true}
             type="email"
-            value="ken@gmaoil.com"
           />
         </div>
         <div
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -283,17 +307,6 @@ exports[`Test Profile component renders correctly 1`] = `
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -359,6 +372,7 @@ exports[`Test Profile component should display error messages from redux error p
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={Array []}
   mostOrder={
     Array [
       Object {
@@ -410,7 +424,7 @@ exports[`Test Profile component should display error messages from redux error p
   user={Object {}}
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -434,7 +448,7 @@ exports[`Test Profile component should display error messages from redux error p
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -500,9 +514,19 @@ exports[`Test Profile component should display error messages from redux error p
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -558,17 +582,6 @@ exports[`Test Profile component should display error messages from redux error p
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -624,13 +637,8 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
           Array [],
           Array [],
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -697,6 +705,7 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={Array []}
   mostOrder={
     Array [
       Object {
@@ -748,7 +757,7 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
   user={Object {}}
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -772,7 +781,7 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -838,9 +847,19 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -896,17 +915,6 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -963,13 +971,8 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
           Array [],
           Array [],
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -1040,6 +1043,7 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={Array []}
   mostOrder={
     Array [
       Object {
@@ -1091,7 +1095,7 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
   user={Object {}}
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -1115,7 +1119,7 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -1181,9 +1185,19 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -1239,17 +1253,6 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -1306,13 +1309,8 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
           Array [],
           Array [],
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -1383,6 +1381,7 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={Array []}
   mostOrder={
     Array [
       Object {
@@ -1434,7 +1433,7 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
   user={Object {}}
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -1458,7 +1457,7 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -1524,9 +1523,19 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -1582,17 +1591,6 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -1637,13 +1635,8 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
           Array [],
           Array [],
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -1706,6 +1699,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={Array []}
   mostOrder={
     Array [
       Object {
@@ -1757,7 +1751,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
   user={Object {}}
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -1781,7 +1775,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -1847,9 +1841,19 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -1905,17 +1909,6 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -2008,13 +2001,8 @@ exports[`Test Profile component should respond to onChange event 1`] = `
         "calls": Array [
           Array [],
           Array [],
-          Array [],
         ],
         "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -2085,6 +2073,16 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "getMenu": [MockFunction],
     }
   }
+  menuMeals={
+    Array [
+      Object {
+        "desctription": "good",
+        "id": 1,
+        "name": "jollof",
+        "price": 100,
+      },
+    ]
+  }
   myOrder={
     Array [
       Object {
@@ -2121,6 +2119,12 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "updateOrder": [MockFunction],
     }
   }
+  showMenu={[MockFunction]}
+  state={
+    Object {
+      "accordion": Object {},
+    }
+  }
   successMessage={
     Object {
       "createMealSuccess": "meal created",
@@ -2139,7 +2143,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
   }
 >
   <div
-    className="order-container"
+    className="profile-container"
   >
     <h2
       style={
@@ -2165,7 +2169,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       className="text-center p-color"
     />
     <div
-      className="profile-container"
+      className="profile-wrap"
       style={
         Object {
           "marginTop": "2px",
@@ -2209,7 +2213,6 @@ exports[`Test Profile component should respond to onChange event 1`] = `
             className="username"
             readOnly={true}
             type="text"
-            value="ken"
           />
         </div>
         <div
@@ -2226,16 +2229,25 @@ exports[`Test Profile component should respond to onChange event 1`] = `
             name="email"
             readOnly={true}
             type="email"
-            value="ken@gmaoil.com"
           />
         </div>
         <div
           className="profile-field"
         >
           <label
-            htmlFor="password"
+            htmlFor="name"
           >
-            Image
+            <img
+              alt="upload"
+              className="img-fluid"
+              src=""
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </label>
           <span
             className="form-label"
@@ -2291,17 +2303,6 @@ exports[`Test Profile component should respond to onChange event 1`] = `
                 />
               </div>
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              src=""
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div

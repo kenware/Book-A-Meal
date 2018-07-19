@@ -8,16 +8,11 @@ describe('Test Profile component', () => {
     const tree = mount(<Profile {...props} />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should display error messages from redux error props', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.state('name')).toEqual('');
     expect(tree).toMatchSnapshot();
-  });
-
-
-  it('should have one Profile container class', () => {
-    const tree = mount(<Profile {...emptyProps} />);
-    expect(tree.find('.order-container')).toHaveLength(1);
   });
 
   it('should have one form tag class', () => {
@@ -29,6 +24,7 @@ describe('Test Profile component', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.find('.profile-field')).toHaveLength(4);
   });
+
   it('should have 2 form-field className', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.find('.form-field')).toHaveLength(2);
@@ -39,10 +35,11 @@ describe('Test Profile component', () => {
     expect(tree.find('input')).toHaveLength(4);
   });
 
-  it('should have three label', () => {
+  it('should have four label', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.find('label')).toHaveLength(4);
   });
+
   it('testing initial states', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.state('name')).toEqual('');
@@ -55,15 +52,11 @@ describe('Test Profile component', () => {
     const tree = mount(<Profile {...emptyProps} />);
     expect(tree.find('.form-label').length).toEqual(2);
   });
+
   it('the value of name input must be equall to enter value', () => {
     const tree = mount(<Profile {...emptyProps} />);
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'ken' } });
     expect(tree.find('#name').prop('value')).toEqual('ken');
-  });
-  it('the value of username and email input must be from props', () => {
-    const tree = mount(<Profile {...props} />);
-    expect(tree.find('.username').prop('value')).toEqual('ken');
-    expect(tree.find('#email').prop('value')).toEqual('ken@gmaoil.com');
   });
 
   it('should respond to dropbox ondrop method', () => {
@@ -72,12 +65,14 @@ describe('Test Profile component', () => {
     wrapper.onDrop([{ preview: 'image/l.jpg' }]);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to componentWillMount lifeCycle method', () => {
     const tree = mount(<Profile {...emptyProps} />);
     const wrapper = tree.instance();
     wrapper.componentWillUnmount();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to componentWillProps method', () => {
     const tree = mount(<Profile {...emptyProps} />);
     const wrapper = tree.instance();
@@ -87,12 +82,15 @@ describe('Test Profile component', () => {
     expect(tree).toMatchSnapshot();
     wrapper.componentWillReceiveProps({
       user: {
-        name: 'ken',
+        username: 'ken',
         image: 'image_url',
+        email: 'ken@gmaoil.com'
+
       }
     });
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to onChange event', () => {
     const tree = mount(<Profile {...props} />);
     const wrapper = tree.instance();
@@ -100,6 +98,7 @@ describe('Test Profile component', () => {
     expect(tree).toMatchSnapshot();
     tree.find('.submit').simulate('click');
   });
+
   it('should update user profile', () => {
     const tree = mount(<Profile {...emptyProps} />);
     // onChange event
@@ -108,11 +107,13 @@ describe('Test Profile component', () => {
     tree.find('.submit').simulate('click');
     expect(tree.state('validName')).toEqual('Name is required');
   });
+
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();

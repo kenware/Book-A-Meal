@@ -39,7 +39,7 @@ exports[`Test mostOder components it should flip card on mouseEnter event 1`] = 
         </p>
         <Link
           replace={false}
-          to="/detail/1"
+          to="/dashboard"
         >
           View
         </Link>
@@ -94,7 +94,7 @@ exports[`Test mostOder components renders correctly 1`] = `
         </p>
         <Link
           replace={false}
-          to="/detail/1"
+          to="/dashboard"
         >
           View
         </Link>

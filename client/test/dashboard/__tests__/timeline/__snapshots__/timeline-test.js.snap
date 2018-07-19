@@ -90,38 +90,36 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
       <div
         className="timeline-body"
       >
-        <p>
-          <ul
+        <ul
+          style={
+            Object {
+              "height": "300px",
+              "overflow": "scroll",
+            }
+          }
+        >
+          <li
+            key="1"
             style={
               Object {
-                "height": "300px",
-                "overflow": "scroll",
+                "marginTop": "1rem",
               }
             }
           >
-            <li
-              key="1"
-              style={
-                Object {
-                  "marginTop": "1rem",
-                }
-              }
+            <div
+              className="p-color"
             >
-              <div
-                className="p-color"
-              >
-                here i come
-              </div>
-              <div>
-                Jun
-                 
-                10
-                  
-                2018
-              </div>
-            </li>
-          </ul>
-        </p>
+              here i come
+            </div>
+            <div>
+              Jun
+               
+              10
+                
+              2018
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </li>
@@ -148,20 +146,18 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
       <div
         className="timeline-body"
       >
-        <p>
-          <ul>
-            <li />
-            <li>
-              Italian Recipes
-            </li>
-            <li>
-              Ewedu Meal
-            </li>
-            <li>
-              Abacha
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li />
+          <li>
+            Italian Recipes
+          </li>
+          <li>
+            Ewedu Meal
+          </li>
+          <li>
+            Abacha
+          </li>
+        </ul>
       </div>
     </div>
   </li>
@@ -265,38 +261,36 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
       <div
         className="timeline-body"
       >
-        <p>
-          <ul
+        <ul
+          style={
+            Object {
+              "height": "300px",
+              "overflow": "scroll",
+            }
+          }
+        >
+          <li
+            key="1"
             style={
               Object {
-                "height": "300px",
-                "overflow": "scroll",
+                "marginTop": "1rem",
               }
             }
           >
-            <li
-              key="1"
-              style={
-                Object {
-                  "marginTop": "1rem",
-                }
-              }
+            <div
+              className="p-color"
             >
-              <div
-                className="p-color"
-              >
-                here i come
-              </div>
-              <div>
-                Jun
-                 
-                10
-                  
-                2018
-              </div>
-            </li>
-          </ul>
-        </p>
+              here i come
+            </div>
+            <div>
+              Jun
+               
+              10
+                
+              2018
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </li>
@@ -323,20 +317,18 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
       <div
         className="timeline-body"
       >
-        <p>
-          <ul>
-            <li />
-            <li>
-              Italian Recipes
-            </li>
-            <li>
-              Ewedu Meal
-            </li>
-            <li>
-              Abacha
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li />
+          <li>
+            Italian Recipes
+          </li>
+          <li>
+            Ewedu Meal
+          </li>
+          <li>
+            Abacha
+          </li>
+        </ul>
       </div>
     </div>
   </li>

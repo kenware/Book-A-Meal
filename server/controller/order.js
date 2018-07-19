@@ -8,6 +8,11 @@ const {
   Order,
 } = model;
 
+/**
+ * @class orderController
+ * @description create an order, get user order, get all orders, update order
+ *  confirm that a meal is recieved
+ */
 export default class orderController {
   /**
  * @method createOrder
@@ -135,22 +140,23 @@ export default class orderController {
  */
   async getOrders(req, res) {
     const { id } = req.decoded;
+    let { limit, offset } = req.query;
+    limit = parseInt(limit, 10) || 6;
+    offset = parseInt(offset, 10) || 0;
     const catererId = id;
-    const orders = await Order.findAll({
+    const orders = await Order.findAndCountAll({
       where: { catererId },
       include: [
         {
           model: Meal,
           attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
-        },
-        {
-          model: User,
-          attributes: ['id', 'name', 'username', 'image']
-        },
+        }
       ],
       order: [
         ['createdAt', 'DESC']
-      ]
+      ],
+      limit,
+      offset
     });
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'users have not ordered a meal' }); }
     return res.status(200).json(orders);

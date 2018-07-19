@@ -238,9 +238,6 @@ exports[`Test Component of Order component renders correctly 1`] = `
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -266,9 +263,6 @@ exports[`Test Component of Order component renders correctly 1`] = `
           className="order-contents"
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>

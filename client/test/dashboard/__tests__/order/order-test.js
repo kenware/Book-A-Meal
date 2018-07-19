@@ -35,8 +35,8 @@ describe('Test order component of dashboard', () => {
     const tree = shallow(<Orders {...props} />);
     expect(tree.find('table')).toHaveLength(1);
     expect(tree.find('tr')).toHaveLength(2);
-    expect(tree.find('th')).toHaveLength(5);
-    expect(tree.find('td')).toHaveLength(13);
+    expect(tree.find('th')).toHaveLength(4);
+    expect(tree.find('td')).toHaveLength(12);
   });
 
   it('testing initial state of the components', () => {

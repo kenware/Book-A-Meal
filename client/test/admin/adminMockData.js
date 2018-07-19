@@ -11,22 +11,24 @@ export const props = {
       }
     }
   ],
-  allOrder: [
-    {
-      id: 1,
-      createdAt: '2018-05-4',
-      updatedAt: '2018-05-4',
-      address: 'Reverend Street',
-      status: 'pending',
-      quantity: 3,
-      Meal: {
+  allOrder: {
+    rows: [
+      {
         id: 1,
-        name: 'rice',
-        price: '200',
-        descrption: 'Very delicious'
+        createdAt: '2018-05-4',
+        updatedAt: '2018-05-4',
+        address: 'Reverend Street',
+        status: 'pending',
+        quantity: 3,
+        Meal: {
+          id: 1,
+          name: 'rice',
+          price: '200',
+          descrption: 'Very delicious'
+        }
       }
-    }
-  ],
+    ]
+  },
   meals: {
     rows: [
       {
@@ -72,8 +74,11 @@ export const props = {
 export const emptyProps = {
   mostOrder: [
   ],
-  allOrder: [
-  ],
+  allOrder: {
+    rows: [
+
+    ]
+  },
   meals: {
     rows: [
     ]

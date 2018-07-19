@@ -29,12 +29,12 @@ exports[`Test parallax components renders correctly 1`] = `
         <h2
           className="white-color"
         >
-          Dashboard
+          Menu
         </h2>
         <p
           className="white-color"
         >
-          Enter your dashboard to perform awesome functionality which include ordering for a meal, adding meal options from meal menu
+          Enter menu page to perform awesome functionality which include ordering a meal, adding meal options from meal menu
         </p>
       </div>
       <div
@@ -76,7 +76,7 @@ exports[`Test parallax components renders correctly 1`] = `
         <h2
           className="white-color"
         >
-          Login/SignUp
+          Login
         </h2>
         <p
           className="p-style"

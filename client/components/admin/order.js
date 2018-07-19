@@ -10,6 +10,7 @@ const Orders = ({ mostOrder, allOrder }) => {
     const name = `${element.Meal.name.substr(0, 7)}...`;
     data.push({ name, totalOrder: element.OrderCount, price: element.Meal.price });
   });
+
   const monthNames = [
     'January', 'February', 'March',
     'April', 'May', 'June',
@@ -50,11 +51,10 @@ const Orders = ({ mostOrder, allOrder }) => {
         </div> : <h3 style={{ marginTop: '1rem' }} className="p-color text-center">Users have not Ordered a meal</h3>}
       <div className="order-wrapper">
         <h2 style={{ marginTop: '4rem' }}>ORDER HISTORY OF ALL USERS</h2>
-        {allOrder.length > 0 ?
+        {allOrder.rows.length > 0 ?
           <table>
             <tbody>
               <tr>
-                <th>id</th>
                 <th>Name</th>
                 <th>Quanitity
                 </th>
@@ -65,10 +65,9 @@ const Orders = ({ mostOrder, allOrder }) => {
                 <td>Date</td>
                 <td>Status</td>
               </tr>
-              {allOrder.map(order =>
+              {allOrder.rows.map(order =>
                   (
                     <tr key={order.id} className="order-contents">
-                      <td>{order.Meal.id}</td>
                       <td>{order.Meal.name}</td>
                       <td>{order.quantity}</td>
                       <td>{order.Meal.price}</td>
@@ -88,8 +87,10 @@ const Orders = ({ mostOrder, allOrder }) => {
     </div>
   );
 };
+
 Orders.propTypes = {
   mostOrder: PropTypes.array.isRequired,
-  allOrder: PropTypes.array.isRequired,
+  allOrder: PropTypes.object.isRequired,
 };
+
 export default Orders;

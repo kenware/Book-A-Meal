@@ -42,14 +42,14 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className="p-color"
           >
             ADMIN
           </h4>
         </div>
         <div>
           <h4
-            className="white-color"
+            className="p-color"
           />
           <img
             alt="profile"
@@ -129,14 +129,14 @@ exports[`Test index Component of admin pages should have respond handle click an
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className="p-color"
           >
             ADMIN
           </h4>
         </div>
         <div>
           <h4
-            className="white-color"
+            className="p-color"
           />
           <img
             alt="profile"
@@ -216,14 +216,14 @@ exports[`Test index Component of admin pages should have respond handle click an
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className="p-color"
           >
             ADMIN
           </h4>
         </div>
         <div>
           <h4
-            className="white-color"
+            className="p-color"
           />
           <img
             alt="profile"
@@ -303,14 +303,14 @@ exports[`Test index Component of admin pages should have respond handle click an
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className="p-color"
           >
             ADMIN
           </h4>
         </div>
         <div>
           <h4
-            className="white-color"
+            className="p-color"
           />
           <img
             alt="profile"
@@ -390,14 +390,14 @@ exports[`Test index Component of admin pages should have respond to logOut metho
           className="l-r-pad-text"
         >
           <h4
-            className="white-color"
+            className="p-color"
           >
             ADMIN
           </h4>
         </div>
         <div>
           <h4
-            className="white-color"
+            className="p-color"
           />
           <img
             alt="profile"
@@ -484,22 +484,24 @@ Object {
 
 exports[`Test index Component of admin pages should respond to mapStateToProps methods 1`] = `
 Object {
-  "allOrder": Array [
-    Object {
-      "Meal": Object {
-        "descrption": "Very delicious",
+  "allOrder": Object {
+    "rows": Array [
+      Object {
+        "Meal": Object {
+          "descrption": "Very delicious",
+          "id": 1,
+          "name": "rice",
+          "price": "200",
+        },
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
         "id": 1,
-        "name": "rice",
-        "price": "200",
+        "quantity": 3,
+        "status": "pending",
+        "updatedAt": "2018-05-4",
       },
-      "address": "Reverend Street",
-      "createdAt": "2018-05-4",
-      "id": 1,
-      "quantity": 3,
-      "status": "pending",
-      "updatedAt": "2018-05-4",
-    },
-  ],
+    ],
+  },
   "errorMessage": Object {
     "createMealError": "Wrong credentials",
   },

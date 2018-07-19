@@ -13,6 +13,15 @@ const {
 } = model;
 
 export default class mailController {
+  /**
+ * @method sendMail
+ * @returns { object } returns today menu, message and email info
+ * @returns { null } returns a message is not set
+ * @param { String } req menu from menu controller
+ * @param { String } res menu, message and email info
+ * @description After menu is set from menu controller,
+ *  it passes menu to maik controller to send email to user that today menu is set
+ */
   async sendMail(req, res) {
     const { menu, username } = req.body;
     let { message } = req.body;
@@ -31,9 +40,7 @@ export default class mailController {
     // send email notification when menu is set using nodemailer
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
-      // host: 'bookmeals.herokuapp.com',
       port: 465,
-      // port: 5000,
       secure: true, // use SSL
       auth: {
         user: gmailUser,
@@ -66,7 +73,6 @@ export default class mailController {
       from: '"Book-A-Meal "<no-reply@Book-A-Meal.com>', // sender address (who sends)
       to: emailList, // list of receivers (who receives)
       subject: 'Notification', // Subject line
-      // text: 'Hello world ', // plaintext body
       html: mailoutput // html body
     };
 
@@ -80,6 +86,15 @@ export default class mailController {
   }
 
   async changePassword(req, res) {
+    /**
+ * @method changePassword
+ * @returns { object } returns email message body
+ * @returns { null } returns could not send reset password link to a user
+ * @param { String } req user from user controller
+ * @param { String } res resetlink sent to user for resetting password
+ * @description Sends a reset password link to user's email,
+ *  in the case of forgotten password
+ */
     const { user, token } = req.body;
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',

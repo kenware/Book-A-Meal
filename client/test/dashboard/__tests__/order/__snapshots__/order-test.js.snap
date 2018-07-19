@@ -199,9 +199,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -211,7 +208,7 @@ exports[`Test order component of dashboard renders correctly 1`] = `
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -229,9 +226,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -337,6 +331,14 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -376,6 +378,10 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -485,6 +491,16 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -529,6 +545,12 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -767,9 +789,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -779,7 +798,7 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -795,9 +814,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -1088,9 +1104,6 @@ exports[`Test order component of dashboard should change state when component re
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -1100,7 +1113,7 @@ exports[`Test order component of dashboard should change state when component re
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -1118,9 +1131,6 @@ exports[`Test order component of dashboard should change state when component re
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -1187,6 +1197,7 @@ Orders {
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [],
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -1281,6 +1292,7 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={Array []}
         mostOrder={
           Array [
             Object {
@@ -1547,9 +1559,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -1559,7 +1568,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -1575,9 +1584,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
@@ -1820,9 +1826,6 @@ exports[`Test order component of dashboard should change state when component re
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -1832,7 +1835,7 @@ exports[`Test order component of dashboard should change state when component re
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -1850,9 +1853,6 @@ exports[`Test order component of dashboard should change state when component re
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -1919,6 +1919,7 @@ Orders {
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [],
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -2018,6 +2019,7 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={Array []}
         mostOrder={
           Array [
             Object {
@@ -2289,9 +2291,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -2301,7 +2300,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -2317,9 +2316,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
@@ -2391,6 +2387,7 @@ Orders {
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [],
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -2495,6 +2492,7 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={Array []}
         mostOrder={
           Array [
             Object {
@@ -2771,9 +2769,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -2783,7 +2778,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -2799,9 +2794,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
@@ -3049,9 +3041,6 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -3061,7 +3050,7 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -3079,9 +3068,6 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -3307,6 +3293,14 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -3438,6 +3432,10 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -3667,6 +3665,16 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -3803,6 +3811,12 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -4041,9 +4055,6 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -4053,7 +4064,7 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -4069,9 +4080,6 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -4367,9 +4375,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -4379,7 +4384,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -4397,9 +4402,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -4650,6 +4652,14 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -4798,6 +4808,10 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -5052,6 +5066,16 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -5205,6 +5229,12 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -5443,9 +5473,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -5455,7 +5482,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -5471,9 +5498,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -5769,9 +5793,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -5781,7 +5802,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -5799,9 +5820,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -6057,6 +6075,14 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -6205,6 +6231,10 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -6464,6 +6494,16 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -6617,6 +6657,12 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -6855,9 +6901,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -6867,7 +6910,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -6883,9 +6926,6 @@ exports[`Test order component of dashboard should display close confirm-order mo
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -7181,9 +7221,6 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -7193,7 +7230,7 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -7211,9 +7248,6 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -7449,6 +7483,14 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -7585,6 +7627,10 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -7824,6 +7870,16 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -7965,6 +8021,12 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -8203,9 +8265,6 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -8215,7 +8274,7 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -8231,9 +8290,6 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -8534,9 +8590,6 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -8546,7 +8599,7 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -8564,9 +8617,6 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -8807,6 +8857,14 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -8950,6 +9008,10 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -9199,6 +9261,16 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -9347,6 +9419,12 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -9595,9 +9673,6 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -9607,7 +9682,7 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -9623,9 +9698,6 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -9918,9 +9990,6 @@ exports[`Test order component of dashboard should modify an order 1`] = `
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -9930,7 +9999,7 @@ exports[`Test order component of dashboard should modify an order 1`] = `
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -9948,9 +10017,6 @@ exports[`Test order component of dashboard should modify an order 1`] = `
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -10193,9 +10259,6 @@ exports[`Test order component of dashboard should respond to a click event and d
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -10205,7 +10268,7 @@ exports[`Test order component of dashboard should respond to a click event and d
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -10223,9 +10286,6 @@ exports[`Test order component of dashboard should respond to a click event and d
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -10376,6 +10436,14 @@ exports[`Test order component of dashboard should respond to a click event and d
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -10455,6 +10523,10 @@ exports[`Test order component of dashboard should respond to a click event and d
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -10609,6 +10681,16 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -10693,6 +10775,12 @@ exports[`Test order component of dashboard should respond to a click event and d
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -10931,9 +11019,6 @@ exports[`Test order component of dashboard should respond to a click event and d
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -10943,7 +11028,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -10959,9 +11044,6 @@ exports[`Test order component of dashboard should respond to a click event and d
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -11259,9 +11341,6 @@ exports[`Test order component of dashboard should respond to a click event and d
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -11271,7 +11350,7 @@ exports[`Test order component of dashboard should respond to a click event and d
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -11289,9 +11368,6 @@ exports[`Test order component of dashboard should respond to a click event and d
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -11467,6 +11543,14 @@ exports[`Test order component of dashboard should respond to a click event and d
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -11556,6 +11640,10 @@ exports[`Test order component of dashboard should respond to a click event and d
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -11735,6 +11823,16 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -11829,6 +11927,12 @@ exports[`Test order component of dashboard should respond to a click event and d
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -12067,9 +12171,6 @@ exports[`Test order component of dashboard should respond to a click event and d
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -12079,7 +12180,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -12095,9 +12196,6 @@ exports[`Test order component of dashboard should respond to a click event and d
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -12390,9 +12488,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -12402,7 +12497,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -12420,9 +12515,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -12583,6 +12675,14 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -12667,6 +12767,10 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -12831,6 +12935,16 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -12920,6 +13034,12 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -13158,9 +13278,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -13170,7 +13287,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -13186,9 +13303,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -13481,9 +13595,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -13493,7 +13604,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -13511,9 +13622,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -13679,6 +13787,14 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -13763,6 +13879,10 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -13932,6 +14052,16 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -14021,6 +14151,12 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -14259,9 +14395,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -14271,7 +14404,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -14287,9 +14420,6 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -14551,6 +14681,14 @@ Orders {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [
+      Object {
+        "desctription": "good",
+        "id": 1,
+        "name": "jollof",
+        "price": 100,
+      },
+    ],
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -14660,6 +14798,10 @@ Orders {
       },
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
+    },
+    "showMenu": [MockFunction],
+    "state": Object {
+      "accordion": Object {},
     },
     "successMessage": Object {
       "createMealSuccess": "meal created",
@@ -14864,6 +15006,16 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={
+          Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ]
+        }
         myOrder={
           Array [
             Object {
@@ -14978,6 +15130,12 @@ Orders {
             },
             "orderMeal": [MockFunction],
             "updateOrder": [MockFunction],
+          }
+        }
+        showMenu={[MockFunction]}
+        state={
+          Object {
+            "accordion": Object {},
           }
         }
         successMessage={
@@ -15216,9 +15374,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -15228,7 +15383,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -15244,9 +15399,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
@@ -15491,6 +15643,14 @@ Orders {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [
+      Object {
+        "desctription": "good",
+        "id": 1,
+        "name": "jollof",
+        "price": 100,
+      },
+    ],
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -15617,6 +15777,10 @@ Orders {
       },
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
+    },
+    "showMenu": [MockFunction],
+    "state": Object {
+      "accordion": Object {},
     },
     "successMessage": Object {
       "createMealSuccess": "meal created",
@@ -15836,6 +16000,16 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={
+          Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ]
+        }
         myOrder={
           Array [
             Object {
@@ -15967,6 +16141,12 @@ Orders {
             },
             "orderMeal": [MockFunction],
             "updateOrder": [MockFunction],
+          }
+        }
+        showMenu={[MockFunction]}
+        state={
+          Object {
+            "accordion": Object {},
           }
         }
         successMessage={
@@ -16215,9 +16395,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -16227,7 +16404,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -16243,9 +16420,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
@@ -16577,9 +16751,6 @@ exports[`Test order component of dashboard should respond to modify functions 1`
       <tbody>
         <tr>
           <th>
-            id
-          </th>
-          <th>
             Name
           </th>
           <th>
@@ -16589,7 +16760,7 @@ exports[`Test order component of dashboard should respond to modify functions 1`
             Price ($)
           </th>
           <th>
-            Total price ( price * quantity)
+            Total price
           </th>
           <td>
             Date
@@ -16607,9 +16778,6 @@ exports[`Test order component of dashboard should respond to modify functions 1`
         <tr
           key="1"
         >
-          <td>
-            1
-          </td>
           <td>
             rice
           </td>
@@ -16795,6 +16963,14 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
+                      "menuMeals": Array [
+                        Object {
+                          "desctription": "good",
+                          "id": 1,
+                          "name": "jollof",
+                          "price": 100,
+                        },
+                      ],
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -16889,6 +17065,10 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                         },
                         "orderMeal": [MockFunction],
                         "updateOrder": [MockFunction],
+                      },
+                      "showMenu": [MockFunction],
+                      "state": Object {
+                        "accordion": Object {},
                       },
                       "successMessage": Object {
                         "createMealSuccess": "meal created",
@@ -17078,6 +17258,16 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                               "getMenu": [MockFunction],
                             }
                           }
+                          menuMeals={
+                            Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ]
+                          }
                           myOrder={
                             Array [
                               Object {
@@ -17177,6 +17367,12 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                               },
                               "orderMeal": [MockFunction],
                               "updateOrder": [MockFunction],
+                            }
+                          }
+                          showMenu={[MockFunction]}
+                          state={
+                            Object {
+                              "accordion": Object {},
                             }
                           }
                           successMessage={
@@ -17415,9 +17611,6 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                               <tbody>
                                 <tr>
                                   <th>
-                                    id
-                                  </th>
-                                  <th>
                                     Name
                                   </th>
                                   <th>
@@ -17427,7 +17620,7 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                                     Price ($)
                                   </th>
                                   <th>
-                                    Total price ( price * quantity)
+                                    Total price
                                   </th>
                                   <td>
                                     Date
@@ -17443,9 +17636,6 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>
-                                    1
-                                  </td>
                                   <td>
                                     rice
                                   </td>
@@ -17697,6 +17887,14 @@ Orders {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
+    "menuMeals": Array [
+      Object {
+        "desctription": "good",
+        "id": 1,
+        "name": "jollof",
+        "price": 100,
+      },
+    ],
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -17801,6 +17999,10 @@ Orders {
       },
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
+    },
+    "showMenu": [MockFunction],
+    "state": Object {
+      "accordion": Object {},
     },
     "successMessage": Object {
       "createMealSuccess": "meal created",
@@ -17995,6 +18197,16 @@ Orders {
             "getMenu": [MockFunction],
           }
         }
+        menuMeals={
+          Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ]
+        }
         myOrder={
           Array [
             Object {
@@ -18104,6 +18316,12 @@ Orders {
             },
             "orderMeal": [MockFunction],
             "updateOrder": [MockFunction],
+          }
+        }
+        showMenu={[MockFunction]}
+        state={
+          Object {
+            "accordion": Object {},
           }
         }
         successMessage={
@@ -18342,9 +18560,6 @@ Orders {
             <tbody>
               <tr>
                 <th>
-                  id
-                </th>
-                <th>
                   Name
                 </th>
                 <th>
@@ -18354,7 +18569,7 @@ Orders {
                   Price ($)
                 </th>
                 <th>
-                  Total price ( price * quantity)
+                  Total price
                 </th>
                 <td>
                   Date
@@ -18370,9 +18585,6 @@ Orders {
                 </td>
               </tr>
               <tr>
-                <td>
-                  1
-                </td>
                 <td>
                   rice
                 </td>
