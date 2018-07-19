@@ -15,11 +15,10 @@ const logOut = () => {
   return window.localStorage.removeItem('role');
 };
 
-const setRefresh = (token, image) => {
+const setRefresh = (token) => {
   window.localStorage.setItem('token', token);
-  window.localStorage.setItem('image', image);
 };
-
+const setImage = image => window.localStorage.setItem('image', image);
 const getToken = () => window.localStorage.getItem('token');
 const getRole = () => window.localStorage.getItem('role');
 const getUsername = () => window.localStorage.getItem('username');
@@ -30,5 +29,6 @@ export default {
   getToken,
   getRole,
   getUsername,
-  setRefresh
+  setRefresh,
+  setImage
 };

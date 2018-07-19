@@ -85,6 +85,7 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -106,6 +107,7 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -133,9 +135,6 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -149,9 +148,6 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -176,9 +172,6 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -199,6 +192,46 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -287,6 +320,7 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -310,6 +344,7 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -337,9 +372,6 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -353,9 +385,6 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -380,9 +409,6 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -403,6 +429,46 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -491,6 +557,7 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -514,6 +581,7 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -541,9 +609,6 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -557,9 +622,6 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -584,9 +646,6 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -607,6 +666,46 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -695,6 +794,7 @@ exports[`Test Component of SETMENU component should respond to a click event by 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -718,6 +818,7 @@ exports[`Test Component of SETMENU component should respond to a click event by 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -745,9 +846,6 @@ exports[`Test Component of SETMENU component should respond to a click event by 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -761,9 +859,6 @@ exports[`Test Component of SETMENU component should respond to a click event by 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -788,9 +883,6 @@ exports[`Test Component of SETMENU component should respond to a click event by 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -811,6 +903,46 @@ exports[`Test Component of SETMENU component should respond to a click event by 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -900,6 +1032,7 @@ exports[`Test Component of SETMENU component should respond to change event and 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -921,6 +1054,7 @@ exports[`Test Component of SETMENU component should respond to change event and 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -948,9 +1082,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -964,9 +1095,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -991,9 +1119,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -1014,6 +1139,46 @@ exports[`Test Component of SETMENU component should respond to change event and 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1102,6 +1267,7 @@ exports[`Test Component of SETMENU component should respond to change event and 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -1123,6 +1289,7 @@ exports[`Test Component of SETMENU component should respond to change event and 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -1152,9 +1319,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -1168,9 +1332,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -1195,9 +1356,6 @@ exports[`Test Component of SETMENU component should respond to change event and 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -1218,16 +1376,56 @@ exports[`Test Component of SETMENU component should respond to change event and 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Test Component of SETMENU component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],
@@ -1241,10 +1439,20 @@ Object {
     "updateProfile": [Function],
     "upgrade": [Function],
   },
+  "mealActions": Object {
+    "createMeal": [Function],
+    "deleteMeal": [Function],
+    "getAllMeals": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadSuccessMessage": [Function],
+    "updateMeal": [Function],
+  },
   "menuActions": Object {
     "getMenu": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
     "setMenu": [Function],
@@ -1257,20 +1465,22 @@ Object {
   "errorMessage": Object {
     "createMealError": "Wrong credentials",
   },
-  "meals": Array [
-    Object {
-      "descrption": "Very delicious",
-      "id": 1,
-      "name": "rice",
-      "price": "200",
-    },
-    Object {
-      "descrption": "Very delicious",
-      "id": 2,
-      "name": "beans",
-      "price": "200",
-    },
-  ],
+  "meals": Object {
+    "rows": Array [
+      Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      Object {
+        "descrption": "Very delicious",
+        "id": 2,
+        "name": "beans",
+        "price": "200",
+      },
+    ],
+  },
   "successMessage": Object {
     "createMealSuccess": "meal created",
   },
@@ -1362,6 +1572,7 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -1383,6 +1594,7 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -1410,9 +1622,6 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -1426,9 +1635,6 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -1453,9 +1659,6 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -1476,6 +1679,46 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1564,6 +1807,7 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -1585,6 +1829,7 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -1612,9 +1857,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -1628,9 +1870,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -1655,9 +1894,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -1678,6 +1914,46 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1766,6 +2042,7 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
   />
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="name"
@@ -1787,6 +2064,7 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
   </div>
   <div
     className="form-field"
+    id="setMenu-forrm"
   >
     <label
       htmlFor="password"
@@ -1814,9 +2092,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
     <tbody>
       <tr>
         <th>
-          id
-        </th>
-        <th>
           Name
         </th>
         <th>
@@ -1830,9 +2105,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
         className="tr"
         key="1"
       >
-        <td>
-          1
-        </td>
         <td>
           rice
         </td>
@@ -1857,9 +2129,6 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
         key="2"
       >
         <td>
-          2
-        </td>
-        <td>
           beans
         </td>
         <td>
@@ -1880,5 +2149,45 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
       </tr>
     </tbody>
   </table>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;

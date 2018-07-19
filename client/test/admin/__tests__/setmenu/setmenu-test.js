@@ -35,12 +35,12 @@ describe('Test Component of SETMENU component', () => {
 
   it('should have only 4 td on the table', () => {
     const tree = shallow(<SetMenu {...props} />);
-    expect(tree.find('td')).toHaveLength(8);
+    expect(tree.find('td')).toHaveLength(6);
   });
 
   it('should have only 4 th on the table', () => {
     const tree = shallow(<SetMenu {...props} />);
-    expect(tree.find('th')).toHaveLength(4);
+    expect(tree.find('th')).toHaveLength(3);
   });
 
   it('should display two menu meals', () => {

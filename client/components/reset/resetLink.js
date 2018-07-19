@@ -45,7 +45,6 @@ class ResetLink extends Component {
   */
   resetLink(e) {
     e.preventDefault();
-    this.props.actions.clearMessages();
     const {
       emailOrUsername,
     } = this.state;
@@ -55,6 +54,7 @@ class ResetLink extends Component {
       this.setState({
         submit: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
       });
+      this.setState({ inputError: '' });
       return;
     }
     this.setState({ inputError: 'this field is required' });

@@ -13,7 +13,7 @@ const props = {
   dash: 'dash',
   cPassword: '12345',
   profile: 'profile',
-  notific: [],
+  notific: '',
   logout: 'logout',
   order: 'order',
 };
@@ -22,7 +22,8 @@ describe('Testing of sidebar component', () => {
     const tree = shallow(<Sidebar {...props} />);
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to dashbord link events', () => {
+
+  it('should respond to dashbord mouseenter events', () => {
     const tree = shallow(<Sidebar {...props} />);
     // toggle side bar first
     tree.find('.toggle1').simulate('click');
@@ -35,7 +36,8 @@ describe('Testing of sidebar component', () => {
     tree.find('.dashboard-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to handleClick and handleClose events on allmeals,', () => {
+
+  it('should respond to handleClick and handleClose events on allmeals mouseEnter', () => {
     const tree = shallow(<Sidebar {...props} />);
     // toggle side bar
     tree.find('.bar2').simulate('click');
@@ -47,7 +49,8 @@ describe('Testing of sidebar component', () => {
     tree.find('.allMeal-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to handleClick and handleClose events of setmeal,', () => {
+
+  it('should respond to handleClick and handleClose events of setmeal mouseEnter', () => {
     const tree = shallow(<Sidebar {...props} />);
     // mouse focus sidebar all meals link
     tree.find('.setmeal-link').simulate('mouseEnter');
@@ -56,7 +59,8 @@ describe('Testing of sidebar component', () => {
     tree.find('.setmeal-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to handleClick and handleClose events of addMeal,', () => {
+
+  it('should respond to handleClick and handleClose events of addMeal mouseEnter', () => {
     const tree = shallow(<Sidebar {...props} />);
     // mouse focus sidebar all meals link
     tree.find('.addmeal-link').simulate('mouseEnter');
@@ -65,6 +69,7 @@ describe('Testing of sidebar component', () => {
     tree.find('.addmeal-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to handleClick and handleClose events of notification,', () => {
     const tree = shallow(<Sidebar {...props} />);
     // mouse focus sidebar all meals link
@@ -74,6 +79,7 @@ describe('Testing of sidebar component', () => {
     tree.find('.profile-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to handleClick and handleClose of Change Password events,', () => {
     const tree = shallow(<Sidebar {...props} />);
     // mouse focus sidebar all meals link
@@ -82,6 +88,7 @@ describe('Testing of sidebar component', () => {
     tree.find('.cpassword-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to handleClick and handleClose of logout,', () => {
     const tree = shallow(<Sidebar {...props} />);
     // mouse focus sidebar all meals link

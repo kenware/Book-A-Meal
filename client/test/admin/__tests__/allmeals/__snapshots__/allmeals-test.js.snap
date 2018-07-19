@@ -66,7 +66,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -136,7 +136,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -203,6 +203,46 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
            Delete
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
     </div>
   </div>
 </div>
@@ -274,7 +314,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -344,7 +384,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -411,6 +451,46 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
            Delete
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
     </div>
   </div>
 </div>
@@ -482,7 +562,7 @@ exports[`Test Component of ALLMeals component should cancel/remove modal that de
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -552,7 +632,7 @@ exports[`Test Component of ALLMeals component should cancel/remove modal that de
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -619,6 +699,46 @@ exports[`Test Component of ALLMeals component should cancel/remove modal that de
            Delete
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
     </div>
   </div>
 </div>
@@ -690,7 +810,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -760,7 +880,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -827,6 +947,46 @@ exports[`Test Component of ALLMeals component should respond to a click event by
            Delete
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
     </div>
   </div>
 </div>
@@ -898,7 +1058,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -968,7 +1128,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -1035,6 +1195,46 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
            Delete
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
     </div>
   </div>
 </div>
@@ -1106,7 +1306,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     className="danger text-center"
   />
   <div
-    className="contents"
+    className="contents container"
     key="1"
   >
     <div
@@ -1176,7 +1376,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     </div>
   </div>
   <div
-    className="contents"
+    className="contents container"
     key="2"
   >
     <div
@@ -1245,6 +1445,46 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
       </div>
     </div>
   </div>
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1266,20 +1506,22 @@ Object {
 
 exports[`Test Component of ALLMeals component should respond to mapStateToProps methods 1`] = `
 Object {
-  "meals": Array [
-    Object {
-      "descrption": "Very delicious",
-      "id": 1,
-      "name": "rice",
-      "price": "200",
-    },
-    Object {
-      "descrption": "Very delicious",
-      "id": 2,
-      "name": "beans",
-      "price": "200",
-    },
-  ],
+  "meals": Object {
+    "rows": Array [
+      Object {
+        "descrption": "Very delicious",
+        "id": 1,
+        "name": "rice",
+        "price": "200",
+      },
+      Object {
+        "descrption": "Very delicious",
+        "id": 2,
+        "name": "beans",
+        "price": "200",
+      },
+    ],
+  },
   "successMessage": Object {
     "createMealSuccess": "meal created",
   },

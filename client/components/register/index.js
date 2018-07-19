@@ -109,14 +109,15 @@ export class Register extends Component {
     } else {
       this.setState({ message: 'All Field Is Required' });
     }
+    this.props.actions.clearMessages();
   }
   render() {
     return (
       <div>
         <Header />
-        <div className="register-container">
+        <div className="register-container" id="register-bg">
           <div className="register-col" />
-          <div className="register-wrapper">
+          <div className="register-wrapper" style={{ height: '500px' }}>
             <h2 className="login-header">Enter your details to SignUp</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.registerError }</h3>
             <h3 className="text-center danger">{this.state.message }</h3>

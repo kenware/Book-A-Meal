@@ -68,7 +68,7 @@ describe('Test menu component of dashboard', () => {
   });
   it('should have 12  dive', () => {
     const tree = shallow(<Menu {...props} />);
-    expect(tree.find('div')).toHaveLength(9);
+    expect(tree.find('div')).toHaveLength(13);
   });
 
   it('testing initial state of the components', () => {

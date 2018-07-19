@@ -1,18 +1,22 @@
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import sequelize from 'sequelize';
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
 import model from '../models/index';
 
 dotenv.config();
 const secret = process.env.SECRET;
-const passEmail = process.env.PASS;
-const userEmail = process.env.USERS;
 const { Op } = sequelize;
 const { User, notification } = model;
 
 export default class userController {
+  /**
+ * @method createUser
+ * @param { object } req An object containing user details like name, username, email
+ * @param {object} res A response containing the user
+ * @returns { object } returns the user
+ * @description It takes req containing user object and create the user and then returns the user
+ */
   async createUser(req, res) {
     const {
       name, username, email, role
@@ -45,10 +49,18 @@ export default class userController {
       username: user.username,
       email: user.email,
       role: user.role,
-      token
+      token,
+      image: user.image
     });
   }
 
+  /**
+ * @method login
+ * @param { object } req An object containing password and username
+ * @param {object} res A response containing the user
+ * @returns { object } returns the user
+ * @description It takes req containing user object and create the user and then returns the user
+ */
   async login(req, res) {
     const { username, password } = req.body;
     const user = await User.findOne({
@@ -71,12 +83,14 @@ export default class userController {
           message: 'succesful login',
           token,
           username: user.username,
-          role: user.role
+          role: user.role,
+          image: user.image
         });
       }
       return res.status(401).json({ message: 'Wrong credentials' });
     });
   }
+
   /**
    * @param  {token} req upgrade user to an admin
    * @param  {user} res user is now an admin
@@ -104,6 +118,10 @@ export default class userController {
     return res.status(201).json({ message, setAdmin, token });
   }
 
+  /**
+   * @param  {token} req  send a request that get a user from the token
+   * @param  {user} res response containing the user
+   */
   async getUser(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -112,7 +130,14 @@ export default class userController {
     }
     return res.status(200).json(user);
   }
-  async sendResetLink(req, res) {
+
+  /**
+   * @param  {object} req email or username
+   * @param  {link} res send resetpassword link
+   * @description It takes a valid email address or
+   *   username and sends a resetPassword link to user email
+   */
+  async sendResetLink(req, res, next) {
     const { emailOrUsername } = req.body;
     try {
       const verify = await User.findOne({
@@ -125,62 +150,28 @@ export default class userController {
       });
       if (!verify) { return res.json({ message: 'Record not found' }); }
       const token = jwt.sign(
-        { id: verify.id, username: verify.username, role: verify.role },
+        {
+          id: verify.id,
+          username: verify.username,
+          role: verify.role,
+          image: verify.image
+        },
         secret, { expiresIn: 86400 }
       );
-
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        // host: 'bookmeals.herokuapp.com',
-        port: 465,
-        // port: 5000,
-        secure: true, // use SSL
-        auth: {
-          user: userEmail,
-          pass: passEmail
-        }
-      });
-      const mailoutput = `<html>\n\
-      <body>\n\
-      <table>\n\
-      <tr>\n\
-      <td>Title: </td><h2> Book-A-Meal</h2><td></td>\n\
-      <td>Title: </td>Reset Password <td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Email: </td><td>${verify.email}</td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>MN: </td> Click the link bellow to reset your password<td></td>\n\
-      </tr>\n\
-      <tr>\n\
-      <td>Messge: </td> Dere ${verify.name} reset your password 
-      <a href='${req.headers.host}/passwordreset/${token}'> here </a>. If the above link do not 
-      work. Pkease follow this link ${req.headers.host}/passwordreset/${token} <td></td>\n\
-      </tr>\n\
-      </table></body></html>`;
-      // setup e-mail data
-      const mailOptions = {
-        from: '"Book-A-Meal "<no-reply@Book-A-Meal.com>', // sender address (who sends)
-        to: verify.email, // list of receivers (who receives)
-        subject: 'Reset Password', // Subject line
-        // text: 'Hello world ', // plaintext body
-        html: mailoutput // html body
-      };
-
-      // send mail with defined transport object
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return res.json(error);
-        }
-
-        return res.json({ success: info.response });
-      });
+      req.body.user = verify;
+      req.body.token = token;
+      next();
     } catch (err) { return res.json(err); }
   }
+
+  /**
+   * @param  {object} req password and decoded id
+   * @param  {newPassword} res send new password
+   * @description It takes a new password from user and set it as user's password
+   */
   async resetPassword(req, res) {
     const { id } = req.decoded;
-    const { password } = req.body;
+    let { password } = req.body;
     if (!password) { return res.status(401).json({ message: 'Enter new password' }); }
     if (/^\S+$/g.test(password) === false) {
       return res.status(401).json({ message: 'Password cannot contain a space' });
@@ -188,13 +179,27 @@ export default class userController {
     try {
       const user = await User.findById(id);
       if (!user) { return res.status(401).json({ message: 'User not found' }); }
+      // Hasah password using bcrypt
+      password = await new Promise((resolve, reject) => {
+        bcrypt.hash(password, 10, (err, hash) => {
+          if (err) reject(err);
+          resolve(hash);
+        });
+      });
+      // change password
       const update = await user.update({ password });
       if (update) {
-        return res.status(201).json({ message: 'Password changed' });
+        return res.status(201).json({ success: 'Password changed', user: update });
       }
       return res.status(401).json({ message: 'Password reset failed' });
     } catch (err) { return res.json(err); }
   }
+
+  /**
+   * @param  {object} req decoded id from token
+   * @param  {newPassword} res send notification
+   * @description It sendes notification to users that today's menu is set
+   */
   async userNotification(req, res) {
     const { userId } = req.decoded;
     const notifications = await notification.findAll({
@@ -210,6 +215,13 @@ export default class userController {
     });
     return res.status(201).json(notifications);
   }
+
+  /**
+   * @param  {object} req payloads from token
+   * @param  {newPassword} res new token
+   * @description It takes payload from existing token and assign a new token to it
+   *              the token then have a fresh expire time
+   */
   async refreshToken(req, res) {
     const token = jwt.sign(
       {
@@ -228,6 +240,11 @@ export default class userController {
       token
     });
   }
+
+  /**
+   * @param  {object} req object containing user info. to update
+   * @param  {user} res updated user
+   */
   async userUpdate(req, res) {
     const { id } = req.decoded;
     const user = await User.findById(id);
@@ -241,6 +258,22 @@ export default class userController {
       image = req.files[0].url;
     }
     const update = await user.update({ name, image });
-    return res.status(201).json(update);
+    const token = jwt.sign(
+      {
+        username: update.username,
+        role: update.role,
+        id: update.id,
+        image: update.image
+      },
+      secret, { expiresIn: 86400 }
+    );
+    const userUpdate = {
+      username: update.username,
+      role: update.role,
+      id: update.id,
+      image: update.image,
+      token
+    };
+    return res.status(201).json(userUpdate);
   }
 }

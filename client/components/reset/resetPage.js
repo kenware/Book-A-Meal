@@ -11,12 +11,11 @@ class ResetPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
       password: '',
       submit: 'Submit'
     };
     this.onChange = this.onChange.bind(this);
-    this.reset = this.reset.bind(this);
+    this.newPassword = this.newPassword.bind(this);
   }
   /**
    * lifecycle hook called when component receives props
@@ -41,18 +40,16 @@ class ResetPage extends Component {
    * calls redux action
    * sends resetlink to user email
   */
-  reset(e) {
+  newPassword(e) {
     e.preventDefault();
-    this.props.actions.clearMessages();
-    const {
-      emailOrUsername,
-    } = this.state;
-
-    if (emailOrUsername) {
-      this.props.actions.reset(emailOrUsername);
+    const { password } = this.state;
+    const { token } = this.props.match.params;
+    if (password) {
+      this.props.actions.changePassword(password, token);
       this.setState({
         submit: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
       });
+      this.setState({ inputError: '' });
       return;
     }
     this.setState({ inputError: 'this field is required' });
@@ -66,8 +63,8 @@ class ResetPage extends Component {
           <div className="register-col" />
           <div className="register-wrapper">
             <h2 className="login-header">Enter Your New Password</h2>
-            <h3 className="login-header danger text-center">{this.props.errorMessage.resetError}</h3>
-            <h3 className="login-header p-color text-center">{this.props.successMessage.resetSuccess}</h3>
+            <h3 className="login-header danger text-center">{this.props.errorMessage.passwordResetError}</h3>
+            <h3 className="login-header p-color text-center">{this.props.successMessage.passwordSuccess}</h3>
             <form action="dashboard.html">
               <div className="form-field">
                 <label htmlFor="name">New Password <br />
@@ -76,7 +73,7 @@ class ResetPage extends Component {
                 <input onChange={this.onChange} type="password" id="password" name="password" placeholder="124gdt446776j7u" />
               </div>
               <div className="form-field">
-                <button type="submit" className="button lg" onClick={this.reset}>{this.state.submit}</button>
+                <button type="submit" className="button lg" onClick={this.newPassword}>{this.state.submit}</button>
               </div>
               <div className="form-field">
                 <label htmlFor="inputPassword3">
@@ -96,6 +93,7 @@ class ResetPage extends Component {
   }
 }
 ResetPage.propTypes = {
+  match: PropTypes.object.isRequired,
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
   actions: {

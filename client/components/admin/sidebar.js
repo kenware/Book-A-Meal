@@ -140,7 +140,7 @@ Sidebar.propTypes = {
   dash: PropTypes.string.isRequired,
   cPassword: PropTypes.string.isRequired,
   profile: PropTypes.string.isRequired,
-  notific: PropTypes.array.isRequired,
+  notific: PropTypes.string.isRequired,
   logout: PropTypes.string.isRequired,
   order: PropTypes.string.isRequired
 };

@@ -729,7 +729,9 @@ Edit {
       "getAllMeals": [MockFunction],
       "updateMeal": [MockFunction],
     },
-    "meals": Array [],
+    "meals": Object {
+      "rows": Array [],
+    },
     "menuActions": Object {},
     "mostOrder": Array [],
     "successMessage": Object {
@@ -741,7 +743,9 @@ Edit {
     "description": undefined,
     "file": Array [],
     "image": undefined,
-    "meals": Array [],
+    "meals": Object {
+      "rows": Array [],
+    },
     "name": undefined,
     "price": undefined,
     "updateMeal": "Update Meal",
@@ -782,7 +786,11 @@ Edit {
             "updateMeal": [MockFunction],
           }
         }
-        meals={Array []}
+        meals={
+          Object {
+            "rows": Array [],
+          }
+        }
         menuActions={Object {}}
         mostOrder={Array []}
         successMessage={
@@ -797,7 +805,9 @@ Edit {
         "description": undefined,
         "file": Array [],
         "image": undefined,
-        "meals": Array [],
+        "meals": Object {
+          "rows": Array [],
+        },
         "name": undefined,
         "price": undefined,
         "updateMeal": "Update Meal",
@@ -1187,7 +1197,9 @@ Edit {
       "getAllMeals": [MockFunction],
       "updateMeal": [MockFunction],
     },
-    "meals": Array [],
+    "meals": Object {
+      "rows": Array [],
+    },
     "menuActions": Object {},
     "mostOrder": Array [],
     "successMessage": Object {
@@ -1203,7 +1215,9 @@ Edit {
       },
     ],
     "image": "",
-    "meals": Array [],
+    "meals": Object {
+      "rows": Array [],
+    },
     "name": undefined,
     "price": undefined,
     "updateMeal": "Update Meal",
@@ -1244,7 +1258,11 @@ Edit {
             "updateMeal": [MockFunction],
           }
         }
-        meals={Array []}
+        meals={
+          Object {
+            "rows": Array [],
+          }
+        }
         menuActions={Object {}}
         mostOrder={Array []}
         successMessage={
@@ -1263,7 +1281,9 @@ Edit {
           },
         ],
         "image": "",
-        "meals": Array [],
+        "meals": Object {
+          "rows": Array [],
+        },
         "name": undefined,
         "price": undefined,
         "updateMeal": "Update Meal",
@@ -1806,10 +1826,10 @@ exports[`Test edit meal component should respond to lifeCycle methods 6`] = `
 exports[`Test edit meal component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],
@@ -1850,25 +1870,6 @@ Object {
   },
   "successMessage": Object {
     "createMealSuccess": "meal created",
-  },
-}
-`;
-
-exports[`Test edit meal component should respond to mapStateToProps methods 2`] = `
-Object {
-  "errorMessage": Object {
-    "createMealError": "",
-  },
-  "meals": Array [
-    Object {
-      "description": "",
-      "id": 0,
-      "name": "",
-      "price": 0,
-    },
-  ],
-  "successMessage": Object {
-    "createMealSuccess": "",
   },
 }
 `;

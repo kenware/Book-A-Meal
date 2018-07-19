@@ -5,12 +5,18 @@ exports[`Test Login Component renders correctly 1`] = `
   <Nav />
   <div
     className="register-container"
+    id="login-bg"
   >
     <div
       className="register-col"
     />
     <div
       className="register-wrapper"
+      style={
+        Object {
+          "height": "50vh",
+        }
+      }
     >
       <h2
         className="login-header"
@@ -117,12 +123,18 @@ exports[`Test Login Component should recieve error message props with wrong cred
   <Nav />
   <div
     className="register-container"
+    id="login-bg"
   >
     <div
       className="register-col"
     />
     <div
       className="register-wrapper"
+      style={
+        Object {
+          "height": "50vh",
+        }
+      }
     >
       <h2
         className="login-header"
@@ -229,12 +241,18 @@ exports[`Test Login Component should recieve error message props with wrong cred
   <Nav />
   <div
     className="register-container"
+    id="login-bg"
   >
     <div
       className="register-col"
     />
     <div
       className="register-wrapper"
+      style={
+        Object {
+          "height": "50vh",
+        }
+      }
     >
       <h2
         className="login-header"
@@ -343,12 +361,18 @@ exports[`Test Login Component should respond to change event and change the stat
   <Nav />
   <div
     className="register-container"
+    id="login-bg"
   >
     <div
       className="register-col"
     />
     <div
       className="register-wrapper"
+      style={
+        Object {
+          "height": "50vh",
+        }
+      }
     >
       <h2
         className="login-header"
@@ -459,10 +483,10 @@ exports[`Test Login Component should respond to change event and change the stat
 exports[`Test Login Component should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],

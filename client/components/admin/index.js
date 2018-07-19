@@ -47,10 +47,9 @@ export class Admin extends Component {
    * refreshes token if it is not expired or logout and redirect to home if expired
    */
   componentDidMount() {
-    this.props.mealActions.getAllMeals();
     this.props.mealActions.loadMostOrderedMeal();
     this.props.orderActions.getAllOrders();
-    this.props.actions.refreshToken();
+    this.props.actions.refreshToken('admin');
   }
   // logout user
   logOut() {
@@ -134,7 +133,7 @@ export class Admin extends Component {
               </div>
               <div>
                 <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
-                <img src="image/eze.jpg" className="user-img rounded-circle" alt="profile" />
+                <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="profile" />
               </div>
             </header>
             <Route exact path="/admin" render={props => <Order mostOrder={this.props.mostOrder} allOrder={this.props.allOrder} {...props} />} />

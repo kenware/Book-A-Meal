@@ -144,9 +144,7 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -171,6 +169,46 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -326,6 +364,46 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -473,9 +551,7 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -500,6 +576,46 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -647,9 +763,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -674,6 +788,46 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -821,9 +975,7 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -848,6 +1000,46 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1003,6 +1195,46 @@ exports[`Test menu component of dashboard should respond to a click event and di
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1158,6 +1390,46 @@ exports[`Test menu component of dashboard should respond to a click event and di
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1313,6 +1585,46 @@ exports[`Test menu component of dashboard should respond to a click event and di
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1468,6 +1780,46 @@ exports[`Test menu component of dashboard should respond to a click event and di
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1633,6 +1985,46 @@ exports[`Test menu component of dashboard should respond to a click event and di
     menu={Array []}
   />
   <video />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1787,9 +2179,7 @@ exports[`Test menu component of dashboard should respond to a click event of ord
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -1814,6 +2204,46 @@ exports[`Test menu component of dashboard should respond to a click event of ord
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -1968,9 +2398,7 @@ exports[`Test menu component of dashboard should respond to a click event order 
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -1995,6 +2423,46 @@ exports[`Test menu component of dashboard should respond to a click event order 
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -2142,9 +2610,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2169,6 +2635,46 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -2316,9 +2822,7 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2343,6 +2847,46 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -2490,9 +3034,7 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2517,16 +3059,56 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Test menu component of dashboard should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
+    "changePassword": [Function],
     "clearMessages": [Function],
     "getNotifications": [Function],
     "getUser": [Function],
-    "loadAllMeals": [Function],
     "loadErrorMessage": [Function],
     "loadMostOrdered": [Function],
     "loadMostOrderedMeal": [Function],
@@ -2543,7 +3125,6 @@ Object {
   "menuActions": Object {
     "getMenu": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
     "loadSuccessMessage": [Function],
     "loadTodayMenu": [Function],
     "setMenu": [Function],
@@ -2740,9 +3321,7 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2767,6 +3346,46 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -2914,9 +3533,7 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -2941,6 +3558,46 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -3088,9 +3745,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3115,6 +3770,46 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -3262,9 +3957,7 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
   <h3
     className="danger text-center"
   />
-  <h3
-    className="danger text-center"
-  />
+  <spsan />
   <todayMenu
     confirmOrder={[Function]}
     menu={
@@ -3289,5 +3982,45 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
     }
   />
   <span />
+  <div
+    className="pagination"
+  >
+    <div
+      className="prev p-color"
+    >
+         
+      <button
+        onClick={[Function]}
+      >
+         
+        <em
+          className="fa fa-angle-left"
+        />
+         PREV 
+      </button>
+    </div>
+    <div
+      className="current p-color"
+    >
+      <button>
+        1
+         
+      </button>
+    </div>
+    <div
+      className="next p-color"
+    >
+      <button
+        onClick={[Function]}
+      >
+        NEXT 
+        <em
+          className="fa fa-angle-right"
+        />
+      </button>
+        
+       
+    </div>
+  </div>
 </div>
 `;
