@@ -6,7 +6,7 @@
   "scripts": {
     "start-d": "nodemon ./app.js --exec babel-node",
     "start": "babel-node app.js",
-    "test": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha test/**.js --recursive",
+    "test": "NODE_ENV=test babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha test/**.js --recursive",
     "start-dev": "npm-run-all --parallel build-development start-d",
     "build-production": "webpack -p",
     "build-development": "webpack -w",
@@ -129,7 +129,6 @@
     "node": "6.11.3"
   },
   "jest": {
-    "coverageCollector": "jest-babel-istanbul",
     "setupFiles": [
       "./client/test/jestsetup.js"
     ],

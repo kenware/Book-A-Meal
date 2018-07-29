@@ -61,31 +61,56 @@ export default class menuController {
 
   /**
  * @method getMenu
+ * @param req
+ * @param res response containing today's menu
  * @returns { array } returns today's menu
  * @description gets today's menu
  */
   async getMenu(req, res) {
     let { date } = req.params;
     let { limit, offset } = req.query;
-    limit = parseInt(limit, 10) || 0;
+    limit = parseInt(limit, 10) || 6;
     offset = parseInt(offset, 10) || 0;
     if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
     const menu = await Menu.findAll({
       where: { date },
+      include: [
+        {
+          model: model.User,
+          attributes: ['id', 'name', 'username', 'image']
+        }
+      ],
       limit,
-      offset,
+      offset
+    });
+    menu.map((oneMenu) => {
+      oneMenu.dataValues.Meals = `${req.headers.host}/api/v1/menuMeals/${oneMenu.id}`;
+      return oneMenu;
+    });
+    if (!menu || menu.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
+    return res.status(200).json(menu);
+  }
+
+  async getMenuMeals(req, res) {
+    const { menuId } = req.params;
+    let { limit, offset } = req.query;
+    limit = parseInt(limit, 10) || 4;
+    offset = parseInt(offset, 10) || 0;
+    const id = parseInt(menuId, 10);
+    const date = shortcode.parse('{YYYY-MM-DD}', new Date());
+    const menu = await Menu.findAll({
+      where: { date, id },
       include: [
         {
           model: model.Meal,
           attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
-        },
-        {
-          model: model.User,
-          attributes: ['id', 'name', 'username', 'image']
-        },
-      ]
+        }
+      ],
+      limit,
+      offset,
+      subQuery: false,
     });
     if (!menu || menu.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
-    return res.status(200).json(menu);
+    return res.status(200).json(menu[0].Meals);
   }
 }

@@ -28,6 +28,7 @@ export class Edit extends Component {
     this.addMeal = this.addMeal.bind(this);
     this.onDrop = this.onDrop.bind(this);
   }
+
   /**
    * lifecycle hook called when component is mounted to DOM
    *
@@ -40,6 +41,7 @@ export class Edit extends Component {
       this.props.mealActions.getAllMeal();
     }
   }
+
   /**
    * lifecycle hook called when component receives props
    *
@@ -58,6 +60,7 @@ export class Edit extends Component {
     }
     return { meals: state.meals };
   }
+
   /**
    * remove error props in redux store if component unmount
    */
@@ -67,17 +70,20 @@ export class Edit extends Component {
   /**
    * @param  {} e set state on input onchange event
   */
+
   onChange(e) {
     const { state } = this;
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
+
   /**
    * @param  {} file sets image to state using drop box
   */
   onDrop(file) {
     this.setState({ file, image: '' });
   }
+
   /**
    * calls a redux function
    * adds a meal using form-data
@@ -103,6 +109,7 @@ export class Edit extends Component {
     });
     this.props.mealActions.updateMeal(this.props.meals.id, payload);
   }
+
   render() {
     const meal = this.props.meals;
     return (
@@ -169,7 +176,7 @@ export class Edit extends Component {
   }
 }
 
-export function mapStateToProps(state, ownProps) {
+export const mapStateToProps = (state, ownProps) => {
   let meals;
   if (state.meals.rows.length > 0) {
     meals = state.meals.rows.find(meal => meal.id === parseInt(ownProps.match.params.mealId));
@@ -183,7 +190,7 @@ export function mapStateToProps(state, ownProps) {
     successMessage: state.successMessage,
     meals
   };
-}
+};
 
 Edit.propTypes = {
   meals: PropTypes.object.isRequired,
@@ -193,10 +200,8 @@ Edit.propTypes = {
   actions: PropTypes.object.isRequired,
 };
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    mealActions: bindActionCreators(mealActions, dispatch),
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+export const mapDispatchToProps = dispatch => ({
+  mealActions: bindActionCreators(mealActions, dispatch),
+  actions: bindActionCreators(actions, dispatch)
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Edit);

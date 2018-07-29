@@ -1,77 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Timeline component of dashboard renders correctly 1`] = `
+exports[`Test Today menu component of menu renders correctly 1`] = `
 <div>
   <div
     key="1"
   >
-    <h3
-      className="p-color text-center"
+    <button
+      className="accordion"
+      onClick={[Function]}
     >
-      Menu by Caterer 
-      <Link
-        replace={false}
-        to="/profile/undefined"
+      <span
+        style={
+          Object {
+            "float": "right",
+            "marginTop": "1.5rem",
+          }
+        }
       >
-        ken
-      </Link>
+        <em
+          className="fa fa-plus p-color"
+        />
+      </span>
       <img
         alt="profile"
         className="user-img rounded-circle"
+        src="image/l.png"
       />
-    </h3>
+      <br />
+    </button>
     <div
-      className="contents"
-      key="1"
+      className="showA meal-menu-row spreadundefined"
     >
       <div
-        className="content-wrap"
+        className="meal-menu"
+        key="1"
       >
         <div
-          className="col-meal l-r-pad-text"
+          className="menu-card"
         >
-          <a
-            href="image/l.png"
+          <div
+            className="menu-img-wrap"
           >
-            <img
-              alt="menu meal"
-              className="rounded-circle img-height"
+            <div
+              className="menu-overlay"
             />
-          </a>
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h4
-            className="p-color"
+            <img
+              alt="Avatar"
+              className="menu-card-img"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text"
           >
-             Name
-          </h4>
-          jollof
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h4
-            className="p-color"
-          >
-            Price(#)
-          </h4>
-          100
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h5
-            className="p-color"
-          >
-            <Link
-              replace={false}
-              to="/detail"
+            <h4
+              className="p-color"
             >
-              View
-            </Link>
-             
+              <b>
+                jollof
+              </b>
+            </h4>
             <button
               className="order1"
               onClick={[Function]}
@@ -81,7 +68,7 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
               />
                 Order
             </button>
-          </h5>
+          </div>
         </div>
       </div>
     </div>
@@ -89,78 +76,65 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
 </div>
 `;
 
-exports[`Test Timeline component of dashboard should have three modal-order-content class 1`] = `
+exports[`Test Today menu component of menu should have three modal-order-content class 1`] = `
 <div>
   <div
     key="1"
   >
-    <h3
-      className="p-color text-center"
+    <button
+      className="accordion"
+      onClick={[Function]}
     >
-      Menu by Caterer 
-      <Link
-        replace={false}
-        to="/profile/undefined"
+      <span
+        style={
+          Object {
+            "float": "right",
+            "marginTop": "1.5rem",
+          }
+        }
       >
-        ken
-      </Link>
+        <em
+          className="fa fa-plus p-color"
+        />
+      </span>
       <img
         alt="profile"
         className="user-img rounded-circle"
+        src="image/l.png"
       />
-    </h3>
+      <br />
+    </button>
     <div
-      className="contents"
-      key="1"
+      className="showA meal-menu-row spreadundefined"
     >
       <div
-        className="content-wrap"
+        className="meal-menu"
+        key="1"
       >
         <div
-          className="col-meal l-r-pad-text"
+          className="menu-card"
         >
-          <a
-            href="image/l.png"
+          <div
+            className="menu-img-wrap"
           >
-            <img
-              alt="menu meal"
-              className="rounded-circle img-height"
+            <div
+              className="menu-overlay"
             />
-          </a>
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h4
-            className="p-color"
+            <img
+              alt="Avatar"
+              className="menu-card-img"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text"
           >
-             Name
-          </h4>
-          jollof
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h4
-            className="p-color"
-          >
-            Price(#)
-          </h4>
-          100
-        </div>
-        <div
-          className="col-meal"
-        >
-          <h5
-            className="p-color"
-          >
-            <Link
-              replace={false}
-              to="/detail"
+            <h4
+              className="p-color"
             >
-              View
-            </Link>
-             
+              <b>
+                jollof
+              </b>
+            </h4>
             <button
               className="order1"
               onClick={[Function]}
@@ -170,7 +144,7 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
               />
                 Order
             </button>
-          </h5>
+          </div>
         </div>
       </div>
     </div>

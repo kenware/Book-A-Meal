@@ -17,6 +17,16 @@ export const props = {
       ]
     }
   ],
+  menuMeals: [
+    {
+      id: 1,
+      price: 100,
+      desctription: 'good',
+      name: 'jollof'
+    }
+  ],
+  state: { accordion: { } },
+  showMenu: jest.fn(),
   confirmOrder: jest.fn(),
   user: {
     username: 'ken',
@@ -118,6 +128,7 @@ export const emptyProps = {
       }
     }
   ],
+  menuMeals: [],
   myOrder: [
     {
       id: 1,

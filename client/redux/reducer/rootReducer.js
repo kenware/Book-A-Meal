@@ -9,6 +9,7 @@ import myOrder from './myOrderReducer';
 import allOrder from './allOrderReducer';
 import notifics from './notificsReducer';
 import user from './userReducer';
+import menuMeals from './menuMealsReducer';
 
 const rootReducer = combineReducers({
   // short hand property names
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   myOrder,
   allOrder,
   notifics,
-  user
+  user,
+  menuMeals
 });
 export default rootReducer;

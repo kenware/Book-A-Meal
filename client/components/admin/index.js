@@ -129,10 +129,10 @@ export class Admin extends Component {
           <main className={`main ${this.state.main}`} id="main">
             <header className="header">
               <div className="l-r-pad-text">
-                <h4 className="white-color">ADMIN</h4>
+                <h4 className="p-color">ADMIN</h4>
               </div>
               <div>
-                <h4 className="white-color">{window.localStorage.getItem('username')}</h4>
+                <h4 className="p-color">{window.localStorage.getItem('username')}</h4>
                 <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="profile" />
               </div>
             </header>
@@ -151,25 +151,24 @@ export class Admin extends Component {
     );
   }
 }
+
 Admin.propTypes = {
   mostOrder: PropTypes.array.isRequired,
-  allOrder: PropTypes.array.isRequired,
+  allOrder: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired,
   orderActions: PropTypes.object.isRequired,
 };
-export function mapStateToProps(state) {
-  return {
-    errorMessage: state.errorMessage,
-    mostOrder: state.mostOrder,
-    allOrder: state.allOrder
-  };
-}
-export function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch),
-    mealActions: bindActionCreators(mealActions, dispatch),
-    orderActions: bindActionCreators(orderActions, dispatch)
-  };
-}
+
+export const mapStateToProps = state => ({
+  errorMessage: state.errorMessage,
+  mostOrder: state.mostOrder,
+  allOrder: state.allOrder
+});
+
+export const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+  mealActions: bindActionCreators(mealActions, dispatch),
+  orderActions: bindActionCreators(orderActions, dispatch)
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);

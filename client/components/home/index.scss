@@ -75,6 +75,7 @@ button:hover{
     }
   }
   .all-meal-step{
+    margin: 0 2rem 0 2rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -110,6 +111,7 @@ button:hover{
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    margin: 0 2rem 0 2rem;
     .meal-card-img{
       width:100%;
       height: 270px;
@@ -179,7 +181,7 @@ button:hover{
  -o-background-size: cover;
  background-size: cover;
  .parallex-menu {
-  margin-top: 2rem;
+  margin: 2rem 0 1rem 0;
   margin-left: 1rem;
  }
  .parallex-card{
@@ -286,12 +288,14 @@ button:hover{
     text-align: center;
   }
     .testimonial-photo{
-      margin: -4rem 0px 0px 40%;
-      display: inline-block;
-      width: 120px;
-      height: 120px;
-      margin-bottom: 1.6rem;
-      overflow: hidden;
+    margin: -13% auto 0px;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
       
     }
     .text-pad {

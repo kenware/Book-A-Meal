@@ -720,7 +720,9 @@ Edit {
         ],
       },
     },
-    "allOrder": Array [],
+    "allOrder": Object {
+      "rows": Array [],
+    },
     "errorMessage": Object {
       "createMealError": "",
     },
@@ -773,7 +775,11 @@ Edit {
             },
           }
         }
-        allOrder={Array []}
+        allOrder={
+          Object {
+            "rows": Array [],
+          }
+        }
         errorMessage={
           Object {
             "createMealError": "",
@@ -1188,7 +1194,9 @@ Edit {
         ],
       },
     },
-    "allOrder": Array [],
+    "allOrder": Object {
+      "rows": Array [],
+    },
     "errorMessage": Object {
       "createMealError": "",
     },
@@ -1245,7 +1253,11 @@ Edit {
             },
           }
         }
-        allOrder={Array []}
+        allOrder={
+          Object {
+            "rows": Array [],
+          }
+        }
         errorMessage={
           Object {
             "createMealError": "",

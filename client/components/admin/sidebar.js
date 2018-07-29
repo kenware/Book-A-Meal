@@ -129,6 +129,7 @@ const Sidebar = ({
     </nav>
   </div>
 );
+
 Sidebar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   handleClose: PropTypes.func.isRequired,
@@ -144,4 +145,5 @@ Sidebar.propTypes = {
   logout: PropTypes.string.isRequired,
   order: PropTypes.string.isRequired
 };
+
 export default Sidebar;

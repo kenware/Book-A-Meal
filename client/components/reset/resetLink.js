@@ -9,7 +9,7 @@ import Footer from '../footer/index';
 import * as actions from '../../redux/Action/action';
 
 
-class ResetLink extends Component {
+export class ResetLink extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -100,19 +100,13 @@ class ResetLink extends Component {
 ResetLink.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
-  actions: {
-    clearMessages: PropTypes.func.isRequired,
-    resetLink: PropTypes.func.isRequired
-  }.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state) {
-  return {
-    errorMessage: state.errorMessage,
-    successMessage: state.successMessage,
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
-}
+export const mapStateToProps = state => ({
+  errorMessage: state.errorMessage,
+  successMessage: state.successMessage,
+});
+
+export const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(ResetLink);

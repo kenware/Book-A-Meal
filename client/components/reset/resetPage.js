@@ -7,7 +7,7 @@ import Header from '../header/index';
 import Footer from '../footer/index';
 import * as actions from '../../redux/Action/action';
 
-class ResetPage extends Component {
+export class ResetPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,19 +96,13 @@ ResetPage.propTypes = {
   match: PropTypes.object.isRequired,
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
-  actions: {
-    clearMessages: PropTypes.func.isRequired,
-    resetLink: PropTypes.func.isRequired
-  }.isRequired,
+  actions: PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state) {
-  return {
-    errorMessage: state.errorMessage,
-    successMessage: state.successMessage,
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
-}
+export const mapStateToProps = state => ({
+  errorMessage: state.errorMessage,
+  successMessage: state.successMessage,
+});
+
+export const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
 export default connect(mapStateToProps, mapDispatchToProps)(ResetPage);

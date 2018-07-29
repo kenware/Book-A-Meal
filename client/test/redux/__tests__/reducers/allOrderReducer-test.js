@@ -1,14 +1,13 @@
-import allOrder from '../../../../redux/reducer/rootReducer';
+import reducer from '../../../../redux/reducer/rootReducer';
 import * as types from '../../../../redux/Action/actionType';
 
-const reducer = allOrder;
 describe('allOrderReducer reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer().allOrder(undefined, {})).toEqual([]);
+    expect(reducer(undefined, {}).allOrder).toEqual({ rows: [] });
   });
 
-  it('should handle ADD_TODO', () => {
-    expect(reducer().allOrder([], {
+  it('should handle allOrderReducer', () => {
+    expect(reducer({}, {
       type: types.LOAD_ALL_ORDER,
       allOrder: [{
         quantity: 3,
@@ -19,7 +18,7 @@ describe('allOrderReducer reducer', () => {
           description: 'good'
         }
       }]
-    })).toEqual([
+    }).allOrder).toEqual([
       {
         quantity: 3,
         totalPrice: 4556,

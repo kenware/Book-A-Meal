@@ -3,6 +3,11 @@ import model from '../models/index';
 
 const { Meal, User, Order } = model;
 
+/**
+ * @class mealController
+ * @description create a meal, update a meal, delete a meal
+ *  get all meals
+ */
 export default class mealController {
   /**
  * @method getMeals
@@ -61,30 +66,10 @@ export default class mealController {
  * @description Add name, price, description and image of the meal to db
  */
   async addMeal(req, res) {
-    let { description, name } = req.body;
+    const { description, name } = req.body;
     const { price } = req.body;
     const { id } = req.decoded;
     const userId = id;
-    // Input validation
-    if (!price) { return res.status(401).json({ message: 'Price field is required' }); }
-    if (!name) { return res.status(401).json({ message: 'Name field is required' }); }
-    if (!description) { return res.status(401).json({ message: 'description field is required' }); }
-
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
-      return res.status(401).json({ message: 'Please provide a valid meal price' });
-    }
-    if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid meal name' });
-    }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid meal name' });
-    }
-    // trim empty spaces at the beginning and the end of the string
-    name = name.trim();
-    description = description.trim();
-    // remove extra spaces in a string
-    name = name.replace(/  +/g, ' ');
-    description = description.replace(/  +/g, ' ');
     // chech if meal is already exist
     const isExist = await Meal.findOne({ where: { name, userId } });
     if (isExist) { return res.status(422).json({ message: 'Meal already exist' }); }
@@ -115,27 +100,8 @@ export default class mealController {
  */
   async updateMeal(req, res) {
     const { mealId } = req.params;
-    let { name, description } = req.body;
+    const { name, description } = req.body;
     const { price } = req.body;
-
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
-      return res.status(401).json({ message: 'Please provide a valid meal price' });
-    }
-    if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid meal name' });
-    }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
-      return res.status(400).json({ message: 'Please provide a valid description' });
-    }
-    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
-      return res.status(401).json({ message: 'Provide a valid meal id' });
-    }
-    // remove extra spaces in a string
-    name = name.trim();
-    description = description.trim();
-    // remove extra spaces in a string
-    name = name.replace(/  +/g, ' ');
-    description = description.replace(/  +/g, ' ');
     // get the meal to update
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }

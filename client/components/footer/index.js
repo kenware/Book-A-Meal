@@ -29,21 +29,6 @@ const footer = () => (
           your order now.We are available 24/7
         </p>
       </div>
-      <div className="footer-col">
-        <h3 className="">
-          Subscribe
-        </h3>
-        <p>
-           Get Monthly Updates on our Meal and Recipes and
-           also free resources.
-        </p>
-        <div className="form-row">
-          <input type="email" placeholder="Email" style={{ backgroundColor: 'white' }} />
-        </div>
-        <div className="form-row">
-          <button className="button" type="submit">Subscribe</button>
-        </div>
-      </div>
       <div className="footer-col social">
         <h3 className="">
            Connect With Us
@@ -51,10 +36,9 @@ const footer = () => (
         <p>
             Get in touch with us on various social media
         </p>
-        <span className="fa fa-twitter" />
-        <span className="fa fa-facebook" />
-        <span className="fa fa-likedIn" />
-        <span className="fa fa-twitter" />
+        <a href="https://twitter.com"><span className="fa fa-twitter" /></a>&nbsp;&nbsp;
+        <a href="https://facebook.com"><span className="fa fa-facebook" /></a>&nbsp;&nbsp;
+        <a href="https://linkedin.com"><span className="fa fa-likedIn" /></a>
       </div>
     </footer>
     <div className="footer-row">

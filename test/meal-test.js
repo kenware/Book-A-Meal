@@ -36,30 +36,6 @@ describe('/POST api/v1/auth/signup', () => {
       });
   });
   before((done) => {
-    Menu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Order.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    MealMenu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    notification.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
     User.destroy({
       where: {}
     })

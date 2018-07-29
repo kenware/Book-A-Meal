@@ -1,11 +1,12 @@
 export default {
   meals: { rows: [] },
   mostOrder: [],
-  user: [],
+  user: {},
   errorMessage: {},
   successMessage: {},
   menu: [],
   myOrder: [],
-  allOrder: [],
-  notifics: []
+  allOrder: { rows: [] },
+  notifics: [],
+  menuMeals: []
 };

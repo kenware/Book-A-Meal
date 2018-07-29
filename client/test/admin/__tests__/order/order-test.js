@@ -35,17 +35,17 @@ describe('Test Component of Order component', () => {
     expect(tree.find('tr')).toHaveLength(2);
   });
 
-  it('should have only 11 td on the table', () => {
+  it('should have only 10 td on the table', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('td')).toHaveLength(11);
+    expect(tree.find('td')).toHaveLength(10);
   });
 
-  it('should have only 5 th on the table', () => {
+  it('should have only 4 th on the table', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('th')).toHaveLength(5);
+    expect(tree.find('th')).toHaveLength(4);
   });
 
-  it('should display no meal meals with empty meal props', () => {
+  it('should display no meals with empty meal props', () => {
     const tree = shallow(<Orders {...emptyProps} />);
     expect(tree.find('.order-contents')).toHaveLength(0);
   });

@@ -47,21 +47,19 @@ const Timeline = ({ notifics }) => (
           <h5 className="timeline-title l-margin m-text">Notifications</h5>
         </div>
         <div className="timeline-body">
-          <p>
-            <ul style={{ overflow: 'scroll', height: '300px' }}>
-              {notifics.map(notific =>
-                (
-                  <li style={{ marginTop: '1rem' }} key={notific.id}>
-                    <div className="p-color">{notific.message}</div>
-                    <div>
-                      {monthNames[new Date(notific.createdAt).getMonth()].substr(0, 3)}&nbsp;
-                      {new Date(notific.createdAt).getDate()} &nbsp;
-                      {new Date(notific.createdAt).getFullYear()}
-                    </div>
-                  </li>
-                ))}
-            </ul>
-          </p>
+          <ul style={{ overflow: 'scroll', height: '300px' }}>
+            {notifics.map(notific =>
+              (
+                <li style={{ marginTop: '1rem' }} key={notific.id}>
+                  <div className="p-color">{notific.message}</div>
+                  <div>
+                    {monthNames[new Date(notific.createdAt).getMonth()].substr(0, 3)}&nbsp;
+                    {new Date(notific.createdAt).getDate()} &nbsp;
+                    {new Date(notific.createdAt).getFullYear()}
+                  </div>
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
     </li>
@@ -72,14 +70,12 @@ const Timeline = ({ notifics }) => (
           <h5 className="timeline-title m-text l-margin">Recently Ordered Meal</h5>
         </div>
         <div className="timeline-body">
-          <p>
-            <ul >
-              <li />
-              <li>Italian Recipes</li>
-              <li>Ewedu Meal</li>
-              <li>Abacha</li>
-            </ul>
-          </p>
+          <ul >
+            <li />
+            <li>Italian Recipes</li>
+            <li>Ewedu Meal</li>
+            <li>Abacha</li>
+          </ul>
         </div>
       </div>
     </li>

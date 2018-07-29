@@ -82,6 +82,7 @@ export class Add extends Component {
     });
     this.props.mealActions.createMeal(payload);
   }
+
   render() {
     return (
       <div>
@@ -143,18 +144,21 @@ export class Add extends Component {
     );
   }
 }
+
 Add.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   successMessage: PropTypes.object.isRequired,
   mealActions: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
+
 export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage
   };
 }
+
 export function mapDispatchToProps(dispatch) {
   return {
     mealActions: bindActionCreators(mealActions, dispatch),

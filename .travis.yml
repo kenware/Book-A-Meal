@@ -11,7 +11,7 @@ services:
   - postgresql
 
 before_script:
-  - psql -c "CREATE DATABASE bookmeals;" -U postgres
+  - psql -c "CREATE DATABASE bookmeal_test;" -U postgres
   - chmod 0755 ./node_modules/.bin/mocha
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter

@@ -350,22 +350,24 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
     }
   }
   allOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "rows": Array [
+        Object {
+          "Meal": Object {
+            "descrption": "Very delicious",
+            "id": 1,
+            "name": "rice",
+            "price": "200",
+          },
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "quantity": 3,
+          "status": "pending",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   errorMessage={
     Object {

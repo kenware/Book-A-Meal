@@ -3,11 +3,11 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import history from './history';
 import HomeComp from './components/home/index';
 import RegisterComp from './components/register/index';
-import ResetLink from './components/reset/resetLink';
-import LoginComp from './components/login/index';
-import Dashboard from './components/dashboard/index';
+import ResetLinkComponent from './components/reset/resetLink';
+import LoginComponent from './components/login/index';
+import DashboardIndex from './components/dashboard/index';
 import AdminComp from './components/admin/index';
-import ResetPage from './components/reset/resetPage';
+import ResetPageComponent from './components/reset/resetPage';
 /**
  * React route using react v4
  */
@@ -18,11 +18,11 @@ const Routes = () => (
         <Switch>
           <Route exact path="/meals" component={HomeComp} />
           <Route exact path="/register" component={RegisterComp} />
-          <Route exact path="/resetLink" component={ResetLink} />
-          <Route exact path="/login" component={LoginComp} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route exact path="/resetLink" component={ResetLinkComponent} />
+          <Route exact path="/login" component={LoginComponent} />
+          <Route path="/dashboard" component={DashboardIndex} />
           <Route path="/admin" component={AdminComp} />
-          <Route path="/passwordreset/:token" component={ResetPage} />
+          <Route path="/passwordreset/:token" component={ResetPageComponent} />
           <Redirect to="/meals" />
         </Switch>
       </main>
