@@ -94,7 +94,7 @@ export default class menuController {
   async getMenuMeals(req, res) {
     const { menuId } = req.params;
     let { limit, offset } = req.query;
-    limit = parseInt(limit, 10) || 4;
+    limit = parseInt(limit, 10) || 5;
     offset = parseInt(offset, 10) || 0;
     const id = parseInt(menuId, 10);
     const date = shortcode.parse('{YYYY-MM-DD}', new Date());

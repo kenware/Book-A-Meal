@@ -19,7 +19,7 @@ export default class mealController {
  */
   async getMeals(req, res) {
     let { limit, offset } = req.query;
-    limit = parseInt(limit, 10) || 0;
+    limit = parseInt(limit, 10) || 6;
     offset = parseInt(offset, 10) || 0;
     const { id } = req.decoded;
     const userId = id;
