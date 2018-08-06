@@ -6,7 +6,6 @@
   width: 100%;
   overflow: hidden;
   background-color: rgba(184, 181, 7, 3);
- 
 }
 
 .nav .a:first-child {float: left;}
@@ -21,12 +20,9 @@
   margin-top:15px;
   padding-right: 2rem;
 }
-.active {
-  font-size: 25px;
-}
+
 .nav .a:hover {
-  background-color: #ddd;
-  color: lightseagreen;
+  color: black;
 }
 .nav .icon {
   display: none;

@@ -11,25 +11,23 @@ export const loadTodayMenu = menu => ({ type: types.LOAD_TODAY_MENU, menu });
 export const loadMyOrder = myOrder => ({ type: types.LOAD_MY_ORDER, myOrder });
 export const loadAllOrder = allOrder => ({ type: types.LOAD_ALL_ORDER, allOrder });
 
-export const orderMeal = (mealId, menuId, address, quantity) => dispatch => window.fetch('/api/v1/orders', {
+export const orderMeal = order => dispatch => window.fetch('/api/v1/orders', {
   method: 'POST',
   headers: {
     authorization: auth.getToken(),
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({
-    mealId, menuId, address, quantity
-  })
+  body: JSON.stringify(order)
 })
   .then(res => res.json())
   .then((response) => {
-    if (!response.status) {
+    if (response.message) {
       return dispatch(loadErrorMessage({ orderError: response.message }));
     }
     return dispatch(loadSuccessMessage({ orderSuccess: 'Order created' }));
-    // return history.push('/dashboard');
   });
-export const getMyOrder = () => dispatch => window.fetch('/api/v1/user/orders', {
+
+export const getMyOrder = (limit, offset) => dispatch => window.fetch(`/api/v1/user/orders?limit=${limit}&offset=${offset}`, {
   headers: {
     authorization: auth.getToken()
   }
@@ -37,14 +35,15 @@ export const getMyOrder = () => dispatch => window.fetch('/api/v1/user/orders', 
   .then(res => res.json())
   .then((myOrder) => {
     if (myOrder.message) {
-      dispatch(loadErrorMessage({
+      dispatch(loadMyOrder({ orders: [] }));
+      return dispatch(loadErrorMessage({
         myOrderError: 'OOps You Have Not Ordered A Meal'
       }));
-      return dispatch(loadMyOrder([]));
     }
     dispatch(loadMyOrder(myOrder));
   });
-export const getAllOrders = () => dispatch => window.fetch('/api/v1/orders', {
+
+export const getAllOrders = (limit, offset) => dispatch => window.fetch(`/api/v1/orders?limit=${limit}&offset=${offset}`, {
   headers: {
     authorization: auth.getToken()
   }
@@ -58,14 +57,15 @@ export const getAllOrders = () => dispatch => window.fetch('/api/v1/orders', {
     }
     dispatch(loadAllOrder(allOrder));
   });
-export const updateOrder = (id, quantity, address, status) => dispatch => window.fetch(`/api/v1/orders/${id}`, {
+
+export const updateOrder = (id, meals, address) => dispatch => window.fetch(`/api/v1/orders/${id}`, {
   method: 'PUT',
   headers: {
     authorization: auth.getToken(),
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    id, status, address, quantity
+    address, meals
   })
 })
   .then(res => res.json())
@@ -76,6 +76,7 @@ export const updateOrder = (id, quantity, address, status) => dispatch => window
     dispatch(loadSuccessMessage({ updateSuccess: 'Order created' }));
     dispatch(getMyOrder());
   });
+
 export const confirmStatus = id => dispatch => window.fetch(`/api/v1/orderStatus/${id}`, {
   method: 'PUT',
   headers: {

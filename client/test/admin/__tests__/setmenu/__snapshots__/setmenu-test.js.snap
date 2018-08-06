@@ -1,59 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Component of SETMENU component renders correctly 1`] = `
+exports[`Test Component of SETMENU admin renders correctly 1`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -77,6 +27,9 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
     />
      5pm
   </h5>
+  <h4
+    className="danger text-center"
+  />
   <h4
     className="danger text-center"
   />
@@ -129,11 +82,21 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -141,11 +104,11 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -155,20 +118,16 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -178,117 +137,61 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
 
-exports[`Test Component of SETMENU component should call addMenu method onclick event 1`] = `
+exports[`Test Component of SETMENU admin should call addMenu method onclick event 1`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -312,6 +215,9 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
     />
      5pm
   </h5>
+  <h4
+    className="danger text-center"
+  />
   <h4
     className="danger text-center"
   />
@@ -366,11 +272,21 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -378,11 +294,11 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -392,20 +308,17 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
           200
         </td>
         <td>
-          <button
+          <input
+            checked={true}
+            className="checkbox"
             id="rice"
             onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -415,117 +328,61 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
 
-exports[`Test Component of SETMENU component should cancel addMenu modal cancelAdd method onclick event 1`] = `
+exports[`Test Component of SETMENU admin should respond to a click event by dispalying a modal when caterer want to set menu by selecting a meal 1`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -552,478 +409,6 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
   <h4
     className="danger text-center"
   />
-  <h4
-    className="y-color text-center"
-  />
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="name"
-    >
-      Title 
-      <br />
-      <span
-        className="text-center danger"
-      >
-        Title is required
-      </span>
-    </label>
-    <input
-      id="title"
-      name="title"
-      onChange={[Function]}
-      placeholder="Keny"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="password"
-    >
-      Expire Time 
-      <br />
-      <span
-        className="text-center danger"
-      />
-    </label>
-    <input
-      id="expire"
-      name="orderBefore"
-      onChange={[Function]}
-      required={true}
-      type="number"
-    />
-  </div>
-  <h4
-    className="p-color text-center"
-  >
-    Set menu from the meal options
-  </h4>
-  <table>
-    <tbody>
-      <tr>
-        <th>
-          Name
-        </th>
-        <th>
-          Price ($)
-        </th>
-        <th>
-          Add to Menu
-        </th>
-      </tr>
-      <tr
-        className="tr"
-        key="1"
-      >
-        <td>
-          rice
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-      <tr
-        className="tr"
-        key="2"
-      >
-        <td>
-          beans
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test Component of SETMENU component should respond to a click event by dispalying a modal when caterer want to set menu by selecting a meal 1`] = `
-<div
-  className="order-wrapper order-container"
->
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
-  <h2
-    style={
-      Object {
-        "marginTop": "2rem",
-      }
-    }
-  >
-    SET MENU FOR THE DAY
-  </h2>
-  <h4
-    className="p-color text-center"
-  >
-    Enter Menu Title and the Expire Time(24 Hours Format) in Hours
-  </h4>
-  <h5
-    className="p-color text-center"
-  >
-    Eg Expire time of 17 
-    <em
-      className="fa fa-long-arrow-right"
-    />
-     5pm
-  </h5>
-  <h4
-    className="danger text-center"
-  />
-  <h4
-    className="y-color text-center"
-  />
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="name"
-    >
-      Title 
-      <br />
-      <span
-        className="text-center danger"
-      >
-        Title is required
-      </span>
-    </label>
-    <input
-      id="title"
-      name="title"
-      onChange={[Function]}
-      placeholder="Keny"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="password"
-    >
-      Expire Time 
-      <br />
-      <span
-        className="text-center danger"
-      />
-    </label>
-    <input
-      id="expire"
-      name="orderBefore"
-      onChange={[Function]}
-      required={true}
-      type="number"
-    />
-  </div>
-  <h4
-    className="p-color text-center"
-  >
-    Set menu from the meal options
-  </h4>
-  <table>
-    <tbody>
-      <tr>
-        <th>
-          Name
-        </th>
-        <th>
-          Price ($)
-        </th>
-        <th>
-          Add to Menu
-        </th>
-      </tr>
-      <tr
-        className="tr"
-        key="1"
-      >
-        <td>
-          rice
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-      <tr
-        className="tr"
-        key="2"
-      >
-        <td>
-          beans
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test Component of SETMENU component should respond to change event and change the state of the title input and expire time and add meal to the menu 1`] = `
-<div
-  className="order-wrapper order-container"
->
-  <div
-    className="modal-order "
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-        rice
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
-  <h2
-    style={
-      Object {
-        "marginTop": "2rem",
-      }
-    }
-  >
-    SET MENU FOR THE DAY
-  </h2>
-  <h4
-    className="p-color text-center"
-  >
-    Enter Menu Title and the Expire Time(24 Hours Format) in Hours
-  </h4>
-  <h5
-    className="p-color text-center"
-  >
-    Eg Expire time of 17 
-    <em
-      className="fa fa-long-arrow-right"
-    />
-     5pm
-  </h5>
   <h4
     className="danger text-center"
   />
@@ -1076,11 +461,21 @@ exports[`Test Component of SETMENU component should respond to change event and 
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -1088,11 +483,11 @@ exports[`Test Component of SETMENU component should respond to change event and 
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -1102,20 +497,16 @@ exports[`Test Component of SETMENU component should respond to change event and 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -1125,117 +516,61 @@ exports[`Test Component of SETMENU component should respond to change event and 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
 
-exports[`Test Component of SETMENU component should respond to change event and change the state of the title input and return error while addMeal method when orderBefore field is not supplied 1`] = `
+exports[`Test Component of SETMENU admin should respond to change event and change the state of the title input and expire time and add meal to the menu 1`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -1259,6 +594,9 @@ exports[`Test Component of SETMENU component should respond to change event and 
     />
      5pm
   </h5>
+  <h4
+    className="danger text-center"
+  />
   <h4
     className="danger text-center"
   />
@@ -1298,9 +636,7 @@ exports[`Test Component of SETMENU component should respond to change event and 
       <br />
       <span
         className="text-center danger"
-      >
-        Order Expiring time is required
-      </span>
+      />
     </label>
     <input
       id="expire"
@@ -1313,11 +649,21 @@ exports[`Test Component of SETMENU component should respond to change event and 
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -1325,11 +671,11 @@ exports[`Test Component of SETMENU component should respond to change event and 
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -1339,20 +685,16 @@ exports[`Test Component of SETMENU component should respond to change event and 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -1362,64 +704,246 @@ exports[`Test Component of SETMENU component should respond to change event and 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
 
-exports[`Test Component of SETMENU component should respond to mapDispatchToProps methods 1`] = `
+exports[`Test Component of SETMENU admin should respond to change event and change the state of the title input and return error while addMeal method when orderBefore field is not supplied 1`] = `
+<div
+  className=""
+>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    SET MENU FOR THE DAY
+  </h2>
+  <h4
+    className="p-color text-center"
+  >
+    Enter Menu Title and the Expire Time(24 Hours Format) in Hours
+  </h4>
+  <h5
+    className="p-color text-center"
+  >
+    Eg Expire time of 17 
+    <em
+      className="fa fa-long-arrow-right"
+    />
+     5pm
+  </h5>
+  <h4
+    className="danger text-center"
+  />
+  <h4
+    className="danger text-center"
+  />
+  <h4
+    className="y-color text-center"
+  />
+  <div
+    className="form-field"
+    id="setMenu-forrm"
+  >
+    <label
+      htmlFor="name"
+    >
+      Title 
+      <br />
+      <span
+        className="text-center danger"
+      />
+    </label>
+    <input
+      id="title"
+      name="title"
+      onChange={[Function]}
+      placeholder="Keny"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="form-field"
+    id="setMenu-forrm"
+  >
+    <label
+      htmlFor="password"
+    >
+      Expire Time 
+      <br />
+      <span
+        className="text-center danger"
+      />
+    </label>
+    <input
+      id="expire"
+      name="orderBefore"
+      onChange={[Function]}
+      required={true}
+      type="number"
+    />
+  </div>
+  <h4
+    className="p-color text-center"
+  >
+    Select meals to set todays menu
+  </h4>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
+    <tbody>
+      <tr
+        className="tr tr-color tr-height"
+      >
+        <th>
+          Name
+        </th>
+        <th>
+          Price ($)
+        </th>
+        <th>
+          Select
+        </th>
+      </tr>
+      <tr
+        className="tr tr tr-height"
+        key="1"
+      >
+        <td>
+          rice
+        </td>
+        <td>
+          200
+        </td>
+        <td>
+          <input
+            className="checkbox"
+            id="rice"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </td>
+      </tr>
+      <tr
+        className="tr tr tr-height"
+        key="2"
+      >
+        <td>
+          beans
+        </td>
+        <td>
+          200
+        </td>
+        <td>
+          <input
+            className="checkbox"
+            id="beans"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className=""
+  >
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
+    >
+       
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test Component of SETMENU admin should respond to mapDispatchToProps methods 1`] = `
 Object {
   "actions": Object {
     "changePassword": [Function],
@@ -1427,8 +951,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
@@ -1451,6 +973,8 @@ Object {
     "updateMeal": [Function],
   },
   "menuActions": Object {
+    "addMealToCart": [Function],
+    "addToCart": [Function],
     "clearMenuMeals": [Function],
     "getMenu": [Function],
     "getMenuMeals": [Function],
@@ -1463,7 +987,7 @@ Object {
 }
 `;
 
-exports[`Test Component of SETMENU component should respond to mapStateToProps methods 1`] = `
+exports[`Test Component of SETMENU admin should respond to mapStateToProps methods 1`] = `
 Object {
   "errorMessage": Object {
     "createMealError": "Wrong credentials",
@@ -1490,60 +1014,10 @@ Object {
 }
 `;
 
-exports[`Test Component of SETMENU component should should respond to cancelAdd method that close modal 1`] = `
+exports[`Test Component of SETMENU admin should should respond to lifeCycle Methods 1`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -1567,6 +1041,9 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
     />
      5pm
   </h5>
+  <h4
+    className="danger text-center"
+  />
   <h4
     className="danger text-center"
   />
@@ -1619,11 +1096,21 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
+  <table
+    className="table"
+    style={
+      Object {
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
+      }
+    }
+  >
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -1631,11 +1118,11 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -1645,20 +1132,16 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -1668,117 +1151,61 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
 
-exports[`Test Component of SETMENU component should should respond to lifeCycle Methods 1`] = `
+exports[`Test Component of SETMENU admin should should respond to lifeCycle Methods 2`] = `
 <div
-  className="order-wrapper order-container"
+  className=""
 >
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
   <h2
     style={
       Object {
@@ -1802,6 +1229,9 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
     />
      5pm
   </h5>
+  <h4
+    className="danger text-center"
+  />
   <h4
     className="danger text-center"
   />
@@ -1854,246 +1284,21 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
   <h4
     className="p-color text-center"
   >
-    Set menu from the meal options
+    Select meals to set todays menu
   </h4>
-  <table>
-    <tbody>
-      <tr>
-        <th>
-          Name
-        </th>
-        <th>
-          Price ($)
-        </th>
-        <th>
-          Add to Menu
-        </th>
-      </tr>
-      <tr
-        className="tr"
-        key="1"
-      >
-        <td>
-          rice
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-      <tr
-        className="tr"
-        key="2"
-      >
-        <td>
-          beans
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <button
-            id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test Component of SETMENU component should should respond to lifeCycle Methods 2`] = `
-<div
-  className="order-wrapper order-container"
->
-  <div
-    className="modal-order modal"
-  >
-    <button
-      className="remove-modal"
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "red",
-          "display": "block",
-          "float": "right",
-        }
-      }
-    >
-      ×
-    </button>
-    <div
-      className="modal-order-content"
-      style={
-        Object {
-          "margin": "1rem 1rem 1rem 1rem",
-        }
-      }
-    >
-      <p
-        className="justify l-r-pad-text"
-      >
-         Add 
-         to todays menu
-      </p>
-    </div>
-    <div
-      className="modal-order-content"
-    >
-      <button
-        className="remove-modal"
-        id="addMenu"
-        onClick={[Function]}
-      >
-        Add
-      </button>
-      <button
-        className="remove-modal"
-        id="removeMenu"
-        onClick={[Function]}
-      >
-        Cancel
-      </button>
-    </div>
-  </div>
-  <h2
+  <table
+    className="table"
     style={
       Object {
-        "marginTop": "2rem",
+        "margin": "10px 10% 10px 7%",
+        "width": "90%",
       }
     }
   >
-    SET MENU FOR THE DAY
-  </h2>
-  <h4
-    className="p-color text-center"
-  >
-    Enter Menu Title and the Expire Time(24 Hours Format) in Hours
-  </h4>
-  <h5
-    className="p-color text-center"
-  >
-    Eg Expire time of 17 
-    <em
-      className="fa fa-long-arrow-right"
-    />
-     5pm
-  </h5>
-  <h4
-    className="danger text-center"
-  />
-  <h4
-    className="y-color text-center"
-  />
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="name"
-    >
-      Title 
-      <br />
-      <span
-        className="text-center danger"
-      />
-    </label>
-    <input
-      id="title"
-      name="title"
-      onChange={[Function]}
-      placeholder="Keny"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="password"
-    >
-      Expire Time 
-      <br />
-      <span
-        className="text-center danger"
-      />
-    </label>
-    <input
-      id="expire"
-      name="orderBefore"
-      onChange={[Function]}
-      required={true}
-      type="number"
-    />
-  </div>
-  <h4
-    className="p-color text-center"
-  >
-    Set menu from the meal options
-  </h4>
-  <table>
     <tbody>
-      <tr>
+      <tr
+        className="tr tr-color tr-height"
+      >
         <th>
           Name
         </th>
@@ -2101,11 +1306,11 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
           Price ($)
         </th>
         <th>
-          Add to Menu
+          Select
         </th>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="1"
       >
         <td>
@@ -2115,20 +1320,16 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="rice"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
       <tr
-        className="tr"
+        className="tr tr tr-height"
         key="2"
       >
         <td>
@@ -2138,59 +1339,53 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
           200
         </td>
         <td>
-          <button
+          <input
+            className="checkbox"
             id="beans"
-            onClick={[Function]}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-list-alt y-color"
-            />
-             Add
-          </button>
+            onChange={[Function]}
+            type="checkbox"
+          />
         </td>
       </tr>
     </tbody>
   </table>
   <div
-    className="pagination"
+    className=""
   >
-    <div
-      className="prev p-color"
+     
+    <button
+      className="setMenuBtn"
+      onClick={[Function]}
     >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
        
-    </div>
+      Set Menu
+       
+    </button>
+     
+  </div>
+  <br />
+  <br />
+  <div
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;

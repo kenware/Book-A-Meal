@@ -3,7 +3,7 @@ import * as types from '../../../../redux/Action/actionType';
 
 describe('allOrderReducer reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {}).allOrder).toEqual({ rows: [] });
+    expect(reducer(undefined, {}).allOrder).toEqual({ orders: [] });
   });
 
   it('should handle allOrderReducer', () => {

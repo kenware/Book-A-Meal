@@ -369,8 +369,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],

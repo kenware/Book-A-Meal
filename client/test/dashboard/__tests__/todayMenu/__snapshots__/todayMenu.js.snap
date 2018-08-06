@@ -6,7 +6,7 @@ exports[`Test Today menu component of menu renders correctly 1`] = `
     key="1"
   >
     <button
-      className="accordion"
+      className="menuAccordion"
       onClick={[Function]}
     >
       <span
@@ -31,121 +31,34 @@ exports[`Test Today menu component of menu renders correctly 1`] = `
     <div
       className="showA meal-menu-row spreadundefined"
     >
-      <div
-        className="meal-menu"
-        key="1"
-      >
-        <div
-          className="menu-card"
-        >
-          <div
-            className="menu-img-wrap"
-          >
-            <div
-              className="menu-overlay"
-            />
-            <img
-              alt="Avatar"
-              className="menu-card-img"
-            />
-          </div>
-          <div
-            className="container l-r-pad-text"
-          >
-            <h4
-              className="p-color"
-            >
-              <b>
-                jollof
-              </b>
-            </h4>
-            <button
-              className="order1"
-              onClick={[Function]}
-            >
-              <em
-                className="fa fa-cart-plus"
-              />
-                Order
-            </button>
-          </div>
-        </div>
+      <div>
+        <i
+          aria-hidden="true"
+          className="fa fa-spinner fa-spin fa-4x fa-fw"
+        />
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test Today menu component of menu should have three modal-order-content class 1`] = `
-<div>
-  <div
-    key="1"
-  >
-    <button
-      className="accordion"
-      onClick={[Function]}
-    >
-      <span
+      <div
+        className="meal-pagination"
         style={
           Object {
-            "float": "right",
-            "marginTop": "1.5rem",
+            "width": "100%",
           }
         }
       >
-        <em
-          className="fa fa-plus p-color"
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={4}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[MockFunction]}
+          pageRangeDisplayed={6}
+          prevPageText="⟨"
+          totalItemsCount={2}
         />
-      </span>
-      <img
-        alt="profile"
-        className="user-img rounded-circle"
-        src="image/l.png"
-      />
-      <br />
-    </button>
-    <div
-      className="showA meal-menu-row spreadundefined"
-    >
-      <div
-        className="meal-menu"
-        key="1"
-      >
-        <div
-          className="menu-card"
-        >
-          <div
-            className="menu-img-wrap"
-          >
-            <div
-              className="menu-overlay"
-            />
-            <img
-              alt="Avatar"
-              className="menu-card-img"
-            />
-          </div>
-          <div
-            className="container l-r-pad-text"
-          >
-            <h4
-              className="p-color"
-            >
-              <b>
-                jollof
-              </b>
-            </h4>
-            <button
-              className="order1"
-              onClick={[Function]}
-            >
-              <em
-                className="fa fa-cart-plus"
-              />
-                Order
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   </div>

@@ -720,12 +720,14 @@ Edit {
         ],
       },
     },
+    "activePage": 1,
     "allOrder": Object {
-      "rows": Array [],
+      "orders": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handlePageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
@@ -775,9 +777,10 @@ Edit {
             },
           }
         }
+        activePage={1}
         allOrder={
           Object {
-            "rows": Array [],
+            "orders": Array [],
           }
         }
         errorMessage={
@@ -785,6 +788,7 @@ Edit {
             "createMealError": "",
           }
         }
+        handlePageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -1194,12 +1198,14 @@ Edit {
         ],
       },
     },
+    "activePage": 1,
     "allOrder": Object {
-      "rows": Array [],
+      "orders": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handlePageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
@@ -1253,9 +1259,10 @@ Edit {
             },
           }
         }
+        activePage={1}
         allOrder={
           Object {
-            "rows": Array [],
+            "orders": Array [],
           }
         }
         errorMessage={
@@ -1263,6 +1270,7 @@ Edit {
             "createMealError": "",
           }
         }
+        handlePageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -1843,8 +1851,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],

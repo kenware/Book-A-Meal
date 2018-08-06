@@ -2,15 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Popover from 'react-simple-popover';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemTitle,
+  AccordionItemBody,
+} from 'react-accessible-accordion';
 import PropTypes from 'prop-types';
+import Modal from 'react-responsive-modal';
+import Pagination from 'react-js-pagination';
 import * as orderActions from '../../redux/Action/orderAction';
 import * as actions from '../../redux/Action/action';
+import OrderModal from './modals/orderModal';
 
-
+const limit = 6;
 export class Orders extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      confirmOrderModal: false,
       open: false,
       quantity: '',
       address: '',
@@ -18,19 +28,20 @@ export class Orders extends Component {
       mealName: '',
       price: '',
       totalPrice: '',
-      modal: 'modal',
       modifyOrder: 'Modify',
       statusModal: 'modal',
       modifyError: '',
-      confirmButton: 'Confirm'
+      confirmButton: 'Confirm',
+      activePage: 1
     };
-    // bind this to methods
     this.onChange = this.onChange.bind(this);
-    this.cancelOrder = this.cancelOrder.bind(this);
     this.modify = this.modify.bind(this);
     this.confirmStatus = this.confirmStatus.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+
+    this.onOpenModal = this.onOpenModal.bind(this);
+    this.onCloseModal = this.onCloseModal.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -57,13 +68,8 @@ export class Orders extends Component {
     } else if (props.successMessage.updateSuccess || props.successMessage.confirmSuccess) {
       props.actions.clearMessages();
       return {
-        modal: 'modal',
-        address: '',
-        quantity: '',
-        orderId: '',
-        price: '',
-        statusModal: 'modal',
-        modifyError: '',
+        open: false,
+        confirmOrderModal: false,
         modifyOrder: 'Modify',
         confirmButton: 'Confirm'
       };
@@ -78,30 +84,36 @@ export class Orders extends Component {
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
-  // show popover on hover
-  handleClick() {
-    this.setState({ open: !this.state.open });
-  }
-  // close popover on mouse leave event
-  handleClose() {
+
+  onCloseModal() {
     this.setState({ open: false });
   }
-  /**
-   * cancel modal if the user dont want to proceed with the order
-  */
-  cancelOrder() {
+
+  onOpenModal(meal, order) {
     this.setState({
-      modal: 'modal',
-      address: '',
-      quantity: '',
-      orderId: '',
-      price: '',
-      statusModal: 'modal',
-      modifyError: '',
-      modifyOrder: 'Modify',
-      confirmButton: 'Confirm'
+      orderId: order.id,
+      mealId: meal.id,
+      mealName: meal.name,
+      quantity: meal.orderMealItems.quantity,
+      address: order.address,
+      price: meal.price,
+      open: true
+    });
+    const index = order.meals.indexOf(meal);
+    order.meals.splice(index, 1);
+    this.setState({ order });
+  }
+
+  // show popover on hover
+  handleClick(orderId, mealName) {
+    this.setState({
+      confirmOrderModal: !this.state.confirmOrderModal,
+      orderId,
+      mealName,
+      statusModal: ''
     });
   }
+
   /**
    * call a redux action
    * user confirms that meal is received
@@ -117,18 +129,41 @@ export class Orders extends Component {
   */
   modify() {
     const {
-      orderId,
       quantity,
       address,
-      status
+      mealId,
+      orderId,
+      price,
+      order
     } = this.state;
+
     if (!quantity || !address) {
       return this.setState({ modifyError: 'All the field is required' });
     }
+
+    const meals = [{
+      mealId,
+      totalPrice: price * quantity,
+      quantity
+    }];
+
+    order.meals.forEach((meal) => {
+      meals.push({
+        mealId: meal.id,
+        quantity: meal.orderMealItems.quantity,
+        totalPrice: meal.orderMealItems.totalPrice
+      });
+    });
+
     this.setState({ modifyOrder: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>) });
-    this.props.orderActions.updateOrder(orderId, quantity, address, status);
+    this.props.orderActions.updateOrder(orderId, meals, address);
   }
 
+  handlePageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ activePage: pageNumber });
+    this.props.orderActions.getMyOrder(limit, offset);
+  }
 
   render() {
     const monthNames = [
@@ -137,132 +172,110 @@ export class Orders extends Component {
       'July', 'August', 'September',
       'October', 'November', 'December'
     ];
-    // show confirm status order modal
-    const confirmOrder = (orderId, mealName) => {
-      this.setState({ orderId, mealName, statusModal: '' });
-    };
-    // show modify order modal
-    const modifyOrder = (orderId, mealName, quantity, address, price) => {
-      this.setState({
-        orderId, mealName, quantity, address, price, modal: ''
-      });
-    };
+
     return (
       <div className="order-wrapper order-container">
         <div style={{ margin: '1rem 1rem 1rem 1rem' }}>
-          <div className={`modal-order ${this.state.statusModal}`}>
-            <button
-              style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-              className="remove-modal"
-              onClick={this.cancelOrder}
-            >
-              &times;
-            </button>
-            <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
-              <p className="justify l-r-pad-text"> Confirm that you have received  {this.state.mealName}</p>
+          <Modal open={this.state.open} onClose={this.onCloseModal} center>
+            <OrderModal modify={this.modify} state={this.state} onChange={this.onChange} />
+          </Modal>
+          <Modal open={this.state.confirmOrderModal} onClose={this.handleClick} center>
+            <br />
+            <div className="modal-header">
+              <p className="justify l-r-pad-text"> Confirm that you have received this order</p>
             </div>
-            <div className="modal-order-content">
-              <button className="remove-modal confirmStatus" onClick={this.confirmStatus}>{this.state.confirmButton}</button><button onClick={this.cancelOrder}className="remove-modal">Cancel</button>
+            <div className="modal-contents">
+              <button style={{ float: 'left', minHeight: '2rem' }} className="remove-modal confirmStatus" onClick={this.confirmStatus}>{this.state.confirmButton}</button>
             </div>
-          </div>
-          <div className={`modal-order ${this.state.modal}`}>
-            <button
-              style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-              onClick={this.cancelOrder}
-              className="remove-modal"
-            >
-              &times;
-            </button>
-            <div className="modal-order-content">
-              <p className="justify l-r-pad-text">
-                Edit the field to modify this order<br />
-                NB This order can only be modified <br />within ONE hour after it is created
-                <h4 className="danger text-center">{this.state.modifyError}</h4>
-              </p>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Name: </span>
-              <span className="modal-order-items ">{this.state.mealName}</span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Price per Meal(#): </span>
-              <span className="modal-order-items ">{this.state.price}</span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Quantity: </span>
-              <span className="modal-order-items l-r-pad-text"><input id="quantity" value={this.state.quantity} name="quantity" type="number" onChange={this.onChange} /></span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text address"> Address: </span>
-              <span className="modal-order-items l-r-pad-text"><input id="address" value={this.state.address} name="address" type="text" onChange={this.onChange} /></span>
-            </div>
-            <div className="modal-order-content">
-              <span className="modal-order-items l-r-pad-text">
-                <button onClick={this.modify} className="remove-modal modify">{this.state.modifyOrder}</button>
-              </span>
-              <span className="modal-order-items l-r-pad-text">
-                <button onClick={this.cancelOrder} className="remove-modal cancel">Cancel</button>
-              </span>
-            </div>
-          </div>
+          </Modal>
 
           <h2 style={{ marginTop: '4rem' }}>MY MEAL ORDER HISTORY</h2>
           <h3 className="danger text-center"><b>{this.props.errorMessage.myOrderError}</b></h3>
-          <table>
-            <tbody>
-              <tr>
-                <th>Name</th>
-                <th>Quanitity odered
-                </th>
-                <th>Price ($)</th>
-
-                <th>Total price</th>
-                <td>Date</td>
-                <td>Address</td>
-                <td>Status</td>
-                <td>Modify</td>
-              </tr>
-              {this.props.myOrder.map(order =>
-              (
-                <tr key={order.id}>
-                  <td>{order.Meal.name}</td>
-                  <td>{order.quantity}</td>
-                  <td>{order.Meal.price}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>{monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)} &nbsp;
-                    {new Date(order.createdAt).getDate()} &nbsp;
-                    {new Date(order.createdAt).getFullYear()}
-                  </td>
-                  <td>{order.address}</td>
-                  <td>{order.status === 'pending' ?
-                    <span>{order.status}
-                      <button
-                        className="y-color confirm-btn"
-                        onClick={() => confirmOrder(order.id, order.Meal.name)}
-                        ref="target"
-                        onMouseEnter={this.handleClick}
-                        onMouseLeave={this.handleClose}
-                      >Confirm
-                      </button>
-                      <Popover
-                        placement="top"
-                        container={this}
-                        target={this.refs.target}
-                        show={this.state.open}
-                      >
-                        <p className="p-color">Confirm Meal Delivery</p>
-                      </Popover>
-                    </span>
-                  : <span>{order.status}</span>}
-                  </td>
-                  <td>{ order.status === 'confirmed' ?
-                    <button className="p-color modify-btn" disabled>Modify</button> :
-                    <button onClick={() => modifyOrder(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)} className="p-color modify-btn" >Modify</button>}
-                  </td>
-                </tr>
-                ))}
-            </tbody>
-          </table>
+          <Accordion>
+            <AccordionItem>
+              <AccordionItemTitle>
+                <div className="accordion__meal" />
+                <div className="order-accordion accordion-color">
+                  <div> S/N </div>
+                  <div>Total price</div>
+                  <div>Date</div>
+                  <div>Address</div>
+                  <div>Status</div>
+                  <div>Action</div>
+                </div>
+              </AccordionItemTitle>
+            </AccordionItem>
+            {this.props.myOrder.orders.map(order => (
+              <AccordionItem key={order.id}>
+                <AccordionItemTitle>
+                  <div className="accordion__arrow u-postion-relative" />
+                  <div className="order-accordion">
+                    <div className="order-">
+                      {this.props.myOrder.orders.indexOf(order) + 1}
+                    </div>
+                    <div className="order-contents ">
+                      # {order.totalPrice}
+                    </div>
+                    <div className="order-contents ">
+                      {monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)}&nbsp;
+                      {new Date(order.createdAt).getDate()} &nbsp;
+                      {new Date(order.createdAt).getFullYear()}
+                    </div>
+                    <div>{order.address}</div>
+                    <div className="order-contents">
+                      {order.status}
+                    </div>
+                    <div>
+                      {order.status === 'pending' ?
+                        <button
+                          className="y-color confirm-btn"
+                          onClick={() => this.handleClick(order.id)}
+                        >Confirm
+                        </button>
+                      : <span />
+                    }
+                    </div>
+                  </div>
+                </AccordionItemTitle>
+                <AccordionItemBody>
+                  <table className="table">
+                    <tbody>
+                      <tr className="p-color tr-height tr-color">
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total Price</th>
+                        <th>Edit</th>
+                      </tr>
+                      { order.meals.map(meal => (
+                        <tr className="p-color tr tr-height" key={meal.id}>
+                          <td>{order.meals.indexOf(meal) + 1}</td>
+                          <td>{meal.name}</td>
+                          <td>{meal.orderMealItems.quantity}</td>
+                          <td>{meal.price}</td>
+                          <td>{meal.orderMealItems.totalPrice}</td>
+                          <td>{ order.status === 'pending' ?
+                            <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
+                            : <span />}
+                          </td>
+                        </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </AccordionItemBody>
+              </AccordionItem>
+             ))}
+          </Accordion>
+          <div className="meal-pagination">
+            <Pagination
+              activePage={this.state.activePage}
+              itemsCountPerPage={limit}
+              totalItemsCount={Math.ceil(this.props.myOrder.count)}
+              pageRangeDisplayed={4}
+              onChange={this.handlePageChange}
+            />
+          </div>
         </div>
       </div>
     );
@@ -271,7 +284,7 @@ export class Orders extends Component {
 Orders.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   orderActions: PropTypes.object.isRequired,
-  myOrder: PropTypes.array.isRequired
+  myOrder: PropTypes.object.isRequired
 };
 export function mapStateToProps(state) {
   return {

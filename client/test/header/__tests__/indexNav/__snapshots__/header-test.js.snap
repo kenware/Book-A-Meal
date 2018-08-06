@@ -22,7 +22,6 @@ exports[`Testing of sidebar component should render properly 1`] = `
     <span />
     <span />
     <span />
-    <span />
     <Link
       className="a"
       replace={false}
@@ -36,13 +35,6 @@ exports[`Testing of sidebar component should render properly 1`] = `
       to="/register"
     >
       SignUp
-    </Link>
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
     </Link>
     <span
       className="a icon"
@@ -76,6 +68,7 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
+    <span />
     <span
       className="a"
       onClick={[Function]}
@@ -88,29 +81,20 @@ exports[`Testing of sidebar component should render properly with user info in t
       replace={false}
       to="/profile"
     >
-      <em
-        className="fa fa-user"
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="user"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
       />
-        
-      user
-    </Link>
-    <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/dashboard"
-    >
-      dashboard
     </Link>
     <span />
     <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}
@@ -143,6 +127,7 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
+    <span />
     <span
       className="a"
       onClick={[Function]}
@@ -155,29 +140,20 @@ exports[`Testing of sidebar component should render properly with user info in t
       replace={false}
       to="/profile"
     >
-      <em
-        className="fa fa-user"
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="admin"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
       />
-        
-      admin
-    </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/admin"
-    >
-      Admin
     </Link>
     <span />
     <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}
@@ -210,6 +186,7 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
+    <span />
     <span
       className="a"
       onClick={[Function]}
@@ -222,29 +199,20 @@ exports[`Testing of sidebar component should render properly with user info in t
       replace={false}
       to="/profile"
     >
-      <em
-        className="fa fa-user"
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="user"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
       />
-        
-      user
-    </Link>
-    <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/dashboard"
-    >
-      dashboard
     </Link>
     <span />
     <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}
@@ -277,6 +245,7 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
     >
       Book-A-Meal
     </Link>
+    <span />
     <span
       className="a"
       onClick={[Function]}
@@ -289,29 +258,20 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
       replace={false}
       to="/profile"
     >
-      <em
-        className="fa fa-user"
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="user"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
       />
-        
-      user
-    </Link>
-    <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/dashboard"
-    >
-      dashboard
     </Link>
     <span />
     <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}
@@ -344,6 +304,7 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
     >
       Book-A-Meal
     </Link>
+    <span />
     <span
       className="a"
       onClick={[Function]}
@@ -356,29 +317,20 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
       replace={false}
       to="/profile"
     >
-      <em
-        className="fa fa-user"
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="user"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
       />
-        
-      user
-    </Link>
-    <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/dashboard"
-    >
-      dashboard
     </Link>
     <span />
     <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}

@@ -21,6 +21,9 @@ export default class mealController {
     let { limit, offset } = req.query;
     limit = parseInt(limit, 10) || 6;
     offset = parseInt(offset, 10) || 0;
+    if (limit < 0 || offset < 0) {
+      return res.status(401).json({ message: 'Your query param cannot be negative' });
+    }
     const { id } = req.decoded;
     const userId = id;
     try {
@@ -147,21 +150,32 @@ export default class mealController {
  * @description used to get most ordered meal
  */
   async getMostOrderMeals(req, res) {
-    const { limit } = req.params;
+    let { limit } = req.query;
+    limit = parseInt(limit, 10) || 5;
+    if (limit < 0) {
+      return res.status(401).json({ message: 'Your query param cannot be negative' });
+    }
     try {
-      const meal = await Order.findAll({
-        attributes: [
-          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'OrderCount']],
-        include: [{ model: Meal }],
+      const meal = await Meal.findAll({
         group: ['Meal.id'],
+        include: [{
+          model: Order,
+          as: 'orders',
+          duplicating: false
+        }],
+        attributes: [
+          'id', 'name', 'price', 'description', 'image',
+          [Sequelize.fn('COUNT', Sequelize.col('orders.id')), 'orderCount'],
+        ],
+        includeIgnoreAttributes: false,
         order: [
-          [Sequelize.fn('COUNT', Sequelize.col('Order.id')), 'DESC']
+          [Sequelize.fn('COUNT', Sequelize.col('orders.id')), 'DESC']
         ],
         limit
       });
-      return res.json(meal);
+      return res.status(201).json(meal);
     } catch (err) {
-      return res.json(err);
+      return res.status(500).json(err);
     }
   }
 }

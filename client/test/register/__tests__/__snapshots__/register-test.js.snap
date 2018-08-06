@@ -12,16 +12,11 @@ exports[`Test Register Component should render correctly 1`] = `
     />
     <div
       className="register-wrapper"
-      style={
-        Object {
-          "height": "500px",
-        }
-      }
     >
       <h2
         className="login-header"
       >
-        Enter your details to SignUp
+        SignUp
       </h2>
       <br />
       <h3
@@ -36,16 +31,11 @@ exports[`Test Register Component should render correctly 1`] = `
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Fullname
-          </label>
           <input
             id="name"
             name="name"
             onChange={[Function]}
-            placeholder="Eze Kevin"
+            placeholder="Fullname"
             required={true}
             type="text"
           />
@@ -53,39 +43,24 @@ exports[`Test Register Component should render correctly 1`] = `
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Username
-          </label>
           <input
             id="username"
             name="username"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Username"
             required={true}
             type="text"
           />
         </div>
+        <span />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Email
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
           <input
             id="email"
             name="email"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Email"
             required={true}
             type="email"
           />
@@ -93,73 +68,60 @@ exports[`Test Register Component should render correctly 1`] = `
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
-          >
-            Password
-          </label>
           <input
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="Password"
             required={true}
             type="password"
           />
         </div>
+        <span />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
-          >
-            Confirm Password
-            <br />
-            <font
-              color="green"
-            />
-            <font
-              color="red"
-            />
-          </label>
           <input
             id="vpassword"
             name="vpassword"
             onChange={[Function]}
+            placeholder="Confirm Password"
             required={true}
             type="password"
           />
         </div>
-        <div
-          className="form-field"
-        >
+        <div>
           <button
-            className="button lg submit"
+            className="button signup-btn"
+            name="submit"
             onClick={[Function]}
+            style={
+              Object {
+                "float": "right",
+              }
+            }
             type="submit"
           >
             SignUp
           </button>
         </div>
+        <br />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="inputPassword3"
+          <Link
+            replace={false}
+            to="/login"
           >
-            <Link
-              replace={false}
-              to="/login"
-            >
-              Login
-            </Link>
-                
-            <Link
-              replace={false}
-              to="/resetLink"
-            >
-              forgot password? 
-            </Link>
-          </label>
+            Login
+          </Link>
+              
+          <Link
+            replace={false}
+            to="/resetLink"
+          >
+            forgot password? 
+          </Link>
         </div>
       </form>
     </div>
@@ -179,8 +141,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],

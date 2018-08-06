@@ -3,38 +3,38 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import 'video-react/dist/video-react.css';
 import PropTypes from 'prop-types';
+import Modal from 'react-responsive-modal';
+import Pagination from 'react-js-pagination';
 import * as actions from '../../redux/Action/action';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
 import MealGuide from './mealGuide';
 import TodayMenu from './todayMenu';
 import Video from './video';
+import MenuModal from './modals/menuModal';
 
-const limit = 2;
+const limit = 4;
 export class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealId: '',
-      menuId: '',
-      quantity: '',
+      open: false,
       address: '',
       name: '',
-      image: '',
-      price: '',
-      mealDescription: '',
-      order: 'Order',
-      modal: 'modal',
+      cart: {},
+      checkOut: [],
       pageNum: 1,
-      accordion: {}
+      accordion: {},
+      menuActivePage: 1,
+      mealActivePage: 1
     };
     this.onChange = this.onChange.bind(this);
-    this.orderMeal = this.orderMeal.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
-    this.confirmOrder = this.confirmOrder.bind(this);
-    this.handlePageNext = this.handlePageNext.bind(this);
-    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.showMenu = this.showMenu.bind(this);
+    this.handleMenuPageChange = this.handleMenuPageChange.bind(this);
+    this.handleMealPageChange = this.handleMealPageChange.bind(this);
+    this.cartModal = this.cartModal.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -93,42 +93,38 @@ export class Menu extends Component {
       addressError: ''
     });
   }
-  /**
-   * Orders meal
-   * calls redux action
-  */
-  orderMeal() {
-    const {
-      mealId,
-      menuId,
-      address,
-      quantity
-    } = this.state;
-    // Ensure that address and quanity is not empty
-    if (!address) {
-      this.setState({ addressError: 'Your address is required' }); return;
-    } this.setState({ addressError: '' });
-    if (!quantity) {
-      this.setState({ quantityError: 'Quantity is required' }); return;
-    } this.setState({ quantityError: '' });
-    // redux addmeal action
-    this.props.orderActions.orderMeal(mealId, menuId, address, quantity);
-    this.setState({
-      order: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
-    });
-  }
-  // shows modal to comfirm that user want to a meal
-  confirmOrder(mealId, menuId, mealName, image, price, mealDescription) {
-    this.setState({
+
+  cartModal(mealId, menuId, mealName, image, price, mealDescription) {
+    const cart = {
       mealId,
       menuId,
       mealName,
       image,
       price,
       mealDescription,
-      modal: ''
+    };
+    this.setState({
+      cart,
+      open: !this.state.open
     });
   }
+
+  // shows modal to comfirm that user want to a meal
+  addToCart() {
+    if (!this.state.quantity) {
+      return this.setState({ emptyAddress: 'All the field is required' });
+    }
+    const myOrder = {
+      mealId: this.state.cart.mealId,
+      name: this.state.cart.mealName,
+      menuId: this.state.cart.menuId,
+      quantity: Number(this.state.quantity),
+      totalPrice: this.state.cart.price * this.state.quantity
+    };
+    this.props.menuActions.addToCart(myOrder);
+    this.setState({ open: false });
+  }
+
   showMenu(id, url) {
     let state = this.state.accordion;
     if (state[id]) {
@@ -140,105 +136,65 @@ export class Menu extends Component {
       this.state.accordion = {};
       state = this.state.accordion;
       state[id] = id;
+      state.url = url;
       this.setState(state);
     }
   }
   /**
    * Pagination method
-   * Next page
+   * Menu Pagination
    */
-  handlePageNext() {
-    let { pageNum } = this.state;
-    pageNum += 1;
-    const offset = (pageNum - 1) * limit;
-    const totalPage = this.props.menu.length;
-    if (totalPage < 1) {
-      return this.setState({ lastPage: 'Last page', firstPage: '' });
-    }
+  handleMenuPageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ menuActivePage: pageNumber });
     this.props.menuActions.getMenu(limit, offset);
-    this.setState({ pageNum, firstPage: '' });
   }
+
   /**
    * Pagination method
-   * Prev page
+   * Meal Pagination
    */
-  handlePagePrev() {
-    let { pageNum } = this.state;
-    pageNum -= 1;
-    if (pageNum < 1) {
-      return this.setState({ firstPage: 'firstPage', lastPage: '' });
-    }
-    const offset = (pageNum - 1) * limit;
-    this.props.menuActions.getMenu(limit, offset);
-    this.setState({ pageNum, lastPage: '' });
+  handleMealPageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ mealActivePage: pageNumber });
+    this.props.menuActions.clearMenuMeals();
+    this.props.menuActions.getMenuMeals(this.state.accordion.url, limit, offset);
   }
+
   render() {
     return (
       <div className="meal-container">
-        <div className={`modal-order ${this.state.modal}`}>
-          <button
-            style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-            onClick={this.cancelOrder}
-            className="remove-modal top-close"
-          >
-             &times;
-          </button>
-          <div className="modal-order-content">
-            <img src={this.state.image} className="rounded-circle img-height" alt="menu" />
-          </div>
-          <div className="modal-order-content">
-            <span className="justify l-r-pad-text">
-              You about to Order {this.state.mealName}<br />
-              <h4 className="danger text-center">{this.state.quantityError}</h4>
-              <h4 className="danger text-center">{this.state.addressError}</h4>
-            </span>
-          </div>
-          <div className="justify-overide">
-            <span className="modal-order-items l-r-pad-text"> Name:: </span>
-            <span className="modal-order-items ">{this.state.mealName}</span>
-          </div>
-          <div className="justify-overide">
-            <span className="modal-order-items l-r-pad-text"> Price (#): </span>
-            <span className="modal-order-items ">{this.state.price}</span>
-          </div>
-          <div className="justify-overide">
-            <span className="modal-order-items l-r-pad-text"> Quantity: </span>
-            <span className="modal-order-items l-r-pad-text"><input id="quantity" name="quantity" type="number" onChange={this.onChange} /></span>
-          </div>
-          <div className="justify-overide">
-            <span className="modal-order-items l-r-pad-text"> Address: </span>
-            <span className="modal-order-items l-r-pad-text"><input name="address" id="address" type="text" onChange={this.onChange} /></span>
-          </div>
-          <div className="modal-order-content">
-            <span className="modal-order-items l-r-pad-text">
-              <button onClick={this.orderMeal} className="remove-modal order-meal">{this.state.order}</button>
-            </span>
-            <span className="modal-order-items l-r-pad-text">
-              <button onClick={this.cancelOrder} className="remove-modal close-modal">Cancel</button>
-            </span>
-          </div>
-        </div>
+        <Modal open={this.state.open} onClose={this.cartModal} center>
+          <MenuModal addToCart={this.addToCart} state={this.state} onChange={this.onChange} />
+        </Modal>
         <MealGuide />
         <h2 className="top-bot-margin">TODAY MENU FROM All CATERERS</h2>
         <h3 className="success text-center">{this.state.successMessage}</h3>
         <h3 className="danger text-center">{this.state.errorMessage}</h3>
-        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
+        {this.props.menu.rows.length < 1 ?
           <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3> :
           <span /> }
         <TodayMenu
           menu={this.props.menu}
-          confirmOrder={this.confirmOrder}
+          cartModal={this.cartModal}
           state={this.state}
           showMenu={this.showMenu}
           menuMeals={this.props.menuMeals}
+          handleMealPageChange={this.handleMealPageChange}
         />
-        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
-          <Video /> : <span /> }
-        <div className="pagination">
-          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
-          <div className="current p-color"><button>{this.state.pageNum} </button></div>
-          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
-        </div>
+        {this.props.menu.rows.length < 1 ?
+          <Video /> :
+          <div className="meal-pagination" id="menuPagination">
+            <Pagination
+              activePage={this.state.menuActivePage}
+              itemsCountPerPage={limit}
+              totalItemsCount={Math.ceil(this.props.menu.count)}
+              pageRangeDisplayed={6}
+              onChange={this.handleMenuPageChange}
+            />
+          </div>
+           }
+
       </div>
     );
   }
@@ -246,11 +202,10 @@ export class Menu extends Component {
 // propType validation
 Menu.propTypes = {
   errorMessage: PropTypes.object.isRequired,
-  orderActions: PropTypes.object.isRequired,
-  menu: PropTypes.array.isRequired,
+  menu: PropTypes.object.isRequired,
   menuActions: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  menuMeals: PropTypes.array.isRequired,
+  menuMeals: PropTypes.object.isRequired,
 };
 
 export function mapStateToProps(state) {
@@ -258,7 +213,8 @@ export function mapStateToProps(state) {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
     menu: state.menu,
-    menuMeals: state.menuMeals
+    menuMeals: state.menuMeals,
+    cart: state.cart
   };
 }
 export function mapDispatchToProps(dispatch) {

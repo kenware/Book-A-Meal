@@ -9,7 +9,7 @@ export const loadSuccessMessage = successMessage => ({
 });
 export const loadAllMeals = meals => ({ type: types.LOAD_ALL_MEALS, meals });
 
-export const loadMostOrderedMeal = () => dispatch => window.fetch('/api/v1/mostOrder/meals/6')
+export const loadMostOrderedMeal = limit => dispatch => window.fetch(`/api/v1/mostOrder/meals?limit=${limit}`)
   .then(res => res.json())
   .then(mostOrder =>
     dispatch(loadMostOrdered(mostOrder)));
@@ -54,6 +54,7 @@ export const deleteMeal = id => dispatch => window.fetch(`/api/v1/meals/${id}`, 
     dispatch(loadSuccessMessage(meals));
     dispatch(getAllMeals(6, 0));
   });
+
 export const updateMeal = (id, payload) => dispatch => window.fetch(`/api/v1/meals/${id}`, {
   method: 'PUT',
   headers: {

@@ -28,6 +28,9 @@ Book-A-Meal: Order a meal of your choice just by a single click
 * After installations
 * navigate to 127.0.0.1://5000/meal to view project live
 * You must have posgres installed
+* npm test to run both backend(mocha) and frontend(jest) test
+* To run end-2-end test. create a lib folder and Install selenium-server-standalone-[version].jar and chromedriver
+* npm run e2e-test.
 # <a name="functions"></a>Functions
 * The project provides an interphase to Add a meal
 * Modify a meal

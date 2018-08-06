@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     Menu.belongsTo(models.User, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
+      as: 'user'
     });
     Menu.belongsToMany(models.Meal, {
       through: 'MealMenus',

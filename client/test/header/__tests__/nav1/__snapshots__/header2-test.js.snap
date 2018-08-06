@@ -45,6 +45,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/dashboard"
     >
@@ -52,6 +53,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/admin/allmeals"
     >
@@ -136,6 +138,7 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/dashboard"
     >
@@ -143,6 +146,7 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/admin/allmeals"
     >
@@ -227,6 +231,7 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/dashboard"
     >
@@ -234,6 +239,7 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
     </Link>
     <Link
       className="a"
+      onClick={[Function]}
       replace={false}
       to="/admin/allmeals"
     >

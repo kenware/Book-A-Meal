@@ -117,45 +117,41 @@ export class Register extends Component {
         <Header />
         <div className="register-container" id="register-bg">
           <div className="register-col" />
-          <div className="register-wrapper" style={{ height: '500px' }}>
-            <h2 className="login-header">Enter your details to SignUp</h2><br />
+          <div className="register-wrapper">
+            <h2 className="login-header">SignUp</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.registerError }</h3>
             <h3 className="text-center danger">{this.state.message }</h3>
             <form className="register">
               <div className="form-field">
-                <label htmlFor="name">Fullname</label>
-                <input onChange={this.onChange} type="text" id="name" name="name" placeholder="Eze Kevin" required />
+                <input onChange={this.onChange} type="text" id="name" name="name" placeholder="Fullname" required />
               </div>
               <div className="form-field">
-                <label htmlFor="name">Username</label>
-                <input onChange={this.onChange} type="text" id="username" name="username" placeholder="Keny" required />
+                <input onChange={this.onChange} type="text" id="username" name="username" placeholder="Username" required />
+              </div>
+              {this.state.validEmail ?
+                <span className="register-margin danger">{this.state.validEmail} </span>
+              : <span />}
+              <div className="form-field">
+                <input onChange={this.onEmail} type="email" name="email" placeholder="Email" id="email" required />
               </div>
               <div className="form-field">
-                <label htmlFor="name">Email<br />
-                  <font color="red">{this.state.validEmail} </font>
-                </label>
-                <input onChange={this.onEmail} type="email" name="email" placeholder="Keny" id="email" required />
-
+                <input onChange={this.onChange} type="password" name="password" id="password" placeholder="Password" required />
               </div>
+              {this.state.passwordmatc || this.state.passwordmismatch ?
+                <div className="form-field">
+                  <font className="register-margin" color="green">{this.state.passwordmatch }</font>
+                  <font className="register-margin" color="red">{this.state.passwordmismatch }</font>
+                </div>
+               : <span />}
               <div className="form-field">
-                <label htmlFor="password">Password</label>
-                <input onChange={this.onChange} type="password" name="password" id="password" required />
+                <input onChange={this.change} type="password" name="vpassword" id="vpassword" placeholder="Confirm Password" required />
               </div>
+              <div>
+                <button type="submit" style={{ float: 'right' }} name="submit" className="button signup-btn" onClick={this.register}>{this.state.signUp}</button>
+              </div><br />
               <div className="form-field">
-                <label htmlFor="password">Confirm Password<br />
-                  <font color="green">{this.state.passwordmatch }</font>
-                  <font color="red">{this.state.passwordmismatch }</font>
-                </label>
-                <input onChange={this.change} type="password" name="vpassword" id="vpassword"required />
-              </div>
-              <div className="form-field">
-                <button type="submit" className="button lg submit" onClick={this.register}>{this.state.signUp}</button>
-              </div>
-              <div className="form-field">
-                <label htmlFor="inputPassword3">
-                  <Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <Link to="/resetLink">forgot password? </Link>
-                </label>
+                <Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/resetLink">forgot password? </Link>
               </div>
             </form>
 

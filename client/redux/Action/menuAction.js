@@ -11,15 +11,16 @@ export const loadSuccessMessage = successMessage => ({
 export const loadTodayMenu = menu => ({ type: types.LOAD_TODAY_MENU, menu });
 
 export const loadTodayMenuMeals = menuMeals => ({ type: types.LOAD_TODAY_MENUMEALS, menuMeals });
+export const addMealToCart = cart => ({ type: types.ADD_MEAL_TO_CART, cart });
 
-export const setMenu = (mealId, title, orderBefore) => dispatch => window.fetch('/api/v1/menu', {
+export const setMenu = (meals, title, orderBefore) => dispatch => window.fetch('/api/v1/menu', {
   method: 'POST',
   headers: {
     authorization: auth.getToken(),
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    mealId, title, orderBefore
+    meals, title, orderBefore
   })
 })
   .then(res => res.json())
@@ -39,7 +40,6 @@ export const getMenu = (limit, offset) => dispatch => window.fetch(`/api/v1/menu
   .then(res => res.json())
   .then((menu) => {
     if (menu.message) {
-      dispatch(loadTodayMenu([]));
       return dispatch(loadErrorMessage({ getMenuError: 'Todays Menu is not set yet' }));
     }
     dispatch(loadTodayMenu(menu));
@@ -53,10 +53,11 @@ export const getMenuMeals = (url, limit, offset) => dispatch => window.fetch(`${
   .then(res => res.json())
   .then((menuMeals) => {
     if (menuMeals.message) {
-      dispatch(loadTodayMenuMeals([]));
       return dispatch(loadErrorMessage({ getMenuMealsError: 'Error fetching meals' }));
     }
     dispatch(loadTodayMenuMeals(menuMeals));
   });
 
-export const clearMenuMeals = () => dispatch => dispatch(loadTodayMenuMeals([]));
+export const clearMenuMeals = () => dispatch => dispatch(loadTodayMenuMeals({ meals: [] }));
+
+export const addToCart = meals => dispatch => dispatch(addMealToCart(meals));

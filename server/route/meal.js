@@ -22,7 +22,7 @@ router
 // delete a meal
   .delete('/meals/:mealId', jwtAuth.authAdmin, Meal.deleteMeal)
 // get  most ordered meals
-  .get('/mostOrder/meals/:limit', Meal.getMostOrderMeals)
+  .get('/mostOrder/meals', Meal.getMostOrderMeals)
 // get one meal
   .get('/meals/:mealId', jwtAuth.authAdmin, Meal.getOneMeal);
 export default router;

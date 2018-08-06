@@ -1,6 +1,9 @@
 node_modules/
 coverage/
 .env
+front-end-coverage/
+reports/
+lib/
 # Object file
 *.o
 

@@ -43,23 +43,18 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
           <li>
             <span
               className="h2-color"
-            >
-              Keny
-            </span>
+            />
           </li>
           <li>
             <span
               className="h2-color"
             >
-              Update profile
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-              role="button"
-            >
-               Change Password
+              <Link
+                replace={false}
+                to="/profile"
+              >
+                profile
+              </Link>
             </span>
           </li>
           <span />
@@ -209,29 +204,34 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
             <span
               className="h2-color"
             >
-              Keny
+              user
             </span>
           </li>
           <li>
             <span
               className="h2-color"
             >
-              Update profile
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-              role="button"
-            >
-               Change Password
+              <Link
+                replace={false}
+                to="/profile"
+              >
+                profile
+              </Link>
             </span>
           </li>
           <li>
             <button
-              className="p-color"
+              id="userUpgrade"
+              onClick={[MockFunction]}
+              style={
+                Object {
+                  "backgroundColor": "#b8b507",
+                  "color": "white",
+                  "minHeight": "2rem",
+                }
+              }
             >
-               Upgrade To A Caterer
+              Upgrade To A Caterer
             </button>
           </li>
         </ul>

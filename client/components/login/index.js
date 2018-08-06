@@ -71,40 +71,29 @@ export class Login extends Component {
       <div>
         <Header />
         <div className="register-container" id="login-bg">
-          <div className="register-col" />
-          <div className="register-wrapper" style={{ height: '50vh' }}>
-            <h2 className="login-header">Enter your details to Login</h2><br />
+          <div className="register-wrapper" style={{ margin: '100px 25% 100px 25%' }}>
+            <h2 className="login-header">Login</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
             <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>
             <form action="dashboard.html" className="login">
               <div className="form-field">
-                <label htmlFor="name">
-                  Username <br />
-                  <span className="text-center danger">{this.state.userField }</span>
-                </label>
-                <input onChange={this.onChange} type="text" id="username" name="username" placeholder="Keny" required />
-
+                <span className="text-center danger">{this.state.userField }</span>
+                <input onChange={this.onChange} type="text" id="username" name="username" placeholder="Username" required />
               </div>
               <div className="form-field">
-                <label htmlFor="password">
-                  Password <br />
-                  <span className="text-center danger">{this.state.passField }</span>
-                </label>
-                <input onChange={this.onChange} type="password" name="password" id="password" required />
-              </div>
+                <span className="text-center danger">{this.state.passField }</span>
+                <input onChange={this.onChange} type="password" name="password" id="password" placeholder="Password" required />
+              </div> <br />
+              <div style={{ display: 'flex' }}>
+                <button name="submit" type="submit" className="button lg-btn" onClick={this.login}>{this.state.login} </button>
+              </div> <br />
               <div className="form-field">
-                <button name="submit" type="submit" className="button lg" onClick={this.login}>{this.state.login}</button>
-              </div>
-              <div className="form-field">
-                <label htmlFor="inputPassword3">
-                  <Link to="/register">SignUp</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <Link to="/resetLink">forgot password? </Link>
-                </label>
+                <Link to="/register">SignUp</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/resetLink">forgot password? </Link>
               </div>
             </form>
 
           </div>
-          <div className="register-col" />
         </div>
         <Footer />
       </div>

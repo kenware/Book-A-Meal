@@ -1,8 +1,13 @@
-#login-bg{
+#login-bg {
     background: url('../../image/bg5.jpg') center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 70vh;
+}
+.lg-btn {
+    margin-left: 7%;
+    width: 70px;
+    height: 30px;
+    font-size: 20px;    
 }

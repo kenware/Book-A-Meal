@@ -5,7 +5,9 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
   <span
     className="largeScreen-header"
   >
-    <Nav />
+    <Nav
+      component="admin"
+    />
   </span>
   <span
     className="smallScreen-header"
@@ -36,7 +38,7 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
       id="main"
     >
       <header
-        className="header"
+        className="header smallScreen-header"
       >
         <div
           className="l-r-pad-text"
@@ -92,7 +94,9 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
-    <Nav />
+    <Nav
+      component="admin"
+    />
   </span>
   <span
     className="smallScreen-header"
@@ -123,7 +127,7 @@ exports[`Test index Component of admin pages should have respond handle click an
       id="main"
     >
       <header
-        className="header"
+        className="header smallScreen-header"
       >
         <div
           className="l-r-pad-text"
@@ -179,7 +183,9 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
-    <Nav />
+    <Nav
+      component="admin"
+    />
   </span>
   <span
     className="smallScreen-header"
@@ -210,7 +216,7 @@ exports[`Test index Component of admin pages should have respond handle click an
       id="main"
     >
       <header
-        className="header"
+        className="header smallScreen-header"
       >
         <div
           className="l-r-pad-text"
@@ -266,7 +272,9 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
-    <Nav />
+    <Nav
+      component="admin"
+    />
   </span>
   <span
     className="smallScreen-header"
@@ -297,7 +305,7 @@ exports[`Test index Component of admin pages should have respond handle click an
       id="main"
     >
       <header
-        className="header"
+        className="header smallScreen-header"
       >
         <div
           className="l-r-pad-text"
@@ -353,7 +361,9 @@ exports[`Test index Component of admin pages should have respond to logOut metho
   <span
     className="largeScreen-header"
   >
-    <Nav />
+    <Nav
+      component="admin"
+    />
   </span>
   <span
     className="smallScreen-header"
@@ -384,7 +394,7 @@ exports[`Test index Component of admin pages should have respond to logOut metho
       id="main"
     >
       <header
-        className="header"
+        className="header smallScreen-header"
       >
         <div
           className="l-r-pad-text"
@@ -443,8 +453,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
@@ -485,36 +493,46 @@ Object {
 exports[`Test index Component of admin pages should respond to mapStateToProps methods 1`] = `
 Object {
   "allOrder": Object {
-    "rows": Array [
+    "orders": Array [
       Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
-          "id": 1,
-          "name": "rice",
-          "price": "200",
-        },
         "address": "Reverend Street",
         "createdAt": "2018-05-4",
         "id": 1,
+        "meals": Array [
+          Object {
+            "descrption": "Very delicious",
+            "id": 1,
+            "name": "rice",
+            "orderMealItems": Object {
+              "quantity": 3,
+              "totalPrice": 4,
+            },
+            "price": "200",
+          },
+        ],
         "quantity": 3,
-        "status": "pending",
+        "status": "confirmed",
         "updatedAt": "2018-05-4",
+        "user": Object {
+          "id": 1,
+          "image": "image",
+          "name": "kevin",
+        },
       },
     ],
   },
+  "cart": undefined,
   "errorMessage": Object {
     "createMealError": "Wrong credentials",
   },
   "mostOrder": Array [
     Object {
-      "Meal": Object {
-        "description": "good",
-        "id": 1,
-        "image": "image",
-        "name": "rice",
-        "price": "400",
-      },
+      "description": "good",
       "id": 1,
+      "image": "image",
+      "name": "rice",
+      "orderCount": 4,
+      "price": "400",
     },
   ],
 }

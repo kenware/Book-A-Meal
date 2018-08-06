@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import Pagination from 'react-js-pagination';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as actions from '../../redux/Action/action';
 import * as mealActions from '../../redux/Action/mealAction';
@@ -12,22 +13,19 @@ export class SetMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      meals: [],
       title: '',
       orderBefore: '',
-      modal: 'modal',
-      mealId: 0,
-      mealName: '',
       erorTitle: '',
       errorOrderBefore: '',
       setMenuSuccess: '',
-      Add: 'Add',
+      add: 'Set Menu',
       pageNum: 1
     };
-    this.handlePageNext = this.handlePageNext.bind(this);
-    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.onChange = this.onChange.bind(this);
     this.addMenu = this.addMenu.bind(this);
-    this.cancelAdd = this.cancelAdd.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+    this.confirmAdd = this.confirmAdd.bind(this);
   }
   /**
    * lifecycle hook called when component receives props
@@ -44,8 +42,7 @@ export class SetMenu extends Component {
       const errorMessage = props.errorMessage.setMenuError;
       props.actions.clearMessages();
       return {
-        Add: 'Add',
-        modal: 'modal',
+        add: 'Set Menu',
         setMenuSuccess: successMessage,
         errorMessage
       };
@@ -62,84 +59,59 @@ export class SetMenu extends Component {
     this.setState(state);
   }
 
-  // cancel modal
-  cancelAdd() {
-    this.setState({ mealId: 0, mealName: '', modal: 'modal' });
-  }
   /** Add meal to menu
    * calls redux action
    */
 
   addMenu() {
-    const { mealId, title, orderBefore } = this.state;
-    if (mealId && title) {
-      this.props.menuActions.setMenu(mealId, title, orderBefore);
-      this.setState({
+    const { meals, title, orderBefore } = this.state;
+    if (!title) {
+      this.setState({ errorTitle: 'Title is required', errorOrderBefore: '' });
+      return;
+    }
+    if (!orderBefore) {
+      this.setState({ errorOrderBefore: 'Order Expiring time is required', errorTitle: '' });
+      return;
+    }
+    if (meals.length > 0) {
+      this.props.menuActions.setMenu(meals, title, orderBefore);
+      return this.setState({
         mealId: '',
         mealName: '',
-        Add: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
+        add: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
       });
     }
+    this.setState({ mealError: 'Please select meals to set a menu' });
   }
 
-  handlePageNext() {
-    let { pageNum } = this.state;
-    pageNum += 1;
-    const offset = (pageNum - 1) * limit;
-    const totalPage = this.props.meals.count / limit;
-    if (pageNum === totalPage || pageNum > totalPage) {
-      return this.setState({ lastPage: 'Last page', firstPage: '' });
-    }
+  handlePageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ activePage: pageNumber });
     this.props.mealActions.getAllMeals(limit, offset);
-    this.setState({ pageNum, firstPage: '' });
   }
 
-  handlePagePrev() {
-    let { pageNum } = this.state;
-    pageNum -= 1;
-    if (pageNum < 1) {
-      return this.setState({ firstPage: 'firstPage', lastPage: '' });
+  confirmAdd(mealId) {
+    const { state } = this;
+    if (state.meals.indexOf(mealId) === -1) {
+      state[mealId] = mealId;
+      state.meals.push(mealId);
+      this.setState(state);
+    } else {
+      const index = state.meals.indexOf(mealId);
+      state.meals.splice(index, 1);
+      state[mealId] = '';
+      this.setState(state);
     }
-    const offset = (pageNum - 1) * limit;
-    this.props.mealActions.getAllMeals(limit, offset);
-    this.setState({ pageNum, lastPage: '' });
   }
 
   render() {
-    // Display modal that allow you to add meal to menu
-    const confirmAdd = (mealId, mealName) => {
-      if (!this.state.title) {
-        this.setState({ errorTitle: 'Title is required' });
-        return;
-      }
-      if (!this.state.orderBefore) {
-        this.setState({ errorOrderBefore: 'Order Expiring time is required' });
-        return;
-      }
-      this.setState({ mealId, mealName, modal: '' });
-    };
-
     return (
-      <div className="order-wrapper order-container">
-        <div className={`modal-order ${this.state.modal}`}>
-          <button
-            style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-            className="remove-modal"
-            onClick={this.cancelAdd}
-          >
-            &times;
-          </button>
-          <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
-            <p className="justify l-r-pad-text"> Add {this.state.mealName} to todays menu</p>
-          </div>
-          <div className="modal-order-content">
-            <button className="remove-modal" id="addMenu" onClick={this.addMenu}>{this.state.Add}</button><button onClick={this.cancelAdd}className="remove-modal" id="removeMenu">Cancel</button>
-          </div>
-        </div>
+      <div className="">
         <h2 style={{ marginTop: '2rem' }}>SET MENU FOR THE DAY</h2>
         <h4 className="p-color text-center">Enter Menu Title and the Expire Time(24 Hours Format) in Hours</h4>
         <h5 className="p-color text-center">Eg Expire time of 17 <em className="fa fa-long-arrow-right" /> 5pm</h5>
         <h4 className="danger text-center">{this.state.errorMessage}</h4>
+        <h4 className="danger text-center">{this.state.mealError}</h4>
         <h4 className="y-color text-center">{this.state.setMenuSuccess}</h4>
         <div className="form-field" id="setMenu-forrm">
           <label htmlFor="name">
@@ -156,32 +128,37 @@ export class SetMenu extends Component {
           </label>
           <input onChange={this.onChange} type="number" id="expire" name="orderBefore" required />
         </div>
-        <h4 className="p-color text-center">Set menu from the meal options</h4>
-        <table>
+        <h4 className="p-color text-center">Select meals to set todays menu</h4>
+        <table className="table" style={{ margin: '10px 10% 10px 7%', width: '90%' }}>
           <tbody>
-            <tr>
+            <tr className="tr tr-color tr-height">
               <th>Name</th>
               <th>Price ($)</th>
-              <th>Add to Menu</th>
+              <th>Select</th>
             </tr>
             {this.props.meals.rows.map(meal =>
               (
-                <tr className="tr" key={meal.id}>
+                <tr className="tr tr tr-height" key={meal.id}>
                   <td>{meal.name}</td>
                   <td>{meal.price}</td>
                   <td>
-                    <button onClick={() => confirmAdd(meal.id, meal.name)} id={`${meal.name}`}>
-                      <i className="fa fa-list-alt y-color" aria-hidden="true" />&nbsp;Add
-                    </button>
+                    {this.state[meal.id] ? <input className="checkbox" type="checkbox" onClick={() => this.confirmAdd(meal.id, meal.name)} id={`${meal.name}`} checked />
+                    : <input className="checkbox" type="checkbox" onChange={() => this.confirmAdd(meal.id, meal.name)} id={`${meal.name}`} /> }
                   </td>
                 </tr>
               ))}
           </tbody>
         </table>
-        <div className="pagination">
-          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
-          <div className="current p-color"><button>{this.state.pageNum} </button></div>
-          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
+        <div className=""> <button onClick={this.addMenu} className="setMenuBtn"> {this.state.add} </button> </div><br /><br />
+        <div style={{ textAlign: 'center' }}>
+          <Pagination
+            activePage={this.state.activePage}
+            itemsCountPerPage={limit}
+            totalItemsCount={Math.ceil(this.props.meals.count)}
+            pageRangeDisplayed={4}
+            onChange={this.handlePageChange}
+          />
+
         </div>
       </div>
     );

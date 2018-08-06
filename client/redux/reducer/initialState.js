@@ -4,9 +4,10 @@ export default {
   user: {},
   errorMessage: {},
   successMessage: {},
-  menu: [],
-  myOrder: [],
-  allOrder: { rows: [] },
+  menu: { rows: [] },
+  myOrder: { orders: [] },
+  allOrder: { orders: [] },
   notifics: [],
-  menuMeals: []
+  menuMeals: { meals: [] },
+  cart: []
 };

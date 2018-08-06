@@ -1,0 +1,92 @@
+.modal-header{
+  display: flex;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 9px 6% 9px 6%;
+  border-bottom: 2px;
+  text-align: left;
+  margin-right: 5px;
+  outline: none;
+  font-size: 15px;
+}
+.modal-upgrade{
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 9px 6% 9px 6%;
+  border-bottom: 2px;
+  text-align: left;
+  margin-right: 5px;
+  outline: none;
+  font-size: 15px;
+}
+.modal-contents {
+  display: flex;
+  color:  darkslategray;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  .modal-items {
+  font-size: 20px;
+  flex: 1;
+    input {
+      height: 1.5rem;;
+    }
+  }
+  .modal-menu {
+    flex: 2;
+  }
+  input {
+    height: 2rem;;
+  }
+}
+.select {
+  height: 20px;;
+}
+.modal-footer {
+    display: flex;
+}
+.menu-footer {
+  margin-top: 1rem;
+  float: right;
+}
+.modal-btn {
+  font-size: 15px;
+  min-height: 30px;
+}
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+.tr-color{
+  background-color: #c1dacb//#d2cc96;
+}
+.th, .td {
+  text-align: left;
+  padding: 8px;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+.tr-height {
+  height: 4rem;
+}
+//tr:nth-child(even){background-color: #d7dfdf}
+
+.tr:nth-child(odd) {background-color: #d7dfdf}
+
+
+.modal-wrapper {
+  height: 300px;
+  overflow-x: auto;
+  overflow-y: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-margin {
+  margin-top: 0.5rem;
+}

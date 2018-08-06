@@ -22,6 +22,13 @@ exports[`Test Profile component renders correctly 1`] = `
       "upgrade": [MockFunction],
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": Array [],
+    }
+  }
+  cartModal={[MockFunction]}
   confirmOrder={[MockFunction]}
   errorMessage={
     Object {
@@ -29,6 +36,7 @@ exports[`Test Profile component renders correctly 1`] = `
       "updateError": "error on update",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "getAllMeals": [MockFunction],
@@ -52,24 +60,27 @@ exports[`Test Profile component renders correctly 1`] = `
     ]
   }
   menu={
-    Array [
-      Object {
-        "Meals": Array [
-          Object {
-            "desctription": "good",
-            "id": 1,
-            "name": "jollof",
-            "price": 100,
+    Object {
+      "count": 4,
+      "rows": Array [
+        Object {
+          "id": 1,
+          "meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "user": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
           },
-        ],
-        "User": Object {
-          "email": "ken@gmail.com",
-          "name": "ken",
-          "usrername": "ken",
         },
-        "id": 1,
-      },
-    ]
+      ],
+    }
   }
   menuActions={
     Object {
@@ -78,32 +89,41 @@ exports[`Test Profile component renders correctly 1`] = `
     }
   }
   menuMeals={
-    Array [
-      Object {
+    Object {
+      "count": 2,
+      "meals": Object {
         "desctription": "good",
         "id": 1,
         "name": "jollof",
         "price": 100,
       },
-    ]
+    }
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "pending",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -136,6 +156,7 @@ exports[`Test Profile component renders correctly 1`] = `
       "upgradeSuccess": " good",
     }
   }
+  upGrade={[MockFunction]}
   user={
     Object {
       "email": "ken@gmaoil.com",
@@ -354,11 +375,18 @@ exports[`Test Profile component should display error messages from redux error p
       },
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "createMeal": [MockFunction],
@@ -366,13 +394,23 @@ exports[`Test Profile component should display error messages from redux error p
     }
   }
   meals={Array []}
-  menu={Array []}
+  menu={
+    Object {
+      "count": 3,
+      "rows": Array [],
+    }
+  }
   menuActions={
     Object {
       "getMenu": [MockFunction],
     }
   }
-  menuMeals={Array []}
+  menuMeals={
+    Object {
+      "count": 0,
+      "meals": Array [],
+    }
+  }
   mostOrder={
     Array [
       Object {
@@ -387,22 +425,30 @@ exports[`Test Profile component should display error messages from redux error p
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -687,11 +733,18 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
       },
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "createMeal": [MockFunction],
@@ -699,13 +752,23 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
     }
   }
   meals={Array []}
-  menu={Array []}
+  menu={
+    Object {
+      "count": 3,
+      "rows": Array [],
+    }
+  }
   menuActions={
     Object {
       "getMenu": [MockFunction],
     }
   }
-  menuMeals={Array []}
+  menuMeals={
+    Object {
+      "count": 0,
+      "meals": Array [],
+    }
+  }
   mostOrder={
     Array [
       Object {
@@ -720,22 +783,30 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1025,11 +1096,18 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
       },
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "createMeal": [MockFunction],
@@ -1037,13 +1115,23 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
     }
   }
   meals={Array []}
-  menu={Array []}
+  menu={
+    Object {
+      "count": 3,
+      "rows": Array [],
+    }
+  }
   menuActions={
     Object {
       "getMenu": [MockFunction],
     }
   }
-  menuMeals={Array []}
+  menuMeals={
+    Object {
+      "count": 0,
+      "meals": Array [],
+    }
+  }
   mostOrder={
     Array [
       Object {
@@ -1058,22 +1146,30 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1363,11 +1459,18 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
       },
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "createMeal": [MockFunction],
@@ -1375,13 +1478,23 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
     }
   }
   meals={Array []}
-  menu={Array []}
+  menu={
+    Object {
+      "count": 3,
+      "rows": Array [],
+    }
+  }
   menuActions={
     Object {
       "getMenu": [MockFunction],
     }
   }
-  menuMeals={Array []}
+  menuMeals={
+    Object {
+      "count": 0,
+      "meals": Array [],
+    }
+  }
   mostOrder={
     Array [
       Object {
@@ -1396,22 +1509,30 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1681,11 +1802,18 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
       },
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "createMeal": [MockFunction],
@@ -1693,13 +1821,23 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
     }
   }
   meals={Array []}
-  menu={Array []}
+  menu={
+    Object {
+      "count": 3,
+      "rows": Array [],
+    }
+  }
   menuActions={
     Object {
       "getMenu": [MockFunction],
     }
   }
-  menuMeals={Array []}
+  menuMeals={
+    Object {
+      "count": 0,
+      "meals": Array [],
+    }
+  }
   mostOrder={
     Array [
       Object {
@@ -1714,22 +1852,30 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1944,8 +2090,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
@@ -2018,6 +2162,13 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "upgrade": [MockFunction],
     }
   }
+  activePage={1}
+  cart={
+    Object {
+      "cart": Array [],
+    }
+  }
+  cartModal={[MockFunction]}
   confirmOrder={[MockFunction]}
   errorMessage={
     Object {
@@ -2025,6 +2176,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "updateError": "error on update",
     }
   }
+  handleMealPageChange={[MockFunction]}
   mealActions={
     Object {
       "getAllMeals": [MockFunction],
@@ -2048,24 +2200,27 @@ exports[`Test Profile component should respond to onChange event 1`] = `
     ]
   }
   menu={
-    Array [
-      Object {
-        "Meals": Array [
-          Object {
-            "desctription": "good",
-            "id": 1,
-            "name": "jollof",
-            "price": 100,
+    Object {
+      "count": 4,
+      "rows": Array [
+        Object {
+          "id": 1,
+          "meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "user": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
           },
-        ],
-        "User": Object {
-          "email": "ken@gmail.com",
-          "name": "ken",
-          "usrername": "ken",
         },
-        "id": 1,
-      },
-    ]
+      ],
+    }
   }
   menuActions={
     Object {
@@ -2074,32 +2229,41 @@ exports[`Test Profile component should respond to onChange event 1`] = `
     }
   }
   menuMeals={
-    Array [
-      Object {
+    Object {
+      "count": 2,
+      "meals": Object {
         "desctription": "good",
         "id": 1,
         "name": "jollof",
         "price": 100,
       },
-    ]
+    }
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "pending",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -2132,6 +2296,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "upgradeSuccess": " good",
     }
   }
+  upGrade={[MockFunction]}
   user={
     Object {
       "email": "ken@gmaoil.com",

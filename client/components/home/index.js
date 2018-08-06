@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Header from '../header/index';
 import Footer from '../footer/index';
 import './index.scss';
-import { loadMostOrderedMeal } from '../../redux/Action/action';
+import { loadMostOrderedMeal } from '../../redux/Action/mealAction';
 import MostOrder from './mostOrder';
 import ParallaxScroll from './parallaxScroll';
 import UserTestimonial from './userTestimonial';
@@ -23,7 +23,7 @@ export class Home extends Component {
    * load most ordered meal on page load
    */
   componentDidMount() {
-    this.props.loadMostOrderedMeal();
+    this.props.loadMostOrderedMeal(5);
   }
 
   render() {
@@ -90,22 +90,22 @@ export class Home extends Component {
             (
               <div className="meal-menu" key={meal.id}>
                 <div className="meal-menu-flip">
-                  <ReactCardFlip isFlipped={this.state[meal.Meal.id]}>
+                  <ReactCardFlip isFlipped={this.state[meal.id]}>
                     <div
                       id="flip-card"
                       key="front"
-                      onMouseEnter={() => handleClick(meal.Meal.id)}
+                      onMouseEnter={() => handleClick(meal.id)}
                     >
-                      <img src={meal.Meal.image} alt="Avatar" className="meal-card-img" />
+                      <img src={meal.image} alt="Avatar" className="meal-card-img" />
                     </div>
                     <div
                       id="flip-card-back"
                       key="back"
-                      onMouseLeave={() => handleClose(meal.Meal.id)}
+                      onMouseLeave={() => handleClose(meal.id)}
                     >
-                      <h2>{meal.Meal.name}</h2>
-                      <h2>Price: {meal.Meal.price}</h2>
-                      <p className="justify l-r-pad-text">{`${meal.Meal.description.substr(0, 300).trim()}...`}</p>
+                      <h2>{meal.name}</h2>
+                      <h2>Price: {meal.price}</h2>
+                      <p className="justify l-r-pad-text">{`${meal.description.substr(0, 300).trim()}...`}</p>
                     </div>
                   </ReactCardFlip>
                 </div>

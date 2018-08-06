@@ -8,20 +8,17 @@ exports[`Test Login Component renders correctly 1`] = `
     id="login-bg"
   >
     <div
-      className="register-col"
-    />
-    <div
       className="register-wrapper"
       style={
         Object {
-          "height": "50vh",
+          "margin": "100px 25% 100px 25%",
         }
       }
     >
       <h2
         className="login-header"
       >
-        Enter your details to Login
+        Login
       </h2>
       <br />
       <h3
@@ -37,20 +34,14 @@ exports[`Test Login Component renders correctly 1`] = `
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Username 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="username"
             name="username"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Username"
             required={true}
             type="text"
           />
@@ -58,61 +49,58 @@ exports[`Test Login Component renders correctly 1`] = `
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
-          >
-            Password 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="Password"
             required={true}
             type="password"
           />
         </div>
+         
+        <br />
         <div
-          className="form-field"
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
         >
           <button
-            className="button lg"
+            className="button lg-btn"
             name="submit"
             onClick={[Function]}
             type="submit"
           >
             Login
+             
           </button>
         </div>
+         
+        <br />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="inputPassword3"
+          <Link
+            replace={false}
+            to="/register"
           >
-            <Link
-              replace={false}
-              to="/register"
-            >
-              SignUp
-            </Link>
-                
-            <Link
-              replace={false}
-              to="/resetLink"
-            >
-              forgot password? 
-            </Link>
-          </label>
+            SignUp
+          </Link>
+              
+          <Link
+            replace={false}
+            to="/resetLink"
+          >
+            forgot password? 
+          </Link>
         </div>
       </form>
     </div>
-    <div
-      className="register-col"
-    />
   </div>
   <footer />
 </div>
@@ -126,20 +114,17 @@ exports[`Test Login Component should recieve error message props with wrong cred
     id="login-bg"
   >
     <div
-      className="register-col"
-    />
-    <div
       className="register-wrapper"
       style={
         Object {
-          "height": "50vh",
+          "margin": "100px 25% 100px 25%",
         }
       }
     >
       <h2
         className="login-header"
       >
-        Enter your details to Login
+        Login
       </h2>
       <br />
       <h3
@@ -155,20 +140,14 @@ exports[`Test Login Component should recieve error message props with wrong cred
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Username 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="username"
             name="username"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Username"
             required={true}
             type="text"
           />
@@ -176,61 +155,58 @@ exports[`Test Login Component should recieve error message props with wrong cred
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
-          >
-            Password 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="Password"
             required={true}
             type="password"
           />
         </div>
+         
+        <br />
         <div
-          className="form-field"
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
         >
           <button
-            className="button lg"
+            className="button lg-btn"
             name="submit"
             onClick={[Function]}
             type="submit"
           >
             Login
+             
           </button>
         </div>
+         
+        <br />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="inputPassword3"
+          <Link
+            replace={false}
+            to="/register"
           >
-            <Link
-              replace={false}
-              to="/register"
-            >
-              SignUp
-            </Link>
-                
-            <Link
-              replace={false}
-              to="/resetLink"
-            >
-              forgot password? 
-            </Link>
-          </label>
+            SignUp
+          </Link>
+              
+          <Link
+            replace={false}
+            to="/resetLink"
+          >
+            forgot password? 
+          </Link>
         </div>
       </form>
     </div>
-    <div
-      className="register-col"
-    />
   </div>
   <footer />
 </div>
@@ -244,20 +220,17 @@ exports[`Test Login Component should recieve error message props with wrong cred
     id="login-bg"
   >
     <div
-      className="register-col"
-    />
-    <div
       className="register-wrapper"
       style={
         Object {
-          "height": "50vh",
+          "margin": "100px 25% 100px 25%",
         }
       }
     >
       <h2
         className="login-header"
       >
-        Enter your details to Login
+        Login
       </h2>
       <br />
       <h3
@@ -275,20 +248,14 @@ exports[`Test Login Component should recieve error message props with wrong cred
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
-          >
-            Username 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="username"
             name="username"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Username"
             required={true}
             type="text"
           />
@@ -296,61 +263,58 @@ exports[`Test Login Component should recieve error message props with wrong cred
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
-          >
-            Password 
-            <br />
-            <span
-              className="text-center danger"
-            />
-          </label>
+          <span
+            className="text-center danger"
+          />
           <input
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="Password"
             required={true}
             type="password"
           />
         </div>
+         
+        <br />
         <div
-          className="form-field"
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
         >
           <button
-            className="button lg"
+            className="button lg-btn"
             name="submit"
             onClick={[Function]}
             type="submit"
           >
             Login
+             
           </button>
         </div>
+         
+        <br />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="inputPassword3"
+          <Link
+            replace={false}
+            to="/register"
           >
-            <Link
-              replace={false}
-              to="/register"
-            >
-              SignUp
-            </Link>
-                
-            <Link
-              replace={false}
-              to="/resetLink"
-            >
-              forgot password? 
-            </Link>
-          </label>
+            SignUp
+          </Link>
+              
+          <Link
+            replace={false}
+            to="/resetLink"
+          >
+            forgot password? 
+          </Link>
         </div>
       </form>
     </div>
-    <div
-      className="register-col"
-    />
   </div>
   <footer />
 </div>
@@ -364,20 +328,17 @@ exports[`Test Login Component should respond to change event and change the stat
     id="login-bg"
   >
     <div
-      className="register-col"
-    />
-    <div
       className="register-wrapper"
       style={
         Object {
-          "height": "50vh",
+          "margin": "100px 25% 100px 25%",
         }
       }
     >
       <h2
         className="login-header"
       >
-        Enter your details to Login
+        Login
       </h2>
       <br />
       <h3
@@ -395,22 +356,16 @@ exports[`Test Login Component should respond to change event and change the stat
         <div
           className="form-field"
         >
-          <label
-            htmlFor="name"
+          <span
+            className="text-center danger"
           >
-            Username 
-            <br />
-            <span
-              className="text-center danger"
-            >
-              Username is required
-            </span>
-          </label>
+            Username is required
+          </span>
           <input
             id="username"
             name="username"
             onChange={[Function]}
-            placeholder="Keny"
+            placeholder="Username"
             required={true}
             type="text"
           />
@@ -418,63 +373,60 @@ exports[`Test Login Component should respond to change event and change the stat
         <div
           className="form-field"
         >
-          <label
-            htmlFor="password"
+          <span
+            className="text-center danger"
           >
-            Password 
-            <br />
-            <span
-              className="text-center danger"
-            >
-              Password is required
-            </span>
-          </label>
+            Password is required
+          </span>
           <input
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder="Password"
             required={true}
             type="password"
           />
         </div>
+         
+        <br />
         <div
-          className="form-field"
+          style={
+            Object {
+              "display": "flex",
+            }
+          }
         >
           <button
-            className="button lg"
+            className="button lg-btn"
             name="submit"
             onClick={[Function]}
             type="submit"
           >
             Login
+             
           </button>
         </div>
+         
+        <br />
         <div
           className="form-field"
         >
-          <label
-            htmlFor="inputPassword3"
+          <Link
+            replace={false}
+            to="/register"
           >
-            <Link
-              replace={false}
-              to="/register"
-            >
-              SignUp
-            </Link>
-                
-            <Link
-              replace={false}
-              to="/resetLink"
-            >
-              forgot password? 
-            </Link>
-          </label>
+            SignUp
+          </Link>
+              
+          <Link
+            replace={false}
+            to="/resetLink"
+          >
+            forgot password? 
+          </Link>
         </div>
       </form>
     </div>
-    <div
-      className="register-col"
-    />
   </div>
   <footer />
 </div>
@@ -488,8 +440,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
