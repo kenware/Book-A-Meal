@@ -1,40 +1,77 @@
 .form-label {
-    flex:2;
-    padding: 10px 10px 10px 10px;
-    margin-right: 10px;
+  flex:2;
+  padding: 10px 10px 10px 10px;
+  margin-right: 10px;
 }
-.detail-contents{
-    display:flex;
-    justify-content: space-around;
+
+.detail-contents {
+  display:flex;
+  justify-content: space-around;
   }
+
   .detail-img{
     width:60%;
     height: 60%;
   }
   .detail-text{
-   margin-top:1rem;
+    margin-top:1rem;
   }
+
   @media screen and (max-width: 600px) {
-  .largeScreen-header{
-     display: none;
+    .largeScreen-header{
+      display: none;
     }
   }
+
   @media screen and (min-width: 600px) {
     .smallScreen-header{
        display: none;
       }
     }
-  
-.pagination{
+
+.allMeal:nth-child(odd) {background-color: #d7dfdf}
+.meal-pagination {
   display: flex;
   justify-content: center;
-  margin: 1rem 1rem 1rem 1rem;
-  .prev{
-    text-align: center;
-    flex:1;
-  }
-  .next{
-    text-align: center;
-    flex:1;
-  }
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.pagination>li {
+  display: inline;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+  color: #777;
+  background-color: #fff;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+.pagination>li>a, .pagination>li>span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  z-index: 3;
+  background-color: #d7dfdf;
+  border-color: #337ab7;
+  cursor: default;
 }

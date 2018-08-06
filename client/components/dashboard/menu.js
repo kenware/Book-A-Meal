@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import 'video-react/dist/video-react.css';
 import PropTypes from 'prop-types';
+import Pagination from 'react-js-pagination';
 import * as actions from '../../redux/Action/action';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
@@ -10,7 +11,7 @@ import MealGuide from './mealGuide';
 import TodayMenu from './todayMenu';
 import Video from './video';
 
-const limit = 2;
+const limit = 4;
 export class Menu extends Component {
   constructor(props) {
     super(props);
@@ -26,15 +27,17 @@ export class Menu extends Component {
       order: 'Order',
       modal: 'modal',
       pageNum: 1,
-      accordion: {}
+      accordion: {},
+      menuActivePage: 1,
+      mealActivePage: 1
     };
     this.onChange = this.onChange.bind(this);
     this.orderMeal = this.orderMeal.bind(this);
     this.cancelOrder = this.cancelOrder.bind(this);
     this.confirmOrder = this.confirmOrder.bind(this);
-    this.handlePageNext = this.handlePageNext.bind(this);
-    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.showMenu = this.showMenu.bind(this);
+    this.handleMenuPageChange = this.handleMenuPageChange.bind(this);
+    this.handleMealPageChange = this.handleMealPageChange.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -140,38 +143,31 @@ export class Menu extends Component {
       this.state.accordion = {};
       state = this.state.accordion;
       state[id] = id;
+      state.url = url;
       this.setState(state);
     }
   }
   /**
    * Pagination method
-   * Next page
+   * Menu Pagination
    */
-  handlePageNext() {
-    let { pageNum } = this.state;
-    pageNum += 1;
-    const offset = (pageNum - 1) * limit;
-    const totalPage = this.props.menu.length;
-    if (totalPage < 1) {
-      return this.setState({ lastPage: 'Last page', firstPage: '' });
-    }
+  handleMenuPageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ menuActivePage: pageNumber });
     this.props.menuActions.getMenu(limit, offset);
-    this.setState({ pageNum, firstPage: '' });
   }
+
   /**
    * Pagination method
-   * Prev page
+   * Meal Pagination
    */
-  handlePagePrev() {
-    let { pageNum } = this.state;
-    pageNum -= 1;
-    if (pageNum < 1) {
-      return this.setState({ firstPage: 'firstPage', lastPage: '' });
-    }
-    const offset = (pageNum - 1) * limit;
-    this.props.menuActions.getMenu(limit, offset);
-    this.setState({ pageNum, lastPage: '' });
+  handleMealPageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ mealActivePage: pageNumber });
+    this.props.menuActions.clearMenuMeals();
+    this.props.menuActions.getMenuMeals(this.state.accordion.url, limit, offset);
   }
+
   render() {
     return (
       <div className="meal-container">
@@ -222,7 +218,7 @@ export class Menu extends Component {
         <h2 className="top-bot-margin">TODAY MENU FROM All CATERERS</h2>
         <h3 className="success text-center">{this.state.successMessage}</h3>
         <h3 className="danger text-center">{this.state.errorMessage}</h3>
-        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
+        {this.props.menu.rows.length < 1 ?
           <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3> :
           <span /> }
         <TodayMenu
@@ -231,14 +227,21 @@ export class Menu extends Component {
           state={this.state}
           showMenu={this.showMenu}
           menuMeals={this.props.menuMeals}
+          handleMealPageChange={this.handleMealPageChange}
         />
-        {this.props.menu.length < 1 && this.state.pageNum === 1 ?
-          <Video /> : <span /> }
-        <div className="pagination">
-          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
-          <div className="current p-color"><button>{this.state.pageNum} </button></div>
-          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
-        </div>
+        {this.props.menu.rows.length < 1 ?
+          <Video /> :
+          <div className="meal-pagination" id="menuPagination">
+            <Pagination
+              activePage={this.state.menuActivePage}
+              itemsCountPerPage={limit}
+              totalItemsCount={Math.ceil(this.props.menu.count)}
+              pageRangeDisplayed={6}
+              onChange={this.handleMenuPageChange}
+            />
+          </div>
+           }
+
       </div>
     );
   }
@@ -247,10 +250,10 @@ export class Menu extends Component {
 Menu.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   orderActions: PropTypes.object.isRequired,
-  menu: PropTypes.array.isRequired,
+  menu: PropTypes.object.isRequired,
   menuActions: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  menuMeals: PropTypes.array.isRequired,
+  menuMeals: PropTypes.object.isRequired,
 };
 
 export function mapStateToProps(state) {

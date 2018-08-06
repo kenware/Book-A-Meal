@@ -12,11 +12,6 @@ exports[`Test Register Component should render correctly 1`] = `
     />
     <div
       className="register-wrapper"
-      style={
-        Object {
-          "height": "500px",
-        }
-      }
     >
       <h2
         className="login-header"

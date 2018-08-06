@@ -20,7 +20,7 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -411,7 +411,7 @@ exports[`Test index Component of admin pages renders correctly 2`] = `
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -805,7 +805,7 @@ exports[`Test index Component of admin pages should accept new props from compon
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -1196,7 +1196,7 @@ exports[`Test index Component of admin pages should accept new props from compon
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -1587,7 +1587,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -1981,7 +1981,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -2372,7 +2372,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -2763,7 +2763,7 @@ exports[`Test index Component of admin pages should close upgrade modal on cance
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -3154,7 +3154,7 @@ exports[`Test index Component of admin pages should logOut  1`] = `
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -3545,7 +3545,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -3949,7 +3949,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -4353,7 +4353,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -4757,7 +4757,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -5161,7 +5161,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -5565,7 +5565,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -5969,7 +5969,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -6373,7 +6373,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -6777,7 +6777,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -7181,7 +7181,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -7575,7 +7575,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -7969,7 +7969,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -8363,7 +8363,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -8757,7 +8757,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -9151,7 +9151,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -9545,7 +9545,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -9949,7 +9949,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -10353,7 +10353,7 @@ exports[`Test index Component of admin pages should popover on mousenter and rem
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -10757,7 +10757,7 @@ exports[`Test index Component of admin pages should respond to change event of a
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -11151,7 +11151,7 @@ exports[`Test index Component of admin pages should respond to change event of a
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -11613,7 +11613,7 @@ exports[`Test index Component of admin pages should toggle sidebar 1`] = `
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -12004,7 +12004,7 @@ exports[`Test index Component of admin pages should toggle sidebar 2`] = `
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -12395,7 +12395,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 1`
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />
@@ -12789,7 +12789,7 @@ exports[`Test index Component of admin pages should upgrade a user to caterer 2`
     >
       <div>
         <em
-          className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+          className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
           onClick={[Function]}
           role="button"
         />

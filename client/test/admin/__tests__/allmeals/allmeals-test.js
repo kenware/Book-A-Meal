@@ -29,9 +29,9 @@ describe('Test Component of ALLMeals component', () => {
     expect(tree.find('.col-meal')).toHaveLength(8);
   });
 
-  it('should have 17 divs', () => {
+  it('should have 18 divs', () => {
     const tree = shallow(<AllMeal {...props} />);
-    expect(tree.find('div')).toHaveLength(21);
+    expect(tree.find('div')).toHaveLength(18);
   });
 
   it('should display 2 img tag from the meals contents', () => {

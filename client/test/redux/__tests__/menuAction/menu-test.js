@@ -52,7 +52,7 @@ describe('async actions test', () => {
       .get(`/api/v1/menu?limit=${limit}&offset=${offset}`, { body: message });
 
     const expectedActions = [
-      { type: types.LOAD_TODAY_MENU, menu: [] }, { type: types.LOAD_ERROR_MESSAGE, errorMessage: { getMenuError: 'Todays Menu is not set yet' } }
+      { type: types.LOAD_ERROR_MESSAGE, errorMessage: { getMenuError: 'Todays Menu is not set yet' } }
     ];
     const store = mockStore({ menu: [] });
     return store.dispatch(actions.getMenu(limit, offset)).then(() => {

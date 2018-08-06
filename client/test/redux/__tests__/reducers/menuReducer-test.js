@@ -1,9 +1,9 @@
 import reducer from '../../../../redux/reducer/menuReducer';
 import * as types from '../../../../redux/Action/actionType';
 
-describe('MealReducer reducer', () => {
+describe('MenuReducer reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual([]);
+    expect(reducer(undefined, {})).toEqual({ rows: [] });
   });
 
   it('should handle LOAD_ALL_MEALS', () => {

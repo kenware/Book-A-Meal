@@ -1,52 +1,59 @@
 
-  
-  
-  .register-container{
-    display: flex;
-    height: auto;
+.register-container {
+  display: flex;
+  height: auto;
+}
+
+.register-col{
+  flex:1;
+}
+
+.register-wrapper{
+  border: dotted darkslategray;
+  background-color: white;
+  margin: 100px 5% 100Px 5%;
+  align-items:center;
+  flex:3;
+  height: auto;
+}
+
+.form-field{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10% 10px 7%;
+}
+
+.form-field label{
+  padding: 10px 10px 10px 10px;
+  flex:1;
+}
+
+.form-field input{
+  flex:2;
+  padding: 10px 10px 10px 10px;
+  margin-right: 10px;
   }
-  .register-col{
-    flex:1;
-  }
-  .register-wrapper{
-      border: dotted darkslategray;
-      background-color: white;
-      margin-top: 100px;
-      align-items:center;
-     flex:3;
-     height: auto;
-  }
-  .form-field{
-      display: flex;
-      padding: 10px 10% 10px 7%;
-  }
-  .form-field label{
-   padding: 10px 10px 10px 10px;
-   flex:1;
-  }
-  .form-field input{
-    flex:2;
-    padding: 10px 10px 10px 10px;
-    margin-right: 10px;
-   }
-   .form-field button{
-    flex:2;
-    padding: 10px 10px 10px 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-   }
-   .text-center {
-     text-align: center;
-   }
-   .danger {
-     color: red;
-   }
-   #register-bg{
-    background: url('../../image/image.jpg') center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 90vh;
-    opacity: 1;;
+
+.form-field button{
+  flex:2;
+  padding: 10px 10px 10px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.danger {
+  color: red;
+}
+
+#register-bg{
+  background: url('../../image/image.jpg') center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;;
 }

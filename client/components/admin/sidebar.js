@@ -20,7 +20,7 @@ const Sidebar = ({
   <div>
     <nav className={`sidebar sidebar1-width ${nav1}`}>
       <div>
-        <em className="fa fa-bars l-r-pad-text m-text bar1 toggle1" onClick={() => toggle()} role="button" />
+        <em className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color" onClick={() => toggle()} role="button" />
         <h3 className="y-color l-r-pad-text"><Link to="/admin" className="y-color">ADMIN</Link></h3>
         <ul>
           <li className="top-padding li-style">

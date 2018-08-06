@@ -69,10 +69,10 @@ export default class menuController {
   async getMenu(req, res) {
     let { date } = req.params;
     let { limit, offset } = req.query;
-    limit = parseInt(limit, 10) || 6;
+    limit = parseInt(limit, 10) || 4;
     offset = parseInt(offset, 10) || 0;
     if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
-    const menu = await Menu.findAll({
+    const menu = await Menu.findAndCountAll({
       where: { date },
       include: [
         {
@@ -83,22 +83,22 @@ export default class menuController {
       limit,
       offset
     });
-    menu.map((oneMenu) => {
+    menu.rows.map((oneMenu) => {
       oneMenu.dataValues.Meals = `${req.headers.host}/api/v1/menuMeals/${oneMenu.id}`;
       return oneMenu;
     });
-    if (!menu || menu.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
+    if (!menu || menu.rows.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
     return res.status(200).json(menu);
   }
 
   async getMenuMeals(req, res) {
     const { menuId } = req.params;
     let { limit, offset } = req.query;
-    limit = parseInt(limit, 10) || 5;
+    limit = parseInt(limit, 10) || 4;
     offset = parseInt(offset, 10) || 0;
     const id = parseInt(menuId, 10);
     const date = shortcode.parse('{YYYY-MM-DD}', new Date());
-    const menu = await Menu.findAll({
+    const menu = await Menu.findAndCountAll({
       where: { date, id },
       include: [
         {
@@ -110,7 +110,9 @@ export default class menuController {
       offset,
       subQuery: false,
     });
-    if (!menu || menu.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
-    return res.status(200).json(menu[0].Meals);
+    if (!menu || menu.rows.length < 1) { return res.status(404).json({ message: `${date} menu is not set` }); }
+    return res.status(200).json({
+      count: menu.count, meals: menu.rows[0].Meals
+    });
   }
 }

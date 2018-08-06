@@ -39,7 +39,6 @@ export const getMenu = (limit, offset) => dispatch => window.fetch(`/api/v1/menu
   .then(res => res.json())
   .then((menu) => {
     if (menu.message) {
-      dispatch(loadTodayMenu([]));
       return dispatch(loadErrorMessage({ getMenuError: 'Todays Menu is not set yet' }));
     }
     dispatch(loadTodayMenu(menu));
@@ -53,10 +52,9 @@ export const getMenuMeals = (url, limit, offset) => dispatch => window.fetch(`${
   .then(res => res.json())
   .then((menuMeals) => {
     if (menuMeals.message) {
-      dispatch(loadTodayMenuMeals([]));
       return dispatch(loadErrorMessage({ getMenuMealsError: 'Error fetching meals' }));
     }
     dispatch(loadTodayMenuMeals(menuMeals));
   });
 
-export const clearMenuMeals = () => dispatch => dispatch(loadTodayMenuMeals([]));
+export const clearMenuMeals = () => dispatch => dispatch(loadTodayMenuMeals({ meals: [] }));

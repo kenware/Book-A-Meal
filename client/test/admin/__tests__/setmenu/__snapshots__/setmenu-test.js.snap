@@ -193,44 +193,22 @@ exports[`Test Component of SETMENU component renders correctly 1`] = `
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -430,44 +408,22 @@ exports[`Test Component of SETMENU component should call addMenu method onclick 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -667,44 +623,22 @@ exports[`Test Component of SETMENU component should cancel addMenu modal cancelA
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -904,44 +838,22 @@ exports[`Test Component of SETMENU component should respond to a click event by 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -1140,44 +1052,22 @@ exports[`Test Component of SETMENU component should respond to change event and 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -1377,44 +1267,22 @@ exports[`Test Component of SETMENU component should respond to change event and 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -1683,44 +1551,22 @@ exports[`Test Component of SETMENU component should should respond to cancelAdd 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -1918,44 +1764,22 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;
@@ -2153,44 +1977,22 @@ exports[`Test Component of SETMENU component should should respond to lifeCycle 
     </tbody>
   </table>
   <div
-    className="pagination"
+    className="meal-pagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={6}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={4}
+      prevPageText="⟨"
+      totalItemsCount={NaN}
+    />
   </div>
 </div>
 `;

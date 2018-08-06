@@ -68,7 +68,9 @@ export const props = {
     getAllOrders: jest.fn(),
     setMenu: jest.fn()
   },
-  notific: []
+  notific: [],
+  handlePageChange: jest.fn(),
+  activePage: 1
 };
 
 export const emptyProps = {
@@ -98,6 +100,7 @@ export const emptyProps = {
     updateMeal: jest.fn()
   },
   menuActions: {
-
-  }
+  },
+  handlePageChange: jest.fn(),
+  activePage: 1
 };

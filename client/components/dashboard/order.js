@@ -3,14 +3,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Popover from 'react-simple-popover';
 import PropTypes from 'prop-types';
+import Modal from 'react-responsive-modal';
+import Pagination from 'react-js-pagination';
 import * as orderActions from '../../redux/Action/orderAction';
 import * as actions from '../../redux/Action/action';
+import OrderModal from './modals/orderModal';
 
-
+const limit = 6;
 export class Orders extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      confirmOrderModal: false,
       open: false,
       quantity: '',
       address: '',
@@ -22,7 +26,8 @@ export class Orders extends Component {
       modifyOrder: 'Modify',
       statusModal: 'modal',
       modifyError: '',
-      confirmButton: 'Confirm'
+      confirmButton: 'Confirm',
+      activePage: 1
     };
     // bind this to methods
     this.onChange = this.onChange.bind(this);
@@ -30,7 +35,10 @@ export class Orders extends Component {
     this.modify = this.modify.bind(this);
     this.confirmStatus = this.confirmStatus.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
+
+    this.onOpenModal = this.onOpenModal.bind(this);
+    this.onCloseModal = this.onCloseModal.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -57,7 +65,8 @@ export class Orders extends Component {
     } else if (props.successMessage.updateSuccess || props.successMessage.confirmSuccess) {
       props.actions.clearMessages();
       return {
-        modal: 'modal',
+        open: false,
+        confirmOrderModal: false,
         address: '',
         quantity: '',
         orderId: '',
@@ -78,14 +87,29 @@ export class Orders extends Component {
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
-  // show popover on hover
-  handleClick() {
-    this.setState({ open: !this.state.open });
-  }
-  // close popover on mouse leave event
-  handleClose() {
+
+  onCloseModal() {
+    this.cancelOrder();
     this.setState({ open: false });
   }
+
+  onOpenModal(orderId, mealName, quantity, address, price) {
+    this.setState({
+      orderId, mealName, quantity, address, price, modal: ''
+    });
+    this.setState({ open: true });
+  }
+
+  // show popover on hover
+  handleClick(orderId, mealName) {
+    this.setState({
+      confirmOrderModal: !this.state.confirmOrderModal,
+      orderId,
+      mealName,
+      statusModal: ''
+    });
+  }
+
   /**
    * cancel modal if the user dont want to proceed with the order
   */
@@ -129,6 +153,11 @@ export class Orders extends Component {
     this.props.orderActions.updateOrder(orderId, quantity, address, status);
   }
 
+  handlePageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ activePage: pageNumber });
+    this.props.orderActions.getMyOrder(limit, offset);
+  }
 
   render() {
     const monthNames = [
@@ -137,92 +166,38 @@ export class Orders extends Component {
       'July', 'August', 'September',
       'October', 'November', 'December'
     ];
-    // show confirm status order modal
-    const confirmOrder = (orderId, mealName) => {
-      this.setState({ orderId, mealName, statusModal: '' });
-    };
-    // show modify order modal
-    const modifyOrder = (orderId, mealName, quantity, address, price) => {
-      this.setState({
-        orderId, mealName, quantity, address, price, modal: ''
-      });
-    };
+
     return (
       <div className="order-wrapper order-container">
         <div style={{ margin: '1rem 1rem 1rem 1rem' }}>
-          <div className={`modal-order ${this.state.statusModal}`}>
-            <button
-              style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-              className="remove-modal"
-              onClick={this.cancelOrder}
-            >
-              &times;
-            </button>
-            <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
+          <Modal open={this.state.open} onClose={this.onCloseModal} center>
+            <OrderModal modify={this.modify} state={this.state} onChange={this.onChange} />
+          </Modal>
+          <Modal open={this.state.confirmOrderModal} onClose={this.handleClick} center>
+            <br />
+            <div className="modal-header">
               <p className="justify l-r-pad-text"> Confirm that you have received  {this.state.mealName}</p>
             </div>
-            <div className="modal-order-content">
-              <button className="remove-modal confirmStatus" onClick={this.confirmStatus}>{this.state.confirmButton}</button><button onClick={this.cancelOrder}className="remove-modal">Cancel</button>
+            <div className="modal-contents">
+              <button className="remove-modal confirmStatus" onClick={this.confirmStatus}>{this.state.confirmButton}</button>
             </div>
-          </div>
-          <div className={`modal-order ${this.state.modal}`}>
-            <button
-              style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-              onClick={this.cancelOrder}
-              className="remove-modal"
-            >
-              &times;
-            </button>
-            <div className="modal-order-content">
-              <p className="justify l-r-pad-text">
-                Edit the field to modify this order<br />
-                NB This order can only be modified <br />within ONE hour after it is created
-                <h4 className="danger text-center">{this.state.modifyError}</h4>
-              </p>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Name: </span>
-              <span className="modal-order-items ">{this.state.mealName}</span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Price per Meal(#): </span>
-              <span className="modal-order-items ">{this.state.price}</span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text"> Quantity: </span>
-              <span className="modal-order-items l-r-pad-text"><input id="quantity" value={this.state.quantity} name="quantity" type="number" onChange={this.onChange} /></span>
-            </div>
-            <div className="justify-overide">
-              <span className="modal-order-items l-r-pad-text address"> Address: </span>
-              <span className="modal-order-items l-r-pad-text"><input id="address" value={this.state.address} name="address" type="text" onChange={this.onChange} /></span>
-            </div>
-            <div className="modal-order-content">
-              <span className="modal-order-items l-r-pad-text">
-                <button onClick={this.modify} className="remove-modal modify">{this.state.modifyOrder}</button>
-              </span>
-              <span className="modal-order-items l-r-pad-text">
-                <button onClick={this.cancelOrder} className="remove-modal cancel">Cancel</button>
-              </span>
-            </div>
-          </div>
+          </Modal>
 
           <h2 style={{ marginTop: '4rem' }}>MY MEAL ORDER HISTORY</h2>
           <h3 className="danger text-center"><b>{this.props.errorMessage.myOrderError}</b></h3>
           <table>
             <tbody>
-              <tr>
+              <tr className="p-color">
                 <th>Name</th>
                 <th>Quanitity odered
                 </th>
                 <th>Price ($)</th>
-
                 <th>Total price</th>
                 <td>Date</td>
-                <td>Address</td>
                 <td>Status</td>
                 <td>Modify</td>
               </tr>
-              {this.props.myOrder.map(order =>
+              {this.props.myOrder.rows.map(order =>
               (
                 <tr key={order.id}>
                   <td>{order.Meal.name}</td>
@@ -233,36 +208,33 @@ export class Orders extends Component {
                     {new Date(order.createdAt).getDate()} &nbsp;
                     {new Date(order.createdAt).getFullYear()}
                   </td>
-                  <td>{order.address}</td>
                   <td>{order.status === 'pending' ?
-                    <span>{order.status}
+                    <span>{order.status}&nbsp;
                       <button
                         className="y-color confirm-btn"
-                        onClick={() => confirmOrder(order.id, order.Meal.name)}
-                        ref="target"
-                        onMouseEnter={this.handleClick}
-                        onMouseLeave={this.handleClose}
+                        onClick={() => this.handleClick(order.id, order.Meal.name)}
                       >Confirm
                       </button>
-                      <Popover
-                        placement="top"
-                        container={this}
-                        target={this.refs.target}
-                        show={this.state.open}
-                      >
-                        <p className="p-color">Confirm Meal Delivery</p>
-                      </Popover>
                     </span>
                   : <span>{order.status}</span>}
                   </td>
                   <td>{ order.status === 'confirmed' ?
                     <button className="p-color modify-btn" disabled>Modify</button> :
-                    <button onClick={() => modifyOrder(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)} className="p-color modify-btn" >Modify</button>}
+                    <button onClick={() => this.onOpenModal(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)} className="p-color modify-btn" >Modify</button>}
                   </td>
                 </tr>
                 ))}
             </tbody>
           </table>
+          <div className="meal-pagination">
+            <Pagination
+              activePage={this.state.activePage}
+              itemsCountPerPage={limit}
+              totalItemsCount={Math.ceil(this.props.myOrder.count)}
+              pageRangeDisplayed={4}
+              onChange={this.handlePageChange}
+            />
+          </div>
         </div>
       </div>
     );
@@ -271,7 +243,7 @@ export class Orders extends Component {
 Orders.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   orderActions: PropTypes.object.isRequired,
-  myOrder: PropTypes.array.isRequired
+  myOrder: PropTypes.object.isRequired
 };
 export function mapStateToProps(state) {
   return {

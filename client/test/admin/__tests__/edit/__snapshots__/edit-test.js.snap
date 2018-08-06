@@ -720,12 +720,14 @@ Edit {
         ],
       },
     },
+    "activePage": 1,
     "allOrder": Object {
       "rows": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handlePageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
@@ -775,6 +777,7 @@ Edit {
             },
           }
         }
+        activePage={1}
         allOrder={
           Object {
             "rows": Array [],
@@ -785,6 +788,7 @@ Edit {
             "createMealError": "",
           }
         }
+        handlePageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -1194,12 +1198,14 @@ Edit {
         ],
       },
     },
+    "activePage": 1,
     "allOrder": Object {
       "rows": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handlePageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
@@ -1253,6 +1259,7 @@ Edit {
             },
           }
         }
+        activePage={1}
         allOrder={
           Object {
             "rows": Array [],
@@ -1263,6 +1270,7 @@ Edit {
             "createMealError": "",
           }
         }
+        handlePageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],

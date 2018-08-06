@@ -147,35 +147,40 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -183,8 +188,10 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -195,46 +202,24 @@ exports[`Test menu component of dashboard renders correctly 1`] = `
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -388,16 +373,29 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -409,46 +407,6 @@ exports[`Test menu component of dashboard renders correctly 2`] = `
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -599,35 +557,40 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -635,8 +598,10 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -647,46 +612,24 @@ exports[`Test menu component of dashboard should clear redux store on unmount me
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -838,35 +781,40 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -874,8 +822,10 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -886,46 +836,24 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -1077,35 +1005,40 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -1113,8 +1046,10 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -1125,46 +1060,24 @@ exports[`Test menu component of dashboard should respond lifeCyle method compone
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -1318,16 +1231,29 @@ exports[`Test menu component of dashboard should respond to a click event and di
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -1339,46 +1265,6 @@ exports[`Test menu component of dashboard should respond to a click event and di
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -1531,8 +1417,19 @@ exports[`Test menu component of dashboard should respond to a click event and di
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
@@ -1540,9 +1437,11 @@ exports[`Test menu component of dashboard should respond to a click event and di
         "address": "",
         "addressError": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "mealDescription",
         "mealId": "",
         "mealName": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -1555,46 +1454,6 @@ exports[`Test menu component of dashboard should respond to a click event and di
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -1747,16 +1606,29 @@ exports[`Test menu component of dashboard should respond to a click event and di
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -1768,46 +1640,6 @@ exports[`Test menu component of dashboard should respond to a click event and di
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -1960,8 +1792,19 @@ exports[`Test menu component of dashboard should respond to a click event and di
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
@@ -1969,9 +1812,11 @@ exports[`Test menu component of dashboard should respond to a click event and di
         "address": "",
         "addressError": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "mealDescription",
         "mealId": "",
         "mealName": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -1984,46 +1829,6 @@ exports[`Test menu component of dashboard should respond to a click event and di
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -2186,8 +1991,19 @@ exports[`Test menu component of dashboard should respond to a click event and di
   />
   <todayMenu
     confirmOrder={[Function]}
-    menu={Array []}
-    menuMeals={Array []}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
     showMenu={[Function]}
     state={
       Object {
@@ -2195,9 +2011,11 @@ exports[`Test menu component of dashboard should respond to a click event and di
         "address": "my address",
         "addressError": "",
         "image": "image",
+        "mealActivePage": 1,
         "mealDescription": "mealDescription",
         "mealId": "mealId",
         "mealName": "mealName",
+        "menuActivePage": 1,
         "menuId": "menuId",
         "modal": "",
         "name": "",
@@ -2215,46 +2033,6 @@ exports[`Test menu component of dashboard should respond to a click event and di
     }
   />
   <video />
-  <div
-    className="pagination"
-  >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
-  </div>
 </div>
 `;
 
@@ -2412,35 +2190,40 @@ exports[`Test menu component of dashboard should respond to a click event of ord
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -2449,9 +2232,11 @@ exports[`Test menu component of dashboard should respond to a click event of ord
         "address": "",
         "addressError": "Your address is required",
         "image": "image",
+        "mealActivePage": 1,
         "mealDescription": "mealDescription",
         "mealId": "mealId",
         "mealName": "mealName",
+        "menuActivePage": 1,
         "menuId": "menuId",
         "modal": "",
         "name": "",
@@ -2462,46 +2247,24 @@ exports[`Test menu component of dashboard should respond to a click event of ord
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -2660,35 +2423,40 @@ exports[`Test menu component of dashboard should respond to a click event order 
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -2697,9 +2465,11 @@ exports[`Test menu component of dashboard should respond to a click event order 
         "address": "my address",
         "addressError": "",
         "image": "image",
+        "mealActivePage": 1,
         "mealDescription": "mealDescription",
         "mealId": "mealId",
         "mealName": "mealName",
+        "menuActivePage": 1,
         "menuId": "menuId",
         "modal": "",
         "name": "",
@@ -2711,46 +2481,24 @@ exports[`Test menu component of dashboard should respond to a click event order 
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -2902,35 +2650,40 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -2938,8 +2691,10 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -2950,46 +2705,24 @@ exports[`Test menu component of dashboard should respond to canceOrder method 1`
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -3141,35 +2874,40 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -3177,8 +2915,10 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -3189,46 +2929,24 @@ exports[`Test menu component of dashboard should respond to canceOrder method 2`
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -3380,35 +3098,40 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -3416,8 +3139,10 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -3428,46 +3153,24 @@ exports[`Test menu component of dashboard should respond to confirmOrder method 
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -3524,32 +3227,36 @@ Object {
     "createMealError": "Wrong credentials",
     "updateError": "error on update",
   },
-  "menu": Array [
-    Object {
-      "Meals": Array [
-        Object {
-          "desctription": "good",
-          "id": 1,
-          "name": "jollof",
-          "price": 100,
+  "menu": Object {
+    "count": 4,
+    "rows": Array [
+      Object {
+        "Meals": Array [
+          Object {
+            "desctription": "good",
+            "id": 1,
+            "name": "jollof",
+            "price": 100,
+          },
+        ],
+        "User": Object {
+          "email": "ken@gmail.com",
+          "name": "ken",
+          "usrername": "ken",
         },
-      ],
-      "User": Object {
-        "email": "ken@gmail.com",
-        "name": "ken",
-        "usrername": "ken",
+        "id": 1,
       },
-      "id": 1,
-    },
-  ],
-  "menuMeals": Array [
-    Object {
+    ],
+  },
+  "menuMeals": Object {
+    "count": 2,
+    "meals": Object {
       "desctription": "good",
       "id": 1,
       "name": "jollof",
       "price": 100,
     },
-  ],
+  },
   "successMessage": Object {
     "createMealSuccess": "meal created",
     "updateProfileSuccess": "updated",
@@ -3705,35 +3412,40 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -3741,8 +3453,10 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -3753,46 +3467,24 @@ exports[`Test menu component of dashboard should respond to onChange method 1`] 
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -3944,35 +3636,40 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -3981,8 +3678,10 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
         "address": "",
         "image": "",
         "ken": undefined,
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -3993,46 +3692,24 @@ exports[`Test menu component of dashboard should respond to onChange method 2`] 
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -4184,35 +3861,40 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -4220,8 +3902,10 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -4232,46 +3916,24 @@ exports[`Test menu component of dashboard should respond to orderMeal method 1`]
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;
@@ -4423,35 +4085,40 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
   <span />
   <todayMenu
     confirmOrder={[Function]}
+    handleMealPageChange={[Function]}
     menu={
-      Array [
-        Object {
-          "Meals": Array [
-            Object {
-              "desctription": "good",
-              "id": 1,
-              "name": "jollof",
-              "price": 100,
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "Meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "User": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
             },
-          ],
-          "User": Object {
-            "email": "ken@gmail.com",
-            "name": "ken",
-            "usrername": "ken",
+            "id": 1,
           },
-          "id": 1,
-        },
-      ]
+        ],
+      }
     }
     menuMeals={
-      Array [
-        Object {
+      Object {
+        "count": 2,
+        "meals": Object {
           "desctription": "good",
           "id": 1,
           "name": "jollof",
           "price": 100,
         },
-      ]
+      }
     }
     showMenu={[Function]}
     state={
@@ -4459,8 +4126,10 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
         "accordion": Object {},
         "address": "",
         "image": "",
+        "mealActivePage": 1,
         "mealDescription": "",
         "mealId": "",
+        "menuActivePage": 1,
         "menuId": "",
         "modal": "modal",
         "name": "",
@@ -4471,46 +4140,24 @@ exports[`Test menu component of dashboard should respond to orderMeal method 2`]
       }
     }
   />
-  <span />
   <div
-    className="pagination"
+    className="meal-pagination"
+    id="menuPagination"
   >
-    <div
-      className="prev p-color"
-    >
-         
-      <button
-        onClick={[Function]}
-      >
-         
-        <em
-          className="fa fa-angle-left"
-        />
-         PREV 
-      </button>
-    </div>
-    <div
-      className="current p-color"
-    >
-      <button>
-        1
-         
-      </button>
-    </div>
-    <div
-      className="next p-color"
-    >
-      <button
-        onClick={[Function]}
-      >
-        NEXT 
-        <em
-          className="fa fa-angle-right"
-        />
-      </button>
-        
-       
-    </div>
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
   </div>
 </div>
 `;

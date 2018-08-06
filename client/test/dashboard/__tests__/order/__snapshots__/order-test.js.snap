@@ -286,11 +286,13 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -309,36 +311,40 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -436,6 +442,7 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -443,6 +450,7 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -466,24 +474,27 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -492,14 +503,15 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -1185,19 +1197,27 @@ Orders {
       "clearMessages": [MockFunction],
       "getUser": [MockFunction],
     },
+    "activePage": 1,
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
     },
     "meals": Array [],
-    "menu": Array [],
+    "menu": Object {
+      "count": 3,
+      "rows": Array [],
+    },
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [],
+    "menuMeals": Object {
+      "count": 0,
+      "meals": Array [],
+    },
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -1274,11 +1294,13 @@ Orders {
             "getUser": [MockFunction],
           }
         }
+        activePage={1}
         errorMessage={
           Object {
             "createMealError": "",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -1286,13 +1308,23 @@ Orders {
           }
         }
         meals={Array []}
-        menu={Array []}
+        menu={
+          Object {
+            "count": 3,
+            "rows": Array [],
+          }
+        }
         menuActions={
           Object {
             "getMenu": [MockFunction],
           }
         }
-        menuMeals={Array []}
+        menuMeals={
+          Object {
+            "count": 0,
+            "meals": Array [],
+          }
+        }
         mostOrder={
           Array [
             Object {
@@ -1907,19 +1939,27 @@ Orders {
       "clearMessages": [MockFunction],
       "getUser": [MockFunction],
     },
+    "activePage": 1,
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
     },
     "meals": Array [],
-    "menu": Array [],
+    "menu": Object {
+      "count": 3,
+      "rows": Array [],
+    },
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [],
+    "menuMeals": Object {
+      "count": 0,
+      "meals": Array [],
+    },
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -2001,11 +2041,13 @@ Orders {
             "getUser": [MockFunction],
           }
         }
+        activePage={1}
         errorMessage={
           Object {
             "createMealError": "",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -2013,13 +2055,23 @@ Orders {
           }
         }
         meals={Array []}
-        menu={Array []}
+        menu={
+          Object {
+            "count": 3,
+            "rows": Array [],
+          }
+        }
         menuActions={
           Object {
             "getMenu": [MockFunction],
           }
         }
-        menuMeals={Array []}
+        menuMeals={
+          Object {
+            "count": 0,
+            "meals": Array [],
+          }
+        }
         mostOrder={
           Array [
             Object {
@@ -2375,19 +2427,27 @@ Orders {
       "clearMessages": [MockFunction],
       "getUser": [MockFunction],
     },
+    "activePage": 1,
     "errorMessage": Object {
       "createMealError": "",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "createMeal": [MockFunction],
       "getAllMeals": [MockFunction],
     },
     "meals": Array [],
-    "menu": Array [],
+    "menu": Object {
+      "count": 3,
+      "rows": Array [],
+    },
     "menuActions": Object {
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [],
+    "menuMeals": Object {
+      "count": 0,
+      "meals": Array [],
+    },
     "mostOrder": Array [
       Object {
         "Meal": Object {
@@ -2474,11 +2534,13 @@ Orders {
             "getUser": [MockFunction],
           }
         }
+        activePage={1}
         errorMessage={
           Object {
             "createMealError": "",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "createMeal": [MockFunction],
@@ -2486,13 +2548,23 @@ Orders {
           }
         }
         meals={Array []}
-        menu={Array []}
+        menu={
+          Object {
+            "count": 3,
+            "rows": Array [],
+          }
+        }
         menuActions={
           Object {
             "getMenu": [MockFunction],
           }
         }
-        menuMeals={Array []}
+        menuMeals={
+          Object {
+            "count": 0,
+            "meals": Array [],
+          }
+        }
         mostOrder={
           Array [
             Object {
@@ -3248,11 +3320,13 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -3271,36 +3345,40 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -3610,6 +3688,7 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -3617,6 +3696,7 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -3640,24 +3720,27 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -3666,14 +3749,15 @@ exports[`Test order component of dashboard should close modify modal 1`] = `
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -4607,11 +4691,13 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -4630,36 +4716,40 @@ exports[`Test order component of dashboard should display close confirm-order mo
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -5011,6 +5101,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -5018,6 +5109,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -5041,24 +5133,27 @@ exports[`Test order component of dashboard should display close confirm-order mo
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -5067,14 +5162,15 @@ exports[`Test order component of dashboard should display close confirm-order mo
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -6030,11 +6126,13 @@ exports[`Test order component of dashboard should display close confirm-order mo
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -6053,36 +6151,40 @@ exports[`Test order component of dashboard should display close confirm-order mo
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -6439,6 +6541,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -6446,6 +6549,7 @@ exports[`Test order component of dashboard should display close confirm-order mo
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -6469,24 +6573,27 @@ exports[`Test order component of dashboard should display close confirm-order mo
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -6495,14 +6602,15 @@ exports[`Test order component of dashboard should display close confirm-order mo
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -7438,11 +7546,13 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -7461,36 +7571,40 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -7815,6 +7929,7 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -7822,6 +7937,7 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -7845,24 +7961,27 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -7871,14 +7990,15 @@ exports[`Test order component of dashboard should display confirm-order modal 1`
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -8812,11 +8932,13 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -8835,36 +8957,40 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -9206,6 +9332,7 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -9213,6 +9340,7 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -9236,24 +9364,27 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -9262,14 +9393,15 @@ exports[`Test order component of dashboard should display confirm-order modal 2`
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -10391,11 +10523,13 @@ exports[`Test order component of dashboard should respond to a click event and d
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -10414,36 +10548,40 @@ exports[`Test order component of dashboard should respond to a click event and d
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -10626,6 +10764,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -10633,6 +10772,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -10656,24 +10796,27 @@ exports[`Test order component of dashboard should respond to a click event and d
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -10682,14 +10825,15 @@ exports[`Test order component of dashboard should respond to a click event and d
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -11498,11 +11642,13 @@ exports[`Test order component of dashboard should respond to a click event and d
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -11521,36 +11667,40 @@ exports[`Test order component of dashboard should respond to a click event and d
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -11768,6 +11918,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -11775,6 +11926,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -11798,24 +11950,27 @@ exports[`Test order component of dashboard should respond to a click event and d
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -11824,14 +11979,15 @@ exports[`Test order component of dashboard should respond to a click event and d
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -12630,11 +12786,13 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -12653,36 +12811,40 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -12880,6 +13042,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -12887,6 +13050,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -12910,24 +13074,27 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -12936,14 +13103,15 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -13742,11 +13910,13 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -13765,36 +13935,40 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -13997,6 +14171,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -14004,6 +14179,7 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -14027,24 +14203,27 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -14053,14 +14232,15 @@ exports[`Test order component of dashboard should respond to a mouse hover event
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -14636,11 +14816,13 @@ Orders {
       "updateProfile": [MockFunction],
       "upgrade": [MockFunction],
     },
+    "activePage": 1,
     "confirmOrder": [MockFunction],
     "errorMessage": Object {
       "createMealError": "Wrong credentials",
       "updateError": "error on update",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "getAllMeals": [MockFunction],
       "loadMostOrderedMeal": [MockFunction],
@@ -14659,36 +14841,40 @@ Orders {
         "price": "200",
       },
     ],
-    "menu": Array [
-      Object {
-        "Meals": Array [
-          Object {
-            "desctription": "good",
-            "id": 1,
-            "name": "jollof",
-            "price": 100,
+    "menu": Object {
+      "count": 4,
+      "rows": Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
           },
-        ],
-        "User": Object {
-          "email": "ken@gmail.com",
-          "name": "ken",
-          "usrername": "ken",
+          "id": 1,
         },
-        "id": 1,
-      },
-    ],
+      ],
+    },
     "menuActions": Object {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [
-      Object {
+    "menuMeals": Object {
+      "count": 2,
+      "meals": Object {
         "desctription": "good",
         "id": 1,
         "name": "jollof",
         "price": 100,
       },
-    ],
+    },
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -14951,6 +15137,7 @@ Orders {
             "upgrade": [MockFunction],
           }
         }
+        activePage={1}
         confirmOrder={[MockFunction]}
         errorMessage={
           Object {
@@ -14958,6 +15145,7 @@ Orders {
             "updateError": "error on update",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "getAllMeals": [MockFunction],
@@ -14981,24 +15169,27 @@ Orders {
           ]
         }
         menu={
-          Array [
-            Object {
-              "Meals": Array [
-                Object {
-                  "desctription": "good",
-                  "id": 1,
-                  "name": "jollof",
-                  "price": 100,
+          Object {
+            "count": 4,
+            "rows": Array [
+              Object {
+                "Meals": Array [
+                  Object {
+                    "desctription": "good",
+                    "id": 1,
+                    "name": "jollof",
+                    "price": 100,
+                  },
+                ],
+                "User": Object {
+                  "email": "ken@gmail.com",
+                  "name": "ken",
+                  "usrername": "ken",
                 },
-              ],
-              "User": Object {
-                "email": "ken@gmail.com",
-                "name": "ken",
-                "usrername": "ken",
+                "id": 1,
               },
-              "id": 1,
-            },
-          ]
+            ],
+          }
         }
         menuActions={
           Object {
@@ -15007,14 +15198,15 @@ Orders {
           }
         }
         menuMeals={
-          Array [
-            Object {
+          Object {
+            "count": 2,
+            "meals": Object {
               "desctription": "good",
               "id": 1,
               "name": "jollof",
               "price": 100,
             },
-          ]
+          }
         }
         myOrder={
           Array [
@@ -15598,11 +15790,13 @@ Orders {
       "updateProfile": [MockFunction],
       "upgrade": [MockFunction],
     },
+    "activePage": 1,
     "confirmOrder": [MockFunction],
     "errorMessage": Object {
       "createMealError": "Wrong credentials",
       "updateError": "error on update",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "getAllMeals": [MockFunction],
       "loadMostOrderedMeal": [MockFunction],
@@ -15621,36 +15815,40 @@ Orders {
         "price": "200",
       },
     ],
-    "menu": Array [
-      Object {
-        "Meals": Array [
-          Object {
-            "desctription": "good",
-            "id": 1,
-            "name": "jollof",
-            "price": 100,
+    "menu": Object {
+      "count": 4,
+      "rows": Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
           },
-        ],
-        "User": Object {
-          "email": "ken@gmail.com",
-          "name": "ken",
-          "usrername": "ken",
+          "id": 1,
         },
-        "id": 1,
-      },
-    ],
+      ],
+    },
     "menuActions": Object {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [
-      Object {
+    "menuMeals": Object {
+      "count": 2,
+      "meals": Object {
         "desctription": "good",
         "id": 1,
         "name": "jollof",
         "price": 100,
       },
-    ],
+    },
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -15945,6 +16143,7 @@ Orders {
             "upgrade": [MockFunction],
           }
         }
+        activePage={1}
         confirmOrder={[MockFunction]}
         errorMessage={
           Object {
@@ -15952,6 +16151,7 @@ Orders {
             "updateError": "error on update",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "getAllMeals": [MockFunction],
@@ -15975,24 +16175,27 @@ Orders {
           ]
         }
         menu={
-          Array [
-            Object {
-              "Meals": Array [
-                Object {
-                  "desctription": "good",
-                  "id": 1,
-                  "name": "jollof",
-                  "price": 100,
+          Object {
+            "count": 4,
+            "rows": Array [
+              Object {
+                "Meals": Array [
+                  Object {
+                    "desctription": "good",
+                    "id": 1,
+                    "name": "jollof",
+                    "price": 100,
+                  },
+                ],
+                "User": Object {
+                  "email": "ken@gmail.com",
+                  "name": "ken",
+                  "usrername": "ken",
                 },
-              ],
-              "User": Object {
-                "email": "ken@gmail.com",
-                "name": "ken",
-                "usrername": "ken",
+                "id": 1,
               },
-              "id": 1,
-            },
-          ]
+            ],
+          }
         }
         menuActions={
           Object {
@@ -16001,14 +16204,15 @@ Orders {
           }
         }
         menuMeals={
-          Array [
-            Object {
+          Object {
+            "count": 2,
+            "meals": Object {
               "desctription": "good",
               "id": 1,
               "name": "jollof",
               "price": 100,
             },
-          ]
+          }
         }
         myOrder={
           Array [
@@ -16918,11 +17122,13 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                         "updateProfile": [MockFunction],
                         "upgrade": [MockFunction],
                       },
+                      "activePage": 1,
                       "confirmOrder": [MockFunction],
                       "errorMessage": Object {
                         "createMealError": "Wrong credentials",
                         "updateError": "error on update",
                       },
+                      "handleMealPageChange": [MockFunction],
                       "mealActions": Object {
                         "getAllMeals": [MockFunction],
                         "loadMostOrderedMeal": [MockFunction],
@@ -16941,36 +17147,40 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                           "price": "200",
                         },
                       ],
-                      "menu": Array [
-                        Object {
-                          "Meals": Array [
-                            Object {
-                              "desctription": "good",
-                              "id": 1,
-                              "name": "jollof",
-                              "price": 100,
+                      "menu": Object {
+                        "count": 4,
+                        "rows": Array [
+                          Object {
+                            "Meals": Array [
+                              Object {
+                                "desctription": "good",
+                                "id": 1,
+                                "name": "jollof",
+                                "price": 100,
+                              },
+                            ],
+                            "User": Object {
+                              "email": "ken@gmail.com",
+                              "name": "ken",
+                              "usrername": "ken",
                             },
-                          ],
-                          "User": Object {
-                            "email": "ken@gmail.com",
-                            "name": "ken",
-                            "usrername": "ken",
+                            "id": 1,
                           },
-                          "id": 1,
-                        },
-                      ],
+                        ],
+                      },
                       "menuActions": Object {
                         "getAllOrders": [MockFunction],
                         "getMenu": [MockFunction],
                       },
-                      "menuMeals": Array [
-                        Object {
+                      "menuMeals": Object {
+                        "count": 2,
+                        "meals": Object {
                           "desctription": "good",
                           "id": 1,
                           "name": "jollof",
                           "price": 100,
                         },
-                      ],
+                      },
                       "myOrder": Array [
                         Object {
                           "Meal": Object {
@@ -17203,6 +17413,7 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                               "upgrade": [MockFunction],
                             }
                           }
+                          activePage={1}
                           confirmOrder={[MockFunction]}
                           errorMessage={
                             Object {
@@ -17210,6 +17421,7 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                               "updateError": "error on update",
                             }
                           }
+                          handleMealPageChange={[MockFunction]}
                           mealActions={
                             Object {
                               "getAllMeals": [MockFunction],
@@ -17233,24 +17445,27 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                             ]
                           }
                           menu={
-                            Array [
-                              Object {
-                                "Meals": Array [
-                                  Object {
-                                    "desctription": "good",
-                                    "id": 1,
-                                    "name": "jollof",
-                                    "price": 100,
+                            Object {
+                              "count": 4,
+                              "rows": Array [
+                                Object {
+                                  "Meals": Array [
+                                    Object {
+                                      "desctription": "good",
+                                      "id": 1,
+                                      "name": "jollof",
+                                      "price": 100,
+                                    },
+                                  ],
+                                  "User": Object {
+                                    "email": "ken@gmail.com",
+                                    "name": "ken",
+                                    "usrername": "ken",
                                   },
-                                ],
-                                "User": Object {
-                                  "email": "ken@gmail.com",
-                                  "name": "ken",
-                                  "usrername": "ken",
+                                  "id": 1,
                                 },
-                                "id": 1,
-                              },
-                            ]
+                              ],
+                            }
                           }
                           menuActions={
                             Object {
@@ -17259,14 +17474,15 @@ exports[`Test order component of dashboard should respond to modify functions 1`
                             }
                           }
                           menuMeals={
-                            Array [
-                              Object {
+                            Object {
+                              "count": 2,
+                              "meals": Object {
                                 "desctription": "good",
                                 "id": 1,
                                 "name": "jollof",
                                 "price": 100,
                               },
-                            ]
+                            }
                           }
                           myOrder={
                             Array [
@@ -17842,11 +18058,13 @@ Orders {
       "updateProfile": [MockFunction],
       "upgrade": [MockFunction],
     },
+    "activePage": 1,
     "confirmOrder": [MockFunction],
     "errorMessage": Object {
       "createMealError": "Wrong credentials",
       "updateError": "error on update",
     },
+    "handleMealPageChange": [MockFunction],
     "mealActions": Object {
       "getAllMeals": [MockFunction],
       "loadMostOrderedMeal": [MockFunction],
@@ -17865,36 +18083,40 @@ Orders {
         "price": "200",
       },
     ],
-    "menu": Array [
-      Object {
-        "Meals": Array [
-          Object {
-            "desctription": "good",
-            "id": 1,
-            "name": "jollof",
-            "price": 100,
+    "menu": Object {
+      "count": 4,
+      "rows": Array [
+        Object {
+          "Meals": Array [
+            Object {
+              "desctription": "good",
+              "id": 1,
+              "name": "jollof",
+              "price": 100,
+            },
+          ],
+          "User": Object {
+            "email": "ken@gmail.com",
+            "name": "ken",
+            "usrername": "ken",
           },
-        ],
-        "User": Object {
-          "email": "ken@gmail.com",
-          "name": "ken",
-          "usrername": "ken",
+          "id": 1,
         },
-        "id": 1,
-      },
-    ],
+      ],
+    },
     "menuActions": Object {
       "getAllOrders": [MockFunction],
       "getMenu": [MockFunction],
     },
-    "menuMeals": Array [
-      Object {
+    "menuMeals": Object {
+      "count": 2,
+      "meals": Object {
         "desctription": "good",
         "id": 1,
         "name": "jollof",
         "price": 100,
       },
-    ],
+    },
     "myOrder": Array [
       Object {
         "Meal": Object {
@@ -18142,6 +18364,7 @@ Orders {
             "upgrade": [MockFunction],
           }
         }
+        activePage={1}
         confirmOrder={[MockFunction]}
         errorMessage={
           Object {
@@ -18149,6 +18372,7 @@ Orders {
             "updateError": "error on update",
           }
         }
+        handleMealPageChange={[MockFunction]}
         mealActions={
           Object {
             "getAllMeals": [MockFunction],
@@ -18172,24 +18396,27 @@ Orders {
           ]
         }
         menu={
-          Array [
-            Object {
-              "Meals": Array [
-                Object {
-                  "desctription": "good",
-                  "id": 1,
-                  "name": "jollof",
-                  "price": 100,
+          Object {
+            "count": 4,
+            "rows": Array [
+              Object {
+                "Meals": Array [
+                  Object {
+                    "desctription": "good",
+                    "id": 1,
+                    "name": "jollof",
+                    "price": 100,
+                  },
+                ],
+                "User": Object {
+                  "email": "ken@gmail.com",
+                  "name": "ken",
+                  "usrername": "ken",
                 },
-              ],
-              "User": Object {
-                "email": "ken@gmail.com",
-                "name": "ken",
-                "usrername": "ken",
+                "id": 1,
               },
-              "id": 1,
-            },
-          ]
+            ],
+          }
         }
         menuActions={
           Object {
@@ -18198,14 +18425,15 @@ Orders {
           }
         }
         menuMeals={
-          Array [
-            Object {
+          Object {
+            "count": 2,
+            "meals": Object {
               "desctription": "good",
               "id": 1,
               "name": "jollof",
               "price": 100,
             },
-          ]
+          }
         }
         myOrder={
           Array [

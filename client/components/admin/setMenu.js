@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import Pagination from 'react-js-pagination';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as actions from '../../redux/Action/action';
 import * as mealActions from '../../redux/Action/mealAction';
@@ -23,11 +24,10 @@ export class SetMenu extends Component {
       Add: 'Add',
       pageNum: 1
     };
-    this.handlePageNext = this.handlePageNext.bind(this);
-    this.handlePagePrev = this.handlePagePrev.bind(this);
     this.onChange = this.onChange.bind(this);
     this.addMenu = this.addMenu.bind(this);
     this.cancelAdd = this.cancelAdd.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
   }
   /**
    * lifecycle hook called when component receives props
@@ -82,27 +82,10 @@ export class SetMenu extends Component {
     }
   }
 
-  handlePageNext() {
-    let { pageNum } = this.state;
-    pageNum += 1;
-    const offset = (pageNum - 1) * limit;
-    const totalPage = this.props.meals.count / limit;
-    if (pageNum === totalPage || pageNum > totalPage) {
-      return this.setState({ lastPage: 'Last page', firstPage: '' });
-    }
+  handlePageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ activePage: pageNumber });
     this.props.mealActions.getAllMeals(limit, offset);
-    this.setState({ pageNum, firstPage: '' });
-  }
-
-  handlePagePrev() {
-    let { pageNum } = this.state;
-    pageNum -= 1;
-    if (pageNum < 1) {
-      return this.setState({ firstPage: 'firstPage', lastPage: '' });
-    }
-    const offset = (pageNum - 1) * limit;
-    this.props.mealActions.getAllMeals(limit, offset);
-    this.setState({ pageNum, lastPage: '' });
   }
 
   render() {
@@ -178,10 +161,15 @@ export class SetMenu extends Component {
               ))}
           </tbody>
         </table>
-        <div className="pagination">
-          <div className="prev p-color">{this.state.firstPage} &nbsp; <button onClick={this.handlePagePrev}> <em className="fa fa-angle-left" /> PREV </button></div>
-          <div className="current p-color"><button>{this.state.pageNum} </button></div>
-          <div className="next p-color"><button onClick={this.handlePageNext}>NEXT <em className="fa fa-angle-right" /></button> &nbsp;{this.state.lastPage} </div>
+        <div className="meal-pagination">
+          <Pagination
+            activePage={this.state.activePage}
+            itemsCountPerPage={limit}
+            totalItemsCount={Math.ceil(this.props.meals.count)}
+            pageRangeDisplayed={4}
+            onChange={this.handlePageChange}
+          />
+
         </div>
       </div>
     );
