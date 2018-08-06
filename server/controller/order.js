@@ -150,6 +150,10 @@ export default class orderController {
         {
           model: Meal,
           attributes: ['id', 'name', 'price', 'description', 'image', 'createdAt', 'updatedAt']
+        },
+        {
+          model: User,
+          attributes: ['id', 'name', 'username', 'image']
         }
       ],
       order: [
@@ -169,9 +173,11 @@ export default class orderController {
  * @description used to get the orders made by a particular user
  */
   async getUserOrders(req, res) {
-    const { id } = req.decoded;
-    const userId = id;
-    const orders = await Order.findAll({
+    let { limit, offset } = req.query;
+    limit = parseInt(limit, 10) || 6;
+    offset = parseInt(offset, 10) || 0;
+    const userId = req.decoded.id;
+    const orders = await Order.findAndCountAll({
       where: { userId },
       include: [
         {
@@ -181,7 +187,9 @@ export default class orderController {
       ],
       order: [
         ['createdAt', 'DESC']
-      ]
+      ],
+      limit,
+      offset
     });
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
     return res.status(200).json(orders);

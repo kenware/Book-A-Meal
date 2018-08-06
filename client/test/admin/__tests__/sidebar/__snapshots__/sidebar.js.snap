@@ -7,7 +7,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -279,7 +279,7 @@ exports[`Testing of sidebar component should respond to dashbord mouseenter even
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -551,7 +551,7 @@ exports[`Testing of sidebar component should respond to dashbord mouseenter even
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -823,7 +823,7 @@ exports[`Testing of sidebar component should respond to dashbord mouseenter even
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -1095,7 +1095,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -1367,7 +1367,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -1639,7 +1639,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -1911,7 +1911,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -2183,7 +2183,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -2455,7 +2455,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -2727,7 +2727,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -2999,7 +2999,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -3271,7 +3271,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -3543,7 +3543,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />
@@ -3815,7 +3815,7 @@ exports[`Testing of sidebar component should respond to handleClick and handleCl
   >
     <div>
       <em
-        className="fa fa-bars l-r-pad-text m-text bar1 toggle1"
+        className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color"
         onClick={[Function]}
         role="button"
       />

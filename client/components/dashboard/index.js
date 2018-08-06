@@ -138,7 +138,7 @@ export class Dashboard extends Component {
         <div className="admin-container">
           <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
             <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar1 toggle1" onClick={this.toggle} role="button" />
+              <em className="fa fa-bars l-r-pad-text m-text bar1 toggle1 y-color" onClick={this.toggle} role="button" />
               <h3 className="y-color l-r-pad-text">Book-A-Meal</h3>
               <ul>
                 {window.localStorage.getItem('role') === 'admin' ?

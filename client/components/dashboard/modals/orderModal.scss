@@ -1,0 +1,29 @@
+.modal-header{
+  display: flex;
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 9px 6% 9px 6%;
+  border-bottom: 2px;
+  text-align: left;
+  margin-right: 5px;
+  outline: none;
+  font-size: 15px;
+}
+
+.modal-contents {
+  display: flex;
+  color:  darkslategray;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  .modal-items {
+  flex: 1;
+    input {
+      height: 1.5rem;;
+    }
+  }
+}
+
+.modal-footer {
+    display: flex;
+}

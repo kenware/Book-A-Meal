@@ -19,6 +19,7 @@ import history from '../../history';
 import auth from '../../authenticate/auth';
 import SideBar from './sidebar';
 
+const limit = 6;
 export class Admin extends Component {
   constructor(props) {
     super(props);
@@ -32,12 +33,14 @@ export class Admin extends Component {
       notific: 'notific',
       logout: 'logout',
       order: 'order',
-      setmeal: 'setmeal'
+      setmeal: 'setmeal',
+      activePage: 1
     };
     this.logOut = this.logOut.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.toggle = this.toggle.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -84,6 +87,12 @@ export class Admin extends Component {
     state[value] = '';
     this.setState(state);
   }
+
+  handlePageChange(pageNumber) {
+    const offset = (pageNumber - 1) * limit;
+    this.setState({ activePage: pageNumber });
+    this.props.orderActions.getAllOrders(limit, offset);
+  }
   render() {
     const {
       nav1,
@@ -95,7 +104,7 @@ export class Admin extends Component {
       notific,
       logout,
       order,
-      setmeal
+      setmeal,
     } = this.state;
     const prop = {
       nav1,
@@ -107,7 +116,7 @@ export class Admin extends Component {
       notific,
       logout,
       order,
-      setmeal
+      setmeal,
     };
 
     return (
@@ -136,7 +145,17 @@ export class Admin extends Component {
                 <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="profile" />
               </div>
             </header>
-            <Route exact path="/admin" render={props => <Order mostOrder={this.props.mostOrder} allOrder={this.props.allOrder} {...props} />} />
+            <Route
+              exact
+              path="/admin"
+              render={props => (<Order
+                mostOrder={this.props.mostOrder}
+                allOrder={this.props.allOrder}
+                activePage={this.state.activePage}
+                handlePageChange={this.handlePageChange}
+                {...props}
+              />)}
+            />
             <Route exact path="/admin/allmeals" component={Allmeals} />
             <Route exact path="/admin/setmenu" component={Setmenu} />
             <Route exact path="/admin/addmeals" component={Addmeals} />

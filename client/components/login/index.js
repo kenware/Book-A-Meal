@@ -71,8 +71,7 @@ export class Login extends Component {
       <div>
         <Header />
         <div className="register-container" id="login-bg">
-          <div className="register-col" />
-          <div className="register-wrapper" style={{ height: '50vh' }}>
+          <div className="register-wrapper" style={{ margin: '100px 15% 100px 15%' }}>
             <h2 className="login-header">Enter your details to Login</h2><br />
             <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
             <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>
@@ -104,7 +103,6 @@ export class Login extends Component {
             </form>
 
           </div>
-          <div className="register-col" />
         </div>
         <Footer />
       </div>

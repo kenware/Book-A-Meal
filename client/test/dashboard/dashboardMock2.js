@@ -1,31 +1,29 @@
 export const props = {
-  menu: {
-    count: 4,
-    rows: [{
-      id: 1,
-      User: {
-        name: 'ken',
-        usrername: 'ken',
-        email: 'ken@gmail.com'
-      },
-      Meals: [
-        {
-          id: 1,
-          price: 100,
-          desctription: 'good',
-          name: 'jollof'
-        }
-      ]
-    }]
-  },
+  menu: [{
+    id: 1,
+    User: {
+      name: 'ken',
+      usrername: 'ken',
+      email: 'ken@gmail.com'
+    },
+    Meals: [
+      {
+        id: 1,
+        price: 100,
+        desctription: 'good',
+        name: 'jollof'
+      }
+    ]
+  }
+  ],
   menuMeals: {
     count: 2,
-    meals: {
+    meals: [{
       id: 1,
       price: 100,
       desctription: 'good',
       name: 'jollof'
-    }
+    }]
   },
   state: { accordion: { } },
   showMenu: jest.fn(),
@@ -112,10 +110,7 @@ export const props = {
 };
 
 export const emptyProps = {
-  menu: {
-    count: 3,
-    rows: []
-  },
+  menu: [],
   user: {
   },
   notifics: [
@@ -177,8 +172,6 @@ export const emptyProps = {
   },
   menuActions: {
     getMenu: jest.fn()
-  },
-  handleMealPageChange: jest.fn(),
-  activePage: 1
+  }
 };
 

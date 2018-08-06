@@ -10,22 +10,26 @@ describe('Test menu component of dashboard', () => {
     tree = shallow(<Menu {...emptyProps} />);
     expect(tree).toMatchSnapshot();
   });
+
   it('should have three modal-order-content class', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree.find('.modal-order-content')).toHaveLength(3);
   });
+
   it('should respond to confirmOrder method', () => {
     const tree = shallow(<Menu {...props} />);
     const wrapper = tree.instance();
     wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
     expect(tree).toMatchSnapshot();
   });
+
   it('should clear redux store on unmount method', () => {
     const tree = shallow(<Menu {...props} />);
     const wrapper = tree.instance();
     wrapper.componentWillUnmount();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to canceOrder method', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree).toMatchSnapshot();
@@ -33,6 +37,7 @@ describe('Test menu component of dashboard', () => {
     wrapper.cancelOrder();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond lifeCyle method component did mount', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree).toMatchSnapshot();
@@ -40,6 +45,7 @@ describe('Test menu component of dashboard', () => {
     wrapper.componentDidMount();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to onChange method', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree).toMatchSnapshot();
@@ -47,6 +53,7 @@ describe('Test menu component of dashboard', () => {
     wrapper.onChange({ target: { name: 'ken' } });
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to orderMeal method', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree).toMatchSnapshot();
@@ -54,21 +61,25 @@ describe('Test menu component of dashboard', () => {
     wrapper.orderMeal();
     expect(tree).toMatchSnapshot();
   });
+
   it('should have two modal with className modal-order ', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree.find('.modal-order')).toHaveLength(1);
   });
+
   it('should have 13 span className ', () => {
     const tree = shallow(<Menu {...props} />);
-    expect(tree.find('span')).toHaveLength(13);
+    expect(tree.find('span')).toHaveLength(12);
   });
+
   it('should have justify-overide class', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree.find('.justify-overide')).toHaveLength(4);
   });
-  it('should have 12  dive', () => {
+
+  it('should have 10  dive', () => {
     const tree = shallow(<Menu {...props} />);
-    expect(tree.find('div')).toHaveLength(13);
+    expect(tree.find('div')).toHaveLength(10);
   });
 
   it('testing initial state of the components', () => {
@@ -110,6 +121,7 @@ describe('Test menu component of dashboard', () => {
     expect(tree).toMatchSnapshot();
     wrapper.constructor.getDerivedStateFromProps({ errorMessage: '', successMessage: '' });
   });
+
   it('should respond to a click event and dislay a modal and close modal on cancel order method', () => {
     const tree = shallow(<Menu {...emptyProps} />);
     const wrapper = tree.instance();
@@ -118,6 +130,7 @@ describe('Test menu component of dashboard', () => {
     tree.find('.close-modal').simulate('click');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to a click event and dislay a modal and close modal on cancel order method', () => {
     const tree = shallow(<Menu {...emptyProps} />);
     const wrapper = tree.instance();
@@ -126,11 +139,13 @@ describe('Test menu component of dashboard', () => {
     tree.find('.top-close').simulate('click');
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();
