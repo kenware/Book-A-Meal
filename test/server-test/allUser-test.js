@@ -15,12 +15,6 @@ chai.use(chaiHttp);
 let tokenUpdate = '', newToken;
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
     User.destroy({
       where: {}
     })
@@ -28,6 +22,7 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
+
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')

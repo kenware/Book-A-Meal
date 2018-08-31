@@ -122,7 +122,7 @@ const Orders = ({
                             <td>{meal.name}</td>
                             <td>{meal.orderMealItems.quantity}</td>
                             <td>{meal.price}</td>
-                            <td>{meal.orderMealItems.totalPrice}</td>
+                            <td>{meal.totalPrice}</td>
                           </tr>
                         ))}
                       </tbody>

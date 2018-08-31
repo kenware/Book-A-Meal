@@ -3,10 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const orderMealItems = sequelize.define('orderMealItems', {
     quantity: {
       type: DataTypes.STRING
-    },
-    totalPrice: {
-      type: DataTypes.INTEGER
-    },
+    }
   }, {
     classMethods: {
       associate(models) {

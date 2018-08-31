@@ -131,7 +131,7 @@ export default class mealController {
  */
   async deleteMeal(req, res) {
     const { mealId } = req.params;
-    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+    if ((isNaN(mealId)) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'provide a valid meal id' });
     }
     const meal = await Meal.findById(mealId);

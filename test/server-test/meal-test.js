@@ -8,15 +8,7 @@ import token from '../../server/helpers/tokenGenerator';
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification,
-  orderMealItems
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 let tokenUser = '';
@@ -24,14 +16,6 @@ let tokenAdmin = '', tokenAdmin2 = '', mealId = 0;
 
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-
-  before((done) => {
-    User.sync();
     User.destroy({
       where: {}
     })

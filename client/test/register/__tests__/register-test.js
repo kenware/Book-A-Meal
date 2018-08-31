@@ -1,36 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Register, mapDispatchToProps, mapStateToProps } from '../../../components/register/index';
+import { props, emptyProps } from '../registerMock';
 
 describe('Test Register Component', () => {
-  const props = {
-    errorMessage: {
-      registerError: 'Wrong credentials'
-    },
-    actions: {
-      register: jest.fn(),
-      errorMessage: {
-        registerError: 'Wrong credentials',
-        authError: 'Wrong credentials'
-      },
-      clearMessages: jest.fn()
-    },
-
-  };
-  const emptyProps = {
-    errorMessage: {
-      loginError: ''
-    },
-    actions: {
-      register: jest.fn(),
-      errorMessage: {
-        registerError: '',
-        authError: ''
-      },
-      clearMessages: jest.fn()
-    },
-
-  };
   it('should render correctly', () => {
     const tree = shallow(<Register {...emptyProps} />);
     expect(tree).toMatchSnapshot();

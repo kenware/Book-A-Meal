@@ -13,9 +13,6 @@ module.exports = {
     status: {
       type: Sequelize.STRING
     },
-    totalPrice: {
-      type: Sequelize.INTEGER
-    },
     catererId: {
       type: Sequelize.INTEGER
     },

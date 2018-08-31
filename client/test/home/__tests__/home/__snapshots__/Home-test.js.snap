@@ -2,7 +2,11 @@
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -212,7 +216,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 2`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -422,7 +430,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 3`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -632,7 +644,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >

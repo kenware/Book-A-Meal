@@ -16,7 +16,7 @@ export default class menuMiddleware {
     if (!orderBefore) {
       return res.status(401).json({ message: 'Specify the time users should be able to make an order' });
     }
-    if ((Number.isNaN(Number(orderBefore))) === true || (/^ *$/.test(orderBefore) === true)) {
+    if ((isNaN(orderBefore)) === true || (/^ *$/.test(orderBefore) === true)) {
       return res.status(401).json({ message: 'Please provide a valid time in hours' });
     }
     if (!meals || meals.length < 1) {
@@ -26,11 +26,11 @@ export default class menuMiddleware {
     if (orderBefore > 24) {
       return res.status(401).json({ message: 'Expire time cannot be more than 24 hours' });
     }
-    meals.forEach((meal) => {
-      if (Number.isNaN(Number(meal)) || (/^ *$/.test(meal) === true)) {
+    for ( const meal of meals) {
+      if ((isNaN(meal)) === true || (/^ *$/.test(meal) === true)) {
         return res.status(401).json({ message: 'Enter a valid meal id' });
       }
-    });
+    }
     meals = [...new Set(meals.map(id => Number(id)))];
     // pass the mealId and orderBefore to req
     orderBefore = Number(orderBefore);
@@ -41,7 +41,7 @@ export default class menuMiddleware {
 
   async menuMeals(req, res, next) {
     const { menuId } = req.params;
-    if ((Number.isNaN(Number(menuId))) === true || (/^ *$/.test(menuId) === true)) {
+    if ((isNaN(menuId)) === true || (/^ *$/.test(menuId) === true)) {
       return res.status(401).json({ message: 'provide a valid menu id' });
     }
     next();

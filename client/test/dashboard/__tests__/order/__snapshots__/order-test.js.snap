@@ -314,9 +314,7 @@ exports[`Test order component of dashboard renders correctly 1`] = `
                 <td>
                   200
                 </td>
-                <td>
-                  4
-                </td>
+                <td />
                 <td>
                   <em
                     className="modify-btn fa fa-edit fa-2x"
@@ -661,9 +659,7 @@ exports[`Test order component of dashboard should change state when component re
                 <td>
                   200
                 </td>
-                <td>
-                  4
-                </td>
+                <td />
                 <td>
                   <span />
                 </td>
@@ -1232,9 +1228,7 @@ Orders {
                       <td>
                         200
                       </td>
-                      <td>
-                        4
-                      </td>
+                      <td />
                       <td>
                         <span />
                       </td>
@@ -1580,9 +1574,7 @@ exports[`Test order component of dashboard should change state when component re
                 <td>
                   200
                 </td>
-                <td>
-                  4
-                </td>
+                <td />
                 <td>
                   <span />
                 </td>
@@ -2161,9 +2153,7 @@ Orders {
                       <td>
                         200
                       </td>
-                      <td>
-                        4
-                      </td>
+                      <td />
                       <td>
                         <span />
                       </td>
@@ -2757,9 +2747,7 @@ Orders {
                       <td>
                         200
                       </td>
-                      <td>
-                        4
-                      </td>
+                      <td />
                       <td>
                         <span />
                       </td>
@@ -3110,9 +3098,7 @@ exports[`Test order component of dashboard should respond to a click event and d
                 <td>
                   200
                 </td>
-                <td>
-                  4
-                </td>
+                <td />
                 <td>
                   <em
                     className="modify-btn fa fa-edit fa-2x"
@@ -4024,9 +4010,7 @@ Orders {
                       <td>
                         200
                       </td>
-                      <td>
-                        4
-                      </td>
+                      <td />
                       <td>
                         <em
                           className="modify-btn fa fa-edit fa-2x"
@@ -4941,9 +4925,7 @@ Orders {
                       <td>
                         200
                       </td>
-                      <td>
-                        4
-                      </td>
+                      <td />
                       <td>
                         <em
                           className="modify-btn fa fa-edit fa-2x"

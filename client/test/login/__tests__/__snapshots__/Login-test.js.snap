@@ -2,7 +2,11 @@
 
 exports[`Test Login Component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
     id="login-bg"
@@ -108,7 +112,11 @@ exports[`Test Login Component renders correctly 1`] = `
 
 exports[`Test Login Component should recieve error message props with wrong credentials 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
     id="login-bg"
@@ -214,7 +222,11 @@ exports[`Test Login Component should recieve error message props with wrong cred
 
 exports[`Test Login Component should recieve error message props with wrong credentials 2`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
     id="login-bg"
@@ -322,7 +334,11 @@ exports[`Test Login Component should recieve error message props with wrong cred
 
 exports[`Test Login Component should respond to change event and change the state of the Login Component 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
     id="login-bg"

@@ -15,18 +15,13 @@ export default class mealFilter {
     }
     return true;
   }
-  getPrice(meals, id) {
+
+  getPrice(meals) {
     let totalPrice = 0;
-    let menuMeals;
-
-    if (id) {
-      menuMeals = meals.filter(meal => meal.menuId === id);
-    } else {
-      menuMeals = meals;
-    }
-
-    for (const meal of menuMeals) {
-      totalPrice += meal.totalPrice;
+    for (const meal of meals) {
+      const price = meal.price * meal.orderMealItems.quantity;
+      meal.dataValues.totalPrice = price;
+      totalPrice += price;
     }
     return totalPrice;
   }

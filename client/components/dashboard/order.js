@@ -254,7 +254,7 @@ export class Orders extends Component {
                           <td>{meal.name}</td>
                           <td>{meal.orderMealItems.quantity}</td>
                           <td>{meal.price}</td>
-                          <td>{meal.orderMealItems.totalPrice}</td>
+                          <td>{meal.totalPrice}</td>
                           <td>{ order.status === 'pending' ?
                             <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
                             : <span />}

@@ -2,7 +2,11 @@
 
 exports[`Test ResetLink component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -92,7 +96,11 @@ exports[`Test ResetLink component renders correctly 1`] = `
 
 exports[`Test ResetLink component should render messages from props 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -186,7 +194,11 @@ exports[`Test ResetLink component should render messages from props 1`] = `
 
 exports[`Test ResetLink component should respond to change event and change the state of the resetLink Component 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -281,7 +293,11 @@ exports[`Test ResetLink component should respond to change event and change the 
 
 exports[`Test ResetLink component should respond to componentWillRecievProps methods 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >

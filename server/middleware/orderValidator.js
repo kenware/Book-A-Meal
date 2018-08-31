@@ -11,45 +11,43 @@ export default class orderMiddleware {
     if (meals.length < 1) {
       return res.status(401).json({ message: 'Meals not found' });
     }
-    meals.forEach((meal) => {
-      if ((Number.isNaN(Number(meal.menuId))) === true || (/^ *$/.test(meal.menuId) === true)) {
+
+    for (const meal of meals) {
+      if ((isNaN(meal.menuId)) === true || (/^ *$/.test(meal.menuId) === true)) {
         return res.status(401).json({ message: 'Please provide a valid menu id' });
       }
-      if ((Number.isNaN(Number(meal.quantity))) === true || (/^ *$/.test(meal.quantity) === true)) {
+      if ((isNaN(meal.quantity)) === true || (/^ *$/.test(meal.quantity) === true)) {
         return res.status(401).json({ message: 'Please provide a valid quantity' });
       }
-      if ((Number.isNaN(Number(meal.totalPrice))) === true || (/^ *$/.test(meal.totalPrice) === true)) {
-        return res.status(401).json({ message: 'Total Price must be a number' });
-      }
-      if ((Number.isNaN(Number(meal.mealId))) === true || (/^ *$/.test(meal.mealId) === true)) {
+      if ((isNaN(meal.mealId)) === true || (/^ *$/.test(meal.mealId) === true)) {
         return res.status(401).json({ message: 'Please provide a valid meal id' });
       }
-    });
+    }
     next();
   }
 
   async updateOrder(req, res, next) {
-    const {
-      meals,
-      address
-    } = req.body;
+    const { meals, address } = req.body;
+    const { orderId } = req.params;
+
     if (address && typeof address !== 'string') {
       return res.status(401).json({ message: 'Please provide a valid address' });
     }
     if (meals.length < 1) {
       return res.status(401).json({ message: 'Meals not found' });
     }
-    meals.forEach((meal) => {
-      if ((Number.isNaN(Number(meal.quantity))) === true || (/^ *$/.test(meal.quantity) === true)) {
+
+    for (const meal of meals) {
+      if ((isNaN(meal.quantity)) === true || (/^ *$/.test(meal.quantity) === true)) {
         return res.status(401).json({ message: 'Please provide a valid quantity' });
       }
-      if ((Number.isNaN(Number(meal.totalPrice))) === true || (/^ *$/.test(meal.totalPrice) === true)) {
-        return res.status(401).json({ message: 'Total Price must be a number' });
+      if ((isNaN(orderId)) === true || (/^ *$/.test(orderId) === true)) {
+        return res.status(401).json({ message: 'Provide a valid order id' });
       }
-      if ((Number.isNaN(Number(meal.mealId))) === true || (/^ *$/.test(meal.mealId) === true)) {
+      if ((isNaN(meal.mealId)) === true || (/^ *$/.test(meal.mealId) === true)) {
         return res.status(401).json({ message: 'Please provide a valid meal id' });
       }
-    });
+    }
     next();
   }
 }

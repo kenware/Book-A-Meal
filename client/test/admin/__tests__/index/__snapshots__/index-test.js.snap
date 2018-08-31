@@ -6,7 +6,9 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
     className="largeScreen-header"
   >
     <Nav
+      cart={Array []}
       component="admin"
+      onModal={[Function]}
     />
   </span>
   <span
@@ -95,7 +97,9 @@ exports[`Test index Component of admin pages should have respond handle click an
     className="largeScreen-header"
   >
     <Nav
+      cart={Array []}
       component="admin"
+      onModal={[Function]}
     />
   </span>
   <span
@@ -184,7 +188,9 @@ exports[`Test index Component of admin pages should have respond handle click an
     className="largeScreen-header"
   >
     <Nav
+      cart={Array []}
       component="admin"
+      onModal={[Function]}
     />
   </span>
   <span
@@ -273,7 +279,9 @@ exports[`Test index Component of admin pages should have respond handle click an
     className="largeScreen-header"
   >
     <Nav
+      cart={Array []}
       component="admin"
+      onModal={[Function]}
     />
   </span>
   <span
@@ -362,7 +370,9 @@ exports[`Test index Component of admin pages should have respond to logOut metho
     className="largeScreen-header"
   >
     <Nav
+      cart={Array []}
       component="admin"
+      onModal={[Function]}
     />
   </span>
   <span

@@ -51,7 +51,7 @@ export default class orderController {
 
       if (orderBefore < Number(presentTime)) {
         return res.status(422)
-          .json({ message: 'You cannot order menu at this time' });
+          .json({ message: `You cannot order menu with this id ${eachMenu} at this time` });
       }
       const allMenuMealId = eachMenu.Meals.map(meal => meal.id);
 
@@ -60,24 +60,19 @@ export default class orderController {
       const allMealId = allMeal.map(meal => meal.mealId);
 
       const mealsExistInMenu = new mealFilter().checkMeals(allMenuMealId, allMealId);
-      const totalPrice = new mealFilter().getPrice(meals, eachMenu.id);
 
       if (!mealsExistInMenu) { return res.status(404).json({ message: 'Meal not found' }); }
       const { id } = req.decoded;
       const order = await Order.create({
         status: 'pending',
         address,
-        totalPrice,
         catererId
       });
       const user = User.build({ id });
       order.setUser(user);
       for (const meal of allMeal) {
-        if (!meal.quantity || !meal.totalPrice) {
-          return res.status(404).json({ message: 'Quantity is required' });
-        }
         order.setMeals(meal.mealId, {
-          through: { quantity: meal.quantity, totalPrice: meal.totalPrice }
+          through: { quantity: meal.quantity }
         });
       }
       order.dataValues.meals = allMealId;
@@ -100,12 +95,8 @@ export default class orderController {
     const { meals, address } = req.body;
     const { orderId } = req.params;
 
-    if ((Number.isNaN(Number(orderId))) === true || (/^ *$/.test(orderId) === true)) {
-      return res.status(401).json({ message: 'Provide a valid order id' });
-    }
-    const id = orderId;
     const order = await Order.findOne({
-      where: { id },
+      where: { id: orderId },
       include: { model: Meal, as: 'meals', }
     });
 
@@ -128,27 +119,17 @@ export default class orderController {
 
     const allMealId = meals.map(meal => meal.mealId);
     const mealsExistInOrder = new mealFilter().checkMeals(allOrderMealId, allMealId);
-    const totalPrice = new mealFilter().getPrice(meals);
 
     if (!mealsExistInOrder) { return res.status(404).json({ message: 'Meal not found' }); }
 
-    const update = await order.update({
-      address, totalPrice,
-    });
+    const update = await order.update({ address });
 
     for (const meal of meals) {
-      if (!meal.quantity || !meal.totalPrice) {
-        return res.status(404).json({ message: 'Quantity is required' });
-      }
-
       await update.addMeal(meal.mealId, {
-        through: { quantity: meal.quantity, totalPrice: meal.totalPrice }
+        through: { quantity: meal.quantity }
       });
     }
-    const myOrder = await Order.findOne({
-      where: { id }
-    });
-    return res.status(201).json({ myOrder, meals: allOrderMealId });
+    return res.status(201).json(update);
   }
 
   /**
@@ -188,11 +169,14 @@ export default class orderController {
       limit,
       offset
     });
-
     const count = await Order.count({ where: { catererId } });
 
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
-    return res.status(200).json({ count, orders });
+    orders.forEach((order) => {
+      const totalPrice = new mealFilter().getPrice(order.meals);
+      order.dataValues.totalPrice = totalPrice;
+    });
+    return res.status(200).json({ orders, count });
   }
 
   /**
@@ -225,7 +209,12 @@ export default class orderController {
       offset
     });
     const count = await Order.count({ where: { userId } });
-    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'You have not ordered a meal' }); }
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'You have not ordered a meal' }); }   
+
+    orders.forEach((order) => {
+      const totalPrice = new mealFilter().getPrice(order.meals);
+      order.dataValues.totalPrice = totalPrice;
+    });
     return res.status(200).json({ count, orders });
   }
 

@@ -10,7 +10,7 @@ export default class mealMiddleware {
     if (!name) { return res.status(401).json({ message: 'Name field is required' }); }
     if (!description) { return res.status(401).json({ message: 'description field is required' }); }
 
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
+    if ((isNaN(price)) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
@@ -33,7 +33,7 @@ export default class mealMiddleware {
     let { name, description } = req.body;
     const { price } = req.body;
 
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
+    if ((isNaN(price)) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
@@ -42,7 +42,7 @@ export default class mealMiddleware {
     if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid description' });
     }
-    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+    if ((isNaN(mealId)) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Provide a valid meal id' });
     }
     // remove extra spaces in a string

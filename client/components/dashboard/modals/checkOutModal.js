@@ -37,7 +37,7 @@ const checkOutModal = ({
                     <td>{cart.name}</td>
                     <td>{cart.quantity}</td>
                     <td>{cart.totalPrice}</td>
-                    <td><em onClick={() => removeFromeCart(cart)} className="fa fa-delete" role="button">Remove</em></td>
+                    <td><em onClick={() => removeFromeCart(cart)} className="fa fa-trash-o" role="button" /></td>
                   </tr>
                 ))}
       </tbody>

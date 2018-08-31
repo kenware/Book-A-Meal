@@ -72,6 +72,11 @@ class Nav extends Component {
     );
   }
 }
+Nav.defaultProps = {
+  cart: [],
+  component: '',
+  onModal: () => {}
+};
 
 Nav.propTypes = {
   cart: PropTypes.array,

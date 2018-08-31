@@ -1,36 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Login, mapDispatchToProps, mapStateToProps } from '../../../components/login/index';
+import { props, emptyProps } from '../loginMock';
 
 describe('Test Login Component', () => {
-  const props = {
-    errorMessage: {
-      loginError: 'Wrong credentials'
-    },
-    actions: {
-      login: jest.fn(),
-      errorMessage: {
-        loginError: 'Wrong credentials',
-        authError: 'Wrong credentials'
-      },
-      clearMessages: jest.fn()
-    },
-
-  };
-  const emptyProps = {
-    errorMessage: {
-      loginError: ''
-    },
-    actions: {
-      login: jest.fn(),
-      errorMessage: {
-        loginError: '',
-        authError: ''
-      },
-      clearMessages: jest.fn()
-    },
-
-  };
   it('renders correctly', () => {
     const tree = shallow(<Login {...emptyProps} />);
     expect(tree).toMatchSnapshot();

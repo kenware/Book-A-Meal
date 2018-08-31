@@ -7,15 +7,7 @@ import model from '../../server/models';
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification,
-  orderMealItems
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 
@@ -26,54 +18,13 @@ let mealId = 0, menuId = 1, orderId = 0;
 let id1;
 describe('User information for Menu and Order controller', () => {
   before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Menu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Order.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    MealMenu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    notification.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    orderMealItems.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
     User.destroy({
       where: {}
     }).then(() => {
       done();
     });
   });
+
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
@@ -181,7 +132,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: '',
+        meals: '',
         orderBefore: (new Date().getHours() + 2),
       })
       .end((err, res) => {
@@ -334,8 +285,7 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId: '',
-          quantity: 2,
-          totalPrice: 400
+          quantity: 2
         }]
       })
       .end((err, res) => {
@@ -355,8 +305,7 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId: '',
           menuId,
-          quantity: 2,
-          totalPrice: 400
+          quantity: 2
         }]
       })
       .end((err, res) => {
@@ -375,8 +324,7 @@ describe('Testing of Order middleware and controller', () => {
         address: 'no 19 reverend street',
         meals: [{
           mealId,
-          menuId,
-          totalPrice: 400
+          menuId
         }]
       })
       .end((err, res) => {
@@ -396,14 +344,12 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
       .end((err, res) => {
         res.should.have.status(201);
         res.body[0].should.have.property('address').eql('no 19 reverend street');
-        res.body[0].should.have.property('totalPrice').eql(400);
         res.body[0].should.have.property('status').eql('pending');
         res.body[0].should.have.property('meals').be.a('array');
         res.body[0].meals.length.should.be.eql(1);
@@ -422,13 +368,11 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         },
         {
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
@@ -436,7 +380,6 @@ describe('Testing of Order middleware and controller', () => {
         res.should.have.status(201);
         res.body.length.should.be.eql(1);
         res.body[0].should.have.property('address').eql('no 19 reverend street');
-        res.body[0].should.have.property('totalPrice').eql(800);
         res.body[0].should.have.property('status').eql('pending');
         res.body[0].should.have.property('meals').be.a('array');
         res.body[0].meals.length.should.be.eql(2);
@@ -454,7 +397,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
@@ -475,7 +417,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 4
         }]
       })
@@ -496,7 +437,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 500,
           quantity: 4
         }]
       })
@@ -537,15 +477,13 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.myOrder.should.have.property('address').eql('no 19 reverend street');
-        res.body.myOrder.should.have.property('totalPrice').eql(400);
-        res.body.myOrder.should.have.property('status').eql('pending');
+        res.body.should.have.property('address').eql('no 19 reverend street');
+        res.body.should.have.property('status').eql('pending');
         res.body.should.have.property('meals').be.a('array');
         res.body.meals.length.should.be.eql(1);
         res.body.should.be.a('object');

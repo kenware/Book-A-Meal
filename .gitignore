@@ -4,6 +4,7 @@ coverage/
 front-end-coverage/
 reports/
 lib/
+client/dist/
 # Object file
 *.o
 
