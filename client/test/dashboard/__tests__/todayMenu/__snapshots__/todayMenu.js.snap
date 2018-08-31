@@ -1,5 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test Today menu component of menu It should call toggle accordion function 1`] = `
+<div>
+  <div
+    key="1"
+  >
+    <button
+      className="menuAccordion"
+      onClick={[Function]}
+    >
+      <span
+        style={
+          Object {
+            "float": "right",
+            "marginTop": "1.5rem",
+          }
+        }
+      >
+        <em
+          className="fa fa-plus p-color"
+        />
+      </span>
+      <img
+        alt="profile"
+        className="user-img rounded-circle"
+        src="image_url"
+      />
+      <br />
+    </button>
+    <div
+      className="showA meal-menu-row spreadundefined"
+    >
+      <div
+        className="meal-menu"
+        key="1"
+      >
+        <div
+          className="menu-card"
+        >
+          <div
+            className="menu-img-wrap"
+            onClick={[Function]}
+            role="button"
+          >
+            <div
+              className="menu-overlay"
+            />
+            <img
+              alt="Avatar"
+              className="menu-card-img"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text flex-direction pad-text"
+          >
+            <span
+              className="p-color pad-text"
+            >
+              <b>
+                jollof
+              </b>
+            </span>
+            <span
+              className="p-color pad-text"
+            >
+              <b>
+                N
+                100
+              </b>
+            </span>
+          </div>
+          <div
+            className="container l-r-pad-text"
+          >
+            <button
+              className="order1"
+              onClick={[Function]}
+            >
+              <em
+                className="fa fa-cart-plus"
+              />
+                Add
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="meal-pagination"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={4}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[MockFunction]}
+          pageRangeDisplayed={6}
+          prevPageText="⟨"
+          totalItemsCount={2}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Test Today menu component of menu renders correctly 1`] = `
 <div>
   <div
@@ -24,12 +137,125 @@ exports[`Test Today menu component of menu renders correctly 1`] = `
       <img
         alt="profile"
         className="user-img rounded-circle"
-        src="image/l.png"
+        src="image_url"
       />
       <br />
     </button>
     <div
       className="showA meal-menu-row spreadundefined"
+    >
+      <div
+        className="meal-menu"
+        key="1"
+      >
+        <div
+          className="menu-card"
+        >
+          <div
+            className="menu-img-wrap"
+            onClick={[Function]}
+            role="button"
+          >
+            <div
+              className="menu-overlay"
+            />
+            <img
+              alt="Avatar"
+              className="menu-card-img"
+            />
+          </div>
+          <div
+            className="container l-r-pad-text flex-direction pad-text"
+          >
+            <span
+              className="p-color pad-text"
+            >
+              <b>
+                jollof
+              </b>
+            </span>
+            <span
+              className="p-color pad-text"
+            >
+              <b>
+                N
+                100
+              </b>
+            </span>
+          </div>
+          <div
+            className="container l-r-pad-text"
+          >
+            <button
+              className="order1"
+              onClick={[Function]}
+            >
+              <em
+                className="fa fa-cart-plus"
+              />
+                Add
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="meal-pagination"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={4}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[MockFunction]}
+          pageRangeDisplayed={6}
+          prevPageText="⟨"
+          totalItemsCount={2}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test Today menu component of menu renders correctly with empty props 1`] = `
+<div>
+  <div
+    key="1"
+  >
+    <button
+      className="menuAccordion"
+      onClick={[Function]}
+    >
+      <span
+        style={
+          Object {
+            "float": "right",
+            "marginTop": "1.5rem",
+          }
+        }
+      >
+        <em
+          className="fa fa-minus p-color"
+        />
+      </span>
+      <img
+        alt="profile"
+        className="user-img rounded-circle"
+        src="image/profile.png"
+      />
+      <br />
+    </button>
+    <div
+      className="showA meal-menu-row spread1"
     >
       <div>
         <i

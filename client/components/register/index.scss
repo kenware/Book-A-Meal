@@ -26,6 +26,7 @@
 .form-field label{
   padding: 10px 10px 10px 10px;
   flex:1;
+  font-size: 18px;
 }
 
 .form-field input{
@@ -35,6 +36,7 @@
   }
 
 .form-field button{
+  font-size: 18px;
   flex:2;
   padding: 10px 10px 10px 10px;
   margin-right: 10px;
@@ -65,4 +67,7 @@
 }
 .register-margin {
   margin-left: 8%;
+}
+.toasterror {
+  margin-top: 4rem;
 }

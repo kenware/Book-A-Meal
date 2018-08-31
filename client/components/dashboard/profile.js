@@ -13,6 +13,8 @@ export class Profile extends Component {
     super(props);
     this.state = {
       name: '',
+      email: '',
+      username: '',
       file: [],
       image: '',
       updateProfile: 'Update',

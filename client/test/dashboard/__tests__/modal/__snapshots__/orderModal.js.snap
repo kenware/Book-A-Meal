@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test menu component of dashboard renders correctly with empty props 1`] = `
+<div
+  className=""
+>
+  <br />
+  <div
+    className="modal-header"
+  >
+    <h3
+      className="justify l-r-pad-text"
+    >
+      This order can only be modified within ONE hour after it is created
+      <p
+        className="danger text-center"
+      />
+    </h3>
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Name: 
+    </span>
+    <span
+      className="modal-menu"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Price: 
+    </span>
+    <span
+      className="modal-menu"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Quantity: 
+    </span>
+    <input
+      className="modal-menu select"
+      id="quantity"
+      name="quantity"
+      onChange={[MockFunction]}
+      type="number"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text address"
+    >
+       Address: 
+    </span>
+    <textarea
+      className="modal-menu"
+      id="address"
+      name="address"
+      onChange={[MockFunction]}
+      rows="4"
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    className="checkout-btn"
+    onClick={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`Test menu component of dashboard should render with props 1`] = `
+<div
+  className=""
+>
+  <br />
+  <div
+    className="modal-header"
+  >
+    <h3
+      className="justify l-r-pad-text"
+    >
+      This order can only be modified within ONE hour after it is created
+      <p
+        className="danger text-center"
+      />
+    </h3>
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Name: 
+    </span>
+    <span
+      className="modal-menu"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Price: 
+    </span>
+    <span
+      className="modal-menu"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Quantity: 
+    </span>
+    <input
+      className="modal-menu select"
+      id="quantity"
+      name="quantity"
+      onChange={[MockFunction]}
+      type="number"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text address"
+    >
+       Address: 
+    </span>
+    <textarea
+      className="modal-menu"
+      id="address"
+      name="address"
+      onChange={[MockFunction]}
+      rows="4"
+      type="text"
+      value="Reveend street"
+    />
+  </div>
+  <button
+    className="checkout-btn"
+    onClick={[MockFunction]}
+  />
+</div>
+`;

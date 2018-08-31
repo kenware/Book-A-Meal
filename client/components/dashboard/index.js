@@ -4,7 +4,9 @@ import { bindActionCreators } from 'redux';
 import { Route, Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Modal from 'react-responsive-modal';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 import Header from '../header/index';
 import Header3 from '../header/header3';
 import MyMenu from './menu';
@@ -12,6 +14,7 @@ import Order from './order';
 import Footer from '../footer/index';
 import Profil from './profile';
 import './index.scss';
+import * as mealActions from '../../redux/Action/mealAction';
 import * as menuActions from '../../redux/Action/menuAction';
 import * as orderActions from '../../redux/Action/orderAction';
 import * as actions from '../../redux/Action/action';
@@ -31,6 +34,7 @@ export class Dashboard extends Component {
       timeline: '',
       main: 'main-sidebar2',
       dash: 'dash',
+      adminPage: 'adminPage',
       order: 'order',
       cPassword: 'cPassword',
       profile: 'profile',
@@ -41,7 +45,8 @@ export class Dashboard extends Component {
       upgradeButton: 'Upgrade',
       orderError: '',
       Redirect: false,
-      address: ''
+      address: '',
+      errorMessage: ''
     };
     this.upgrade = this.upgrade.bind(this);
     this.confirmUpgrade = this.confirmUpgrade.bind(this);
@@ -65,6 +70,7 @@ export class Dashboard extends Component {
   componentDidMount() {
     this.props.actions.getNotifications();
     this.props.actions.refreshToken('user');
+    this.props.mealActions.loadMostOrderedMeal(5);
   }
   /**
    * lifecycle hook called when component receives props
@@ -79,11 +85,26 @@ export class Dashboard extends Component {
         open: false
       });
       this.props.cart.cart = [];
+      swal({
+        title: 'Congratulation!',
+        text: 'Order Created!',
+        icon: 'success',
+        button: false,
+        timer: 3000
+      });
     } else if (newProps.successMessage.upgradeSuccess) {
       this.setState({
         upgradeModal: false,
         upgradeButton: 'upGrade',
-        admin: true
+        redirect: true
+      });
+    } else if (newProps.errorMessage.orderError) {
+      this.setState({
+        orderBtn: 'Check Out',
+        errorMessage: 'You cannot order this menu at this time'
+      });
+      toast.error('Order failed', {
+        className: 'toast'
       });
     }
   }
@@ -99,7 +120,8 @@ export class Dashboard extends Component {
 
   onModal() {
     this.setState({
-      open: !this.state.open
+      open: !this.state.open,
+      orderError: ''
     });
   }
   /**
@@ -178,9 +200,10 @@ export class Dashboard extends Component {
     this.setState({ open: true });
   }
   render() {
-    if (this.state.admin) { return (<Redirect to="/admin" />); }
+    if (this.state.redirect) { return (<Redirect to="/admin" />); }
     return (
       <div>
+        <ToastContainer autoClose={8000} />
         <span className="largeScreen-header">
           <Header component="dash" onModal={this.onModal} cart={this.props.cart.cart} />
         </span>
@@ -189,14 +212,16 @@ export class Dashboard extends Component {
         </span>
         <div className="react-modal">
           <Modal open={this.state.open} onClose={this.onModal} center>
-            <CheckOutModal
-              checkOut={this.checkOut}
-              carts={this.props.cart.cart}
-              state={this.state}
-              onChange={this.onChange}
-              removeFromeCart={this.removeFromeCart}
-            />
-            <button onClick={this.orderMeal} className="checkout-btn">{this.state.orderBtn}</button>
+            <div style={{ backgroundColor: '#eee' }}>
+              <CheckOutModal
+                checkOut={this.checkOut}
+                carts={this.props.cart.cart}
+                state={this.state}
+                onChange={this.onChange}
+                removeFromeCart={this.removeFromeCart}
+              />
+              <button onClick={this.orderMeal} className="checkout-btn">{this.state.orderBtn}</button>
+            </div>
           </Modal>
           <Modal open={this.state.upgradeModal} onClose={this.upgrade} center>
             <div className="modal-upgrade">
@@ -242,9 +267,6 @@ export class Dashboard extends Component {
                   <Link to="/dashboard/profile" className="bar1 y-color ">Profile</Link>
                 </li>
                 <li className="top-padding li-style">
-                  <Link to="/dashboard/profile" className="set y-color">Change Password</Link>
-                </li>
-                <li className="top-padding li-style">
                   <span onClick={this.logOut} className="y-color" role="button">LogOut</span>
                 </li>
               </ul>
@@ -252,9 +274,10 @@ export class Dashboard extends Component {
           </nav>
           <nav className={`sidebar sidebar2-width ${this.state.nav2}`}>
             <div>
-              <em className="fa fa-bars l-r-pad-text m-text bar2 y-color " onClick={this.toggle} role="button" />
-              <h1 className="l-r-pad-text"><a href="index.html"><em className="y-color fa fa-home" /></a></h1>
               <ul className="y-color">
+                <li className=" li-style">
+                  <em className="fa fa-bars m-text bar2 y-color " onClick={this.toggle} role="button" />
+                </li>
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard"
@@ -265,6 +288,18 @@ export class Dashboard extends Component {
                   </Link>
                   <span className={`p-dash m-text ${this.state.dash}`}>Dashoard</span>
                 </li>
+                {window.localStorage.getItem('role') === 'admin' ?
+                  <li className="top-padding li-style">
+                    <Link
+                      to="/admin"
+                      className="y-color m-text admin-link"
+                      onMouseLeave={() => this.handleClose('adminPage')}
+                      onMouseEnter={() => this.handleClick('adminPage')}
+                    ><em className="fa fa-user-secret popover all-meal" />
+                    </Link>
+                    <span className={`p-admin m-text ${this.state.adminPage}`}>Admin</span>
+                  </li>
+                : <span />}
                 <li className="top-padding li-style">
                   <Link
                     to="/dashboard/orders"
@@ -297,16 +332,6 @@ export class Dashboard extends Component {
                   <label className={`p-add m-text ${this.state.profile}`}>Profile</label>
                 </li>
                 <li className="top-padding li-style">
-                  <Link
-                    to="/dashboard/profile"
-                    className="y-color m-text pReset-link"
-                    onMouseLeave={() => this.handleClose('cPassword')}
-                    onMouseEnter={() => this.handleClick('cPassword')}
-                  ><em className="fa fa-edit set-meal" />
-                  </Link>
-                  <label className={`hover p-set m-text ${this.state.cPassword}`}>Change Password</label>
-                </li>
-                <li className="top-padding li-style">
                   <span
                     role="button"
                     onClick={this.logOut}
@@ -331,7 +356,7 @@ export class Dashboard extends Component {
                 }
               </div>
               <div> <br /><br />
-                <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="user" />
+                <img src={window.localStorage.getItem('image') !== 'null' ? window.localStorage.getItem('image') : 'image/profile.png'} className="user-img rounded-circle" alt="user" />
               </div>
               <div className="notification1"><br />
                 <span className="hover" onClick={this.toggle} role="button">
@@ -350,15 +375,16 @@ export class Dashboard extends Component {
               <Route exact path="/dashboard/orders" component={Order} />
               <div className={`timeline-container ${this.state.timeline}`}>
                 <h2>Timeline</h2>
-                <Timeline notifics={this.props.notifics} upGrade={this.upgrade} />
+                <Timeline
+                  notifics={this.props.notifics}
+                  mostOrder={this.props.mostOrder}
+                  upGrade={this.upgrade}
+                />
               </div>
-
             </div>
             <Footer />
           </main>
-
         </div>
-
       </div>
 
     );
@@ -369,7 +395,9 @@ Dashboard.propTypes = {
   errorMessage: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   cart: PropTypes.object.isRequired,
-  orderActions: PropTypes.object.isRequired
+  orderActions: PropTypes.object.isRequired,
+  mostOrder: PropTypes.array.isRequired,
+  mealActions: PropTypes.object.isRequired
 };
 
 export function mapStateToProps(state) {
@@ -378,14 +406,16 @@ export function mapStateToProps(state) {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
     notifics,
-    cart: state.cart
+    cart: state.cart,
+    mostOrder: state.mostOrder,
   };
 }
 export function mapDispatchToProps(dispatch) {
   return {
     menuActions: bindActionCreators(menuActions, dispatch),
     orderActions: bindActionCreators(orderActions, dispatch),
-    actions: bindActionCreators(actions, dispatch)
+    actions: bindActionCreators(actions, dispatch),
+    mealActions: bindActionCreators(mealActions, dispatch),
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

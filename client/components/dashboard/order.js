@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Popover from 'react-simple-popover';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Accordion,
   AccordionItem,
@@ -66,6 +67,10 @@ export class Orders extends Component {
         modifyError
       };
     } else if (props.successMessage.updateSuccess || props.successMessage.confirmSuccess) {
+      const update = props.successMessage.updateSuccess ? 'Order updated successfuly' : 'Order delivery confirmed';
+      toast(update, {
+        className: 'toast'
+      });
       props.actions.clearMessages();
       return {
         open: false,
@@ -99,9 +104,6 @@ export class Orders extends Component {
       price: meal.price,
       open: true
     });
-    const index = order.meals.indexOf(meal);
-    order.meals.splice(index, 1);
-    this.setState({ order });
   }
 
   // show popover on hover
@@ -133,8 +135,6 @@ export class Orders extends Component {
       address,
       mealId,
       orderId,
-      price,
-      order
     } = this.state;
 
     if (!quantity || !address) {
@@ -143,17 +143,8 @@ export class Orders extends Component {
 
     const meals = [{
       mealId,
-      totalPrice: price * quantity,
       quantity
     }];
-
-    order.meals.forEach((meal) => {
-      meals.push({
-        mealId: meal.id,
-        quantity: meal.orderMealItems.quantity,
-        totalPrice: meal.orderMealItems.totalPrice
-      });
-    });
 
     this.setState({ modifyOrder: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>) });
     this.props.orderActions.updateOrder(orderId, meals, address);
@@ -175,6 +166,7 @@ export class Orders extends Component {
 
     return (
       <div className="order-wrapper order-container">
+        <ToastContainer autoClose={8000} />
         <div style={{ margin: '1rem 1rem 1rem 1rem' }}>
           <Modal open={this.state.open} onClose={this.onCloseModal} center>
             <OrderModal modify={this.modify} state={this.state} onChange={this.onChange} />
@@ -191,91 +183,95 @@ export class Orders extends Component {
 
           <h2 style={{ marginTop: '4rem' }}>MY MEAL ORDER HISTORY</h2>
           <h3 className="danger text-center"><b>{this.props.errorMessage.myOrderError}</b></h3>
-          <Accordion>
-            <AccordionItem>
-              <AccordionItemTitle>
-                <div className="accordion__meal" />
-                <div className="order-accordion accordion-color">
-                  <div> S/N </div>
-                  <div>Total price</div>
-                  <div>Date</div>
-                  <div>Address</div>
-                  <div>Status</div>
-                  <div>Action</div>
-                </div>
-              </AccordionItemTitle>
-            </AccordionItem>
-            {this.props.myOrder.orders.map(order => (
-              <AccordionItem key={order.id}>
-                <AccordionItemTitle>
-                  <div className="accordion__arrow u-postion-relative" />
-                  <div className="order-accordion">
-                    <div className="order-">
-                      {this.props.myOrder.orders.indexOf(order) + 1}
+          { this.props.myOrder.orders.length > 0 ?
+            <div>
+              <Accordion>
+                <AccordionItem>
+                  <AccordionItemTitle>
+                    <div className="accordion__meal" />
+                    <div className="order-accordion accordion-color">
+                      <div> S/N </div>
+                      <div>Total price</div>
+                      <div>Date</div>
+                      <div>Address</div>
+                      <div>Status</div>
+                      <div>Action</div>
                     </div>
-                    <div className="order-contents ">
-                      # {order.totalPrice}
-                    </div>
-                    <div className="order-contents ">
-                      {monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)}&nbsp;
-                      {new Date(order.createdAt).getDate()} &nbsp;
-                      {new Date(order.createdAt).getFullYear()}
-                    </div>
-                    <div>{order.address}</div>
-                    <div className="order-contents">
-                      {order.status}
-                    </div>
-                    <div>
-                      {order.status === 'pending' ?
-                        <button
-                          className="y-color confirm-btn"
-                          onClick={() => this.handleClick(order.id)}
-                        >Confirm
-                        </button>
-                      : <span />
-                    }
-                    </div>
-                  </div>
-                </AccordionItemTitle>
-                <AccordionItemBody>
-                  <table className="table">
-                    <tbody>
-                      <tr className="p-color tr-height tr-color">
-                        <th>S/N</th>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total Price</th>
-                        <th>Edit</th>
-                      </tr>
-                      { order.meals.map(meal => (
-                        <tr className="p-color tr tr-height" key={meal.id}>
-                          <td>{order.meals.indexOf(meal) + 1}</td>
-                          <td>{meal.name}</td>
-                          <td>{meal.orderMealItems.quantity}</td>
-                          <td>{meal.price}</td>
-                          <td>{meal.orderMealItems.totalPrice}</td>
-                          <td>{ order.status === 'pending' ?
-                            <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
-                            : <span />}
-                          </td>
-                        </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                </AccordionItemBody>
-              </AccordionItem>
-             ))}
-          </Accordion>
-          <div className="meal-pagination">
-            <Pagination
-              activePage={this.state.activePage}
-              itemsCountPerPage={limit}
-              totalItemsCount={Math.ceil(this.props.myOrder.count)}
-              pageRangeDisplayed={4}
-              onChange={this.handlePageChange}
-            />
-          </div>
+                  </AccordionItemTitle>
+                </AccordionItem>
+                {this.props.myOrder.orders.map(order => (
+                  <AccordionItem key={order.id}>
+                    <AccordionItemTitle>
+                      <div className="accordion__arrow u-postion-relative" />
+                      <div className="order-accordion">
+                        <div className="order-">
+                          {this.props.myOrder.orders.indexOf(order) + 1}
+                        </div>
+                        <div className="order-contents ">
+                          N{order.totalPrice}
+                        </div>
+                        <div className="order-contents ">
+                          {monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)}&nbsp;
+                          {new Date(order.createdAt).getDate()} &nbsp;
+                          {new Date(order.createdAt).getFullYear()}
+                        </div>
+                        <div>{order.address}</div>
+                        <div className="order-contents">
+                          {order.status}
+                        </div>
+                        <div>
+                          {order.status === 'pending' ?
+                            <button
+                              className=" confirm-btn"
+                              onClick={() => this.handleClick(order.id)}
+                            >Confirm
+                            </button>
+                          : <span />
+                        }
+                        </div>
+                      </div>
+                    </AccordionItemTitle>
+                    <AccordionItemBody>
+                      <table className="table">
+                        <tbody>
+                          <tr className="p-color tr-height tr-color">
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total Price</th>
+                            <th>Edit</th>
+                          </tr>
+                          { order.meals.map(meal => (
+                            <tr className="p-color tr tr-height" key={meal.id}>
+                              <td>{order.meals.indexOf(meal) + 1}</td>
+                              <td>{meal.name}</td>
+                              <td>{meal.orderMealItems.quantity}</td>
+                              <td>N{meal.price}</td>
+                              <td>{meal.totalPrice}</td>
+                              <td>{ order.status === 'pending' ?
+                                <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
+                                : <span />}
+                              </td>
+                            </tr>
+                            ))}
+                        </tbody>
+                      </table>
+                    </AccordionItemBody>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <div className="meal-pagination">
+                <Pagination
+                  activePage={this.state.activePage}
+                  itemsCountPerPage={limit}
+                  totalItemsCount={Math.ceil(this.props.myOrder.count)}
+                  pageRangeDisplayed={4}
+                  onChange={this.handlePageChange}
+                />
+              </div>
+            </div>
+         : <div /> }
         </div>
       </div>
     );

@@ -6,18 +6,18 @@ const orderModal = ({ state, modify, onChange }) => (
   <div className="">
     <br />
     <div className="modal-header">
-      <p className="justify l-r-pad-text">
+      <h3 className="justify l-r-pad-text">
         This order can only be modified within ONE hour after it is created
-        <h4 className="danger text-center">{state.modifyError}</h4>
-      </p>
+        <p className="danger text-center">{state.modifyError}</p>
+      </h3>
     </div>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text"> Name: </span>
-      <span className="modal-items ">{state.mealName}</span>
+      <span className="modal-menu">{state.mealName}</span>
     </div>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text"> Price: </span>
-      <span className="modal-items ">{state.price}</span>
+      <span className="modal-menu">{state.price}</span>
     </div>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text"> Quantity: </span>

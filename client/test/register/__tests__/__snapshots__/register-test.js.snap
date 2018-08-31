@@ -2,7 +2,34 @@
 
 exports[`Test Register Component should render correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <div
     className="register-container"
     id="register-bg"
@@ -19,9 +46,6 @@ exports[`Test Register Component should render correctly 1`] = `
         SignUp
       </h2>
       <br />
-      <h3
-        className="text-center danger"
-      />
       <h3
         className="text-center danger"
       />
@@ -44,6 +68,7 @@ exports[`Test Register Component should render correctly 1`] = `
           className="form-field"
         >
           <input
+            autoComplete="true"
             id="username"
             name="username"
             onChange={[Function]}
@@ -69,6 +94,7 @@ exports[`Test Register Component should render correctly 1`] = `
           className="form-field"
         >
           <input
+            autoComplete="true"
             id="password"
             name="password"
             onChange={[Function]}
@@ -82,6 +108,7 @@ exports[`Test Register Component should render correctly 1`] = `
           className="form-field"
         >
           <input
+            autoComplete="true"
             id="vpassword"
             name="vpassword"
             onChange={[Function]}

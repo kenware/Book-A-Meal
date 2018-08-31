@@ -44,18 +44,21 @@ describe('Test edit meal component', () => {
 
   it('should respond to change event and change the state of the name input', () => {
     const tree = shallow(<Edit {...emptyProps} />);
-    // onChange event
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'rice' } });
     expect(tree.state('name')).toEqual('rice');
   });
 
   it('should respond to lifeCycle methods', () => {
+    const componentDidMount = jest.spyOn(Edit.prototype, 'componentDidMount');
+    const componentWillUnmount = jest.spyOn(Edit.prototype, 'componentWillUnmount');
+
     const tree = shallow(<Edit {...emptyProps} />);
     const wrapper = tree.instance();
-    wrapper.componentWillMount();
-    expect(tree).toMatchSnapshot();
+    wrapper.componentDidMount();
     wrapper.componentWillUnmount();
     expect(wrapper).toMatchSnapshot();
+    expect(componentDidMount).toHaveBeenCalled();
+    expect(componentWillUnmount).toHaveBeenCalled();
   });
 
   it('should respond to mapStateToProps methods', () => {
@@ -69,11 +72,10 @@ describe('Test edit meal component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should respond to lifeCycle methods', () => {
+  it('should respond to class methods', () => {
     const tree = shallow(<Edit {...emptyProps} />);
     const wrapper = tree.instance();
     wrapper.onDrop([{ preview: 'image.jpg' }]);
-    expect(tree).toMatchSnapshot();
     wrapper.addMeal({ preventDefault: jest.fn() });
     expect(wrapper).toMatchSnapshot();
   });
@@ -88,35 +90,27 @@ describe('Test edit meal component', () => {
     }, { meals: { } });
     expect(tree).toMatchSnapshot();
     tree.instance().constructor.getDerivedStateFromProps({ meals: {} }, { meals: { } });
-    wrapper.componentWillMount();
     expect(tree).toMatchSnapshot();
   });
 
   it('should respond to addMeal onClick method and return error when name input is not supplied', () => {
     const tree = shallow(<Edit {...emptyProps} />);
-    // onclick submit event
     tree.find('.submit').simulate('click', { target: { name: 'submit' }, preventDefault: jest.fn() });
     expect(tree.state('validName')).toEqual('Name is required');
   });
 
   it('should respond addMeal method onClick event and return error when price input is empty', () => {
     const tree = shallow(<Edit {...emptyProps} />);
-    // onChange event
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'rice' } });
-    // onclick submit event
     tree.find('.submit').simulate('click', { target: { name: 'submit' }, preventDefault: jest.fn() });
     expect(tree.state('validPrice')).toEqual('Price is required');
   });
 
-  it('should respond addMeal method onClick event edit profile', () => {
+  it('should respond addMeal method onClick event of edit profile page', () => {
     const tree = shallow(<Edit {...emptyProps} />);
-    // onChange event
     tree.find('#name').simulate('change', { target: { name: 'name', value: 'rice' } });
-    // onchange event
     tree.find('#price').simulate('change', { target: { name: 'price', value: '100' } });
-    // onchange event
     tree.find('#description').simulate('change', { target: { name: 'description', value: 'Good' } });
-    // onclick submit event
     tree.find('.submit').simulate('click', { target: { name: 'submit' }, preventDefault: jest.fn() });
     expect(tree).toMatchSnapshot();
   });

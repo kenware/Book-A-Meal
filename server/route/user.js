@@ -18,7 +18,7 @@ const router = express.Router();
 
 // User route
 router
-  .post('/auth/signup', validate.signup, User.createUser)
+  .post('/auth/signup', validate.signup, validate.signupAsyncMiddleware, User.createUser)
   .post('/auth/signin', validate.signin, User.login)
 // send reset link to email
   .post('/auth/resetLink', User.sendResetLink, Mail.changePassword)
@@ -33,5 +33,5 @@ router
 // refresh user token
   .get('/refresh', jwtAuth.authUser, User.refreshToken)
 // update a user
-  .post('/auth/update', jwtAuth.authUser, upload.array('file'), User.userUpdate);
+  .put('/auth/update', jwtAuth.authUser, upload.array('file'), validate.userUpdateAsyncMiddleware, User.userUpdate);
 export default router;

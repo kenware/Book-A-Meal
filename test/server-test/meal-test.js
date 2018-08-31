@@ -3,20 +3,12 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../../app';
 import model from '../../server/models';
-import token from '../../server/helpers/tokenGenerator';
+import { adminUser, firstUser, secondUser, secondAdmin } from '../testMock';
 
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification,
-  orderMealItems
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 let tokenUser = '';
@@ -24,14 +16,6 @@ let tokenAdmin = '', tokenAdmin2 = '', mealId = 0;
 
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-
-  before((done) => {
-    User.sync();
     User.destroy({
       where: {}
     })
@@ -43,17 +27,11 @@ describe('/POST api/v1/auth/signup', () => {
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'kevlin',
-        name: 'kenson',
-        email: 'kenson@gmail.com',
-        password: '12345',
-        role: 'admin'
-      })
+      .send(adminUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('kenson');
-        res.body.should.have.property('username').eql('kevlin');
+        res.body.should.have.property('username').eql('kenson');
         res.body.should.have.property('name').eql('kenson');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
@@ -65,13 +43,7 @@ describe('/POST api/v1/auth/signup', () => {
   it('first user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'keneth',
-        name: 'keneth',
-        email: 'kelvin@gmail.kev',
-        password: '12345',
-        role: 'admin'
-      })
+      .send(firstUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('keneth');
@@ -79,7 +51,7 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        tokenAdmin2 = res.body.token;
+        tokenUser = res.body.token;
         done();
       });
   });
@@ -87,20 +59,14 @@ describe('/POST api/v1/auth/signup', () => {
   it('user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'ejike',
-        name: 'ejike',
-        email: 'ejike@gmail.kev',
-        password: '12345'
-      })
+      .send(secondAdmin)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('ejike');
         res.body.should.have.property('username').eql('ejike');
         res.body.should.have.property('email').eql('ejike@gmail.kev');
         res.body.should.have.property('token');
-        res.body.should.be.a('object');
-        tokenUser = res.body.token;
+        tokenAdmin2 = res.body.token;
         done();
       });
   });

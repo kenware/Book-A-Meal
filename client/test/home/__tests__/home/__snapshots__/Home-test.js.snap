@@ -2,7 +2,11 @@
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -33,7 +37,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -120,6 +126,7 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
           },
         ]
       }
+      showDetail={[Function]}
     />
   </div>
   <parallaxScroll />
@@ -194,7 +201,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -212,7 +221,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 2`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -243,7 +256,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -330,6 +345,7 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
           },
         ]
       }
+      showDetail={[Function]}
     />
   </div>
   <parallaxScroll />
@@ -404,7 +420,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -422,7 +440,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 3`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -453,7 +475,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -540,6 +564,7 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
           },
         ]
       }
+      showDetail={[Function]}
     />
   </div>
   <parallaxScroll />
@@ -614,7 +639,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -632,7 +659,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -663,7 +694,9 @@ exports[`Test Home Component renders correctly 1`] = `
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -750,6 +783,7 @@ exports[`Test Home Component renders correctly 1`] = `
           },
         ]
       }
+      showDetail={[Function]}
     />
   </div>
   <parallaxScroll />
@@ -824,7 +858,9 @@ exports[`Test Home Component renders correctly 1`] = `
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -838,6 +874,13 @@ exports[`Test Home Component renders correctly 1`] = `
   </div>
   <footer />
 </div>
+`;
+
+exports[`Test Home Component should redirect to dashboard if user is signed in 1`] = `
+<Redirect
+  push={false}
+  to="/dashboard"
+/>
 `;
 
 exports[`Test Home Component should respond to mapDispatchToProps methods 1`] = `

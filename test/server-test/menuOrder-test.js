@@ -3,19 +3,12 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../../app';
 import model from '../../server/models';
+import { adminUser, firstUser, secondUser } from '../testMock';
 
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification,
-  orderMealItems
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 
@@ -26,64 +19,17 @@ let mealId = 0, menuId = 1, orderId = 0;
 let id1;
 describe('User information for Menu and Order controller', () => {
   before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Menu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    Order.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    MealMenu.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    notification.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
-    orderMealItems.sync()
-      .then(() => {
-        done();
-      });
-  });
-  before((done) => {
     User.destroy({
       where: {}
     }).then(() => {
       done();
     });
   });
+
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'kenson',
-        name: 'kenson',
-        email: 'kenson@gmail.com',
-        password: '12345',
-        role: 'admin'
-      })
+      .send(adminUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('kenson');
@@ -99,12 +45,7 @@ describe('User information for Menu and Order controller', () => {
   it('first user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'keneth',
-        name: 'keneth',
-        email: 'kelvin@gmail.kev',
-        password: '12345'
-      })
+      .send(firstUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('keneth');
@@ -120,19 +61,13 @@ describe('User information for Menu and Order controller', () => {
   it('second user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'ejike',
-        name: 'ejike',
-        email: 'ejike@gmail.kev',
-        password: '12345'
-      })
+      .send(secondUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('ejike');
         res.body.should.have.property('username').eql('ejike');
         res.body.should.have.property('email').eql('ejike@gmail.kev');
         res.body.should.have.property('token');
-        res.body.should.be.a('object');
         tokenUser = res.body.token;
         done();
       });
@@ -181,7 +116,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: '',
+        meals: '',
         orderBefore: (new Date().getHours() + 2),
       })
       .end((err, res) => {
@@ -320,6 +255,30 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
+  it('Admin should Get a menu he/she set', (done) => {
+    chai.request(server)
+      .get('/api/v1/myMenu?limit=1&offset=0')
+      .set('authorization', tokenAdmin)
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it('User should Get a meal in the menu', (done) => {
+    chai.request(server)
+      .get(`/api/v1/menuMeals/${menuId}/?limit=1&offset=0`)
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('count');
+        res.body.should.have.property('meals');
+        done();
+      });
+  });
 });
 
 
@@ -334,8 +293,7 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId: '',
-          quantity: 2,
-          totalPrice: 400
+          quantity: 2
         }]
       })
       .end((err, res) => {
@@ -355,8 +313,7 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId: '',
           menuId,
-          quantity: 2,
-          totalPrice: 400
+          quantity: 2
         }]
       })
       .end((err, res) => {
@@ -375,8 +332,7 @@ describe('Testing of Order middleware and controller', () => {
         address: 'no 19 reverend street',
         meals: [{
           mealId,
-          menuId,
-          totalPrice: 400
+          menuId
         }]
       })
       .end((err, res) => {
@@ -396,14 +352,12 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
       .end((err, res) => {
         res.should.have.status(201);
         res.body[0].should.have.property('address').eql('no 19 reverend street');
-        res.body[0].should.have.property('totalPrice').eql(400);
         res.body[0].should.have.property('status').eql('pending');
         res.body[0].should.have.property('meals').be.a('array');
         res.body[0].meals.length.should.be.eql(1);
@@ -422,13 +376,11 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         },
         {
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
@@ -436,7 +388,6 @@ describe('Testing of Order middleware and controller', () => {
         res.should.have.status(201);
         res.body.length.should.be.eql(1);
         res.body[0].should.have.property('address').eql('no 19 reverend street');
-        res.body[0].should.have.property('totalPrice').eql(800);
         res.body[0].should.have.property('status').eql('pending');
         res.body[0].should.have.property('meals').be.a('array');
         res.body[0].meals.length.should.be.eql(2);
@@ -454,7 +405,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
@@ -475,7 +425,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 4
         }]
       })
@@ -496,7 +445,6 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 500,
           quantity: 4
         }]
       })
@@ -537,15 +485,13 @@ describe('Testing of Order middleware and controller', () => {
         meals: [{
           mealId,
           menuId,
-          totalPrice: 400,
           quantity: 3
         }]
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.myOrder.should.have.property('address').eql('no 19 reverend street');
-        res.body.myOrder.should.have.property('totalPrice').eql(400);
-        res.body.myOrder.should.have.property('status').eql('pending');
+        res.body.should.have.property('address').eql('no 19 reverend street');
+        res.body.should.have.property('status').eql('pending');
         res.body.should.have.property('meals').be.a('array');
         res.body.meals.length.should.be.eql(1);
         res.body.should.be.a('object');

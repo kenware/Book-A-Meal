@@ -1,336 +1,362 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test Timeline component of dashboard renders correctly 1`] = `
-<ul
-  className="timeline"
->
-  <li>
-    <div
-      className="timeline-badge"
-    >
-      <em
-        className="fa fa-camera"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
+<div>
+  <ul
+    className="timeline"
+  >
+    <li>
       <div
-        className="timeline-heading"
+        className="timeline-badge"
       >
-        <h5
-          className="timeline-title l-margin m-text"
-        >
-          Profile
-        </h5>
+        <em
+          className="fa fa-camera"
+        />
       </div>
       <div
-        className="timeline-body"
+        className="timeline-panel bg-light"
       >
-        <ul>
-          <li
-            style={
-              Object {
-                "listStyle": "none",
-              }
-            }
+        <div
+          className="timeline-heading"
+        >
+          <h5
+            className="timeline-title l-margin m-text"
           >
-            <img
-              alt="profil"
-              className="user-img rounded-circle"
-            />
-          </li>
-          <li>
-            <span
-              className="h2-color"
-            />
-          </li>
-          <li>
-            <span
-              className="h2-color"
-            >
-              <Link
-                replace={false}
-                to="/profile"
-              >
-                profile
-              </Link>
-            </span>
-          </li>
-          <span />
-        </ul>
-      </div>
-    </div>
-  </li>
-  <li>
-    <div
-      className="timeline-badge primary"
-    >
-      <em
-        className="fa fa-link"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
-      <div
-        className="timeline-heading"
-      >
-        <h5
-          className="timeline-title l-margin m-text"
+            Profile
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
         >
-          Notifications
-        </h5>
-      </div>
-      <div
-        className="timeline-body"
-      >
-        <ul
-          style={
-            Object {
-              "height": "300px",
-              "overflow": "scroll",
-            }
-          }
-        >
-          <li
-            key="1"
-            style={
-              Object {
-                "marginTop": "1rem",
-              }
-            }
-          >
-            <div
-              className="p-color"
-            >
-              here i come
-            </div>
-            <div>
-              Jun
-               
-              10
-                
-              2018
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </li>
-  <li>
-    <div
-      className="timeline-badge"
-    >
-      <em
-        className="fa fa-paperclip"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
-      <div
-        className="timeline-heading"
-      >
-        <h5
-          className="timeline-title m-text l-margin"
-        >
-          Recently Ordered Meal
-        </h5>
-      </div>
-      <div
-        className="timeline-body"
-      >
-        <ul>
-          <li />
-          <li>
-            Italian Recipes
-          </li>
-          <li>
-            Ewedu Meal
-          </li>
-          <li>
-            Abacha
-          </li>
-        </ul>
-      </div>
-    </div>
-  </li>
-</ul>
-`;
-
-exports[`Test Timeline component of dashboard should have three modal-order-content class 1`] = `
-<ul
-  className="timeline"
->
-  <li>
-    <div
-      className="timeline-badge"
-    >
-      <em
-        className="fa fa-camera"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
-      <div
-        className="timeline-heading"
-      >
-        <h5
-          className="timeline-title l-margin m-text"
-        >
-          Profile
-        </h5>
-      </div>
-      <div
-        className="timeline-body"
-      >
-        <ul>
-          <li
-            style={
-              Object {
-                "listStyle": "none",
-              }
-            }
-          >
-            <img
-              alt="profil"
-              className="user-img rounded-circle"
-              src="user"
-            />
-          </li>
-          <li>
-            <span
-              className="h2-color"
-            >
-              user
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-            >
-              <Link
-                replace={false}
-                to="/profile"
-              >
-                profile
-              </Link>
-            </span>
-          </li>
-          <li>
-            <button
-              id="userUpgrade"
-              onClick={[MockFunction]}
+          <ul>
+            <li
               style={
                 Object {
-                  "backgroundColor": "#b8b507",
-                  "color": "white",
-                  "minHeight": "2rem",
+                  "listStyle": "none",
                 }
               }
             >
-              Upgrade To A Caterer
-            </button>
-          </li>
-        </ul>
+              <img
+                alt="profil"
+                className="user-img rounded-circle"
+              />
+            </li>
+            <li>
+              <span
+                className="h2-color"
+              />
+            </li>
+            <li>
+              <span
+                className="h2-color"
+              >
+                <Link
+                  replace={false}
+                  to="/profile"
+                >
+                  profile
+                </Link>
+              </span>
+            </li>
+            <span />
+          </ul>
+        </div>
       </div>
-    </div>
-  </li>
-  <li>
-    <div
-      className="timeline-badge primary"
-    >
-      <em
-        className="fa fa-link"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
+    </li>
+    <li>
       <div
-        className="timeline-heading"
+        className="timeline-badge primary"
       >
-        <h5
-          className="timeline-title l-margin m-text"
-        >
-          Notifications
-        </h5>
+        <em
+          className="fa fa-link"
+        />
       </div>
       <div
-        className="timeline-body"
+        className="timeline-panel bg-light"
       >
-        <ul
-          style={
-            Object {
-              "height": "300px",
-              "overflow": "scroll",
-            }
-          }
+        <div
+          className="timeline-heading"
         >
-          <li
-            key="1"
+          <h5
+            className="timeline-title l-margin m-text"
+          >
+            Notifications
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
+        >
+          <ul
             style={
               Object {
-                "marginTop": "1rem",
+                "height": "300px",
+                "overflow": "scroll",
               }
             }
           >
-            <div
-              className="p-color"
+            <li
+              key="1"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
             >
-              here i come
-            </div>
-            <div>
-              Jun
-               
-              10
-                
-              2018
-            </div>
-          </li>
-        </ul>
+              <div
+                className="p-color"
+              >
+                here i come
+              </div>
+              <div>
+                Jun
+                 
+                10
+                  
+                2018
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </li>
-  <li>
-    <div
-      className="timeline-badge"
-    >
-      <em
-        className="fa fa-paperclip"
-      />
-    </div>
-    <div
-      className="timeline-panel bg-light"
-    >
+    </li>
+    <li>
       <div
-        className="timeline-heading"
+        className="timeline-badge"
       >
-        <h5
-          className="timeline-title m-text l-margin"
+        <em
+          className="fa fa-paperclip"
+        />
+      </div>
+      <div
+        className="timeline-panel bg-light"
+      >
+        <div
+          className="timeline-heading"
         >
-          Recently Ordered Meal
-        </h5>
+          <h5
+            className="timeline-title m-text l-margin"
+          >
+            Most Ordered Meal
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
+        >
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
+            <li
+              key="rice"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
+            >
+              <div
+                className="p-color"
+              >
+                rice
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Test Timeline component of dashboard should have three modal-order-content class 1`] = `
+<div>
+  <ul
+    className="timeline"
+  >
+    <li>
+      <div
+        className="timeline-badge"
+      >
+        <em
+          className="fa fa-camera"
+        />
       </div>
       <div
-        className="timeline-body"
+        className="timeline-panel bg-light"
       >
-        <ul>
-          <li />
-          <li>
-            Italian Recipes
-          </li>
-          <li>
-            Ewedu Meal
-          </li>
-          <li>
-            Abacha
-          </li>
-        </ul>
+        <div
+          className="timeline-heading"
+        >
+          <h5
+            className="timeline-title l-margin m-text"
+          >
+            Profile
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
+        >
+          <ul>
+            <li
+              style={
+                Object {
+                  "listStyle": "none",
+                }
+              }
+            >
+              <img
+                alt="profil"
+                className="user-img rounded-circle"
+                src="user"
+              />
+            </li>
+            <li>
+              <span
+                className="h2-color"
+              >
+                user
+              </span>
+            </li>
+            <li>
+              <span
+                className="h2-color"
+              >
+                <Link
+                  replace={false}
+                  to="/profile"
+                >
+                  profile
+                </Link>
+              </span>
+            </li>
+            <li>
+              <button
+                id="userUpgrade"
+                onClick={[MockFunction]}
+                style={
+                  Object {
+                    "backgroundColor": "#b8b507",
+                    "color": "white",
+                    "minHeight": "2rem",
+                  }
+                }
+              >
+                Upgrade To A Caterer
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+    <li>
+      <div
+        className="timeline-badge primary"
+      >
+        <em
+          className="fa fa-link"
+        />
+      </div>
+      <div
+        className="timeline-panel bg-light"
+      >
+        <div
+          className="timeline-heading"
+        >
+          <h5
+            className="timeline-title l-margin m-text"
+          >
+            Notifications
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
+        >
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
+            <li
+              key="1"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
+            >
+              <div
+                className="p-color"
+              >
+                here i come
+              </div>
+              <div>
+                Jun
+                 
+                10
+                  
+                2018
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div
+        className="timeline-badge"
+      >
+        <em
+          className="fa fa-paperclip"
+        />
+      </div>
+      <div
+        className="timeline-panel bg-light"
+      >
+        <div
+          className="timeline-heading"
+        >
+          <h5
+            className="timeline-title m-text l-margin"
+          >
+            Most Ordered Meal
+          </h5>
+        </div>
+        <div
+          className="timeline-body"
+        >
+          <ul
+            style={
+              Object {
+                "height": "300px",
+                "overflow": "scroll",
+              }
+            }
+          >
+            <li
+              key="rice"
+              style={
+                Object {
+                  "marginTop": "1rem",
+                }
+              }
+            >
+              <div
+                className="p-color"
+              >
+                rice
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 `;

@@ -40,7 +40,7 @@ export const getMyOrder = (limit, offset) => dispatch => window.fetch(`/api/v1/u
         myOrderError: 'OOps You Have Not Ordered A Meal'
       }));
     }
-    dispatch(loadMyOrder(myOrder));
+    return dispatch(loadMyOrder(myOrder));
   });
 
 export const getAllOrders = (limit, offset) => dispatch => window.fetch(`/api/v1/orders?limit=${limit}&offset=${offset}`, {
@@ -70,11 +70,11 @@ export const updateOrder = (id, meals, address) => dispatch => window.fetch(`/ap
 })
   .then(res => res.json())
   .then((response) => {
+    dispatch(getMyOrder(5, 0));
     if (response.message) {
       return dispatch(loadErrorMessage({ updateError: response.message }));
     }
     dispatch(loadSuccessMessage({ updateSuccess: 'Order created' }));
-    dispatch(getMyOrder());
   });
 
 export const confirmStatus = id => dispatch => window.fetch(`/api/v1/orderStatus/${id}`, {

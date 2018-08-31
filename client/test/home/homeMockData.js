@@ -1,5 +1,6 @@
 export const props = {
   loadMostOrderedMeal: jest.fn(),
+  showDetail: jest.fn(),
   mostOrder: [
     {
       count: 8,
@@ -22,6 +23,7 @@ export const props = {
   ]
 };
 export const emptyProps = {
+  showDetail: jest.fn(),
   loadMostOrderedMeal: jest.fn(),
   mostOrder: [
   ],

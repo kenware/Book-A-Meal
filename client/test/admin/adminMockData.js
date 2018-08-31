@@ -1,4 +1,5 @@
 export const props = {
+  showDetail: jest.fn(),
   mostOrder: [
     {
       id: 1,
@@ -81,6 +82,7 @@ export const props = {
 };
 
 export const emptyProps = {
+  showDetail: jest.fn(),
   mostOrder: [
   ],
   allOrder: {

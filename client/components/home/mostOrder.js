@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 /**
  * @param  {} {mostOrder} load most ordered menu
  */
-export const mostOrdered = ({ mostOrder }) => (
+export const mostOrdered = ({ mostOrder, showDetail }) => (
   <div className="meal-menu-row">
     { mostOrder.map(meal =>
     (
       <div className="meal-menu" key={meal.id}>
         <div className="meal-menu-card">
           <div className="meal-img-wrap">
-            <div className="meal-overlay" />
+            <div className="meal-overlay" onClick={() => showDetail(meal.name, meal.description, meal.image)} role="button" />
             <img src={meal.image} alt="Avatar" className="meal-card-img" />
           </div>
           <div className="container l-r-pad-text">
@@ -26,7 +26,8 @@ export const mostOrdered = ({ mostOrder }) => (
   </div>
 );
 mostOrdered.propTypes = {
-  mostOrder: PropTypes.array.isRequired,
+  showDetail: PropTypes.func.isRequired,
+  mostOrder: PropTypes.array.isRequired
 };
 export default mostOrdered;
 

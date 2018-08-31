@@ -2,7 +2,7 @@
 
 exports[`Test Admin Order component renders correctly 1`] = `
 <div
-  className="order-container"
+  className="admin-order"
   style={
     Object {
       "justifyContent": "spaceAround",
@@ -11,6 +11,7 @@ exports[`Test Admin Order component renders correctly 1`] = `
   }
 >
   <h2
+    id="order-page"
     style={
       Object {
         "marginTop": "4rem",
@@ -20,11 +21,11 @@ exports[`Test Admin Order component renders correctly 1`] = `
     Overview Of Most Ordered Meal 
   </h2>
   <div
-    className="order-wrapper"
+    className="admin-order-wrapper"
     style={
       Object {
-        "marginLeft": "5%",
-        "marginRight": "5%",
+        "marginLeft": "10%",
+        "marginRight": "4%",
       }
     }
   >
@@ -238,7 +239,7 @@ exports[`Test Admin Order component renders correctly 1`] = `
     ORDER HISTORY OF ALL USERS
   </h2>
   <div
-    className="order-wrapper"
+    className="order-detail"
   >
     <span>
       <AccordionWrapper
@@ -337,7 +338,9 @@ exports[`Test Admin Order component renders correctly 1`] = `
               </div>
               <div
                 className="order-contents "
-              />
+              >
+                N
+              </div>
               <div
                 className="order-contents"
               >
@@ -403,10 +406,11 @@ exports[`Test Admin Order component renders correctly 1`] = `
                     3
                   </td>
                   <td>
+                    N
                     200
                   </td>
                   <td>
-                    4
+                    N
                   </td>
                 </tr>
               </tbody>

@@ -12,15 +12,14 @@ export const loadTodayMenu = menu => ({ type: types.LOAD_TODAY_MENU, menu });
 
 export const loadTodayMenuMeals = menuMeals => ({ type: types.LOAD_TODAY_MENUMEALS, menuMeals });
 export const addMealToCart = cart => ({ type: types.ADD_MEAL_TO_CART, cart });
-
-export const setMenu = (meals, title, orderBefore) => dispatch => window.fetch('/api/v1/menu', {
+export const setMenu = (meals, title, orderBefore, sendEmail) => dispatch => window.fetch('/api/v1/menu', {
   method: 'POST',
   headers: {
     authorization: auth.getToken(),
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    meals, title, orderBefore
+    meals, title, orderBefore, sendEmail
   })
 })
   .then(res => res.json())
@@ -29,7 +28,6 @@ export const setMenu = (meals, title, orderBefore) => dispatch => window.fetch('
       return dispatch(loadErrorMessage({ setMenuError: response.message }));
     }
     return dispatch(loadSuccessMessage({ setMenuSuccess: 'Meal added to menu' }));
-    // return history.push('/dashboard');
   });
 
 export const getMenu = (limit, offset) => dispatch => window.fetch(`/api/v1/menu?limit=${limit}&offset=${offset}`, {

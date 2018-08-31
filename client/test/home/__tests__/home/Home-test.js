@@ -19,11 +19,6 @@ describe('Test Home Component', () => {
     expect(tree.find('.site-container').length).toEqual(2);
   });
 
-  it('should have one carousel header', () => {
-    const tree = shallow(<Home {...props} />);
-    expect(tree.find('.carousel-header').length).toEqual(1);
-  });
-
   it('should have caption header to be equal ', () => {
     const tree = shallow(<Home {...props} />);
     expect(tree.find('.caption').length).toEqual(1);
@@ -56,6 +51,15 @@ describe('Test Home Component', () => {
 
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(props);
+    expect(tree).toMatchSnapshot();
+  });
+  it('should redirect to dashboard if user is signed in', () => {
+    global.localStorage = {
+      getItem(role) {
+        return 'admin';
+      }
+    };
+    const tree = shallow(<Home {...props} />);
     expect(tree).toMatchSnapshot();
   });
 });

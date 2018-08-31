@@ -10,14 +10,14 @@ describe('Test Admin Order component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should have one order-container class', () => {
+  it('should have one admin-order class', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('.order-container')).toHaveLength(1);
+    expect(tree.find('.admin-order')).toHaveLength(1);
   });
 
   it('should display one order-wrapper', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('.order-wrapper')).toHaveLength(2);
+    expect(tree.find('.admin-order-wrapper')).toHaveLength(1);
   });
 
   it('should have only one table', () => {

@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
+import volleyball from 'volleyball';
 import path from 'path';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import volleyball from 'volleyball';
 import userRoute from './server/route/user';
 import mealRoute from './server/route/meal';
 import menuRoute from './server/route/menu';
@@ -15,11 +15,11 @@ dotenv.config();
 const swaggerDocument = require('./swagger.json');
 
 const app = express();
+app.use(volleyball);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
-app.use(volleyball);
 
 // api routes
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

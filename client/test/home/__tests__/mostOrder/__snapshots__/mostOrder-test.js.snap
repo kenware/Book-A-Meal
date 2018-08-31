@@ -16,6 +16,8 @@ exports[`Test mostOder components it should flip card on mouseEnter event 1`] = 
       >
         <div
           className="meal-overlay"
+          onClick={[Function]}
+          role="button"
         />
         <img
           alt="Avatar"
@@ -71,6 +73,8 @@ exports[`Test mostOder components renders correctly 1`] = `
       >
         <div
           className="meal-overlay"
+          onClick={[Function]}
+          role="button"
         />
         <img
           alt="Avatar"

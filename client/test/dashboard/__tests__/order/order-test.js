@@ -13,9 +13,9 @@ describe('Test order component of dashboard', () => {
     expect(tree.find('.order-container')).toHaveLength(1);
   });
 
-  it('should have 12  dive', () => {
+  it('should have 22  dive', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('div')).toHaveLength(21);
+    expect(tree.find('div')).toHaveLength(22);
   });
 
   it('should have 1 table ', () => {
@@ -33,57 +33,41 @@ describe('Test order component of dashboard', () => {
     expect(tree).toMatchSnapshot();
     expect(tree.state('statusModal')).toEqual('');
   });
-  // it('should respond to a mouse hover event and dislay a poppover', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   tree.find('.confirm-btn').simulate('mouseEnter');
-  //   expect(tree).toMatchSnapshot();
-  //   expect(tree.state('open')).toEqual(true);
-  //   tree.find('.confirm-btn').simulate('mouseLeave');
-  //   expect(tree).toMatchSnapshot();
-  //   expect(tree.state('open')).toEqual(false);
-  // });
 
-  // it('should respond to a click event and dislay a modal', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   tree.find('.modify-btn').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  //   expect(tree.state('statusModal')).toEqual('modal');
-  // });
-
-  // it('should respond to modify functions', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.modify();
-  //   expect(tree).toMatchSnapshot();
-  // });
-  it('should respond to modify functions', () => {
+  it('should respond to lifCycle method', () => {
+    const componentDidMount = jest.spyOn(Orders.prototype, 'componentDidMount');
     const tree = shallow(<Orders {...props} />);
     const wrapper = tree.instance();
     wrapper.componentDidMount();
     expect(wrapper).toMatchSnapshot();
+    expect(componentDidMount).toHaveBeenCalled();
   });
 
   it('should respond to cancelOrder functions', () => {
+    const confirmStatus = jest.spyOn(Orders.prototype, 'confirmStatus');
     const tree = shallow(<Orders {...props} />);
     const wrapper = tree.instance();
     wrapper.confirmStatus();
     expect(wrapper).toMatchSnapshot();
+    expect(confirmStatus).toHaveBeenCalled();
   });
 
-  it('should change state when component receive new props', () => {
+  it('should change state when component receive new error props', () => {
     const tree = shallow(<Orders {...emptyProps} />);
     expect(tree).toMatchSnapshot();
     const wrapper = tree.instance();
     wrapper.constructor.getDerivedStateFromProps({ errorMessage: { updateError: 'erro message' }, actions: { clearMessages: jest.fn() } });
     expect(wrapper).toMatchSnapshot();
   });
-  it('should change state when component receive new props', () => {
+
+  it('should change state when component receive new success props', () => {
     const tree = shallow(<Orders {...emptyProps} />);
     expect(tree).toMatchSnapshot();
     const wrapper = tree.instance();
-    wrapper.constructor.getDerivedStateFromProps({ successMessage: { updateSuccess: 'erro message' }, errorMessage: '', actions: { clearMessages: jest.fn() } });
+    wrapper.constructor.getDerivedStateFromProps({ successMessage: { updateSuccess: 'success' }, errorMessage: '', actions: { clearMessages: jest.fn() } });
     expect(wrapper).toMatchSnapshot();
   });
+
   it('should change state when component receive new props', () => {
     const tree = shallow(<Orders {...emptyProps} />);
     const wrapper = tree.instance();
@@ -91,62 +75,32 @@ describe('Test order component of dashboard', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // it('should modifyError when quantity is undefined', () => {
-  //   const tree = shallow(<Orders {...emptyProps} />);
-  //   tree.find('.modify-btn').simulate('click');
-  //   // onChange event
-  //   tree.find('#quantity').simulate('change', { target: { name: 'quantity', value: '' } });
-  //   // onclick submit event
-  //   tree.find('.modify').simulate('click');
-  //   expect(tree.state('modifyError')).toEqual('All the field is required');
-  // });
-
-  // it('should modifyError when address is undefined', () => {
-  //   const tree = shallow(<Orders {...emptyProps} />);
-  //   tree.find('.modify-btn').simulate('click');
-  //   // onChange event
-  //   tree.find('#address').simulate('change', { target: { name: 'address', value: '' } });
-  //   // onclick submit event
-  //   tree.find('.modify').simulate('click');
-  //   expect(tree.state('modifyError')).toEqual('All the field is required');
-  // });
-  // it('should modify an order', () => {
-  //   const tree = shallow(<Orders {...emptyProps} />);
-  //   tree.find('.modify-btn').simulate('click');
-  //   // onclick submit event
-  //   tree.find('.modify').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
-  // it('should close modify modal', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   tree.find('.modify-btn').simulate('click');
-  //   // onclick submit event
-  //   tree.find('.cancel').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
-  // it('should display confirm-order modal', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   tree.find('.confirm-btn').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  //   // onclick submit event
-  //   tree.find('.confirmStatus').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
-  // it('should display close confirm-order modal', () => {
-  //   const tree = shallow(<Orders {...props} />);
-  //   tree.find('.confirm-btn').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  //   // onclick submit event
-  //   tree.find('.cancel').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
-  it('should respond to mapDispatchToProps methods', () => {
-    const tree = mapDispatchToProps(emptyProps);
-    expect(tree).toMatchSnapshot();
+
+  it('should respond to onChange and oncloseModal method', () => {
+    const onChange = jest.spyOn(Orders.prototype, 'onChange');
+    const tree = shallow(<Orders {...props} />);
+    const wrapper = tree.instance();
+    wrapper.onChange({ target: { name: 'ken' } });
+    wrapper.onCloseModal();
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('should call class methods', () => {
+    const onOpenModal = jest.spyOn(Orders.prototype, 'onOpenModal');
+    const modify = jest.spyOn(Orders.prototype, 'modify');
+    const handlePageChange = jest.spyOn(Orders.prototype, 'handlePageChange');
+    const tree = shallow(<Orders {...props} />);
+    const wrapper = tree.instance();
+    wrapper.onOpenModal(props.myOrder.orders[0].meals[0], props.myOrder.orders[0]);
+    wrapper.modify();
+    wrapper.handlePageChange();
+    expect(onOpenModal).toHaveBeenCalled();
+    expect(modify).toHaveBeenCalled();
+    expect(handlePageChange).toHaveBeenCalled();
   });
 });

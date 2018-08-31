@@ -24,21 +24,16 @@ export default class mealController {
     if (limit < 0 || offset < 0) {
       return res.status(401).json({ message: 'Your query param cannot be negative' });
     }
-    const { id } = req.decoded;
-    const userId = id;
-    try {
-      const meals = await Meal.findAndCountAll({
-        where: { userId },
-        limit,
-        offset
-      });
-      if (meals.count < 1) {
-        return res.status(401).json({ message: 'There is no meal in the list' });
-      }
-      return res.status(200).json(meals);
-    } catch (err) {
-      return res.json(err);
+    const userId = req.decoded.id;
+    const meals = await Meal.findAndCountAll({
+      where: { userId },
+      limit,
+      offset
+    });
+    if (meals.count < 1) {
+      return res.status(401).json({ message: 'There is no meal in the list' });
     }
+    return res.status(200).json(meals);
   }
 
   /**
@@ -49,9 +44,9 @@ export default class mealController {
  * @description used to get one meal using the meal Id
  */
   async getOneMeal(req, res) {
-    const { id } = req.decoded;
-    const userId = id;
+    const userId = req.decoded.id;
     const { mealId } = req.params;
+
     const meal = await Meal.findAll({ where: { userId, id: mealId } });
     if (!meal) {
       return res.status(401).json({ message: 'There is no meal in the list' });
@@ -73,7 +68,7 @@ export default class mealController {
     const { price } = req.body;
     const { id } = req.decoded;
     const userId = id;
-    // chech if meal is already exist
+
     const isExist = await Meal.findOne({ where: { name, userId } });
     if (isExist) { return res.status(422).json({ message: 'Meal already exist' }); }
 
@@ -105,13 +100,13 @@ export default class mealController {
     const { mealId } = req.params;
     const { name, description } = req.body;
     const { price } = req.body;
-    // get the meal to update
+
     const meal = await Meal.findById(mealId);
     if (!meal) { return res.status(422).json({ message: 'Meal does not exist' }); }
     if (req.decoded.id !== meal.userId) {
       return res.status(401).json({ message: 'You cannot update meal you did not add' });
     }
-    // get file upload
+
     let image;
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
@@ -131,7 +126,7 @@ export default class mealController {
  */
   async deleteMeal(req, res) {
     const { mealId } = req.params;
-    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+    if ((isNaN(mealId)) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'provide a valid meal id' });
     }
     const meal = await Meal.findById(mealId);

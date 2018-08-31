@@ -2,9 +2,33 @@
 
 exports[`Test Component of SETMENU admin renders correctly 1`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -50,10 +74,11 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
       />
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -72,12 +97,40 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -89,7 +142,7 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -108,8 +161,13 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -118,17 +176,24 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -137,62 +202,95 @@ exports[`Test Component of SETMENU admin renders correctly 1`] = `
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    >
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Test Component of SETMENU admin should call addMenu method onclick event 1`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -240,10 +338,11 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
       </span>
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -262,12 +361,40 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -279,7 +406,7 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -298,8 +425,13 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -308,18 +440,24 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
           200
         </td>
         <td>
-          <input
-            checked={true}
-            className="checkbox"
-            id="rice"
-            onClick={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -328,250 +466,95 @@ exports[`Test Component of SETMENU admin should call addMenu method onclick even
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
-  </div>
-</div>
-`;
-
-exports[`Test Component of SETMENU admin should respond to a click event by dispalying a modal when caterer want to set menu by selecting a meal 1`] = `
-<div
-  className=""
->
-  <h2
-    style={
-      Object {
-        "marginTop": "2rem",
-      }
-    }
-  >
-    SET MENU FOR THE DAY
-  </h2>
-  <h4
-    className="p-color text-center"
-  >
-    Enter Menu Title and the Expire Time(24 Hours Format) in Hours
-  </h4>
-  <h5
-    className="p-color text-center"
-  >
-    Eg Expire time of 17 
-    <em
-      className="fa fa-long-arrow-right"
-    />
-     5pm
-  </h5>
-  <h4
-    className="danger text-center"
-  />
-  <h4
-    className="danger text-center"
-  />
-  <h4
-    className="y-color text-center"
-  />
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="name"
     >
-      Title 
-      <br />
-      <span
-        className="text-center danger"
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
       />
-    </label>
-    <input
-      id="title"
-      name="title"
-      onChange={[Function]}
-      placeholder="Keny"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="form-field"
-    id="setMenu-forrm"
-  >
-    <label
-      htmlFor="password"
-    >
-      Expire Time 
-      <br />
-      <span
-        className="text-center danger"
-      />
-    </label>
-    <input
-      id="expire"
-      name="orderBefore"
-      onChange={[Function]}
-      required={true}
-      type="number"
-    />
-  </div>
-  <h4
-    className="p-color text-center"
-  >
-    Select meals to set todays menu
-  </h4>
-  <table
-    className="table"
-    style={
-      Object {
-        "margin": "10px 10% 10px 7%",
-        "width": "90%",
-      }
-    }
-  >
-    <tbody>
-      <tr
-        className="tr tr-color tr-height"
-      >
-        <th>
-          Name
-        </th>
-        <th>
-          Price ($)
-        </th>
-        <th>
-          Select
-        </th>
-      </tr>
-      <tr
-        className="tr tr tr-height"
-        key="1"
-      >
-        <td>
-          rice
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </td>
-      </tr>
-      <tr
-        className="tr tr tr-height"
-        key="2"
-      >
-        <td>
-          beans
-        </td>
-        <td>
-          200
-        </td>
-        <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
-    >
-       
-      Set Menu
-       
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
-      }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Test Component of SETMENU admin should respond to change event and change the state of the title input and expire time and add meal to the menu 1`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -617,10 +600,11 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
       />
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -639,12 +623,40 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -656,7 +668,7 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -675,8 +687,13 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -685,17 +702,24 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -704,62 +728,95 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    >
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Test Component of SETMENU admin should respond to change event and change the state of the title input and return error while addMeal method when orderBefore field is not supplied 1`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -805,10 +862,11 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
       />
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -827,12 +885,40 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -844,7 +930,7 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -863,8 +949,13 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -873,17 +964,24 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -892,53 +990,62 @@ exports[`Test Component of SETMENU admin should respond to change event and chan
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    >
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
+      />
+    </div>
   </div>
 </div>
 `;
@@ -992,6 +1099,7 @@ Object {
   "errorMessage": Object {
     "createMealError": "Wrong credentials",
   },
+  "mealList": undefined,
   "meals": Object {
     "rows": Array [
       Object {
@@ -1016,9 +1124,33 @@ Object {
 
 exports[`Test Component of SETMENU admin should should respond to lifeCycle Methods 1`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -1064,10 +1196,11 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
       />
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -1086,12 +1219,40 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -1103,7 +1264,7 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -1122,8 +1283,13 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -1132,17 +1298,24 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -1151,62 +1324,95 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    >
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`Test Component of SETMENU admin should should respond to lifeCycle Methods 2`] = `
 <div
-  className=""
+  className="my-menu"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <h2
+    id="menu-header"
     style={
       Object {
         "marginTop": "2rem",
@@ -1252,10 +1458,11 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
       />
     </label>
     <input
+      className="menu-form"
       id="title"
       name="title"
       onChange={[Function]}
-      placeholder="Keny"
+      placeholder="Title"
       required={true}
       type="text"
     />
@@ -1274,12 +1481,40 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
       />
     </label>
     <input
+      className="menu-form"
       id="expire"
       name="orderBefore"
       onChange={[Function]}
+      placeholder="24"
       required={true}
       type="number"
     />
+  </div>
+  <div
+    className="email-field"
+  >
+    <div
+      className="notific-div"
+    >
+      Email Notification
+    </div>
+    <div
+      className="switch-div"
+    >
+      <label
+        className="switch"
+      >
+        <input
+          name="emailSwitch"
+          onChange={[Function]}
+          type="checkbox"
+          value="true"
+        />
+        <span
+          className="slider round"
+        />
+      </label>
+    </div>
   </div>
   <h4
     className="p-color text-center"
@@ -1291,7 +1526,7 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
     style={
       Object {
         "margin": "10px 10% 10px 7%",
-        "width": "90%",
+        "width": "82%",
       }
     }
   >
@@ -1310,8 +1545,13 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
         </th>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="1"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           rice
@@ -1320,17 +1560,24 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="rice"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="rice"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
       <tr
-        className="tr tr tr-height"
+        className="tr meal-menu"
         key="2"
+        style={
+          Object {
+            "height": "4rem",
+          }
+        }
       >
         <td>
           beans
@@ -1339,53 +1586,62 @@ exports[`Test Component of SETMENU admin should should respond to lifeCycle Meth
           200
         </td>
         <td>
-          <input
-            className="checkbox"
-            id="beans"
-            onChange={[Function]}
-            type="checkbox"
-          />
+          <label>
+            <input
+              className="checkbox"
+              id="beans"
+              onClick={[Function]}
+              type="checkbox"
+            />
+          </label>
         </td>
       </tr>
     </tbody>
   </table>
-  <div
-    className=""
-  >
-     
-    <button
-      className="setMenuBtn"
-      onClick={[Function]}
+  <div>
+    <div
+      className=""
     >
        
-      Set Menu
+      <button
+        className="setMenuBtn"
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "11%",
+          }
+        }
+      >
+         
+        Set Menu
+         
+      </button>
        
-    </button>
-     
-  </div>
-  <br />
-  <br />
-  <div
-    style={
-      Object {
-        "textAlign": "center",
+    </div>
+    <br />
+    <br />
+    <div
+      style={
+        Object {
+          "textAlign": "center",
+        }
       }
-    }
-  >
-    <a
-      activePage={1}
-      firstPageText="«"
-      getPageUrl={[Function]}
-      hideFirstLastPages={false}
-      innerClass="pagination"
-      itemsCountPerPage={6}
-      lastPageText="»"
-      nextPageText="⟩"
-      onChange={[Function]}
-      pageRangeDisplayed={4}
-      prevPageText="⟨"
-      totalItemsCount={NaN}
-    />
+    >
+      <a
+        activePage={1}
+        firstPageText="«"
+        getPageUrl={[Function]}
+        hideFirstLastPages={false}
+        innerClass="pagination"
+        itemsCountPerPage={6}
+        lastPageText="»"
+        nextPageText="⟩"
+        onChange={[Function]}
+        pageRangeDisplayed={4}
+        prevPageText="⟨"
+        totalItemsCount={NaN}
+      />
+    </div>
   </div>
 </div>
 `;

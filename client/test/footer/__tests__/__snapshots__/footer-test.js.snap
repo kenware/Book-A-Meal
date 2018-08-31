@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Login Component renders correctly 1`] = `
+<div>
+  <footer
+    className="footer"
+    style={
+      Object {
+        "marginTop": "2rem",
+        "top": "100%",
+      }
+    }
+  >
+    <div
+      className="footer-col"
+    >
+      <h3
+        className=""
+      >
+        Book-A-Meal
+      </h3>
+      <ul>
+        <li>
+           
+          <Link
+            className="text-white"
+            replace={false}
+            to="/login"
+          >
+            LogIn
+          </Link>
+        </li>
+        <li>
+           
+          <br />
+          <Link
+            className="text-white"
+            replace={false}
+            to="/register"
+          >
+            SignUp
+          </Link>
+        </li>
+        <li>
+          <br />
+          <Link
+            className="text-white"
+            replace={false}
+            to="/dashboard"
+          >
+            Dashboard
+          </Link>
+        </li>
+        <li>
+          <br />
+          <Link
+            className="text-white"
+            replace={false}
+            to="#"
+          >
+            Get In Touch
+          </Link>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="footer-col"
+    >
+      <h3
+        className=""
+      >
+        Recent News
+      </h3>
+      <p>
+        Book-a-Meal app is designed to make live better and easier. You can get your favorite meal with just a click any where around the world.
+        <br />
+        <br />
+         Dont hesistate to make your order now.We are available 24/7
+      </p>
+    </div>
+    <div
+      className="footer-col social"
+    >
+      <h3
+        className=""
+      >
+        Connect With Us
+      </h3>
+      <p>
+        Get in touch with us on various social media
+      </p>
+      <a
+        href="https://twitter.com"
+      >
+        <span
+          className="fa fa-twitter"
+        />
+      </a>
+        
+      <a
+        href="https://facebook.com"
+      >
+        <span
+          className="fa fa-facebook"
+        />
+      </a>
+        
+      <a
+        href="https://linkedin.com"
+      >
+        <span
+          className="fa fa-likedIn"
+        />
+      </a>
+    </div>
+  </footer>
+  <div
+    className="footer-row"
+  >
+    <p
+      className=""
+    >
+      © Copyright 2018 Book-A-Meal - All Rights Reserved
+    </p>
+  </div>
+</div>
+`;

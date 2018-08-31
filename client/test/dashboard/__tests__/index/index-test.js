@@ -5,10 +5,6 @@ import { props, emptyProps } from '../../dashboardMockData';
 
 describe('Test index Component of Dashboard pages', () => {
   it('renders correctly', () => {
-    const tree = shallow(<Dashboard {...props} />);
-    expect(tree).toMatchSnapshot();
-  });
-  it('renders correctly', () => {
     global.localStorage = {
       getItem() {
         return 'user';
@@ -35,7 +31,7 @@ describe('Test index Component of Dashboard pages', () => {
 
   it('should have 10 li tag', () => {
     const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('li')).toHaveLength(12);
+    expect(tree.find('li')).toHaveLength(11);
   });
 
   it('should have one main tag', () => {
@@ -48,10 +44,9 @@ describe('Test index Component of Dashboard pages', () => {
     expect(tree.find('header')).toHaveLength(1);
   });
 
-
   it('should have three label', () => {
     const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('label')).toHaveLength(2);
+    expect(tree.find('label')).toHaveLength(1);
   });
 
   it('should have img tag', () => {
@@ -64,9 +59,9 @@ describe('Test index Component of Dashboard pages', () => {
     expect(tree.find('Route')).toHaveLength(3);
   });
 
-  it('should have 17 divs', () => {
+  it('should have 13 divs', () => {
     const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('div')).toHaveLength(12);
+    expect(tree.find('div')).toHaveLength(13);
   });
 
 
@@ -76,17 +71,29 @@ describe('Test index Component of Dashboard pages', () => {
     tree.find('.toggle1').simulate('click');
     expect(tree).toMatchSnapshot();
   });
-  it('should upgrade a user to caterer', () => {
-    const tree = shallow(<Dashboard {...props} />);
-    const wrapper = tree.instance();
-    expect(tree).toMatchSnapshot();
-    tree.find('#upgrade').simulate('click');
-    expect(tree).toMatchSnapshot();
-  });
 
   it('The number of link must be 8', () => {
     const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('Link').length).toEqual(8);
+    expect(tree.find('Link').length).toEqual(6);
+  });
+
+  it('should call onModal method', () => {
+    const onModal = jest.spyOn(Dashboard.prototype, 'onModal');
+    let tree = shallow(<Dashboard {...props} />);
+    tree = tree.instance();
+    tree.onModal();
+    expect(onModal).toHaveBeenCalled();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should call onChange method', () => {
+    const onChange = jest.spyOn(Dashboard.prototype, 'onChange');
+    let tree = shallow(<Dashboard {...props} />);
+    tree = tree.instance();
+    const e = { target: { name: 'description', value: 'very good' } };
+    tree.onChange(e);
+    expect(onChange).toHaveBeenCalled();
+    expect(tree).toMatchSnapshot();
   });
 
   it('should logOut ', () => {
@@ -105,20 +112,60 @@ describe('Test index Component of Dashboard pages', () => {
 
   it('should accept new props from componentWillReceiveProps ', () => {
     const tree = shallow(<Dashboard {...props} />);
-    tree.instance().componentWillReceiveProps({ successMessage: { upgradeSuccess: 'success' } });
+    const componentWillReceiveProps = jest.spyOn(Dashboard.prototype, 'componentWillReceiveProps');
+    tree.instance().componentWillReceiveProps({
+      successMessage: { upgradeSuccess: 'success' },
+      errorMessage: { orderError: 'error ordering a meal' }
+    });
     expect(tree).toMatchSnapshot();
-    tree.instance().componentWillReceiveProps({ successMessage: '' });
+
+    tree.instance().componentWillReceiveProps({ successMessage: { orderSuccess: 'success' }, errorMessage: '' });
+    expect(tree).toMatchSnapshot();
+
+    tree.instance().componentWillReceiveProps({ successMessage: '', errorMessage: { orderError: 'error ordering a meal' } });
+    expect(tree).toMatchSnapshot();
+    expect(componentWillReceiveProps).toHaveBeenCalled();
+  });
+
+  it('should call onChange event', () => {
+    const tree = shallow(<Dashboard {...props} />);
+    const onChange = jest.spyOn(Dashboard.prototype, 'onChange');
+    const e = { target: { name: 'name', value: 'kevin' } };
+    tree.instance().onChange(e);
+    expect(tree).toMatchSnapshot();
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('should call upgrade method', () => {
+    const tree = shallow(<Dashboard {...props} />);
+    const upgrade = jest.spyOn(Dashboard.prototype, 'upgrade');
+    tree.instance().upgrade();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should call orderMeal method', () => {
+    const tree = shallow(<Dashboard {...props} />);
+    const orderMeal = jest.spyOn(Dashboard.prototype, 'orderMeal');
+    tree.instance().orderMeal();
+    tree.instance().setState({ address: 'address' });
+    tree.instance().orderMeal();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should call removeFromeCart method', () => {
+    const tree = shallow(<Dashboard {...props} />);
+    tree.instance().removeFromeCart();
     expect(tree).toMatchSnapshot();
   });
 
   it('should toggle sidebar', () => {
     const tree = shallow(<Dashboard {...props} />);
-    // toggle side bar first
     tree.find('.toggle1').simulate('click');
     expect(tree).toMatchSnapshot();
     tree.find('.bar2').simulate('click');
     expect(tree).toMatchSnapshot();
   });
+
   it('should popover on mousenter and remove popover onmouseleave events on sidebar dashoard link', () => {
     global.localStorage = {
       getItem() {
@@ -126,20 +173,17 @@ describe('Test index Component of Dashboard pages', () => {
       }
     };
     const tree = shallow(<Dashboard {...props} />);
-    // toggle side bar first
     tree.find('.toggle1').simulate('click');
     expect(tree).toMatchSnapshot();
-    // mouse focus sidebar dashboard link
     tree.find('.dashboard-link').simulate('mouseEnter');
     expect(tree).toMatchSnapshot();
     expect(tree.state('dash')).toEqual('');
-    // remove mouse on sidebar link
     tree.find('.dashboard-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
     expect(tree.state('dash')).toEqual('dash');
   });
 
-  it('should popover on mousenter and remove popover on mouseleave events on sidebar allMeals link', () => {
+  it('should popover on mousenter and remove popover on mouseleave events on sidebar order link', () => {
     global.localStorage = {
       getItem() {
         return 'user';
@@ -159,7 +203,7 @@ describe('Test index Component of Dashboard pages', () => {
     expect(tree.state('order')).toEqual('order');
   });
 
-  it('should popover on mousenter and remove popover on mouseleave events on sidebar addMeals link', () => {
+  it('should popover on mousenter and remove popover on mouseleave events on sidebar notification link', () => {
     global.localStorage = {
       getItem() {
         return 'admin';
@@ -182,7 +226,7 @@ describe('Test index Component of Dashboard pages', () => {
   it('should popover on mousenter and remove popover on mouseleave events on sidebar setMeals link', () => {
     global.localStorage = {
       getItem() {
-        return 'user';
+        return 'admin';
       }
     };
     const tree = shallow(<Dashboard {...props} />);
@@ -190,13 +234,13 @@ describe('Test index Component of Dashboard pages', () => {
     tree.find('.toggle1').simulate('click');
     expect(tree).toMatchSnapshot();
     // mouse focus sidebar set meals link
-    tree.find('.pReset-link').simulate('mouseEnter');
+    tree.find('.admin-link').simulate('mouseEnter');
     expect(tree).toMatchSnapshot();
-    expect(tree.state('cPassword')).toEqual('');
+    expect(tree.state('adminPage')).toEqual('');
     // remove mouse on sidebar link
-    tree.find('.pReset-link').simulate('mouseLeave');
+    tree.find('.admin-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
-    expect(tree.state('cPassword')).toEqual('cPassword');
+    expect(tree.state('adminPage')).toEqual('adminPage');
   });
 
   it('should popover on mousenter and remove popover on mouseleave events on profile link', () => {
@@ -238,11 +282,13 @@ describe('Test index Component of Dashboard pages', () => {
     expect(tree).toMatchSnapshot();
     expect(tree.state('logOut')).toEqual('logOut');
   });
+
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };
     const tree = mapStateToProps(props, ownProps);
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to mapDispatchToProps methods', () => {
     const tree = mapDispatchToProps(emptyProps);
     expect(tree).toMatchSnapshot();

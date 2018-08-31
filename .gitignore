@@ -3,9 +3,6 @@ coverage/
 .env
 front-end-coverage/
 reports/
-lib/
-# Object file
+client/dist/
 *.o
-
-# Ada Library Information
 *.ali

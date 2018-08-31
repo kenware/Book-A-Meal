@@ -2,445 +2,76 @@
 
 exports[`Test index Component of admin pages renders correctly 1`] = `
 <div>
-  <span
-    className="largeScreen-header"
-  >
-    <Nav
-      component="admin"
-    />
-  </span>
-  <span
-    className="smallScreen-header"
-  >
-    <Header />
-  </span>
+  <Nav
+    cart={Array []}
+    component="admin"
+    onModal={[Function]}
+  />
   <div
-    className="admin-container"
+    className="page-container"
   >
-    <Sidebar
-      cPassword="cPassword"
-      dash="dash"
-      handleClick={[Function]}
-      handleClose={[Function]}
-      logOut={[Function]}
-      logout="logout"
-      main="main-sidebar1"
-      nav1=""
-      nav2="nav2"
-      notific="notific"
-      order="order"
-      profile="profile"
-      setmeal="setmeal"
-      toggle={[Function]}
+    <Route
+      exact={true}
+      path="/admin"
+      render={[Function]}
     />
-    <main
-      className="main main-sidebar1"
-      id="main"
-    >
-      <header
-        className="header smallScreen-header"
-      >
-        <div
-          className="l-r-pad-text"
-        >
-          <h4
-            className="p-color"
-          >
-            ADMIN
-          </h4>
-        </div>
-        <div>
-          <h4
-            className="p-color"
-          />
-          <img
-            alt="profile"
-            className="user-img rounded-circle"
-          />
-        </div>
-      </header>
-      <Route
-        exact={true}
-        path="/admin"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/allmeals"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/setmenu"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/addmeals"
-      />
-      <Route
-        component={[Function]}
-        path="/admin/edit/:mealId"
-      />
-      <footer />
-    </main>
-  </div>
-</div>
-`;
-
-exports[`Test index Component of admin pages should have respond handle click and close method 1`] = `
-<div>
-  <span
-    className="largeScreen-header"
-  >
-    <Nav
-      component="admin"
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/allmeals"
     />
-  </span>
-  <span
-    className="smallScreen-header"
-  >
-    <Header />
-  </span>
-  <div
-    className="admin-container"
-  >
-    <Sidebar
-      cPassword="cPassword"
-      dash="dash"
-      handleClick={[Function]}
-      handleClose={[Function]}
-      logOut={[Function]}
-      logout="logout"
-      main="main-sidebar1"
-      nav1=""
-      nav2="nav2"
-      notific="notific"
-      order="order"
-      profile="profile"
-      setmeal="setmeal"
-      toggle={[Function]}
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/setmenu"
     />
-    <main
-      className="main main-sidebar1"
-      id="main"
-    >
-      <header
-        className="header smallScreen-header"
-      >
-        <div
-          className="l-r-pad-text"
-        >
-          <h4
-            className="p-color"
-          >
-            ADMIN
-          </h4>
-        </div>
-        <div>
-          <h4
-            className="p-color"
-          />
-          <img
-            alt="profile"
-            className="user-img rounded-circle"
-          />
-        </div>
-      </header>
-      <Route
-        exact={true}
-        path="/admin"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/allmeals"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/setmenu"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/addmeals"
-      />
-      <Route
-        component={[Function]}
-        path="/admin/edit/:mealId"
-      />
-      <footer />
-    </main>
-  </div>
-</div>
-`;
-
-exports[`Test index Component of admin pages should have respond handle click and close method 2`] = `
-<div>
-  <span
-    className="largeScreen-header"
-  >
-    <Nav
-      component="admin"
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/addmeals"
     />
-  </span>
-  <span
-    className="smallScreen-header"
-  >
-    <Header />
-  </span>
-  <div
-    className="admin-container"
-  >
-    <Sidebar
-      cPassword="cPassword"
-      dash="dash"
-      handleClick={[Function]}
-      handleClose={[Function]}
-      logOut={[Function]}
-      logout="logout"
-      main="main-sidebar1"
-      nav1=""
-      nav2="nav2"
-      notific="notific"
-      order="order"
-      profile="profile"
-      setmeal="setmeal"
-      toggle={[Function]}
+    <Route
+      component={[Function]}
+      path="/admin/edit/:mealId"
     />
-    <main
-      className="main main-sidebar1"
-      id="main"
-    >
-      <header
-        className="header smallScreen-header"
-      >
-        <div
-          className="l-r-pad-text"
-        >
-          <h4
-            className="p-color"
-          >
-            ADMIN
-          </h4>
-        </div>
-        <div>
-          <h4
-            className="p-color"
-          />
-          <img
-            alt="profile"
-            className="user-img rounded-circle"
-          />
-        </div>
-      </header>
-      <Route
-        exact={true}
-        path="/admin"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/allmeals"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/setmenu"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/addmeals"
-      />
-      <Route
-        component={[Function]}
-        path="/admin/edit/:mealId"
-      />
-      <footer />
-    </main>
-  </div>
-</div>
-`;
-
-exports[`Test index Component of admin pages should have respond handle click and close method 3`] = `
-<div>
-  <span
-    className="largeScreen-header"
-  >
-    <Nav
-      component="admin"
-    />
-  </span>
-  <span
-    className="smallScreen-header"
-  >
-    <Header />
-  </span>
-  <div
-    className="admin-container"
-  >
-    <Sidebar
-      cPassword="cPassword"
-      dash="dash"
-      handleClick={[Function]}
-      handleClose={[Function]}
-      logOut={[Function]}
-      logout="logout"
-      main="main-sidebar1"
-      nav1=""
-      nav2="nav2"
-      notific="notific"
-      order="order"
-      profile="profile"
-      setmeal="setmeal"
-      toggle={[Function]}
-    />
-    <main
-      className="main main-sidebar1"
-      id="main"
-    >
-      <header
-        className="header smallScreen-header"
-      >
-        <div
-          className="l-r-pad-text"
-        >
-          <h4
-            className="p-color"
-          >
-            ADMIN
-          </h4>
-        </div>
-        <div>
-          <h4
-            className="p-color"
-          />
-          <img
-            alt="profile"
-            className="user-img rounded-circle"
-          />
-        </div>
-      </header>
-      <Route
-        exact={true}
-        path="/admin"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/allmeals"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/setmenu"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/addmeals"
-      />
-      <Route
-        component={[Function]}
-        path="/admin/edit/:mealId"
-      />
-      <footer />
-    </main>
   </div>
 </div>
 `;
 
 exports[`Test index Component of admin pages should have respond to logOut method 1`] = `
 <div>
-  <span
-    className="largeScreen-header"
-  >
-    <Nav
-      component="admin"
-    />
-  </span>
-  <span
-    className="smallScreen-header"
-  >
-    <Header />
-  </span>
+  <Nav
+    cart={Array []}
+    component="admin"
+    onModal={[Function]}
+  />
   <div
-    className="admin-container"
+    className="page-container"
   >
-    <Sidebar
-      cPassword="cPassword"
-      dash="dash"
-      handleClick={[Function]}
-      handleClose={[Function]}
-      logOut={[Function]}
-      logout="logout"
-      main="main-sidebar1"
-      nav1=""
-      nav2="nav2"
-      notific="notific"
-      order="order"
-      profile="profile"
-      setmeal="setmeal"
-      toggle={[Function]}
+    <Route
+      exact={true}
+      path="/admin"
+      render={[Function]}
     />
-    <main
-      className="main main-sidebar1"
-      id="main"
-    >
-      <header
-        className="header smallScreen-header"
-      >
-        <div
-          className="l-r-pad-text"
-        >
-          <h4
-            className="p-color"
-          >
-            ADMIN
-          </h4>
-        </div>
-        <div>
-          <h4
-            className="p-color"
-          />
-          <img
-            alt="profile"
-            className="user-img rounded-circle"
-          />
-        </div>
-      </header>
-      <Route
-        exact={true}
-        path="/admin"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/allmeals"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/setmenu"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/admin/addmeals"
-      />
-      <Route
-        component={[Function]}
-        path="/admin/edit/:mealId"
-      />
-      <footer />
-    </main>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/allmeals"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/setmenu"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/admin/addmeals"
+    />
+    <Route
+      component={[Function]}
+      path="/admin/edit/:mealId"
+    />
   </div>
 </div>
 `;

@@ -1,7 +1,12 @@
 
 
 export default class mealMiddleware {
-  async addMeal(req, res, next) {
+  /**
+ * @method addMeal
+ * @param {string} req - description, name, price
+ * @description if the parameter is valid, pass it controller
+ */
+  addMeal(req, res, next) {
     let { description, name } = req.body;
     const { price } = req.body;
 
@@ -10,13 +15,13 @@ export default class mealMiddleware {
     if (!name) { return res.status(401).json({ message: 'Name field is required' }); }
     if (!description) { return res.status(401).json({ message: 'description field is required' }); }
 
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
+    if ((isNaN(price)) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal name' });
     }
-    if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
+    if (typeof description !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid meal description' });
     }
     // trim empty spaces at the beginning and the end of the string
@@ -28,12 +33,17 @@ export default class mealMiddleware {
     next();
   }
 
-  async updateMeal(req, res, next) {
+  /**
+ * @method updateMeal
+ * @param {string} req - description, name, price
+ * @description if the parameter is valid, pass it controller
+ */
+  updateMeal(req, res, next) {
     const { mealId } = req.params;
     let { name, description } = req.body;
     const { price } = req.body;
 
-    if ((Number.isNaN(Number(price))) === true || (/^ *$/.test(price) === true)) {
+    if ((isNaN(price)) === true || (/^ *$/.test(price) === true)) {
       return res.status(401).json({ message: 'Please provide a valid meal price' });
     }
     if ((/^ *$/.test(name) === true) || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string') {
@@ -42,7 +52,7 @@ export default class mealMiddleware {
     if ((/^ *$/.test(description) === true) || (/^[a-zA-Z ]+$/.test(description) === false) || typeof description !== 'string') {
       return res.status(400).json({ message: 'Please provide a valid description' });
     }
-    if ((Number.isNaN(Number(mealId))) === true || (/^ *$/.test(mealId) === true)) {
+    if ((isNaN(mealId)) === true || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Provide a valid meal id' });
     }
     // remove extra spaces in a string

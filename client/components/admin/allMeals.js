@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-responsive-modal';
 import Pagination from 'react-js-pagination';
 import './index.scss';
@@ -71,7 +73,7 @@ export class AllMeal extends Component {
 
   render() {
     return (
-      <div>
+      <div id="allmeal">
         <Modal open={this.state.open} onClose={this.cancelDelete} center>
           <br />
           <div className="modal-header">
@@ -86,7 +88,7 @@ export class AllMeal extends Component {
         </Modal>
         <h2>All Meal Options{this.props.successMessage.createMealSuccess }</h2>
         <h4 className="p-color text-center">Edit, delete or View all meal options</h4>
-        <h4 className="danger text-center">{this.props.successMessage.message}</h4>
+        <h2 className="danger">{this.props.successMessage.deleteMessage }</h2>
         {this.props.meals.rows.map(meal =>
         (
           <div className="contents container allMeal" key={meal.id}>
@@ -96,28 +98,30 @@ export class AllMeal extends Component {
               </div>
               <div className="col-meal">
                 <h4 className="p-color"> Title</h4>
-                <Link to={`/admin/edit/${meal.id}`}>{meal.name}</Link>
+                <Link to={`/admin/edit/${meal.id}`} id="edit">{meal.name}</Link>
               </div>
               <div className="col-meal">
-                <h4 className="p-color">Price</h4>{meal.price}
+                <h4 className="p-color">Price</h4>N{meal.price}
               </div>
               <div className="col-meal">
                 <br />
                 <Link to={`/admin/edit/${meal.id}`}><em className="fa fa-edit p-color" />&nbsp;Edit</Link><br /> <br />
-                <span onClick={() => this.onOpenModal(meal.id, meal.name, meal.image)} className="p-color" id={meal.name} role="button"><em className="fa fa-trash p-color" />&nbsp;Delete</span>
+                <span onClick={() => this.onOpenModal(meal.id, meal.name, meal.image)} className="p-color delete" id={meal.name} role="button"><em className="fa fa-trash p-color" />&nbsp;Delete</span>
               </div>
             </div>
           </div>
         ))}
-        <div className="meal-pagination">
-          <Pagination
-            activePage={this.state.activePage}
-            itemsCountPerPage={limit}
-            totalItemsCount={Math.ceil(this.props.meals.count)}
-            pageRangeDisplayed={4}
-            onChange={this.handlePageChange}
-          />
-
+        <div className="meal-pagination margin-bottom">
+          {this.props.meals.rows.length > 0 ?
+            <Pagination
+              activePage={this.state.activePage}
+              itemsCountPerPage={limit}
+              totalItemsCount={Math.ceil(this.props.meals.count)}
+              pageRangeDisplayed={4}
+              onChange={this.handlePageChange}
+            />
+          :
+            <span> Meal List Empty</span>}
         </div>
       </div>
     );

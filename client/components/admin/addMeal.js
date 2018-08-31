@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import Dropzone from 'react-dropzone';
 import FormData from 'form-data';
 import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as mealActions from '../../redux/Action/mealAction';
 import * as actions from '../../redux/Action/action';
 import './index.scss';
@@ -31,11 +33,18 @@ export class Add extends Component {
    *
    * return new state after it is changed
    */
-  static getDerivedStateFromProps(props) {
-    if (props.errorMessage.createMealError || props.successMessage.createMealSuccess) {
-      return { addMeal: 'Add Meal' };
+  componentWillReceiveProps(props) {
+    if (props.successMessage.createMealSuccess) {
+      toast('Meal succeesfuly added', {
+        className: 'toast'
+      });
+      this.setState({ addMeal: 'Add Meal' });
+    } else if (props.errorMessage.createMealError) {
+      toast.error('Error occured while adding a meal', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+      this.setState({ addMeal: 'Add Meal' });
     }
-    return null;
   }
   /**
    * remove error props in redux store if component unmount
@@ -86,11 +95,12 @@ export class Add extends Component {
   render() {
     return (
       <div>
+        <ToastContainer autoClose={8000} />
         <h2 style={{ marginTop: '2rem' }}>ADD A MEAL </h2>
         <div className="register-container" style={{ marginTop: '2px' }}>
           <div className="register-col" />
           <div className="register-wrapper" style={{ marginTop: '2px' }}>
-            <h4 className="p-color text-center">Fill The Field Below To Add A Meal</h4><br />
+            <h4 style={{ fontSize: '18px' }}className="p-color text-center">Fill The Field Below To Add A Meal</h4><br />
             <h3 className="text-center danger">{this.props.errorMessage.createMealError }</h3>
             <h3 className="text-center danger">{this.state.message }</h3>
             <form>
