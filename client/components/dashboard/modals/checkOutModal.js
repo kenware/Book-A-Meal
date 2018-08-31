@@ -6,21 +6,20 @@ const checkOutModal = ({
   carts, state, onChange, removeFromeCart
 }) => (
   <div className="modal-wrapper top-margin">
-    <div className="modal-contents">
-      <span className="modal-items danger l-r-pad-text address"> {state.orderError} </span>
-    </div>
+    <p className="order-center">
+      Cart
+    </p>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text address"> Address: </span>
-      <textarea rows="4" className="modal-menu "id="address" name="address" type="text" onChange={onChange} value={state.address} />
+      <textarea rows="4" className="modal-menu "id="address" name="address" type="text" onChange={onChange} value={state.address} style={{ marginLeft: '1rem' }} />
     </div>
     <div className="">
-      <h4 className="justify l-r-pad-text">
-        My Carts
-      </h4>
-      <h5 className="justify l-r-pad-text">
-        {state.address}
-      </h5>
+      <h3 className="danger justify l-r-pad-text">
+        {state.orderError}
+      </h3>
+      {state.errorMessage}
     </div>
+<<<<<<< HEAD
     <table className="table">
       <tbody>
         <tr className="p-white tr-color tr-height">
@@ -43,6 +42,35 @@ const checkOutModal = ({
       </tbody>
     </table>
 
+=======
+    {carts.length > 0 ?
+      <div>
+        <table className="table">
+          <tbody>
+            <tr className="p-white tr-color tr-height">
+              <th>S/N</th>
+              <th>Name</th>
+              <td>Quantity</td>
+              <td>Remove</td>
+            </tr>
+            {carts.map(cart =>
+                    (
+                      <tr key={cart.id} className="order-contents tr tr-height">
+                        <td>{carts.indexOf(cart) + 1}</td>
+                        <td>{cart.name}</td>
+                        <td>{cart.quantity}</td>
+                        <td><em onClick={() => removeFromeCart(cart)} className="fa fa-trash-o" id="cart-btn" role="button" /></td>
+                      </tr>
+                    ))}
+          </tbody>
+        </table>
+      </div>
+    :
+      <p className="order-center">
+        Cart Empty
+      </p>
+  }
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </div>
 );
 

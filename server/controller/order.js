@@ -27,23 +27,10 @@ export default class orderController {
  */
   async createOrder(req, res) {
     const {
-      meals, address
+      meals, address, menu
     } = req.body;
 
-    const date = shortcode.parse('{YYYY-MM-DD}', new Date());
     const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
-
-    const allMenuId = [...new Set(meals.map(meal => Number(meal.menuId)))];
-    const menu = await Menu.findAll({
-      where: {
-        id: { $in: allMenuId },
-        date
-      },
-      include: { model: Meal }
-    });
-
-    if (allMenuId.length > menu.length) { return res.status(404).json({ message: 'Menu not found' }); }
-
     const myOrder = [];
     for (const eachMenu of menu) {
       const { orderBefore } = eachMenu;
@@ -51,12 +38,12 @@ export default class orderController {
 
       if (orderBefore < Number(presentTime)) {
         return res.status(422)
-          .json({ message: `You cannot order menu with this id ${eachMenu} at this time` });
+          .json({ message: 'You cannot order meal from this menu at this time' });
       }
       const allMenuMealId = eachMenu.Meals.map(meal => meal.id);
-
-      const allMeal = meals.filter(eachMenuMeal =>
-        eachMenuMeal.menuId === eachMenu.id);
+      // extract all meal that that has above menuId
+      const allMeal = meals.filter(meal =>
+        meal.menuId === eachMenu.id);
       const allMealId = allMeal.map(meal => meal.mealId);
 
       const mealsExistInMenu = new mealFilter().checkMeals(allMenuMealId, allMealId);
@@ -92,28 +79,8 @@ export default class orderController {
     or address of the person that is ordering the meal and updates an order
  */
   async updateOrder(req, res) {
-    const { meals, address } = req.body;
+    const { meals, address, order } = req.body;
     const { orderId } = req.params;
-
-    const order = await Order.findOne({
-      where: { id: orderId },
-      include: { model: Meal, as: 'meals', }
-    });
-
-    if (!order) { return res.status(404).json({ message: 'Order not found' }); }
-    const orderHour = new Date(order.createdAt).getHours() * 60;
-    const orderMinute = (new Date(order.createdAt).getMinutes());
-    const orderTime = orderMinute + orderHour;
-    const presentTime = (new Date().getHours() * 60) + (new Date().getMinutes());
-
-    if ((Number(presentTime) - Number(orderTime)) > 60) {
-      return res.status(404).json({ message: 'You cannot update order at this time' });
-    }
-
-    // check if the user that ordered the meal is making the update
-    if (req.decoded.id !== order.userId) {
-      return res.status(401).json({ message: 'You cannot update order you did not add' });
-    }
 
     const allOrderMealId = order.meals.map(meal => meal.id);
 
@@ -209,7 +176,7 @@ export default class orderController {
       offset
     });
     const count = await Order.count({ where: { userId } });
-    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'You have not ordered a meal' }); }   
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'You have not ordered a meal' }); }
 
     orders.forEach((order) => {
       const totalPrice = new mealFilter().getPrice(order.meals);

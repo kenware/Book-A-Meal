@@ -4,7 +4,7 @@ import './index.scss';
 // footer, used in all pages
 const footer = () => (
   <div>
-    <footer className="footer" style={{ marginTop: '2rem' }}>
+    <footer className="footer" style={{ marginTop: '2rem', top: '100%' }}>
       <div className="footer-col">
         <h3 className="">
            Book-A-Meal

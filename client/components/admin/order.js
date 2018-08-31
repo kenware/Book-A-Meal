@@ -31,10 +31,10 @@ const Orders = ({
     'October', 'November', 'December'
   ];
   return (
-    <div className="order-container" style={{ marginTop: '6rem', justifyContent: 'spaceAround' }}>
-      <h2 style={{ marginTop: '4rem' }}>Overview Of Most Ordered Meal </h2>
+    <div className="admin-order" style={{ marginTop: '6rem', justifyContent: 'spaceAround' }}>
+      <h2 id="order-page" style={{ marginTop: '4rem' }}>Overview Of Most Ordered Meal </h2>
       {mostOrder.length > 0 ?
-        <div className="order-wrapper" style={{ marginLeft: '5%', marginRight: '5%' }}>
+        <div className="admin-order-wrapper" style={{ marginLeft: '10%', marginRight: '4%' }}>
           <AreaChart
             width={1000}
             height={250}
@@ -60,9 +60,9 @@ const Orders = ({
             <Area type="monotone" dataKey="totalOrder" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
             <Area type="monotone" dataKey="price" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
           </AreaChart>
-        </div> : <h3 style={{ marginTop: '1rem' }} className="p-color text-center">Users have not Ordered a meal</h3>}
+        </div> : <h3 style={{ marginTop: '1rem' }} className="p-color text-center">Most Order List Empty</h3>}
       <h2 style={{ marginTop: '4rem' }}>ORDER HISTORY OF ALL USERS</h2>
-      <div className="order-wrapper">
+      <div className="order-detail">
         {allOrder.orders.length > 0 ?
           <span>
             <Accordion>
@@ -141,7 +141,7 @@ const Orders = ({
               />
             </div>
           </span>
-        : <h3 style={{ marginTop: '1rem' }} className="p-color text-center">Users have not Ordered your meal</h3>}
+        : <h3 style={{ marginTop: '1rem' }} className="p-color text-center">Empty Order List</h3>}
       </div>
     </div>
   );

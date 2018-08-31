@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import validator from 'validator';
 import PropTypes from 'prop-types';
 import Header from '../header/index';
@@ -35,11 +37,13 @@ export class Register extends Component {
    * @param  {} props if new props from redux with error arrives
    * change the state lof register button from loading icon to text
    */
-  static getDerivedStateFromProps(props) {
+  componentWillReceiveProps(props) {
     if (props.errorMessage.registerError) {
-      return { signUp: 'SignUp' };
+      toast.error(props.errorMessage.registerError, {
+        className: 'toasterror'
+      });
+      this.setState({ signUp: 'SignUp' });
     }
-    return null;
   }
   /**
    * remove error props in redux store if component unmount
@@ -115,11 +119,11 @@ export class Register extends Component {
     return (
       <div>
         <Header />
+        <ToastContainer autoClose={8000} />
         <div className="register-container" id="register-bg">
           <div className="register-col" />
           <div className="register-wrapper">
             <h2 className="login-header">SignUp</h2><br />
-            <h3 className="text-center danger">{this.props.errorMessage.registerError }</h3>
             <h3 className="text-center danger">{this.state.message }</h3>
             <form className="register">
               <div className="form-field">

@@ -8,7 +8,7 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly with user info in the nav bar', () => {
+  it('should render properly with user role', () => {
     window.localStorage = {
       getItem() {
         return 'user';
@@ -18,13 +18,14 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly with user info in the nav bar', () => {
+  it('should render properly with admin role', () => {
     window.localStorage = {
       getItem() {
         return 'admin';
       }
     };
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
+<<<<<<< HEAD
     expect(tree).toMatchSnapshot();
   });
 
@@ -35,16 +36,23 @@ describe('Testing of sidebar component', () => {
       }
     };
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
+=======
+>>>>>>> bg(fix): Fixed my test and modified my controller
     expect(tree).toMatchSnapshot();
   });
 
   it('should respond to click method', () => {
+<<<<<<< HEAD
+=======
+    const onClick = jest.spyOn(IndexNav.prototype, 'onClick');
+>>>>>>> bg(fix): Fixed my test and modified my controller
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
     const wrapper = tree.instance();
     wrapper.onClick();
     tree.setState({ responsive: 'responsive' });
     wrapper.onClick();
     expect(tree).toMatchSnapshot();
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('should respond to logout method', () => {

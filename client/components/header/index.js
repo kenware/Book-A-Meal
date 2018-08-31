@@ -50,20 +50,47 @@ class Nav extends Component {
             </span>
           : <span />}
           {window.localStorage.getItem('role') ?
-            <span onClick={this.logout} className="a" role="button">LogOut</span>
+            <span onClick={this.logout} className="a logOut" role="button">LogOut</span>
           : <span />}
           {window.localStorage.getItem('username') ?
             <Link to="/profile" className="a">
-              <img src={window.localStorage.getItem('image')} className="rounded-circle" alt="user" style={{ height: '20px', width: '20px' }} />
+              <img src={window.localStorage.getItem('image') !== 'null' ? window.localStorage.getItem('image') : 'image/profile.png'} className="rounded-circle" alt="user" style={{ height: '20px', width: '20px' }} />
             </Link>
+          : <span />}
+          {this.props.component === 'admin' && window.localStorage.getItem('role') === 'admin' ?
+            <div className="dropdown a">
+              <i className="dropbtn fa fa-caret-down" />
+              <div className="dropdown-content">
+                <ul>
+                  <li className="top-padding li-style">
+                    <Link to="/admin" className="white-color">Admin</Link>
+                  </li>
+                  <li className="li-style">
+                    <Link to="/dashboard" className="white-color">Dashoard</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/admin/allmeals" className="white-color my-order" id="allMeal-link">All Meals</Link>
+                  </li>
+                  <li className="">
+                    <Link to="/admin/addmeals" className="white-color my-order" id="addmeal">Add Meals</Link>
+                  </li>
+                  <li className=" ">
+                    <Link to="/admin/setmenu" className="white-color my-order" id="setMenu">Set Menu</Link>
+                  </li>
+                  <li className=" li-style">
+                    <Link to="/dashboard/profile" className="bar1 white-color ">Profile</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           : <span />}
           {window.localStorage.getItem('role') ?
             <span />
-          : <Link to="/login" className="a">Login</Link>
+          : <Link to="/login" className="a login-header">Login</Link>
             }
           {this.state.role ?
             <span />
-          : <Link to="/register" className="a">SignUp</Link>
+          : <Link to="/register" className="a register-header">SignUp</Link>
             }
           <span className="a icon" onClick={this.onClick} role="button"><span className="fa fa-bars" /></span>
         </div>

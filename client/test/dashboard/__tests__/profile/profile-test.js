@@ -60,21 +60,26 @@ describe('Test Profile component', () => {
   });
 
   it('should respond to dropbox ondrop method', () => {
+    const onDrop = jest.spyOn(Profile.prototype, 'onDrop');
     const tree = mount(<Profile {...emptyProps} />);
     const wrapper = tree.instance();
     wrapper.onDrop([{ preview: 'image/l.jpg' }]);
     expect(tree).toMatchSnapshot();
+    expect(onDrop).toHaveBeenCalled();
   });
 
   it('should respond to componentWillMount lifeCycle method', () => {
+    const componentWillUnmount = jest.spyOn(Profile.prototype, 'componentWillUnmount');
     const tree = mount(<Profile {...emptyProps} />);
     const wrapper = tree.instance();
     wrapper.componentWillUnmount();
     expect(tree).toMatchSnapshot();
+    expect(componentWillUnmount).toHaveBeenCalled();
   });
 
   it('should respond to componentWillProps method', () => {
     const tree = mount(<Profile {...emptyProps} />);
+    const componentWillReceiveProps = jest.spyOn(Profile.prototype, 'componentWillReceiveProps');
     const wrapper = tree.instance();
     wrapper.componentWillReceiveProps({
       user: { }
@@ -89,6 +94,7 @@ describe('Test Profile component', () => {
       }
     });
     expect(tree).toMatchSnapshot();
+    expect(componentWillReceiveProps).toHaveBeenCalled();
   });
 
   it('should respond to onChange event', () => {

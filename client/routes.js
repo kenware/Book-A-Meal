@@ -23,7 +23,7 @@ const Routes = () => (
           <Route path="/dashboard" component={DashboardIndex} />
           <Route path="/admin" component={AdminComp} />
           <Route path="/passwordreset/:token" component={ResetPageComponent} />
-          <Redirect to="/dashboard" />
+          <Redirect to="/meals" />
         </Switch>
       </main>
     </div>

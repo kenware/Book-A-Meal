@@ -41,40 +41,38 @@ describe('Test Component of ALLMeals component', () => {
 
   it('should respond to a click event by dispalying a modal when caterer want to delete a meal by selecting from meal options', () => {
     const tree = shallow(<AllMeal {...props} />);
-    // onClick event
     tree.find('#rice').simulate('click');
     expect(tree).toMatchSnapshot();
   });
 
   it('should respond to deleteMeal method', () => {
     const tree = shallow(<AllMeal {...props} />);
-    // onClick event
     const wrapper = tree.instance();
     wrapper.deleteMeal();
     expect(tree).toMatchSnapshot();
   });
+
   it('should respond to deleteMeal method ', () => {
+    const cancelDelete = jest.spyOn(AllMeal.prototype, 'cancelDelete');
     const tree = shallow(<AllMeal {...props} />);
-    // onClick event
     const wrapper = tree.instance();
     wrapper.cancelDelete();
     expect(tree).toMatchSnapshot();
+    expect(cancelDelete).toHaveBeenCalled();
   });
 
   it('should call deletMeal method onclick event', () => {
     const deleteMeal = jest.spyOn(AllMeal.prototype, 'deleteMeal');
     const tree = shallow(<AllMeal {...props} />);
-    // onClick event
     tree.find('#rice').simulate('click');
     tree.find('.delete-meal').simulate('click');
     expect(tree).toMatchSnapshot();
     expect(deleteMeal).toHaveBeenCalled();
   });
 
-  it('should cancel/remove modal that delete meal using cancelAdd method onclick event', () => {
+  it('should cancel/remove modal that delete meal using cancelAdd method', () => {
     const cancelDelete = jest.spyOn(AllMeal.prototype, 'cancelDelete');
     let tree = shallow(<AllMeal {...props} />);
-    // onClick event
     tree.find('#rice').simulate('click');
     tree = tree.instance().cancelDelete();
     expect(tree).toMatchSnapshot();

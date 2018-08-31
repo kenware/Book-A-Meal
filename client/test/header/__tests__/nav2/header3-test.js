@@ -8,7 +8,7 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly', () => {
+  it('should render properly with admin role', () => {
     const tree = shallow(<Header2 />).setState({ role: 'admin' });
     expect(tree).toMatchSnapshot();
   });

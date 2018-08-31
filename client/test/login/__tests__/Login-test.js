@@ -15,12 +15,15 @@ describe('Test Login Component', () => {
   });
 
   it('should have one login container class', () => {
+    const componentWillUnmount = jest.spyOn(Login.prototype, 'componentWillUnmount');
     const tree = shallow(<Login {...props} />);
     const wrapper = tree.instance();
     wrapper.componentWillUnmount();
+    expect(componentWillUnmount).toHaveBeenCalled();
   });
 
   it('should respond to change event and change the state of the Login Component', () => {
+    const login = jest.spyOn(Login.prototype, 'login');
     const tree = shallow(<Login {...props} />);
     const wrapper = tree.instance();
     wrapper.login({ preventDefault: jest.fn() });
@@ -29,13 +32,7 @@ describe('Test Login Component', () => {
     tree.find('#password').simulate('change', { target: { name: 'password', value: 'cats' } });
     wrapper.login({ preventDefault: jest.fn() });
     expect(tree).toMatchSnapshot();
-  });
-
-  it('should recieve error message props with wrong credentials', () => {
-    let tree = shallow(<Login {...emptyProps} />);
-    expect(tree).toMatchSnapshot();
-    tree = shallow(<Login {...props} />);
-    expect(tree).toMatchSnapshot();
+    expect(login).toHaveBeenCalled();
   });
 
   it('should respond to mapStateToProps methods', () => {

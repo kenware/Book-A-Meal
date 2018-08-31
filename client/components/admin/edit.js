@@ -115,9 +115,6 @@ export class Edit extends Component {
     return (
       <div>
         <h2 style={{ marginTop: '2rem' }}>UPDATE A MEAL </h2>
-        <div className="detail-contents">
-          <img src={this.state.image} className="detail-img" alt="meal" />
-        </div>
         <div className="register-container" style={{ marginTop: '2px' }}>
           <div className="register-col" />
           <div className="register-wrapper" style={{ marginTop: '2px' }}>

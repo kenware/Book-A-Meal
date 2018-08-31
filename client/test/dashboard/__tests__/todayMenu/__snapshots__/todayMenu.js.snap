@@ -24,7 +24,7 @@ exports[`Test Today menu component of menu renders correctly 1`] = `
       <img
         alt="profile"
         className="user-img rounded-circle"
-        src="image/l.png"
+        src="image/profile.png"
       />
       <br />
     </button>

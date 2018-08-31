@@ -37,7 +37,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -198,7 +200,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -251,7 +255,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -412,7 +418,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -465,7 +473,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -626,7 +636,9 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4
@@ -679,7 +691,9 @@ exports[`Test Home Component renders correctly 1`] = `
       }
     }
   >
-    <h2>
+    <h2
+      id="header"
+    >
       BOOK A MEAL IN THREE EASY STEPS
     </h2>
     <div
@@ -840,7 +854,9 @@ exports[`Test Home Component renders correctly 1`] = `
   >
     <br />
     <br />
-    <h2>
+    <h2
+      id="user-story"
+    >
       WHAT OUR FANTASTIC USERS SAY
     </h2>
     <h4

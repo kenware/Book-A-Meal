@@ -17,7 +17,7 @@ const todayMenu = ({
           <div key={oneMenu.id}>
             <button className="menuAccordion" onClick={() => showMenu(oneMenu.id, oneMenu.meals.replace(window.location.host, ''))}>
               <span style={{ float: 'right', marginTop: '1.5rem' }}>{ state.accordion[oneMenu.id] ? <em className="fa fa-minus p-color" /> : <em className="fa fa-plus p-color" />}</span>
-              <img src={oneMenu.user.image ? oneMenu.user.image : 'image/l.png'} className="user-img rounded-circle" alt="profile" /><br />
+              <img src={oneMenu.user.image ? oneMenu.user.image : 'image/profile.png'} className="user-img rounded-circle" alt="profile" /><br />
               {oneMenu.user.username}
             </button>
             <div className={`showA meal-menu-row spread${state.accordion[oneMenu.id]}`} >
