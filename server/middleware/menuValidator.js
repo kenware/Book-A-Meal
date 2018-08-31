@@ -18,7 +18,7 @@ export default class menuMiddleware {
     if (!orderBefore) {
       return res.status(401).json({ message: 'Specify the time users should be able to make an order' });
     }
-    if ((Number.isNaN(Number(orderBefore))) === true || (/^ *$/.test(orderBefore) === true)) {
+    if ((isNaN(orderBefore)) === true || (/^ *$/.test(orderBefore) === true)) {
       return res.status(401).json({ message: 'Please provide a valid time in hours' });
     }
     if (!mealId) {
@@ -28,6 +28,7 @@ export default class menuMiddleware {
     if (orderBefore > 24) {
       return res.status(401).json({ message: 'Expire time cannot be more than 24 hours' });
     }
+<<<<<<< HEAD
     if (Number.isNaN(Number(mealId)) || (/^ *$/.test(mealId) === true)) {
       return res.status(401).json({ message: 'Enter a valid meal id' });
     }
@@ -35,6 +36,26 @@ export default class menuMiddleware {
     orderBefore = Number(orderBefore);
     req.body.orderBefore = orderBefore;
     req.body.mealId = mealId;
+=======
+    for ( const meal of meals) {
+      if ((isNaN(meal)) === true || (/^ *$/.test(meal) === true)) {
+        return res.status(401).json({ message: 'Enter a valid meal id' });
+      }
+    }
+    meals = [...new Set(meals.map(id => Number(id)))];
+    // pass the mealId and orderBefore to req
+    orderBefore = Number(orderBefore);
+    req.body.orderBefore = orderBefore;
+    req.body.mealList = meals;
+    next();
+  }
+
+  async menuMeals(req, res, next) {
+    const { menuId } = req.params;
+    if ((isNaN(menuId)) === true || (/^ *$/.test(menuId) === true)) {
+      return res.status(401).json({ message: 'provide a valid menu id' });
+    }
+>>>>>>> bg(fix): Fixed my test and modified my controller
     next();
   }
 }

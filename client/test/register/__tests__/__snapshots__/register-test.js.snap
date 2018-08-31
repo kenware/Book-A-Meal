@@ -2,7 +2,11 @@
 
 exports[`Test Register Component should render correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
     id="register-bg"

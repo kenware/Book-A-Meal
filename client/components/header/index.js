@@ -70,6 +70,11 @@ class Nav extends Component {
     );
   }
 }
+Nav.defaultProps = {
+  cart: [],
+  component: '',
+  onModal: () => {}
+};
 
 
 export default Nav;

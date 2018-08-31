@@ -4,7 +4,6 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 
 module.exports = {
-  mode: 'development',
   entry: './client/index.js',
   output: {
     filename: 'bundle.js',

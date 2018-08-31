@@ -17,12 +17,15 @@ module.exports = {
     status: {
       type: Sequelize.STRING
     },
+<<<<<<< HEAD
     quantity: {
       type: Sequelize.INTEGER
     },
     totalPrice: {
       type: Sequelize.INTEGER
     },
+=======
+>>>>>>> bg(fix): Fixed my test and modified my controller
     catererId: {
       type: Sequelize.INTEGER
     },

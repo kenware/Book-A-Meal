@@ -4,7 +4,7 @@ import IndexNav from '../../../../components/header/index';
 
 describe('Testing of sidebar component', () => {
   it('should render properly', () => {
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -14,7 +14,7 @@ describe('Testing of sidebar component', () => {
         return 'user';
       }
     };
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -24,7 +24,7 @@ describe('Testing of sidebar component', () => {
         return 'admin';
       }
     };
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -34,12 +34,12 @@ describe('Testing of sidebar component', () => {
         return 'user';
       }
     };
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     expect(tree).toMatchSnapshot();
   });
 
   it('should respond to click method', () => {
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     const wrapper = tree.instance();
     wrapper.onClick();
     tree.setState({ responsive: 'responsive' });
@@ -48,7 +48,7 @@ describe('Testing of sidebar component', () => {
   });
 
   it('should respond to logout method', () => {
-    const tree = shallow(<IndexNav />);
+    const tree = shallow(<IndexNav onModal={jest.fn()} />);
     window.localStorage = {
       removeItem() {
       },

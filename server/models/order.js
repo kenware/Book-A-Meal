@@ -16,9 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     catererId: {
       type: DataTypes.INTEGER
-    },
-    totalPrice: {
-      type: DataTypes.INTEGER
     }
   });
   Order.associate = (models) => {

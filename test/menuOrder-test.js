@@ -7,14 +7,7 @@ import model from '../server/models';
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 
@@ -25,18 +18,11 @@ let mealId = 0, menuId = 1, orderId = 0;
 let id1;
 describe('User information for Menu and Order controller', () => {
   before((done) => {
-    User.sync();
-    Meal.sync();
-    Menu.sync();
-    Order.sync();
-    MealMenu.sync();
-    notification.sync();
     User.destroy({
       where: {}
-    })
-      .then(() => {
-        done();
-      });
+    }).then(() => {
+      done();
+    });
   });
 
   it('admin should sign up ', (done) => {
@@ -159,7 +145,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: '',
+        meals: '',
         orderBefore: (new Date().getHours() + 2),
       })
       .end((err, res) => {
@@ -306,10 +292,19 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: '',
         menuId,
         quantity: 2,
         address: 'no 19 reverend street'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId: '',
+          quantity: 2
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -323,10 +318,19 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: id1,
         menuId: '',
         quantity: 2,
         address: 'no 19 reverend street'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId: '',
+          menuId,
+          quantity: 2
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -340,10 +344,18 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: id1,
         menuId,
         quantity: '',
         address: 'no 19 reverend street'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -357,6 +369,7 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: id1,
         menuId,
         quantity: 2,
@@ -366,6 +379,23 @@ describe('Testing of Order middleware and controller', () => {
         res.should.have.status(401);
         res.body.should.have.property('message').eql('address is required');
         res.body.should.be.a('object');
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body[0].should.have.property('address').eql('no 19 reverend street');
+        res.body[0].should.have.property('status').eql('pending');
+        res.body[0].should.have.property('meals').be.a('array');
+        res.body[0].meals.length.should.be.eql(1);
+        res.body[0].should.be.a('object');
+        orderId = res.body[0].id;
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
         done();
       });
   });
@@ -374,6 +404,7 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: id1,
         menuId: ' ',
         quantity: 2,
@@ -383,6 +414,28 @@ describe('Testing of Order middleware and controller', () => {
         res.should.have.status(401);
         res.body.should.have.property('message').eql('Please provide a valid menu id');
         res.body.should.be.a('object');
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        },
+        {
+          mealId,
+          menuId,
+          quantity: 3
+        }]
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.length.should.be.eql(1);
+        res.body[0].should.have.property('address').eql('no 19 reverend street');
+        res.body[0].should.have.property('status').eql('pending');
+        res.body[0].should.have.property('meals').be.a('array');
+        res.body[0].meals.length.should.be.eql(2);
+        res.body[0].should.be.a('object');
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
         done();
       });
   });
@@ -391,10 +444,19 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: '  hj',
         menuId,
         quantity: 2,
         address: 'no 19'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -408,10 +470,19 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: id1,
         menuId,
         quantity: 'hhjo',
         address: 'no 19'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 4
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -425,10 +496,19 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId: 10000,
         menuId,
         quantity: 2,
         address: 'no 19'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 4
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(404);
@@ -459,16 +539,54 @@ describe('Testing of Order middleware and controller', () => {
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
+<<<<<<< HEAD:test/menuOrder-test.js
         mealId,
         menuId,
         quantity: 2,
         address: 'no 19 reverend street'
+=======
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
       })
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('address').eql('no 19 reverend street');
+<<<<<<< HEAD:test/menuOrder-test.js
         res.body.should.have.property('totalPrice').eql(1110);
         res.body.should.have.property('status').eql('pending');
+=======
+        res.body.should.have.property('status').eql('pending');
+        res.body.should.have.property('meals').be.a('array');
+        res.body.meals.length.should.be.eql(1);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it('Admin should not get orders with negative query param', (done) => {
+    chai.request(server)
+      .get('/api/v1/orders?limit=-1&offset=3')
+      .set('authorization', tokenAdmin)
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Your query param cannot be negative');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it('Admin should get all orders', (done) => {
+    chai.request(server)
+      .get('/api/v1/orders')
+      .set('authorization', tokenAdmin)
+      .end((err, res) => {
+        res.should.have.status(200);
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/menuOrder-test.js
         res.body.should.be.a('object');
         orderId = res.body.id;
         done();

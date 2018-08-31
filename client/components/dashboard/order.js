@@ -185,47 +185,82 @@ export class Orders extends Component {
 
           <h2 style={{ marginTop: '4rem' }}>MY MEAL ORDER HISTORY</h2>
           <h3 className="danger text-center"><b>{this.props.errorMessage.myOrderError}</b></h3>
-          <table>
-            <tbody>
-              <tr className="p-color">
-                <th>Name</th>
-                <th>Quanitity odered
-                </th>
-                <th>Price ($)</th>
-                <th>Total price</th>
-                <td>Date</td>
-                <td>Status</td>
-                <td>Modify</td>
-              </tr>
-              {this.props.myOrder.rows.map(order =>
-              (
-                <tr key={order.id}>
-                  <td>{order.Meal.name}</td>
-                  <td>{order.quantity}</td>
-                  <td>{order.Meal.price}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>{monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)} &nbsp;
-                    {new Date(order.createdAt).getDate()} &nbsp;
-                    {new Date(order.createdAt).getFullYear()}
-                  </td>
-                  <td>{order.status === 'pending' ?
-                    <span>{order.status}&nbsp;
-                      <button
-                        className="y-color confirm-btn"
-                        onClick={() => this.handleClick(order.id, order.Meal.name)}
-                      >Confirm
-                      </button>
-                    </span>
-                  : <span>{order.status}</span>}
-                  </td>
-                  <td>{ order.status === 'confirmed' ?
-                    <button className="p-color modify-btn" disabled>Modify</button> :
-                    <button onClick={() => this.onOpenModal(order.id, order.Meal.name, order.quantity, order.address, order.Meal.price)} className="p-color modify-btn" >Modify</button>}
-                  </td>
-                </tr>
-                ))}
-            </tbody>
-          </table>
+          <Accordion>
+            <AccordionItem>
+              <AccordionItemTitle>
+                <div className="accordion__meal" />
+                <div className="order-accordion accordion-color">
+                  <div> S/N </div>
+                  <div>Total price</div>
+                  <div>Date</div>
+                  <div>Address</div>
+                  <div>Status</div>
+                  <div>Action</div>
+                </div>
+              </AccordionItemTitle>
+            </AccordionItem>
+            {this.props.myOrder.orders.map(order => (
+              <AccordionItem key={order.id}>
+                <AccordionItemTitle>
+                  <div className="accordion__arrow u-postion-relative" />
+                  <div className="order-accordion">
+                    <div className="order-">
+                      {this.props.myOrder.orders.indexOf(order) + 1}
+                    </div>
+                    <div className="order-contents ">
+                      # {order.totalPrice}
+                    </div>
+                    <div className="order-contents ">
+                      {monthNames[new Date(order.createdAt).getMonth()].substr(0, 3)}&nbsp;
+                      {new Date(order.createdAt).getDate()} &nbsp;
+                      {new Date(order.createdAt).getFullYear()}
+                    </div>
+                    <div>{order.address}</div>
+                    <div className="order-contents">
+                      {order.status}
+                    </div>
+                    <div>
+                      {order.status === 'pending' ?
+                        <button
+                          className="y-color confirm-btn"
+                          onClick={() => this.handleClick(order.id)}
+                        >Confirm
+                        </button>
+                      : <span />
+                    }
+                    </div>
+                  </div>
+                </AccordionItemTitle>
+                <AccordionItemBody>
+                  <table className="table">
+                    <tbody>
+                      <tr className="p-color tr-height tr-color">
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total Price</th>
+                        <th>Edit</th>
+                      </tr>
+                      { order.meals.map(meal => (
+                        <tr className="p-color tr tr-height" key={meal.id}>
+                          <td>{order.meals.indexOf(meal) + 1}</td>
+                          <td>{meal.name}</td>
+                          <td>{meal.orderMealItems.quantity}</td>
+                          <td>{meal.price}</td>
+                          <td>{meal.totalPrice}</td>
+                          <td>{ order.status === 'pending' ?
+                            <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
+                            : <span />}
+                          </td>
+                        </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </AccordionItemBody>
+              </AccordionItem>
+             ))}
+          </Accordion>
           <div className="meal-pagination">
             <Pagination
               activePage={this.state.activePage}
