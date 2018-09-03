@@ -264,6 +264,7 @@ exports[`Test Component of Order component renders correctly 1`] = `
             className="order-contents"
             key="1"
           >
+<<<<<<< HEAD
             <td>
               rice
             </td>
@@ -290,6 +291,54 @@ exports[`Test Component of Order component renders correctly 1`] = `
           </tr>
         </tbody>
       </table>
+=======
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
+>>>>>>> bg(fix): Fixed my test and modified my controller
       <div
         className="meal-pagination"
       >

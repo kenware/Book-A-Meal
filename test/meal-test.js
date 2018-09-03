@@ -7,6 +7,7 @@ import model from '../server/models';
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
+<<<<<<< HEAD:test/meal-test.js
 const {
   User,
   Meal,
@@ -15,6 +16,9 @@ const {
   MealMenu,
   notification
 } = model;
+=======
+const { User } = model;
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/meal-test.js
 
 chai.use(chaiHttp);
 let tokenUpdate = '';
@@ -23,6 +27,7 @@ let tokenAdmin = '', mealId = 0;
 
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
+<<<<<<< HEAD:test/meal-test.js
     User.sync()
       .then(() => {
         done();
@@ -36,6 +41,8 @@ describe('/POST api/v1/auth/signup', () => {
       });
   });
   before((done) => {
+=======
+>>>>>>> bg(fix): Fixed my test and modified my controller:test/server-test/meal-test.js
     User.destroy({
       where: {}
     })

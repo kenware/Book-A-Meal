@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="6"
+            failures="1"
+            tests="2">
+
+  <testsuite name="register-login"
+    errors="6" failures="1" hostname="" id="" package="register-login" skipped="1"
+    tests="2" time="5.123" timestamp="Sun, 19 Aug 2018 21:03:32 GMT">
+  
+    <testcase name="Login test new tours" classname="register-login" time="5.123" assertions="1">  <failure message="Testing if the page title equals &#34;Book-A-Meal&#34;.">    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:11:15)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      ERROR: Unable to locate element: &#34;input[name=&#34;name&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:5:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;input[name=&#34;username&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:6:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;input[name=&#34;password&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:7:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;input[name=&#34;email&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:8:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;input[name=&#34;vpassword&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:9:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;button[name=&#34;submit&#34;]&#34; using: css selector
+    at Object.Login test new tours (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/test/e2e-test/register-login.js:10:8)
+    at Module.call (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Bookmeal/Book-A-Meal/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="Login test" classname="register-login">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

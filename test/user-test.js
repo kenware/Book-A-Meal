@@ -22,12 +22,6 @@ chai.use(chaiHttp);
 let tokenUpdate = '';
 describe('/POST api/v1/auth/signup', () => {
   before((done) => {
-    User.sync();
-    Meal.sync();
-    Menu.sync();
-    Order.sync();
-    MealMenu.sync();
-    notification.sync();
     User.destroy({
       where: {}
     })
@@ -35,7 +29,8 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
-  it('superuser should sign up ', (done) => {
+
+  it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
       .send({

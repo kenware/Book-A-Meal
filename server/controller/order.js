@@ -33,6 +33,7 @@ export default class orderController {
       where: { id: parseInt(menuId) },
       include: { model: Meal }
     });
+<<<<<<< HEAD
     if (!menu) { return res.status(404).json({ message: 'Menu not found' }); }
     // caterers id
     const { userId } = menu;
@@ -47,6 +48,44 @@ export default class orderController {
     if (orderBefore < Number(presentTime) || menu.date !== date) {
       return res.status(422)
         .json({ message: 'You cannot order menu at this time' });
+=======
+
+    if (allMenuId.length > menu.length) { return res.status(404).json({ message: 'Menu not found' }); }
+
+    const myOrder = [];
+    for (const eachMenu of menu) {
+      const { orderBefore } = eachMenu;
+      const catererId = eachMenu.userId;
+
+      if (orderBefore < Number(presentTime)) {
+        return res.status(422)
+          .json({ message: `You cannot order menu with this id ${eachMenu} at this time` });
+      }
+      const allMenuMealId = eachMenu.Meals.map(meal => meal.id);
+
+      const allMeal = meals.filter(eachMenuMeal =>
+        eachMenuMeal.menuId === eachMenu.id);
+      const allMealId = allMeal.map(meal => meal.mealId);
+
+      const mealsExistInMenu = new mealFilter().checkMeals(allMenuMealId, allMealId);
+
+      if (!mealsExistInMenu) { return res.status(404).json({ message: 'Meal not found' }); }
+      const { id } = req.decoded;
+      const order = await Order.create({
+        status: 'pending',
+        address,
+        catererId
+      });
+      const user = User.build({ id });
+      order.setUser(user);
+      for (const meal of allMeal) {
+        order.setMeals(meal.mealId, {
+          through: { quantity: meal.quantity }
+        });
+      }
+      order.dataValues.meals = allMealId;
+      myOrder.push(order);
+>>>>>>> bg(fix): Fixed my test and modified my controller
     }
     let meal;
     // check if meal exist in the menu using mealId
@@ -91,6 +130,7 @@ export default class orderController {
     const newAddress = req.body.address;
     const newStatus = req.body.status;
     const { orderId } = req.params;
+<<<<<<< HEAD
     if ((Number.isNaN(Number(orderId))) === true || (/^ *$/.test(orderId) === true)) {
       return res.status(401).json({ message: 'Provide a valid order id' });
     }
@@ -98,6 +138,12 @@ export default class orderController {
     const order = await Order.findOne({
       where: { id },
       include: { model: Meal }
+=======
+
+    const order = await Order.findOne({
+      where: { id: orderId },
+      include: { model: Meal, as: 'meals', }
+>>>>>>> bg(fix): Fixed my test and modified my controller
     });
     // check if order exist
     if (!order) { return res.status(404).json({ message: 'Order not found' }); }
@@ -113,6 +159,7 @@ export default class orderController {
     if (req.decoded.id !== order.userId) {
       return res.status(401).json({ message: 'You cannot update order you did not add' });
     }
+<<<<<<< HEAD
     let {
       quantity,
       address,
@@ -128,6 +175,23 @@ export default class orderController {
       quantity, address, totalPrice, status
     });
     if (!update) { return res.status(404).json({ message: 'Update failed' }); }
+=======
+
+    const allOrderMealId = order.meals.map(meal => meal.id);
+
+    const allMealId = meals.map(meal => meal.mealId);
+    const mealsExistInOrder = new mealFilter().checkMeals(allOrderMealId, allMealId);
+
+    if (!mealsExistInOrder) { return res.status(404).json({ message: 'Meal not found' }); }
+
+    const update = await order.update({ address });
+
+    for (const meal of meals) {
+      await update.addMeal(meal.mealId, {
+        through: { quantity: meal.quantity }
+      });
+    }
+>>>>>>> bg(fix): Fixed my test and modified my controller
     return res.status(201).json(update);
   }
 
@@ -162,8 +226,19 @@ export default class orderController {
       limit,
       offset
     });
+<<<<<<< HEAD
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'users have not ordered a meal' }); }
     return res.status(200).json(orders);
+=======
+    const count = await Order.count({ where: { catererId } });
+
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
+    orders.forEach((order) => {
+      const totalPrice = new mealFilter().getPrice(order.meals);
+      order.dataValues.totalPrice = totalPrice;
+    });
+    return res.status(200).json({ orders, count });
+>>>>>>> bg(fix): Fixed my test and modified my controller
   }
 
   /**
@@ -191,8 +266,19 @@ export default class orderController {
       limit,
       offset
     });
+<<<<<<< HEAD
     if (!orders || orders.length < 1) { return res.status(404).json({ message: 'Users have not ordered a meal' }); }
     return res.status(200).json(orders);
+=======
+    const count = await Order.count({ where: { userId } });
+    if (!orders || orders.length < 1) { return res.status(404).json({ message: 'You have not ordered a meal' }); }   
+
+    orders.forEach((order) => {
+      const totalPrice = new mealFilter().getPrice(order.meals);
+      order.dataValues.totalPrice = totalPrice;
+    });
+    return res.status(200).json({ count, orders });
+>>>>>>> bg(fix): Fixed my test and modified my controller
   }
 
   /**

@@ -5,7 +5,15 @@ exports[`Test index Component of admin pages renders correctly 1`] = `
   <span
     className="largeScreen-header"
   >
+<<<<<<< HEAD
     <Nav />
+=======
+    <Nav
+      cart={Array []}
+      component="admin"
+      onModal={[Function]}
+    />
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </span>
   <span
     className="smallScreen-header"
@@ -92,7 +100,15 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
+<<<<<<< HEAD
     <Nav />
+=======
+    <Nav
+      cart={Array []}
+      component="admin"
+      onModal={[Function]}
+    />
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </span>
   <span
     className="smallScreen-header"
@@ -179,7 +195,15 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
+<<<<<<< HEAD
     <Nav />
+=======
+    <Nav
+      cart={Array []}
+      component="admin"
+      onModal={[Function]}
+    />
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </span>
   <span
     className="smallScreen-header"
@@ -266,7 +290,15 @@ exports[`Test index Component of admin pages should have respond handle click an
   <span
     className="largeScreen-header"
   >
+<<<<<<< HEAD
     <Nav />
+=======
+    <Nav
+      cart={Array []}
+      component="admin"
+      onModal={[Function]}
+    />
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </span>
   <span
     className="smallScreen-header"
@@ -353,7 +385,15 @@ exports[`Test index Component of admin pages should have respond to logOut metho
   <span
     className="largeScreen-header"
   >
+<<<<<<< HEAD
     <Nav />
+=======
+    <Nav
+      cart={Array []}
+      component="admin"
+      onModal={[Function]}
+    />
+>>>>>>> bg(fix): Fixed my test and modified my controller
   </span>
   <span
     className="smallScreen-header"
