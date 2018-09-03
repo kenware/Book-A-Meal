@@ -3,21 +3,12 @@ import { shallow } from 'enzyme';
 import { SetMenu, mapStateToProps, mapDispatchToProps } from '../../../../components/admin/setMenu';
 import { props, emptyProps } from '../../adminMockData';
 
-describe('Test Component of SETMENU component', () => {
+describe('Test Component of SETMENU admin', () => {
   it('renders correctly', () => {
     const tree = shallow(<SetMenu {...props} />);
     expect(tree).toMatchSnapshot();
   });
 
-  it('should have one order-container class', () => {
-    const tree = shallow(<SetMenu {...props} />);
-    expect(tree.find('.order-container')).toHaveLength(1);
-  });
-
-  it('should display one order-wrapper', () => {
-    const tree = shallow(<SetMenu {...props} />);
-    expect(tree.find('.order-wrapper')).toHaveLength(1);
-  });
   it('should have form-fields', () => {
     const tree = shallow(<SetMenu {...props} />);
     expect(tree.find('.form-field')).toHaveLength(2);
@@ -45,12 +36,12 @@ describe('Test Component of SETMENU component', () => {
 
   it('should display two menu meals', () => {
     const tree = shallow(<SetMenu {...props} />);
-    expect(tree.find('.tr')).toHaveLength(2);
+    expect(tree.find('.tr')).toHaveLength(3);
   });
 
   it('should display no menu meals with empty meal props', () => {
     const tree = shallow(<SetMenu {...emptyProps} />);
-    expect(tree.find('.tr')).toHaveLength(0);
+    expect(tree.find('.tr')).toHaveLength(1);
   });
 
   it('should respond to change event and change the state of the title input and expire time and add meal to the menu', () => {
@@ -88,28 +79,12 @@ describe('Test Component of SETMENU component', () => {
     const addmenu = jest.spyOn(SetMenu.prototype, 'addMenu');
     const tree = shallow(<SetMenu {...props} />);
     // onClick event
-    tree.find('#rice').simulate('click');
-    tree.find('#addMenu').simulate('click');
+    tree.find('#rice').simulate('change');
+    tree.find('.setMenuBtn').simulate('click');
     expect(tree).toMatchSnapshot();
     expect(addmenu).toHaveBeenCalled();
   });
 
-  it('should cancel addMenu modal cancelAdd method onclick event', () => {
-    const removeMenu = jest.spyOn(SetMenu.prototype, 'cancelAdd');
-    const tree = shallow(<SetMenu {...props} />);
-    // onClick event
-    tree.find('#rice').simulate('click');
-    tree.find('#removeMenu').simulate('click');
-    expect(tree).toMatchSnapshot();
-    expect(removeMenu).toHaveBeenCalled();
-  });
-  it('should should respond to cancelAdd method that close modal', () => {
-    const tree = shallow(<SetMenu {...props} />);
-    // onClick event
-    const wrapper = tree.instance();
-    wrapper.cancelAdd();
-    expect(tree).toMatchSnapshot();
-  });
   it('should should respond to lifeCycle Methods', () => {
     const tree = shallow(<SetMenu {...props} />);
     // onClick event

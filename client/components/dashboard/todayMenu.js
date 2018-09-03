@@ -5,7 +5,7 @@ import Pagination from 'react-js-pagination';
 
 const todayMenu = ({
   menu,
-  confirmOrder,
+  cartModal,
   state,
   showMenu,
   menuMeals,
@@ -15,10 +15,10 @@ const todayMenu = ({
     { menu.rows.map(oneMenu =>
         (
           <div key={oneMenu.id}>
-            <button className="accordion" onClick={() => showMenu(oneMenu.id, oneMenu.Meals.replace(window.location.host, ''))}>
+            <button className="menuAccordion" onClick={() => showMenu(oneMenu.id, oneMenu.meals.replace(window.location.host, ''))}>
               <span style={{ float: 'right', marginTop: '1.5rem' }}>{ state.accordion[oneMenu.id] ? <em className="fa fa-minus p-color" /> : <em className="fa fa-plus p-color" />}</span>
-              <img src={oneMenu.User.image ? oneMenu.User.image : 'image/l.png'} className="user-img rounded-circle" alt="profile" /><br />
-              {oneMenu.User.username}
+              <img src={oneMenu.user.image ? oneMenu.user.image : 'image/l.png'} className="user-img rounded-circle" alt="profile" /><br />
+              {oneMenu.user.username}
             </button>
             <div className={`showA meal-menu-row spread${state.accordion[oneMenu.id]}`} >
               { menuMeals.meals.length > 0 ? menuMeals.meals.map(meal => (
@@ -33,7 +33,7 @@ const todayMenu = ({
                       <span className="p-color pad-text"><b>$ {meal.price}</b></span>
                     </div>
                     <div className="container l-r-pad-text">
-                      <button onClick={() => confirmOrder(meal.id, oneMenu.id, meal.name, meal.image, meal.price, meal.description)} className="order1">
+                      <button onClick={() => cartModal(meal.id, oneMenu.id, meal.name, meal.image, meal.price, meal.description)} className="order1">
                         <em className="fa fa-cart-plus" />
                         &nbsp; Order
                       </button>
@@ -63,7 +63,7 @@ todayMenu.propTypes = {
   showMenu: PropTypes.func.isRequired,
   state: PropTypes.object.isRequired,
   menu: PropTypes.object.isRequired,
-  confirmOrder: PropTypes.func.isRequired
+  cartModal: PropTypes.func.isRequired
 };
 
 export default todayMenu;

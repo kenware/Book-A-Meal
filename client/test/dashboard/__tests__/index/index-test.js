@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Dashboard, mapStateToProps, mapDispatchToProps } from '../../../../components/dashboard/index';
 import { props, emptyProps } from '../../dashboardMockData';
 
-describe('Test index Component of admin pages', () => {
+describe('Test index Component of Dashboard pages', () => {
   it('renders correctly', () => {
     const tree = shallow(<Dashboard {...props} />);
     expect(tree).toMatchSnapshot();
@@ -78,24 +78,17 @@ describe('Test index Component of admin pages', () => {
   });
   it('should upgrade a user to caterer', () => {
     const tree = shallow(<Dashboard {...props} />);
-    tree.find('.upgrade').simulate('click');
-    expect(tree).toMatchSnapshot();
-    tree.find('.cancelUpgrade').simulate('click');
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('The number of link must be 8', () => {
-    const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('Link').length).toEqual(8);
-  });
-
-  it('should close upgrade modal on cancelUpgrade() call ', () => {
-    const tree = shallow(<Dashboard {...props} />);
     const wrapper = tree.instance();
-    wrapper.cancelUpgrade();
     expect(tree).toMatchSnapshot();
-    expect(tree.state('upgradeModal')).toEqual('modal');
+    tree.find('#upgrade').simulate('click');
+    expect(tree).toMatchSnapshot();
   });
+
+  it('The number of link must be 9', () => {
+    const tree = shallow(<Dashboard {...props} />);
+    expect(tree.find('Link').length).toEqual(9);
+  });
+
   it('should logOut ', () => {
     global.localStorage = {
       removeItem() {
@@ -112,20 +105,9 @@ describe('Test index Component of admin pages', () => {
 
   it('should accept new props from componentWillReceiveProps ', () => {
     const tree = shallow(<Dashboard {...props} />);
-    tree.instance().constructor.getDerivedStateFromProps({ successMessage: { upgradeSuccess: 'success' } });
+    tree.instance().componentWillReceiveProps({ successMessage: { upgradeSuccess: 'success' } });
     expect(tree).toMatchSnapshot();
-    tree.instance().constructor.getDerivedStateFromProps({ successMessage: '' });
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should close upgrade modal on cancelUpgrade() call ', () => {
-    const tree = shallow(<Dashboard {...props} />);
-    const wrapper = tree.instance();
-    wrapper.confirmUpgrade();
-    expect(tree).toMatchSnapshot();
-    wrapper.upgrade();
-    expect(tree).toMatchSnapshot();
-    wrapper.componentDidMount();
+    tree.instance().componentWillReceiveProps({ successMessage: '' });
     expect(tree).toMatchSnapshot();
   });
 

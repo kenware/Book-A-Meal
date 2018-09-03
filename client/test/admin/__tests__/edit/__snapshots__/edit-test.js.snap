@@ -136,6 +136,8 @@ exports[`Test edit meal component renders correctly 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -309,6 +311,8 @@ exports[`Test edit meal component renders correctly 2`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -485,6 +489,8 @@ exports[`Test edit meal component should respond addMeal method onClick event ed
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -663,6 +669,8 @@ exports[`Test edit meal component should respond to lifeCycle methods 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -722,7 +730,7 @@ Edit {
     },
     "activePage": 1,
     "allOrder": Object {
-      "rows": Array [],
+      "orders": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
@@ -743,6 +751,7 @@ Edit {
     },
   },
   "refs": Object {},
+  "setState": [Function],
   "state": Object {
     "description": undefined,
     "file": Array [],
@@ -780,7 +789,7 @@ Edit {
         activePage={1}
         allOrder={
           Object {
-            "rows": Array [],
+            "orders": Array [],
           }
         }
         errorMessage={
@@ -963,6 +972,8 @@ Edit {
                     disableClick={false}
                     disablePreview={false}
                     disabled={false}
+                    getDataTransferItems={[Function]}
+                    inputProps={Object {}}
                     maxSize={Infinity}
                     minSize={0}
                     multiple={false}
@@ -1002,6 +1013,7 @@ Edit {
       "_updater": [Circular],
     },
   },
+  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
@@ -1022,6 +1034,7 @@ exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
     <img
       alt="meal"
       className="detail-img"
+      src=""
     />
   </div>
   <div
@@ -1141,6 +1154,8 @@ exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1149,6 +1164,12 @@ exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
             >
               Drag and drop or click to select an image to upload.
             </t>
+            <img
+              alt="meal"
+              className="img-fluid"
+              key="image.jpg"
+              src="image.jpg"
+            />
           </span>
         </div>
         <div
@@ -1200,7 +1221,7 @@ Edit {
     },
     "activePage": 1,
     "allOrder": Object {
-      "rows": Array [],
+      "orders": Array [],
     },
     "errorMessage": Object {
       "createMealError": "",
@@ -1221,6 +1242,7 @@ Edit {
     },
   },
   "refs": Object {},
+  "setState": [Function],
   "state": Object {
     "description": undefined,
     "file": Array [
@@ -1262,7 +1284,7 @@ Edit {
         activePage={1}
         allOrder={
           Object {
-            "rows": Array [],
+            "orders": Array [],
           }
         }
         errorMessage={
@@ -1450,6 +1472,8 @@ Edit {
                     disableClick={false}
                     disablePreview={false}
                     disabled={false}
+                    getDataTransferItems={[Function]}
+                    inputProps={Object {}}
                     maxSize={Infinity}
                     minSize={0}
                     multiple={false}
@@ -1494,6 +1518,7 @@ Edit {
       "_updater": [Circular],
     },
   },
+  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
@@ -1633,6 +1658,8 @@ exports[`Test edit meal component should respond to lifeCycle methods 5`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1806,6 +1833,8 @@ exports[`Test edit meal component should respond to lifeCycle methods 6`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1851,8 +1880,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],

@@ -6,7 +6,7 @@ exports[`Test Today menu component of menu renders correctly 1`] = `
     key="1"
   >
     <button
-      className="accordion"
+      className="menuAccordion"
       onClick={[Function]}
     >
       <span

@@ -38,28 +38,24 @@ exports[`Test Timeline component of dashboard renders correctly 1`] = `
             <img
               alt="profil"
               className="user-img rounded-circle"
+              src={null}
+            />
+          </li>
+          <li>
+            <span
+              className="h2-color"
             />
           </li>
           <li>
             <span
               className="h2-color"
             >
-              Keny
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-            >
-              Update profile
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-              role="button"
-            >
-               Change Password
+              <Link
+                replace={false}
+                to="/profile"
+              >
+                profile
+              </Link>
             </span>
           </li>
           <span />
@@ -202,38 +198,27 @@ exports[`Test Timeline component of dashboard should have three modal-order-cont
             <img
               alt="profil"
               className="user-img rounded-circle"
-              src="user"
+              src={null}
+            />
+          </li>
+          <li>
+            <span
+              className="h2-color"
             />
           </li>
           <li>
             <span
               className="h2-color"
             >
-              Keny
+              <Link
+                replace={false}
+                to="/profile"
+              >
+                profile
+              </Link>
             </span>
           </li>
-          <li>
-            <span
-              className="h2-color"
-            >
-              Update profile
-            </span>
-          </li>
-          <li>
-            <span
-              className="h2-color"
-              role="button"
-            >
-               Change Password
-            </span>
-          </li>
-          <li>
-            <button
-              className="p-color"
-            >
-               Upgrade To A Caterer
-            </button>
-          </li>
+          <span />
         </ul>
       </div>
     </div>

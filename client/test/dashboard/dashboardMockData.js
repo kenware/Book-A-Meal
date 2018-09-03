@@ -1,14 +1,19 @@
 export const props = {
+  cart: {
+    cart: []
+  },
+  upGrade: jest.fn(),
+  cartModal: jest.fn(),
   menu: {
     count: 4,
     rows: [{
       id: 1,
-      User: {
+      user: {
         name: 'ken',
         usrername: 'ken',
         email: 'ken@gmail.com'
       },
-      Meals: [
+      meals: [
         {
           id: 1,
           price: 100,
@@ -46,22 +51,29 @@ export const props = {
       updatedAt: '2018-06-10'
     }
   ],
-  myOrder: [
-    {
-      id: 1,
-      createdAt: '2018-05-4',
-      updatedAt: '2018-05-4',
-      address: 'Reverend Street',
-      status: 'pending',
-      quantity: 3,
-      Meal: {
+  myOrder: {
+    orders: [
+      {
         id: 1,
-        name: 'rice',
-        price: '200',
-        descrption: 'Very delicious'
+        createdAt: '2018-05-4',
+        updatedAt: '2018-05-4',
+        address: 'Reverend Street',
+        status: 'pending',
+        quantity: 3,
+        meals: [{
+          id: 1,
+          name: 'rice',
+          price: '200',
+          descrption: 'Very delicious',
+          orderMealItems: {
+            quantity: 3,
+            totalPrice: 4
+          }
+
+        }],
       }
-    }
-  ],
+    ]
+  },
   meals: [
     {
       id: 1,
@@ -112,6 +124,9 @@ export const props = {
 };
 
 export const emptyProps = {
+  cart: {
+    cart: jest.fn()
+  },
   menu: {
     count: 3,
     rows: []
@@ -138,22 +153,28 @@ export const emptyProps = {
     count: 0,
     meals: []
   },
-  myOrder: [
-    {
-      id: 1,
-      status: 'confirmed',
-      createdAt: '2018-05-4',
-      updatedAt: '2018-05-4',
-      address: 'Reverend Street',
-      quantity: 3,
-      Meal: {
+  myOrder: {
+    orders: [
+      {
         id: 1,
-        name: 'rice',
-        price: '200',
-        descrption: 'Very delicious'
+        status: 'confirmed',
+        createdAt: '2018-05-4',
+        updatedAt: '2018-05-4',
+        address: 'Reverend Street',
+        quantity: 3,
+        meals: [{
+          id: 1,
+          name: 'rice',
+          price: '200',
+          descrption: 'Very delicious',
+          orderMealItems: {
+            quantity: 3,
+            totalPrice: 4
+          }
+        }]
       }
-    }
-  ],
+    ]
+  },
   meals: [
   ],
   successMessage: {

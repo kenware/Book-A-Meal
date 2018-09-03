@@ -16,9 +16,7 @@ const router = express.Router();
 // POST a menu for the day
 router
   .post('/menu', jwtAuth.authAdmin, validate.menu, Menu.createMenu, Mail.sendMail)
-// get todays menu
   .get('/menu', jwtAuth.authUser, Menu.getMenu)
-// Get menuMeals of today's menu
-  .get('/menuMeals/:menuId', jwtAuth.authUser, Menu.getMenuMeals);
-
+  .get('/myMenu', jwtAuth.authAdmin, Menu.getMyMenu)
+  .get('/menuMeals/:menuId', jwtAuth.authUser, validate.menuMeals, Menu.getMenuMeals);
 export default router;

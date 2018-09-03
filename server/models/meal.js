@@ -24,9 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       through: 'MealMenus',
       onDelete: 'CASCADE'
     });
-    Meal.hasMany(models.Order, {
-      foreignKey: 'mealId',
-      as: 'Meals'
+    Meal.belongsToMany(models.Order, {
+      through: 'orderMealItems',
+      onDelete: 'CASCADE',
+      as: 'orders'
     });
   };
   return Meal;

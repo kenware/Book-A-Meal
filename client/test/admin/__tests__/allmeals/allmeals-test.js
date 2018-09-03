@@ -14,16 +14,6 @@ describe('Test Component of ALLMeals component', () => {
     expect(tree.find('.contents')).toHaveLength(2);
   });
 
-  it('should display 1 modal-order contents', () => {
-    const tree = shallow(<AllMeal {...props} />);
-    expect(tree.find('.modal-order')).toHaveLength(1);
-  });
-
-  it('should display 3 modal-order-content class contents', () => {
-    const tree = shallow(<AllMeal {...props} />);
-    expect(tree.find('.modal-order-content')).toHaveLength(3);
-  });
-
   it('should display 8 col-meal class from the meals contents', () => {
     const tree = shallow(<AllMeal {...props} />);
     expect(tree.find('.col-meal')).toHaveLength(8);
@@ -31,7 +21,7 @@ describe('Test Component of ALLMeals component', () => {
 
   it('should have 18 divs', () => {
     const tree = shallow(<AllMeal {...props} />);
-    expect(tree.find('div')).toHaveLength(18);
+    expect(tree.find('div')).toHaveLength(17);
   });
 
   it('should display 2 img tag from the meals contents', () => {
@@ -83,10 +73,10 @@ describe('Test Component of ALLMeals component', () => {
 
   it('should cancel/remove modal that delete meal using cancelAdd method onclick event', () => {
     const cancelDelete = jest.spyOn(AllMeal.prototype, 'cancelDelete');
-    const tree = shallow(<AllMeal {...props} />);
+    let tree = shallow(<AllMeal {...props} />);
     // onClick event
     tree.find('#rice').simulate('click');
-    tree.find('.cancel-delete').simulate('click');
+    tree = tree.instance().cancelDelete();
     expect(tree).toMatchSnapshot();
     expect(cancelDelete).toHaveBeenCalled();
   });

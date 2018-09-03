@@ -13,8 +13,12 @@ const router = express.Router();
 // POST an order for the day
 router
   .post('/orders', jwtAuth.authUser, validate.order, Order.createOrder)
-  .put('/orders/:orderId', validate.updateOrder, jwtAuth.authUser, Order.updateOrder)
+  .put('/orders/:orderId', validate.updateOrder, validate.updateOrder, jwtAuth.authUser, Order.updateOrder)
   .put('/orderStatus/:orderId', jwtAuth.authUser, Order.confirmStatus)
   .get('/orders', jwtAuth.authAdmin, Order.getOrders)
-  .get('/user/orders', jwtAuth.authUser, Order.getUserOrders);
+  .get('/user/orders', jwtAuth.authUser, Order.getUserOrders)
+  .get('*', (req, res) => res.status(404).json({ message: '404 Not Found' }))
+  .post('*', (req, res) => res.status(404).json({ message: '404 Not Found' }))
+  .delete('*', (req, res) => res.status(404).json({ message: '404 Not Found' }))
+  .put('*', (req, res) => res.status(404).json({ message: '404 Not Found' }));
 export default router;

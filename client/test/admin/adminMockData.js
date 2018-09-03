@@ -2,29 +2,36 @@ export const props = {
   mostOrder: [
     {
       id: 1,
-      Meal: {
-        id: 1,
-        name: 'rice',
-        price: '400',
-        description: 'good',
-        image: 'image'
-      }
+      name: 'rice',
+      price: '400',
+      description: 'good',
+      image: 'image',
+      orderCount: 4
     }
   ],
   allOrder: {
-    rows: [
+    orders: [
       {
         id: 1,
+        status: 'confirmed',
         createdAt: '2018-05-4',
         updatedAt: '2018-05-4',
         address: 'Reverend Street',
-        status: 'pending',
         quantity: 3,
-        Meal: {
+        meals: [{
           id: 1,
           name: 'rice',
           price: '200',
-          descrption: 'Very delicious'
+          descrption: 'Very delicious',
+          orderMealItems: {
+            quantity: 3,
+            totalPrice: 4
+          }
+        }],
+        user: {
+          name: 'kevin',
+          image: 'image',
+          id: 1
         }
       }
     ]
@@ -77,7 +84,7 @@ export const emptyProps = {
   mostOrder: [
   ],
   allOrder: {
-    rows: [
+    orders: [
 
     ]
   },

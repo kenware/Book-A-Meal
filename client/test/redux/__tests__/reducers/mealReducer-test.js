@@ -1,7 +1,7 @@
 import reducer from '../../../../redux/reducer/mealsReducer';
 import * as types from '../../../../redux/Action/actionType';
 
-describe('MealReducer reducer', () => {
+describe('MealReducer test', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({ rows: [] });
   });

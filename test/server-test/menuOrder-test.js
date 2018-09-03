@@ -1,42 +1,28 @@
 
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import server from '../app';
-import model from '../server/models';
+import server from '../../app';
+import model from '../../server/models';
 
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
 
-let tokenUpdate = '';
+let tokenUser2 = '';
 let tokenUser = '';
 let tokenAdmin = '';
 let mealId = 0, menuId = 1, orderId = 0;
 let id1;
 describe('User information for Menu and Order controller', () => {
   before((done) => {
-    User.sync();
-    Meal.sync();
-    Menu.sync();
-    Order.sync();
-    MealMenu.sync();
-    notification.sync();
     User.destroy({
       where: {}
-    })
-      .then(() => {
-        done();
-      });
+    }).then(() => {
+      done();
+    });
   });
 
   it('admin should sign up ', (done) => {
@@ -77,7 +63,7 @@ describe('User information for Menu and Order controller', () => {
         res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        tokenUpdate = res.body.token;
+        tokenUser2 = res.body.token;
         done();
       });
   });
@@ -99,19 +85,6 @@ describe('User information for Menu and Order controller', () => {
         res.body.should.have.property('token');
         res.body.should.be.a('object');
         tokenUser = res.body.token;
-        done();
-      });
-  });
-
-  it('first User should update to admin', (done) => {
-    chai.request(server)
-      .post('/api/v1/auth/admin')
-      .set('authorization', tokenUpdate)
-      .end((err, res) => {
-        res.should.have.status(201);
-        res.body.should.have.property('message');
-        res.body.should.have.property('setAdmin');
-        res.body.should.be.a('object');
         done();
       });
   });
@@ -159,7 +132,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: '',
+        meals: '',
         orderBefore: (new Date().getHours() + 2),
       })
       .end((err, res) => {
@@ -176,7 +149,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: '34545jhjk',
+        meals: ['34545jhjk'],
         orderBefore: (new Date().getHours() + 1),
       })
       .end((err, res) => {
@@ -193,7 +166,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: id1,
+        meals: [id1],
         orderBefore: '',
       })
       .end((err, res) => {
@@ -210,7 +183,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: id1,
+        meals: [id1],
         orderBefore: '3455kl;;',
       })
       .end((err, res) => {
@@ -227,7 +200,7 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId: 400,
+        meals: [400],
         orderBefore: '3455',
       })
       .end((err, res) => {
@@ -237,6 +210,7 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   });
+
   it('Admin user should  not Get a menu that is not set', (done) => {
     chai.request(server)
       .get('/api/v1/menu')
@@ -273,11 +247,11 @@ describe('Testing of Menu middleware and controller', () => {
       .set('authorization', tokenAdmin)
       .send({
         title: 'today',
-        mealId,
+        meals: [mealId],
         orderBefore: (new Date().getHours() + 1),
       })
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.body.should.have.property('message');
         res.body.should.have.property('menu');
         res.body.should.be.a('object');
@@ -285,12 +259,13 @@ describe('Testing of Menu middleware and controller', () => {
         done();
       });
   }).timeout(10000);
+
   it('User should Get a menu', (done) => {
     chai.request(server)
       .get('/api/v1/menu?limit=1&offset=0')
       .set('authorization', tokenUser)
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.body.should.be.a('object');
         res.body.should.have.property('count');
         done();
@@ -301,83 +276,17 @@ describe('Testing of Menu middleware and controller', () => {
 
 // Testing of order middleware and controller. it depends on the menu set
 describe('Testing of Order middleware and controller', () => {
-  it('User should not order a meal without mealId', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId: '',
-        menuId,
-        quantity: 2,
-        address: 'no 19 reverend street'
-      })
-      .end((err, res) => {
-        res.should.have.status(401);
-        res.body.should.have.property('message').eql('mealId is required');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
   it('User should not order a meal without menuId', (done) => {
-    chai.request(server)
+    const newLocal = chai.request(server)
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
-        mealId: id1,
-        menuId: '',
-        quantity: 2,
-        address: 'no 19 reverend street'
-      })
-      .end((err, res) => {
-        res.should.have.status(401);
-        res.body.should.have.property('message').eql('menuId is required');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User should not order a meal without quantity', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId: id1,
-        menuId,
-        quantity: '',
-        address: 'no 19 reverend street'
-      })
-      .end((err, res) => {
-        res.should.have.status(401);
-        res.body.should.have.property('message').eql('quantity is required');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User should not order a meal without address', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId: id1,
-        menuId,
-        quantity: 2,
-        address: ''
-      })
-      .end((err, res) => {
-        res.should.have.status(401);
-        res.body.should.have.property('message').eql('address is required');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User should not order a meal with invalid menu id', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId: id1,
-        menuId: ' ',
-        quantity: 2,
-        address: 'no 19'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId: '',
+          quantity: 2
+        }]
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -385,16 +294,19 @@ describe('Testing of Order middleware and controller', () => {
         res.body.should.be.a('object');
         done();
       });
-  });
-  it('User should not order a meal with invalid meal id', (done) => {
+  }).timeout(10000);
+
+  it('User should not order a meal without a valid mealId', (done) => {
     chai.request(server)
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
-        mealId: '  hj',
-        menuId,
-        quantity: 2,
-        address: 'no 19'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId: '',
+          menuId,
+          quantity: 2
+        }]
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -403,15 +315,17 @@ describe('Testing of Order middleware and controller', () => {
         done();
       });
   });
-  it('User should not order a meal with invalid quantity input', (done) => {
+
+  it('User should not order a meal without quantity', (done) => {
     chai.request(server)
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
-        mealId: id1,
-        menuId,
-        quantity: 'hhjo',
-        address: 'no 19'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId
+        }]
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -420,67 +334,71 @@ describe('Testing of Order middleware and controller', () => {
         done();
       });
   });
-  it('User should not order a meal with a meal id that does not exist', (done) => {
+
+  it('User should order a meal', (done) => {
     chai.request(server)
       .post('/api/v1/orders')
       .set('authorization', tokenUser)
       .send({
-        mealId: 10000,
-        menuId,
-        quantity: 2,
-        address: 'no 19'
-      })
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.body.should.have.property('message').eql('Meal not found');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User should not order a meal with a menu id that does not exist', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId: id1,
-        menuId: 200,
-        quantity: 2,
-        address: 'no 19'
-      })
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.body.should.have.property('message').eql('Menu not found');
-        res.body.should.be.a('object');
-        done();
-      });
-  });
-  it('User order a meal', (done) => {
-    chai.request(server)
-      .post('/api/v1/orders')
-      .set('authorization', tokenUser)
-      .send({
-        mealId,
-        menuId,
-        quantity: 2,
-        address: 'no 19 reverend street'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
       })
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('address').eql('no 19 reverend street');
-        res.body.should.have.property('totalPrice').eql(1110);
-        res.body.should.have.property('status').eql('pending');
-        res.body.should.be.a('object');
-        orderId = res.body.id;
+        res.body[0].should.have.property('address').eql('no 19 reverend street');
+        res.body[0].should.have.property('status').eql('pending');
+        res.body[0].should.have.property('meals').be.a('array');
+        res.body[0].meals.length.should.be.eql(1);
+        res.body[0].should.be.a('object');
+        orderId = res.body[0].id;
         done();
       });
   });
+
+  it('User should order multiple meal', (done) => {
+    chai.request(server)
+      .post('/api/v1/orders')
+      .set('authorization', tokenUser)
+      .send({
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        },
+        {
+          mealId,
+          menuId,
+          quantity: 3
+        }]
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        res.body.length.should.be.eql(1);
+        res.body[0].should.have.property('address').eql('no 19 reverend street');
+        res.body[0].should.have.property('status').eql('pending');
+        res.body[0].should.have.property('meals').be.a('array');
+        res.body[0].meals.length.should.be.eql(2);
+        res.body[0].should.be.a('object');
+        done();
+      });
+  });
+
   it('User should not update order with aa bad order id params', (done) => {
     chai.request(server)
       .put('/api/v1/orders/a')
       .set('authorization', tokenUser)
       .send({
-        quantity: 3,
-        address: 'no 19 reverend street'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
       })
       .end((err, res) => {
         res.should.have.status(401);
@@ -489,13 +407,18 @@ describe('Testing of Order middleware and controller', () => {
         done();
       });
   });
-  it('User should not update order with orderId that does not exist', (done) => {
+
+  it('User should not update order that does not exist', (done) => {
     chai.request(server)
-      .put('/api/v1/orders/200')
+      .put('/api/v1/orders/100023')
       .set('authorization', tokenUser)
       .send({
-        quantity: 3,
-        address: 'no 19 reverend street'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 4
+        }]
       })
       .end((err, res) => {
         res.should.have.status(404);
@@ -504,34 +427,195 @@ describe('Testing of Order middleware and controller', () => {
         done();
       });
   });
+
+  it('User should not update order he did not order', (done) => {
+    chai.request(server)
+      .put(`/api/v1/orders/${orderId}`)
+      .set('authorization', tokenUser2)
+      .send({
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 4
+        }]
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('You cannot update order you did not add');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it('User should not update an order without quantity', (done) => {
+    chai.request(server)
+      .put(`/api/v1/orders/${orderId}`)
+      .set('authorization', tokenUser)
+      .send({
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          totalPrice: 400
+        }]
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Please provide a valid quantity');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
   it('User should update an order', (done) => {
     chai.request(server)
       .put(`/api/v1/orders/${orderId}`)
       .set('authorization', tokenUser)
       .send({
-        quantity: 1,
-        address: 'no 19 reverend street'
+        address: 'no 19 reverend street',
+        meals: [{
+          mealId,
+          menuId,
+          quantity: 3
+        }]
       })
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('address').eql('no 19 reverend street');
-        res.body.should.have.property('totalPrice').eql(555);
         res.body.should.have.property('status').eql('pending');
+        res.body.should.have.property('meals').be.a('array');
+        res.body.meals.length.should.be.eql(1);
         res.body.should.be.a('object');
         done();
       });
   });
+
+  it('Admin should not get orders with negative query param', (done) => {
+    chai.request(server)
+      .get('/api/v1/orders?limit=-1&offset=3')
+      .set('authorization', tokenAdmin)
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Your query param cannot be negative');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
   it('Admin should get all orders', (done) => {
     chai.request(server)
       .get('/api/v1/orders')
       .set('authorization', tokenAdmin)
-      .send({
-        quantity: 3,
-        address: 'no 19 reverend street'
-      })
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
+        res.body.should.have.property('orders').to.be.a('array');
+        done();
+      });
+  });
+
+  it('Users should not get orders with negative query param', (done) => {
+    chai.request(server)
+      .get('/api/v1/user/orders?limit=-1&offset=3')
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('Your query param cannot be negative');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it('User should not get orders when he has not ordered a meal', (done) => {
+    chai.request(server)
+      .get('/api/v1/user/orders')
+      .set('authorization', tokenUser2)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message').eql('You have not ordered a meal');
+        done();
+      });
+  });
+
+  it('User should get his orders', (done) => {
+    chai.request(server)
+      .get('/api/v1/user/orders')
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('orders').to.be.a('array');
+        done();
+      });
+  });
+
+  it('Users should not confirm order that does not exist', (done) => {
+    chai.request(server)
+      .put('/api/v1/orderStatus/64646')
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.have.property('message').eql('Order not found');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+});
+
+describe('Bad Requests', () => {
+  it('Should return 404 on GET bad request', (done) => {
+    chai.request(server)
+      .get('/api/v1/ordersbyme')
+      .set('authorization', tokenAdmin)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('object');
+        res.body.should.have.property('message').eql('404 Not Found');
+        done();
+      });
+  });
+
+  it('Should return 404 on put bad request', (done) => {
+    chai.request(server)
+      .put(`/api/v1/ordersinthelondon/${orderId}`)
+      .set('authorization', tokenUser)
+      .send({
+        quantity: 2,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('object');
+        res.body.should.have.property('message').eql('404 Not Found');
+        done();
+      });
+  });
+
+  it('Should return 404 on DELETE bad request', (done) => {
+    chai.request(server)
+      .delete(`/api/v1/ordersinthelondon/${orderId}`)
+      .set('authorization', tokenUser)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('object');
+        res.body.should.have.property('message').eql('404 Not Found');
+        done();
+      });
+  });
+
+  it('Should return 404 on put bad request', (done) => {
+    chai.request(server)
+      .post('/api/v1/mymealseals')
+      .set('authorization', tokenUser)
+      .send({
+        quantity: 2,
+        address: 'no 19 reverend street'
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('object');
+        res.body.should.have.property('message').eql('404 Not Found');
         done();
       });
   });

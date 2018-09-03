@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route, Link } from 'react-router-dom';
 
 const monthNames = [
   'January', 'February', 'March',
@@ -12,7 +13,7 @@ const monthNames = [
    * timeline components
    * displays notification
   */
-const Timeline = ({ notifics }) => (
+const Timeline = ({ notifics, upGrade }) => (
   <ul className="timeline" >
     <li>
       <div className="timeline-badge"><em className="fa fa-camera" /></div>
@@ -26,14 +27,21 @@ const Timeline = ({ notifics }) => (
               <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="profil" />
             </li>
             <li>
-              <span className="h2-color">Keny</span>
+              <span className="h2-color">{window.localStorage.getItem('username')}</span>
             </li>
             <li>
-              <span className="h2-color">Update profile</span>
+              <span className="h2-color"><Link to="/profile">profile</Link></span>
             </li>
-            <li><span className="h2-color" role="button"> Change Password</span></li>
             {window.localStorage.getItem('role') === 'user' ?
-              <li><button className="p-color"> Upgrade To A Caterer</button></li>
+              <li>
+                <button
+                  id="userUpgrade"
+                  onClick={upGrade}
+                  style={{ backgroundColor: '#b8b507', color: 'white', minHeight: '2rem' }}
+                >
+                  Upgrade To A Caterer
+                </button>
+              </li>
             : <span />
             }
           </ul>
@@ -83,5 +91,6 @@ const Timeline = ({ notifics }) => (
 );
 Timeline.propTypes = {
   notifics: PropTypes.array.isRequired,
+  upGrade: PropTypes.func.isRequired
 };
 export default Timeline;

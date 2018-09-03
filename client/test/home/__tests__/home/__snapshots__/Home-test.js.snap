@@ -2,7 +2,11 @@
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -111,14 +115,12 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       mostOrder={
         Array [
           Object {
-            "Meal": Object {
-              "description": "good",
-              "id": 1,
-              "image": "image",
-              "name": "rice",
-              "price": "400",
-            },
+            "count": 8,
+            "description": "good",
             "id": 1,
+            "image": "image",
+            "name": "rice",
+            "price": "400",
           },
         ]
       }
@@ -214,7 +216,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 2`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -323,14 +329,12 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       mostOrder={
         Array [
           Object {
-            "Meal": Object {
-              "description": "good",
-              "id": 1,
-              "image": "image",
-              "name": "rice",
-              "price": "400",
-            },
+            "count": 8,
+            "description": "good",
             "id": 1,
+            "image": "image",
+            "name": "rice",
+            "price": "400",
           },
         ]
       }
@@ -426,7 +430,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component it should flip card on mouseEnter and mouseLeave event 3`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -535,14 +543,12 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
       mostOrder={
         Array [
           Object {
-            "Meal": Object {
-              "description": "good",
-              "id": 1,
-              "image": "image",
-              "name": "rice",
-              "price": "400",
-            },
+            "count": 8,
+            "description": "good",
             "id": 1,
+            "image": "image",
+            "name": "rice",
+            "price": "400",
           },
         ]
       }
@@ -638,7 +644,11 @@ exports[`Test Home Component it should flip card on mouseEnter and mouseLeave ev
 
 exports[`Test Home Component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="carousel-header"
   >
@@ -747,14 +757,12 @@ exports[`Test Home Component renders correctly 1`] = `
       mostOrder={
         Array [
           Object {
-            "Meal": Object {
-              "description": "good",
-              "id": 1,
-              "image": "image",
-              "name": "rice",
-              "price": "400",
-            },
+            "count": 8,
+            "description": "good",
             "id": 1,
+            "image": "image",
+            "name": "rice",
+            "price": "400",
           },
         ]
       }
@@ -858,26 +866,22 @@ exports[`Test Home Component should respond to mapStateToProps methods 1`] = `
 Object {
   "mealFlip": Array [
     Object {
-      "Meal": Object {
-        "description": "good",
-        "id": 1,
-        "image": "image",
-        "name": "rice",
-        "price": "400",
-      },
+      "count": 8,
+      "description": "good",
       "id": 1,
+      "image": "image",
+      "name": "rice",
+      "price": "400",
     },
   ],
   "mostOrder": Array [
     Object {
-      "Meal": Object {
-        "description": "good",
-        "id": 1,
-        "image": "image",
-        "name": "rice",
-        "price": "400",
-      },
+      "count": 8,
+      "description": "good",
       "id": 1,
+      "image": "image",
+      "name": "rice",
+      "price": "400",
     },
   ],
 }

@@ -81,7 +81,7 @@ export default class mailController {
       if (error) {
         return res.json(error);
       }
-      return res.json({ message, menu });
+      return res.status(201).json({ message, menu });
     });
   }
 

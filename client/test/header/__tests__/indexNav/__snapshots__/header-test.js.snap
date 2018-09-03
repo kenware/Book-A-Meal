@@ -22,7 +22,6 @@ exports[`Testing of sidebar component should render properly 1`] = `
     <span />
     <span />
     <span />
-    <span />
     <Link
       className="a"
       replace={false}
@@ -36,13 +35,6 @@ exports[`Testing of sidebar component should render properly 1`] = `
       to="/register"
     >
       SignUp
-    </Link>
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
     </Link>
     <span
       className="a icon"
@@ -76,40 +68,22 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
-    <span
-      className="a"
-      onClick={[Function]}
-      role="button"
-    >
-      LogOut
-    </span>
+    <span />
+    <span />
+    <span />
     <Link
       className="a"
       replace={false}
-      to="/profile"
+      to="/login"
     >
-      <em
-        className="fa fa-user"
-      />
-        
-      user
+      Login
     </Link>
-    <span />
     <Link
       className="a"
       replace={false}
-      to="/dashboard"
+      to="/register"
     >
-      dashboard
-    </Link>
-    <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
+      SignUp
     </Link>
     <span
       className="a icon"
@@ -143,40 +117,22 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
-    <span
-      className="a"
-      onClick={[Function]}
-      role="button"
-    >
-      LogOut
-    </span>
+    <span />
+    <span />
+    <span />
     <Link
       className="a"
       replace={false}
-      to="/profile"
+      to="/login"
     >
-      <em
-        className="fa fa-user"
-      />
-        
-      admin
+      Login
     </Link>
     <Link
       className="a"
       replace={false}
-      to="/admin"
+      to="/register"
     >
-      Admin
-    </Link>
-    <span />
-    <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
+      SignUp
     </Link>
     <span
       className="a icon"
@@ -210,40 +166,22 @@ exports[`Testing of sidebar component should render properly with user info in t
     >
       Book-A-Meal
     </Link>
-    <span
-      className="a"
-      onClick={[Function]}
-      role="button"
-    >
-      LogOut
-    </span>
+    <span />
+    <span />
+    <span />
     <Link
       className="a"
       replace={false}
-      to="/profile"
+      to="/login"
     >
-      <em
-        className="fa fa-user"
-      />
-        
-      user
+      Login
     </Link>
-    <span />
     <Link
       className="a"
       replace={false}
-      to="/dashboard"
+      to="/register"
     >
-      dashboard
-    </Link>
-    <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
+      SignUp
     </Link>
     <span
       className="a icon"
@@ -261,7 +199,7 @@ exports[`Testing of sidebar component should render properly with user info in t
 exports[`Testing of sidebar component should respond to click method 1`] = `
 <div>
   <div
-    className="nav responsive"
+    className="nav "
     id="myTopnav"
   >
     <Link
@@ -277,40 +215,22 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
     >
       Book-A-Meal
     </Link>
-    <span
-      className="a"
-      onClick={[Function]}
-      role="button"
-    >
-      LogOut
-    </span>
+    <span />
+    <span />
+    <span />
     <Link
       className="a"
       replace={false}
-      to="/profile"
+      to="/login"
     >
-      <em
-        className="fa fa-user"
-      />
-        
-      user
+      Login
     </Link>
-    <span />
     <Link
       className="a"
       replace={false}
-      to="/dashboard"
+      to="/register"
     >
-      dashboard
-    </Link>
-    <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
+      SignUp
     </Link>
     <span
       className="a icon"
@@ -344,40 +264,22 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
     >
       Book-A-Meal
     </Link>
-    <span
-      className="a"
-      onClick={[Function]}
-      role="button"
-    >
-      LogOut
-    </span>
+    <span />
+    <span />
+    <span />
     <Link
       className="a"
       replace={false}
-      to="/profile"
+      to="/login"
     >
-      <em
-        className="fa fa-user"
-      />
-        
-      user
+      Login
     </Link>
-    <span />
     <Link
       className="a"
       replace={false}
-      to="/dashboard"
+      to="/register"
     >
-      dashboard
-    </Link>
-    <span />
-    <span />
-    <Link
-      className="active a"
-      replace={false}
-      to="/meals"
-    >
-      Home
+      SignUp
     </Link>
     <span
       className="a icon"

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Modal from 'react-responsive-modal';
 
 import Header from '../header/index';
 import Header3 from '../header/header3';
@@ -17,34 +18,41 @@ import * as actions from '../../redux/Action/action';
 import Timeline from './timeline';
 import auth from '../../authenticate/auth';
 import history from '../../history';
+import CheckOutModal from './modals/checkOutModal';
 
 export class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nav1: '',
-      nav2: 'nav2',
+      open: false,
+      nav1: 'nav1',
+      nav2: '',
       modal: 'modal',
-      timeline: 'timeliner',
-      main: 'main-sidebar1',
+      timeline: '',
+      main: 'main-sidebar2',
       dash: 'dash',
+      order: 'order',
       cPassword: 'cPassword',
       profile: 'profile',
       notific: 'notific',
       logOut: 'logOut',
-      order: 'order',
-      limit: 4,
-      upgradeModal: 'modal',
+      orderBtn: 'Check Out',
+      upgradeModal: false,
       upgradeButton: 'Upgrade',
-      Redirect: false
+      orderError: '',
+      Redirect: false,
+      address: ''
     };
     this.upgrade = this.upgrade.bind(this);
     this.confirmUpgrade = this.confirmUpgrade.bind(this);
-    this.cancelUpgrade = this.cancelUpgrade.bind(this);
     this.logOut = this.logOut.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.toggle = this.toggle.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.onModal = this.onModal.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.orderMeal = this.orderMeal.bind(this);
+    this.removeFromeCart = this.removeFromeCart.bind(this);
   }
   /**
    * lifecycle hook called when component is mounted to DOM
@@ -64,17 +72,35 @@ export class Dashboard extends Component {
    * @memberof Dashboard index
    * return state after it is changed
    */
-  static getDerivedStateFromProps(props) {
-    if (props.successMessage.upgradeSuccess) {
-      return { upgradeModal: 'modal' };
+  componentWillReceiveProps(newProps) {
+    if (newProps.successMessage.orderSuccess) {
+      this.setState({
+        orderBtn: 'Check Out',
+        open: false
+      });
+      this.props.cart.cart = [];
+    } else if (newProps.successMessage.upgradeSuccess) {
+      this.setState({
+        upgradeModal: false,
+        upgradeButton: 'upGrade',
+        admin: true
+      });
     }
-    return null;
   }
+
   /**
-   * cancel upgrade using modal
-   */
-  cancelUpgrade() {
-    this.setState({ upgradeModal: 'modal' });
+   * @param  {} e set state on input onchange event
+  */
+  onChange(e) {
+    const { state } = this;
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  }
+
+  onModal() {
+    this.setState({
+      open: !this.state.open
+    });
   }
   /**
    * go ahead to upgrade user to caterer
@@ -89,7 +115,7 @@ export class Dashboard extends Component {
    * Dispaly modal upgrade
    */
   upgrade() {
-    this.setState({ upgradeModal: '' });
+    this.setState({ upgradeModal: !this.state.upgradeModal });
   }
   // logout and redirect to home
   logOut() {
@@ -126,15 +152,70 @@ export class Dashboard extends Component {
     state[value] = '';
     this.setState(state);
   }
+
+  /**
+   * Orders meal
+   * calls redux action
+  */
+  orderMeal() {
+    const {
+      address
+    } = this.state;
+    if (!address) { return this.setState({ orderError: 'Address is required' }); }
+    const order = {
+      address: this.state.address,
+      meals: this.props.cart.cart
+    };
+    this.props.orderActions.orderMeal(order);
+    this.setState({
+      orderBtn: (<div><i className="fa fa-spinner fa-spin fa-2x fa-fw" aria-hidden="true" /></div>)
+    });
+  }
+  removeFromeCart(cart) {
+    const myCart = this.props.cart.cart;
+    const index = myCart.indexOf(cart);
+    const newCart = this.props.cart.cart.splice(index, 1);
+    this.setState({ open: true });
+  }
   render() {
+    if (this.state.admin) { return (<Redirect to="/admin" />); }
     return (
       <div>
         <span className="largeScreen-header">
-          <Header />
+          <Header component="dash" onModal={this.onModal} cart={this.props.cart.cart} />
         </span>
         <span className="smallScreen-header">
           <Header3 />
         </span>
+        <div className="react-modal">
+          <Modal open={this.state.open} onClose={this.onModal} center>
+            <CheckOutModal
+              checkOut={this.checkOut}
+              carts={this.props.cart.cart}
+              state={this.state}
+              onChange={this.onChange}
+              removeFromeCart={this.removeFromeCart}
+            />
+            <button onClick={this.orderMeal} className="checkout-btn">{this.state.orderBtn}</button>
+          </Modal>
+          <Modal open={this.state.upgradeModal} onClose={this.upgrade} center>
+            <div className="modal-upgrade">
+              <p className="justify l-r-pad-text danger">
+                {this.props.errorMessage.upgradeError}
+              </p>
+              <h4 className="">
+              You are about to upgrade to an admin
+              </h4>
+            </div>
+            <button
+              onClick={this.confirmUpgrade}
+              id="upgrade"
+              className="checkout-btn"
+            >
+              {this.state.upgradeButton}
+            </button>
+          </Modal>
+        </div>
         <div className="admin-container">
           <nav className={`sidebar sidebar1-width ${this.state.nav1}`}>
             <div>
@@ -241,7 +322,7 @@ export class Dashboard extends Component {
           </nav>
 
           <main className={`main ${this.state.main}`} id="main">
-            <header className="header p-color">
+            <header className="header p-color smallScreen-header">
               <div className="l-r-pad-text">
                 <h4 className="">USER DASHBOARD</h4>
                 { window.localStorage.getItem('role') === 'user' ?
@@ -249,43 +330,27 @@ export class Dashboard extends Component {
                 : <Link to="/admin" className="y-color">Manage your meals</Link>
                 }
               </div>
-              <div>
-                <h4 className="">{window.localStorage.getItem('username')}</h4>
+              <div> <br /><br />
                 <img src={window.localStorage.getItem('image')} className="user-img rounded-circle" alt="user" />
               </div>
-              <div className="notification1">
+              <div className="notification1"><br />
                 <span className="hover" onClick={this.toggle} role="button">
-                  <h4 className=" hover">Notification</h4>
-                  <em className="fa fa-bars l-r-pad-text y-color hover" />
+                  <h4 className=" hover"><em className="fa fa-bell notif" /></h4>
                 </span>
               </div>
-
-            </header>
-
-            <div className="content-container">
-              <div className={`modal-order ${this.state.upgradeModal}`}>
-                <button
-                  style={{ float: 'right', backgroundColor: 'red', display: 'block' }}
-                  className="remove-modal"
-                  onClick={this.cancelUpgrade}
-                >
-                  &times;
-                </button>
-                <div className="modal-order-content" style={{ margin: '1rem 1rem 1rem 1rem' }}>
-                  <p className="justify l-r-pad-text"> You are about to upgrade to admin/Caterer</p>
-                  <p className="justify l-r-pad-text danger">{this.props.errorMessage.upgradeError}</p>
-                </div>
-                <div className="modal-order-content">
-                  <button className="remove-modal confirmUpgrade" onClick={this.confirmUpgrade}>{this.state.upgradeButton}</button><button onClick={this.cancelUpgrade}className="remove-modal cancelUpgrade">Cancel</button>
-                </div>
+              <div onClick={this.onModal} role="button" >
+                <br /><br />
+                <em className="p-color">{this.props.cart.cart.length}</em>
+                <i className="fa fa-shopping-cart fa-2x" aria-hidden="true" />
               </div>
-
+            </header>
+            <div className="content-container">
               <Route exact path="/dashboard" component={MyMenu} />
               <Route exact path="/dashboard/profile" component={Profil} />
               <Route exact path="/dashboard/orders" component={Order} />
               <div className={`timeline-container ${this.state.timeline}`}>
                 <h2>Timeline</h2>
-                <Timeline notifics={this.props.notifics} />
+                <Timeline notifics={this.props.notifics} upGrade={this.upgrade} />
               </div>
 
             </div>
@@ -303,6 +368,8 @@ Dashboard.propTypes = {
   notifics: PropTypes.array.isRequired,
   errorMessage: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired,
+  orderActions: PropTypes.object.isRequired
 };
 
 export function mapStateToProps(state) {
@@ -310,7 +377,8 @@ export function mapStateToProps(state) {
   return {
     errorMessage: state.errorMessage,
     successMessage: state.successMessage,
-    notifics
+    notifics,
+    cart: state.cart
   };
 }
 export function mapDispatchToProps(dispatch) {

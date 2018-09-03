@@ -50,7 +50,7 @@ export class Admin extends Component {
    * refreshes token if it is not expired or logout and redirect to home if expired
    */
   componentDidMount() {
-    this.props.mealActions.loadMostOrderedMeal();
+    this.props.mealActions.loadMostOrderedMeal(5);
     this.props.orderActions.getAllOrders();
     this.props.actions.refreshToken('admin');
   }
@@ -122,7 +122,7 @@ export class Admin extends Component {
     return (
       <div>
         <span className="largeScreen-header">
-          <Header />
+          <Header component="admin" />
         </span>
         <span className="smallScreen-header">
           <Header2 />
@@ -136,7 +136,7 @@ export class Admin extends Component {
             logOut={this.logOut}
           />
           <main className={`main ${this.state.main}`} id="main">
-            <header className="header">
+            <header className="header smallScreen-header">
               <div className="l-r-pad-text">
                 <h4 className="p-color">ADMIN</h4>
               </div>
@@ -182,7 +182,8 @@ Admin.propTypes = {
 export const mapStateToProps = state => ({
   errorMessage: state.errorMessage,
   mostOrder: state.mostOrder,
-  allOrder: state.allOrder
+  allOrder: state.allOrder,
+  cart: state.cart
 });
 
 export const mapDispatchToProps = dispatch => ({

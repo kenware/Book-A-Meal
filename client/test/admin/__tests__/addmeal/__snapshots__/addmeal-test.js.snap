@@ -130,6 +130,8 @@ exports[`Test index Component of addmeal component it should change display erro
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -300,6 +302,8 @@ exports[`Test index Component of addmeal component it should change display erro
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -352,20 +356,31 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
   activePage={1}
   allOrder={
     Object {
-      "rows": Array [
+      "orders": Array [
         Object {
-          "Meal": Object {
-            "descrption": "Very delicious",
-            "id": 1,
-            "name": "rice",
-            "price": "200",
-          },
           "address": "Reverend Street",
           "createdAt": "2018-05-4",
           "id": 1,
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
           "quantity": 3,
-          "status": "pending",
+          "status": "confirmed",
           "updatedAt": "2018-05-4",
+          "user": Object {
+            "id": 1,
+            "image": "image",
+            "name": "kevin",
+          },
         },
       ],
     }
@@ -410,14 +425,12 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
   mostOrder={
     Array [
       Object {
-        "Meal": Object {
-          "description": "good",
-          "id": 1,
-          "image": "image",
-          "name": "rice",
-          "price": "400",
-        },
+        "description": "good",
         "id": 1,
+        "image": "image",
+        "name": "rice",
+        "orderCount": 4,
+        "price": "400",
       },
     ]
   }
@@ -564,6 +577,8 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                 disableClick={false}
                 disablePreview={false}
                 disabled={false}
+                getDataTransferItems={[Function]}
+                inputProps={Object {}}
                 maxSize={Infinity}
                 minSize={0}
                 multiple={false}
@@ -586,6 +601,7 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                       "borderStyle": "dashed",
                       "borderWidth": 2,
                       "height": 200,
+                      "position": "relative",
                       "width": 200,
                     }
                   }
@@ -599,7 +615,13 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                     onChange={[Function]}
                     style={
                       Object {
-                        "display": "none",
+                        "bottom": 0,
+                        "left": 0,
+                        "opacity": 0.00001,
+                        "pointerEvents": "none",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
                       }
                     }
                     type="file"
@@ -770,6 +792,8 @@ exports[`Test index Component of addmeal component should respond addMeal method
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -821,8 +845,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
@@ -990,6 +1012,8 @@ exports[`Test index Component of addmeal component should should respond to drop
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -998,6 +1022,18 @@ exports[`Test index Component of addmeal component should should respond to drop
             >
               Drag and drop or click to select an image to upload.
             </t>
+            <img
+              alt="upload"
+              className="img-fluid"
+              key="image/l.jpg"
+              src="image/l.jpg"
+              style={
+                Object {
+                  "height": "200px",
+                  "width": "200px",
+                }
+              }
+            />
           </span>
         </div>
         <div
@@ -1162,6 +1198,8 @@ exports[`Test index Component of addmeal component should should respond to life
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1334,6 +1372,8 @@ exports[`Test index Component of addmeal component should should respond to life
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}

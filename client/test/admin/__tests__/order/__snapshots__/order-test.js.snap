@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Component of Order component renders correctly 1`] = `
+exports[`Test Admin Order component renders correctly 1`] = `
 <div
   className="order-container"
   style={
     Object {
       "justifyContent": "spaceAround",
-      "marginTop": "4rem",
+      "marginTop": "6rem",
     }
   }
 >
@@ -21,6 +21,12 @@ exports[`Test Component of Order component renders correctly 1`] = `
   </h2>
   <div
     className="order-wrapper"
+    style={
+      Object {
+        "marginLeft": "5%",
+        "marginRight": "5%",
+      }
+    }
   >
     <AreaChart
       barCategoryGap="10%"
@@ -30,7 +36,7 @@ exports[`Test Component of Order component renders correctly 1`] = `
           Object {
             "name": "rice...",
             "price": "400",
-            "totalOrder": undefined,
+            "totalOrder": 4,
           },
         ]
       }
@@ -46,7 +52,7 @@ exports[`Test Component of Order component renders correctly 1`] = `
       }
       reverseStackOrder={false}
       stackOffset="none"
-      width={670}
+      width={1000}
     >
       <defs>
         <linearGradient
@@ -222,74 +228,190 @@ exports[`Test Component of Order component renders correctly 1`] = `
       />
     </AreaChart>
   </div>
+  <h2
+    style={
+      Object {
+        "marginTop": "4rem",
+      }
+    }
+  >
+    ORDER HISTORY OF ALL USERS
+  </h2>
   <div
     className="order-wrapper"
   >
-    <h2
-      style={
-        Object {
-          "marginTop": "4rem",
-        }
-      }
-    >
-      ORDER HISTORY OF ALL USERS
-    </h2>
     <span>
-      <table>
-        <tbody>
-          <tr>
-            <th>
-              Name
-            </th>
-            <th>
-              Quanitity
-            </th>
-            <th>
-              Price (#)
-            </th>
-            <th>
-              Total price
-            </th>
-            <td>
-              Address
-            </td>
-            <td>
-              Date
-            </td>
-            <td>
-              Status
-            </td>
-          </tr>
-          <tr
-            className="order-contents"
-            key="1"
+      <AccordionWrapper
+        accordion={true}
+        className="accordion"
+        onChange={[Function]}
+      >
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
           >
-            <td>
-              rice
-            </td>
-            <td>
-              3
-            </td>
-            <td>
-              200
-            </td>
-            <td />
-            <td>
-              Reverend Street
-            </td>
-            <td>
-              May
-               
-              4
-                
-              2018
-            </td>
-            <td>
-              pending
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <div
+              className="accordion__meal"
+            />
+            <div
+              className="order-accordion accordion-color"
+            >
+              <div>
+                 S/N 
+              </div>
+              <div>
+                Total price
+              </div>
+              <div>
+                Address
+              </div>
+              <div>
+                Date
+              </div>
+              <div>
+                Status
+              </div>
+              <div>
+                Username
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+        </AccordionItemWrapper>
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+          key="1"
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__arrow u-postion-relative"
+            />
+            <div
+              className="order-accordion"
+            >
+              <div
+                className="order-"
+              >
+                1
+              </div>
+              <div
+                className="order-contents "
+              />
+              <div
+                className="order-contents"
+              >
+                Reverend Street
+              </div>
+              <div
+                className="order-contents "
+              >
+                May
+                 
+                4
+                  
+                2018
+              </div>
+              <div
+                className="order-contents"
+              >
+                confirmed
+              </div>
+              <div
+                className="order-contents "
+              />
+            </div>
+          </AccordionItemTitleWrapper>
+          <AccordionItemBodyWrapper
+            className="accordion__body"
+            hideBodyClassName="accordion__body--hidden"
+          >
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
       <div
         className="meal-pagination"
       >
