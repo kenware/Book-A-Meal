@@ -3,7 +3,6 @@ import React from 'react';
 const mealGuide = () => (
   <div>
     <h2>ORDER A MEAL IN A TWO MORE EASY STEPS</h2>
-    <h4 className="p-color text-center">Choose and order a meal in todays menu using the order button</h4>
     <div className="all-meal-step">
       <div className="meal-day">
         <div >
@@ -30,6 +29,7 @@ const mealGuide = () => (
         </div>
       </div>
     </div>
+    <h4 className="p-color text-center">Add meals to cart from menu of different caterers</h4>
   </div>
 );
 export default mealGuide;

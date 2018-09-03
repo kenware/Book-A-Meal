@@ -19,7 +19,7 @@
   }
 
   .sidebar1-width {
-    width:25%;
+    width:20%;
   }
 
   .sidebar2-width {
@@ -31,8 +31,8 @@
   }
 
 .main-sidebar1 {
-      width:75%;
-      margin-left: 25%;
+      width:80%;
+      margin-left: 20%;
   }
   .main-sidebar2 {
     width:90%;
@@ -122,22 +122,24 @@
   width: 50px;
 }
 
-table {
+.table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   border: 1px solid #ddd;
 }
 
-th, td {
+.th, .td {
   text-align: left;
   padding: 8px;
 }
-tr {
+.tr-height {
   height: 6rem;
 }
 //tr:nth-child(even){background-color: #d7dfdf}
-tr:nth-child(odd) {background-color: #d7dfdf}
+.tr{
+  tr:nth-child(odd) {background-color: #d7dfdf}
+}
 
 .y-color {
     color: rgb(215, 226, 112);
@@ -145,7 +147,8 @@ tr:nth-child(odd) {background-color: #d7dfdf}
   }
 .order-wrapper {
   overflow-x: auto;
-  margin: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
   .sidebar {
     color:white;
@@ -260,9 +263,9 @@ tr:nth-child(odd) {background-color: #d7dfdf}
   }
 }
   @media screen and (max-width: 745px) {
-  input { 
-    border-color:  rgb(215, 226, 112);;
-  }
+    input, textarea, select {
+      border:1px solid rgb(215, 226, 112);
+    }
   .meal-container{
     order:2;
   }
@@ -338,7 +341,7 @@ tr:nth-child(odd) {background-color: #d7dfdf}
 .hover:hover {
   color: lightseagreen;
 }
-.accordion {
+.menuAccordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -420,4 +423,14 @@ tr:nth-child(odd) {background-color: #d7dfdf}
 .flex-direction {
   display: flex;
   flex-direction: column;
+}
+.react-modal {
+  margin-left: 0.5rem;
+  margin-left: 0.5rem;
+}
+.checkout-btn {
+  margin: 1rem;
+  float: right;
+  min-height: 2rem;
+  font-size: 15px;
 }

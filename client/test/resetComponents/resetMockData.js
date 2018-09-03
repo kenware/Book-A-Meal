@@ -1,4 +1,5 @@
 export const props = {
+  onModal: jest.fn(),
   match: {
     params: {
       token: '3838bhjw747yb'
@@ -17,6 +18,7 @@ export const props = {
 };
 
 export const emptyProps = {
+  onModal: jest.fn(),
   errorMessage: {
     resetError: ''
   },

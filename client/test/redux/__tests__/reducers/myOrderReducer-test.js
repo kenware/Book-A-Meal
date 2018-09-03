@@ -1,9 +1,9 @@
 import reducer from '../../../../redux/reducer/myOrderReducer';
 import * as types from '../../../../redux/Action/actionType';
 
-describe('MealReducer reducer', () => {
+describe('My order Reducer test', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual([]);
+    expect(reducer(undefined, {})).toEqual({ orders: [] });
   });
 
   it('should handle LOAD_MY_ORDER', () => {

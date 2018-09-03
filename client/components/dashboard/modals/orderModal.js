@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './orderModal.scss';
+import './modal.scss';
 
 const orderModal = ({ state, modify, onChange }) => (
   <div className="">
@@ -21,15 +21,13 @@ const orderModal = ({ state, modify, onChange }) => (
     </div>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text"> Quantity: </span>
-      <span className="modal-items "><input id="quantity" value={state.quantity} name="quantity" type="number" onChange={onChange} /></span>
+      <input className="modal-menu select" id="quantity" value={state.quantity} name="quantity" type="number" onChange={onChange} />
     </div>
     <div className="modal-contents">
       <span className="modal-items l-r-pad-text address"> Address: </span>
-      <span className="modal-items "><input id="address" value={state.address} name="address" type="text" onChange={onChange} /></span>
+      <textarea rows="4" className="modal-menu" id="address" value={state.address} name="address" type="text" onChange={onChange} />
     </div>
-    <div className="modal-footer l-r-pad-text">
-      <button onClick={modify} className="remove-modal modify">{state.modifyOrder}</button>
-    </div>
+    <button onClick={modify} className="checkout-btn">{state.modifyOrder}</button>
   </div>
 );
 

@@ -12,11 +12,11 @@ export const mostOrdered = ({ mostOrder }) => (
         <div className="meal-menu-card">
           <div className="meal-img-wrap">
             <div className="meal-overlay" />
-            <img src={meal.Meal.image} alt="Avatar" className="meal-card-img" />
+            <img src={meal.image} alt="Avatar" className="meal-card-img" />
           </div>
           <div className="container l-r-pad-text">
-            <h4 className="p-color"><b>${meal.Meal.price}</b></h4>
-            <p>{meal.Meal.name}</p>
+            <h4 className="p-color"><b>${meal.price}</b></h4>
+            <p>{meal.name}</p>
             <Link to="/dashboard">View</Link>
           </div>
         </div>

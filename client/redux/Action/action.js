@@ -3,8 +3,6 @@ import * as types from './actionType';
 import auth from '../../authenticate/auth';
 import history from '../../history';
 
-export const loadMostOrdered = mostOrder => ({ type: types.LOAD_MOST_ORDERED, mostOrder });
-
 export const loadErrorMessage = errorMessage => ({ type: types.LOAD_ERROR_MESSAGE, errorMessage });
 
 export const loadSuccessMessage = successMessage => ({
@@ -14,11 +12,6 @@ export const loadSuccessMessage = successMessage => ({
 export const loadNotifications = notifics => ({ type: types.LOAD_NOTIFICATIONS, notifics });
 
 export const loadUser = user => ({ type: types.LOAD_USER, user });
-
-export const loadMostOrderedMeal = () => dispatch => window.fetch('/api/v1/mostOrder/meals/6')
-  .then(res => res.json())
-  .then(mostOrder =>
-    dispatch(loadMostOrdered(mostOrder)));
 
 export const register = (name, username, email, password) => dispatch => window.fetch('/api/v1/auth/signup', {
   method: 'POST',

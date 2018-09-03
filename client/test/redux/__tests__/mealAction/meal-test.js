@@ -18,13 +18,13 @@ describe('async meal actions test', () => {
   it('should  LOAD_MOST_ORDERED meal ', () => {
     const meal = [{ name: 'rice' }];
     fetchMock
-      .getOnce('/api/v1/mostOrder/meals/6', { body: meal });
+      .getOnce('/api/v1/mostOrder/meals?limit=2', { body: meal });
 
     const expectedActions = [
       { type: types.LOAD_MOST_ORDERED, mostOrder: meal }
     ];
     const store = mockStore({ meal: [] });
-    return store.dispatch(actions.loadMostOrderedMeal()).then(() => {
+    return store.dispatch(actions.loadMostOrderedMeal(2)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });

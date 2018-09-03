@@ -5,8 +5,9 @@ export default {
   errorMessage: {},
   successMessage: {},
   menu: { rows: [] },
-  myOrder: { rows: [] },
-  allOrder: { rows: [] },
+  myOrder: { orders: [] },
+  allOrder: { orders: [] },
   notifics: [],
-  menuMeals: { meals: [] }
+  menuMeals: { meals: [] },
+  cart: []
 };

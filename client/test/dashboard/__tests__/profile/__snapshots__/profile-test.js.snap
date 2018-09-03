@@ -23,6 +23,12 @@ exports[`Test Profile component renders correctly 1`] = `
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": Array [],
+    }
+  }
+  cartModal={[MockFunction]}
   confirmOrder={[MockFunction]}
   errorMessage={
     Object {
@@ -58,7 +64,8 @@ exports[`Test Profile component renders correctly 1`] = `
       "count": 4,
       "rows": Array [
         Object {
-          "Meals": Array [
+          "id": 1,
+          "meals": Array [
             Object {
               "desctription": "good",
               "id": 1,
@@ -66,12 +73,11 @@ exports[`Test Profile component renders correctly 1`] = `
               "price": 100,
             },
           ],
-          "User": Object {
+          "user": Object {
             "email": "ken@gmail.com",
             "name": "ken",
             "usrername": "ken",
           },
-          "id": 1,
         },
       ],
     }
@@ -94,22 +100,30 @@ exports[`Test Profile component renders correctly 1`] = `
     }
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "pending",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -142,6 +156,7 @@ exports[`Test Profile component renders correctly 1`] = `
       "upgradeSuccess": " good",
     }
   }
+  upGrade={[MockFunction]}
   user={
     Object {
       "email": "ken@gmaoil.com",
@@ -267,6 +282,8 @@ exports[`Test Profile component renders correctly 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -289,6 +306,7 @@ exports[`Test Profile component renders correctly 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -306,7 +324,13 @@ exports[`Test Profile component renders correctly 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -361,6 +385,11 @@ exports[`Test Profile component should display error messages from redux error p
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
@@ -405,22 +434,30 @@ exports[`Test Profile component should display error messages from redux error p
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -554,6 +591,8 @@ exports[`Test Profile component should display error messages from redux error p
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -576,6 +615,7 @@ exports[`Test Profile component should display error messages from redux error p
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -593,7 +633,13 @@ exports[`Test Profile component should display error messages from redux error p
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -706,6 +752,11 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
@@ -750,22 +801,30 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -899,6 +958,8 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -921,6 +982,7 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -938,7 +1000,13 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -1056,6 +1124,11 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
@@ -1100,22 +1173,30 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1249,6 +1330,8 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1271,6 +1354,7 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1288,7 +1372,13 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -1406,6 +1496,11 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
@@ -1450,22 +1545,30 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1599,6 +1702,8 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1621,6 +1726,7 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1638,7 +1744,13 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -1736,6 +1848,11 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": [MockFunction],
+    }
+  }
   errorMessage={
     Object {
       "createMealError": "",
@@ -1780,22 +1897,30 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
     ]
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "confirmed",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -1929,6 +2054,8 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1951,6 +2078,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1968,7 +2096,13 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"
@@ -2010,8 +2144,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],
@@ -2085,6 +2217,12 @@ exports[`Test Profile component should respond to onChange event 1`] = `
     }
   }
   activePage={1}
+  cart={
+    Object {
+      "cart": Array [],
+    }
+  }
+  cartModal={[MockFunction]}
   confirmOrder={[MockFunction]}
   errorMessage={
     Object {
@@ -2120,7 +2258,8 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "count": 4,
       "rows": Array [
         Object {
-          "Meals": Array [
+          "id": 1,
+          "meals": Array [
             Object {
               "desctription": "good",
               "id": 1,
@@ -2128,12 +2267,11 @@ exports[`Test Profile component should respond to onChange event 1`] = `
               "price": 100,
             },
           ],
-          "User": Object {
+          "user": Object {
             "email": "ken@gmail.com",
             "name": "ken",
             "usrername": "ken",
           },
-          "id": 1,
         },
       ],
     }
@@ -2156,22 +2294,30 @@ exports[`Test Profile component should respond to onChange event 1`] = `
     }
   }
   myOrder={
-    Array [
-      Object {
-        "Meal": Object {
-          "descrption": "Very delicious",
+    Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
           "id": 1,
-          "name": "rice",
-          "price": "200",
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "pending",
+          "updatedAt": "2018-05-4",
         },
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ]
+      ],
+    }
   }
   notifics={
     Array [
@@ -2204,6 +2350,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
       "upgradeSuccess": " good",
     }
   }
+  upGrade={[MockFunction]}
   user={
     Object {
       "email": "ken@gmaoil.com",
@@ -2329,6 +2476,8 @@ exports[`Test Profile component should respond to onChange event 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
+              getDataTransferItems={[Function]}
+              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -2351,6 +2500,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
+                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -2368,7 +2518,13 @@ exports[`Test Profile component should respond to onChange event 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "display": "none",
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 0.00001,
+                      "pointerEvents": "none",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
                     }
                   }
                   type="file"

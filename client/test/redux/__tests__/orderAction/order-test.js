@@ -9,7 +9,7 @@ import * as types from '../../../../redux/Action/actionType';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 // let auth = { getToken: jest.fn() };
-describe('async actions test', () => {
+describe('async order actions test', () => {
   afterEach(() => {
     fetchMock.reset();
     fetchMock.restore();
@@ -29,7 +29,7 @@ describe('async actions test', () => {
     });
   });
 
-  it('should  LOAD_SUCCESS_MESSAGE when order is created wiyh orderMeal Action', () => {
+  it('should  LOAD_SUCCESS_MESSAGE when order is created with orderMeal Action', () => {
     const order = { status: 'pending', meal: { name: 'rice' } };
     fetchMock
       .post('/api/v1/orders', { body: order });
@@ -47,13 +47,13 @@ describe('async actions test', () => {
   it('should  LOAD_ERROR_MESSAGE when order fail with getMyOrder Action ', () => {
     const message = { message: 'order failed' };
     fetchMock
-      .get('/api/v1/user/orders', { body: message });
+      .get('/api/v1/user/orders?limit=2&offset=2', { body: message });
     const expectedActions = [
-      { type: types.LOAD_ERROR_MESSAGE, errorMessage: { myOrderError: 'OOps You Have Not Ordered A Meal' } },
-      { type: types.LOAD_MY_ORDER, myOrder: [] }
+      { type: types.LOAD_MY_ORDER, myOrder: { orders: [] } },
+      { type: types.LOAD_ERROR_MESSAGE, errorMessage: { myOrderError: 'OOps You Have Not Ordered A Meal' } }
     ];
     const store = mockStore({ myOrder: [] });
-    store.dispatch(actions.getMyOrder()).then(() => {
+    store.dispatch(actions.getMyOrder(2, 2)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
@@ -62,12 +62,12 @@ describe('async actions test', () => {
   it('should  LOAD_ERROR_MESSAGE when order fail with getMyOrder Action ', () => {
     const myOrder = { status: 'pending', meal: { name: 'rice' } };
     fetchMock
-      .get('/api/v1/user/orders', { body: myOrder });
+      .get('/api/v1/user/orders?limit=2&offset=2', { body: myOrder });
     const expectedActions = [
       { type: types.LOAD_MY_ORDER, myOrder }
     ];
     const store = mockStore({ myOrder: [] });
-    store.dispatch(actions.getMyOrder()).then(() => {
+    store.dispatch(actions.getMyOrder(2, 2)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
@@ -76,12 +76,12 @@ describe('async actions test', () => {
   it('should  LOAD_ERROR_MESSAGE when order fail with getAllOrder Action ', () => {
     const message = { message: 'order failed' };
     fetchMock
-      .get('/api/v1/orders', { body: message });
+      .get('/api/v1/orders?limit=2&offset=2', { body: message });
     const expectedActions = [
       { type: types.LOAD_ERROR_MESSAGE, errorMessage: { allOrderError: 'OOps Users Have Not Ordered A Meal' } },
     ];
     const store = mockStore({ myOrder: [] });
-    store.dispatch(actions.getAllOrders()).then(() => {
+    store.dispatch(actions.getAllOrders(2, 2)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
@@ -90,12 +90,12 @@ describe('async actions test', () => {
   it('should  LOAD_ALL_ORDER when order is created with getAllOrder Action ', () => {
     const allOrder = { status: 'pending', meal: { name: 'rice' } };
     fetchMock
-      .get('/api/v1/orders', { body: allOrder });
+      .get('/api/v1/orders?limit=2&offset=2', { body: allOrder });
     const expectedActions = [
       { type: types.LOAD_ALL_ORDER, allOrder }
     ];
     const store = mockStore({ myOrder: [] });
-    store.dispatch(actions.getAllOrders()).then(() => {
+    store.dispatch(actions.getAllOrders(2, 2)).then(() => {
       // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });

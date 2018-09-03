@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = (models) => {
     User.hasMany(models.Meal, {
       foreignKey: 'userId',
-      as: 'Meals'
+      as: 'meals'
     });
     User.hasMany(models.notification, {
       foreignKey: 'userId',
@@ -34,11 +34,11 @@ module.exports = (sequelize, DataTypes) => {
     });
     User.hasMany(models.Menu, {
       foreignKey: 'userId',
-      as: 'Menus'
+      as: 'menus'
     });
     User.hasMany(models.Order, {
       foreignKey: 'userId',
-      as: 'Orders'
+      as: 'orders'
     });
   };
   return User;

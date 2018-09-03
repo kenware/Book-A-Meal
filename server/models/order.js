@@ -1,23 +1,13 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define('Order', {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     address: {
       type: DataTypes.STRING
     },
     status: {
       type: DataTypes.STRING
     },
-    quantity: {
-      type: DataTypes.INTEGER
-    },
     catererId: {
-      type: DataTypes.INTEGER
-    },
-    totalPrice: {
       type: DataTypes.INTEGER
     }
   });
@@ -25,10 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     Order.belongsTo(models.User, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
+      as: 'user'
     });
-    Order.belongsTo(models.Meal, {
-      foreignKey: 'mealId',
+    Order.belongsToMany(models.Meal, {
+      through: 'orderMealItems',
       onDelete: 'CASCADE',
+      as: 'meals'
     });
   };
   return Order;

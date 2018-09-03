@@ -1,40 +1,20 @@
 
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import server from '../app';
-import model from '../server/models';
+import server from '../../app';
+import model from '../../server/models';
+import token from '../../server/helpers/tokenGenerator';
 
 process.env.NODE_ENV = 'test';
 const should = chai.should();
 
-const {
-  User,
-  Meal,
-  Menu,
-  Order,
-  MealMenu,
-  notification
-} = model;
+const { User } = model;
 
 chai.use(chaiHttp);
-let tokenUpdate = '';
 let tokenUser = '';
-let tokenAdmin = '', mealId = 0;
+let tokenAdmin = '', tokenAdmin2 = '', mealId = 0;
 
 describe('/POST api/v1/auth/signup', () => {
-  before((done) => {
-    User.sync()
-      .then(() => {
-        done();
-      });
-  });
-  // migrate or a DB
-  before((done) => {
-    Meal.sync()
-      .then(() => {
-        done();
-      });
-  });
   before((done) => {
     User.destroy({
       where: {}
@@ -43,6 +23,7 @@ describe('/POST api/v1/auth/signup', () => {
         done();
       });
   });
+
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
@@ -72,7 +53,8 @@ describe('/POST api/v1/auth/signup', () => {
         username: 'keneth',
         name: 'keneth',
         email: 'kelvin@gmail.kev',
-        password: '12345'
+        password: '12345',
+        role: 'admin'
       })
       .end((err, res) => {
         res.should.have.status(201);
@@ -81,12 +63,12 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('email').eql('kelvin@gmail.kev');
         res.body.should.have.property('token');
         res.body.should.be.a('object');
-        tokenUpdate = res.body.token;
+        tokenAdmin2 = res.body.token;
         done();
       });
   });
 
-  it('second user should sign up', (done) => {
+  it('user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
       .send({
@@ -103,19 +85,6 @@ describe('/POST api/v1/auth/signup', () => {
         res.body.should.have.property('token');
         res.body.should.be.a('object');
         tokenUser = res.body.token;
-        done();
-      });
-  });
-
-  it('first User should update to admin', (done) => {
-    chai.request(server)
-      .post('/api/v1/auth/admin')
-      .set('authorization', tokenUpdate)
-      .end((err, res) => {
-        res.should.have.status(201);
-        res.body.should.have.property('message');
-        res.body.should.have.property('setAdmin');
-        res.body.should.be.a('object');
         done();
       });
   });
@@ -304,6 +273,23 @@ describe('Testing of meal middleware and controller', () => {
       })
       .end((err, res) => {
         res.body.should.have.property('message').eql('Meal does not exist');
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+
+  it(' caterer should not UPDATE a meal he did not add', (done) => {
+    chai.request(server)
+      .put(`/api/v1/meals/${mealId}`)
+      .set('authorization', tokenAdmin2)
+      .send({
+        name: 'beansee',
+        price: '5566',
+        description: 'good'
+      })
+      .end((err, res) => {
+        res.should.have.status(401);
+        res.body.should.have.property('message').eql('You cannot update meal you did not add');
         res.body.should.be.a('object');
         done();
       });

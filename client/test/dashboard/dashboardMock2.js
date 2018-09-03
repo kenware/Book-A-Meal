@@ -1,4 +1,7 @@
 export const props = {
+  cart: {
+    cart: jest.fn()
+  },
   menu: [{
     id: 1,
     User: {
@@ -44,22 +47,28 @@ export const props = {
       updatedAt: '2018-06-10'
     }
   ],
-  myOrder: [
-    {
-      id: 1,
-      createdAt: '2018-05-4',
-      updatedAt: '2018-05-4',
-      address: 'Reverend Street',
-      status: 'pending',
-      quantity: 3,
-      Meal: {
+  myOrder: {
+    orders: [
+      {
         id: 1,
-        name: 'rice',
-        price: '200',
-        descrption: 'Very delicious'
+        createdAt: '2018-05-4',
+        updatedAt: '2018-05-4',
+        address: 'Reverend Street',
+        status: 'pending',
+        quantity: 3,
+        meals: [{
+          id: 1,
+          name: 'rice',
+          price: '200',
+          descrption: 'Very delicious'
+        }],
+        orderMealItems: {
+          quantity: 3,
+          totalPrice: 4
+        }
       }
-    }
-  ],
+    ]
+  },
   meals: [
     {
       id: 1,

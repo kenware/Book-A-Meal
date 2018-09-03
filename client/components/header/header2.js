@@ -42,8 +42,8 @@ class Header extends Component {
           <span onClick={this.logout} className="a" role="button">LogOut</span>
           <Link to="/profile" className="a"><em className="fa fa-user" /> &nbsp;{window.localStorage.getItem('username')}</Link>
           <Link to="/admin" className="a">Admin</Link>
-          <Link to="/dashboard" className="a">dashboard</Link>
-          <Link to="/admin/allmeals" className="a">All meals</Link>
+          <Link to="/dashboard" className="a" onClick={this.onClick}>dashboard</Link>
+          <Link to="/admin/allmeals" className="a" onClick={this.onClick}>All meals</Link>
           <Link to="/admin/setmenu" className="a">Set Menu</Link>
           <Link to="/admin/addmeals" className="a">Add meals</Link>
           <Link to="/meals" className="active a">Home</Link>

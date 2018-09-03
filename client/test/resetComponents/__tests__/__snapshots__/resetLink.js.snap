@@ -2,7 +2,11 @@
 
 exports[`Test ResetLink component renders correctly 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -92,7 +96,11 @@ exports[`Test ResetLink component renders correctly 1`] = `
 
 exports[`Test ResetLink component should render messages from props 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -186,7 +194,11 @@ exports[`Test ResetLink component should render messages from props 1`] = `
 
 exports[`Test ResetLink component should respond to change event and change the state of the resetLink Component 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -225,7 +237,6 @@ exports[`Test ResetLink component should respond to change event and change the 
             <span
               className="danger"
             >
-              this field is required
                
             </span>
           </label>
@@ -245,7 +256,12 @@ exports[`Test ResetLink component should respond to change event and change the 
             onClick={[Function]}
             type="submit"
           >
-            Submit
+            <div>
+              <i
+                aria-hidden="true"
+                className="fa fa-spinner fa-spin fa-2x fa-fw"
+              />
+            </div>
           </button>
         </div>
         <div
@@ -281,7 +297,11 @@ exports[`Test ResetLink component should respond to change event and change the 
 
 exports[`Test ResetLink component should respond to componentWillRecievProps methods 1`] = `
 <div>
-  <Nav />
+  <Nav
+    cart={Array []}
+    component=""
+    onModal={[Function]}
+  />
   <div
     className="register-container"
   >
@@ -381,8 +401,6 @@ Object {
     "getNotifications": [Function],
     "getUser": [Function],
     "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMostOrderedMeal": [Function],
     "loadNotifications": [Function],
     "loadSuccessMessage": [Function],
     "loadUser": [Function],

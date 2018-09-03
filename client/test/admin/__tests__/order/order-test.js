@@ -4,15 +4,10 @@ import Orders from '../../../../components/admin/order';
 import { props, emptyProps } from '../../adminMockData';
 
 
-describe('Test Component of Order component', () => {
+describe('Test Admin Order component', () => {
   it('renders correctly', () => {
     const tree = shallow(<Orders {...props} />);
     expect(tree).toMatchSnapshot();
-  });
-
-  it('should display two meals', () => {
-    const tree = shallow(<Orders {...props} />);
-    expect(tree.find('.order-contents')).toHaveLength(1);
   });
 
   it('should have one order-container class', () => {
@@ -35,14 +30,14 @@ describe('Test Component of Order component', () => {
     expect(tree.find('tr')).toHaveLength(2);
   });
 
-  it('should have only 10 td on the table', () => {
+  it('should have only 5 td on the table', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('td')).toHaveLength(10);
+    expect(tree.find('td')).toHaveLength(5);
   });
 
-  it('should have only 4 th on the table', () => {
+  it('should have only 5 th on the table', () => {
     const tree = shallow(<Orders {...props} />);
-    expect(tree.find('th')).toHaveLength(4);
+    expect(tree.find('th')).toHaveLength(5);
   });
 
   it('should display no meals with empty meal props', () => {
