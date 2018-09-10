@@ -13,4 +13,8 @@ describe('Test menu component of dashboard', () => {
     const tree = shallow(<OrderModal {...props} />);
     expect(tree).toMatchSnapshot();
   });
+  it('should render with props', () => {
+    const tree = shallow(<OrderModal {...props} />);
+    expect(tree).toMatchSnapshot();
+  });
 });

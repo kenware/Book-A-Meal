@@ -232,7 +232,7 @@ describe('async actions test', () => {
     ];
     const store = mockStore({ message: [] });
     return store.dispatch(actions.clearMessages(), () => {
-    expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions()).toEqual(expectedActions);
     });
   });
 });

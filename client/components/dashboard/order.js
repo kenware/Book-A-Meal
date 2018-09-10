@@ -211,63 +211,6 @@ export class Orders extends Component {
                       <div>Status</div>
                       <div>Action</div>
                     </div>
-<<<<<<< HEAD
-                    <div>{order.address}</div>
-                    <div className="order-contents">
-                      {order.status}
-                    </div>
-                    <div>
-                      {order.status === 'pending' ?
-                        <button
-                          className="y-color confirm-btn"
-                          onClick={() => this.handleClick(order.id)}
-                        >Confirm
-                        </button>
-                      : <span />
-                    }
-                    </div>
-                  </div>
-                </AccordionItemTitle>
-                <AccordionItemBody>
-                  <table className="table">
-                    <tbody>
-                      <tr className="p-color tr-height tr-color">
-                        <th>S/N</th>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total Price</th>
-                        <th>Edit</th>
-                      </tr>
-                      { order.meals.map(meal => (
-                        <tr className="p-color tr tr-height" key={meal.id}>
-                          <td>{order.meals.indexOf(meal) + 1}</td>
-                          <td>{meal.name}</td>
-                          <td>{meal.orderMealItems.quantity}</td>
-                          <td>{meal.price}</td>
-                          <td>{meal.totalPrice}</td>
-                          <td>{ order.status === 'pending' ?
-                            <em role="button" onClick={() => this.onOpenModal(meal, order)} className="modify-btn fa fa-edit fa-2x" />
-                            : <span />}
-                          </td>
-                        </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                </AccordionItemBody>
-              </AccordionItem>
-             ))}
-          </Accordion>
-          <div className="meal-pagination">
-            <Pagination
-              activePage={this.state.activePage}
-              itemsCountPerPage={limit}
-              totalItemsCount={Math.ceil(this.props.myOrder.count)}
-              pageRangeDisplayed={4}
-              onChange={this.handlePageChange}
-            />
-          </div>
-=======
                   </AccordionItemTitle>
                 </AccordionItem>
                 {this.props.myOrder.orders.map(order => (
@@ -343,7 +286,6 @@ export class Orders extends Component {
               </div>
             </div>
          : <div /> }
->>>>>>> bg(fix): Fixed my test and modified my controller
         </div>
       </div>
     );

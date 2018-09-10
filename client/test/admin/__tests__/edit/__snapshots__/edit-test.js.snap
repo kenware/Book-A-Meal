@@ -1,0 +1,1490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test edit meal component renders correctly 1`] = `
+<div>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    UPDATE A MEAL 
+  </h2>
+  <div
+    className="register-container"
+    style={
+      Object {
+        "marginTop": "2px",
+      }
+    }
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <h4
+        className="p-color text-center"
+      >
+        Edit The Field Below To Update 
+         Meal
+      </h4>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Price
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="price"
+            name="price"
+            onChange={[Function]}
+            required={true}
+            type="number"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Description
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <textarea
+            className="form-label"
+            cols="7"
+            id="description"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            rows="9"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              Drag and drop or click to select an image to upload.
+            </t>
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update Meal
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test edit meal component renders correctly 2`] = `
+<div>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    UPDATE A MEAL 
+  </h2>
+  <div
+    className="register-container"
+    style={
+      Object {
+        "marginTop": "2px",
+      }
+    }
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <h4
+        className="p-color text-center"
+      >
+        Edit The Field Below To Update 
+         Meal
+      </h4>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Price
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="price"
+            name="price"
+            onChange={[Function]}
+            required={true}
+            type="number"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Description
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <textarea
+            className="form-label"
+            cols="7"
+            id="description"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            rows="9"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              Drag and drop or click to select an image to upload.
+            </t>
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update Meal
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test edit meal component should respond addMeal method onClick event of edit profile page 1`] = `
+<div>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    UPDATE A MEAL 
+  </h2>
+  <div
+    className="register-container"
+    style={
+      Object {
+        "marginTop": "2px",
+      }
+    }
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <h4
+        className="p-color text-center"
+      >
+        Edit The Field Below To Update 
+         Meal
+      </h4>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+            value="rice"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Price
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="price"
+            name="price"
+            onChange={[Function]}
+            required={true}
+            type="number"
+            value="100"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Description
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <textarea
+            className="form-label"
+            cols="7"
+            id="description"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            rows="9"
+            value="Good"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              Drag and drop or click to select an image to upload.
+            </t>
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            <div>
+              <i
+                aria-hidden="true"
+                className="fa fa-spinner fa-spin fa-2x fa-fw"
+              />
+            </div>
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test edit meal component should respond to lifeCycle methods 1`] = `
+Edit {
+  "addMeal": [Function],
+  "context": Object {},
+  "onChange": [Function],
+  "onDrop": [Function],
+  "props": Object {
+    "actions": Object {
+      "clearMessages": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    "activePage": 1,
+    "allOrder": Object {
+      "orders": Array [],
+    },
+    "errorMessage": Object {
+      "createMealError": "",
+    },
+    "handlePageChange": [MockFunction],
+    "mealActions": Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+      "updateMeal": [MockFunction],
+    },
+    "meals": Object {
+      "rows": Array [],
+    },
+    "menuActions": Object {},
+    "mostOrder": Array [],
+    "successMessage": Object {
+      "createMealSuccess": "",
+    },
+  },
+  "refs": Object {},
+  "state": Object {
+    "description": undefined,
+    "file": Array [],
+    "image": undefined,
+    "meals": Object {
+      "rows": Array [],
+    },
+    "name": undefined,
+    "price": undefined,
+    "updateMeal": "Update Meal",
+    "validDescription": "",
+    "validName": "",
+    "validPrice": "",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_element": <Edit
+        actions={
+          Object {
+            "clearMessages": [MockFunction] {
+              "calls": Array [
+                Array [],
+              ],
+              "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+              ],
+            },
+          }
+        }
+        activePage={1}
+        allOrder={
+          Object {
+            "orders": Array [],
+          }
+        }
+        errorMessage={
+          Object {
+            "createMealError": "",
+          }
+        }
+        handlePageChange={[MockFunction]}
+        mealActions={
+          Object {
+            "createMeal": [MockFunction],
+            "getAllMeals": [MockFunction],
+            "updateMeal": [MockFunction],
+          }
+        }
+        meals={
+          Object {
+            "rows": Array [],
+          }
+        }
+        menuActions={Object {}}
+        mostOrder={Array []}
+        successMessage={
+          Object {
+            "createMealSuccess": "",
+          }
+        }
+      />,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_newState": Object {
+        "description": undefined,
+        "file": Array [],
+        "image": undefined,
+        "meals": Object {
+          "rows": Array [],
+        },
+        "name": undefined,
+        "price": undefined,
+        "updateMeal": "Update Meal",
+        "validDescription": "",
+        "validName": "",
+        "validPrice": "",
+      },
+      "_rendered": <div>
+        <h2
+          style={
+            Object {
+              "marginTop": "2rem",
+            }
+          }
+        >
+          UPDATE A MEAL 
+        </h2>
+        <div
+          className="register-container"
+          style={
+            Object {
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            className="register-col"
+          />
+          <div
+            className="register-wrapper"
+            style={
+              Object {
+                "marginTop": "2px",
+              }
+            }
+          >
+            <h4
+              className="p-color text-center"
+            >
+              Edit The Field Below To Update 
+               Meal
+            </h4>
+            <br />
+            <h3
+              className="text-center danger"
+            />
+            <h3
+              className="text-center danger"
+            />
+            <form>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="name"
+                >
+                  Name     
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    
+                     
+                  </font>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="price"
+                >
+                  Price
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    
+                     
+                  </font>
+                </label>
+                <input
+                  id="price"
+                  name="price"
+                  onChange={[Function]}
+                  required={true}
+                  type="number"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="name"
+                >
+                  Description
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    
+                     
+                  </font>
+                </label>
+                <textarea
+                  className="form-label"
+                  cols="7"
+                  id="description"
+                  name="description"
+                  onChange={[Function]}
+                  required={true}
+                  rows="9"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Image
+                </label>
+                <span
+                  className="form-label"
+                >
+                  <t
+                    accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                    disableClick={false}
+                    disablePreview={false}
+                    disabled={false}
+                    maxSize={Infinity}
+                    minSize={0}
+                    multiple={false}
+                    onDrop={[Function]}
+                    preventDropOnDocument={true}
+                  >
+                    Drag and drop or click to select an image to upload.
+                  </t>
+                </span>
+              </div>
+              <div
+                className="form-field"
+              >
+                <button
+                  className="button lg submit"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Update Meal
+                </button>
+              </div>
+              <div
+                className="form-field"
+              >
+                <span
+                  className="text-center form-label p-color"
+                />
+              </div>
+            </form>
+          </div>
+          <div
+            className="register-col"
+          />
+        </div>
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+    },
+  },
+}
+`;
+
+exports[`Test edit meal component should respond to lifeCycle methods 2`] = `
+Edit {
+  "addMeal": [Function],
+  "context": Object {},
+  "onChange": [Function],
+  "onDrop": [Function],
+  "props": Object {
+    "actions": Object {
+      "clearMessages": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+    },
+    "activePage": 1,
+    "allOrder": Object {
+      "orders": Array [],
+    },
+    "errorMessage": Object {
+      "createMealError": "",
+    },
+    "handlePageChange": [MockFunction],
+    "mealActions": Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+      "updateMeal": [MockFunction],
+    },
+    "meals": Object {
+      "rows": Array [],
+    },
+    "menuActions": Object {},
+    "mostOrder": Array [],
+    "successMessage": Object {
+      "createMealSuccess": "",
+    },
+  },
+  "refs": Object {},
+  "state": Object {
+    "description": undefined,
+    "file": Array [
+      Object {
+        "preview": "image.jpg",
+      },
+    ],
+    "image": "",
+    "meals": Object {
+      "rows": Array [],
+    },
+    "name": undefined,
+    "price": undefined,
+    "updateMeal": "Update Meal",
+    "validDescription": "",
+    "validName": "Name is required",
+    "validPrice": "",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_element": <Edit
+        actions={
+          Object {
+            "clearMessages": [MockFunction] {
+              "calls": Array [
+                Array [],
+              ],
+              "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+              ],
+            },
+          }
+        }
+        activePage={1}
+        allOrder={
+          Object {
+            "orders": Array [],
+          }
+        }
+        errorMessage={
+          Object {
+            "createMealError": "",
+          }
+        }
+        handlePageChange={[MockFunction]}
+        mealActions={
+          Object {
+            "createMeal": [MockFunction],
+            "getAllMeals": [MockFunction],
+            "updateMeal": [MockFunction],
+          }
+        }
+        meals={
+          Object {
+            "rows": Array [],
+          }
+        }
+        menuActions={Object {}}
+        mostOrder={Array []}
+        successMessage={
+          Object {
+            "createMealSuccess": "",
+          }
+        }
+      />,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_newState": Object {
+        "description": undefined,
+        "file": Array [
+          Object {
+            "preview": "image.jpg",
+          },
+        ],
+        "image": "",
+        "meals": Object {
+          "rows": Array [],
+        },
+        "name": undefined,
+        "price": undefined,
+        "updateMeal": "Update Meal",
+        "validDescription": "",
+        "validName": "Name is required",
+        "validPrice": "",
+      },
+      "_rendered": <div>
+        <h2
+          style={
+            Object {
+              "marginTop": "2rem",
+            }
+          }
+        >
+          UPDATE A MEAL 
+        </h2>
+        <div
+          className="register-container"
+          style={
+            Object {
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            className="register-col"
+          />
+          <div
+            className="register-wrapper"
+            style={
+              Object {
+                "marginTop": "2px",
+              }
+            }
+          >
+            <h4
+              className="p-color text-center"
+            >
+              Edit The Field Below To Update 
+               Meal
+            </h4>
+            <br />
+            <h3
+              className="text-center danger"
+            />
+            <h3
+              className="text-center danger"
+            />
+            <form>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="name"
+                >
+                  Name     
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    Name is required
+                     
+                  </font>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  onChange={[Function]}
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="price"
+                >
+                  Price
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    
+                     
+                  </font>
+                </label>
+                <input
+                  id="price"
+                  name="price"
+                  onChange={[Function]}
+                  required={true}
+                  type="number"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="name"
+                >
+                  Description
+                  <br />
+                  <font
+                    color="red"
+                  >
+                    
+                     
+                  </font>
+                </label>
+                <textarea
+                  className="form-label"
+                  cols="7"
+                  id="description"
+                  name="description"
+                  onChange={[Function]}
+                  required={true}
+                  rows="9"
+                />
+              </div>
+              <div
+                className="form-field"
+              >
+                <label
+                  htmlFor="password"
+                >
+                  Image
+                </label>
+                <span
+                  className="form-label"
+                >
+                  <t
+                    accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+                    disableClick={false}
+                    disablePreview={false}
+                    disabled={false}
+                    maxSize={Infinity}
+                    minSize={0}
+                    multiple={false}
+                    onDrop={[Function]}
+                    preventDropOnDocument={true}
+                  >
+                    Drag and drop or click to select an image to upload.
+                  </t>
+                  <img
+                    alt="meal"
+                    className="img-fluid"
+                    src="image.jpg"
+                  />
+                </span>
+              </div>
+              <div
+                className="form-field"
+              >
+                <button
+                  className="button lg submit"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Update Meal
+                </button>
+              </div>
+              <div
+                className="form-field"
+              >
+                <span
+                  className="text-center form-label p-color"
+                />
+              </div>
+            </form>
+          </div>
+          <div
+            className="register-col"
+          />
+        </div>
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+    },
+  },
+}
+`;
+
+exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
+<div>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    UPDATE A MEAL 
+  </h2>
+  <div
+    className="register-container"
+    style={
+      Object {
+        "marginTop": "2px",
+      }
+    }
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <h4
+        className="p-color text-center"
+      >
+        Edit The Field Below To Update 
+         Meal
+      </h4>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Price
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="price"
+            name="price"
+            onChange={[Function]}
+            required={true}
+            type="number"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Description
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <textarea
+            className="form-label"
+            cols="7"
+            id="description"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            rows="9"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              Drag and drop or click to select an image to upload.
+            </t>
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update Meal
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test edit meal component should respond to lifeCycle methods 4`] = `
+<div>
+  <h2
+    style={
+      Object {
+        "marginTop": "2rem",
+      }
+    }
+  >
+    UPDATE A MEAL 
+  </h2>
+  <div
+    className="register-container"
+    style={
+      Object {
+        "marginTop": "2px",
+      }
+    }
+  >
+    <div
+      className="register-col"
+    />
+    <div
+      className="register-wrapper"
+      style={
+        Object {
+          "marginTop": "2px",
+        }
+      }
+    >
+      <h4
+        className="p-color text-center"
+      >
+        Edit The Field Below To Update 
+         Meal
+      </h4>
+      <br />
+      <h3
+        className="text-center danger"
+      />
+      <h3
+        className="text-center danger"
+      />
+      <form>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Name     
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="name"
+            name="name"
+            onChange={[Function]}
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="price"
+          >
+            Price
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <input
+            id="price"
+            name="price"
+            onChange={[Function]}
+            required={true}
+            type="number"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="name"
+          >
+            Description
+            <br />
+            <font
+              color="red"
+            >
+               
+            </font>
+          </label>
+          <textarea
+            className="form-label"
+            cols="7"
+            id="description"
+            name="description"
+            onChange={[Function]}
+            required={true}
+            rows="9"
+          />
+        </div>
+        <div
+          className="form-field"
+        >
+          <label
+            htmlFor="password"
+          >
+            Image
+          </label>
+          <span
+            className="form-label"
+          >
+            <t
+              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={false}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+            >
+              Drag and drop or click to select an image to upload.
+            </t>
+          </span>
+        </div>
+        <div
+          className="form-field"
+        >
+          <button
+            className="button lg submit"
+            onClick={[Function]}
+            type="submit"
+          >
+            Update Meal
+          </button>
+        </div>
+        <div
+          className="form-field"
+        >
+          <span
+            className="text-center form-label p-color"
+          />
+        </div>
+      </form>
+    </div>
+    <div
+      className="register-col"
+    />
+  </div>
+</div>
+`;
+
+exports[`Test edit meal component should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "mealActions": Object {
+    "createMeal": [Function],
+    "deleteMeal": [Function],
+    "getAllMeals": [Function],
+    "loadAllMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMostOrderedMeal": [Function],
+    "loadSuccessMessage": [Function],
+    "updateMeal": [Function],
+  },
+}
+`;
+
+exports[`Test edit meal component should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+  },
+  "meals": Object {
+    "descrption": "Very delicious",
+    "id": 1,
+    "name": "rice",
+    "price": "200",
+  },
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+  },
+}
+`;

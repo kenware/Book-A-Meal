@@ -237,6 +237,7 @@ exports[`Test ResetLink component should respond to change event and change the 
             <span
               className="danger"
             >
+              this field is required
                
             </span>
           </label>
@@ -256,12 +257,7 @@ exports[`Test ResetLink component should respond to change event and change the 
             onClick={[Function]}
             type="submit"
           >
-            <div>
-              <i
-                aria-hidden="true"
-                className="fa fa-spinner fa-spin fa-2x fa-fw"
-              />
-            </div>
+            Submit
           </button>
         </div>
         <div

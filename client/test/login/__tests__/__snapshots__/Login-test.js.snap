@@ -178,7 +178,9 @@ exports[`Test Login Component should respond to change event and change the stat
         >
           <span
             className="text-center danger"
-          />
+          >
+            Username is required
+          </span>
           <input
             id="username"
             name="username"
@@ -193,7 +195,9 @@ exports[`Test Login Component should respond to change event and change the stat
         >
           <span
             className="text-center danger"
-          />
+          >
+            Password is required
+          </span>
           <input
             id="password"
             name="password"

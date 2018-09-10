@@ -78,11 +78,6 @@ describe('Test index Component of Dashboard pages', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('The number of link must be 9', () => {
-    const tree = shallow(<Dashboard {...props} />);
-    expect(tree.find('Link').length).toEqual(6);
-  });
-
   it('should logOut ', () => {
     global.localStorage = {
       removeItem() {
@@ -173,26 +168,6 @@ describe('Test index Component of Dashboard pages', () => {
     tree.find('.notific-link').simulate('mouseLeave');
     expect(tree).toMatchSnapshot();
     expect(tree.state('notific')).toEqual('notific');
-  });
-
-  it('should popover on mousenter and remove popover on mouseleave events on sidebar setMeals link', () => {
-    global.localStorage = {
-      getItem() {
-        return 'admin';
-      }
-    };
-    const tree = shallow(<Dashboard {...props} />);
-    // toggle side bar first
-    tree.find('.toggle1').simulate('click');
-    expect(tree).toMatchSnapshot();
-    // mouse focus sidebar set meals link
-    tree.find('.admin-link').simulate('mouseEnter');
-    expect(tree).toMatchSnapshot();
-    expect(tree.state('adminPage')).toEqual('');
-    // remove mouse on sidebar link
-    tree.find('.admin-link').simulate('mouseLeave');
-    expect(tree).toMatchSnapshot();
-    expect(tree.state('adminPage')).toEqual('adminPage');
   });
 
   it('should popover on mousenter and remove popover on mouseleave events on profile link', () => {

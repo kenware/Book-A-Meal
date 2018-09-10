@@ -158,8 +158,6 @@ exports[`Test index Component of addmeal component it should rerender component 
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -358,8 +356,6 @@ exports[`Test index Component of addmeal component it should rerender component 
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -665,8 +661,6 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                 disableClick={false}
                 disablePreview={false}
                 disabled={false}
-                getDataTransferItems={[Function]}
-                inputProps={Object {}}
                 maxSize={Infinity}
                 minSize={0}
                 multiple={false}
@@ -689,7 +683,6 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                       "borderStyle": "dashed",
                       "borderWidth": 2,
                       "height": 200,
-                      "position": "relative",
                       "width": 200,
                     }
                   }
@@ -703,13 +696,7 @@ exports[`Test index Component of addmeal component renders correctly 1`] = `
                     onChange={[Function]}
                     style={
                       Object {
-                        "bottom": 0,
-                        "left": 0,
-                        "opacity": 0.00001,
-                        "pointerEvents": "none",
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                        "display": "none",
                       }
                     }
                     type="file"
@@ -908,8 +895,6 @@ exports[`Test index Component of addmeal component should respond addMeal method
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1156,8 +1141,6 @@ exports[`Test index Component of addmeal component should should respond to drop
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1166,18 +1149,6 @@ exports[`Test index Component of addmeal component should should respond to drop
             >
               Drag and drop or click to select an image to upload.
             </t>
-            <img
-              alt="upload"
-              className="img-fluid"
-              key="image/l.jpg"
-              src="image/l.jpg"
-              style={
-                Object {
-                  "height": "200px",
-                  "width": "200px",
-                }
-              }
-            />
           </span>
         </div>
         <div
@@ -1370,8 +1341,6 @@ exports[`Test index Component of addmeal component should should respond to life
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1572,8 +1541,6 @@ exports[`Test index Component of addmeal component should should respond to life
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}

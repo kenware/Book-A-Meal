@@ -1,0 +1,1599 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test menu component of dashboard renders correctly 1`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard renders correctly 2`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "name": "",
+          "open": false,
+          "pageNum": 1,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <h3
+    className="danger text-center"
+  />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 3,
+        "rows": Array [],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 0,
+        "meals": Array [],
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "name": "",
+        "open": false,
+        "pageNum": 1,
+      }
+    }
+  />
+  <video />
+</div>
+`;
+
+exports[`Test menu component of dashboard should clear redux store on unmount method 1`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond lifeCyle method component did mount 1`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond lifeCyle method component did mount 2`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to canceOrder method 1`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to canceOrder method 2`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "menuActions": Object {
+    "addMealToCart": [Function],
+    "addToCart": [Function],
+    "clearMenuMeals": [Function],
+    "getMenu": [Function],
+    "getMenuMeals": [Function],
+    "loadErrorMessage": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "loadTodayMenuMeals": [Function],
+    "setMenu": [Function],
+  },
+  "orderActions": Object {
+    "confirmStatus": [Function],
+    "getAllOrders": [Function],
+    "getMyOrder": [Function],
+    "loadAllOrder": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMyOrder": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "orderMeal": [Function],
+    "updateOrder": [Function],
+  },
+}
+`;
+
+exports[`Test menu component of dashboard should respond to mapStateToProps methods 1`] = `
+Object {
+  "cart": Object {
+    "cart": Array [],
+  },
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+    "orderError": "error ordering meals",
+    "updateError": "error on update",
+  },
+  "menu": Object {
+    "count": 4,
+    "rows": Array [
+      Object {
+        "id": 1,
+        "meals": Array [
+          Object {
+            "desctription": "good",
+            "id": 1,
+            "name": "jollof",
+            "price": 100,
+          },
+        ],
+        "user": Object {
+          "email": "ken@gmail.com",
+          "name": "ken",
+          "usrername": "ken",
+        },
+      },
+    ],
+  },
+  "menuMeals": Object {
+    "count": 2,
+    "meals": Object {
+      "desctription": "good",
+      "id": 1,
+      "name": "jollof",
+      "price": 100,
+    },
+  },
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+    "updateProfileSuccess": "updated",
+    "upgradeSuccess": " good",
+  },
+}
+`;
+
+exports[`Test menu component of dashboard should respond to onChange method 1`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should respond to onChange method 2`] = `
+<div
+  className="meal-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <Modal
+    animationDuration={500}
+    center={true}
+    classNames={Object {}}
+    classes={
+      Object {
+        "closeButton": "styles_closeButton__20ID4",
+        "closeIcon": "styles_closeIcon__1QwbI",
+        "modal": "styles_modal__gNwvD",
+        "overlay": "styles_overlay__CLSq-",
+        "overlayCenter": "styles_overlayCenter__YHoO7",
+        "transitionEnter": "styles_transitionEnter__3j_-a",
+        "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+        "transitionExit": "styles_transitionExit__1KmEf",
+        "transitionExitActive": "styles_transitionExitActive__1nQXw",
+      }
+    }
+    closeIconSize={28}
+    closeIconSvgPath={
+      <path
+        d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+      />
+    }
+    closeOnEsc={true}
+    closeOnOverlayClick={true}
+    onClose={[Function]}
+    onEntered={null}
+    onEscKeyDown={null}
+    onExited={null}
+    onOverlayClick={null}
+    open={false}
+    showCloseIcon={true}
+    styles={Object {}}
+  >
+    <menuModal
+      addToCart={[Function]}
+      onChange={[Function]}
+      state={
+        Object {
+          "accordion": Object {},
+          "address": "",
+          "cart": Object {},
+          "checkOut": Array [],
+          "errorMessage": "error ordering meals",
+          "ken": undefined,
+          "mealActivePage": 1,
+          "menuActivePage": 1,
+          "modal": "modal",
+          "name": "",
+          "open": false,
+          "order": "Order",
+          "pageNum": 1,
+          "successMessage": undefined,
+        }
+      }
+    />
+  </Modal>
+  <mealGuide />
+  <h2
+    className="top-bot-margin"
+    id="menu-header"
+  >
+    TODAY MENU FROM All CATERERS
+  </h2>
+  <h3
+    className="success text-center"
+  />
+  <span />
+  <todayMenu
+    cartModal={[Function]}
+    handleMealPageChange={[Function]}
+    menu={
+      Object {
+        "count": 4,
+        "rows": Array [
+          Object {
+            "id": 1,
+            "meals": Array [
+              Object {
+                "desctription": "good",
+                "id": 1,
+                "name": "jollof",
+                "price": 100,
+              },
+            ],
+            "user": Object {
+              "email": "ken@gmail.com",
+              "name": "ken",
+              "usrername": "ken",
+            },
+          },
+        ],
+      }
+    }
+    menuMeals={
+      Object {
+        "count": 2,
+        "meals": Object {
+          "desctription": "good",
+          "id": 1,
+          "name": "jollof",
+          "price": 100,
+        },
+      }
+    }
+    showMenu={[Function]}
+    state={
+      Object {
+        "accordion": Object {},
+        "address": "",
+        "cart": Object {},
+        "checkOut": Array [],
+        "errorMessage": "error ordering meals",
+        "ken": undefined,
+        "mealActivePage": 1,
+        "menuActivePage": 1,
+        "modal": "modal",
+        "name": "",
+        "open": false,
+        "order": "Order",
+        "pageNum": 1,
+        "successMessage": undefined,
+      }
+    }
+  />
+  <div
+    className="meal-pagination"
+    id="menuPagination"
+  >
+    <a
+      activePage={1}
+      firstPageText="«"
+      getPageUrl={[Function]}
+      hideFirstLastPages={false}
+      innerClass="pagination"
+      itemsCountPerPage={4}
+      lastPageText="»"
+      nextPageText="⟩"
+      onChange={[Function]}
+      pageRangeDisplayed={6}
+      prevPageText="⟨"
+      totalItemsCount={4}
+    />
+  </div>
+</div>
+`;

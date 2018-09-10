@@ -6,7 +6,6 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
 >
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -255,7 +254,6 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
 >
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -506,7 +504,6 @@ exports[`Test Component of ALLMeals component should respond to a click event by
 >
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -755,7 +752,6 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
 >
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -1004,7 +1000,6 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
 >
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={

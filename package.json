@@ -12,7 +12,7 @@
     "server-test": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha test/server-test/**.js --recursive",
     "build-production": "webpack --mode=production",
     "build-development": "webpack -d -w",
-    "jest": "NODE_ENV=test jest --no-cache --coverage",
+    "jest": "NODE_ENV=test jest --no-cache --coverage -u",
     "test": "run-s jest server-test",
     "jest-watch": "jest --no-cache --coverage --watch",
     "e2e-test": "node ./nightwatch.js --config nightwatch.json --verbose"

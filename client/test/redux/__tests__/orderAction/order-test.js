@@ -149,7 +149,7 @@ describe('async order actions test', () => {
     ];
     const store = mockStore({ myOrder: [], getMyOrder: jest.fn() });
     store.dispatch(actions.updateOrder(id)).then(() => {
-    expect(store.getActions()).toEqual(expectedActions);
+      expect(store.getActions()).toEqual(expectedActions);
     });
   });
 });
