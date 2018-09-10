@@ -19,30 +19,6 @@ const checkOutModal = ({
       </h3>
       {state.errorMessage}
     </div>
-<<<<<<< HEAD
-    <table className="table">
-      <tbody>
-        <tr className="p-white tr-color tr-height">
-          <th>S/N</th>
-          <th>Name</th>
-          <td>Quantity</td>
-          <td>Total Price</td>
-          <td>Remove</td>
-        </tr>
-        {carts.map(cart =>
-                (
-                  <tr key={cart.id} className="order-contents tr tr-height">
-                    <td>{carts.indexOf(cart) + 1}</td>
-                    <td>{cart.name}</td>
-                    <td>{cart.quantity}</td>
-                    <td>{cart.totalPrice}</td>
-                    <td><em onClick={() => removeFromeCart(cart)} className="fa fa-trash-o" role="button" /></td>
-                  </tr>
-                ))}
-      </tbody>
-    </table>
-
-=======
     {carts.length > 0 ?
       <div>
         <table className="table">
@@ -70,7 +46,6 @@ const checkOutModal = ({
         Cart Empty
       </p>
   }
->>>>>>> bg(fix): Fixed my test and modified my controller
   </div>
 );
 

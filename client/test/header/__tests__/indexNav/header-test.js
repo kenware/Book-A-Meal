@@ -25,27 +25,11 @@ describe('Testing of sidebar component', () => {
       }
     };
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
-<<<<<<< HEAD
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('should render properly with user info in the nav bar', () => {
-    window.localStorage = {
-      getItem() {
-        return 'user';
-      }
-    };
-    const tree = shallow(<IndexNav onModal={jest.fn()} />);
-=======
->>>>>>> bg(fix): Fixed my test and modified my controller
     expect(tree).toMatchSnapshot();
   });
 
   it('should respond to click method', () => {
-<<<<<<< HEAD
-=======
     const onClick = jest.spyOn(IndexNav.prototype, 'onClick');
->>>>>>> bg(fix): Fixed my test and modified my controller
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
     const wrapper = tree.instance();
     wrapper.onClick();

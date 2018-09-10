@@ -312,8 +312,6 @@ exports[`Test Profile component renders correctly 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -336,7 +334,6 @@ exports[`Test Profile component renders correctly 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -354,13 +351,7 @@ exports[`Test Profile component renders correctly 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -634,8 +625,6 @@ exports[`Test Profile component should display error messages from redux error p
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -658,7 +647,6 @@ exports[`Test Profile component should display error messages from redux error p
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -676,13 +664,7 @@ exports[`Test Profile component should display error messages from redux error p
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -1014,8 +996,6 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1038,7 +1018,6 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1056,13 +1035,7 @@ exports[`Test Profile component should respond to componentWillMount lifeCycle m
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -1399,8 +1372,6 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1423,7 +1394,6 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1441,13 +1411,7 @@ exports[`Test Profile component should respond to componentWillProps method 1`] 
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -1784,8 +1748,6 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1808,7 +1770,6 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -1826,13 +1787,7 @@ exports[`Test Profile component should respond to componentWillProps method 2`] 
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -2149,8 +2104,6 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -2173,7 +2126,6 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -2191,13 +2143,7 @@ exports[`Test Profile component should respond to dropbox ondrop method 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
@@ -2602,8 +2548,6 @@ exports[`Test Profile component should respond to onChange event 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -2626,7 +2570,6 @@ exports[`Test Profile component should respond to onChange event 1`] = `
                     "borderStyle": "dashed",
                     "borderWidth": 2,
                     "height": 200,
-                    "position": "relative",
                     "width": 200,
                   }
                 }
@@ -2644,13 +2587,7 @@ exports[`Test Profile component should respond to onChange event 1`] = `
                   onChange={[Function]}
                   style={
                     Object {
-                      "bottom": 0,
-                      "left": 0,
-                      "opacity": 0.00001,
-                      "pointerEvents": "none",
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
+                      "display": "none",
                     }
                   }
                   type="file"
