@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Header from '../header/index';
@@ -27,11 +29,13 @@ export class Login extends Component {
    * change the state login button from loading icon to
    * to text
    */
-  static getDerivedStateFromProps(props) {
+  componentWillReceiveProps(props) {
     if (props.errorMessage.loginError) {
-      return { login: 'Login' };
+      toast.error('Wrong login credentials', {
+        className: 'toasterror'
+      });
+      this.setState({ login: 'Login' });
     }
-    return null;
   }
   /**
    * remove error props in redux store if component unmount
@@ -70,10 +74,9 @@ export class Login extends Component {
     return (
       <div>
         <Header />
+        <ToastContainer autoClose={8000} />
         <div className="register-container" id="login-bg">
           <div className="register-wrapper" style={{ margin: '100px 25% 100px 25%' }}>
-            <h2 className="login-header">Login</h2><br />
-            <h3 className="text-center danger">{this.props.errorMessage.loginError }</h3>
             <h3 className="text-center danger">{this.props.errorMessage.authError }</h3>
             <form action="dashboard.html" className="login">
               <div className="form-field">

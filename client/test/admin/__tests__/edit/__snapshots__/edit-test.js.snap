@@ -12,14 +12,6 @@ exports[`Test edit meal component renders correctly 1`] = `
     UPDATE A MEAL 
   </h2>
   <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
-  <div
     className="register-container"
     style={
       Object {
@@ -136,8 +128,6 @@ exports[`Test edit meal component renders correctly 1`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -187,14 +177,6 @@ exports[`Test edit meal component renders correctly 2`] = `
     UPDATE A MEAL 
   </h2>
   <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
-  <div
     className="register-container"
     style={
       Object {
@@ -311,8 +293,6 @@ exports[`Test edit meal component renders correctly 2`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -350,7 +330,7 @@ exports[`Test edit meal component renders correctly 2`] = `
 </div>
 `;
 
-exports[`Test edit meal component should respond addMeal method onClick event edit profile 1`] = `
+exports[`Test edit meal component should respond addMeal method onClick event of edit profile page 1`] = `
 <div>
   <h2
     style={
@@ -361,14 +341,6 @@ exports[`Test edit meal component should respond addMeal method onClick event ed
   >
     UPDATE A MEAL 
   </h2>
-  <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
   <div
     className="register-container"
     style={
@@ -489,8 +461,6 @@ exports[`Test edit meal component should respond addMeal method onClick event ed
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -534,181 +504,6 @@ exports[`Test edit meal component should respond addMeal method onClick event ed
 `;
 
 exports[`Test edit meal component should respond to lifeCycle methods 1`] = `
-<div>
-  <h2
-    style={
-      Object {
-        "marginTop": "2rem",
-      }
-    }
-  >
-    UPDATE A MEAL 
-  </h2>
-  <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
-  <div
-    className="register-container"
-    style={
-      Object {
-        "marginTop": "2px",
-      }
-    }
-  >
-    <div
-      className="register-col"
-    />
-    <div
-      className="register-wrapper"
-      style={
-        Object {
-          "marginTop": "2px",
-        }
-      }
-    >
-      <h4
-        className="p-color text-center"
-      >
-        Edit The Field Below To Update 
-         Meal
-      </h4>
-      <br />
-      <h3
-        className="text-center danger"
-      />
-      <h3
-        className="text-center danger"
-      />
-      <form>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="name"
-          >
-            Name     
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <input
-            id="name"
-            name="name"
-            onChange={[Function]}
-            required={true}
-            type="text"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="price"
-          >
-            Price
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <input
-            id="price"
-            name="price"
-            onChange={[Function]}
-            required={true}
-            type="number"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="name"
-          >
-            Description
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <textarea
-            className="form-label"
-            cols="7"
-            id="description"
-            name="description"
-            onChange={[Function]}
-            required={true}
-            rows="9"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="password"
-          >
-            Image
-          </label>
-          <span
-            className="form-label"
-          >
-            <t
-              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
-              disableClick={false}
-              disablePreview={false}
-              disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
-              maxSize={Infinity}
-              minSize={0}
-              multiple={false}
-              onDrop={[Function]}
-              preventDropOnDocument={true}
-            >
-              Drag and drop or click to select an image to upload.
-            </t>
-          </span>
-        </div>
-        <div
-          className="form-field"
-        >
-          <button
-            className="button lg submit"
-            onClick={[Function]}
-            type="submit"
-          >
-            Update Meal
-          </button>
-        </div>
-        <div
-          className="form-field"
-        >
-          <span
-            className="text-center form-label p-color"
-          />
-        </div>
-      </form>
-    </div>
-    <div
-      className="register-col"
-    />
-  </div>
-</div>
-`;
-
-exports[`Test edit meal component should respond to lifeCycle methods 2`] = `
 Edit {
   "addMeal": [Function],
   "context": Object {},
@@ -751,7 +546,6 @@ Edit {
     },
   },
   "refs": Object {},
-  "setState": [Function],
   "state": Object {
     "description": undefined,
     "file": Array [],
@@ -844,14 +638,6 @@ Edit {
         >
           UPDATE A MEAL 
         </h2>
-        <div
-          className="detail-contents"
-        >
-          <img
-            alt="meal"
-            className="detail-img"
-          />
-        </div>
         <div
           className="register-container"
           style={
@@ -972,8 +758,6 @@ Edit {
                     disableClick={false}
                     disablePreview={false}
                     disabled={false}
-                    getDataTransferItems={[Function]}
-                    inputProps={Object {}}
                     maxSize={Infinity}
                     minSize={0}
                     multiple={false}
@@ -1013,193 +797,10 @@ Edit {
       "_updater": [Circular],
     },
   },
-  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
-exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
-<div>
-  <h2
-    style={
-      Object {
-        "marginTop": "2rem",
-      }
-    }
-  >
-    UPDATE A MEAL 
-  </h2>
-  <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-      src=""
-    />
-  </div>
-  <div
-    className="register-container"
-    style={
-      Object {
-        "marginTop": "2px",
-      }
-    }
-  >
-    <div
-      className="register-col"
-    />
-    <div
-      className="register-wrapper"
-      style={
-        Object {
-          "marginTop": "2px",
-        }
-      }
-    >
-      <h4
-        className="p-color text-center"
-      >
-        Edit The Field Below To Update 
-         Meal
-      </h4>
-      <br />
-      <h3
-        className="text-center danger"
-      />
-      <h3
-        className="text-center danger"
-      />
-      <form>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="name"
-          >
-            Name     
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <input
-            id="name"
-            name="name"
-            onChange={[Function]}
-            required={true}
-            type="text"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="price"
-          >
-            Price
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <input
-            id="price"
-            name="price"
-            onChange={[Function]}
-            required={true}
-            type="number"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="name"
-          >
-            Description
-            <br />
-            <font
-              color="red"
-            >
-               
-            </font>
-          </label>
-          <textarea
-            className="form-label"
-            cols="7"
-            id="description"
-            name="description"
-            onChange={[Function]}
-            required={true}
-            rows="9"
-          />
-        </div>
-        <div
-          className="form-field"
-        >
-          <label
-            htmlFor="password"
-          >
-            Image
-          </label>
-          <span
-            className="form-label"
-          >
-            <t
-              accept="image/jpeg,image/jpg,image/tiff,image/gif,image/png,image/svg"
-              disableClick={false}
-              disablePreview={false}
-              disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
-              maxSize={Infinity}
-              minSize={0}
-              multiple={false}
-              onDrop={[Function]}
-              preventDropOnDocument={true}
-            >
-              Drag and drop or click to select an image to upload.
-            </t>
-            <img
-              alt="meal"
-              className="img-fluid"
-              key="image.jpg"
-              src="image.jpg"
-            />
-          </span>
-        </div>
-        <div
-          className="form-field"
-        >
-          <button
-            className="button lg submit"
-            onClick={[Function]}
-            type="submit"
-          >
-            Update Meal
-          </button>
-        </div>
-        <div
-          className="form-field"
-        >
-          <span
-            className="text-center form-label p-color"
-          />
-        </div>
-      </form>
-    </div>
-    <div
-      className="register-col"
-    />
-  </div>
-</div>
-`;
-
-exports[`Test edit meal component should respond to lifeCycle methods 4`] = `
+exports[`Test edit meal component should respond to lifeCycle methods 2`] = `
 Edit {
   "addMeal": [Function],
   "context": Object {},
@@ -1242,7 +843,6 @@ Edit {
     },
   },
   "refs": Object {},
-  "setState": [Function],
   "state": Object {
     "description": undefined,
     "file": Array [
@@ -1343,15 +943,6 @@ Edit {
         >
           UPDATE A MEAL 
         </h2>
-        <div
-          className="detail-contents"
-        >
-          <img
-            alt="meal"
-            className="detail-img"
-            src=""
-          />
-        </div>
         <div
           className="register-container"
           style={
@@ -1472,8 +1063,6 @@ Edit {
                     disableClick={false}
                     disablePreview={false}
                     disabled={false}
-                    getDataTransferItems={[Function]}
-                    inputProps={Object {}}
                     maxSize={Infinity}
                     minSize={0}
                     multiple={false}
@@ -1518,11 +1107,10 @@ Edit {
       "_updater": [Circular],
     },
   },
-  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
-exports[`Test edit meal component should respond to lifeCycle methods 5`] = `
+exports[`Test edit meal component should respond to lifeCycle methods 3`] = `
 <div>
   <h2
     style={
@@ -1533,14 +1121,6 @@ exports[`Test edit meal component should respond to lifeCycle methods 5`] = `
   >
     UPDATE A MEAL 
   </h2>
-  <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
   <div
     className="register-container"
     style={
@@ -1658,8 +1238,6 @@ exports[`Test edit meal component should respond to lifeCycle methods 5`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}
@@ -1697,7 +1275,7 @@ exports[`Test edit meal component should respond to lifeCycle methods 5`] = `
 </div>
 `;
 
-exports[`Test edit meal component should respond to lifeCycle methods 6`] = `
+exports[`Test edit meal component should respond to lifeCycle methods 4`] = `
 <div>
   <h2
     style={
@@ -1708,14 +1286,6 @@ exports[`Test edit meal component should respond to lifeCycle methods 6`] = `
   >
     UPDATE A MEAL 
   </h2>
-  <div
-    className="detail-contents"
-  >
-    <img
-      alt="meal"
-      className="detail-img"
-    />
-  </div>
   <div
     className="register-container"
     style={
@@ -1833,8 +1403,6 @@ exports[`Test edit meal component should respond to lifeCycle methods 6`] = `
               disableClick={false}
               disablePreview={false}
               disabled={false}
-              getDataTransferItems={[Function]}
-              inputProps={Object {}}
               maxSize={Infinity}
               minSize={0}
               multiple={false}

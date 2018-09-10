@@ -4,6 +4,29 @@ exports[`Test order component of dashboard renders correctly 1`] = `
 <div
   className="order-wrapper order-container"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <div
     style={
       Object {
@@ -13,7 +36,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
   >
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -70,7 +92,6 @@ exports[`Test order component of dashboard renders correctly 1`] = `
     </Modal>
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -144,218 +165,1875 @@ exports[`Test order component of dashboard renders correctly 1`] = `
     >
       <b />
     </h3>
-    <AccordionWrapper
-      accordion={true}
-      className="accordion"
-      onChange={[Function]}
+    <div>
+      <AccordionWrapper
+        accordion={true}
+        className="accordion"
+        onChange={[Function]}
+      >
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__meal"
+            />
+            <div
+              className="order-accordion accordion-color"
+            >
+              <div>
+                 S/N 
+              </div>
+              <div>
+                Total price
+              </div>
+              <div>
+                Date
+              </div>
+              <div>
+                Address
+              </div>
+              <div>
+                Status
+              </div>
+              <div>
+                Action
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+        </AccordionItemWrapper>
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+          key="1"
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__arrow u-postion-relative"
+            />
+            <div
+              className="order-accordion"
+            >
+              <div
+                className="order-"
+              >
+                1
+              </div>
+              <div
+                className="order-contents "
+              >
+                # 
+              </div>
+              <div
+                className="order-contents "
+              >
+                May
+                 
+                4
+                  
+                2018
+              </div>
+              <div>
+                Reverend Street
+              </div>
+              <div
+                className="order-contents"
+              >
+                pending
+              </div>
+              <div>
+                <button
+                  className="y-color confirm-btn"
+                  onClick={[Function]}
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+          <AccordionItemBodyWrapper
+            className="accordion__body"
+            hideBodyClassName="accordion__body--hidden"
+          >
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                  <th>
+                    Edit
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                  <td>
+                    <em
+                      className="modify-btn fa fa-edit fa-2x"
+                      onClick={[Function]}
+                      role="button"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
+      <div
+        className="meal-pagination"
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={6}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[Function]}
+          pageRangeDisplayed={4}
+          prevPageText="⟨"
+          totalItemsCount={NaN}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test order component of dashboard should change state when component receive new error props 1`] = `
+<div
+  className="order-wrapper order-container"
+>
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+  <div
+    style={
+      Object {
+        "margin": "1rem 1rem 1rem 1rem",
+      }
+    }
+  >
+    <Modal
+      animationDuration={500}
+      center={true}
+      classNames={Object {}}
+      classes={
+        Object {
+          "closeButton": "styles_closeButton__20ID4",
+          "closeIcon": "styles_closeIcon__1QwbI",
+          "modal": "styles_modal__gNwvD",
+          "overlay": "styles_overlay__CLSq-",
+          "overlayCenter": "styles_overlayCenter__YHoO7",
+          "transitionEnter": "styles_transitionEnter__3j_-a",
+          "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+          "transitionExit": "styles_transitionExit__1KmEf",
+          "transitionExitActive": "styles_transitionExitActive__1nQXw",
+        }
+      }
+      closeIconSize={28}
+      closeIconSvgPath={
+        <path
+          d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+        />
+      }
+      closeOnEsc={true}
+      closeOnOverlayClick={true}
+      onClose={[Function]}
+      onEntered={null}
+      onEscKeyDown={null}
+      onExited={null}
+      onOverlayClick={null}
+      open={false}
+      showCloseIcon={true}
+      styles={Object {}}
     >
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
+      <orderModal
+        modify={[Function]}
+        onChange={[Function]}
+        state={
+          Object {
+            "activePage": 1,
+            "address": "",
+            "confirmButton": "Confirm",
+            "confirmOrderModal": false,
+            "mealName": "",
+            "modifyError": "",
+            "modifyOrder": "Modify",
+            "open": false,
+            "orderId": "",
+            "price": "",
+            "quantity": "",
+            "statusModal": "modal",
+            "totalPrice": "",
           }
         }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
+      />
+    </Modal>
+    <Modal
+      animationDuration={500}
+      center={true}
+      classNames={Object {}}
+      classes={
+        Object {
+          "closeButton": "styles_closeButton__20ID4",
+          "closeIcon": "styles_closeIcon__1QwbI",
+          "modal": "styles_modal__gNwvD",
+          "overlay": "styles_overlay__CLSq-",
+          "overlayCenter": "styles_overlayCenter__YHoO7",
+          "transitionEnter": "styles_transitionEnter__3j_-a",
+          "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+          "transitionExit": "styles_transitionExit__1KmEf",
+          "transitionExitActive": "styles_transitionExitActive__1nQXw",
+        }
+      }
+      closeIconSize={28}
+      closeIconSvgPath={
+        <path
+          d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+        />
+      }
+      closeOnEsc={true}
+      closeOnOverlayClick={true}
+      onClose={[Function]}
+      onEntered={null}
+      onEscKeyDown={null}
+      onExited={null}
+      onOverlayClick={null}
+      open={false}
+      showCloseIcon={true}
+      styles={Object {}}
+    >
+      <br />
+      <div
+        className="modal-header"
       >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
+        <p
+          className="justify l-r-pad-text"
+        >
+           Confirm that you have received this order
+        </p>
+      </div>
+      <div
+        className="modal-contents"
+      >
+        <button
+          className="remove-modal confirmStatus"
+          onClick={[Function]}
+          style={
+            Object {
+              "float": "left",
+              "minHeight": "2rem",
+            }
+          }
+        >
+          Confirm
+        </button>
+      </div>
+    </Modal>
+    <h2
+      style={
+        Object {
+          "marginTop": "4rem",
+        }
+      }
+    >
+      MY MEAL ORDER HISTORY
+    </h2>
+    <h3
+      className="danger text-center"
+    >
+      <b />
+    </h3>
+    <div>
+      <AccordionWrapper
+        accordion={true}
+        className="accordion"
+        onChange={[Function]}
+      >
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
           hideBodyClassName=""
         >
-          <div
-            className="accordion__meal"
-          />
-          <div
-            className="order-accordion accordion-color"
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
           >
-            <div>
-               S/N 
+            <div
+              className="accordion__meal"
+            />
+            <div
+              className="order-accordion accordion-color"
+            >
+              <div>
+                 S/N 
+              </div>
+              <div>
+                Total price
+              </div>
+              <div>
+                Date
+              </div>
+              <div>
+                Address
+              </div>
+              <div>
+                Status
+              </div>
+              <div>
+                Action
+              </div>
             </div>
-            <div>
-              Total price
+          </AccordionItemTitleWrapper>
+        </AccordionItemWrapper>
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+          key="1"
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__arrow u-postion-relative"
+            />
+            <div
+              className="order-accordion"
+            >
+              <div
+                className="order-"
+              >
+                1
+              </div>
+              <div
+                className="order-contents "
+              >
+                # 
+              </div>
+              <div
+                className="order-contents "
+              >
+                May
+                 
+                4
+                  
+                2018
+              </div>
+              <div>
+                Reverend Street
+              </div>
+              <div
+                className="order-contents"
+              >
+                confirmed
+              </div>
+              <div>
+                <span />
+              </div>
             </div>
-            <div>
-              Date
-            </div>
-            <div>
-              Address
-            </div>
-            <div>
-              Status
-            </div>
-            <div>
-              Action
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-      </AccordionItemWrapper>
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
+          </AccordionItemTitleWrapper>
+          <AccordionItemBodyWrapper
+            className="accordion__body"
+            hideBodyClassName="accordion__body--hidden"
+          >
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                  <th>
+                    Edit
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                  <td>
+                    <span />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
+      <div
+        className="meal-pagination"
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={6}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[Function]}
+          pageRangeDisplayed={4}
+          prevPageText="⟨"
+          totalItemsCount={NaN}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test order component of dashboard should change state when component receive new error props 2`] = `
+Orders {
+  "confirmStatus": [Function],
+  "context": Object {},
+  "handleClick": [Function],
+  "handlePageChange": [Function],
+  "modify": [Function],
+  "onChange": [Function],
+  "onCloseModal": [Function],
+  "onOpenModal": [Function],
+  "props": Object {
+    "actions": Object {
+      "clearMessages": [MockFunction],
+      "getUser": [MockFunction],
+    },
+    "activePage": 1,
+    "addToCart": [MockFunction],
+    "cart": Object {
+      "cart": [MockFunction],
+    },
+    "carts": Array [],
+    "errorMessage": Object {
+      "createMealError": "",
+      "orderError": "",
+    },
+    "handleMealPageChange": [MockFunction],
+    "mealActions": Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    },
+    "meals": Array [],
+    "menu": Object {
+      "count": 3,
+      "rows": Array [],
+    },
+    "menuActions": Object {
+      "getMenu": [MockFunction],
+    },
+    "menuMeals": Object {
+      "count": 0,
+      "meals": Array [],
+    },
+    "modify": [MockFunction],
+    "mostOrder": Array [
+      Object {
+        "descrption": "",
+        "id": 1,
+        "name": "",
+        "price": "",
+      },
+    ],
+    "myOrder": Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
+          "id": 1,
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
             },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
+        },
+      ],
+    },
+    "notifics": Array [
+      Object {},
+    ],
+    "onChange": [MockFunction],
+    "orderActions": Object {
+      "getMyOrder": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    },
+    "removeFromeCart": [MockFunction],
+    "state": Object {
+      "address": "",
+      "cart": Object {
+        "mealName": "",
+      },
+      "errorMessage": "",
+      "orderError": "",
+    },
+    "successMessage": Object {
+      "createMealSuccess": "",
+    },
+    "user": Object {},
+  },
+  "refs": Object {},
+  "state": Object {
+    "activePage": 1,
+    "address": "",
+    "confirmButton": "Confirm",
+    "confirmOrderModal": false,
+    "mealName": "",
+    "modifyError": "",
+    "modifyOrder": "Modify",
+    "open": false,
+    "orderId": "",
+    "price": "",
+    "quantity": "",
+    "statusModal": "modal",
+    "totalPrice": "",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_element": <Orders
+        actions={
+          Object {
+            "clearMessages": [MockFunction],
+            "getUser": [MockFunction],
           }
         }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-        key="1"
+        activePage={1}
+        addToCart={[MockFunction]}
+        cart={
+          Object {
+            "cart": [MockFunction],
+          }
+        }
+        carts={Array []}
+        errorMessage={
+          Object {
+            "createMealError": "",
+            "orderError": "",
+          }
+        }
+        handleMealPageChange={[MockFunction]}
+        mealActions={
+          Object {
+            "createMeal": [MockFunction],
+            "getAllMeals": [MockFunction],
+          }
+        }
+        meals={Array []}
+        menu={
+          Object {
+            "count": 3,
+            "rows": Array [],
+          }
+        }
+        menuActions={
+          Object {
+            "getMenu": [MockFunction],
+          }
+        }
+        menuMeals={
+          Object {
+            "count": 0,
+            "meals": Array [],
+          }
+        }
+        modify={[MockFunction]}
+        mostOrder={
+          Array [
+            Object {
+              "descrption": "",
+              "id": 1,
+              "name": "",
+              "price": "",
+            },
+          ]
+        }
+        myOrder={
+          Object {
+            "orders": Array [
+              Object {
+                "address": "Reverend Street",
+                "createdAt": "2018-05-4",
+                "id": 1,
+                "meals": Array [
+                  Object {
+                    "descrption": "Very delicious",
+                    "id": 1,
+                    "name": "rice",
+                    "orderMealItems": Object {
+                      "quantity": 3,
+                      "totalPrice": 4,
+                    },
+                    "price": "200",
+                  },
+                ],
+                "quantity": 3,
+                "status": "confirmed",
+                "updatedAt": "2018-05-4",
+              },
+            ],
+          }
+        }
+        notifics={
+          Array [
+            Object {},
+          ]
+        }
+        onChange={[MockFunction]}
+        orderActions={
+          Object {
+            "getMyOrder": [MockFunction] {
+              "calls": Array [
+                Array [],
+              ],
+              "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+              ],
+            },
+            "orderMeal": [MockFunction],
+            "updateOrder": [MockFunction],
+          }
+        }
+        removeFromeCart={[MockFunction]}
+        state={
+          Object {
+            "address": "",
+            "cart": Object {
+              "mealName": "",
+            },
+            "errorMessage": "",
+            "orderError": "",
+          }
+        }
+        successMessage={
+          Object {
+            "createMealSuccess": "",
+          }
+        }
+        user={Object {}}
+      />,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_newState": null,
+      "_rendered": <div
+        className="order-wrapper order-container"
       >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
+        <ToastContainer
+          autoClose={8000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
+        />
+        <div
+          style={
+            Object {
+              "margin": "1rem 1rem 1rem 1rem",
+            }
+          }
         >
-          <div
-            className="accordion__arrow u-postion-relative"
-          />
-          <div
-            className="order-accordion"
+          <Modal
+            animationDuration={500}
+            center={true}
+            classNames={Object {}}
+            classes={
+              Object {
+                "closeButton": "styles_closeButton__20ID4",
+                "closeIcon": "styles_closeIcon__1QwbI",
+                "modal": "styles_modal__gNwvD",
+                "overlay": "styles_overlay__CLSq-",
+                "overlayCenter": "styles_overlayCenter__YHoO7",
+                "transitionEnter": "styles_transitionEnter__3j_-a",
+                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+                "transitionExit": "styles_transitionExit__1KmEf",
+                "transitionExitActive": "styles_transitionExitActive__1nQXw",
+              }
+            }
+            closeIconSize={28}
+            closeIconSvgPath={
+              <path
+                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+              />
+            }
+            closeOnEsc={true}
+            closeOnOverlayClick={true}
+            onClose={[Function]}
+            onEntered={null}
+            onEscKeyDown={null}
+            onExited={null}
+            onOverlayClick={null}
+            open={false}
+            showCloseIcon={true}
+            styles={Object {}}
           >
+            <orderModal
+              modify={[Function]}
+              onChange={[Function]}
+              state={
+                Object {
+                  "activePage": 1,
+                  "address": "",
+                  "confirmButton": "Confirm",
+                  "confirmOrderModal": false,
+                  "mealName": "",
+                  "modifyError": "",
+                  "modifyOrder": "Modify",
+                  "open": false,
+                  "orderId": "",
+                  "price": "",
+                  "quantity": "",
+                  "statusModal": "modal",
+                  "totalPrice": "",
+                }
+              }
+            />
+          </Modal>
+          <Modal
+            animationDuration={500}
+            center={true}
+            classNames={Object {}}
+            classes={
+              Object {
+                "closeButton": "styles_closeButton__20ID4",
+                "closeIcon": "styles_closeIcon__1QwbI",
+                "modal": "styles_modal__gNwvD",
+                "overlay": "styles_overlay__CLSq-",
+                "overlayCenter": "styles_overlayCenter__YHoO7",
+                "transitionEnter": "styles_transitionEnter__3j_-a",
+                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+                "transitionExit": "styles_transitionExit__1KmEf",
+                "transitionExitActive": "styles_transitionExitActive__1nQXw",
+              }
+            }
+            closeIconSize={28}
+            closeIconSvgPath={
+              <path
+                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+              />
+            }
+            closeOnEsc={true}
+            closeOnOverlayClick={true}
+            onClose={[Function]}
+            onEntered={null}
+            onEscKeyDown={null}
+            onExited={null}
+            onOverlayClick={null}
+            open={false}
+            showCloseIcon={true}
+            styles={Object {}}
+          >
+            <br />
             <div
-              className="order-"
+              className="modal-header"
             >
-              1
+              <p
+                className="justify l-r-pad-text"
+              >
+                 Confirm that you have received this order
+              </p>
             </div>
             <div
-              className="order-contents "
+              className="modal-contents"
             >
-              # 
-            </div>
-            <div
-              className="order-contents "
-            >
-              May
-               
-              4
-                
-              2018
-            </div>
-            <div>
-              Reverend Street
-            </div>
-            <div
-              className="order-contents"
-            >
-              pending
-            </div>
-            <div>
               <button
-                className="y-color confirm-btn"
+                className="remove-modal confirmStatus"
                 onClick={[Function]}
+                style={
+                  Object {
+                    "float": "left",
+                    "minHeight": "2rem",
+                  }
+                }
               >
                 Confirm
               </button>
             </div>
-          </div>
-        </AccordionItemTitleWrapper>
-        <AccordionItemBodyWrapper
-          className="accordion__body"
-          hideBodyClassName="accordion__body--hidden"
-        >
-          <table
-            className="table"
+          </Modal>
+          <h2
+            style={
+              Object {
+                "marginTop": "4rem",
+              }
+            }
           >
-            <tbody>
-              <tr
-                className="p-color tr-height tr-color"
+            MY MEAL ORDER HISTORY
+          </h2>
+          <h3
+            className="danger text-center"
+          >
+            <b />
+          </h3>
+          <div>
+            <AccordionWrapper
+              accordion={true}
+              className="accordion"
+              onChange={[Function]}
+            >
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
               >
-                <th>
-                  S/N
-                </th>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Quantity
-                </th>
-                <th>
-                  Price
-                </th>
-                <th>
-                  Total Price
-                </th>
-                <th>
-                  Edit
-                </th>
-              </tr>
-              <tr
-                className="p-color tr tr-height"
-                key="1"
-              >
-                <td>
-                  1
-                </td>
-                <td>
-                  rice
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  200
-                </td>
-                <td />
-                <td>
-                  <em
-                    className="modify-btn fa fa-edit fa-2x"
-                    onClick={[Function]}
-                    role="button"
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__meal"
                   />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </AccordionItemBodyWrapper>
-      </AccordionItemWrapper>
-    </AccordionWrapper>
-    <div
-      className="meal-pagination"
-    >
-      <a
-        activePage={1}
-        firstPageText="«"
-        getPageUrl={[Function]}
-        hideFirstLastPages={false}
-        innerClass="pagination"
-        itemsCountPerPage={6}
-        lastPageText="»"
-        nextPageText="⟩"
-        onChange={[Function]}
-        pageRangeDisplayed={4}
-        prevPageText="⟨"
-        totalItemsCount={NaN}
-      />
-    </div>
-  </div>
-</div>
+                  <div
+                    className="order-accordion accordion-color"
+                  >
+                    <div>
+                       S/N 
+                    </div>
+                    <div>
+                      Total price
+                    </div>
+                    <div>
+                      Date
+                    </div>
+                    <div>
+                      Address
+                    </div>
+                    <div>
+                      Status
+                    </div>
+                    <div>
+                      Action
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+              </AccordionItemWrapper>
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__arrow u-postion-relative"
+                  />
+                  <div
+                    className="order-accordion"
+                  >
+                    <div
+                      className="order-"
+                    >
+                      1
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      # 
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      May
+                       
+                      4
+                        
+                      2018
+                    </div>
+                    <div>
+                      Reverend Street
+                    </div>
+                    <div
+                      className="order-contents"
+                    >
+                      confirmed
+                    </div>
+                    <div>
+                      <span />
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+                <AccordionItemBodyWrapper
+                  className="accordion__body"
+                  hideBodyClassName="accordion__body--hidden"
+                >
+                  <table
+                    className="table"
+                  >
+                    <tbody>
+                      <tr
+                        className="p-color tr-height tr-color"
+                      >
+                        <th>
+                          S/N
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Total Price
+                        </th>
+                        <th>
+                          Edit
+                        </th>
+                      </tr>
+                      <tr
+                        className="p-color tr tr-height"
+                      >
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          rice
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          200
+                        </td>
+                        <td />
+                        <td>
+                          <span />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </AccordionItemBodyWrapper>
+              </AccordionItemWrapper>
+            </AccordionWrapper>
+            <div
+              className="meal-pagination"
+            >
+              <a
+                activePage={1}
+                firstPageText="«"
+                getPageUrl={[Function]}
+                hideFirstLastPages={false}
+                innerClass="pagination"
+                itemsCountPerPage={6}
+                lastPageText="»"
+                nextPageText="⟩"
+                onChange={[Function]}
+                pageRangeDisplayed={4}
+                prevPageText="⟨"
+                totalItemsCount={NaN}
+              />
+            </div>
+          </div>
+        </div>
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+    },
+  },
+}
 `;
 
 exports[`Test order component of dashboard should change state when component receive new props 1`] = `
+Orders {
+  "confirmStatus": [Function],
+  "context": Object {},
+  "handleClick": [Function],
+  "handlePageChange": [Function],
+  "modify": [Function],
+  "onChange": [Function],
+  "onCloseModal": [Function],
+  "onOpenModal": [Function],
+  "props": Object {
+    "actions": Object {
+      "clearMessages": [MockFunction],
+      "getUser": [MockFunction],
+    },
+    "activePage": 1,
+    "addToCart": [MockFunction],
+    "cart": Object {
+      "cart": [MockFunction],
+    },
+    "carts": Array [],
+    "errorMessage": Object {
+      "createMealError": "",
+      "orderError": "",
+    },
+    "handleMealPageChange": [MockFunction],
+    "mealActions": Object {
+      "createMeal": [MockFunction],
+      "getAllMeals": [MockFunction],
+    },
+    "meals": Array [],
+    "menu": Object {
+      "count": 3,
+      "rows": Array [],
+    },
+    "menuActions": Object {
+      "getMenu": [MockFunction],
+    },
+    "menuMeals": Object {
+      "count": 0,
+      "meals": Array [],
+    },
+    "modify": [MockFunction],
+    "mostOrder": Array [
+      Object {
+        "descrption": "",
+        "id": 1,
+        "name": "",
+        "price": "",
+      },
+    ],
+    "myOrder": Object {
+      "orders": Array [
+        Object {
+          "address": "Reverend Street",
+          "createdAt": "2018-05-4",
+          "id": 1,
+          "meals": Array [
+            Object {
+              "descrption": "Very delicious",
+              "id": 1,
+              "name": "rice",
+              "orderMealItems": Object {
+                "quantity": 3,
+                "totalPrice": 4,
+              },
+              "price": "200",
+            },
+          ],
+          "quantity": 3,
+          "status": "confirmed",
+          "updatedAt": "2018-05-4",
+        },
+      ],
+    },
+    "notifics": Array [
+      Object {},
+    ],
+    "onChange": [MockFunction],
+    "orderActions": Object {
+      "getMyOrder": [MockFunction] {
+        "calls": Array [
+          Array [],
+          Array [],
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      },
+      "orderMeal": [MockFunction],
+      "updateOrder": [MockFunction],
+    },
+    "removeFromeCart": [MockFunction],
+    "state": Object {
+      "address": "",
+      "cart": Object {
+        "mealName": "",
+      },
+      "errorMessage": "",
+      "orderError": "",
+    },
+    "successMessage": Object {
+      "createMealSuccess": "",
+    },
+    "user": Object {},
+  },
+  "refs": Object {},
+  "state": Object {
+    "activePage": 1,
+    "address": "",
+    "confirmButton": "Confirm",
+    "confirmOrderModal": false,
+    "mealName": "",
+    "modifyError": "",
+    "modifyOrder": "Modify",
+    "open": false,
+    "orderId": "",
+    "price": "",
+    "quantity": "",
+    "statusModal": "modal",
+    "totalPrice": "",
+  },
+  "updater": Updater {
+    "_callbacks": Array [],
+    "_renderer": ReactShallowRenderer {
+      "_context": Object {},
+      "_element": <Orders
+        actions={
+          Object {
+            "clearMessages": [MockFunction],
+            "getUser": [MockFunction],
+          }
+        }
+        activePage={1}
+        addToCart={[MockFunction]}
+        cart={
+          Object {
+            "cart": [MockFunction],
+          }
+        }
+        carts={Array []}
+        errorMessage={
+          Object {
+            "createMealError": "",
+            "orderError": "",
+          }
+        }
+        handleMealPageChange={[MockFunction]}
+        mealActions={
+          Object {
+            "createMeal": [MockFunction],
+            "getAllMeals": [MockFunction],
+          }
+        }
+        meals={Array []}
+        menu={
+          Object {
+            "count": 3,
+            "rows": Array [],
+          }
+        }
+        menuActions={
+          Object {
+            "getMenu": [MockFunction],
+          }
+        }
+        menuMeals={
+          Object {
+            "count": 0,
+            "meals": Array [],
+          }
+        }
+        modify={[MockFunction]}
+        mostOrder={
+          Array [
+            Object {
+              "descrption": "",
+              "id": 1,
+              "name": "",
+              "price": "",
+            },
+          ]
+        }
+        myOrder={
+          Object {
+            "orders": Array [
+              Object {
+                "address": "Reverend Street",
+                "createdAt": "2018-05-4",
+                "id": 1,
+                "meals": Array [
+                  Object {
+                    "descrption": "Very delicious",
+                    "id": 1,
+                    "name": "rice",
+                    "orderMealItems": Object {
+                      "quantity": 3,
+                      "totalPrice": 4,
+                    },
+                    "price": "200",
+                  },
+                ],
+                "quantity": 3,
+                "status": "confirmed",
+                "updatedAt": "2018-05-4",
+              },
+            ],
+          }
+        }
+        notifics={
+          Array [
+            Object {},
+          ]
+        }
+        onChange={[MockFunction]}
+        orderActions={
+          Object {
+            "getMyOrder": [MockFunction] {
+              "calls": Array [
+                Array [],
+                Array [],
+                Array [],
+              ],
+              "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
+              ],
+            },
+            "orderMeal": [MockFunction],
+            "updateOrder": [MockFunction],
+          }
+        }
+        removeFromeCart={[MockFunction]}
+        state={
+          Object {
+            "address": "",
+            "cart": Object {
+              "mealName": "",
+            },
+            "errorMessage": "",
+            "orderError": "",
+          }
+        }
+        successMessage={
+          Object {
+            "createMealSuccess": "",
+          }
+        }
+        user={Object {}}
+      />,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_newState": null,
+      "_rendered": <div
+        className="order-wrapper order-container"
+      >
+        <ToastContainer
+          autoClose={8000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
+        />
+        <div
+          style={
+            Object {
+              "margin": "1rem 1rem 1rem 1rem",
+            }
+          }
+        >
+          <Modal
+            animationDuration={500}
+            center={true}
+            classNames={Object {}}
+            classes={
+              Object {
+                "closeButton": "styles_closeButton__20ID4",
+                "closeIcon": "styles_closeIcon__1QwbI",
+                "modal": "styles_modal__gNwvD",
+                "overlay": "styles_overlay__CLSq-",
+                "overlayCenter": "styles_overlayCenter__YHoO7",
+                "transitionEnter": "styles_transitionEnter__3j_-a",
+                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+                "transitionExit": "styles_transitionExit__1KmEf",
+                "transitionExitActive": "styles_transitionExitActive__1nQXw",
+              }
+            }
+            closeIconSize={28}
+            closeIconSvgPath={
+              <path
+                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+              />
+            }
+            closeOnEsc={true}
+            closeOnOverlayClick={true}
+            onClose={[Function]}
+            onEntered={null}
+            onEscKeyDown={null}
+            onExited={null}
+            onOverlayClick={null}
+            open={false}
+            showCloseIcon={true}
+            styles={Object {}}
+          >
+            <orderModal
+              modify={[Function]}
+              onChange={[Function]}
+              state={
+                Object {
+                  "activePage": 1,
+                  "address": "",
+                  "confirmButton": "Confirm",
+                  "confirmOrderModal": false,
+                  "mealName": "",
+                  "modifyError": "",
+                  "modifyOrder": "Modify",
+                  "open": false,
+                  "orderId": "",
+                  "price": "",
+                  "quantity": "",
+                  "statusModal": "modal",
+                  "totalPrice": "",
+                }
+              }
+            />
+          </Modal>
+          <Modal
+            animationDuration={500}
+            center={true}
+            classNames={Object {}}
+            classes={
+              Object {
+                "closeButton": "styles_closeButton__20ID4",
+                "closeIcon": "styles_closeIcon__1QwbI",
+                "modal": "styles_modal__gNwvD",
+                "overlay": "styles_overlay__CLSq-",
+                "overlayCenter": "styles_overlayCenter__YHoO7",
+                "transitionEnter": "styles_transitionEnter__3j_-a",
+                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
+                "transitionExit": "styles_transitionExit__1KmEf",
+                "transitionExitActive": "styles_transitionExitActive__1nQXw",
+              }
+            }
+            closeIconSize={28}
+            closeIconSvgPath={
+              <path
+                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+              />
+            }
+            closeOnEsc={true}
+            closeOnOverlayClick={true}
+            onClose={[Function]}
+            onEntered={null}
+            onEscKeyDown={null}
+            onExited={null}
+            onOverlayClick={null}
+            open={false}
+            showCloseIcon={true}
+            styles={Object {}}
+          >
+            <br />
+            <div
+              className="modal-header"
+            >
+              <p
+                className="justify l-r-pad-text"
+              >
+                 Confirm that you have received this order
+              </p>
+            </div>
+            <div
+              className="modal-contents"
+            >
+              <button
+                className="remove-modal confirmStatus"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "float": "left",
+                    "minHeight": "2rem",
+                  }
+                }
+              >
+                Confirm
+              </button>
+            </div>
+          </Modal>
+          <h2
+            style={
+              Object {
+                "marginTop": "4rem",
+              }
+            }
+          >
+            MY MEAL ORDER HISTORY
+          </h2>
+          <h3
+            className="danger text-center"
+          >
+            <b />
+          </h3>
+          <div>
+            <AccordionWrapper
+              accordion={true}
+              className="accordion"
+              onChange={[Function]}
+            >
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__meal"
+                  />
+                  <div
+                    className="order-accordion accordion-color"
+                  >
+                    <div>
+                       S/N 
+                    </div>
+                    <div>
+                      Total price
+                    </div>
+                    <div>
+                      Date
+                    </div>
+                    <div>
+                      Address
+                    </div>
+                    <div>
+                      Status
+                    </div>
+                    <div>
+                      Action
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+              </AccordionItemWrapper>
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__arrow u-postion-relative"
+                  />
+                  <div
+                    className="order-accordion"
+                  >
+                    <div
+                      className="order-"
+                    >
+                      1
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      # 
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      May
+                       
+                      4
+                        
+                      2018
+                    </div>
+                    <div>
+                      Reverend Street
+                    </div>
+                    <div
+                      className="order-contents"
+                    >
+                      confirmed
+                    </div>
+                    <div>
+                      <span />
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+                <AccordionItemBodyWrapper
+                  className="accordion__body"
+                  hideBodyClassName="accordion__body--hidden"
+                >
+                  <table
+                    className="table"
+                  >
+                    <tbody>
+                      <tr
+                        className="p-color tr-height tr-color"
+                      >
+                        <th>
+                          S/N
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Total Price
+                        </th>
+                        <th>
+                          Edit
+                        </th>
+                      </tr>
+                      <tr
+                        className="p-color tr tr-height"
+                      >
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          rice
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          200
+                        </td>
+                        <td />
+                        <td>
+                          <span />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </AccordionItemBodyWrapper>
+              </AccordionItemWrapper>
+            </AccordionWrapper>
+            <div
+              className="meal-pagination"
+            >
+              <a
+                activePage={1}
+                firstPageText="«"
+                getPageUrl={[Function]}
+                hideFirstLastPages={false}
+                innerClass="pagination"
+                itemsCountPerPage={6}
+                lastPageText="»"
+                nextPageText="⟩"
+                onChange={[Function]}
+                pageRangeDisplayed={4}
+                prevPageText="⟨"
+                totalItemsCount={NaN}
+              />
+            </div>
+          </div>
+        </div>
+      </div>,
+      "_rendering": false,
+      "_updater": [Circular],
+    },
+  },
+}
+`;
+
+exports[`Test order component of dashboard should change state when component receive new success props 1`] = `
 <div
   className="order-wrapper order-container"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <div
     style={
       Object {
@@ -365,7 +2043,6 @@ exports[`Test order component of dashboard should change state when component re
   >
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -422,7 +2099,6 @@ exports[`Test order component of dashboard should change state when component re
     </Modal>
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -496,206 +2172,208 @@ exports[`Test order component of dashboard should change state when component re
     >
       <b />
     </h3>
-    <AccordionWrapper
-      accordion={true}
-      className="accordion"
-      onChange={[Function]}
-    >
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__meal"
-          />
-          <div
-            className="order-accordion accordion-color"
-          >
-            <div>
-               S/N 
-            </div>
-            <div>
-              Total price
-            </div>
-            <div>
-              Date
-            </div>
-            <div>
-              Address
-            </div>
-            <div>
-              Status
-            </div>
-            <div>
-              Action
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-      </AccordionItemWrapper>
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-        key="1"
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__arrow u-postion-relative"
-          />
-          <div
-            className="order-accordion"
-          >
-            <div
-              className="order-"
-            >
-              1
-            </div>
-            <div
-              className="order-contents "
-            >
-              # 
-            </div>
-            <div
-              className="order-contents "
-            >
-              May
-               
-              4
-                
-              2018
-            </div>
-            <div>
-              Reverend Street
-            </div>
-            <div
-              className="order-contents"
-            >
-              confirmed
-            </div>
-            <div>
-              <span />
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-        <AccordionItemBodyWrapper
-          className="accordion__body"
-          hideBodyClassName="accordion__body--hidden"
-        >
-          <table
-            className="table"
-          >
-            <tbody>
-              <tr
-                className="p-color tr-height tr-color"
-              >
-                <th>
-                  S/N
-                </th>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Quantity
-                </th>
-                <th>
-                  Price
-                </th>
-                <th>
-                  Total Price
-                </th>
-                <th>
-                  Edit
-                </th>
-              </tr>
-              <tr
-                className="p-color tr tr-height"
-                key="1"
-              >
-                <td>
-                  1
-                </td>
-                <td>
-                  rice
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  200
-                </td>
-                <td />
-                <td>
-                  <span />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </AccordionItemBodyWrapper>
-      </AccordionItemWrapper>
-    </AccordionWrapper>
-    <div
-      className="meal-pagination"
-    >
-      <a
-        activePage={1}
-        firstPageText="«"
-        getPageUrl={[Function]}
-        hideFirstLastPages={false}
-        innerClass="pagination"
-        itemsCountPerPage={6}
-        lastPageText="»"
-        nextPageText="⟩"
+    <div>
+      <AccordionWrapper
+        accordion={true}
+        className="accordion"
         onChange={[Function]}
-        pageRangeDisplayed={4}
-        prevPageText="⟨"
-        totalItemsCount={NaN}
-      />
+      >
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__meal"
+            />
+            <div
+              className="order-accordion accordion-color"
+            >
+              <div>
+                 S/N 
+              </div>
+              <div>
+                Total price
+              </div>
+              <div>
+                Date
+              </div>
+              <div>
+                Address
+              </div>
+              <div>
+                Status
+              </div>
+              <div>
+                Action
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+        </AccordionItemWrapper>
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+          key="1"
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__arrow u-postion-relative"
+            />
+            <div
+              className="order-accordion"
+            >
+              <div
+                className="order-"
+              >
+                1
+              </div>
+              <div
+                className="order-contents "
+              >
+                # 
+              </div>
+              <div
+                className="order-contents "
+              >
+                May
+                 
+                4
+                  
+                2018
+              </div>
+              <div>
+                Reverend Street
+              </div>
+              <div
+                className="order-contents"
+              >
+                confirmed
+              </div>
+              <div>
+                <span />
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+          <AccordionItemBodyWrapper
+            className="accordion__body"
+            hideBodyClassName="accordion__body--hidden"
+          >
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                  <th>
+                    Edit
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                  <td>
+                    <span />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
+      <div
+        className="meal-pagination"
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={6}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[Function]}
+          pageRangeDisplayed={4}
+          prevPageText="⟨"
+          totalItemsCount={NaN}
+        />
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Test order component of dashboard should change state when component receive new props 2`] = `
+exports[`Test order component of dashboard should change state when component receive new success props 2`] = `
 Orders {
   "confirmStatus": [Function],
   "context": Object {},
@@ -711,11 +2389,14 @@ Orders {
       "getUser": [MockFunction],
     },
     "activePage": 1,
+    "addToCart": [MockFunction],
     "cart": Object {
       "cart": [MockFunction],
     },
+    "carts": Array [],
     "errorMessage": Object {
       "createMealError": "",
+      "orderError": "",
     },
     "handleMealPageChange": [MockFunction],
     "mealActions": Object {
@@ -734,15 +2415,13 @@ Orders {
       "count": 0,
       "meals": Array [],
     },
+    "modify": [MockFunction],
     "mostOrder": Array [
       Object {
-        "Meal": Object {
-          "descrption": "",
-          "id": 1,
-          "name": "",
-          "price": "",
-        },
-        "id": "",
+        "descrption": "",
+        "id": 1,
+        "name": "",
+        "price": "",
       },
     ],
     "myOrder": Object {
@@ -772,12 +2451,18 @@ Orders {
     "notifics": Array [
       Object {},
     ],
+    "onChange": [MockFunction],
     "orderActions": Object {
       "getMyOrder": [MockFunction] {
         "calls": Array [
           Array [],
+          Array [],
         ],
         "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
           Object {
             "isThrow": false,
             "value": undefined,
@@ -787,13 +2472,21 @@ Orders {
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
     },
+    "removeFromeCart": [MockFunction],
+    "state": Object {
+      "address": "",
+      "cart": Object {
+        "mealName": "",
+      },
+      "errorMessage": "",
+      "orderError": "",
+    },
     "successMessage": Object {
       "createMealSuccess": "",
     },
     "user": Object {},
   },
   "refs": Object {},
-  "setState": [Function],
   "state": Object {
     "activePage": 1,
     "address": "",
@@ -821,14 +2514,17 @@ Orders {
           }
         }
         activePage={1}
+        addToCart={[MockFunction]}
         cart={
           Object {
             "cart": [MockFunction],
           }
         }
+        carts={Array []}
         errorMessage={
           Object {
             "createMealError": "",
+            "orderError": "",
           }
         }
         handleMealPageChange={[MockFunction]}
@@ -856,16 +2552,14 @@ Orders {
             "meals": Array [],
           }
         }
+        modify={[MockFunction]}
         mostOrder={
           Array [
             Object {
-              "Meal": Object {
-                "descrption": "",
-                "id": 1,
-                "name": "",
-                "price": "",
-              },
-              "id": "",
+              "descrption": "",
+              "id": 1,
+              "name": "",
+              "price": "",
             },
           ]
         }
@@ -900,13 +2594,19 @@ Orders {
             Object {},
           ]
         }
+        onChange={[MockFunction]}
         orderActions={
           Object {
             "getMyOrder": [MockFunction] {
               "calls": Array [
                 Array [],
+                Array [],
               ],
               "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
                 Object {
                   "isThrow": false,
                   "value": undefined,
@@ -917,950 +2617,53 @@ Orders {
             "updateOrder": [MockFunction],
           }
         }
-        successMessage={
-          Object {
-            "createMealSuccess": "",
-          }
-        }
-        user={Object {}}
-      />,
-      "_forcedUpdate": false,
-      "_instance": [Circular],
-      "_newState": null,
-      "_rendered": <div
-        className="order-wrapper order-container"
-      >
-        <div
-          style={
-            Object {
-              "margin": "1rem 1rem 1rem 1rem",
-            }
-          }
-        >
-          <Modal
-            animationDuration={500}
-            blockScroll={true}
-            center={true}
-            classNames={Object {}}
-            classes={
-              Object {
-                "closeButton": "styles_closeButton__20ID4",
-                "closeIcon": "styles_closeIcon__1QwbI",
-                "modal": "styles_modal__gNwvD",
-                "overlay": "styles_overlay__CLSq-",
-                "overlayCenter": "styles_overlayCenter__YHoO7",
-                "transitionEnter": "styles_transitionEnter__3j_-a",
-                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-                "transitionExit": "styles_transitionExit__1KmEf",
-                "transitionExitActive": "styles_transitionExitActive__1nQXw",
-              }
-            }
-            closeIconSize={28}
-            closeIconSvgPath={
-              <path
-                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-              />
-            }
-            closeOnEsc={true}
-            closeOnOverlayClick={true}
-            onClose={[Function]}
-            onEntered={null}
-            onEscKeyDown={null}
-            onExited={null}
-            onOverlayClick={null}
-            open={false}
-            showCloseIcon={true}
-            styles={Object {}}
-          >
-            <orderModal
-              modify={[Function]}
-              onChange={[Function]}
-              state={
-                Object {
-                  "activePage": 1,
-                  "address": "",
-                  "confirmButton": "Confirm",
-                  "confirmOrderModal": false,
-                  "mealName": "",
-                  "modifyError": "",
-                  "modifyOrder": "Modify",
-                  "open": false,
-                  "orderId": "",
-                  "price": "",
-                  "quantity": "",
-                  "statusModal": "modal",
-                  "totalPrice": "",
-                }
-              }
-            />
-          </Modal>
-          <Modal
-            animationDuration={500}
-            blockScroll={true}
-            center={true}
-            classNames={Object {}}
-            classes={
-              Object {
-                "closeButton": "styles_closeButton__20ID4",
-                "closeIcon": "styles_closeIcon__1QwbI",
-                "modal": "styles_modal__gNwvD",
-                "overlay": "styles_overlay__CLSq-",
-                "overlayCenter": "styles_overlayCenter__YHoO7",
-                "transitionEnter": "styles_transitionEnter__3j_-a",
-                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-                "transitionExit": "styles_transitionExit__1KmEf",
-                "transitionExitActive": "styles_transitionExitActive__1nQXw",
-              }
-            }
-            closeIconSize={28}
-            closeIconSvgPath={
-              <path
-                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-              />
-            }
-            closeOnEsc={true}
-            closeOnOverlayClick={true}
-            onClose={[Function]}
-            onEntered={null}
-            onEscKeyDown={null}
-            onExited={null}
-            onOverlayClick={null}
-            open={false}
-            showCloseIcon={true}
-            styles={Object {}}
-          >
-            <br />
-            <div
-              className="modal-header"
-            >
-              <p
-                className="justify l-r-pad-text"
-              >
-                 Confirm that you have received this order
-              </p>
-            </div>
-            <div
-              className="modal-contents"
-            >
-              <button
-                className="remove-modal confirmStatus"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "float": "left",
-                    "minHeight": "2rem",
-                  }
-                }
-              >
-                Confirm
-              </button>
-            </div>
-          </Modal>
-          <h2
-            style={
-              Object {
-                "marginTop": "4rem",
-              }
-            }
-          >
-            MY MEAL ORDER HISTORY
-          </h2>
-          <h3
-            className="danger text-center"
-          >
-            <b />
-          </h3>
-          <AccordionWrapper
-            accordion={true}
-            className="accordion"
-            onChange={[Function]}
-          >
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__meal"
-                />
-                <div
-                  className="order-accordion accordion-color"
-                >
-                  <div>
-                     S/N 
-                  </div>
-                  <div>
-                    Total price
-                  </div>
-                  <div>
-                    Date
-                  </div>
-                  <div>
-                    Address
-                  </div>
-                  <div>
-                    Status
-                  </div>
-                  <div>
-                    Action
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-            </AccordionItemWrapper>
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__arrow u-postion-relative"
-                />
-                <div
-                  className="order-accordion"
-                >
-                  <div
-                    className="order-"
-                  >
-                    1
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    # 
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    May
-                     
-                    4
-                      
-                    2018
-                  </div>
-                  <div>
-                    Reverend Street
-                  </div>
-                  <div
-                    className="order-contents"
-                  >
-                    confirmed
-                  </div>
-                  <div>
-                    <span />
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-              <AccordionItemBodyWrapper
-                className="accordion__body"
-                hideBodyClassName="accordion__body--hidden"
-              >
-                <table
-                  className="table"
-                >
-                  <tbody>
-                    <tr
-                      className="p-color tr-height tr-color"
-                    >
-                      <th>
-                        S/N
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Quantity
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Total Price
-                      </th>
-                      <th>
-                        Edit
-                      </th>
-                    </tr>
-                    <tr
-                      className="p-color tr tr-height"
-                    >
-                      <td>
-                        1
-                      </td>
-                      <td>
-                        rice
-                      </td>
-                      <td>
-                        3
-                      </td>
-                      <td>
-                        200
-                      </td>
-                      <td />
-                      <td>
-                        <span />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </AccordionItemBodyWrapper>
-            </AccordionItemWrapper>
-          </AccordionWrapper>
-          <div
-            className="meal-pagination"
-          >
-            <a
-              activePage={1}
-              firstPageText="«"
-              getPageUrl={[Function]}
-              hideFirstLastPages={false}
-              innerClass="pagination"
-              itemsCountPerPage={6}
-              lastPageText="»"
-              nextPageText="⟩"
-              onChange={[Function]}
-              pageRangeDisplayed={4}
-              prevPageText="⟨"
-              totalItemsCount={NaN}
-            />
-          </div>
-        </div>
-      </div>,
-      "_rendering": false,
-      "_updater": [Circular],
-    },
-  },
-  Symbol(enzyme.__setState__): [Function],
-}
-`;
-
-exports[`Test order component of dashboard should change state when component receive new props 3`] = `
-<div
-  className="order-wrapper order-container"
->
-  <div
-    style={
-      Object {
-        "margin": "1rem 1rem 1rem 1rem",
-      }
-    }
-  >
-    <Modal
-      animationDuration={500}
-      blockScroll={true}
-      center={true}
-      classNames={Object {}}
-      classes={
-        Object {
-          "closeButton": "styles_closeButton__20ID4",
-          "closeIcon": "styles_closeIcon__1QwbI",
-          "modal": "styles_modal__gNwvD",
-          "overlay": "styles_overlay__CLSq-",
-          "overlayCenter": "styles_overlayCenter__YHoO7",
-          "transitionEnter": "styles_transitionEnter__3j_-a",
-          "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-          "transitionExit": "styles_transitionExit__1KmEf",
-          "transitionExitActive": "styles_transitionExitActive__1nQXw",
-        }
-      }
-      closeIconSize={28}
-      closeIconSvgPath={
-        <path
-          d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-        />
-      }
-      closeOnEsc={true}
-      closeOnOverlayClick={true}
-      onClose={[Function]}
-      onEntered={null}
-      onEscKeyDown={null}
-      onExited={null}
-      onOverlayClick={null}
-      open={false}
-      showCloseIcon={true}
-      styles={Object {}}
-    >
-      <orderModal
-        modify={[Function]}
-        onChange={[Function]}
+        removeFromeCart={[MockFunction]}
         state={
           Object {
-            "activePage": 1,
             "address": "",
-            "confirmButton": "Confirm",
-            "confirmOrderModal": false,
-            "mealName": "",
-            "modifyError": "",
-            "modifyOrder": "Modify",
-            "open": false,
-            "orderId": "",
-            "price": "",
-            "quantity": "",
-            "statusModal": "modal",
-            "totalPrice": "",
+            "cart": Object {
+              "mealName": "",
+            },
+            "errorMessage": "",
+            "orderError": "",
           }
         }
-      />
-    </Modal>
-    <Modal
-      animationDuration={500}
-      blockScroll={true}
-      center={true}
-      classNames={Object {}}
-      classes={
-        Object {
-          "closeButton": "styles_closeButton__20ID4",
-          "closeIcon": "styles_closeIcon__1QwbI",
-          "modal": "styles_modal__gNwvD",
-          "overlay": "styles_overlay__CLSq-",
-          "overlayCenter": "styles_overlayCenter__YHoO7",
-          "transitionEnter": "styles_transitionEnter__3j_-a",
-          "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-          "transitionExit": "styles_transitionExit__1KmEf",
-          "transitionExitActive": "styles_transitionExitActive__1nQXw",
+        successMessage={
+          Object {
+            "createMealSuccess": "",
+          }
         }
-      }
-      closeIconSize={28}
-      closeIconSvgPath={
-        <path
-          d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+        user={Object {}}
+      />,
+      "_forcedUpdate": false,
+      "_instance": [Circular],
+      "_newState": null,
+      "_rendered": <div
+        className="order-wrapper order-container"
+      >
+        <ToastContainer
+          autoClose={8000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
         />
-      }
-      closeOnEsc={true}
-      closeOnOverlayClick={true}
-      onClose={[Function]}
-      onEntered={null}
-      onEscKeyDown={null}
-      onExited={null}
-      onOverlayClick={null}
-      open={false}
-      showCloseIcon={true}
-      styles={Object {}}
-    >
-      <br />
-      <div
-        className="modal-header"
-      >
-        <p
-          className="justify l-r-pad-text"
-        >
-           Confirm that you have received this order
-        </p>
-      </div>
-      <div
-        className="modal-contents"
-      >
-        <button
-          className="remove-modal confirmStatus"
-          onClick={[Function]}
-          style={
-            Object {
-              "float": "left",
-              "minHeight": "2rem",
-            }
-          }
-        >
-          Confirm
-        </button>
-      </div>
-    </Modal>
-    <h2
-      style={
-        Object {
-          "marginTop": "4rem",
-        }
-      }
-    >
-      MY MEAL ORDER HISTORY
-    </h2>
-    <h3
-      className="danger text-center"
-    >
-      <b />
-    </h3>
-    <AccordionWrapper
-      accordion={true}
-      className="accordion"
-      onChange={[Function]}
-    >
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__meal"
-          />
-          <div
-            className="order-accordion accordion-color"
-          >
-            <div>
-               S/N 
-            </div>
-            <div>
-              Total price
-            </div>
-            <div>
-              Date
-            </div>
-            <div>
-              Address
-            </div>
-            <div>
-              Status
-            </div>
-            <div>
-              Action
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-      </AccordionItemWrapper>
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-        key="1"
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__arrow u-postion-relative"
-          />
-          <div
-            className="order-accordion"
-          >
-            <div
-              className="order-"
-            >
-              1
-            </div>
-            <div
-              className="order-contents "
-            >
-              # 
-            </div>
-            <div
-              className="order-contents "
-            >
-              May
-               
-              4
-                
-              2018
-            </div>
-            <div>
-              Reverend Street
-            </div>
-            <div
-              className="order-contents"
-            >
-              confirmed
-            </div>
-            <div>
-              <span />
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-        <AccordionItemBodyWrapper
-          className="accordion__body"
-          hideBodyClassName="accordion__body--hidden"
-        >
-          <table
-            className="table"
-          >
-            <tbody>
-              <tr
-                className="p-color tr-height tr-color"
-              >
-                <th>
-                  S/N
-                </th>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Quantity
-                </th>
-                <th>
-                  Price
-                </th>
-                <th>
-                  Total Price
-                </th>
-                <th>
-                  Edit
-                </th>
-              </tr>
-              <tr
-                className="p-color tr tr-height"
-                key="1"
-              >
-                <td>
-                  1
-                </td>
-                <td>
-                  rice
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  200
-                </td>
-                <td />
-                <td>
-                  <span />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </AccordionItemBodyWrapper>
-      </AccordionItemWrapper>
-    </AccordionWrapper>
-    <div
-      className="meal-pagination"
-    >
-      <a
-        activePage={1}
-        firstPageText="«"
-        getPageUrl={[Function]}
-        hideFirstLastPages={false}
-        innerClass="pagination"
-        itemsCountPerPage={6}
-        lastPageText="»"
-        nextPageText="⟩"
-        onChange={[Function]}
-        pageRangeDisplayed={4}
-        prevPageText="⟨"
-        totalItemsCount={NaN}
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test order component of dashboard should change state when component receive new props 4`] = `
-Orders {
-  "confirmStatus": [Function],
-  "context": Object {},
-  "handleClick": [Function],
-  "handlePageChange": [Function],
-  "modify": [Function],
-  "onChange": [Function],
-  "onCloseModal": [Function],
-  "onOpenModal": [Function],
-  "props": Object {
-    "actions": Object {
-      "clearMessages": [MockFunction],
-      "getUser": [MockFunction],
-    },
-    "activePage": 1,
-    "cart": Object {
-      "cart": [MockFunction],
-    },
-    "errorMessage": Object {
-      "createMealError": "",
-    },
-    "handleMealPageChange": [MockFunction],
-    "mealActions": Object {
-      "createMeal": [MockFunction],
-      "getAllMeals": [MockFunction],
-    },
-    "meals": Array [],
-    "menu": Object {
-      "count": 3,
-      "rows": Array [],
-    },
-    "menuActions": Object {
-      "getMenu": [MockFunction],
-    },
-    "menuMeals": Object {
-      "count": 0,
-      "meals": Array [],
-    },
-    "mostOrder": Array [
-      Object {
-        "Meal": Object {
-          "descrption": "",
-          "id": 1,
-          "name": "",
-          "price": "",
-        },
-        "id": "",
-      },
-    ],
-    "myOrder": Object {
-      "orders": Array [
-        Object {
-          "address": "Reverend Street",
-          "createdAt": "2018-05-4",
-          "id": 1,
-          "meals": Array [
-            Object {
-              "descrption": "Very delicious",
-              "id": 1,
-              "name": "rice",
-              "orderMealItems": Object {
-                "quantity": 3,
-                "totalPrice": 4,
-              },
-              "price": "200",
-            },
-          ],
-          "quantity": 3,
-          "status": "confirmed",
-          "updatedAt": "2018-05-4",
-        },
-      ],
-    },
-    "notifics": Array [
-      Object {},
-    ],
-    "orderActions": Object {
-      "getMyOrder": [MockFunction] {
-        "calls": Array [
-          Array [],
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      },
-      "orderMeal": [MockFunction],
-      "updateOrder": [MockFunction],
-    },
-    "successMessage": Object {
-      "createMealSuccess": "",
-    },
-    "user": Object {},
-  },
-  "refs": Object {},
-  "setState": [Function],
-  "state": Object {
-    "activePage": 1,
-    "address": "",
-    "confirmButton": "Confirm",
-    "confirmOrderModal": false,
-    "mealName": "",
-    "modifyError": "",
-    "modifyOrder": "Modify",
-    "open": false,
-    "orderId": "",
-    "price": "",
-    "quantity": "",
-    "statusModal": "modal",
-    "totalPrice": "",
-  },
-  "updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": ReactShallowRenderer {
-      "_context": Object {},
-      "_element": <Orders
-        actions={
-          Object {
-            "clearMessages": [MockFunction],
-            "getUser": [MockFunction],
-          }
-        }
-        activePage={1}
-        cart={
-          Object {
-            "cart": [MockFunction],
-          }
-        }
-        errorMessage={
-          Object {
-            "createMealError": "",
-          }
-        }
-        handleMealPageChange={[MockFunction]}
-        mealActions={
-          Object {
-            "createMeal": [MockFunction],
-            "getAllMeals": [MockFunction],
-          }
-        }
-        meals={Array []}
-        menu={
-          Object {
-            "count": 3,
-            "rows": Array [],
-          }
-        }
-        menuActions={
-          Object {
-            "getMenu": [MockFunction],
-          }
-        }
-        menuMeals={
-          Object {
-            "count": 0,
-            "meals": Array [],
-          }
-        }
-        mostOrder={
-          Array [
-            Object {
-              "Meal": Object {
-                "descrption": "",
-                "id": 1,
-                "name": "",
-                "price": "",
-              },
-              "id": "",
-            },
-          ]
-        }
-        myOrder={
-          Object {
-            "orders": Array [
-              Object {
-                "address": "Reverend Street",
-                "createdAt": "2018-05-4",
-                "id": 1,
-                "meals": Array [
-                  Object {
-                    "descrption": "Very delicious",
-                    "id": 1,
-                    "name": "rice",
-                    "orderMealItems": Object {
-                      "quantity": 3,
-                      "totalPrice": 4,
-                    },
-                    "price": "200",
-                  },
-                ],
-                "quantity": 3,
-                "status": "confirmed",
-                "updatedAt": "2018-05-4",
-              },
-            ],
-          }
-        }
-        notifics={
-          Array [
-            Object {},
-          ]
-        }
-        orderActions={
-          Object {
-            "getMyOrder": [MockFunction] {
-              "calls": Array [
-                Array [],
-                Array [],
-              ],
-              "results": Array [
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-              ],
-            },
-            "orderMeal": [MockFunction],
-            "updateOrder": [MockFunction],
-          }
-        }
-        successMessage={
-          Object {
-            "createMealSuccess": "",
-          }
-        }
-        user={Object {}}
-      />,
-      "_forcedUpdate": false,
-      "_instance": [Circular],
-      "_newState": null,
-      "_rendered": <div
-        className="order-wrapper order-container"
-      >
         <div
           style={
             Object {
@@ -1870,7 +2673,6 @@ Orders {
         >
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -1927,7 +2729,6 @@ Orders {
           </Modal>
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -2001,796 +2802,200 @@ Orders {
           >
             <b />
           </h3>
-          <AccordionWrapper
-            accordion={true}
-            className="accordion"
-            onChange={[Function]}
-          >
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__meal"
-                />
-                <div
-                  className="order-accordion accordion-color"
-                >
-                  <div>
-                     S/N 
-                  </div>
-                  <div>
-                    Total price
-                  </div>
-                  <div>
-                    Date
-                  </div>
-                  <div>
-                    Address
-                  </div>
-                  <div>
-                    Status
-                  </div>
-                  <div>
-                    Action
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-            </AccordionItemWrapper>
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__arrow u-postion-relative"
-                />
-                <div
-                  className="order-accordion"
-                >
-                  <div
-                    className="order-"
-                  >
-                    1
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    # 
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    May
-                     
-                    4
-                      
-                    2018
-                  </div>
-                  <div>
-                    Reverend Street
-                  </div>
-                  <div
-                    className="order-contents"
-                  >
-                    confirmed
-                  </div>
-                  <div>
-                    <span />
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-              <AccordionItemBodyWrapper
-                className="accordion__body"
-                hideBodyClassName="accordion__body--hidden"
-              >
-                <table
-                  className="table"
-                >
-                  <tbody>
-                    <tr
-                      className="p-color tr-height tr-color"
-                    >
-                      <th>
-                        S/N
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Quantity
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Total Price
-                      </th>
-                      <th>
-                        Edit
-                      </th>
-                    </tr>
-                    <tr
-                      className="p-color tr tr-height"
-                    >
-                      <td>
-                        1
-                      </td>
-                      <td>
-                        rice
-                      </td>
-                      <td>
-                        3
-                      </td>
-                      <td>
-                        200
-                      </td>
-                      <td />
-                      <td>
-                        <span />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </AccordionItemBodyWrapper>
-            </AccordionItemWrapper>
-          </AccordionWrapper>
-          <div
-            className="meal-pagination"
-          >
-            <a
-              activePage={1}
-              firstPageText="«"
-              getPageUrl={[Function]}
-              hideFirstLastPages={false}
-              innerClass="pagination"
-              itemsCountPerPage={6}
-              lastPageText="»"
-              nextPageText="⟩"
+          <div>
+            <AccordionWrapper
+              accordion={true}
+              className="accordion"
               onChange={[Function]}
-              pageRangeDisplayed={4}
-              prevPageText="⟨"
-              totalItemsCount={NaN}
-            />
-          </div>
-        </div>
-      </div>,
-      "_rendering": false,
-      "_updater": [Circular],
-    },
-  },
-  Symbol(enzyme.__setState__): [Function],
-}
-`;
-
-exports[`Test order component of dashboard should change state when component receive new props 5`] = `
-Orders {
-  "confirmStatus": [Function],
-  "context": Object {},
-  "handleClick": [Function],
-  "handlePageChange": [Function],
-  "modify": [Function],
-  "onChange": [Function],
-  "onCloseModal": [Function],
-  "onOpenModal": [Function],
-  "props": Object {
-    "actions": Object {
-      "clearMessages": [MockFunction],
-      "getUser": [MockFunction],
-    },
-    "activePage": 1,
-    "cart": Object {
-      "cart": [MockFunction],
-    },
-    "errorMessage": Object {
-      "createMealError": "",
-    },
-    "handleMealPageChange": [MockFunction],
-    "mealActions": Object {
-      "createMeal": [MockFunction],
-      "getAllMeals": [MockFunction],
-    },
-    "meals": Array [],
-    "menu": Object {
-      "count": 3,
-      "rows": Array [],
-    },
-    "menuActions": Object {
-      "getMenu": [MockFunction],
-    },
-    "menuMeals": Object {
-      "count": 0,
-      "meals": Array [],
-    },
-    "mostOrder": Array [
-      Object {
-        "Meal": Object {
-          "descrption": "",
-          "id": 1,
-          "name": "",
-          "price": "",
-        },
-        "id": "",
-      },
-    ],
-    "myOrder": Object {
-      "orders": Array [
-        Object {
-          "address": "Reverend Street",
-          "createdAt": "2018-05-4",
-          "id": 1,
-          "meals": Array [
-            Object {
-              "descrption": "Very delicious",
-              "id": 1,
-              "name": "rice",
-              "orderMealItems": Object {
-                "quantity": 3,
-                "totalPrice": 4,
-              },
-              "price": "200",
-            },
-          ],
-          "quantity": 3,
-          "status": "confirmed",
-          "updatedAt": "2018-05-4",
-        },
-      ],
-    },
-    "notifics": Array [
-      Object {},
-    ],
-    "orderActions": Object {
-      "getMyOrder": [MockFunction] {
-        "calls": Array [
-          Array [],
-          Array [],
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      },
-      "orderMeal": [MockFunction],
-      "updateOrder": [MockFunction],
-    },
-    "successMessage": Object {
-      "createMealSuccess": "",
-    },
-    "user": Object {},
-  },
-  "refs": Object {},
-  "setState": [Function],
-  "state": Object {
-    "activePage": 1,
-    "address": "",
-    "confirmButton": "Confirm",
-    "confirmOrderModal": false,
-    "mealName": "",
-    "modifyError": "",
-    "modifyOrder": "Modify",
-    "open": false,
-    "orderId": "",
-    "price": "",
-    "quantity": "",
-    "statusModal": "modal",
-    "totalPrice": "",
-  },
-  "updater": Updater {
-    "_callbacks": Array [],
-    "_renderer": ReactShallowRenderer {
-      "_context": Object {},
-      "_element": <Orders
-        actions={
-          Object {
-            "clearMessages": [MockFunction],
-            "getUser": [MockFunction],
-          }
-        }
-        activePage={1}
-        cart={
-          Object {
-            "cart": [MockFunction],
-          }
-        }
-        errorMessage={
-          Object {
-            "createMealError": "",
-          }
-        }
-        handleMealPageChange={[MockFunction]}
-        mealActions={
-          Object {
-            "createMeal": [MockFunction],
-            "getAllMeals": [MockFunction],
-          }
-        }
-        meals={Array []}
-        menu={
-          Object {
-            "count": 3,
-            "rows": Array [],
-          }
-        }
-        menuActions={
-          Object {
-            "getMenu": [MockFunction],
-          }
-        }
-        menuMeals={
-          Object {
-            "count": 0,
-            "meals": Array [],
-          }
-        }
-        mostOrder={
-          Array [
-            Object {
-              "Meal": Object {
-                "descrption": "",
-                "id": 1,
-                "name": "",
-                "price": "",
-              },
-              "id": "",
-            },
-          ]
-        }
-        myOrder={
-          Object {
-            "orders": Array [
-              Object {
-                "address": "Reverend Street",
-                "createdAt": "2018-05-4",
-                "id": 1,
-                "meals": Array [
-                  Object {
-                    "descrption": "Very delicious",
-                    "id": 1,
-                    "name": "rice",
-                    "orderMealItems": Object {
-                      "quantity": 3,
-                      "totalPrice": 4,
+            >
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
                     },
-                    "price": "200",
-                  },
-                ],
-                "quantity": 3,
-                "status": "confirmed",
-                "updatedAt": "2018-05-4",
-              },
-            ],
-          }
-        }
-        notifics={
-          Array [
-            Object {},
-          ]
-        }
-        orderActions={
-          Object {
-            "getMyOrder": [MockFunction] {
-              "calls": Array [
-                Array [],
-                Array [],
-                Array [],
-              ],
-              "results": Array [
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-                Object {
-                  "isThrow": false,
-                  "value": undefined,
-                },
-              ],
-            },
-            "orderMeal": [MockFunction],
-            "updateOrder": [MockFunction],
-          }
-        }
-        successMessage={
-          Object {
-            "createMealSuccess": "",
-          }
-        }
-        user={Object {}}
-      />,
-      "_forcedUpdate": false,
-      "_instance": [Circular],
-      "_newState": null,
-      "_rendered": <div
-        className="order-wrapper order-container"
-      >
-        <div
-          style={
-            Object {
-              "margin": "1rem 1rem 1rem 1rem",
-            }
-          }
-        >
-          <Modal
-            animationDuration={500}
-            blockScroll={true}
-            center={true}
-            classNames={Object {}}
-            classes={
-              Object {
-                "closeButton": "styles_closeButton__20ID4",
-                "closeIcon": "styles_closeIcon__1QwbI",
-                "modal": "styles_modal__gNwvD",
-                "overlay": "styles_overlay__CLSq-",
-                "overlayCenter": "styles_overlayCenter__YHoO7",
-                "transitionEnter": "styles_transitionEnter__3j_-a",
-                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-                "transitionExit": "styles_transitionExit__1KmEf",
-                "transitionExitActive": "styles_transitionExitActive__1nQXw",
-              }
-            }
-            closeIconSize={28}
-            closeIconSvgPath={
-              <path
-                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-              />
-            }
-            closeOnEsc={true}
-            closeOnOverlayClick={true}
-            onClose={[Function]}
-            onEntered={null}
-            onEscKeyDown={null}
-            onExited={null}
-            onOverlayClick={null}
-            open={false}
-            showCloseIcon={true}
-            styles={Object {}}
-          >
-            <orderModal
-              modify={[Function]}
-              onChange={[Function]}
-              state={
-                Object {
-                  "activePage": 1,
-                  "address": "",
-                  "confirmButton": "Confirm",
-                  "confirmOrderModal": false,
-                  "mealName": "",
-                  "modifyError": "",
-                  "modifyOrder": "Modify",
-                  "open": false,
-                  "orderId": "",
-                  "price": "",
-                  "quantity": "",
-                  "statusModal": "modal",
-                  "totalPrice": "",
-                }
-              }
-            />
-          </Modal>
-          <Modal
-            animationDuration={500}
-            blockScroll={true}
-            center={true}
-            classNames={Object {}}
-            classes={
-              Object {
-                "closeButton": "styles_closeButton__20ID4",
-                "closeIcon": "styles_closeIcon__1QwbI",
-                "modal": "styles_modal__gNwvD",
-                "overlay": "styles_overlay__CLSq-",
-                "overlayCenter": "styles_overlayCenter__YHoO7",
-                "transitionEnter": "styles_transitionEnter__3j_-a",
-                "transitionEnterActive": "styles_transitionEnterActive___eQs7",
-                "transitionExit": "styles_transitionExit__1KmEf",
-                "transitionExitActive": "styles_transitionExitActive__1nQXw",
-              }
-            }
-            closeIconSize={28}
-            closeIconSvgPath={
-              <path
-                d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
-              />
-            }
-            closeOnEsc={true}
-            closeOnOverlayClick={true}
-            onClose={[Function]}
-            onEntered={null}
-            onEscKeyDown={null}
-            onExited={null}
-            onOverlayClick={null}
-            open={false}
-            showCloseIcon={true}
-            styles={Object {}}
-          >
-            <br />
-            <div
-              className="modal-header"
-            >
-              <p
-                className="justify l-r-pad-text"
-              >
-                 Confirm that you have received this order
-              </p>
-            </div>
-            <div
-              className="modal-contents"
-            >
-              <button
-                className="remove-modal confirmStatus"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "float": "left",
-                    "minHeight": "2rem",
                   }
                 }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
               >
-                Confirm
-              </button>
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__meal"
+                  />
+                  <div
+                    className="order-accordion accordion-color"
+                  >
+                    <div>
+                       S/N 
+                    </div>
+                    <div>
+                      Total price
+                    </div>
+                    <div>
+                      Date
+                    </div>
+                    <div>
+                      Address
+                    </div>
+                    <div>
+                      Status
+                    </div>
+                    <div>
+                      Action
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+              </AccordionItemWrapper>
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__arrow u-postion-relative"
+                  />
+                  <div
+                    className="order-accordion"
+                  >
+                    <div
+                      className="order-"
+                    >
+                      1
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      # 
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      May
+                       
+                      4
+                        
+                      2018
+                    </div>
+                    <div>
+                      Reverend Street
+                    </div>
+                    <div
+                      className="order-contents"
+                    >
+                      confirmed
+                    </div>
+                    <div>
+                      <span />
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+                <AccordionItemBodyWrapper
+                  className="accordion__body"
+                  hideBodyClassName="accordion__body--hidden"
+                >
+                  <table
+                    className="table"
+                  >
+                    <tbody>
+                      <tr
+                        className="p-color tr-height tr-color"
+                      >
+                        <th>
+                          S/N
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Total Price
+                        </th>
+                        <th>
+                          Edit
+                        </th>
+                      </tr>
+                      <tr
+                        className="p-color tr tr-height"
+                      >
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          rice
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          200
+                        </td>
+                        <td />
+                        <td>
+                          <span />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </AccordionItemBodyWrapper>
+              </AccordionItemWrapper>
+            </AccordionWrapper>
+            <div
+              className="meal-pagination"
+            >
+              <a
+                activePage={1}
+                firstPageText="«"
+                getPageUrl={[Function]}
+                hideFirstLastPages={false}
+                innerClass="pagination"
+                itemsCountPerPage={6}
+                lastPageText="»"
+                nextPageText="⟩"
+                onChange={[Function]}
+                pageRangeDisplayed={4}
+                prevPageText="⟨"
+                totalItemsCount={NaN}
+              />
             </div>
-          </Modal>
-          <h2
-            style={
-              Object {
-                "marginTop": "4rem",
-              }
-            }
-          >
-            MY MEAL ORDER HISTORY
-          </h2>
-          <h3
-            className="danger text-center"
-          >
-            <b />
-          </h3>
-          <AccordionWrapper
-            accordion={true}
-            className="accordion"
-            onChange={[Function]}
-          >
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__meal"
-                />
-                <div
-                  className="order-accordion accordion-color"
-                >
-                  <div>
-                     S/N 
-                  </div>
-                  <div>
-                    Total price
-                  </div>
-                  <div>
-                    Date
-                  </div>
-                  <div>
-                    Address
-                  </div>
-                  <div>
-                    Status
-                  </div>
-                  <div>
-                    Action
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-            </AccordionItemWrapper>
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__arrow u-postion-relative"
-                />
-                <div
-                  className="order-accordion"
-                >
-                  <div
-                    className="order-"
-                  >
-                    1
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    # 
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    May
-                     
-                    4
-                      
-                    2018
-                  </div>
-                  <div>
-                    Reverend Street
-                  </div>
-                  <div
-                    className="order-contents"
-                  >
-                    confirmed
-                  </div>
-                  <div>
-                    <span />
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-              <AccordionItemBodyWrapper
-                className="accordion__body"
-                hideBodyClassName="accordion__body--hidden"
-              >
-                <table
-                  className="table"
-                >
-                  <tbody>
-                    <tr
-                      className="p-color tr-height tr-color"
-                    >
-                      <th>
-                        S/N
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Quantity
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Total Price
-                      </th>
-                      <th>
-                        Edit
-                      </th>
-                    </tr>
-                    <tr
-                      className="p-color tr tr-height"
-                    >
-                      <td>
-                        1
-                      </td>
-                      <td>
-                        rice
-                      </td>
-                      <td>
-                        3
-                      </td>
-                      <td>
-                        200
-                      </td>
-                      <td />
-                      <td>
-                        <span />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </AccordionItemBodyWrapper>
-            </AccordionItemWrapper>
-          </AccordionWrapper>
-          <div
-            className="meal-pagination"
-          >
-            <a
-              activePage={1}
-              firstPageText="«"
-              getPageUrl={[Function]}
-              hideFirstLastPages={false}
-              innerClass="pagination"
-              itemsCountPerPage={6}
-              lastPageText="»"
-              nextPageText="⟩"
-              onChange={[Function]}
-              pageRangeDisplayed={4}
-              prevPageText="⟨"
-              totalItemsCount={NaN}
-            />
           </div>
         </div>
       </div>,
@@ -2798,7 +3003,6 @@ Orders {
       "_updater": [Circular],
     },
   },
-  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
@@ -2806,6 +3010,29 @@ exports[`Test order component of dashboard should respond to a click event and d
 <div
   className="order-wrapper order-container"
 >
+  <ToastContainer
+    autoClose={8000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
   <div
     style={
       Object {
@@ -2815,7 +3042,6 @@ exports[`Test order component of dashboard should respond to a click event and d
   >
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -2872,7 +3098,6 @@ exports[`Test order component of dashboard should respond to a click event and d
     </Modal>
     <Modal
       animationDuration={500}
-      blockScroll={true}
       center={true}
       classNames={Object {}}
       classes={
@@ -2946,209 +3171,211 @@ exports[`Test order component of dashboard should respond to a click event and d
     >
       <b />
     </h3>
-    <AccordionWrapper
-      accordion={true}
-      className="accordion"
-      onChange={[Function]}
-    >
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__meal"
-          />
-          <div
-            className="order-accordion accordion-color"
-          >
-            <div>
-               S/N 
-            </div>
-            <div>
-              Total price
-            </div>
-            <div>
-              Date
-            </div>
-            <div>
-              Address
-            </div>
-            <div>
-              Status
-            </div>
-            <div>
-              Action
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-      </AccordionItemWrapper>
-      <AccordionItemWrapper
-        accordionStore={
-          AccordionContainer {
-            "_listeners": Array [],
-            "addItem": [Function],
-            "removeItem": [Function],
-            "setAccordion": [Function],
-            "setExpanded": [Function],
-            "setOnChange": [Function],
-            "state": Object {
-              "accordion": true,
-              "items": Array [],
-              "onChange": [Function],
-            },
-          }
-        }
-        className="accordion__item"
-        disabled={false}
-        expanded={false}
-        hideBodyClassName=""
-        key="1"
-      >
-        <AccordionItemTitleWrapper
-          className="accordion__title"
-          hideBodyClassName=""
-        >
-          <div
-            className="accordion__arrow u-postion-relative"
-          />
-          <div
-            className="order-accordion"
-          >
-            <div
-              className="order-"
-            >
-              1
-            </div>
-            <div
-              className="order-contents "
-            >
-              # 
-            </div>
-            <div
-              className="order-contents "
-            >
-              May
-               
-              4
-                
-              2018
-            </div>
-            <div>
-              Reverend Street
-            </div>
-            <div
-              className="order-contents"
-            >
-              pending
-            </div>
-            <div>
-              <button
-                className="y-color confirm-btn"
-                onClick={[Function]}
-              >
-                Confirm
-              </button>
-            </div>
-          </div>
-        </AccordionItemTitleWrapper>
-        <AccordionItemBodyWrapper
-          className="accordion__body"
-          hideBodyClassName="accordion__body--hidden"
-        >
-          <table
-            className="table"
-          >
-            <tbody>
-              <tr
-                className="p-color tr-height tr-color"
-              >
-                <th>
-                  S/N
-                </th>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Quantity
-                </th>
-                <th>
-                  Price
-                </th>
-                <th>
-                  Total Price
-                </th>
-                <th>
-                  Edit
-                </th>
-              </tr>
-              <tr
-                className="p-color tr tr-height"
-                key="1"
-              >
-                <td>
-                  1
-                </td>
-                <td>
-                  rice
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  200
-                </td>
-                <td />
-                <td>
-                  <em
-                    className="modify-btn fa fa-edit fa-2x"
-                    onClick={[Function]}
-                    role="button"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </AccordionItemBodyWrapper>
-      </AccordionItemWrapper>
-    </AccordionWrapper>
-    <div
-      className="meal-pagination"
-    >
-      <a
-        activePage={1}
-        firstPageText="«"
-        getPageUrl={[Function]}
-        hideFirstLastPages={false}
-        innerClass="pagination"
-        itemsCountPerPage={6}
-        lastPageText="»"
-        nextPageText="⟩"
+    <div>
+      <AccordionWrapper
+        accordion={true}
+        className="accordion"
         onChange={[Function]}
-        pageRangeDisplayed={4}
-        prevPageText="⟨"
-        totalItemsCount={NaN}
-      />
+      >
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__meal"
+            />
+            <div
+              className="order-accordion accordion-color"
+            >
+              <div>
+                 S/N 
+              </div>
+              <div>
+                Total price
+              </div>
+              <div>
+                Date
+              </div>
+              <div>
+                Address
+              </div>
+              <div>
+                Status
+              </div>
+              <div>
+                Action
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+        </AccordionItemWrapper>
+        <AccordionItemWrapper
+          accordionStore={
+            AccordionContainer {
+              "_listeners": Array [],
+              "addItem": [Function],
+              "removeItem": [Function],
+              "setAccordion": [Function],
+              "setExpanded": [Function],
+              "setOnChange": [Function],
+              "state": Object {
+                "accordion": true,
+                "items": Array [],
+                "onChange": [Function],
+              },
+            }
+          }
+          className="accordion__item"
+          disabled={false}
+          expanded={false}
+          hideBodyClassName=""
+          key="1"
+        >
+          <AccordionItemTitleWrapper
+            className="accordion__title"
+            hideBodyClassName=""
+          >
+            <div
+              className="accordion__arrow u-postion-relative"
+            />
+            <div
+              className="order-accordion"
+            >
+              <div
+                className="order-"
+              >
+                1
+              </div>
+              <div
+                className="order-contents "
+              >
+                # 
+              </div>
+              <div
+                className="order-contents "
+              >
+                May
+                 
+                4
+                  
+                2018
+              </div>
+              <div>
+                Reverend Street
+              </div>
+              <div
+                className="order-contents"
+              >
+                pending
+              </div>
+              <div>
+                <button
+                  className="y-color confirm-btn"
+                  onClick={[Function]}
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </AccordionItemTitleWrapper>
+          <AccordionItemBodyWrapper
+            className="accordion__body"
+            hideBodyClassName="accordion__body--hidden"
+          >
+            <table
+              className="table"
+            >
+              <tbody>
+                <tr
+                  className="p-color tr-height tr-color"
+                >
+                  <th>
+                    S/N
+                  </th>
+                  <th>
+                    Name
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Price
+                  </th>
+                  <th>
+                    Total Price
+                  </th>
+                  <th>
+                    Edit
+                  </th>
+                </tr>
+                <tr
+                  className="p-color tr tr-height"
+                  key="1"
+                >
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    rice
+                  </td>
+                  <td>
+                    3
+                  </td>
+                  <td>
+                    200
+                  </td>
+                  <td />
+                  <td>
+                    <em
+                      className="modify-btn fa fa-edit fa-2x"
+                      onClick={[Function]}
+                      role="button"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </AccordionItemBodyWrapper>
+        </AccordionItemWrapper>
+      </AccordionWrapper>
+      <div
+        className="meal-pagination"
+      >
+        <a
+          activePage={1}
+          firstPageText="«"
+          getPageUrl={[Function]}
+          hideFirstLastPages={false}
+          innerClass="pagination"
+          itemsCountPerPage={6}
+          lastPageText="»"
+          nextPageText="⟩"
+          onChange={[Function]}
+          pageRangeDisplayed={4}
+          prevPageText="⟨"
+          totalItemsCount={NaN}
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -3224,13 +3451,22 @@ Orders {
       "upgrade": [MockFunction],
     },
     "activePage": 1,
+    "addToCart": [MockFunction],
     "cart": Object {
       "cart": Array [],
     },
     "cartModal": [MockFunction],
+    "carts": Array [
+      Object {
+        "id": 1,
+        "name": "rice",
+        "quantity": 3,
+      },
+    ],
     "confirmOrder": [MockFunction],
     "errorMessage": Object {
       "createMealError": "Wrong credentials",
+      "orderError": "error ordering meals",
       "updateError": "error on update",
     },
     "handleMealPageChange": [MockFunction],
@@ -3286,6 +3522,14 @@ Orders {
         "price": 100,
       },
     },
+    "modify": [MockFunction],
+    "mostOrder": Array [
+      Object {
+        "description": "very good",
+        "name": "rice",
+        "price": 300,
+      },
+    ],
     "myOrder": Object {
       "orders": Array [
         Object {
@@ -3318,6 +3562,7 @@ Orders {
         "updatedAt": "2018-06-10",
       },
     ],
+    "onChange": [MockFunction],
     "orderActions": Object {
       "confirmStatus": [MockFunction] {
         "calls": Array [
@@ -3381,9 +3626,17 @@ Orders {
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
     },
+    "removeFromeCart": [MockFunction],
     "showMenu": [MockFunction],
     "state": Object {
       "accordion": Object {},
+      "address": "Reveend street",
+      "cart": Object {
+        "id": 2,
+        "mealName": "rice",
+      },
+      "errorMessage": "error occure",
+      "orderError": "error occure",
     },
     "successMessage": Object {
       "createMealSuccess": "meal created",
@@ -3400,7 +3653,6 @@ Orders {
     },
   },
   "refs": Object {},
-  "setState": [Function],
   "state": Object {
     "activePage": 1,
     "address": "",
@@ -3487,16 +3739,27 @@ Orders {
           }
         }
         activePage={1}
+        addToCart={[MockFunction]}
         cart={
           Object {
             "cart": Array [],
           }
         }
         cartModal={[MockFunction]}
+        carts={
+          Array [
+            Object {
+              "id": 1,
+              "name": "rice",
+              "quantity": 3,
+            },
+          ]
+        }
         confirmOrder={[MockFunction]}
         errorMessage={
           Object {
             "createMealError": "Wrong credentials",
+            "orderError": "error ordering meals",
             "updateError": "error on update",
           }
         }
@@ -3563,6 +3826,16 @@ Orders {
             },
           }
         }
+        modify={[MockFunction]}
+        mostOrder={
+          Array [
+            Object {
+              "description": "very good",
+              "name": "rice",
+              "price": 300,
+            },
+          ]
+        }
         myOrder={
           Object {
             "orders": Array [
@@ -3599,6 +3872,7 @@ Orders {
             },
           ]
         }
+        onChange={[MockFunction]}
         orderActions={
           Object {
             "confirmStatus": [MockFunction] {
@@ -3664,10 +3938,18 @@ Orders {
             "updateOrder": [MockFunction],
           }
         }
+        removeFromeCart={[MockFunction]}
         showMenu={[MockFunction]}
         state={
           Object {
             "accordion": Object {},
+            "address": "Reveend street",
+            "cart": Object {
+              "id": 2,
+              "mealName": "rice",
+            },
+            "errorMessage": "error occure",
+            "orderError": "error occure",
           }
         }
         successMessage={
@@ -3713,6 +3995,29 @@ Orders {
       "_rendered": <div
         className="order-wrapper order-container"
       >
+        <ToastContainer
+          autoClose={8000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
+        />
         <div
           style={
             Object {
@@ -3722,7 +4027,6 @@ Orders {
         >
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -3784,7 +4088,6 @@ Orders {
           </Modal>
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -3863,207 +4166,209 @@ Orders {
           >
             <b />
           </h3>
-          <AccordionWrapper
-            accordion={true}
-            className="accordion"
-            onChange={[Function]}
-          >
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__meal"
-                />
-                <div
-                  className="order-accordion accordion-color"
-                >
-                  <div>
-                     S/N 
-                  </div>
-                  <div>
-                    Total price
-                  </div>
-                  <div>
-                    Date
-                  </div>
-                  <div>
-                    Address
-                  </div>
-                  <div>
-                    Status
-                  </div>
-                  <div>
-                    Action
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-            </AccordionItemWrapper>
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__arrow u-postion-relative"
-                />
-                <div
-                  className="order-accordion"
-                >
-                  <div
-                    className="order-"
-                  >
-                    1
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    # 
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    May
-                     
-                    4
-                      
-                    2018
-                  </div>
-                  <div>
-                    Reverend Street
-                  </div>
-                  <div
-                    className="order-contents"
-                  >
-                    pending
-                  </div>
-                  <div>
-                    <button
-                      className="y-color confirm-btn"
-                      onClick={[Function]}
-                    >
-                      Confirm
-                    </button>
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-              <AccordionItemBodyWrapper
-                className="accordion__body"
-                hideBodyClassName="accordion__body--hidden"
-              >
-                <table
-                  className="table"
-                >
-                  <tbody>
-                    <tr
-                      className="p-color tr-height tr-color"
-                    >
-                      <th>
-                        S/N
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Quantity
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Total Price
-                      </th>
-                      <th>
-                        Edit
-                      </th>
-                    </tr>
-                    <tr
-                      className="p-color tr tr-height"
-                    >
-                      <td>
-                        1
-                      </td>
-                      <td>
-                        rice
-                      </td>
-                      <td>
-                        3
-                      </td>
-                      <td>
-                        200
-                      </td>
-                      <td />
-                      <td>
-                        <em
-                          className="modify-btn fa fa-edit fa-2x"
-                          onClick={[Function]}
-                          role="button"
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </AccordionItemBodyWrapper>
-            </AccordionItemWrapper>
-          </AccordionWrapper>
-          <div
-            className="meal-pagination"
-          >
-            <a
-              activePage={1}
-              firstPageText="«"
-              getPageUrl={[Function]}
-              hideFirstLastPages={false}
-              innerClass="pagination"
-              itemsCountPerPage={6}
-              lastPageText="»"
-              nextPageText="⟩"
+          <div>
+            <AccordionWrapper
+              accordion={true}
+              className="accordion"
               onChange={[Function]}
-              pageRangeDisplayed={4}
-              prevPageText="⟨"
-              totalItemsCount={NaN}
-            />
+            >
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__meal"
+                  />
+                  <div
+                    className="order-accordion accordion-color"
+                  >
+                    <div>
+                       S/N 
+                    </div>
+                    <div>
+                      Total price
+                    </div>
+                    <div>
+                      Date
+                    </div>
+                    <div>
+                      Address
+                    </div>
+                    <div>
+                      Status
+                    </div>
+                    <div>
+                      Action
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+              </AccordionItemWrapper>
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__arrow u-postion-relative"
+                  />
+                  <div
+                    className="order-accordion"
+                  >
+                    <div
+                      className="order-"
+                    >
+                      1
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      # 
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      May
+                       
+                      4
+                        
+                      2018
+                    </div>
+                    <div>
+                      Reverend Street
+                    </div>
+                    <div
+                      className="order-contents"
+                    >
+                      pending
+                    </div>
+                    <div>
+                      <button
+                        className="y-color confirm-btn"
+                        onClick={[Function]}
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+                <AccordionItemBodyWrapper
+                  className="accordion__body"
+                  hideBodyClassName="accordion__body--hidden"
+                >
+                  <table
+                    className="table"
+                  >
+                    <tbody>
+                      <tr
+                        className="p-color tr-height tr-color"
+                      >
+                        <th>
+                          S/N
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Total Price
+                        </th>
+                        <th>
+                          Edit
+                        </th>
+                      </tr>
+                      <tr
+                        className="p-color tr tr-height"
+                      >
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          rice
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          200
+                        </td>
+                        <td />
+                        <td>
+                          <em
+                            className="modify-btn fa fa-edit fa-2x"
+                            onClick={[Function]}
+                            role="button"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </AccordionItemBodyWrapper>
+              </AccordionItemWrapper>
+            </AccordionWrapper>
+            <div
+              className="meal-pagination"
+            >
+              <a
+                activePage={1}
+                firstPageText="«"
+                getPageUrl={[Function]}
+                hideFirstLastPages={false}
+                innerClass="pagination"
+                itemsCountPerPage={6}
+                lastPageText="»"
+                nextPageText="⟩"
+                onChange={[Function]}
+                pageRangeDisplayed={4}
+                prevPageText="⟨"
+                totalItemsCount={NaN}
+              />
+            </div>
           </div>
         </div>
       </div>,
@@ -4071,83 +4376,10 @@ Orders {
       "_updater": [Circular],
     },
   },
-  Symbol(enzyme.__setState__): [Function],
 }
 `;
 
-exports[`Test order component of dashboard should respond to mapDispatchToProps methods 1`] = `
-Object {
-  "actions": Object {
-    "changePassword": [Function],
-    "clearMessages": [Function],
-    "getNotifications": [Function],
-    "getUser": [Function],
-    "loadErrorMessage": [Function],
-    "loadNotifications": [Function],
-    "loadSuccessMessage": [Function],
-    "loadUser": [Function],
-    "login": [Function],
-    "refreshToken": [Function],
-    "register": [Function],
-    "resetLink": [Function],
-    "updateProfile": [Function],
-    "upgrade": [Function],
-  },
-  "orderActions": Object {
-    "confirmStatus": [Function],
-    "getAllOrders": [Function],
-    "getMyOrder": [Function],
-    "loadAllOrder": [Function],
-    "loadErrorMessage": [Function],
-    "loadMostOrdered": [Function],
-    "loadMyOrder": [Function],
-    "loadSuccessMessage": [Function],
-    "loadTodayMenu": [Function],
-    "orderMeal": [Function],
-    "updateOrder": [Function],
-  },
-}
-`;
-
-exports[`Test order component of dashboard should respond to mapStateToProps methods 1`] = `
-Object {
-  "errorMessage": Object {
-    "createMealError": "Wrong credentials",
-    "updateError": "error on update",
-  },
-  "myOrder": Object {
-    "orders": Array [
-      Object {
-        "address": "Reverend Street",
-        "createdAt": "2018-05-4",
-        "id": 1,
-        "meals": Array [
-          Object {
-            "descrption": "Very delicious",
-            "id": 1,
-            "name": "rice",
-            "orderMealItems": Object {
-              "quantity": 3,
-              "totalPrice": 4,
-            },
-            "price": "200",
-          },
-        ],
-        "quantity": 3,
-        "status": "pending",
-        "updatedAt": "2018-05-4",
-      },
-    ],
-  },
-  "successMessage": Object {
-    "createMealSuccess": "meal created",
-    "updateProfileSuccess": "updated",
-    "upgradeSuccess": " good",
-  },
-}
-`;
-
-exports[`Test order component of dashboard should respond to modify functions 1`] = `
+exports[`Test order component of dashboard should respond to lifCycle method 1`] = `
 Orders {
   "confirmStatus": [Function],
   "context": Object {},
@@ -4207,13 +4439,22 @@ Orders {
       "upgrade": [MockFunction],
     },
     "activePage": 1,
+    "addToCart": [MockFunction],
     "cart": Object {
       "cart": Array [],
     },
     "cartModal": [MockFunction],
+    "carts": Array [
+      Object {
+        "id": 1,
+        "name": "rice",
+        "quantity": 3,
+      },
+    ],
     "confirmOrder": [MockFunction],
     "errorMessage": Object {
       "createMealError": "Wrong credentials",
+      "orderError": "error ordering meals",
       "updateError": "error on update",
     },
     "handleMealPageChange": [MockFunction],
@@ -4269,6 +4510,14 @@ Orders {
         "price": 100,
       },
     },
+    "modify": [MockFunction],
+    "mostOrder": Array [
+      Object {
+        "description": "very good",
+        "name": "rice",
+        "price": 300,
+      },
+    ],
     "myOrder": Object {
       "orders": Array [
         Object {
@@ -4301,6 +4550,7 @@ Orders {
         "updatedAt": "2018-06-10",
       },
     ],
+    "onChange": [MockFunction],
     "orderActions": Object {
       "confirmStatus": [MockFunction],
       "getMyOrder": [MockFunction] {
@@ -4347,9 +4597,17 @@ Orders {
       "orderMeal": [MockFunction],
       "updateOrder": [MockFunction],
     },
+    "removeFromeCart": [MockFunction],
     "showMenu": [MockFunction],
     "state": Object {
       "accordion": Object {},
+      "address": "Reveend street",
+      "cart": Object {
+        "id": 2,
+        "mealName": "rice",
+      },
+      "errorMessage": "error occure",
+      "orderError": "error occure",
     },
     "successMessage": Object {
       "createMealSuccess": "meal created",
@@ -4366,7 +4624,6 @@ Orders {
     },
   },
   "refs": Object {},
-  "setState": [Function],
   "state": Object {
     "activePage": 1,
     "address": "",
@@ -4438,16 +4695,27 @@ Orders {
           }
         }
         activePage={1}
+        addToCart={[MockFunction]}
         cart={
           Object {
             "cart": Array [],
           }
         }
         cartModal={[MockFunction]}
+        carts={
+          Array [
+            Object {
+              "id": 1,
+              "name": "rice",
+              "quantity": 3,
+            },
+          ]
+        }
         confirmOrder={[MockFunction]}
         errorMessage={
           Object {
             "createMealError": "Wrong credentials",
+            "orderError": "error ordering meals",
             "updateError": "error on update",
           }
         }
@@ -4514,6 +4782,16 @@ Orders {
             },
           }
         }
+        modify={[MockFunction]}
+        mostOrder={
+          Array [
+            Object {
+              "description": "very good",
+              "name": "rice",
+              "price": 300,
+            },
+          ]
+        }
         myOrder={
           Object {
             "orders": Array [
@@ -4550,6 +4828,7 @@ Orders {
             },
           ]
         }
+        onChange={[MockFunction]}
         orderActions={
           Object {
             "confirmStatus": [MockFunction],
@@ -4598,10 +4877,18 @@ Orders {
             "updateOrder": [MockFunction],
           }
         }
+        removeFromeCart={[MockFunction]}
         showMenu={[MockFunction]}
         state={
           Object {
             "accordion": Object {},
+            "address": "Reveend street",
+            "cart": Object {
+              "id": 2,
+              "mealName": "rice",
+            },
+            "errorMessage": "error occure",
+            "orderError": "error occure",
           }
         }
         successMessage={
@@ -4642,6 +4929,29 @@ Orders {
       "_rendered": <div
         className="order-wrapper order-container"
       >
+        <ToastContainer
+          autoClose={8000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-right"
+          progressClassName={null}
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
+        />
         <div
           style={
             Object {
@@ -4651,7 +4961,6 @@ Orders {
         >
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -4708,7 +5017,6 @@ Orders {
           </Modal>
           <Modal
             animationDuration={500}
-            blockScroll={true}
             center={true}
             classNames={Object {}}
             classes={
@@ -4782,207 +5090,209 @@ Orders {
           >
             <b />
           </h3>
-          <AccordionWrapper
-            accordion={true}
-            className="accordion"
-            onChange={[Function]}
-          >
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__meal"
-                />
-                <div
-                  className="order-accordion accordion-color"
-                >
-                  <div>
-                     S/N 
-                  </div>
-                  <div>
-                    Total price
-                  </div>
-                  <div>
-                    Date
-                  </div>
-                  <div>
-                    Address
-                  </div>
-                  <div>
-                    Status
-                  </div>
-                  <div>
-                    Action
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-            </AccordionItemWrapper>
-            <AccordionItemWrapper
-              accordionStore={
-                AccordionContainer {
-                  "_listeners": Array [],
-                  "addItem": [Function],
-                  "removeItem": [Function],
-                  "setAccordion": [Function],
-                  "setExpanded": [Function],
-                  "setOnChange": [Function],
-                  "state": Object {
-                    "accordion": true,
-                    "items": Array [],
-                    "onChange": [Function],
-                  },
-                }
-              }
-              className="accordion__item"
-              disabled={false}
-              expanded={false}
-              hideBodyClassName=""
-            >
-              <AccordionItemTitleWrapper
-                className="accordion__title"
-                hideBodyClassName=""
-              >
-                <div
-                  className="accordion__arrow u-postion-relative"
-                />
-                <div
-                  className="order-accordion"
-                >
-                  <div
-                    className="order-"
-                  >
-                    1
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    # 
-                  </div>
-                  <div
-                    className="order-contents "
-                  >
-                    May
-                     
-                    4
-                      
-                    2018
-                  </div>
-                  <div>
-                    Reverend Street
-                  </div>
-                  <div
-                    className="order-contents"
-                  >
-                    pending
-                  </div>
-                  <div>
-                    <button
-                      className="y-color confirm-btn"
-                      onClick={[Function]}
-                    >
-                      Confirm
-                    </button>
-                  </div>
-                </div>
-              </AccordionItemTitleWrapper>
-              <AccordionItemBodyWrapper
-                className="accordion__body"
-                hideBodyClassName="accordion__body--hidden"
-              >
-                <table
-                  className="table"
-                >
-                  <tbody>
-                    <tr
-                      className="p-color tr-height tr-color"
-                    >
-                      <th>
-                        S/N
-                      </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Quantity
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Total Price
-                      </th>
-                      <th>
-                        Edit
-                      </th>
-                    </tr>
-                    <tr
-                      className="p-color tr tr-height"
-                    >
-                      <td>
-                        1
-                      </td>
-                      <td>
-                        rice
-                      </td>
-                      <td>
-                        3
-                      </td>
-                      <td>
-                        200
-                      </td>
-                      <td />
-                      <td>
-                        <em
-                          className="modify-btn fa fa-edit fa-2x"
-                          onClick={[Function]}
-                          role="button"
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </AccordionItemBodyWrapper>
-            </AccordionItemWrapper>
-          </AccordionWrapper>
-          <div
-            className="meal-pagination"
-          >
-            <a
-              activePage={1}
-              firstPageText="«"
-              getPageUrl={[Function]}
-              hideFirstLastPages={false}
-              innerClass="pagination"
-              itemsCountPerPage={6}
-              lastPageText="»"
-              nextPageText="⟩"
+          <div>
+            <AccordionWrapper
+              accordion={true}
+              className="accordion"
               onChange={[Function]}
-              pageRangeDisplayed={4}
-              prevPageText="⟨"
-              totalItemsCount={NaN}
-            />
+            >
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__meal"
+                  />
+                  <div
+                    className="order-accordion accordion-color"
+                  >
+                    <div>
+                       S/N 
+                    </div>
+                    <div>
+                      Total price
+                    </div>
+                    <div>
+                      Date
+                    </div>
+                    <div>
+                      Address
+                    </div>
+                    <div>
+                      Status
+                    </div>
+                    <div>
+                      Action
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+              </AccordionItemWrapper>
+              <AccordionItemWrapper
+                accordionStore={
+                  AccordionContainer {
+                    "_listeners": Array [],
+                    "addItem": [Function],
+                    "removeItem": [Function],
+                    "setAccordion": [Function],
+                    "setExpanded": [Function],
+                    "setOnChange": [Function],
+                    "state": Object {
+                      "accordion": true,
+                      "items": Array [],
+                      "onChange": [Function],
+                    },
+                  }
+                }
+                className="accordion__item"
+                disabled={false}
+                expanded={false}
+                hideBodyClassName=""
+              >
+                <AccordionItemTitleWrapper
+                  className="accordion__title"
+                  hideBodyClassName=""
+                >
+                  <div
+                    className="accordion__arrow u-postion-relative"
+                  />
+                  <div
+                    className="order-accordion"
+                  >
+                    <div
+                      className="order-"
+                    >
+                      1
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      # 
+                    </div>
+                    <div
+                      className="order-contents "
+                    >
+                      May
+                       
+                      4
+                        
+                      2018
+                    </div>
+                    <div>
+                      Reverend Street
+                    </div>
+                    <div
+                      className="order-contents"
+                    >
+                      pending
+                    </div>
+                    <div>
+                      <button
+                        className="y-color confirm-btn"
+                        onClick={[Function]}
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                </AccordionItemTitleWrapper>
+                <AccordionItemBodyWrapper
+                  className="accordion__body"
+                  hideBodyClassName="accordion__body--hidden"
+                >
+                  <table
+                    className="table"
+                  >
+                    <tbody>
+                      <tr
+                        className="p-color tr-height tr-color"
+                      >
+                        <th>
+                          S/N
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Quantity
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Total Price
+                        </th>
+                        <th>
+                          Edit
+                        </th>
+                      </tr>
+                      <tr
+                        className="p-color tr tr-height"
+                      >
+                        <td>
+                          1
+                        </td>
+                        <td>
+                          rice
+                        </td>
+                        <td>
+                          3
+                        </td>
+                        <td>
+                          200
+                        </td>
+                        <td />
+                        <td>
+                          <em
+                            className="modify-btn fa fa-edit fa-2x"
+                            onClick={[Function]}
+                            role="button"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </AccordionItemBodyWrapper>
+              </AccordionItemWrapper>
+            </AccordionWrapper>
+            <div
+              className="meal-pagination"
+            >
+              <a
+                activePage={1}
+                firstPageText="«"
+                getPageUrl={[Function]}
+                hideFirstLastPages={false}
+                innerClass="pagination"
+                itemsCountPerPage={6}
+                lastPageText="»"
+                nextPageText="⟩"
+                onChange={[Function]}
+                pageRangeDisplayed={4}
+                prevPageText="⟨"
+                totalItemsCount={NaN}
+              />
+            </div>
           </div>
         </div>
       </div>,
@@ -4990,6 +5300,78 @@ Orders {
       "_updater": [Circular],
     },
   },
-  Symbol(enzyme.__setState__): [Function],
+}
+`;
+
+exports[`Test order component of dashboard should respond to mapDispatchToProps methods 1`] = `
+Object {
+  "actions": Object {
+    "changePassword": [Function],
+    "clearMessages": [Function],
+    "getNotifications": [Function],
+    "getUser": [Function],
+    "loadErrorMessage": [Function],
+    "loadNotifications": [Function],
+    "loadSuccessMessage": [Function],
+    "loadUser": [Function],
+    "login": [Function],
+    "refreshToken": [Function],
+    "register": [Function],
+    "resetLink": [Function],
+    "updateProfile": [Function],
+    "upgrade": [Function],
+  },
+  "orderActions": Object {
+    "confirmStatus": [Function],
+    "getAllOrders": [Function],
+    "getMyOrder": [Function],
+    "loadAllOrder": [Function],
+    "loadErrorMessage": [Function],
+    "loadMostOrdered": [Function],
+    "loadMyOrder": [Function],
+    "loadSuccessMessage": [Function],
+    "loadTodayMenu": [Function],
+    "orderMeal": [Function],
+    "updateOrder": [Function],
+  },
+}
+`;
+
+exports[`Test order component of dashboard should respond to mapStateToProps methods 1`] = `
+Object {
+  "errorMessage": Object {
+    "createMealError": "Wrong credentials",
+    "orderError": "error ordering meals",
+    "updateError": "error on update",
+  },
+  "myOrder": Object {
+    "orders": Array [
+      Object {
+        "address": "Reverend Street",
+        "createdAt": "2018-05-4",
+        "id": 1,
+        "meals": Array [
+          Object {
+            "descrption": "Very delicious",
+            "id": 1,
+            "name": "rice",
+            "orderMealItems": Object {
+              "quantity": 3,
+              "totalPrice": 4,
+            },
+            "price": "200",
+          },
+        ],
+        "quantity": 3,
+        "status": "pending",
+        "updatedAt": "2018-05-4",
+      },
+    ],
+  },
+  "successMessage": Object {
+    "createMealSuccess": "meal created",
+    "updateProfileSuccess": "updated",
+    "upgradeSuccess": " good",
+  },
 }
 `;

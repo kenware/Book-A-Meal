@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test menu component of dashboard renders correctly with empty props 1`] = `
+<div
+  className=""
+>
+  <br />
+  <div
+    className="modal-header"
+  >
+    <h4
+      className="justify l-r-pad-text"
+    >
+      Add 
+       to cart 
+      <br />
+      Price: # 
+      <p
+        className="danger text-center"
+      />
+    </h4>
+  </div>
+  <div
+    className="modal-contents"
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <img
+      alt="meal"
+      className="rounded-circle img-height"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Quantity: 
+    </span>
+    <input
+      className="modal-menu select"
+      name="quantity"
+      onChange={[MockFunction]}
+      type="number"
+    />
+  </div>
+  <div
+    className="menu-footer"
+  >
+    <button
+      className="modal-btn"
+      onClick={[MockFunction]}
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Test menu component of dashboard should render with props 1`] = `
+<div
+  className=""
+>
+  <br />
+  <div
+    className="modal-header"
+  >
+    <h4
+      className="justify l-r-pad-text"
+    >
+      Add 
+      rice
+       to cart 
+      <br />
+      Price: # 
+      <p
+        className="danger text-center"
+      />
+    </h4>
+  </div>
+  <div
+    className="modal-contents"
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <img
+      alt="meal"
+      className="rounded-circle img-height"
+    />
+  </div>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text"
+    >
+       Quantity: 
+    </span>
+    <input
+      className="modal-menu select"
+      name="quantity"
+      onChange={[MockFunction]}
+      type="number"
+    />
+  </div>
+  <div
+    className="menu-footer"
+  >
+    <button
+      className="modal-btn"
+      onClick={[MockFunction]}
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>
+`;

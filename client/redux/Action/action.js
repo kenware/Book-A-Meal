@@ -135,6 +135,7 @@ export const updateProfile = payload => dispatch => window.fetch('/api/v1/auth/u
     getUser();
     dispatch(loadSuccessMessage({ updateSuccess: 'User updated!' }));
   });
+
 export const resetLink = emailOrUsername => dispatch => window.fetch('/api/v1/auth/resetLink', {
   headers: {
     authorization: auth.getToken(),
@@ -147,10 +148,10 @@ export const resetLink = emailOrUsername => dispatch => window.fetch('/api/v1/au
 })
   .then(res => res.json())
   .then((link) => {
-    if (!link.success) {
-      return dispatch(loadErrorMessage({ resetError: 'Error occured while sending email' }));
+    if (link.message === 'Link sent to email') {
+      return dispatch(loadSuccessMessage({ resetSuccess: 'Reset Link sent to your email. Please check your inbox and spam email.' }));
     }
-    return dispatch(loadSuccessMessage({ resetSuccess: 'Reset Link sent to your email. Please check your inbox and spam email.' }));
+    return dispatch(loadErrorMessage({ resetError: link.message }));
   });
 
 export const changePassword = (password, token) => dispatch => window.fetch('/api/v1/auth/reset', {

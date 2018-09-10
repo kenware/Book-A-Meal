@@ -19,25 +19,19 @@ export default class menuController {
  * @description Create today's menu
  */
   async createMenu(req, res, next) {
-    const { title, mealList, orderBefore } = req.body;
+    const {
+      title,
+      mealList,
+      orderBefore,
+      sendEmail
+    } = req.body;
+
     const { id, username } = req.decoded;
     const userId = id;
-    let { date } = req.body;
     let message = 'menu is updated';
     let isMenuSet = false;
-    // check if mealId exist
-    const meals = await Meal.findAll({ where: { userId, id: { $in: mealList } } });
-    if (mealList.length > meals.length) { return res.status(401).json({ message: 'Meal with the entered id not found' }); }
-    // get current hour of the day
-    const presentTime = new Date().getHours() + (new Date().getMinutes() / 60);
 
-    // check if current time is greater than order expire time
-    if (orderBefore < Number(presentTime)) {
-      return res.status(422)
-        .json({ message: 'The closing time user can order cannot be lesser than the present time' });
-    }
-
-    if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
+    const date = shortcode.parse('{YYYY-MM-DD}', new Date());
     const user = User.build({ id });
     let menu = await Menu.findOne({ where: { date, userId } });
     if (!menu) {
@@ -52,13 +46,13 @@ export default class menuController {
     let menuMeals = await menu.getMeals();
     menuMeals = new mealFilter(menuMeals).getmealList();
     menu.dataValues.meals = menuMeals;
-    if (!isMenuSet) {
+    if (!isMenuSet && sendEmail) {
       req.body.menu = menu;
       req.body.message = message;
       req.body.username = username;
       next();
     } else {
-      return res.status(200).json({ message, menu });
+      return res.status(201).json({ message, menu });
     }
   }
 
@@ -74,7 +68,7 @@ export default class menuController {
     let { limit, offset } = req.query;
     limit = parseInt(limit, 10) || 4;
     offset = parseInt(offset, 10) || 0;
-    if (limit < 0 || offset < 0) {
+    if (limit < 1 || offset < 0) {
       return res.status(401).json({ message: 'Your query param cannot be negative' });
     }
     if (!date) { date = shortcode.parse('{YYYY-MM-DD}', new Date()); }
@@ -130,7 +124,7 @@ export default class menuController {
     let { limit, offset } = req.query;
     limit = parseInt(limit, 10) || 4;
     offset = parseInt(offset, 10) || 0;
-    if (limit < 0 || offset < 0) {
+    if (limit < 1 || offset < 0) {
       return res.status(401).json({ message: 'Your query param cannot be negative' });
     }
     const id = parseInt(menuId, 10);

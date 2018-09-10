@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactCardFlip from 'react-card-flip';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import Header from '../header/index';
 import Footer from '../footer/index';
 import './index.scss';
@@ -42,6 +43,7 @@ export class Home extends Component {
       state[e] = false;
       this.setState({ state });
     };
+    if (window.localStorage.getItem('role')) { return (<Redirect to="/dashboard" />); }
     return (
       <div>
         <Header />
@@ -53,7 +55,7 @@ export class Home extends Component {
           </div>
         </div>
         <div className="site-container" style={{ marginLeft: '3%', marginRight: '3%' }}>
-          <h2>BOOK A MEAL IN THREE EASY STEPS</h2>
+          <h2 id="header">BOOK A MEAL IN THREE EASY STEPS</h2>
           <div className="all-meal-step">
             <div className="meal-day">
               <div >
@@ -114,7 +116,7 @@ export class Home extends Component {
           </div>
         </div>
         <div className="user-testimonial"><br /><br />
-          <h2>WHAT OUR FANTASTIC USERS SAY</h2>
+          <h2 id="user-story">WHAT OUR FANTASTIC USERS SAY</h2>
           <h4 className="p-color text-center">Best site to get latest recipe with just a click<br /><br /></h4>
           <UserTestimonial />
         </div>

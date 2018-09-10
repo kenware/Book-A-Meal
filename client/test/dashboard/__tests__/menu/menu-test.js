@@ -27,11 +27,13 @@ describe('Test menu component of dashboard', () => {
   });
 
   it('should respond lifeCyle method component did mount', () => {
+    const componentDidMount = jest.spyOn(Menu.prototype, 'componentDidMount');
     const tree = shallow(<Menu {...props} />);
     expect(tree).toMatchSnapshot();
     const wrapper = tree.instance();
     wrapper.componentDidMount();
     expect(tree).toMatchSnapshot();
+    expect(componentDidMount).toHaveBeenCalled();
   });
 
   it('should respond to onChange method', () => {
@@ -52,58 +54,6 @@ describe('Test menu component of dashboard', () => {
     const tree = shallow(<Menu {...props} />);
     expect(tree.find('div')).toHaveLength(2);
   });
-
-  // it('should respond to a click event of order button and dislay a modal and show Address is required on empty address field on submit', () => {
-  //   const tree = shallow(<Menu {...props} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
-  //   expect(tree.state('modal')).toEqual('');
-  //   tree.find('.order-meal').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  //   expect(tree.state('addressError')).toEqual('Your address is required');
-  // });
-
-  // it('should respond to a click event order button and dislay a modal and show Quantity is required on empty Quantity field on submit', () => {
-  //   const tree = shallow(<Menu {...props} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
-  //   expect(tree.state('modal')).toEqual('');
-  //   tree.find('#address').simulate('change', { target: { name: 'address', value: 'my address' } });
-  //   tree.find('.order-meal').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  //   expect(tree.state('addressError')).toEqual('');
-  //   expect(tree.state('quantityError')).toEqual('Quantity is required');
-  // });
-
-  // it('should respond to a click event and dislay a modal and order a meal', () => {
-  //   const tree = shallow(<Menu {...emptyProps} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
-  //   tree.find('#address').simulate('change', { target: { name: 'address', value: 'my address' } });
-  //   tree.find('#quantity').simulate('change', { target: { name: 'quantity', value: '300' } });
-  //   tree.find('.order-meal').simulate('click');
-  //   wrapper.constructor.getDerivedStateFromProps({ errorMessage: 'invalid meal name', successMessage: '' });
-  //   expect(tree).toMatchSnapshot();
-  //   wrapper.constructor.getDerivedStateFromProps({ errorMessage: '', successMessage: '' });
-  // });
-
-  // it('should respond to a click event and dislay a modal and close modal on cancel order method', () => {
-  //   const tree = shallow(<Menu {...emptyProps} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
-  //   expect(tree).toMatchSnapshot();
-  //   tree.find('.close-modal').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
-
-  // it('should respond to a click event and dislay a modal and close modal on cancel order method', () => {
-  //   const tree = shallow(<Menu {...emptyProps} />);
-  //   const wrapper = tree.instance();
-  //   wrapper.confirmOrder('mealId', 'menuId', 'mealName', 'image', 'price', 'mealDescription');
-  //   expect(tree).toMatchSnapshot();
-  //   tree.find('.top-close').simulate('click');
-  //   expect(tree).toMatchSnapshot();
-  // });
 
   it('should respond to mapStateToProps methods', () => {
     const ownProps = { match: { params: { mealId: 1 } } };

@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
-import volleyball from 'volleyball';
 import userRoute from './server/route/user';
 import mealRoute from './server/route/meal';
 import menuRoute from './server/route/menu';
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
-app.use(volleyball);
 
 // api routes
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

@@ -2,6 +2,13 @@ export const props = {
   cart: {
     cart: []
   },
+  mostOrder: [
+    {
+      name: 'rice',
+      price: 300,
+      description: 'very good'
+    }
+  ],
   upGrade: jest.fn(),
   cartModal: jest.fn(),
   menu: {
@@ -32,7 +39,6 @@ export const props = {
       name: 'jollof'
     }
   },
-  state: { accordion: { } },
   showMenu: jest.fn(),
   confirmOrder: jest.fn(),
   user: {
@@ -90,7 +96,8 @@ export const props = {
   ],
   errorMessage: {
     createMealError: 'Wrong credentials',
-    updateError: 'error on update'
+    updateError: 'error on update',
+    orderError: 'error ordering meals'
   },
   successMessage: {
     upgradeSuccess: ' good',
@@ -120,7 +127,26 @@ export const props = {
     getMenu: jest.fn()
   },
   handleMealPageChange: jest.fn(),
-  activePage: 1
+  activePage: 1,
+  carts: [{
+    id: 1,
+    name: 'rice',
+    quantity: 3
+  }],
+  state: {
+    cart: {
+      id: 2,
+      mealName: 'rice'
+    },
+    accordion: { },
+    orderError: 'error occure',
+    errorMessage: 'error occure',
+    address: 'Reveend street'
+  },
+  onChange: jest.fn(),
+  removeFromeCart: jest.fn(),
+  addToCart: jest.fn(),
+  modify: jest.fn()
 };
 
 export const emptyProps = {
@@ -140,13 +166,11 @@ export const emptyProps = {
   ],
   mostOrder: [
     {
-      id: '',
-      Meal: {
-        id: 1,
-        name: '',
-        price: '',
-        descrption: ''
-      }
+
+      id: 1,
+      name: '',
+      price: '',
+      descrption: ''
     }
   ],
   menuMeals: {
@@ -181,7 +205,8 @@ export const emptyProps = {
     createMealSuccess: ''
   },
   errorMessage: {
-    createMealError: ''
+    createMealError: '',
+    orderError: ''
   },
   actions: {
     clearMessages: jest.fn(),
@@ -200,6 +225,19 @@ export const emptyProps = {
     getMenu: jest.fn()
   },
   handleMealPageChange: jest.fn(),
-  activePage: 1
+  activePage: 1,
+  carts: [],
+  state: {
+    cart: {
+      mealName: ''
+    },
+    orderError: '',
+    errorMessage: '',
+    address: ''
+  },
+  onChange: jest.fn(),
+  removeFromeCart: jest.fn(),
+  addToCart: jest.fn(),
+  modify: jest.fn()
 };
 

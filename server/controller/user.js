@@ -1,8 +1,7 @@
-
 import bcrypt from 'bcryptjs';
 import sequelize from 'sequelize';
 import model from '../models/index';
-import tokenizer from '../helpers/tokenGenerator';
+import generator from '../helpers/generator';
 
 const { Op } = sequelize;
 const { User, notification } = model;
@@ -25,19 +24,11 @@ export default class userController {
       name, username, email, role
     } = req.body;
     let { password } = req.body;
-    password = await new Promise((resolve, reject) => {
-      bcrypt.hash(password, 10, (err, hash) => {
-        if (err) reject(err);
-        resolve(hash);
-      });
-    });
+    password = await new generator().getHashpassword(password);
     const user = await User.create({
       name, username, password, email, role
     });
-    if (!user) {
-      return res.status(442).json({ message: 'Error signing up' });
-    }
-    const token = new tokenizer(user).getToken();
+    const token = new generator(user).getToken();
     user.token = token;
     return res.status(201).json({
       id: user.id,
@@ -65,7 +56,7 @@ export default class userController {
     if (!user) { return res.status(401).json({ message: 'Wrong credentials' }); }
     bcrypt.compare(password, user.password, (err, match) => {
       if (match) {
-        const token = new tokenizer(user).getToken();
+        const token = new generator(user).getToken();
         return res.status(200).json({
           id: user.id,
           message: 'succesful login',
@@ -94,7 +85,7 @@ export default class userController {
     const setAdmin = await user.update({ role });
     if (!setAdmin) { return res.status(401).json({ message: 'Update failed' }); }
     const message = `${setAdmin.username} is set as admin`;
-    const token = new tokenizer(setAdmin).getToken();
+    const token = new generator(setAdmin).getToken();
     return res.status(201).json({ message, setAdmin, token });
   }
 
@@ -108,7 +99,7 @@ export default class userController {
     if (!user) {
       return res.status(404).json({ message: 'users not found' });
     }
-    return res.status(200).json(user);
+    return res.status(201).json(user);
   }
 
   /**
@@ -128,8 +119,8 @@ export default class userController {
           ]
         }
       });
-      if (!verify) { return res.json({ message: 'Record not found' }); }
-      const token = new tokenizer(verify).getToken();
+      if (!verify) { return res.status(401).json({ message: 'Record not found' }); }
+      const token = new generator(verify).getToken();
       req.body.user = verify;
       req.body.token = token;
       next();
@@ -148,23 +139,14 @@ export default class userController {
     if (/^\S+$/g.test(password) === false) {
       return res.status(401).json({ message: 'Password cannot contain a space' });
     }
-    try {
-      const user = await User.findById(id);
-      if (!user) { return res.status(401).json({ message: 'User not found' }); }
-      // Hasah password using bcrypt
-      password = await new Promise((resolve, reject) => {
-        bcrypt.hash(password, 10, (err, hash) => {
-          if (err) reject(err);
-          resolve(hash);
-        });
-      });
-      // change password
-      const update = await user.update({ password });
-      if (update) {
-        return res.status(201).json({ success: 'Password changed', user: update });
-      }
-      return res.status(401).json({ message: 'Password reset failed' });
-    } catch (err) { return res.json(err); }
+    const user = await User.findById(id);
+    if (!user) { return res.status(401).json({ message: 'User not found' }); }
+    password = await new generator().getHashpassword(password);
+    const update = await user.update({ password });
+    if (update) {
+      return res.status(201).json({ success: 'Password changed', user: update });
+    }
+    return res.status(401).json({ message: 'Password reset failed' });
   }
 
   /**
@@ -173,13 +155,13 @@ export default class userController {
    * @description It sendes notification to users that today's menu is set
    */
   async userNotification(req, res) {
-    const { userId } = req.decoded;
+    const { id } = req.decoded;
+    const user = await User.findById(id);
     const notifications = await notification.findAll({
       where: {
-        [Op.or]: [
-          { userId },
-          { userId: null }
-        ]
+        createdAt: {
+          $gt: user.createdAt
+        }
       },
       order: [
         ['createdAt', 'DESC']
@@ -195,8 +177,8 @@ export default class userController {
    *              the token then have a fresh expire time
    */
   async refreshToken(req, res) {
-    const token = new tokenizer(req.decoded).getToken();
-    return res.status(200).json({
+    const token = new generator(req.decoded).getToken();
+    return res.status(201).json({
       username: req.decoded.username,
       role: req.decoded.role,
       id: req.decoded.id,
@@ -210,19 +192,14 @@ export default class userController {
    * @param  {user} res updated user
    */
   async userUpdate(req, res) {
-    const { id } = req.decoded;
-    const user = await User.findById(id);
-    if (!user) { return res.status(401).json({ message: 'User not found' }); }
-    const { name } = req.body;
+    const { name, user } = req.body;
     let { image } = req.body;
-    if (!name || (/^[a-zA-Z ]+$/.test(name) === false) || typeof name !== 'string' || /^ *$/.test(name) === true) {
-      return res.status(401).json({ message: 'valid name is required' });
-    }
+
     if (req.files && req.files.length !== 0) {
       image = req.files[0].url;
     }
     const update = await user.update({ name, image });
-    const token = new tokenizer(update).getToken();
+    const token = new generator(update).getToken();
     const userUpdate = {
       username: update.username,
       role: update.role,

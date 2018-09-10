@@ -41,8 +41,8 @@ export const createMeal = payload => dispatch => window.fetch('/api/v1/meals', {
     }
     dispatch(getAllMeals(6, 0));
     dispatch(loadSuccessMessage({ createMealSuccess: 'Meal Successfully Created' }));
-    // return history.push('/dashboard');
   });
+
 export const deleteMeal = id => dispatch => window.fetch(`/api/v1/meals/${id}`, {
   method: 'DELETE',
   headers: {

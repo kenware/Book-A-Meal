@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import 'video-react/dist/video-react.css';
 import PropTypes from 'prop-types';
 import Modal from 'react-responsive-modal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Pagination from 'react-js-pagination';
 import * as actions from '../../redux/Action/action';
 import * as menuActions from '../../redux/Action/menuAction';
@@ -114,13 +116,25 @@ export class Menu extends Component {
     if (!this.state.quantity) {
       return this.setState({ emptyAddress: 'All the field is required' });
     }
+    if (this.state.quantity < 1) {
+      return this.setState({ emptyAddress: 'Quantity cannot be less than one' });
+    }
     const myOrder = {
       mealId: this.state.cart.mealId,
       name: this.state.cart.mealName,
       menuId: this.state.cart.menuId,
-      quantity: Number(this.state.quantity),
-      totalPrice: this.state.cart.price * this.state.quantity
+      quantity: Number(this.state.quantity)
     };
+
+    const { cart } = this.props.cart;
+    for (const meal of cart) {
+      if (meal.menuId === myOrder.menuId && meal.mealId === myOrder.mealId) {
+        toast.error('This meal is already in the cart', {
+          className: 'errortoast'
+        });
+        return this.setState({ open: false });
+      }
+    }
     this.props.menuActions.addToCart(myOrder);
     this.setState({ open: false });
   }
@@ -164,13 +178,13 @@ export class Menu extends Component {
   render() {
     return (
       <div className="meal-container">
+        <ToastContainer autoClose={8000} />
         <Modal open={this.state.open} onClose={this.cartModal} center>
           <MenuModal addToCart={this.addToCart} state={this.state} onChange={this.onChange} />
         </Modal>
         <MealGuide />
-        <h2 className="top-bot-margin">TODAY MENU FROM All CATERERS</h2>
+        <h2 className="top-bot-margin" id="menu-header">TODAY MENU FROM All CATERERS</h2>
         <h3 className="success text-center">{this.state.successMessage}</h3>
-        <h3 className="danger text-center">{this.state.errorMessage}</h3>
         {this.props.menu.rows.length < 1 ?
           <h3 className="danger text-center">{this.props.errorMessage.getMenuError}</h3> :
           <span /> }
@@ -206,6 +220,7 @@ Menu.propTypes = {
   menuActions: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
   menuMeals: PropTypes.object.isRequired,
+  cart: PropTypes.object.isRequired
 };
 
 export function mapStateToProps(state) {

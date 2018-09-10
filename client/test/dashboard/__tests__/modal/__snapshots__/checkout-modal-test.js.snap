@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test checkout modal renders correctly with empty props 1`] = `
+<div
+  className="modal-wrapper top-margin"
+>
+  <p
+    className="order-center"
+  >
+    Cart
+  </p>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text address"
+    >
+       Address: 
+    </span>
+    <textarea
+      className="modal-menu "
+      id="address"
+      name="address"
+      onChange={[MockFunction]}
+      rows="4"
+      style={
+        Object {
+          "marginLeft": "1rem",
+        }
+      }
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className=""
+  >
+    <h3
+      className="danger justify l-r-pad-text"
+    />
+  </div>
+  <p
+    className="order-center"
+  >
+    Cart Empty
+  </p>
+</div>
+`;
+
+exports[`Test checkout modal should render with props 1`] = `
+<div
+  className="modal-wrapper top-margin"
+>
+  <p
+    className="order-center"
+  >
+    Cart
+  </p>
+  <div
+    className="modal-contents"
+  >
+    <span
+      className="modal-items l-r-pad-text address"
+    >
+       Address: 
+    </span>
+    <textarea
+      className="modal-menu "
+      id="address"
+      name="address"
+      onChange={[MockFunction]}
+      rows="4"
+      style={
+        Object {
+          "marginLeft": "1rem",
+        }
+      }
+      type="text"
+      value="Reveend street"
+    />
+  </div>
+  <div
+    className=""
+  >
+    <h3
+      className="danger justify l-r-pad-text"
+    >
+      error occure
+    </h3>
+    error occure
+  </div>
+  <div>
+    <table
+      className="table"
+    >
+      <tbody>
+        <tr
+          className="p-white tr-color tr-height"
+        >
+          <th>
+            S/N
+          </th>
+          <th>
+            Name
+          </th>
+          <td>
+            Quantity
+          </td>
+          <td>
+            Remove
+          </td>
+        </tr>
+        <tr
+          className="order-contents tr tr-height"
+          key="1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            rice
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            <em
+              className="fa fa-trash-o"
+              id="cart-btn"
+              onClick={[Function]}
+              role="button"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

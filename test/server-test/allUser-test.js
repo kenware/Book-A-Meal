@@ -3,6 +3,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../../app';
 import model from '../../server/models';
+import { adminUser, firstUser, secondUser } from '../testMock';
 
 process.env.NODE_ENV = 'test';
 const should = chai.should();
@@ -26,13 +27,7 @@ describe('/POST api/v1/auth/signup', () => {
   it('admin should sign up ', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'kenson',
-        name: 'kenson',
-        email: 'kenson@gmail.com',
-        password: '12345',
-        role: 'admin'
-      })
+      .send(adminUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('kenson');
@@ -47,12 +42,7 @@ describe('/POST api/v1/auth/signup', () => {
   it('first user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'keneth',
-        name: 'keneth',
-        email: 'kelvin@gmail.kev',
-        password: '12345'
-      })
+      .send(firstUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('keneth');
@@ -67,12 +57,7 @@ describe('/POST api/v1/auth/signup', () => {
   it('second user should sign up', (done) => {
     chai.request(server)
       .post('/api/v1/auth/signup')
-      .send({
-        username: 'ejike',
-        name: 'ejike',
-        email: 'ejike@gmail.kev',
-        password: '12345'
-      })
+      .send(secondUser)
       .end((err, res) => {
         res.should.have.status(201);
         res.body.should.have.property('name').eql('ejike');
@@ -300,8 +285,7 @@ describe('/POST api/v1/auth/signin', () => {
         emailOrUsername: 'kenson'
       })
       .end((err, res) => {
-        res.should.have.status(201);
-        res.body.should.have.property('success');
+        res.body.should.have.property('message');
         done();
       });
   }).timeout(15000);

@@ -18,19 +18,26 @@ Book-A-Meal: Order a meal of your choice just by a single click
 # <a name="installations">Installations
 * Create a folder 
 * Enter the folder director from the command line and initialize git using "git init" command in the command line
-* clone the the repositary using "git clone https://github.com/kenware/Book-A-Meal.git" command
-* type 'npm install' command on the root directory of the project to install dependency
+* run ```git clone https://github.com/kenware/Book-A-Meal.git``` to clone this repositary
+* Run ```npm install``` command on the root directory of the project to install dependency
 * npm start
+# <a name="documentation">Heroku app
+* [Book-A-Meal](https://bookmeals.herokuapp.com)
 # <a name="documentation">API Documentation
-* Get full documentation of this Api on Swagger
-* https://app.swaggerhub.com/apis/kenware/Book-A-Meal-API/0.1
+* Get full documentation of this App on Swagger
+* [API Documentation](https://bookmeals.herokuapp.com/api-docs)
 # <a name="test"></a>Test
 * After installations
 * navigate to 127.0.0.1://5000/meal to view project live
 * You must have posgres installed
-* npm test to run both backend(mocha) and frontend(jest) test
-* To run end-2-end test. create a lib folder and Install selenium-server-standalone-[version].jar and chromedriver
-* npm run e2e-test.
+* npm run both backend(mocha) and frontend(jest) test
+* ```npm test```
+# Server test
+* ```npm run server-test```
+# Front end test
+* ```npm run jest```
+* To run end-2-end test
+* ```npm run e2e-test```.
 # <a name="functions"></a>Functions
 * The project provides an interphase to Add a meal
 * Modify a meal

@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test Component of ALLMeals component renders correctly 1`] = `
-<div>
+<div
+  id="allmeal"
+>
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -81,8 +82,8 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
   >
     Edit, delete or View all meal options
   </h4>
-  <h4
-    className="danger text-center"
+  <h2
+    className="danger"
   />
   <div
     className="contents container allMeal"
@@ -108,6 +109,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/1"
         >
@@ -141,7 +143,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="rice"
           onClick={[Function]}
           role="button"
@@ -178,6 +180,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/2"
         >
@@ -211,7 +214,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="beans"
           onClick={[Function]}
           role="button"
@@ -225,7 +228,7 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="meal-pagination"
+    className="meal-pagination margin-bottom"
   >
     <a
       activePage={1}
@@ -246,10 +249,11 @@ exports[`Test Component of ALLMeals component renders correctly 1`] = `
 `;
 
 exports[`Test Component of ALLMeals component should call deletMeal method onclick event 1`] = `
-<div>
+<div
+  id="allmeal"
+>
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -326,8 +330,8 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
   >
     Edit, delete or View all meal options
   </h4>
-  <h4
-    className="danger text-center"
+  <h2
+    className="danger"
   />
   <div
     className="contents container allMeal"
@@ -353,6 +357,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/1"
         >
@@ -386,7 +391,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="rice"
           onClick={[Function]}
           role="button"
@@ -423,6 +428,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/2"
         >
@@ -456,7 +462,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="beans"
           onClick={[Function]}
           role="button"
@@ -470,7 +476,7 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
     </div>
   </div>
   <div
-    className="meal-pagination"
+    className="meal-pagination margin-bottom"
   >
     <a
       activePage={1}
@@ -490,13 +496,14 @@ exports[`Test Component of ALLMeals component should call deletMeal method oncli
 </div>
 `;
 
-exports[`Test Component of ALLMeals component should cancel/remove modal that delete meal using cancelAdd method onclick event 1`] = `undefined`;
+exports[`Test Component of ALLMeals component should cancel/remove modal that delete meal using cancelAdd method 1`] = `undefined`;
 
 exports[`Test Component of ALLMeals component should respond to a click event by dispalying a modal when caterer want to delete a meal by selecting from meal options 1`] = `
-<div>
+<div
+  id="allmeal"
+>
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -573,8 +580,8 @@ exports[`Test Component of ALLMeals component should respond to a click event by
   >
     Edit, delete or View all meal options
   </h4>
-  <h4
-    className="danger text-center"
+  <h2
+    className="danger"
   />
   <div
     className="contents container allMeal"
@@ -600,6 +607,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/1"
         >
@@ -633,7 +641,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="rice"
           onClick={[Function]}
           role="button"
@@ -670,6 +678,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/2"
         >
@@ -703,7 +712,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="beans"
           onClick={[Function]}
           role="button"
@@ -717,7 +726,7 @@ exports[`Test Component of ALLMeals component should respond to a click event by
     </div>
   </div>
   <div
-    className="meal-pagination"
+    className="meal-pagination margin-bottom"
   >
     <a
       activePage={1}
@@ -738,10 +747,11 @@ exports[`Test Component of ALLMeals component should respond to a click event by
 `;
 
 exports[`Test Component of ALLMeals component should respond to deleteMeal method  1`] = `
-<div>
+<div
+  id="allmeal"
+>
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -818,8 +828,8 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
   >
     Edit, delete or View all meal options
   </h4>
-  <h4
-    className="danger text-center"
+  <h2
+    className="danger"
   />
   <div
     className="contents container allMeal"
@@ -845,6 +855,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/1"
         >
@@ -878,7 +889,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="rice"
           onClick={[Function]}
           role="button"
@@ -915,6 +926,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/2"
         >
@@ -948,7 +960,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="beans"
           onClick={[Function]}
           role="button"
@@ -962,7 +974,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     </div>
   </div>
   <div
-    className="meal-pagination"
+    className="meal-pagination margin-bottom"
   >
     <a
       activePage={1}
@@ -983,10 +995,11 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
 `;
 
 exports[`Test Component of ALLMeals component should respond to deleteMeal method 1`] = `
-<div>
+<div
+  id="allmeal"
+>
   <Modal
     animationDuration={500}
-    blockScroll={true}
     center={true}
     classNames={Object {}}
     classes={
@@ -1063,8 +1076,8 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
   >
     Edit, delete or View all meal options
   </h4>
-  <h4
-    className="danger text-center"
+  <h2
+    className="danger"
   />
   <div
     className="contents container allMeal"
@@ -1090,6 +1103,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/1"
         >
@@ -1123,7 +1137,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="rice"
           onClick={[Function]}
           role="button"
@@ -1160,6 +1174,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
            Title
         </h4>
         <Link
+          id="edit"
           replace={false}
           to="/admin/edit/2"
         >
@@ -1193,7 +1208,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
          
         <br />
         <span
-          className="p-color"
+          className="p-color delete"
           id="beans"
           onClick={[Function]}
           role="button"
@@ -1207,7 +1222,7 @@ exports[`Test Component of ALLMeals component should respond to deleteMeal metho
     </div>
   </div>
   <div
-    className="meal-pagination"
+    className="meal-pagination margin-bottom"
   >
     <a
       activePage={1}

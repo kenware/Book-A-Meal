@@ -8,7 +8,7 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly with user info in the nav bar', () => {
+  it('should render properly with user role', () => {
     window.localStorage = {
       getItem() {
         return 'user';
@@ -18,7 +18,7 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly with user info in the nav bar', () => {
+  it('should render properly with admin role', () => {
     window.localStorage = {
       getItem() {
         return 'admin';
@@ -28,23 +28,15 @@ describe('Testing of sidebar component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render properly with user info in the nav bar', () => {
-    window.localStorage = {
-      getItem() {
-        return 'user';
-      }
-    };
-    const tree = shallow(<IndexNav onModal={jest.fn()} />);
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should respond to click method', () => {
+    const onClick = jest.spyOn(IndexNav.prototype, 'onClick');
     const tree = shallow(<IndexNav onModal={jest.fn()} />);
     const wrapper = tree.instance();
     wrapper.onClick();
     tree.setState({ responsive: 'responsive' });
     wrapper.onClick();
     expect(tree).toMatchSnapshot();
+    expect(onClick).toHaveBeenCalled();
   });
 
   it('should respond to logout method', () => {

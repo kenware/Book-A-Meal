@@ -64,7 +64,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
 </div>
 `;
 
-exports[`Testing of sidebar component should render properly 2`] = `
+exports[`Testing of sidebar component should render properly with admin role 1`] = `
 <div>
   <div
     className="nav "
@@ -137,7 +137,7 @@ exports[`Testing of sidebar component should render properly 2`] = `
 exports[`Testing of sidebar component should respond to click method 1`] = `
 <div>
   <div
-    className="nav "
+    className="nav responsive"
     id="myTopnav"
   >
     <Link

@@ -7,6 +7,10 @@ import cloudinaryStorage from 'multer-storage-cloudinary';
 dotenv.config();
 
 export default class cloudinaryConfig {
+  /**
+ * @method cloudinary
+ * @description uploads image in cloudinary
+ */
   cloudinary() {
     cloudinary.config({
       cloud_name: process.env.CLOUD_NAME,

@@ -72,14 +72,14 @@
   color:rgba(216, 186, 19, 0.795);
 }
 /*popover*/
-.p-dash,.p-set,.p-add,.p-out,.p-all,.p-notif{
+.p-dash,.p-set,.p-add,.p-out,.p-all,.p-notif, .p-admin{
   position: fixed;
   left:80px;
   z-index: 10000;
   color:lightseagreen;;
 }
 
-.dash, .logout, .cPassword, .notific, .logOut, .order, .profile, .setmeal {
+.dash, .logout, .adminPage, .cPassword, .notific, .logOut, .order, .profile, .setmeal {
   display: none;
 }
 .main {
@@ -317,8 +317,17 @@
     }
   }
   .video-container {
-    display: flex;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex; */
+    max-height: 30rem;
+    max-width: 30rem;
     padding: 1rem 3rem 1rem 3rem;
+  }
+  .video-wrapper {
+    display: flex;
+    justify-content: space-around;
   }
   .profile-wrap {
     border: dotted darkslategray;
@@ -330,10 +339,14 @@
     label {
       flex: 1;
       float: right;
+      font-size: 18px;
     }
     input {
-      flex: 2;
-      height: 30px;
+    flex: 2;
+    height: 3rem;
+    font-size: 18px;
+    border: 1px solid #d7e270;
+    text-align: left;
     }
     }
   
@@ -395,7 +408,7 @@
   margin-bottom: 30px;
   
   .container {
-    padding: 2px 16px;
+    padding: 1px 4px;
   }
 }
 
@@ -434,3 +447,21 @@
   min-height: 2rem;
   font-size: 15px;
 }
+.toast {
+  margin-top: 6rem;
+  background-color: #b8b507;
+  color: white;
+  font-size: 20px;
+}
+
+input {
+  height: 1.7rem;
+  font-size: 15px;
+
+  }
+  textarea {
+    font-size: 18px;
+  }
+  .errortoast {
+    margin-top: 6rem;
+  }

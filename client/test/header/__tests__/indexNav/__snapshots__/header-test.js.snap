@@ -22,15 +22,16 @@ exports[`Testing of sidebar component should render properly 1`] = `
     <span />
     <span />
     <span />
+    <span />
     <Link
-      className="a"
+      className="a login-header"
       replace={false}
       to="/login"
     >
       Login
     </Link>
     <Link
-      className="a"
+      className="a register-header"
       replace={false}
       to="/register"
     >
@@ -49,7 +50,7 @@ exports[`Testing of sidebar component should render properly 1`] = `
 </div>
 `;
 
-exports[`Testing of sidebar component should render properly with user info in the nav bar 1`] = `
+exports[`Testing of sidebar component should render properly with admin role 1`] = `
 <div>
   <div
     className="nav "
@@ -69,22 +70,33 @@ exports[`Testing of sidebar component should render properly with user info in t
       Book-A-Meal
     </Link>
     <span />
-    <span />
-    <span />
+    <span
+      className="a logOut"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
     <Link
       className="a"
       replace={false}
-      to="/login"
+      to="/profile"
     >
-      Login
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="admin"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
+      />
     </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/register"
-    >
-      SignUp
-    </Link>
+    <span />
+    <span />
+    <span />
     <span
       className="a icon"
       onClick={[Function]}
@@ -98,7 +110,7 @@ exports[`Testing of sidebar component should render properly with user info in t
 </div>
 `;
 
-exports[`Testing of sidebar component should render properly with user info in the nav bar 2`] = `
+exports[`Testing of sidebar component should render properly with user role 1`] = `
 <div>
   <div
     className="nav "
@@ -118,71 +130,33 @@ exports[`Testing of sidebar component should render properly with user info in t
       Book-A-Meal
     </Link>
     <span />
-    <span />
-    <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/login"
-    >
-      Login
-    </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/register"
-    >
-      SignUp
-    </Link>
     <span
-      className="a icon"
+      className="a logOut"
       onClick={[Function]}
       role="button"
     >
-      <span
-        className="fa fa-bars"
-      />
+      LogOut
     </span>
-  </div>
-</div>
-`;
-
-exports[`Testing of sidebar component should render properly with user info in the nav bar 3`] = `
-<div>
-  <div
-    className="nav "
-    id="myTopnav"
-  >
     <Link
-      className="a active active-text-header"
+      className="a"
       replace={false}
-      style={
-        Object {
-          "fontSize": "30px",
-          "marginTop": "10px",
+      to="/profile"
+    >
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="user"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
         }
-      }
-      to="/meals"
-    >
-      Book-A-Meal
+      />
     </Link>
     <span />
     <span />
     <span />
-    <Link
-      className="a"
-      replace={false}
-      to="/login"
-    >
-      Login
-    </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/register"
-    >
-      SignUp
-    </Link>
     <span
       className="a icon"
       onClick={[Function]}
@@ -199,7 +173,7 @@ exports[`Testing of sidebar component should render properly with user info in t
 exports[`Testing of sidebar component should respond to click method 1`] = `
 <div>
   <div
-    className="nav "
+    className="nav responsive"
     id="myTopnav"
   >
     <Link
@@ -216,22 +190,33 @@ exports[`Testing of sidebar component should respond to click method 1`] = `
       Book-A-Meal
     </Link>
     <span />
-    <span />
-    <span />
+    <span
+      className="a logOut"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
     <Link
       className="a"
       replace={false}
-      to="/login"
+      to="/profile"
     >
-      Login
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="admin"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
+      />
     </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/register"
-    >
-      SignUp
-    </Link>
+    <span />
+    <span />
+    <span />
     <span
       className="a icon"
       onClick={[Function]}
@@ -265,22 +250,33 @@ exports[`Testing of sidebar component should respond to logout method 1`] = `
       Book-A-Meal
     </Link>
     <span />
-    <span />
-    <span />
+    <span
+      className="a logOut"
+      onClick={[Function]}
+      role="button"
+    >
+      LogOut
+    </span>
     <Link
       className="a"
       replace={false}
-      to="/login"
+      to="/profile"
     >
-      Login
+      <img
+        alt="user"
+        className="rounded-circle"
+        src="admin"
+        style={
+          Object {
+            "height": "20px",
+            "width": "20px",
+          }
+        }
+      />
     </Link>
-    <Link
-      className="a"
-      replace={false}
-      to="/register"
-    >
-      SignUp
-    </Link>
+    <span />
+    <span />
+    <span />
     <span
       className="a icon"
       onClick={[Function]}
